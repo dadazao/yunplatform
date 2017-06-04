@@ -33,7 +33,7 @@ BPMN2.0标准支持
 流程任务的灵活人员运算处理  
 
 权限管理：  
-1、RBAC（Role Based Access Control）。  
+1、RBAC（Role Based Access Control）。  
 2、基于Spring Security 3.0.3，通过拦截任意URL资源是否分配给用户的角色来判断有无访问权限。  
 3、抽象出7张表，同时平台通过角色管理和权限分配界面来管理，统一方便。  
 
