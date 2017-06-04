@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmProStatus">
+	<resultMap id="BpmProStatus" type="com.cloudstong.platform.third.bpm.model.BpmProStatus">
+		<id property="id" column="ID" jdbcType="NUMERIC"/>
+		<result property="actinstid" column="ACTINSTID" jdbcType="NUMERIC"/>
+		<result property="nodeid" column="NODEID" jdbcType="VARCHAR"/>
+		<result property="nodename" column="NODENAME" jdbcType="VARCHAR"/>
+		<result property="status" column="STATUS" jdbcType="NUMERIC"/>
+		<result property="lastupdatetime" column="LASTUPDATETIME" jdbcType="TIMESTAMP"/>
+		<result property="actdefid" column="ACTDEFID" jdbcType="VARCHAR"/>
+		<result property="defId" column="DEFID" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID,ACTINSTID,NODEID,NODENAME,STATUS,LASTUPDATETIME,ACTDEFID,DEFID
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			
+			<if test="@Ognl@isNotEmpty(actinstid)"> AND ACTINSTID  LIKE #{actinstid}  </if>
+			<if test="@Ognl@isNotEmpty(nodeid)"> AND NODEID  LIKE #{nodeid}  </if>
+			<if test="@Ognl@isNotEmpty(nodename)"> AND NODENAME  LIKE #{nodename}  </if>
+			<if test="@Ognl@isNotEmpty(status)"> AND STATUS  =#{status} </if>
+			<if test="@Ognl@isNotEmpty(lastupdatetime)"> AND LASTUPDATETIME  =#{lastupdatetime} </if>
+			<if test="@Ognl@isNotEmpty(actdefid)"> AND ACTDEFID  LIKE #{actdefid}  </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmProStatus">
+		INSERT INTO BPM_PRO_STATUS
+		(ID,ACTINSTID,NODEID,NODENAME,STATUS,LASTUPDATETIME,ACTDEFID,DEFID)
+		VALUES
+		(#{id,jdbcType=NUMERIC}, #{actinstid,jdbcType=VARCHAR}, #{nodeid,jdbcType=VARCHAR}, 
+		#{nodename,jdbcType=VARCHAR}, #{status,jdbcType=NUMERIC}, #{lastupdatetime,jdbcType=TIMESTAMP}, 
+		#{actdefid,jdbcType=VARCHAR},#{defId,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_PRO_STATUS 	WHERE ID=#{id}
+	</delete>
+	
+	<delete id="delByActDefId" parameterType="java.lang.String">
+		DELETE FROM BPM_PRO_STATUS
+		WHERE
+		actDefId=#{actDefId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmProStatus">
+		UPDATE BPM_PRO_STATUS SET
+		ACTINSTID=#{actinstid,jdbcType=VARCHAR} , 
+		NODEID=#{nodeid,jdbcType=VARCHAR} , 
+		NODENAME=#{nodename,jdbcType=VARCHAR} , 
+		STATUS=#{status,jdbcType=NUMERIC} , 
+		LASTUPDATETIME=#{lastupdatetime,jdbcType=TIMESTAMP} , 
+		ACTDEFID=#{actdefid,jdbcType=VARCHAR},
+		DEFID=#{defId,jdbcType=VARCHAR} 
+		WHERE
+		ID=#{id}
+	</update>
+	
+	<update id="updStatus" parameterType="com.cloudstong.platform.third.bpm.model.BpmProStatus">
+		UPDATE BPM_PRO_STATUS SET 	STATUS=#{status,jdbcType=NUMERIC} ,  LASTUPDATETIME=#{lastupdatetime,jdbcType=TIMESTAMP}  
+		WHERE ACTINSTID=#{actinstid} AND NODEID=#{nodeid}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmProStatus">
+		SELECT <include refid="columns"/>
+		FROM BPM_PRO_STATUS
+		WHERE
+		ID=#{id}
+	</select>
+	
+	<select id="getByActInstanceId" parameterType="String" resultMap="BpmProStatus">
+		SELECT <include refid="columns"/>
+		FROM BPM_PRO_STATUS WHERE ACTINSTID=#{actinstid}
+	</select>
+	
+	<select id="isExistByInstanceId" parameterType="String" resultType="Integer">
+		SELECT count(*) amount FROM BPM_PRO_STATUS WHERE ACTINSTID=#{actinstid}
+	</select>
+	
+	<select id="getStatusByRunidNodeid" parameterType="java.util.Map" resultType="Integer">
+		select t.status from bpm_pro_status t where t.nodeid = #{nodeId} 
+		and t.actinstid = (select r.actinstid from bpm_pro_run r where r.runid=#{runId})
+	</select>
+	
+	<select id="getByInstNodeId"    resultMap="BpmProStatus">
+		SELECT *  FROM BPM_PRO_STATUS WHERE ACTINSTID=#{actinstid} AND NODEID=#{nodeid}
+	</select>
+	
+	<select id="getAll" resultMap="BpmProStatus">
+		SELECT <include refid="columns"/>
+		FROM BPM_PRO_STATUS   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by ID  desc
+		</if>
+	</select>
+</mapper>

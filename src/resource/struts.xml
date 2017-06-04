@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+ 
+<struts>
+
+	<!--  bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest" name="requestParser" class="org.beaver.webapp.filter.FileUploadMultiPartRequest" scope="default" optional="true" /-->
+
+	<!-- Constants -->
+	<!-- constant name="struts.multipart.handler" value="requestParser" / -->
+	<constant name="struts.devMode" value="false"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true" />
+    <constant name="struts.custom.i18n.resources" value="ApplicationResources"/>
+    <constant name="struts.locale" value="zh_CN"/>
+    <constant name="struts.multipart.maxSize" value="209715200"/>
+    <constant name="struts.multipart.saveDir" value="/upload"/>
+    <constant name="struts.ui.theme" value="css_xhtml"/>
+    <constant name="struts.codebehind.pathPrefix" value="pages"/>
+    <constant name="struts.enable.SlashesInActionNames" value="false"/>
+    <constant name="struts.convention.action.includeJars" value=".*/yp.*?jar(!/)?" />
+    <constant name="struts.action.excludePattern" value="/components/yozoAppletConfig,/OfficeServlet,/CompexServlet,/upload,/js/iweboffice/OfficeServer.jsp,/servlet/UploadFileServlet,/dwr/*,/dwr/test/Message,/dwr/call/plainpoll/ReverseAjax.dwr,/ReportServer,/bpmImage,/UploadServlet,/*.gzjs" />
+	
+	<!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <interceptors>
+            <!-- Copied from struts-default.xml and changed validation exclude methods -->
+            <interceptor-stack name="defaultStack">
+                <interceptor-ref name="exception"/>
+                <interceptor-ref name="alias"/>
+                <interceptor-ref name="servletConfig"/>
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="i18n"/>
+                <interceptor-ref name="chain"/>
+                <interceptor-ref name="debugging"/>
+                <interceptor-ref name="profiling"/>
+                <interceptor-ref name="scopedModelDriven"/>
+                <interceptor-ref name="modelDriven"/>
+                <interceptor-ref name="fileUpload"/>
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="staticParams"/>
+                <interceptor-ref name="params">
+                    <param name="excludeParams">dojo\..*</param>
+                </interceptor-ref>
+                <interceptor-ref name="conversionError"/>
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">cancel,execute,delete,edit,list</param>
+                </interceptor-ref>
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+            </interceptor-stack>
+            <interceptor-stack name="fileUploadStack">
+                <interceptor-ref name="fileUpload"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+		</interceptors>
+        <global-results>
+            <result name="dataAccessFailure">/pages/common/error.jsp</result>
+            <result name="error">/pages/common/error.jsp</result>
+        </global-results>
+        
+        <global-exception-mappings>
+            <exception-mapping exception="org.springframework.dao.DataAccessException" result="dataAccessFailure"/>
+        	<exception-mapping exception="java.lang.Exception" result="error" />
+        </global-exception-mappings>
+
+    </package>
+    
+    <package name="yunDefault" extends="default">
+    	<interceptors>
+            <interceptor-stack name="eventStack">
+                <interceptor-ref name="scope"/>
+                <interceptor-ref name="modelDriven"/>
+                <interceptor-ref name="paramsPrepareParamsStack" />
+                <interceptor-ref name="validation" />
+            </interceptor-stack>
+    	</interceptors>
+    	<default-interceptor-ref name="eventStack" />
+    </package>
+    
+    <include file="struts_yp.xml" />
+
+</struts>

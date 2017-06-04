@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.form.model.BpmTableTemprights">
+	<resultMap id="BpmTableTemprights" type="com.cloudstong.platform.third.bpm.form.model.BpmTableTemprights">
+		<id property="id" column="ID" jdbcType="NUMERIC"/>
+		<result property="templateId" column="TEMPLATE_ID" jdbcType="NUMERIC"/>
+		<result property="rightType" column="RIGHT_TYPE" jdbcType="NUMERIC"/>
+		<result property="ownerId" column="OWNER_ID" jdbcType="NUMERIC"/>
+		<result property="ownerName" column="OWNER_NAME" jdbcType="VARCHAR"/>
+		<result property="searchType" column="SEARCH_TYPE" jdbcType="NUMERIC"/>
+		<result property="categoryId" column="CATEGORY_ID" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID,TEMPLATE_ID,RIGHT_TYPE,OWNER_ID,OWNER_NAME,SEARCH_TYPE,CATEGORY_ID
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(id)"> AND ID  =#{id} </if>
+			<if test="@Ognl@isNotEmpty(templateId)"> AND TEMPLATE_ID  =#{templateId} </if>
+			<if test="@Ognl@isNotEmpty(rightType)"> AND RIGHT_TYPE  =#{rightType} </if>
+			<if test="@Ognl@isNotEmpty(ownerId)"> AND OWNER_ID  =#{ownerId} </if>
+			<if test="@Ognl@isNotEmpty(ownerName)"> AND OWNER_NAME  LIKE #{ownerName}  </if>
+			<if test="@Ognl@isNotEmpty(searchType)"> AND SEARCH_TYPE  =#{searchType} </if>
+			<if test="@Ognl@isNotEmpty(categoryId)"> AND CATEGORY_ID  =#{categoryId} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmTableTemprights">
+		INSERT INTO BPM_TABLE_TEMPRIGHTS
+		(ID,TEMPLATE_ID,RIGHT_TYPE,OWNER_ID,OWNER_NAME,SEARCH_TYPE,CATEGORY_ID)
+		VALUES
+		(#{id,jdbcType=NUMERIC}, #{templateId,jdbcType=NUMERIC}, #{rightType,jdbcType=NUMERIC}, #{ownerId,jdbcType=NUMERIC}, #{ownerName,jdbcType=VARCHAR}, #{searchType,jdbcType=NUMERIC},#{categoryId,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_TABLE_TEMPRIGHTS 
+		WHERE
+		ID=#{id}
+	</delete>
+	
+	<select id="getByTemplateId" resultMap="BpmTableTemprights" parameterType="java.lang.Long">
+		SELECT <include refid="columns"/>
+		FROM BPM_TABLE_TEMPRIGHTS 
+		where TEMPLATE_ID = #{templateId}
+	</select>
+	
+	<select id="getByCategoryId" resultMap="BpmTableTemprights" parameterType="java.lang.Long">
+		SELECT <include refid="columns"/>
+		FROM BPM_TABLE_TEMPRIGHTS 
+		where CATEGORY_ID = #{categoryId}
+	</select>
+	
+	<delete id="delByTemplateId" parameterType="java.lang.Long">
+		DELETE FROM BPM_TABLE_TEMPRIGHTS 
+		WHERE
+		TEMPLATE_ID=#{templateId}
+	</delete>
+	
+	<delete id="delByCategoryId" parameterType="java.lang.Long">
+		DELETE FROM BPM_TABLE_TEMPRIGHTS 
+		WHERE
+		CATEGORY_ID=#{categoryId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmTableTemprights">
+		UPDATE BPM_TABLE_TEMPRIGHTS SET
+		TEMPLATE_ID=#{templateId,jdbcType=NUMERIC} , 
+		RIGHT_TYPE=#{rightType,jdbcType=NUMERIC} , 
+		OWNER_ID=#{ownerId,jdbcType=NUMERIC} , 
+		OWNER_NAME=#{ownerName,jdbcType=VARCHAR} , 
+		SEARCH_TYPE=#{searchType,jdbcType=NUMERIC},
+		CATEGORY_ID=#{categoryId,jdbcType=NUMERIC} 
+		WHERE
+		ID=#{id}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmTableTemprights">
+		SELECT <include refid="columns"/>
+		FROM BPM_TABLE_TEMPRIGHTS
+		WHERE
+		ID=#{id}
+	</select>
+	
+	<select id="getAll" resultMap="BpmTableTemprights">
+		SELECT <include refid="columns"/>
+		FROM BPM_TABLE_TEMPRIGHTS   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by ID  desc
+		</if>
+	</select>
+</mapper>

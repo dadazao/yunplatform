@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/codegen" >
+	<xs:element name="config">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="datasource" type="datasourceType" minOccurs="1" maxOccurs="1"></xs:element>
+				<xs:element name="variables" type="variablesType" maxOccurs="1" minOccurs="1"></xs:element>
+				<xs:element name="templates" type="templatesType" maxOccurs="1" minOccurs="1"></xs:element>
+				<xs:element name="files" type="filesType" maxOccurs="1" minOccurs="1"></xs:element>
+				<xs:element name="table" type="tableType" maxOccurs="1" minOccurs="1"></xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- 数据源元素类型 -->
+	<xs:complexType name="datasourceType">
+		<xs:attribute name="path" type="xs:string"></xs:attribute>
+	</xs:complexType>
+	<!-- variables -->
+	<xs:complexType name="variablesType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="variable" type="variableType"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- variable -->
+	<xs:complexType name="variableType">
+		<xs:attribute name="name" type="xs:string"></xs:attribute>
+		<xs:attribute name="value" type="xs:string"></xs:attribute>
+	</xs:complexType>
+	<!-- templates -->
+	<xs:complexType name="templatesType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="template" type="templateType" minOccurs="1"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="basePath" type="xs:string" use="required"></xs:attribute>
+	</xs:complexType>
+	<!-- template -->
+	<xs:complexType name="templateType">
+		<xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+		<xs:attribute name="path" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					<![CDATA[
+						生成主表时使用的模板文件名
+					]]>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="sub1" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					<![CDATA[
+						生成1:1关系时，子表需要参考的模板文件名
+					]]>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="subm" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					<![CDATA[
+						生成1:n关系时，子表需要参考的模板文件名
+					]]>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- files -->
+	<xs:complexType name="filesType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="file" type="fileType"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="basePath" type="xs:string" use="required"></xs:attribute>
+	</xs:complexType>
+	<!-- file -->
+	<xs:complexType name="fileType">
+		<xs:attribute name="refTemplate" use="required" type="xs:string"></xs:attribute>
+		<xs:attribute name="fileName" use="required" type="xs:string"></xs:attribute>
+		<xs:attribute name="dir" use="required" type="xs:string"></xs:attribute>
+		<xs:attribute name="table" use="optional" default="all">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1:1"></xs:enumeration>
+					<xs:enumeration value="1:n"></xs:enumeration>
+					<xs:enumeration value="main"></xs:enumeration>
+					<xs:enumeration value="main,1:1"></xs:enumeration>
+					<xs:enumeration value="main,1:n"></xs:enumeration>
+					<xs:enumeration value="1:1,1:n"></xs:enumeration>
+					<xs:enumeration value="1:n,1:1"></xs:enumeration>
+					<xs:enumeration value="all"></xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="override" type="xs:boolean" use="optional" default="true"></xs:attribute>
+		<xs:attribute name="append" type="xs:boolean" use="optional" default="false"></xs:attribute>
+	</xs:complexType>
+
+	<!-- table -->
+	<xs:complexType name="tableType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="variable" type="variableType"></xs:element>
+			<xs:element name="subtables" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="subtable" minOccurs="1">
+							<xs:complexType>
+								<xs:sequence maxOccurs="unbounded">
+									<xs:element name="variable" type="variableType"></xs:element>
+								</xs:sequence>
+								<xs:attribute name="tableName" type="xs:string"	use="required"></xs:attribute>
+								<xs:attribute name="relation" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="1:1"></xs:enumeration>
+											<xs:enumeration value="1:n"></xs:enumeration>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="foreignKey" type="xs:string"></xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="tableName" type="xs:string" use="required"></xs:attribute>
+	</xs:complexType>
+</xs:schema>

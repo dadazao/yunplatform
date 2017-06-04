@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmNodeUser">
+	<resultMap id="BpmNodeUser" type="com.cloudstong.platform.third.bpm.model.BpmNodeUser">
+		<id property="nodeUserId" column="nodeUserId" jdbcType="NUMERIC"/>
+		<result property="setId" column="setId" jdbcType="NUMERIC"/>
+		<result property="nodeId" column="nodeId" jdbcType="VARCHAR"/>
+		<result property="assignType" column="assignType" jdbcType="NUMERIC"/>
+		<result property="assignUseType" column="assignUseType" jdbcType="NUMERIC"/>
+		<result property="cmpIds" column="cmpIds" jdbcType="CLOB"/>
+		<result property="cmpNames" column="cmpNames" jdbcType="CLOB"/>
+		<result property="actDefId" column="actDefId" jdbcType="VARCHAR"/>
+		<result property="compType" column="compType" jdbcType="NUMERIC"/>
+		<result property="sn" column="sn" jdbcType="NUMERIC"/>
+		<result property="conditionId"   column="conditionId"  jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		nodeUserId,setId,nodeId,assignType,cmpIds,cmpNames,actDefId,compType,sn,assignUseType,conditionId
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(nodeUserId)"> AND nodeUserId  =#{nodeUserId} </if>
+			<if test="@Ognl@isNotEmpty(setId)"> AND setId  =#{setId} </if>
+			<if test="@Ognl@isNotEmpty(nodeId)"> AND nodeId  LIKE #{nodeId}  </if>
+			<if test="@Ognl@isNotEmpty(assignType)"> AND assignType  =#{assignType} </if>
+			<if test="@Ognl@isNotEmpty(assignUseType)"> AND assignUseType  =#{assignUseType} </if>
+			<if test="@Ognl@isNotEmpty(actDefId)"> AND actDefId  =#{actDefId} </if>
+			<if test="@Ognl@isNotEmpty(conditionId)"> AND conditionId  =#{conditionId} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeUser">
+		INSERT INTO bpm_node_user
+		(<include refid="columns"/>)
+		VALUES
+		(#{nodeUserId,jdbcType=NUMERIC}, #{setId,jdbcType=NUMERIC}, #{nodeId,jdbcType=VARCHAR}, #{assignType,jdbcType=NUMERIC}, #{cmpIds,jdbcType=CLOB}, #{cmpNames,jdbcType=CLOB}, #{actDefId,jdbcType=VARCHAR}, #{compType,jdbcType=NUMERIC}, #{sn,jdbcType=NUMERIC},#{assignUseType,jdbcType=NUMERIC},#{conditionId,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_USER 
+		WHERE
+		nodeUserId=#{nodeUserId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeUser">
+		UPDATE bpm_node_user SET
+		setId=#{setId,jdbcType=NUMERIC} , 
+		nodeId=#{nodeId,jdbcType=VARCHAR} , 
+		assignType=#{assignType,jdbcType=NUMERIC} , 
+		assignUseType=#{assignUseType,jdbcType=NUMERIC} , 
+		cmpIds=#{cmpIds,jdbcType=CLOB} , 
+		cmpNames=#{cmpNames,jdbcType=CLOB} , 
+		actDefId=#{actDefId,jdbcType=VARCHAR} , 
+		compType=#{compType,jdbcType=NUMERIC} , 
+		sn=#{sn,jdbcType=NUMERIC},
+		conditionId=#{conditionId,jdbcType=NUMERIC}
+		WHERE
+		nodeUserId=#{nodeUserId}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmNodeUser">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_USER
+		WHERE
+		nodeUserId=#{nodeUserId}
+	</select>
+	
+	<select id="getAll" resultMap="BpmNodeUser">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_USER   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by nodeUserId  desc
+		</if>
+	</select>
+	
+	<select id="getBySetId" parameterType="java.lang.Long" resultMap="BpmNodeUser">
+		SELECT *
+		FROM BPM_NODE_USER WHERE 
+		setId = #{setId} 
+		ORDER BY sn asc
+	</select>
+	
+	<select id="getByActDefId" parameterType="java.lang.String" resultMap="BpmNodeUser">
+		SELECT *
+		FROM BPM_NODE_USER WHERE 
+		actDefId=#{actDefId}
+	</select>
+	
+	<delete id="delByActDefId" parameterType="String">
+		DELETE FROM BPM_NODE_USER 
+		WHERE
+		actDefId=#{actDefId}
+	</delete>
+	
+	<delete id="delByConditionId" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_USER 
+		WHERE
+		conditionId=#{conditionId}
+	</delete>
+	
+	<select id="getBySetIdAndConditionId" parameterType="java.util.Map" resultMap="BpmNodeUser">
+		SELECT *
+		FROM BPM_NODE_USER WHERE 
+		setId = #{setId} and 	conditionId=#{conditionId}
+		ORDER BY sn asc
+	</select>
+	
+		<select id="selectNull"   resultMap="BpmNodeUser">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_USER
+		WHERE
+		CONDITIONID is null or CONDITIONID=0
+	</select>
+</mapper>

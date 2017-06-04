@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.form.model.BpmFormDef">
+	<resultMap id="BpmFormDef" type="com.cloudstong.platform.third.bpm.form.model.BpmFormDef">
+		<id property="formDefId" column="formDefId" jdbcType="NUMERIC"/>
+		<result property="formKey" column="formKey" jdbcType="NUMERIC"/>
+		<result property="categoryId" column="categoryId" jdbcType="NUMERIC"/>
+		<result property="subject" column="subject" jdbcType="VARCHAR"/>
+		<result property="formDesc" column="formDesc" jdbcType="VARCHAR"/>
+		<result property="tabTitle" column="tabTitle" jdbcType="VARCHAR"/>
+		<result property="isDefault" column="isDefault" jdbcType="NUMERIC"/>
+		<result property="tableId" column="tableId" jdbcType="NUMERIC"/>
+		<result property="versionNo" column="versionNo" jdbcType="NUMERIC"/>
+		<result property="isPublished" column="isPublished" jdbcType="NUMERIC"/>
+		<result property="publishedBy" column="publishedBy" jdbcType="VARCHAR"/>
+		<result property="publishTime" column="publishTime" jdbcType="TIMESTAMP"/>
+		<result property="designType" column="designType" jdbcType="NUMERIC"/>
+		<result property="templatesId" column="templatesId" jdbcType="NUMERIC"/>
+		
+	</resultMap>
+	
+	
+	
+	<sql id="columns">
+		formDefId,formKey,categoryId,subject,formDesc,tabTitle,html,template,isDefault,tableId,versionNo,isPublished,publishedBy,publishTime,designType,templatesId
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			isDefault=1
+			<if test="@Ognl@isNotEmpty(formDefId)"> AND formDefId  =#{formDefId} </if>
+			<if test="@Ognl@isNotEmpty(formKey)"> AND formKey  =#{formKey} </if>
+			<if test="@Ognl@isNotEmpty(categoryId)"> AND categoryId  =#{categoryId}  </if>
+			<if test="@Ognl@isNotEmpty(subject)"> AND subject  LIKE #{subject}  </if>
+			<if test="@Ognl@isNotEmpty(formDesc)"> AND formDesc  LIKE #{formDesc}  </if>
+			<if test="@Ognl@isNotEmpty(isDefault)"> AND isDefault  =#{isDefault} </if>
+			<if test="@Ognl@isNotEmpty(tableId)"> AND tableId  =#{tableId} </if>
+			<if test="@Ognl@isNotEmpty(versionNo)"> AND versionNo  =#{versionNo} </if>
+			<if test="@Ognl@isNotEmpty(isPublished)"> AND isPublished  =#{isPublished} </if>
+			<if test="@Ognl@isNotEmpty(publishedBy)"> AND publishedBy  LIKE #publishedBy}  </if>
+			<if test="@Ognl@isNotEmpty(publishTime)"> AND publishTime  =#{publishTime} </if>
+			<if test="@Ognl@isNotEmpty(designType)"> AND designType  =#{designType} </if>
+			<if test="@Ognl@isNotEmpty(templatesId)"> AND templatesId  LIKE #{templatesId} </if>	
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormDef">
+		INSERT INTO bpm_form_def
+		(<include refid="columns"/>)
+		VALUES
+		(#{formDefId,jdbcType=NUMERIC}, #{formKey,jdbcType=NUMERIC}, #{categoryId,jdbcType=NUMERIC}, #{subject,jdbcType=VARCHAR}, 
+		#{formDesc,jdbcType=VARCHAR},#{tabTitle,jdbcType=VARCHAR}, #{html,jdbcType=CLOB}, #{template,jdbcType=CLOB},
+		 #{isDefault,jdbcType=NUMERIC}, #{tableId,jdbcType=NUMERIC}, #{versionNo,jdbcType=NUMERIC},
+		  #{isPublished,jdbcType=NUMERIC}, #{publishedBy,jdbcType=VARCHAR}, #{publishTime,jdbcType=TIMESTAMP},
+		  #{designType,jdbcType=NUMERIC},#{templatesId,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM bpm_form_def 
+		WHERE
+		formDefId=#{formDefId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormDef">
+		UPDATE bpm_form_def SET
+		formKey=#{formKey,jdbcType=NUMERIC} , 
+		categoryId=#{categoryId,jdbcType=NUMERIC} , 
+		subject=#{subject,jdbcType=VARCHAR} , 
+		formDesc=#{formDesc,jdbcType=VARCHAR} , 
+		tabTitle=#{tabTitle,jdbcType=VARCHAR} , 
+		html=#{html,jdbcType=CLOB} , 
+		template=#{template,jdbcType=CLOB} , 
+		isDefault=#{isDefault,jdbcType=NUMERIC} , 
+		tableId=#{tableId,jdbcType=NUMERIC} , 
+		versionNo=#{versionNo,jdbcType=NUMERIC} , 
+		isPublished=#{isPublished,jdbcType=NUMERIC} , 
+		publishedBy=#{publishedBy,jdbcType=VARCHAR} , 
+		publishTime=#{publishTime,jdbcType=TIMESTAMP},
+		designType=#{designType,jdbcType=NUMERIC},
+		templatesId=#{templatesId,jdbcType=VARCHAR}
+		WHERE
+		formDefId=#{formDefId}
+	</update>
+	
+	<update id="updNotDefaultByFormKey" parameterType="Long">
+		UPDATE bpm_form_def SET  isDefault=0 where formKey=#{formKey}
+	</update>
+	
+	<update id="updDefaultByFormId" parameterType="Long">
+		UPDATE bpm_form_def SET  isDefault=1 where formDefId=#{formDefId}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmFormDef">
+		SELECT <include refid="columns"/>
+		FROM bpm_form_def
+		WHERE
+		formDefId=#{formDefId}
+	</select>
+	
+	<select id="getAll" resultMap="BpmFormDef">
+		SELECT a.formDefId,a.formKey,a.categoryId,a.subject,a.formDesc,a.tabTitle,a.isDefault,a.tableId,a.versionNo,
+		a.isPublished,a.publishedBy,a.publishTime,a.designType,b.typename categoryName,c.tableName tableName  FROM bpm_form_def a left outer join  bpm_form_table c on a.tableId=c.tableId left outer join sys_gl_type b   on a.categoryid=b.typeid
+		where a.isDefault=1
+		<if test="@Ognl@isNotEmpty(formDefId)"> AND a.formDefId  =#{formDefId} </if>
+		<if test="@Ognl@isNotEmpty(formKey)"> AND a.formKey  =#{formKey} </if>
+		<if test="@Ognl@isNotEmpty(categoryId)"> AND a.categoryId  =#{categoryId}  </if>
+		<if test="@Ognl@isNotEmpty(subject)"> AND a.subject  LIKE #{subject}  </if>
+		<if test="@Ognl@isNotEmpty(formDesc)"> AND a.formDesc  LIKE #{formDesc}  </if>
+		<if test="@Ognl@isNotEmpty(isDefault)"> AND a.isDefault  =#{isDefault} </if>
+		<if test="@Ognl@isNotEmpty(tableId)"> AND a.tableId  =#{tableId} </if>
+		<if test="@Ognl@isNotEmpty(versionNo)"> AND a.versionNo  =#{versionNo} </if>
+		<if test="@Ognl@isNotEmpty(isPublished)"> AND a.isPublished  =#{isPublished} </if>
+		<if test="@Ognl@isNotEmpty(publishedBy)"> AND a.publishedBy  LIKE #{publishedBy}  </if>
+		<if test="@Ognl@isNotEmpty(publishTime)"> AND a.publishTime  =#{publishTime} </if>
+		<if test="@Ognl@isNotEmpty(designType)"> AND a.designType  =#{designType} </if>
+		<if test="@Ognl@isNotEmpty(orderField)">
+			order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+			order by formDefId  desc
+		</if>
+	</select>
+	
+	<select id="getPublished" resultMap="BpmFormDef">
+		SELECT formDefId,formKey,categoryId,subject,formDesc,tabTitle,isDefault,tableId,versionNo,isPublished,publishedBy,publishTime,designType FROM bpm_form_def 
+		where isDefault=1 AND isPublished  =1 
+		<if test="@Ognl@isNotEmpty(categoryId)"> AND categoryId  =#{categoryId}  </if>
+		<if test="@Ognl@isNotEmpty(subject)"> AND subject  LIKE #{subject}  </if>
+		<if test="@Ognl@isNotEmpty(formDesc)"> AND formDesc  LIKE #{formDesc}  </if>
+		<if test="@Ognl@isNotEmpty(designType)"> AND designType  =#{designType} </if>
+		<if test="@Ognl@isNotEmpty(orderField)">
+			order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+			order by formDefId  desc
+		</if>
+	</select>
+	
+	<select id="getDefaultVersionByFormKey" parameterType="Long" resultMap="BpmFormDef">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_DEF 
+		WHERE FORMKEY = #{formKey}
+		AND ISDEFAULT = 1
+	</select>
+	
+	<select id="getDefaultPublishedByFormKey" parameterType="Long" resultMap="BpmFormDef">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_DEF 
+		WHERE FORMKEY = #{formKey}
+		AND ISDEFAULT = 1 and  isPublished  =1 
+	</select>
+
+	
+	<select id="getByFormKey" parameterType="Long" resultMap="BpmFormDef">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_DEF 
+		WHERE FORMKEY = #{formKey}
+		ORDER BY versionNo DESC
+	</select>
+	
+	<select id="getCountByFormKey" parameterType="Long" resultType="int">
+		SELECT count(*) amount
+		FROM BPM_FORM_DEF 
+		WHERE FORMKEY = #{formKey}
+	</select>
+	
+	<select id="isTableHasFormDef" parameterType="long" resultType="int">
+		select count(*) amount from bpm_form_def where tableId=#{tableId}
+	</select>
+	
+	<select id="getFormDefAmount" parameterType="long" resultType="int">
+		select count(*) amount from bpm_form_def where tableId=#{tableId}
+	</select>
+	
+	<delete id="delByFormKey" parameterType="java.lang.Long">
+		DELETE FROM bpm_form_def WHERE formKey=#{formKey}
+	</delete>
+	
+	<select id="getFlowUsed" parameterType="long" resultType="int">
+		select count(*) amount from bpm_node_set where formKey=#{formKey}
+	</select>
+	
+	<select id="getMaxVersionByFormKey" parameterType="Long" resultType="int">
+		SELECT max(versionNo) versionNo
+		FROM BPM_FORM_DEF 
+		WHERE FORMKEY = #{formKey}
+	</select>
+	
+	
+	<select id="getFormKeyByTableId" parameterType="Long" resultType="String">
+		SELECT distinct formKey
+		FROM BPM_FORM_DEF 
+		WHERE tableId = #{tableId}
+	</select>
+	
+	<select id="getByFormKeyIsDefault" parameterType="Map" resultMap="BpmFormDef">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_DEF 
+		WHERE FORMKEY = #{formKey}
+		AND ISDEFAULT = #{isDefault}
+		ORDER BY versionNo DESC
+	</select>
+</mapper>

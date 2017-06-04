@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.ProcessTask">
+
+  <resultMap id="TaskEntity" type="com.cloudstong.platform.third.bpm.model.ProcessTask">
+	    <id property="id" column="ID_" jdbcType="VARCHAR"/>
+	    <result property="revision" column="REV_" jdbcType="INTEGER"/>
+	    <result property="name" column="NAME_" jdbcType="VARCHAR"/>
+	    <result property="parentTaskId" column="PARENT_TASK_ID_" jdbcType="VARCHAR"/>
+	    <result property="description" column="DESCRIPTION_" jdbcType="VARCHAR"/>
+	    <result property="priority" column="PRIORITY_" jdbcType="INTEGER"/>
+	    <result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP" />
+	    <result property="owner" column="OWNER_" jdbcType="VARCHAR"/>
+	    <result property="assignee" column="ASSIGNEE_" jdbcType="VARCHAR"/>
+	    <result property="delegationState" column="DELEGATION_" jdbcType="VARCHAR"/>
+	    <result property="executionId" column="EXECUTION_ID_" jdbcType="VARCHAR" />
+	    <result property="processInstanceId" column="PROC_INST_ID_" jdbcType="VARCHAR" />
+	    <result property="processDefinitionId" column="PROC_DEF_ID_" jdbcType="VARCHAR"/>
+	    <result property="taskDefinitionKey" column="TASK_DEF_KEY_" jdbcType="VARCHAR"/>
+	    <result property="dueDate" column="DUE_DATE_" jdbcType="TIMESTAMP"/>
+	    <result property="subject" column="subject" jdbcType="VARCHAR"/>
+	    <result property="processName" column="processName" jdbcType="VARCHAR"/>	    
+  </resultMap>
+	
+	  <insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.ProcessTask">
+	    insert into ACT_RU_TASK (ID_, REV_, NAME_, PARENT_TASK_ID_, DESCRIPTION_, PRIORITY_, CREATE_TIME_, OWNER_,
+	                      ASSIGNEE_, DELEGATION_, EXECUTION_ID_, PROC_INST_ID_, PROC_DEF_ID_, TASK_DEF_KEY_, DUE_DATE_)
+	    values (#{id, jdbcType=VARCHAR},
+	            1,
+	            #{name, jdbcType=VARCHAR},
+	            #{parentTaskId, jdbcType=VARCHAR},
+	            #{description, jdbcType=VARCHAR},
+	            #{priority, jdbcType=INTEGER},
+	            #{createTime, jdbcType=TIMESTAMP},
+	            #{owner, jdbcType=VARCHAR},
+	            #{assignee, jdbcType=VARCHAR},
+	            #{delegationState, jdbcType=VARCHAR},
+	            #{executionId, jdbcType=VARCHAR},
+	            #{processInstanceId, jdbcType=VARCHAR},
+	            #{processDefinitionId, jdbcType=VARCHAR},
+	            #{taskDefinitionKey, jdbcType=VARCHAR},
+	            #{dueDate, jdbcType=TIMESTAMP}
+	           )
+	  </insert>
+	 <update id="updTaskExecution" parameterType="String">
+		 update act_ru_task set execution_id_ =PROC_INST_ID_ where id_=#{id, jdbcType=VARCHAR}
+	</update> 
+  
+	<update id="setDueDate" parameterType="java.util.Map">
+		update ACT_RU_TASK set DUE_DATE_=#{dueDate} where ID_=#{taskId}
+	</update>
+	<select id="getAll" parameterType="java.util.Map" resultMap="TaskEntity">
+		SELECT task.*,run.subject subject,run.processName processName
+		FROM ACT_RU_TASK task left join BPM_PRO_RUN run
+		on task.PROC_INST_ID_=run.actInstId
+		where 1=1
+		<if test="@Ognl@isNotEmpty(name)"> AND task.name_ LIKE #{name} </if>
+		<if test="@Ognl@isNotEmpty(subject)"> AND run.subject LIKE #{subject} </if>
+		<if test="@Ognl@isNotEmpty(processName)"> AND run.processName LIKE #{processName} </if>
+		<if test="@Ognl@isEmpty(orderField)">
+			order by task.CREATE_TIME_ desc
+		</if>
+		<if test="@Ognl@isNotEmpty(orderField)">
+			order by ${orderField} ${orderSeq}
+		</if>		
+	</select>
+
+	<select id="getAllMyTask" parameterType="java.util.Map" resultMap="TaskEntity">
+		
+		SELECT distinct task.*,run.subject subject,run.processName processName
+		FROM ACT_RU_TASK task left join BPM_PRO_RUN run
+		on task.PROC_INST_ID_=run.actInstId
+        left join act_ru_identitylink ident 
+        on task.id_=ident.TASK_ID_
+		where (task.ASSIGNEE_ = #{userId} 
+		or ( (task.ASSIGNEE_ is NULL) and ( ident.USER_ID_ = #{userId}
+		or (ident.GROUP_ID_ in (select t.roleId from sys_user_role t where t.userid=#{userId}) and TYPE_='role')
+		or (ident.GROUP_ID_ in (select t.orgid from sys_user_org t where t.userid=#{userId}) and TYPE_='org')
+		or (ident.GROUP_ID_ in (select t.posid from sys_user_pos t where t.userid=#{userId}) and TYPE_='pos')
+		)))
+		<if test="@Ognl@isNotEmpty(name)"> AND task.name_ LIKE #{name} </if>
+		<if test="@Ognl@isNotEmpty(subject)"> AND run.subject LIKE #{subject} </if>
+		<if test="@Ognl@isNotEmpty(processName)"> AND run.processName LIKE #{processName} </if>
+		<if test="@Ognl@isEmpty(orderField)">
+			order by task.CREATE_TIME_ desc
+		</if>
+		<if test="@Ognl@isNotEmpty(orderField)">
+			order by ${orderField} ${orderSeq}
+		</if>
+	</select>
+	
+	<select id="getMyMobileTask" parameterType="java.util.Map" resultMap="TaskEntity">
+		SELECT distinct task.*,run.subject subject,run.processName processName
+	    FROM ACT_RU_TASK task left join BPM_PRO_RUN run
+	    on task.PROC_INST_ID_=run.actInstId
+	        left join act_ru_identitylink ident 
+	        on task.id_=ident.TASK_ID_
+	    where 
+	    
+	    task.task_def_key_ in
+	    (select distinct node.nodeid from BPM_PRO_RUN r left join  bpm_node_set  node on node.defid=r.defid  where node.isallowMobile=1) 
+	     
+	    AND task.PROC_INST_ID_ in
+	    (select  r.actinstid from BPM_PRO_RUN r left join  bpm_node_set  node on node.defid=r.defid  where node.isallowMobile=1) 
+	   
+	    AND (task.ASSIGNEE_ =#{userId}  or ( 
+	    (task.ASSIGNEE_ is NULL) and ( ident.USER_ID_ = #{userId}
+	    or (ident.GROUP_ID_ in (select t.roleId from sys_user_role t where t.userid=#{userId}) and TYPE_='role')
+	    or (ident.GROUP_ID_ in (select t.orgid from sys_user_org t where t.userid=#{userId}) and TYPE_='org')
+	    or (ident.GROUP_ID_ in (select t.posid from sys_user_pos t where t.userid=#{userId}) and TYPE_='pos')
+	    )
+	    ))
+		<if test="@Ognl@isNotEmpty(subject)"> AND run.subject LIKE #{subject} </if>
+		<if test="@Ognl@isEmpty(orderField)">
+			order by task.CREATE_TIME_ desc
+		</if>
+		<if test="@Ognl@isNotEmpty(orderField)">
+			order by ${orderField} ${orderSeq}
+		</if>
+	</select>
+	
+	<select id="getCandidateUsers" parameterType="java.lang.Long" resultType="com.cloudstong.platform.third.bpm.model.TaskUser">
+		select * from ACT_RU_IDENTITYLINK where TASK_ID_=#{taskId}
+	</select>
+	
+	<select id="getAgentIdByTaskId" parameterType="java.util.Map" resultType="java.lang.Long">
+	     select distinct a.agentuserid from sys_user_agent a where a.touserid=#{userId} and a.agentid not in (
+         select b.agentid from sys_user_agent b where b.isall=0 and b.agentid not in (
+           select c.agentid from bpm_agent c where c.actdefid in ( 
+            select d.proc_def_id_ from act_ru_task d where d.id_=#{taskId}
+           )
+         ) 
+      )
+	</select>
+
+	<select id="getByAgent" parameterType="java.util.Map" resultMap="TaskEntity">
+		SELECT task.*,run.subject subject,run.processName processName
+		FROM ACT_RU_TASK task left join BPM_PRO_RUN run
+		on task.PROC_INST_ID_=run.actInstId
+        left join act_ru_identitylink ident 
+        on task.id_=ident.TASK_ID_
+		where (task.ASSIGNEE_ = #{userId} or task.OWNER_ = #{userId}
+		or ident.USER_ID_ = #{userId})
+		<if test="@Ognl@isNotEmpty(actDefId)"> AND task.PROC_DEF_ID_ NOT IN(${actDefId})</if>		
+		<if test="@Ognl@isNotEmpty(name)"> AND task.name_ LIKE #{name} </if>
+		<if test="@Ognl@isNotEmpty(subject)"> AND run.subject LIKE #{subject} </if>
+		<if test="@Ognl@isNotEmpty(processName)"> AND run.processName LIKE #{processName} </if>
+		<if test="@Ognl@isEmpty(orderField)">
+			order by task.CREATE_TIME_ desc
+		</if>
+		<if test="@Ognl@isNotEmpty(orderField)">
+			order by ${orderField} ${orderSeq}
+		</if>
+	</select>
+	
+	<select id="getAllAgent" parameterType="java.util.Map" resultMap="TaskEntity">
+		SELECT distinct task.*,run.subject subject,run.processName processName
+		FROM ACT_RU_TASK task left join BPM_PRO_RUN run
+		on task.PROC_INST_ID_=run.actInstId
+        left join act_ru_identitylink ident 
+        on task.id_=ident.TASK_ID_
+		where
+		 (
+			 (
+				task.ASSIGNEE_ IN(
+					SELECT sua.agentuserid 
+					FROM SYS_USER_AGENT sua 
+					WHERE sua.touserid=#{userId} AND sua.isvalid=1 AND sua.isall=1 AND sua.agentid not in					
+					(
+						select b.agentid from SYS_USER_AGENT b where (b.starttime is not null and b.starttime &gt; #{curTime,jdbcType=DATE}) 
+																or ( b.endtime is not null and b.endtime &lt; #{yesterday,jdbcType=DATE})
+  						
+					)
+				)
+				or 
+				(task.assignee_ is null and 
+					ident.USER_ID_ IN(
+						SELECT sua.agentuserid 
+						FROM SYS_USER_AGENT sua 
+						WHERE sua.touserid=#{userId} AND sua.isall=1 AND sua.isvalid=1 AND sua.agentid not in 
+						(
+						select b.agentid from SYS_USER_AGENT b where (b.starttime is not null and b.starttime &gt; #{curTime,jdbcType=DATE}) 
+																or ( b.endtime is not null and b.endtime &lt; #{yesterday,jdbcType=DATE})
+  						)
+					)
+				)
+			)
+			Or(
+				task.PROC_DEF_ID_ IN(
+					SELECT distinct def.actdefid 
+					FROM BPM_AGENT ba 
+					join SYS_USER_AGENT sua on ba.agentid=sua.agentid 
+					join BPM_DEFINITION def on ba.defKey=def.defKey
+					WHERE ba.touserid=#{userId} AND sua.isvalid=1 AND sua.agentid not in
+					(
+						select b.agentid from SYS_USER_AGENT b where (b.starttime is not null and b.starttime &gt; #{curTime,jdbcType=DATE}) 
+																or ( b.endtime is not null and b.endtime &lt; #{yesterday,jdbcType=DATE})
+					)
+				)
+				AND(
+					task.ASSIGNEE_ IN(
+						SELECT sua.agentuserid 
+						FROM SYS_USER_AGENT sua 
+						WHERE sua.touserid=#{userId} AND sua.isvalid=1 AND sua.isall=0 AND sua.agentid not in
+						(
+						select b.agentid from SYS_USER_AGENT b where (b.starttime is not null and b.starttime &gt; #{curTime,jdbcType=DATE}) 
+																or ( b.endtime is not null and b.endtime &lt; #{yesterday,jdbcType=DATE})
+						)
+					)
+					OR
+					ident.USER_ID_ IN(
+						SELECT sua.agentuserid 
+						FROM SYS_USER_AGENT sua 
+						WHERE sua.touserid=#{userId} AND sua.isvalid=1 AND sua.isall=0 AND sua.agentid not in
+						(
+						select b.agentid from SYS_USER_AGENT b where (b.starttime is not null and b.starttime &gt; #{curTime,jdbcType=DATE}) 
+																or ( b.endtime is not null and b.endtime &lt; #{yesterday,jdbcType=DATE})
+						)
+					)
+			  	)
+			)
+		)
+		<if test="@Ognl@isNotEmpty(name)"> AND task.name_ LIKE #{name} </if>
+		<if test="@Ognl@isNotEmpty(subject)"> AND run.subject LIKE #{subject} </if>
+		<if test="@Ognl@isNotEmpty(processName)"> AND run.processName LIKE #{processName} </if>
+		<if test="@Ognl@isEmpty(orderField)">
+			order by task.CREATE_TIME_ desc
+		</if>
+		<if test="@Ognl@isNotEmpty(orderField)">
+			order by ${orderField} ${orderSeq}
+		</if>
+	</select>
+	
+	<select id="getAllMyEvent" parameterType="java.util.Map" resultMap="TaskEntity">
+		
+		SELECT distinct task.*,run.subject subject,run.processName processName
+		FROM ACT_RU_TASK task left join BPM_PRO_RUN run
+		on task.PROC_INST_ID_=run.actInstId
+        left join act_ru_identitylink ident 
+        on task.id_=ident.TASK_ID_
+		where (task.ASSIGNEE_ = #{userId} 
+		or ( (task.ASSIGNEE_ is NULL) and ( task.OWNER_ = #{userId} or ident.USER_ID_ = #{userId})))
+		AND ((task.CREATE_TIME_ >= #{startDate} AND task.CREATE_TIME_ &lt;= #{endDate}) 
+    	OR (task.DUE_DATE_ >= #{startDate} and task.DUE_DATE_ &lt;= #{endDate})) 
+		ORDER BY task.CREATE_TIME_ 
+		
+	</select>
+	
+	<select id="getReminderTask"  resultMap="TaskEntity">
+		select * from ACT_RU_TASK a where exists (select 1 from bpm_task_due b where a.proc_def_id_=b.actdefid and a.task_def_key_=b.nodeid)
+	</select>
+	
+	<select id="getTasksByRunId" parameterType="java.lang.Long" resultMap="TaskEntity">
+		SELECT task.*,run.subject subject,run.processName processName
+		FROM ACT_RU_TASK task left join BPM_PRO_RUN run
+		ON task.PROC_INST_ID_=run.actInstId
+		where run.runId=#{runId}
+	</select>
+	
+	
+	<select id="getByTaskNameOrTaskIds" parameterType="java.lang.Long" resultMap="TaskEntity">
+		SELECT distinct task.*,run.subject subject,run.processName processName
+		FROM ACT_RU_TASK task left join BPM_PRO_RUN run
+		ON task.PROC_INST_ID_=run.actInstId
+		where task.ASSIGNEE_ = #{userId} and ( task.NAME_ like '%#{taskName}%' or  task.ID_ in (#{taskIds}))
+		order by task.CREATE_TIME_ desc
+	</select>
+	
+	<update id="updateTaskAssignee">
+		update ACT_RU_TASK set ASSIGNEE_=#{userId} where ID_=#{taskId}
+	</update>
+	
+	<update id="updateTaskAssigneeNull">
+		update ACT_RU_TASK set ASSIGNEE_=null where ID_=#{taskId}
+	</update>
+	<!-- update the task definition key to new key -->
+	<update id="updateNewTaskDefKeyByInstIdNodeId">
+		update ACT_RU_TASK set TASK_DEF_KEY_=#{newTaskDefKey} where PROC_INST_ID_=#{actInstId} and TASK_DEF_KEY_=#{oldTaskDefKey}
+	</update>
+	
+	<update id="updateOldTaskDefKeyByInstIdNodeId">
+		update ACT_RU_TASK set TASK_DEF_KEY_=#{oldTaskDefKey} where PROC_INST_ID_=#{actInstId} and TASK_DEF_KEY_ like #{newTaskDefKey}
+	</update>
+	
+	<select id="updateTaskOwner">
+		update ACT_RU_TASK set OWNER_=#{userId} where ID_=#{taskId}
+	</select>
+	
+	<select id="getByTaskId" resultMap="TaskEntity">
+		SELECT distinct task.*,run.subject subject,run.processName processName
+		FROM ACT_RU_TASK task left join BPM_PRO_RUN run
+		ON task.PROC_INST_ID_=run.actInstId where task.ID_=#{taskId}
+	</select>
+	
+	<!-- add by ray 2012-08-09 -->
+	<select id="getByInstanceId" resultMap="TaskEntity">
+		SELECT * FROM ACT_RU_TASK task where  task.PROC_INST_ID_=#{instanceId} and EXECUTION_ID_ is not null
+	</select>
+	<!-- add by ray 2012-08-09 -->
+	<delete id="delByInstanceId">
+		DELETE FROM ACT_RU_TASK  where PROC_INST_ID_=#{instanceId}
+	</delete>
+	
+	<delete id="delCandidateByInstanceId">
+		delete from act_ru_identitylink  where task_id_ in(  select a.id_ from    ACT_RU_TASK  a where a.PROC_INST_ID_=#{instanceId})
+	</delete>
+	
+	<delete id="delByActDefId">
+		DELETE FROM ACT_RU_TASK  where PROC_DEF_ID_=#{actDefId}
+	</delete>
+	
+	<delete id="delCandidateByActDefId">
+		delete from act_ru_identitylink  where task_id_ in(  select a.id_ from    ACT_RU_TASK  a where a.PROC_DEF_ID_=#{actDefId})
+	</delete>
+	
+	<select id="getHasCandidateExecutor" resultType="java.util.HashMap">
+		SELECT COUNT(*) AMOUNT,t.task_id_ TASKID FROM act_ru_identitylink t  where t.task_id_ in (${taskIds}) group by t.task_id_ 		
+	</select>
+</mapper>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.ReminderState">
+	<resultMap id="ReminderState" type="com.cloudstong.platform.third.bpm.model.ReminderState">
+		<id property="id" column="id" jdbcType="NUMERIC"/>
+		<result property="actDefId" column="actDefId" jdbcType="VARCHAR"/>
+		<result property="taskId" column="taskId" jdbcType="VARCHAR"/>
+		<result property="userId" column="userId" jdbcType="NUMERIC"/>
+		<result property="actInstanceId" column="actInstanceId" jdbcType="VARCHAR"/>
+		<result property="remindType" column="remindType" jdbcType="NUMERIC"/>
+		<result property="reminderTime" column="reminderTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		id,actDefId,taskId,reminderTime,userId,actInstanceId,remindType
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(actDefId)"> AND actDefId =#{actDefId}  </if>
+			<if test="@Ognl@isNotEmpty(taskId)"> AND taskId =#{taskId}  </if>
+			<if test="@Ognl@isNotEmpty(userId)"> AND userId =#{userId}  </if>
+			<if test="@Ognl@isNotEmpty(remindType)"> AND remindType =#{remindType}  </if>
+		
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.ReminderState">
+		INSERT INTO bpm_task_reminderstate
+		(id,actDefId,taskId,reminderTime,userId,actInstanceId,remindType)
+		VALUES
+		(#{id,jdbcType=NUMERIC}, #{actDefId,jdbcType=VARCHAR}, 
+		#{taskId,jdbcType=VARCHAR}, #{reminderTime,jdbcType=TIMESTAMP},
+		#{userId,jdbcType=NUMERIC},#{actInstanceId,jdbcType=VARCHAR},#{remindType,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_TASK_REMINDERSTATE 
+		WHERE
+		id=#{id}
+	</delete>
+	
+	<delete id="delByActDefId" parameterType="java.lang.String">
+		DELETE FROM BPM_TASK_REMINDERSTATE
+		WHERE
+		actDefId=#{actDefId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.ReminderState">
+		UPDATE bpm_task_reminderstate SET
+		actDefId=#{actDefId,jdbcType=VARCHAR} , 
+		taskId=#{taskId,jdbcType=VARCHAR} , 
+		userId=#{userId,jdbcType=NUMERIC} , 
+		actInstanceId=#{actInstanceId,jdbcType=VARCHAR} , 
+		reminderTime=#{reminderTime,jdbcType=TIMESTAMP},
+		remindType=#{remindType,jdbcType=NUMERIC} 
+		WHERE
+		id=#{id}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="ReminderState">
+		SELECT <include refid="columns"/>
+		FROM BPM_TASK_REMINDERSTATE
+		WHERE
+		id=#{id}
+	</select>
+	
+	<select id="getAll" resultMap="ReminderState">
+		SELECT <include refid="columns"/>
+		FROM BPM_TASK_REMINDERSTATE   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by id  desc
+		</if>
+	</select>
+	
+	<select id="getAmountByUserTaskId" parameterType="Map" resultType="Integer">
+		SELECT count(*) amount
+		FROM BPM_TASK_REMINDERSTATE
+		WHERE
+		taskId=#{taskId} and userId=#{userId} and  remindType=#{remindType}
+	</select>
+	
+	<select id="getAmountByTaskId" parameterType="Map" resultType="Integer">
+		SELECT count(*) amount
+		FROM BPM_TASK_REMINDERSTATE
+		WHERE
+		taskId=#{taskId}  and  remindType=#{remindType}
+	</select>
+	
+	
+	<delete id="delExpiredTaskReminderState" >
+		DELETE from BPM_TASK_REMINDERSTATE  where not exists (select 1 from act_ru_task b where BPM_TASK_REMINDERSTATE.taskid=b.id_)
+	</delete>
+	
+</mapper>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="codegen.xsd">
+	
+	<datasource path="${project.dir}/src/resource/global.properties"/> 
+	
+	<variables>
+		<variable name="developer" value="Allan"/>
+		<variable name="company" value="Cloudstong"/>
+		<variable name="moduleNav" value="true" /> <!-- 用来控制生成导航 -->
+	</variables> 
+	
+	<templates basePath="${project.dir}/codegen/template/mybatis">
+		<template id="model" path="model.ftl"/>
+		<template id="dao" path="dao.ftl" />
+		<template id="daolImpl" path="daoImpl.ftl" />
+		<template id="service" path="service.ftl" />
+		<template id="serviceImpl" path="serviceImpl.ftl" />
+		<template id="action" path="action.ftl" />
+		<template id="list" path="list.ftl" subm="list_subm.ftl"/>
+		<template id="edit" path="edit.ftl" sub1="edit_sub1.ftl" subm="edit_subm.ftl"/>
+		<template id="view" path="view.ftl" sub1="view_sub1.ftl"/>
+		<template id="tab" path="tab.ftl" subm="tab_subm.ftl"/>
+		<template id="mapper" path="model.map.xml.ftl"/>
+		<template id="en_US_properties" path="en_US_properties.ftl" />
+		<template id="zh_CN_properties" path="zh_CN_properties.ftl" />
+		<template id="namespace" path="namespace.ftl" />
+	</templates>
+	
+	<files basePath="${project.dir}">
+		<file refTemplate="model" fileName="{class}.java" dir="src/main/{package}/model" />
+		<file refTemplate="dao" fileName="{class}Dao.java" dir="src/main/{package}/dao"/>
+		<file refTemplate="daolImpl" fileName="{class}DaoImpl.java" dir="src/main/{package}/dao/impl"/>
+		
+		<file refTemplate="service" fileName="{class}Service.java" dir="src/main/{package}/service"/>
+		<file refTemplate="serviceImpl" fileName="{class}ServiceImpl.java" dir="src/main/{package}/service/impl"/>
+		
+		<file refTemplate="action" fileName="{class}Action.java" dir="src/main/{package}/action"/>
+		
+		<file refTemplate="list" fileName="{class}List.jsp" dir="WebContent/{page}" table="main,1:n"/>
+		<file refTemplate="edit" fileName="{class}Edit.jsp" dir="WebContent/{page}"/>
+		<file refTemplate="view" fileName="{class}View.jsp" dir="WebContent/{page}" table="main,1:1"/>
+		<file refTemplate="tab" fileName="{class}Tab.jsp" dir="WebContent/{page}" table="1:n" />
+		<file refTemplate="mapper" fileName="{class}.map.xml" dir="src/resource/com/cloudstong/business/maper"/>
+		<file refTemplate="en_US_properties" fileName="ApplicationResources_en_US.properties" dir="src/resource" append="true"/>
+		<file refTemplate="zh_CN_properties" fileName="ApplicationResources_zh_CN.properties" dir="src/resource" append="true"/>
+		<file refTemplate="namespace" fileName="namespace.js" dir="WebContent/js/common" table="main" append="true"/>
+	</files>
+<!--
+	<table tableName="bus_xiantao">
+		<variable name="class" value="Peach"/>
+		<variable name="page" value="pages/business/peach"/>
+		<variable name="package" value="com.cloudstong.business.peach"/>
+	</table>
+	-->
+	<!-- <table tableName="bus_fruits">
+		<variable name="class" value="Fruit"/>
+		<variable name="page" value="pages/business/fruit"/>
+		<variable name="package" value="com.cloudstong.business.fruit"/>
+		<subtables>
+			<subtable tableName="bus_fruitdetail" relation="1:1" foreignKey="tbl_fruit_id">
+				<variable name="class" value="FruitDetail"/>
+				<variable name="page" value="pages/business/fruit"/>
+				<variable name="package" value="com.cloudstong.business.fruit"/>
+			</subtable>
+			<subtable tableName="bus_ftypes" relation="1:n" foreignKey="tbl_fruit_id">
+				<variable name="class" value="FruitType" />
+				<variable name="page" value="pages/business/fruit"/>
+				<variable name="package" value="com.cloudstong.business.fruit"/>
+			</subtable>
+		</subtables>
+	</table> -->
+	
+	<table tableName="bus_product">
+		<variable name="class" value="Product"/>
+		<variable name="page" value="pages/business/product"/>
+		<variable name="package" value="com.cloudstong.business.product"/>
+		<subtables>
+			<subtable tableName="bus_productdetail" relation="1:1" foreignKey="tbl_product_id">
+				<variable name="class" value="ProductDetail"/>
+				<variable name="page" value="pages/business/product"/>
+				<variable name="package" value="com.cloudstong.business.product"/>
+			</subtable>
+			<subtable tableName="bus_pingjia" relation="1:n" foreignKey="tbl_product_id">
+				<variable name="class" value="Pingjia" />
+				<variable name="page" value="pages/business/product"/>
+				<variable name="package" value="com.cloudstong.business.product"/>
+			</subtable>
+		</subtables>
+	</table>
+</config>

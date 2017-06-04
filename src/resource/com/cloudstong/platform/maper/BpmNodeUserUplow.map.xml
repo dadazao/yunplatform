@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmNodeUserUplow">
+	<resultMap id="BpmNodeUserUplow" type="com.cloudstong.platform.third.bpm.model.BpmNodeUserUplow">
+		<id property="ID" column="ID" jdbcType="NUMERIC"/>
+		<result property="nodeUserId" column="nodeUserId" jdbcType="NUMERIC"/>
+		<result property="demensionId" column="demensionId" jdbcType="NUMERIC"/>
+		<result property="demensionName" column="demensionName" jdbcType="VARCHAR"/>
+		<result property="upLowLevel" column="upLowLevel" jdbcType="NUMERIC"/>
+		<result property="upLowType" column="upLowType" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID,nodeUserId,demensionId,demensionName,upLowLevel,upLowType
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(nodeUserId)"> AND nodeUserId  =#{nodeUserId} </if>
+			<if test="@Ognl@isNotEmpty(demensionId)"> AND demensionId  =#{demensionId} </if>
+			<if test="@Ognl@isNotEmpty(demensionName)"> AND demensionName  LIKE #{demensionName}  </if>
+			<if test="@Ognl@isNotEmpty(upLowLevel)"> AND upLowLevel  =#{upLowLevel} </if>
+			<if test="@Ognl@isNotEmpty(upLowType)"> AND upLowType  =#{upLowType} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeUserUplow">
+		INSERT INTO BPM_NODE_USER_UPLOW
+		(ID,nodeUserId,demensionId,demensionName,upLowLevel,upLowType)
+		VALUES
+		(#{ID,jdbcType=NUMERIC}, #{nodeUserId,jdbcType=NUMERIC}, #{demensionId,jdbcType=NUMERIC}, #{demensionName,jdbcType=VARCHAR}, #{upLowLevel,jdbcType=NUMERIC}, #{upLowType,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_USER_UPLOW 
+		WHERE
+		ID=#{ID}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeUserUplow">
+		UPDATE BPM_NODE_USER_UPLOW SET
+		nodeUserId=#{nodeUserId,jdbcType=NUMERIC} , 
+		demensionId=#{demensionId,jdbcType=NUMERIC} , 
+		demensionName=#{demensionName,jdbcType=VARCHAR} , 
+		upLowLevel=#{upLowLevel,jdbcType=NUMERIC} , 
+		upLowType=#{upLowType,jdbcType=NUMERIC} 
+		WHERE
+		ID=#{ID}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmNodeUserUplow">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_USER_UPLOW
+		WHERE
+		ID=#{ID}
+	</select>
+	
+	<select id="getByNodeUserId" parameterType="java.lang.Long" resultMap="BpmNodeUserUplow">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_USER_UPLOW
+		WHERE
+		NODEUSERID=#{userId}
+	</select>
+	
+	<select id="getAll" resultMap="BpmNodeUserUplow">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_USER_UPLOW   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by ID  desc
+		</if>
+	</select>
+	
+	<delete id="delByNodeUserId"  parameterType="Long" >
+		DELETE FROM BPM_NODE_USER_UPLOW 
+		WHERE nodeUserId=#{nodeUserId}
+	</delete>
+</mapper>

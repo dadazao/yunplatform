@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmNodeSign">
+	<resultMap id="BpmNodeSign" type="com.cloudstong.platform.third.bpm.model.BpmNodeSign">
+		<id property="signId" column="signId" jdbcType="NUMERIC"/>
+		<result property="actDefId" column="actDefId" jdbcType="VARCHAR"/>
+		<result property="nodeId" column="nodeId" jdbcType="VARCHAR"/>
+		<result property="voteAmount" column="voteAmount" jdbcType="NUMERIC"/>
+		<result property="decideType" column="decideType" jdbcType="NUMERIC"/>
+		<result property="voteType" column="voteType" jdbcType="NUMERIC"/>
+		<result property="flowMode" column="flowMode" jdbcType="NUMERIC"/>
+	</resultMap>
+	<sql id="columns">
+		signId,actDefId,nodeId,voteAmount,decideType,voteType,flowMode
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(signId)"> AND signId  =#{signId} </if>
+			<if test="@Ognl@isNotEmpty(nodeId)"> AND nodeId = #{nodeId}  </if>
+			<if test="@Ognl@isNotEmpty(actDefId)"> AND actDefId  =#{actDefId} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeSign">
+		INSERT INTO bpm_node_sign
+		(<include refid="columns"/>)
+		VALUES
+		(#{signId,jdbcType=NUMERIC}, #{actDefId,jdbcType=VARCHAR}, #{nodeId,jdbcType=VARCHAR}, #{voteAmount,jdbcType=NUMERIC}, #{decideType,jdbcType=NUMERIC}, #{voteType,jdbcType=NUMERIC},#{flowMode,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_SIGN 
+		WHERE
+		signId=#{signId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeSign">
+		UPDATE bpm_node_sign SET
+		actDefId=#{actDefId,jdbcType=VARCHAR} , 
+		nodeId=#{nodeId,jdbcType=VARCHAR} , 
+		voteAmount=#{voteAmount,jdbcType=NUMERIC} , 
+		decideType=#{decideType,jdbcType=NUMERIC} , 
+		voteType=#{voteType,jdbcType=NUMERIC} ,
+		flowMode=#{flowMode,jdbcType=NUMERIC}
+		WHERE
+		signId=#{signId}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmNodeSign">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_SIGN
+		WHERE
+		signId=#{signId}
+	</select>
+	
+	<select id="getByDefIdAndNodeId" parameterType="Map" resultMap="BpmNodeSign">
+		SELECT * FROM BPM_NODE_SIGN WHERE actDefId=#{actDefId} and nodeId=#{nodeId}
+	</select>
+	
+	<select id="getByActDefId" parameterType="String" resultMap="BpmNodeSign">
+		SELECT * FROM BPM_NODE_SIGN WHERE actDefId=#{actDefId} 
+	</select>
+	
+	<select id="getAll" resultMap="BpmNodeSign">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_SIGN   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by signId  desc
+		</if>
+	</select>
+	<delete id="delByActDefId" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_SIGN 
+		WHERE
+		actDefId=#{actDefId}
+	</delete>
+</mapper>

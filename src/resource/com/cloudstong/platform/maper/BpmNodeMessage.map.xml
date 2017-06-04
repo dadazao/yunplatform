@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmNodeMessage">
+	<resultMap id="BpmNodeMessage" type="com.cloudstong.platform.third.bpm.model.BpmNodeMessage">
+		<id property="id" column="id" jdbcType="NUMERIC"/>
+		<result property="messageId" column="messageId" jdbcType="NUMERIC"/>
+		<result property="actDefId" column="actDefId" jdbcType="VARCHAR"/>
+		<result property="nodeId" column="nodeId" jdbcType="VARCHAR"/>
+	</resultMap>
+	<sql id="columns">
+		id,messageId,actDefId,nodeId
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(id)"> AND id  =#{id} </if>
+			<if test="@Ognl@isNotEmpty(messageId)"> AND messageId  =#{messageId} </if>
+			<if test="@Ognl@isNotEmpty(actDefId)"> AND actDefId  LIKE #{actDefId}  </if>
+			<if test="@Ognl@isNotEmpty(nodeId)"> AND nodeId  LIKE #{nodeId}  </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeMessage">
+		INSERT INTO BPM_NODE_MESSAGE
+		(<include refid="columns"/>)
+		VALUES
+		(#{id,jdbcType=NUMERIC}, #{messageId,jdbcType=NUMERIC}, #{actDefId,jdbcType=VARCHAR}, #{nodeId,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_MESSAGE 
+		WHERE
+		id=#{id}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeMessage">
+		UPDATE bpm_node_message SET
+		messageId=#{messageId,jdbcType=NUMERIC} , 
+		actDefId=#{actDefId,jdbcType=VARCHAR} , 
+		nodeId=#{nodeId,jdbcType=VARCHAR} 
+		WHERE
+		id=#{id}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmNodeMessage">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_MESSAGE
+		WHERE
+		id=#{id}
+	</select>
+	
+	<select id="getAll" resultMap="BpmNodeMessage">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_MESSAGE   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by id  desc
+		</if>
+	</select>
+	<select id="getMessageByActDefIdNodeId" resultMap="BpmNodeMessage">
+	   SELECT <include refid="columns"/>
+		FROM BPM_NODE_MESSAGE
+		WHERE 1=1 
+		<if test="@Ognl@isNotEmpty(actDefId)">
+		and actDefId=#{actDefId} 
+		</if>
+		<if test="@Ognl@isNotEmpty(nodeId)">
+		and nodeId=#{nodeId}
+		</if>
+	</select>
+	
+	<delete id="delByActDefId" parameterType="String">
+		DELETE FROM BPM_NODE_MESSAGE 
+		WHERE
+		actDefId=#{actDefId}
+	</delete>
+	<delete id="delByActDefIdAndNodeId" parameterType="Map">
+		DELETE FROM BPM_NODE_MESSAGE 
+		WHERE
+		actDefId=#{actDefId}
+		and
+		nodeId=#{nodeId}
+	</delete>
+	
+	<select id="getByActDefId" parameterType="java.lang.Long" resultMap="BpmNodeMessage">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_MESSAGE
+		WHERE
+		actDefId=#{actDefId}
+	</select>
+	
+</mapper>

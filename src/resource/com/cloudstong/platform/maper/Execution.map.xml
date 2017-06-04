@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+  
+<mapper namespace="com.cloudstong.platform.third.bpm.model.ProcessExecution">
+  <insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.ProcessExecution">
+    insert into ACT_RU_EXECUTION (ID_, REV_, PROC_INST_ID_, BUSINESS_KEY_, PROC_DEF_ID_, ACT_ID_, IS_ACTIVE_, IS_CONCURRENT_, IS_SCOPE_, PARENT_ID_, SUPER_EXEC_,IS_EVENT_SCOPE_,SUSPENSION_STATE_,CACHED_ENT_STATE_)
+    values (
+      #{id ,jdbcType=VARCHAR},
+      1,
+      #{processInstanceId, jdbcType=VARCHAR},
+      #{businessKey, jdbcType=VARCHAR},
+      #{processDefinitionId ,jdbcType=VARCHAR},
+      #{activityId ,jdbcType=VARCHAR},
+      #{isActive ,jdbcType=BOOLEAN},
+      #{isConcurrent ,jdbcType=BOOLEAN},
+      #{isScope ,jdbcType=BOOLEAN},
+      #{parentId, jdbcType=VARCHAR},
+      #{superExecutionId, jdbcType=VARCHAR},
+      #{isEventScope,jdbcType=NUMERIC},
+      #{suspensionState,jdbcType=NUMERIC},
+      #{cachedEntityState,jdbcType=NUMERIC}
+    )
+  </insert>
+
+
+  <!-- EXECUTION RESULTMAP -->
+  
+  <resultMap id="executionResultMap" type="com.cloudstong.platform.third.bpm.model.ProcessExecution">
+    <id property="id" column="ID_" jdbcType="VARCHAR" />
+    <result property="revision" column="REV_" jdbcType="INTEGER" />
+    <result property="processInstanceId" column="PROC_INST_ID_" jdbcType="VARCHAR" />
+    <result property="businessKey" column="BUSINESS_KEY_" jdbcType="VARCHAR" />
+    <result property="processDefinitionId" column="PROC_DEF_ID_" jdbcType="VARCHAR" />
+    <result property="activityId" column="ACT_ID_" jdbcType="VARCHAR" />
+    <result property="isActive" column="IS_ACTIVE_" jdbcType="BOOLEAN" />
+    <result property="isConcurrent" column="IS_CONCURRENT_" jdbcType="BOOLEAN" />
+    <result property="isScope" column="IS_SCOPE_" jdbcType="BOOLEAN" />
+    <result property="parentId" column="PARENT_ID_" jdbcType="VARCHAR" />
+    <result property="superExecutionId" column="SUPER_EXEC_" jdbcType="VARCHAR" />
+    <result property="isEventScope" column="IS_EVENT_SCOPE_" jdbcType="NUMERIC" />
+    <result property="suspensionState" column="SUSPENSION_STATE_" jdbcType="NUMERIC" />
+    <result property="cachedEntityState" column="CACHED_ENT_STATE_" jdbcType="NUMERIC" />
+  </resultMap>
+  
+  <!-- EXECUTION SELECT -->
+  
+  <select id="getById" parameterType="string" resultMap="executionResultMap">
+    select * from ACT_RU_EXECUTION where ID_ = #{id}
+  </select>
+  
+  <delete id="delById" parameterType="String">
+  	delete from  ACT_RU_EXECUTION  where ID_=#{executionId}
+  </delete>
+  
+  <delete id="delExecutionByProcInstId" parameterType="java.lang.String" >
+  	delete from  ACT_RU_EXECUTION  where PROC_INST_ID_=#{procInstId}
+  </delete>
+  
+  <delete id="delSubExecutionByProcInstId" parameterType="java.lang.String" >
+  	delete from  ACT_RU_EXECUTION  where PROC_INST_ID_=#{procInstId} and id_ !=#{procInstId}
+  </delete>
+  
+  <delete id="delAssigneeByExecutionId" parameterType="java.lang.String">
+  	delete from ACT_RU_VARIABLE where EXECUTION_ID_=#{exeuctionId} and NAME_='assignee'
+  </delete>
+  
+  <delete id="delLoopCounterByExecutionId" parameterType="java.lang.String">
+  	delete from ACT_RU_VARIABLE where EXECUTION_ID_=#{exeuctionId} and NAME_='loopCounter'
+  </delete>
+  
+  <delete id="delVariableByProcInstId" parameterType="java.lang.String">
+  	delete from ACT_RU_VARIABLE  where PROC_INST_ID_=#{procInstId}
+  </delete>
+  
+  <delete id="delTokenVarByTaskId" parameterType="Map">
+  	delete from ACT_RU_VARIABLE  where TASK_ID_=#{taskId} and NAME_=#{name}
+  </delete>
+  
+  <delete id="delVarsByExecutionId" parameterType="Long">
+  	delete from ACT_RU_VARIABLE where  EXECUTION_ID_=#{exeuctionId}
+  </delete>
+  
+  <delete id="delNotMainThread">
+  	delete from ACT_RU_EXECUTION where proc_inst_id_=#{procInstId} and parent_id_ is not null
+  </delete>
+  
+  <update id="updateMainThread">
+  	update ACT_RU_EXECUTION set parent_id_=null ,act_id_=#{nodeId},is_concurrent_=0,is_active_=1, is_scope_=1 where ID_=#{executionId}
+  </update>
+  
+   <update id="updateTaskToMainThreadId">
+  	update ACT_RU_TASK set execution_id_=#{executionId}  where ID_=#{taskId}
+  </update>
+  
+</mapper>

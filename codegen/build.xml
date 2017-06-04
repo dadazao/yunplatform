@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="codegen" default="gencode" >
+	
+	<property name="project.dir" value="D:\Workspaces\eclipse\cloudstong\yp" />
+	
+	<property name="lib.dir" value="./lib" />
+	
+	<path id="refLib">
+		<fileset dir="${lib.dir}" includes="*.jar"></fileset>
+	</path>
+	
+	<taskdef name="gencode" classname="com.cloudstong.codegen.task.Codegen">
+		<classpath refid="refLib"></classpath>
+	</taskdef>
+	
+	<target name="gencode" description="生成代码">
+		<gencode xmlPath="${project.dir}/codegen/config.xml"/>
+	</target>
+	
+</project>

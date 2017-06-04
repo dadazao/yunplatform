@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.form.model.BpmFormTable">
+	<cache flushInterval="3600000" size="100" eviction="LRU" ></cache>
+	
+	<resultMap id="BpmFormTable" type="com.cloudstong.platform.third.bpm.form.model.BpmFormTable">
+		<id property="tableId" column="tableId" jdbcType="NUMERIC"/>
+		<result property="tableName" column="tableName" jdbcType="VARCHAR"/>
+		<result property="isMain" column="isMain" jdbcType="NUMERIC"/>
+		<result property="tableDesc" column="tableDesc" jdbcType="VARCHAR"/>
+		<result property="mainTableId" column="mainTableId" jdbcType="NUMERIC"/>
+		<result property="isPublished" column="isPublished" jdbcType="NUMERIC"/>
+		<result property="publishedBy" column="publishedBy" jdbcType="VARCHAR"/>
+		<result property="publishTime" column="publishTime" jdbcType="TIMESTAMP"/>
+		<result property="isExternal" column="isExternal" jdbcType="NUMERIC"/>
+		<result property="dsAlias" column="dsAlias" jdbcType="VARCHAR"/>
+		<result property="dsName" column="dsName" jdbcType="VARCHAR"/>
+		<result property="relation" column="relation" jdbcType="VARCHAR"/>
+		<result property="keyType" column="keyType" jdbcType="NUMERIC"/>
+		<result property="keyValue" column="keyValue" jdbcType="VARCHAR"/>
+		<result property="pkField" column="pkField" jdbcType="VARCHAR"/>
+		<result property="listTemplate" column="listTemplate" jdbcType="CLOB"/>
+		<result property="detailTemplate" column="detailTemplate" jdbcType="CLOB"/>
+		<result property="genByForm" column="genByForm" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<resultMap id="BpmFormTableExt" extends="BpmFormTable" type="com.cloudstong.platform.third.bpm.form.model.BpmFormTable">
+		<result property="hasForm" column="hasForm" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		tableId,tableName,isMain,tableDesc,mainTableId,isPublished,publishedBy,publishTime,isExternal,dsAlias,dsName,relation,keyType,keyValue,pkField,listTemplate,detailTemplate,genByForm
+	</sql>
+	
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormTable" flushCache="true">
+		INSERT INTO bpm_form_table
+		(<include refid="columns"/>)
+		VALUES
+		(#{tableId,jdbcType=NUMERIC}, #{tableName,jdbcType=VARCHAR}, #{isMain,jdbcType=NUMERIC}, #{tableDesc,jdbcType=VARCHAR}, #{mainTableId,jdbcType=NUMERIC},  #{isPublished,jdbcType=NUMERIC}, #{publishedBy,jdbcType=VARCHAR}, #{publishTime,jdbcType=TIMESTAMP}, #{isExternal,jdbcType=NUMERIC}, #{dsAlias,jdbcType=VARCHAR}, #{dsName,jdbcType=VARCHAR}, 
+		#{relation,jdbcType=VARCHAR}, #{keyType,jdbcType=NUMERIC}, #{keyValue,jdbcType=VARCHAR},
+		 #{pkField,jdbcType=VARCHAR}, #{listTemplate,jdbcType=CLOB}, #{detailTemplate,jdbcType=CLOB},#{genByForm,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long" flushCache="true">
+		DELETE FROM BPM_FORM_TABLE 
+		WHERE
+		tableId=#{tableId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormTable" flushCache="true">
+		UPDATE bpm_form_table SET
+		tableName=#{tableName,jdbcType=VARCHAR} , 
+		isMain=#{isMain,jdbcType=NUMERIC} , 
+		tableDesc=#{tableDesc,jdbcType=VARCHAR} , 
+		mainTableId=#{mainTableId,jdbcType=NUMERIC} , 
+		isExternal=#{isExternal,jdbcType=NUMERIC} , 
+		keyType=#{keyType,jdbcType=NUMERIC} , 
+		keyValue=#{keyValue,jdbcType=VARCHAR} , 
+		pkField=#{pkField,jdbcType=VARCHAR} , 
+		listTemplate=#{listTemplate,jdbcType=CLOB} , 
+		detailTemplate=#{detailTemplate,jdbcType=CLOB} ,
+		genByForm=#{genByForm,jdbcType=NUMERIC} 
+		WHERE
+		tableId=#{tableId}
+	
+	</update>
+	
+	<update id="updPublished" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormTable" flushCache="true">
+		UPDATE bpm_form_table SET
+		isPublished=#{isPublished,jdbcType=NUMERIC} , 
+		publishedBy=#{publishedBy,jdbcType=VARCHAR} , 
+		publishTime=#{publishTime,jdbcType=TIMESTAMP} 
+		WHERE
+		tableId=#{tableId}
+	</update>
+	
+	<update id="updateRelations" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormTable" flushCache="true">
+		UPDATE BPM_FORM_TABLE SET relation=#{relation} WHERE tableName=#{tableName} and dsAlias=#{dsAlias}
+	</update>
+	
+	<update id="updateMain" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormTable" flushCache="true">
+		UPDATE BPM_FORM_TABLE SET mainTableId=#{mainTableId} WHERE tableName=#{tableName} and dsAlias=#{dsAlias}
+	</update>
+	
+	<update id="updateMainEmpty" parameterType="Long" flushCache="true">
+		UPDATE BPM_FORM_TABLE SET mainTableId=0 WHERE mainTableId=#{mainTableId}
+	</update>
+	
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmFormTable" useCache="true">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE
+		WHERE
+		tableId=#{tableId}
+	</select>
+	
+	
+	
+	
+	<select id="isTableNameExternalExisted" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormTable" resultType="java.lang.Integer" useCache="false">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE TABLENAME = #{tableName} and isExternal=1 and dsAlias=#{dsAlias}
+	</select>
+	
+	
+	
+	<select id="getSubTableByMainTableId" parameterType="java.lang.Long" resultMap="BpmFormTable" useCache="true">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE 
+		WHERE MAINTABLEID = #{mainTableId}
+	</select>
+	
+	<select id="getAssignableMainTable" resultMap="BpmFormTable" useCache="false">
+		select * from bpm_form_table a  where isMain=1   and isExternal=0   and not exists (select 1 from bpm_form_def b where a.tableid=b.tableid)
+	</select>
+	
+	<select id="getAllUnpublishedMainTable" resultMap="BpmFormTable" useCache="false">
+		select * from bpm_form_table a  where isMain=1   and isExternal=0  and ISPUBLISHED=0
+	</select>
+	
+	
+	
+	
+	<select id="getAllUnassignedSubTable" parameterType="java.lang.String" resultMap="BpmFormTable" useCache="false">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE 
+		WHERE ISPUBLISHED =0 AND  ISMAIN =0 AND (MAINTABLEID IS NULL or MAINTABLEID='')
+	
+	</select>
+	
+	<select id="getAllMainTable" parameterType="java.util.Map" resultMap="BpmFormTable" useCache="false">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE 
+		WHERE ISMAIN = 1 AND  ISPUBLISHED=1
+		<if test="@Ognl@isNotEmpty(tableName)"> AND tableName  LIKE #{tableName} ESCAPE '|' </if>
+		<if test="@Ognl@isNotEmpty(tableDesc)"> AND tableDesc  LIKE #{tableDesc} ESCAPE '|' </if>
+		<if test="@Ognl@isNotEmpty(mainTableId)"> AND mainTableId  =#{mainTableId} </if>
+		<if test="@Ognl@isNotEmpty(isExternal)"> AND isExternal  =#{isExternal} </if>
+		<if test="@Ognl@isNotEmpty(dsAlias)"> AND dsAlias  =#{dsAlias} </if>
+		<if test="genByForm!=null"> AND genByForm  =#{genByForm} </if>
+		
+		<include refid="orderBy"/>
+	</select>
+	
+	
+	<select id="getByDsSubTable" resultMap="BpmFormTable" useCache="false">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE 
+		WHERE dsAlias=#{dsAlias} and isMain=0 
+	</select>
+	
+	<select id="getByDsTablename" resultMap="BpmFormTable" useCache="false">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE 
+		WHERE dsAlias=#{dsAlias} and tableName=#{tableName} 
+	</select>
+	<!--getByTableName-->
+	<select id="getByTableName_oracle" resultMap="BpmFormTable" useCache="true">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE 
+		WHERE  LOWER(tableName)=#{tableName} 
+	</select>
+	
+	<select id="getByTableName_dm" resultMap="BpmFormTable" useCache="true">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE 
+		WHERE  LOWER(tableName)=#{tableName} 
+	</select>
+	
+	
+	<select id="getByTableName_mssql" resultMap="BpmFormTable" useCache="true">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE 
+		WHERE tableName=#{tableName} 
+	</select>
+	
+	<select id="getByTableName_db2" resultMap="BpmFormTable" useCache="true">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE 
+		WHERE LOWER(tableName)=#{tableName} 
+	</select>
+	
+	<select id="getByTableName_mysql" resultMap="BpmFormTable" useCache="true">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE 
+		WHERE tableName=#{tableName} 
+	</select>
+	
+	<sql id="whereSql">
+		<where>
+			<if test="@Ognl@isNotEmpty(tableName)"> AND tableName  LIKE #{tableName} ESCAPE '|' </if>
+			<if test="@Ognl@isNotEmpty(tableDesc)"> AND tableDesc  LIKE #{tableDesc} ESCAPE '|' </if>
+			<if test="@Ognl@isNotEmpty(isMain)"> AND isMain  =#{isMain} </if>
+			<if test="@Ognl@isNotEmpty(mainTableId)"> AND mainTableId  =#{mainTableId} </if>
+			<if test="@Ognl@isNotEmpty(isPublished)"> AND isPublished  =#{isPublished} </if>
+			<if test="@Ognl@isNotEmpty(isExternal)"> AND isExternal  =#{isExternal} </if>
+			<if test="@Ognl@isNotEmpty(dsAlias)"> AND dsAlias  =#{dsAlias} </if>
+			<if test="genByForm!=null"> AND genByForm  =#{genByForm} </if>
+		</where>
+	</sql>
+	<sql id="orderBy">
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by tableId  desc
+		</if>
+	</sql>
+	
+	<!-- start dialect  -->
+	<select id="getAll_oracle" resultMap="BpmFormTableExt" useCache="false">
+		select distinct a.tableId,a.tableName,a.isMain,a.tableDesc,a.mainTableId,a.isPublished,
+		a.publishedBy,a.publishTime,a.isExternal,a.dsAlias,a.dsName,a.relation,a.keyType,a.keyValue,a.pkField,decode(b.tableId,null,0,1) hasForm,genByForm
+		from bpm_form_table a left join bpm_form_def b on a.tableid=b.tableid   
+		<include refid="whereSql"/>
+		<include refid="orderBy"/>
+	
+	</select>
+	
+	<select id="getAll_dm" resultMap="BpmFormTableExt" useCache="false">
+		select distinct a.tableId,a.tableName,a.isMain,a.tableDesc,a.mainTableId,a.isPublished,
+		a.publishedBy,a.publishTime,a.isExternal,a.dsAlias,a.dsName,a.relation,a.keyType,a.keyValue,a.pkField,decode(b.tableId,null,0,1) hasForm,genByForm
+		from bpm_form_table a left join bpm_form_def b on a.tableid=b.tableid   
+		<include refid="whereSql"/>
+		<include refid="orderBy"/>
+	
+	</select>
+	
+	<select id="getAll_mysql" resultMap="BpmFormTableExt" useCache="false">
+		select distinct a.tableId,a.tableName,a.isMain,a.tableDesc,a.mainTableId,a.isPublished,
+		a.publishedBy,a.publishTime,a.isExternal,a.dsAlias,a.dsName,a.relation,a.keyType,a.keyValue,a.pkField,CASE b.tableId WHEN NULL THEN 0 ELSE 1 END hasForm ,genByForm
+		from bpm_form_table a left join bpm_form_def b on a.tableid=b.tableid   
+		<include refid="whereSql"/>
+		<include refid="orderBy"/>
+	</select>
+	
+	<select id="getAll_mssql" resultMap="BpmFormTableExt" useCache="false">
+		select distinct a.tableId,a.tableName,a.isMain,a.tableDesc,a.mainTableId,a.isPublished,
+		a.publishedBy,a.publishTime,a.isExternal,a.dsAlias,a.dsName,a.relation,a.keyType,a.keyValue,a.pkField,CASE WHEN b.tableId IS NULL THEN 0 ELSE 1 END hasForm ,genByForm
+		from bpm_form_table a left join bpm_form_def b on a.tableid=b.tableid   
+		<include refid="whereSql"/>
+<!-- 		<include refid="orderBy"/> -->
+		<if test="@Ognl@isNotEmpty(orderField)">
+			order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+			order by a.tableId  desc
+		</if>
+	</select>
+	<select id="getAll_db2" resultMap="BpmFormTableExt" useCache="false">
+		select distinct a.tableId,a.tableName,a.isMain,a.tableDesc,a.mainTableId,a.isPublished,
+		a.publishedBy,a.publishTime,a.isExternal,a.dsAlias,a.dsName,a.relation,a.keyType,a.keyValue,a.pkField,(CASE WHEN b.tableId IS NULL THEN 0 else 1 END) hasForm ,genByForm
+		from bpm_form_table a left join bpm_form_def b on a.tableid=b.tableid   
+		<include refid="whereSql"/>
+		<include refid="orderBy"/>
+	</select>
+	
+	<select id="getAll_h2" resultMap="BpmFormTableExt" useCache="false">
+		select distinct a.tableId,a.tableName,a.isMain,a.tableDesc,a.mainTableId,a.isPublished,
+		a.publishedBy,a.publishTime,a.isExternal,a.dsAlias,a.dsName,a.relation,a.keyType,a.keyValue,a.pkField,CASE b.tableId WHEN NULL THEN 0 ELSE 1 END hasForm ,genByForm
+		from bpm_form_table a left join bpm_form_def b on a.tableid=b.tableid   
+		<include refid="whereSql"/>
+		<include refid="orderBy"/>
+	</select>
+	
+	<!-- 判断表名是否存在。 -->
+	<sql id="isTableNameExisted">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE TABLENAME= #{tableName} and  isExternal=0
+	</sql>
+	
+	<select id="isTableNameExisted_oracle"  resultType="java.lang.Integer" useCache="false">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE lower(TABLENAME) = lower(#{tableName}) and  isExternal=0
+	</select>
+	
+	<select id="isTableNameExisted_dm"  resultType="java.lang.Integer" useCache="false">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE lower(TABLENAME) = lower(#{tableName}) and  isExternal=0
+	</select>
+	
+	
+	<select id="isTableNameExisted_mssql" parameterType="java.lang.String" resultType="java.lang.Integer" useCache="false">
+		<include refid="isTableNameExisted"/>
+	</select>
+	
+	<select id="isTableNameExisted_mysql" parameterType="java.lang.String" resultType="java.lang.Integer" useCache="false">
+		<include refid="isTableNameExisted"/>
+	</select>
+	
+	<select id="isTableNameExisted_db2" parameterType="java.lang.String" resultType="java.lang.Integer" useCache="false">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE lower(TABLENAME) = lower(CAST(#{tableName} AS VARCHAR(32000))) and  isExternal=0
+	</select>
+	
+	<select id="isTableNameExisted_h2" parameterType="java.lang.String" resultType="java.lang.Integer" useCache="false">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE lower(TABLENAME) = lower(#{tableName}) and  isExternal=0
+	</select>
+	
+	<!-- 判断表名是否存在。 -->
+	<sql id="isTableNameExistedForUpd">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE TABLENAME = #{tableName} and  isExternal=0 and tableId &lt;>#{tableId} 
+	</sql>
+	
+	<select id="isTableNameExistedForUpd_oracle"  resultType="java.lang.Integer" useCache="false">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE lower(TABLENAME) = lower(#{tableName}) and  isExternal=0 and tableId &lt;>#{tableId} 
+	</select>
+	
+	<select id="isTableNameExistedForUpd_dm"  resultType="java.lang.Integer" useCache="false">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE lower(TABLENAME) = lower(#{tableName}) and  isExternal=0 and tableId &lt;>#{tableId} 
+	</select>
+	
+	<select id="isTableNameExistedForUpd_mssql"  resultType="java.lang.Integer" useCache="false">
+		<include refid="isTableNameExistedForUpd"/>
+	</select>
+	
+	<select id="isTableNameExistedForUpd_mysql" resultType="java.lang.Integer" useCache="false">
+		<include refid="isTableNameExistedForUpd"/>
+	</select>
+	
+	<select id="isTableNameExistedForUpd_db2"  resultType="java.lang.Integer" useCache="false">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE lower(TABLENAME) = lower(CAST(#{tableName} AS VARCHAR(32000))) and  isExternal=0 and tableId &lt;>#{tableId} 
+	</select>
+	
+	<select id="isTableNameExistedForUpd_h2" resultType="java.lang.Integer" useCache="false">
+		SELECT COUNT(*) FROM BPM_FORM_TABLE WHERE lower(TABLENAME) = lower(#{tableName}) and  isExternal=0 and tableId &lt;>#{tableId}
+	</select>
+	
+	<select id="getMainTables"  resultMap="BpmFormTable" >
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TABLE
+		WHERE
+		ISMAIN = 1 AND  ISPUBLISHED=1
+		<if test="@Ognl@isNotEmpty(tableName)"> AND tableName  LIKE '%${tableName}%' OR tableDesc LIKE '%${tableName}%'</if>
+	</select>
+</mapper>

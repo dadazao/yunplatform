@@ -1,0 +1,1 @@
+Namespace.Register("ns.${mainTable.variables.class?uncap_first}");
