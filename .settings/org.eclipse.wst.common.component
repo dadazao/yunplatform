@@ -2,6 +2,8 @@
     <wb-module deploy-name="yp">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/resource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test"/>
         <property name="context-root" value="/"/>
         <property name="java-output-path" value="/yp/WebContent/WEB-INF/classes"/>
         <property name="me-struts-base-pkg"/>
