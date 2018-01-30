@@ -3,9 +3,9 @@ package com.cloudstong.platform.third.bpm.cmd;
 import org.activiti.engine.impl.interceptor.Command;
 import org.activiti.engine.impl.interceptor.CommandContext;
 import org.activiti.engine.impl.persistence.entity.ExecutionEntity;
-import org.activiti.engine.impl.persistence.entity.ExecutionManager;
+import org.activiti.engine.impl.persistence.entity.ExecutionEntityManager;
 import org.activiti.engine.impl.persistence.entity.TaskEntity;
-import org.activiti.engine.impl.persistence.entity.TaskManager;
+import org.activiti.engine.impl.persistence.entity.TaskEntityManager;
 
 public class EndProcessCmd implements Command<Void> {
 	private String taskId = "";
@@ -15,10 +15,10 @@ public class EndProcessCmd implements Command<Void> {
 	}
 
 	public Void execute(CommandContext context) {
-		TaskEntity task = context.getTaskManager().findTaskById(taskId);
+		TaskEntity task = context.getTaskEntityManager().findTaskById(taskId);
 		String executionId = task.getExecutionId();
 
-		ExecutionEntity executionEntity = context.getExecutionManager().findExecutionById(executionId);
+		ExecutionEntity executionEntity = context.getExecutionEntityManager().findExecutionById(executionId);
 		ExecutionEntity parentEnt = getTopExecution(executionEntity);
 
 		parentEnt.end();

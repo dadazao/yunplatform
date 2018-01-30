@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="yp">
+    <wb-module deploy-name="yp-3.0">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/resource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test"/>
-        <property name="context-root" value="/"/>
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
         <property name="java-output-path" value="/yp/WebContent/WEB-INF/classes"/>
         <property name="me-struts-base-pkg"/>
+        <property name="context-root" value="yp"/>
     </wb-module>
 </project-modules>

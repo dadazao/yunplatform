@@ -14,6 +14,6 @@ public class BaseProcessService extends ServiceImpl implements InitializingBean 
 
 	public void afterPropertiesSet() throws Exception {
 		ProcessEngineImpl engine = (ProcessEngineImpl) processEngine;
-		setCommandExecutor(engine.getProcessEngineConfiguration().getCommandExecutorTxRequired());
+		setCommandExecutor(engine.getProcessEngineConfiguration().getCommandExecutor());
 	}
 }

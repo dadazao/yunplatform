@@ -19,7 +19,7 @@ public class GetExecutionCmd implements Command<ExecutionEntity>, Serializable {
 		if (executionId == null) {
 			throw new ActivitiException("executionId is null");
 		}
-		ExecutionEntity execution = commandContext.getExecutionManager().findExecutionById(executionId);
+		ExecutionEntity execution = commandContext.getExecutionEntityManager().findExecutionById(executionId);
 
 		if (execution == null) {
 			throw new ActivitiException("execution " + executionId + " doesn't exist");

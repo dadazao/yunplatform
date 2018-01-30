@@ -461,7 +461,7 @@ public class BpmService implements IScript {
 		bpmDao.wirteDefXml(deployId, defXml);
 		ProcessDefinitionEntity ent = getProcessDefinitionByDeployId(deployId);
 
-		((ProcessEngineConfigurationImpl) processEngineConfiguration).getDeploymentCache().removeProcessDefinition(ent.getId());
+		((ProcessEngineConfigurationImpl) processEngineConfiguration).getProcessDefinitionCache().remove(ent.getId());
 	}
 
 	public List<ActivityImpl> getActivityNodes(String actDefId) {
@@ -846,7 +846,7 @@ public class BpmService implements IScript {
 
 		bpmDefinitionDao.update(bpmDefinition);
 
-		((ProcessEngineConfigurationImpl) processEngineConfiguration).getDeploymentCache().removeProcessDefinition(actDefId);
+		((ProcessEngineConfigurationImpl) processEngineConfiguration).getProcessDefinitionCache().remove(actDefId);
 
 		((RepositoryServiceImpl) repositoryService).getDeployedProcessDefinition(actDefId);
 	}
