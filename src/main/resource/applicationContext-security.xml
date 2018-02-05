@@ -1,0 +1,127 @@
+<beans 
+	xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd">
+	
+    <security:http pattern="/js/**" security="none"></security:http>
+    <security:http pattern="/theme/**" security="none"></security:http>
+	<security:http pattern="/themes/**" security="none"></security:http>
+	<security:http pattern="/images/**" security="none"></security:http>
+	<security:http pattern="/pages/commons/**" security="none"></security:http>
+	<security:http pattern="/403*" security="none"></security:http>
+	<security:http pattern="/404*" security="none"></security:http>
+	<security:http pattern="/500*" security="none"></security:http>
+	<security:http pattern="/login.jsp" security="none"></security:http>
+	<security:http pattern="/favicon.ico" security="none"></security:http>
+
+	<security:http entry-point-ref="multipleAuthenticationLoginEntry"  >
+		<!-- spring4.0+ -->
+		<security:csrf disabled="true"/>
+		<security:headers>
+			<security:frame-options policy="SAMEORIGIN"/>
+		</security:headers>
+		<!-- spring4.0+ -->
+		<security:remember-me key="ypPrivateKey"/>
+		<security:logout logout-url="/logout" logout-success-url="/loginRedirect.action"/> 
+		<security:custom-filter ref="aopFilter" after="FORM_LOGIN_FILTER" />
+		<security:custom-filter ref="csrfFilter" after="CAS_FILTER" />
+		<security:custom-filter ref="xssFilter" before="FORM_LOGIN_FILTER" />
+		<security:custom-filter ref="swaggerAuthFilter" after="PRE_AUTH_FILTER" />
+		<security:custom-filter ref="permissionFilter" before="FILTER_SECURITY_INTERCEPTOR" />
+		<security:access-denied-handler ref="ypAccessDeniedHandler"/>
+		<security:custom-filter position="SWITCH_USER_FILTER" ref="switchUserProcessingFilter"/>
+	</security:http>
+	
+	<bean id="multipleAuthenticationLoginEntry" class="com.cloudstong.platform.core.web.security.MultipleAuthenticationLoginEntry">  
+        <property name="defaultLoginUrl" value="/login.jsp"/>  
+    </bean>
+    
+    <bean id="swaggerAuthFilter" class="com.cloudstong.platform.core.web.security.SwaggerAuthFilter" />
+	
+	<!-- 拒绝访问的URL配置 -->
+	<bean id="ypAccessDeniedHandler" class="com.cloudstong.platform.core.web.security.YpAccessDeniedHandler">
+		<property name="accessDeniedUrl" value="/commons/403.jsp"></property>
+	</bean>
+	<!-- 防止XSS注入 -->
+	<bean id="xssFilter" class="com.cloudstong.platform.core.web.security.XssFilter" />
+	<!-- 防止CSRF攻击 -->
+	<bean id="csrfFilter" class="com.cloudstong.platform.core.web.security.CsrfFilter" />
+	
+	<!-- xss url 过滤控制-->
+	<bean id="xssUrl" class="com.cloudstong.platform.core.web.security.RegMatchers">
+		<property name="ingoreUrls">
+			<list>
+				<value>/login.*</value>
+				<value>/error.*</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 需要忽略的CSRF攻击的网站 -->
+	<bean id="csrfUrl" class="com.cloudstong.platform.core.web.security.RegMatchers">
+		<property name="ingoreUrls">
+			<list>
+				<value>/login.*</value>
+				<value>http://localhost:8080/*</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="actionPageMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="mobile" value="/mobile/index.html"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	<!-- 将request,response 放到上下文 ，设置当前人，清除线程变量-->
+	<bean id="aopFilter" class="com.cloudstong.platform.core.web.security.AopFilter"></bean>
+    
+	<security:authentication-manager alias="authenticationManager" >
+		<security:authentication-provider user-service-ref="sysUserService">
+			<security:password-encoder hash="sha-256" base64="true"/>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<!-- 授权判断 -->
+	<bean id="permissionFilter" class="com.cloudstong.platform.core.web.security.PermissionFilter">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="accessDecisionManager" ref="accessDecisionManager" />
+		<property name="securityMetadataSource" ref="securityMetadataSource" />
+	</bean>
+	<!-- 访问决策器 -->
+	<bean id="accessDecisionManager" class="com.cloudstong.platform.core.web.security.YpDecisionManager" />
+	<!-- 获取URL 对应的角色 -->
+	<bean id="securityMetadataSource" class="com.cloudstong.platform.core.web.security.YpSecurityMetadataSource" scope="singleton" >
+		<property name="anonymousUrls">
+			<set>
+				<value>/login.jsp</value>
+				<value>/login.action</value>
+				<value>/logout.action</value>
+				<value>/theme/load.action</value>
+			</set>
+		</property>
+	</bean>
+	<!-- 密码编码器 -->
+	<bean id="passwordEncoder" class="com.cloudstong.platform.core.web.security.CustomPwdEncoder"></bean>
+	<!-- 切换用户 -->
+	<bean id="switchUserProcessingFilter" class="com.cloudstong.platform.core.web.security.YpSwitchUserFilter">
+            <property name="userDetailsService" ref="sysUserService" />
+            <property name="switchUserUrl" value="/j_spring_security_switch_user" />
+            <property name="usernameParameter" value="username"/>
+            <property name="exitUserUrl" value="/j_spring_security_exit_user" />
+            <property name="targetUrl" value="/main.action" />
+            <property name="failureHandler" ref="simpleUrlAuthenticationFailureHandler"></property>
+            
+    </bean>
+    
+    <!-- 认证失败 -->
+    <bean id="simpleUrlAuthenticationFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler" >
+    	<property name="defaultFailureUrl" value="/pages/common/403.jsp"></property>
+    </bean>
+    
+</beans>

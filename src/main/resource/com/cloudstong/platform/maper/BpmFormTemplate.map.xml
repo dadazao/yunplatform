@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.form.model.BpmFormTemplate">
+	<resultMap id="BpmFormTemplate" type="com.cloudstong.platform.third.bpm.form.model.BpmFormTemplate">
+		<id property="templateId" column="templateId" jdbcType="NUMERIC"/>
+		<result property="templateName" column="templateName" jdbcType="VARCHAR"/>
+		<result property="templateType" column="templateType" jdbcType="VARCHAR"/>
+		<result property="macroTemplateAlias" column="macroTemplateAlias" jdbcType="VARCHAR"/>
+		<result property="html" column="html" jdbcType="CLOB"/>
+		<result property="templateDesc" column="templateDesc" jdbcType="VARCHAR"/>
+		<result property="alias" column="alias" jdbcType="VARCHAR"/>
+		<result property="canEdit" column="canEdit" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		templateId,templateName,templateType,macroTemplateAlias,html,templateDesc,alias,canEdit
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(templateName)"> AND templateName  LIKE #{templateName}  </if>
+			<if test="@Ognl@isNotEmpty(templateType)"> AND templateType  =#{templateType} </if>
+			<if test="@Ognl@isNotEmpty(alias)"> AND alias =#{alias} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormTemplate">
+		INSERT INTO BPM_FORM_TEMPLATE
+		(<include refid="columns"/>)
+		VALUES
+		(#{templateId,jdbcType=NUMERIC}, #{templateName,jdbcType=VARCHAR}, #{templateType,jdbcType=VARCHAR}, #{macroTemplateAlias,jdbcType=VARCHAR}, #{html,jdbcType=CLOB}, #{templateDesc,jdbcType=VARCHAR},#{alias,jdbcType=VARCHAR}, #{canEdit,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_FORM_TEMPLATE 
+		WHERE
+		templateId=#{templateId}
+	</delete>
+	
+	<delete id="delSystem">
+		DELETE FROM BPM_FORM_TEMPLATE WHERE canEdit=0
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormTemplate">
+		UPDATE bpm_form_template SET
+		templateName=#{templateName,jdbcType=VARCHAR} , 
+		templateType=#{templateType,jdbcType=NUMERIC} , 
+		macroTemplateAlias=#{macroTemplateAlias,jdbcType=VARCHAR} , 
+		html=#{html,jdbcType=CLOB} , 
+		templateDesc=#{templateDesc,jdbcType=VARCHAR},
+		canEdit=#{canEdit,jdbcType=NUMERIC}
+		WHERE
+		templateId=#{templateId}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmFormTemplate">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TEMPLATE
+		WHERE
+		templateId=#{templateId}
+	</select>
+	
+	<select id="getAll"  resultMap="BpmFormTemplate">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TEMPLATE   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by templateId  desc
+		</if>
+	</select>
+	
+	<select id="getByTemplateAlias"  resultMap="BpmFormTemplate" parameterType="String">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_TEMPLATE
+		WHERE  alias  =#{alias}
+	</select>
+	
+	<select id="getHasData"  resultType="Integer" parameterType="String">
+		SELECT count(*) amount
+		FROM BPM_FORM_TEMPLATE
+	</select>
+</mapper>

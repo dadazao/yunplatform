@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.activiti.engine.impl.persistence.entity.HistoricProcessInstanceEntity">
+
+<resultMap id="HistoricProcessInstanceEntity" type="org.activiti.engine.impl.persistence.entity.HistoricProcessInstanceEntity">
+	    <id property="id" column="ID_" jdbcType="VARCHAR"/>
+	    <result property="processInstanceId" column="PROC_INST_ID_" jdbcType="VARCHAR"/>
+	    <result property="businessKey" column="BUSINESS_KEY_" jdbcType="VARCHAR"/>
+	    <result property="processDefinitionId" column="PROC_DEF_ID_" jdbcType="VARCHAR"/>
+	    <result property="startTime" column="START_TIME_" jdbcType="TIMESTAMP" />
+	    <result property="endTime" column="END_TIME_" jdbcType="TIMESTAMP" />
+	    <result property="duration" column="DURATION_" jdbcType="NUMERIC"/>
+	    <result property="startUserId" column="START_USER_ID_" jdbcType="VARCHAR"/>
+	    <result property="startActivityId" column="START_ACT_ID_" jdbcType="VARCHAR"/>
+	    <result property="endActivityId" column="END_ACT_ID_" jdbcType="VARCHAR"/>
+	    <result property="superProcessInstanceId" column="SUPER_PROCESS_INSTANCE_ID_" jdbcType="VARCHAR"/>
+	    <result property="deleteReason" column="DELETE_REASON_" jdbcType="VARCHAR"/>
+  </resultMap>
+
+ <update id="update" parameterType="org.activiti.engine.impl.persistence.entity.HistoricProcessInstanceEntity">
+	 update ACT_HI_PROCINST set
+     END_TIME_ = #{endTime, jdbcType=TIMESTAMP},
+     DURATION_ = #{durationInMillis ,jdbcType=BIGINT},
+     END_ACT_ID_ = #{endActivityId, jdbcType=VARCHAR},
+     DELETE_REASON_ = #{deleteReason, jdbcType=VARCHAR}
+   	 where ID_ = #{id}
+ </update>
+
+ <select id="getByInstanceIdAndNodeId" parameterType="java.util.Map" resultMap="HistoricProcessInstanceEntity">
+ 	select * from ACT_HI_PROCINST
+ 	where PROC_INST_ID_=#{actInstanceId} and START_ACT_ID_=#{nodeId}
+ </select>
+
+</mapper>

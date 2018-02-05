@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloudstong.platform.third.bpm.model.ProcessTaskHistory">
+  
+  <!-- HISTORIC TASK INSTANCE INSERT -->
+  
+  <insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.ProcessTaskHistory">
+      insert into ACT_HI_TASKINST (
+        ID_,
+        PROC_DEF_ID_,
+        PROC_INST_ID_,
+        EXECUTION_ID_,
+        NAME_,
+        PARENT_TASK_ID_,
+        DESCRIPTION_,
+        OWNER_,
+        ASSIGNEE_,
+        START_TIME_,
+        END_TIME_,
+        DURATION_,
+        DELETE_REASON_,
+        TASK_DEF_KEY_,
+        PRIORITY_,
+        DUE_DATE_
+      ) values (
+        #{id ,jdbcType=VARCHAR},
+        #{processDefinitionId, jdbcType=VARCHAR},
+        #{processInstanceId, jdbcType=VARCHAR},
+        #{executionId, jdbcType=VARCHAR},
+        #{name ,jdbcType=VARCHAR},
+        #{parentTaskId ,jdbcType=VARCHAR},
+        #{description ,jdbcType=VARCHAR},
+        #{owner ,jdbcType=VARCHAR},
+        #{assignee ,jdbcType=VARCHAR},
+        #{startTime, jdbcType=TIMESTAMP},
+        #{endTime, jdbcType=TIMESTAMP},
+        #{durationInMillis ,jdbcType=BIGINT},
+        #{deleteReason ,jdbcType=VARCHAR},
+        #{taskDefinitionKey ,jdbcType=VARCHAR},
+        #{priority, jdbcType=INTEGER},
+        #{dueDate, jdbcType=TIMESTAMP}
+      )
+  </insert>
+
+</mapper>

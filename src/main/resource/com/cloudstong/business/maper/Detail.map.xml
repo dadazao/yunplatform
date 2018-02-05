@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.cloudstong.business.employee.model.Detail">  
+    <resultMap id="entityBaseMap" type="com.cloudstong.platform.core.model.EntityBase">  
+     	<result property="createBy" column="comm_createBy"/>
+        <result property="createDate" column="comm_createDate"/>
+        <result property="updateBy" column="comm_updateBy"/>
+        <result property="updateDate" column="comm_updateDate"/>
+        <result property="isDeleted" column="comm_mark_for_delete"/> 
+    </resultMap>  
+    
+    <resultMap id="detailResultMap" type="com.cloudstong.business.employee.model.Detail" extends="entityBaseMap" >    
+        <id property="id" column="id"/>
+		<result property="location" column="tbl_location"/>    
+		<result property="cardnum" column="tbl_cardnum"/>    
+		<result property="employeeId" column="tbl_employee_id"/>
+    </resultMap>
+    
+    <sql id="columns">
+		id,tbl_location,tbl_cardnum,tbl_employee_id,comm_createBy,comm_createDate,comm_updateBy,comm_updateDate,comm_mark_for_delete
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(location)"> AND tbl_location =#{location} </if>
+			<if test="@Ognl@isNotEmpty(cardnum)"> AND tbl_cardnum =#{cardnum} </if>
+			<if test="@Ognl@isNotEmpty(employeeId)"> AND tbl_employee_id =#{employeeId} </if>
+		</where>
+	</sql>
+       
+    <insert id="save" parameterType="com.cloudstong.business.employee.model.Detail">
+		INSERT INTO bus_detail
+		(<include refid="columns"/>)
+		VALUES(
+			#{id},
+			#{location},
+			#{cardnum},
+			#{employeeId},
+			#{createBy},
+			#{createDate},
+			#{updateBy},
+			#{updateDate},
+			#{isDeleted}
+		)
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM bus_detail 
+		WHERE 
+		id=#{id}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.business.employee.model.Detail">
+		UPDATE bus_detail SET
+		tbl_location=#{location},
+		tbl_cardnum=#{cardnum},
+		comm_updateBy=#{updateBy},
+		comm_updateDate=#{updateDate}
+		WHERE
+		id=#{id}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="detailResultMap">
+		SELECT <include refid="columns"/>
+		FROM bus_detail
+		WHERE 
+		id=#{id}
+	</select>
+	
+	<select id="getAll" resultMap="detailResultMap">
+		SELECT 
+		<include refid="columns"/>
+		FROM bus_detail  
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderDirection}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by comm_updateDate desc
+		</if>
+	</select>
+	<select id="getByEmployeeId" parameterType="java.lang.Long" resultMap="detailResultMap">
+  		SELECT 
+  		<include refid="columns"/>
+  		FROM bus_detail 
+  		WHERE 
+  		tbl_employee_id=#{employeeId}
+  	</select>
+</mapper>

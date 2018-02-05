@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.TaskFork">
+	<resultMap id="TaskFork" type="com.cloudstong.platform.third.bpm.model.TaskFork">
+		<id property="taskForkId" column="taskForkId" jdbcType="NUMERIC"/>
+		<result property="actInstId" column="actInstId" jdbcType="VARCHAR"/>
+		<result property="forkTaskName" column="forkTaskName" jdbcType="VARCHAR"/>
+		<result property="forkTaskKey" column="forkTaskKey" jdbcType="VARCHAR"/>
+		<result property="forkSn" column="forkSn" jdbcType="NUMERIC"/>
+		<result property="forkCount" column="forkCount" jdbcType="NUMERIC"/>
+		<result property="fininshCount" column="fininshCount" jdbcType="NUMERIC"/>
+		<result property="forkTime" column="forkTime" jdbcType="TIMESTAMP"/>
+		<result property="joinTaskName" column="joinTaskName" jdbcType="VARCHAR"/>
+		<result property="joinTaskKey" column="joinTaskKey" jdbcType="VARCHAR"/>
+		<result property="forkTokens" column="forkTokens" jdbcType="VARCHAR"/>
+		<result property="forkTokenPre" column="forkTokenPre" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		taskForkId,actInstId,forkTaskName,forkTaskKey,forkSn,forkCount,fininshCount,forkTime,joinTaskName,joinTaskKey,forkTokens,forkTokenPre
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(taskForkId)"> AND taskForkId  =#{taskForkId} </if>
+			<if test="@Ognl@isNotEmpty(actInstId)"> AND actInstId  LIKE #{actInstId}  </if>
+			<if test="@Ognl@isNotEmpty(forkTaskName)"> AND forkTaskName  LIKE #{forkTaskName}  </if>
+			<if test="@Ognl@isNotEmpty(forkTaskKey)"> AND forkTaskKey  LIKE #{forkTaskKey}  </if>
+			<if test="@Ognl@isNotEmpty(forkSn)"> AND forkSn  =#{forkSn} </if>
+			<if test="@Ognl@isNotEmpty(forkCount)"> AND forkCount  =#{forkCount} </if>
+			<if test="@Ognl@isNotEmpty(finishCount)"> AND finishCount  =#{finishCount} </if>
+			<if test="@Ognl@isNotEmpty(forkTime)"> AND forkTime  =#{forkTime} </if>
+			<if test="@Ognl@isNotEmpty(joinTaskKey)"> AND joinTaskKey  LIKE #{joinTaskKey}  </if>
+			<if test="@Ognl@isNotEmpty(joinTaskName)"> AND joinTaskName  LIKE #{joinTaskName}  </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.TaskFork">
+		INSERT INTO BPM_TASK_FORK
+		(<include refid="columns"/>)
+		VALUES
+		(#{taskForkId,jdbcType=NUMERIC}, #{actInstId,jdbcType=VARCHAR}, #{forkTaskName,jdbcType=VARCHAR}, #{forkTaskKey,jdbcType=VARCHAR}, #{forkSn,jdbcType=NUMERIC}, #{forkCount,jdbcType=NUMERIC}, #{fininshCount,jdbcType=NUMERIC}, #{forkTime,jdbcType=TIMESTAMP}, #{joinTaskName,jdbcType=VARCHAR}, #{joinTaskKey,jdbcType=VARCHAR},#{forkTokens,jdbcType=VARCHAR},#{forkTokenPre,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_TASK_FORK 
+		WHERE
+		taskForkId=#{taskForkId}
+	</delete>
+	
+	<delete id="delByActInstId" parameterType="java.lang.String">
+		DELETE FROM BPM_TASK_FORK 
+		WHERE
+		actInstId=#{actInstId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.TaskFork">
+		UPDATE BPM_TASK_FORK SET
+		actInstId=#{actInstId,jdbcType=VARCHAR} , 
+		forkTaskName=#{forkTaskName,jdbcType=VARCHAR} , 
+		forkTaskKey=#{forkTaskKey,jdbcType=VARCHAR} , 
+		forkSn=#{forkSn,jdbcType=NUMERIC} , 
+		forkCount=#{forkCount,jdbcType=NUMERIC} , 
+		fininshCount=#{fininshCount,jdbcType=NUMERIC} , 
+		forkTime=#{forkTime,jdbcType=TIMESTAMP} , 
+		joinTaskName=#{joinTaskName,jdbcType=VARCHAR} , 
+		joinTaskKey=#{joinTaskKey,jdbcType=VARCHAR} ,
+		forkTokens=#{forkTokens,jdbcType=VARCHAR},
+		forkTokenPre=#{forkTokenPre,jdbcType=VARCHAR} 
+		WHERE
+		taskForkId=#{taskForkId}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="TaskFork">
+		SELECT <include refid="columns"/>
+		FROM BPM_TASK_FORK
+		WHERE
+		taskForkId=#{taskForkId}
+	</select>
+	
+	<select id="getByInstIdJoinTaskKey" parameterType="java.lang.Long" resultMap="TaskFork">
+		SELECT * FROM BPM_TASK_FORK WHERE joinTaskKey=#{joinTaskKey} and actInstId=#{actInstId}
+	</select>
+	
+	<select id="getMaxSn" resultType="java.lang.Integer">
+		select max(forkSn) from BPM_TASK_FORK where actInstId=#{actInstId}
+	</select>
+	
+	<select id="getAll" resultMap="TaskFork">
+		SELECT <include refid="columns"/>
+		FROM BPM_TASK_FORK   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by taskForkId  desc
+		</if>
+	</select>
+	
+	<select id="getByInstIdJoinTaskKeyForkToken" resultMap="TaskFork">
+		SELECT * FROM BPM_TASK_FORK where actInstId=#{actInstId}  and joinTaskKey=#{joinTaskKey} and forkTokens like #{forkToken}
+	</select>
+</mapper>

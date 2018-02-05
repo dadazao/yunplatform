@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.TaskOpinion">
+	<resultMap id="TaskOpinion" type="com.cloudstong.platform.third.bpm.model.TaskOpinion">
+		<id property="opinionId" column="opinionId" jdbcType="NUMERIC"/>
+		<result property="taskName" column="taskName" jdbcType="VARCHAR"/>
+		<result property="taskId" column="taskId" jdbcType="NUMERIC"/>
+		<result property="taskKey" column="taskKey" jdbcType="VARCHAR"/>
+		<result property="taskToken" column="taskToken" jdbcType="VARCHAR"/>
+		<result property="actInstId" column="actInstId" jdbcType="VARCHAR"/>
+		<result property="startTime" column="startTime" jdbcType="TIMESTAMP"/>
+		<result property="endTime" column="endTime" jdbcType="TIMESTAMP"/>
+		<result property="durTime" column="durTime" jdbcType="NUMERIC"/>
+		<result property="exeUserId" column="exeUserId" jdbcType="NUMERIC"/>
+		<result property="exeFullname" column="exeFullname" jdbcType="VARCHAR"/>
+		<result property="opinion" column="opinion" jdbcType="VARCHAR"/>
+		<result property="checkStatus" column="checkStatus" jdbcType="NUMERIC"/>
+		<result property="actDefId" column="actDefId" jdbcType="VARCHAR"/>
+		<result property="formDefId" column="formDefId" jdbcType="NUMERIC"/>
+		<result property="fieldName" column="fieldName" jdbcType="VARCHAR"/>
+		<result property="superExecution" column="superExecution" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<resultMap id="BpmFininshTask" type="com.cloudstong.platform.third.bpm.model.BpmFinishTask">
+		<id property="opinionId" column="opinionId" jdbcType="NUMERIC"/>
+		<result property="taskName" column="taskName" jdbcType="VARCHAR"/>
+		<result property="taskId" column="taskId" jdbcType="NUMERIC"/>
+		<result property="taskKey" column="taskKey" jdbcType="VARCHAR"/>
+		
+		<result property="actInstId" column="actInstId" jdbcType="VARCHAR"/>
+		<result property="startTime" column="startTime" jdbcType="TIMESTAMP"/>
+		<result property="endTime" column="endTime" jdbcType="TIMESTAMP"/>
+		<result property="durTime" column="durTime" jdbcType="NUMERIC"/>
+		<result property="exeUserId" column="exeUserId" jdbcType="NUMERIC"/>
+		<result property="exeFullname" column="exeFullname" jdbcType="VARCHAR"/>
+		<result property="opinion" column="opinion" jdbcType="VARCHAR"/>
+		<result property="checkStatus" column="checkStatus" jdbcType="NUMERIC"/>
+		<result property="actDefId" column="actDefId" jdbcType="VARCHAR"/>
+		<result property="flowName" column="flowName" jdbcType="VARCHAR"/>
+		<result property="subject" column="subject" jdbcType="VARCHAR"/>
+		<result property="businessKey" column="businessKey" jdbcType="VARCHAR"/>
+		<result property="formUrl" column="formUrl" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		opinionId,taskName,taskId,taskKey,taskToken,actInstId,startTime,endTime,durTime,exeUserId,exeFullname,opinion,checkStatus,actDefId,formDefId,fieldName,superExecution
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(opinionId)"> AND opinionId  =#{opinionId} </if>
+			<if test="@Ognl@isNotEmpty(actInstId)"> AND actInstId  LIKE #{actInstId}  </if>
+			<if test="@Ognl@isNotEmpty(taskName)"> AND taskName  LIKE #{taskName}  </if>
+			<if test="@Ognl@isNotEmpty(taskId)"> AND taskId  =#{taskId} </if>
+			<if test="@Ognl@isNotEmpty(startTime)"> AND startTime  =#{startTime} </if>
+			<if test="@Ognl@isNotEmpty(endTime)"> AND endTime  =#{endTime} </if>
+			<if test="@Ognl@isNotEmpty(durTime)"> AND durTime  =#{durTime} </if>
+			<if test="@Ognl@isNotEmpty(exeUserId)"> AND exeUserId  =#{exeUserId} </if>
+			<if test="@Ognl@isNotEmpty(exeFullname)"> AND exeFullname  LIKE #{exeFullname}  </if>
+			<if test="@Ognl@isNotEmpty(opinion)"> AND opinion  LIKE #{opinion}  </if>
+			<if test="@Ognl@isNotEmpty(checkStatus)"> AND checkStatus  =#{checkStatus} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.TaskOpinion">
+		INSERT INTO bpm_task_opinion
+		(<include refid="columns"/>)
+		VALUES
+		(#{opinionId,jdbcType=NUMERIC}, #{taskName,jdbcType=VARCHAR}, #{taskId,jdbcType=NUMERIC},#{taskKey,jdbcType=VARCHAR},#{taskToken,jdbcType=VARCHAR},#{actInstId,jdbcType=VARCHAR},#{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{durTime,jdbcType=NUMERIC}, #{exeUserId,jdbcType=NUMERIC}, #{exeFullname,jdbcType=VARCHAR}, #{opinion,jdbcType=VARCHAR}, #{checkStatus,jdbcType=NUMERIC}, #{actDefId,jdbcType=VARCHAR}, #{formDefId,jdbcType=NUMERIC}, #{fieldName,jdbcType=VARCHAR},#{superExecution,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_TASK_OPINION 
+		WHERE
+		opinionId=#{opinionId}
+	</delete>
+	
+	<delete id="delByTaskId">
+		DELETE FROM BPM_TASK_OPINION WHERE taskId=#{taskId}
+	</delete>
+	
+	<delete id="delByActDefId" parameterType="java.lang.String">
+		DELETE FROM BPM_TASK_OPINION
+		WHERE
+		actDefId=#{actDefId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.TaskOpinion">
+		UPDATE bpm_task_opinion SET
+		taskName=#{taskName,jdbcType=VARCHAR} , 
+		taskId=#{taskId,jdbcType=NUMERIC} , 
+		taskKey=#{taskKey,jdbcType=VARCHAR},
+		taskToken=#{taskToken,jdbcType=VARCHAR},
+		actInstId=#{actInstId,jdbcType=VARCHAR} , 
+		startTime=#{startTime,jdbcType=TIMESTAMP} , 
+		endTime=#{endTime,jdbcType=TIMESTAMP} , 
+		durTime=#{durTime,jdbcType=NUMERIC} , 
+		exeUserId=#{exeUserId,jdbcType=NUMERIC} , 
+		exeFullname=#{exeFullname,jdbcType=VARCHAR} , 
+		opinion=#{opinion,jdbcType=VARCHAR} , 
+		checkStatus=#{checkStatus,jdbcType=NUMERIC} , 
+		actDefId=#{actDefId,jdbcType=VARCHAR} , 
+		formDefId=#{formDefId,jdbcType=NUMERIC} , 
+		fieldName=#{fieldName,jdbcType=VARCHAR} ,
+		superExecution=#{superExecution,jdbcType=VARCHAR}
+		WHERE
+		opinionId=#{opinionId}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="TaskOpinion">
+		SELECT <include refid="columns"/>
+		FROM BPM_TASK_OPINION
+		WHERE
+		opinionId=#{opinionId}
+	</select>
+	
+	<select id="getAll" resultMap="TaskOpinion">
+		SELECT <include refid="columns"/>
+		FROM BPM_TASK_OPINION   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by opinionId  desc
+		</if>
+	</select>
+	
+	<select id="getByTaskId" resultMap="TaskOpinion">
+		SELECT * FROM BPM_TASK_OPINION where taskId=#{taskId}
+	</select>
+	
+	<select id="getByActInstId" resultMap="TaskOpinion">
+		SELECT * FROM BPM_TASK_OPINION where actInstId in 
+		<foreach collection="actInstIds" index="index" item="item" open="(" separator="," close=")">  
+            #{item}  
+        </foreach>  
+        or superExecution in 
+		<foreach collection="actInstIds" index="index" item="item" open="(" separator="," close=")">  
+            #{item}  
+        </foreach>         
+        order by opinionid
+	</select>
+	
+	<select id="getByActInstIdTaskKey" resultMap="TaskOpinion">
+		SELECT * FROM BPM_TASK_OPINION where actInstId=#{actInstId} and taskKey=#{taskKey} order by endTime desc
+	</select>
+	<!-- upd by ray 2012-08-9 -->
+	<select id="getByActInstIdExeUserId" resultMap="TaskOpinion">
+		SELECT * FROM BPM_TASK_OPINION where ACTINSTID=#{actInstId} and EXEUSERID=#{exeUserId} and checkStatus!=7 and ENDTIME IS NOT NULL order by endTime desc
+	</select>
+	
+	
+	<select id="getFormOptionsByInstance" resultMap="TaskOpinion">
+		SELECT * FROM BPM_TASK_OPINION where actInstId=#{actInstId}  order by endTime desc
+	</select>
+	
+	
+	<select id="getByFinishTask" resultMap="BpmFininshTask">
+		select t.*,r.subject,r.businessKey from BPM_TASK_OPINION t left join BPM_PRO_RUN r on t.actinstid=r.actinstid where t.exeuserid=#{userId}
+		<if test="@Ognl@isNotEmpty(subject)"> and r.subject like #{subject}</if>
+		<if test="@Ognl@isNotEmpty(taskName)"> and t.taskName like #{taskName}</if>
+	</select>
+</mapper>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmSubtableRights">
+	<resultMap id="BpmSubtableRights" type="com.cloudstong.platform.third.bpm.model.BpmSubtableRights">
+		<id property="id" column="ID" jdbcType="NUMERIC"/>
+		<result property="actdefid" column="ACTDEFID" jdbcType="VARCHAR"/>
+		<result property="nodeid" column="NODEID" jdbcType="VARCHAR"/>
+		<result property="tableid" column="TABLEID" jdbcType="NUMERIC"/>
+		<result property="permissiontype" column="PERMISSIONTYPE" jdbcType="NUMERIC"/>
+		<result property="permissionseting" column="PERMISSIONSETING" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<sql id="columns">
+		ID,ACTDEFID,NODEID,TABLEID,PERMISSIONTYPE,PERMISSIONSETING
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(id)"> AND ID  =#{id} </if>
+			<if test="@Ognl@isNotEmpty(defid)"> AND ACTDEFID  =#{actdefid} </if>
+			<if test="@Ognl@isNotEmpty(nodeid)"> AND NODEID  LIKE #{nodeid}  </if>
+			<if test="@Ognl@isNotEmpty(tableid)"> AND TABLEID  =#{tableid} </if>
+			<if test="@Ognl@isNotEmpty(permissiontype)"> AND PERMISSIONTYPE  =#{permissiontype} </if>
+			<if test="@Ognl@isNotEmpty(permissionseting)"> AND PERMISSIONSETING  LIKE #{permissionseting}  </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmSubtableRights">
+		INSERT INTO BPM_SUBTABLE_RIGHTS
+		(ID,ACTDEFID,NODEID,TABLEID,PERMISSIONTYPE,PERMISSIONSETING)
+		VALUES
+		(#{id,jdbcType=NUMERIC}, #{actdefid,jdbcType=VARCHAR}, #{nodeid,jdbcType=VARCHAR}, #{tableid,jdbcType=NUMERIC}, #{permissiontype,jdbcType=NUMERIC}, #{permissionseting,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_SUBTABLE_RIGHTS 
+		WHERE
+		ID=#{id}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmSubtableRights">
+		UPDATE BPM_SUBTABLE_RIGHTS SET
+		ACTDEFID=#{actdefid,jdbcType=VARCHAR},
+		NODEID=#{nodeid,jdbcType=VARCHAR},
+		TABLEID=#{tableid,jdbcType=NUMERIC},
+		PERMISSIONTYPE=#{permissiontype,jdbcType=NUMERIC},
+		PERMISSIONSETING=#{permissionseting,jdbcType=VARCHAR}
+		WHERE
+		ID=#{id}
+	</update>
+		    
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmSubtableRights">
+		SELECT <include refid="columns"/>
+		FROM BPM_SUBTABLE_RIGHTS
+		WHERE
+		ID=#{id}
+	</select>
+	
+	<select id="getByDefIdAndNodeId" parameterType="Map" resultMap="BpmSubtableRights">
+		SELECT <include refid="columns"/>
+		FROM BPM_SUBTABLE_RIGHTS
+		WHERE
+		ACTDEFID = #{actdefid} AND NODEID  = #{nodeid} AND TABLEID  =#{tableid}
+	</select>
+	
+	<select id="getAll" resultMap="BpmSubtableRights">
+		SELECT <include refid="columns"/>
+		FROM BPM_SUBTABLE_RIGHTS   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by ID  desc
+		</if>
+	</select>
+</mapper>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmRunLog">
+	<resultMap id="BpmRunLog" type="com.cloudstong.platform.third.bpm.model.BpmRunLog">
+		<id property="id" column="ID" jdbcType="NUMERIC"/>
+		<result property="userid" column="USERID" jdbcType="NUMERIC"/>
+		<result property="username" column="USERNAME" jdbcType="VARCHAR"/>
+		<result property="createtime" column="CREATETIME" jdbcType="TIMESTAMP"/>
+		<result property="operatortype" column="OPERATORTYPE" jdbcType="NUMERIC"/>
+		<result property="memo" column="MEMO" jdbcType="VARCHAR"/>
+		<result property="runid" column="RUNID" jdbcType="NUMERIC"/>
+		<result property="processSubject" column="PROCESSSUBJECT" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID,USERID,USERNAME,CREATETIME,OPERATORTYPE,MEMO,RUNID,PROCESSSUBJECT
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(userid)"> AND USERID  =#{userid} </if>
+			<if test="@Ognl@isNotEmpty(username)"> AND USERNAME  LIKE #{username}  </if>
+			<if test="@Ognl@isNotEmpty(begincreatetime)"> AND CREATETIME  >=#{begincreatetime} </if>
+			<if test="@Ognl@isNotEmpty(endcreatetime)"> AND CREATETIME  &lt;=#{endcreatetime} </if>
+			<if test="@Ognl@isNotEmpty(operatortype)"> AND OPERATORTYPE  =#{operatortype} </if>
+			<if test="@Ognl@isNotEmpty(memo)"> AND MEMO  LIKE #{memo}  </if>
+			<if test="@Ognl@isNotEmpty(runid)"> AND RUNID  = #{runid}  </if>
+			<if test="@Ognl@isNotEmpty(processSubject)"> AND PROCESSSUBJECT LIKE #{processSubject} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmRunLog">
+		INSERT INTO BPM_RUN_LOG
+		(ID,USERID,USERNAME,CREATETIME,OPERATORTYPE,MEMO,RUNID,PROCESSSUBJECT)
+		VALUES
+		(#{id,jdbcType=NUMERIC}, #{userid,jdbcType=NUMERIC}, #{username,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{operatortype,jdbcType=NUMERIC}, #{memo,jdbcType=VARCHAR},#{runid,jdbcType=NUMERIC},#{processSubject,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_RUN_LOG 
+		WHERE
+		ID=#{id}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmRunLog">
+		UPDATE BPM_RUN_LOG SET
+		USERID=#{userid,jdbcType=NUMERIC} , 
+		USERNAME=#{username,jdbcType=VARCHAR} , 
+		CREATETIME=#{createtime,jdbcType=TIMESTAMP} , 
+		OPERATORTYPE=#{operatortype,jdbcType=NUMERIC} , 
+		MEMO=#{memo,jdbcType=VARCHAR} 
+		WHERE
+		ID=#{id}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmRunLog">
+		SELECT <include refid="columns"/>
+		FROM BPM_RUN_LOG
+		WHERE
+		ID=#{id}
+	</select>
+	
+	<select id="getByUserId" parameterType="java.lang.Long" resultMap="BpmRunLog">
+		SELECT <include refid="columns"/>
+		FROM BPM_RUN_LOG
+		WHERE
+		USERID=#{userId}
+	</select>
+	
+	<select id="getByRunId" parameterType="java.lang.Long" resultMap="BpmRunLog">
+		SELECT <include refid="columns"/>
+		FROM BPM_RUN_LOG
+		WHERE
+		RUNID=#{runId}
+	</select>
+	
+	<select id="getAll" resultMap="BpmRunLog">
+		SELECT <include refid="columns"/>
+		FROM BPM_RUN_LOG   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by ID  desc
+		</if>
+	</select>
+</mapper>

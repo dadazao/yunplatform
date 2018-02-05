@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.form.model.BpmFormRights">
+	<resultMap id="BpmFormRights" type="com.cloudstong.platform.third.bpm.form.model.BpmFormRights">
+		<id property="id" column="id" jdbcType="NUMERIC"/>
+		<result property="formDefId" column="formDefId" jdbcType="NUMERIC"/>
+		<result property="name" column="name" jdbcType="VARCHAR"/>
+		<result property="permission" column="permission" jdbcType="VARCHAR"/>
+		<result property="type" column="type" jdbcType="NUMERIC"/>
+		<result property="actDefId" column="actDefId" jdbcType="VARCHAR"/>
+		<result property="nodeId" column="nodeId" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		id,formDefId,name,permission,type,actDefId,nodeId
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(formDefId)"> AND formDefId  =#{formDefId} </if>
+			<if test="@Ognl@isNotEmpty(type)"> AND type  =#{type} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormRights">
+		INSERT INTO bpm_form_rights
+		(<include refid="columns"/>)
+		VALUES
+		(#{id,jdbcType=NUMERIC}, #{formDefId,jdbcType=NUMERIC}, #{name,jdbcType=VARCHAR}, 
+		#{permission,jdbcType=VARCHAR},
+		#{type,jdbcType=NUMERIC},#{actDefId,jdbcType=VARCHAR},#{nodeId,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM bpm_form_rights  WHERE id=#{id}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormRights">
+		UPDATE bpm_form_rights SET
+		formDefId=#{formDefId,jdbcType=NUMERIC} , 
+		name=#{name,jdbcType=VARCHAR} , 
+		permission=#{permission,jdbcType=VARCHAR},
+		type=#{type,jdbcType=NUMERIC},
+		actDefId=#{actDefId,jdbcType=VARCHAR},
+		nodeId=#{nodeId,jdbcType=VARCHAR}
+		WHERE
+		id=#{id}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmFormRights">
+		SELECT <include refid="columns"/> FROM bpm_form_rights WHERE id=#{id}
+	</select>
+	
+	<select id="getAll" resultMap="BpmFormRights">
+		SELECT <include refid="columns"/>
+		FROM bpm_form_rights   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by id  desc
+		</if>
+	</select>
+	
+	<delete id="delByFormDefId" parameterType="java.lang.Long">
+		DELETE FROM bpm_form_rights  WHERE formDefId=#{formDefId} and (nodeId is null or nodeId ='')
+	</delete>
+	
+	<delete id="delByFlowFormNodeId" parameterType="Map">
+		DELETE FROM bpm_form_rights  WHERE actDefId=#{actDefId} and nodeId=#{nodeId}
+	</delete>
+	
+	<select id="getByFormDefId" parameterType="java.lang.Long" resultMap="BpmFormRights">
+		SELECT  <include refid="columns"/> FROM bpm_form_rights WHERE formDefId=#{formDefId} and (nodeId is null or nodeId ='')
+	</select>
+	
+	<select id="getByFlowFormNodeId" parameterType="Map" resultMap="BpmFormRights">
+		SELECT <include refid="columns"/>
+		FROM bpm_form_rights
+		WHERE  actDefId=#{actDefId} and nodeId=#{nodeId}
+	</select>
+	
+	<delete id="deleteByTableId_oracle" parameterType="Long">
+		delete from bpm_form_rights a where exists (select 1 from bpm_form_def b where a.formdefid=b.formkey and b.tableid=#{tableId}) 
+	</delete>
+	
+	<delete id="deleteByTableId_dm" parameterType="Long">
+		delete from bpm_form_rights a where exists (select 1 from bpm_form_def b where a.formdefid=b.formkey and b.tableid=#{tableId}) 
+	</delete>
+	
+	<delete id="deleteByTableId_mysql" parameterType="Long">
+		 delete bpm_form_rights from bpm_form_rights , bpm_form_def  where bpm_form_rights.formdefid=bpm_form_def.formkey and bpm_form_def.tableid=#{tableId}
+	</delete>
+	
+	<delete id="deleteByTableId_mssql" parameterType="Long">
+		 delete from bpm_form_rights where exists (select 1 from bpm_form_rights a, bpm_form_def b where a.formdefid=b.formkey and b.tableid=#{tableId})
+	</delete>
+	
+	<delete id="deleteByTableId_db2" parameterType="Long">
+		 delete from bpm_form_rights a where exists (select 1 from bpm_form_def b where a.formdefid=b.formkey and b.tableid=#{tableId})
+	</delete>
+	
+	<delete id="deleteByTableId_h2" parameterType="Long">
+		delete from bpm_form_rights a where exists (select 1 from bpm_form_def b where a.formdefid=b.formkey and b.tableid=#{tableId}) 
+	</delete>
+</mapper>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+  		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+  		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+  		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+  		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+  		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd"	default-lazy-init="false">
+
+	<bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
+		<property name="dataSource" ref="dataSource" />
+		<property name="databaseType" value="${jdbc.dbType}" />
+		<property name="dbIdentityUsed" value="false" /> 
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="databaseSchemaUpdate" value="true" />
+		<property name="jobExecutorActivate" value="false" />
+		<property name="idGenerator" ref="idGenerator" />
+	</bean>
+	
+	<bean id="idGenerator" class="com.cloudstong.platform.core.keygenerator.impl.ActivitiIdGenerator"></bean>
+
+	<bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
+		<property name="processEngineConfiguration" ref="processEngineConfiguration" />
+	</bean>
+
+	<bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService" />
+	<bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService" />
+	<bean id="taskService" factory-bean="processEngine" factory-method="getTaskService" />
+	<bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService" />
+	<bean id="managementService" factory-bean="processEngine" factory-method="getManagementService" />
+	
+	<!-- 脚本引擎 -->
+	<bean id="scriptEngine" class="com.cloudstong.platform.core.engine.GroovyScriptEngine" />
+	
+	<!--流程图颜色配置-->
+	<bean id="iFlowStatus" class="com.cloudstong.platform.third.bpm.service.impl.FlowStatus">
+  		<property name="bpmProStatus" ref="bpmProStatusDao"></property>
+  		<property name="statusColor" ref="statusColorMap"></property>
+  	</bean>
+	<!--
+      	状态说明：-1:正在审批，0：弃权,1:同意,2:反对,3:驳回,4,追回,5:会签通过,6:会签不通过
+      	用户可以修改状态对应的颜色值，修改图片的颜色。
+    -->
+    <bean id="statusColorMap" class="java.util.HashMap">  
+   		<constructor-arg>  
+       		<map>
+   				<entry key="1" value="#00FF00"></entry>
+   				<entry key="0" value="#FFA500"></entry>
+   				<entry key="-1" value="#FF0000"></entry>
+   				<entry key="2" value="#0000FF"></entry>
+   				<entry key="3" value="#8A0902"></entry>
+   				<entry key="4" value="#023B62"></entry>
+   				<entry key="5" value="#338848"></entry>
+   				<entry key="6" value="#82B7D7"></entry>
+   			</map>
+   		</constructor-arg>  
+	</bean> 
+	
+	<!--流程节点用户计算-->
+	<bean id="directLeaderCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationDirectLeader"></bean>
+	<bean id="orgCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationOrg"></bean>
+	<bean id="orgAttrCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationOrgAttr"></bean>
+	<bean id="orgChargeCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationOrgCharge"></bean>
+	<bean id="positionCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationPosition"></bean>
+	<bean id="pervTypeUserLeaderCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationPrevTypeUserLeader"></bean>
+	<bean id="prevUserLeaderCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationPrevUserLeader"></bean>
+	<bean id="prevUserOrgLeaderCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationPrevUserOrgLeader"></bean>
+	<bean id="roleCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationRole"></bean>
+	<bean id="sameDepartmentCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationSameDepartment"></bean>
+	<bean id="sameNodeCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationSameNode"></bean>
+	<bean id="scriptCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationScript"></bean>
+	<bean id="startUserCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationStartUser"></bean>
+	<bean id="startUserLeaderCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationStartUserLeader"></bean>
+	<bean id="upLowCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationUpLow"></bean>
+	<bean id="userCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationUser"></bean>
+	<bean id="userAttrCalculation" class="com.cloudstong.platform.third.bpm.service.impl.BpmNodeUserCalculationUserAttr"></bean>
+	<bean id="bpmNodeUserCalculationSelector" class="com.cloudstong.platform.third.bpm.service.BpmNodeUserCalculationSelector">
+		<property name="bpmNodeUserCalculation">
+			<map>
+				<entry>
+					<key><value>0</value></key>
+					<ref bean="startUserCalculation" />
+				</entry>
+				<entry>
+					<key><value>1</value></key>
+					<ref bean="userCalculation" />
+				</entry>
+				<entry>
+					<key><value>2</value></key>
+					<ref bean="roleCalculation" />
+				</entry>
+				<entry>
+					<key><value>3</value></key>
+					<ref bean="orgCalculation" />
+				</entry>
+				<entry>
+						<key><value>4</value></key>
+						<ref bean="orgChargeCalculation" />
+					</entry>
+				<entry>
+					<key><value>5</value></key>
+					<ref bean="positionCalculation" />
+				</entry>
+<!--					<entry>-->
+<!--						<key><value>6</value></key>-->
+<!--						<ref bean="upLowCalculation" />-->
+<!--					</entry>-->
+<!--					<entry>-->
+<!--						<key><value>7</value></key>-->
+<!--						<ref bean="userAttrCalculation" />-->
+<!--					</entry>-->
+<!--					<entry>-->
+<!--						<key><value>8</value></key>-->
+<!--						<ref bean="orgAttrCalculation" />-->
+<!--					</entry>-->
+				<entry>
+						<key><value>9</value></key>
+						<ref bean="sameDepartmentCalculation" />
+				</entry>
+				<entry>
+					<key><value>10</value></key>
+					<ref bean="sameNodeCalculation" />
+				</entry>
+				<entry>
+					<key><value>11</value></key>
+						<ref bean="directLeaderCalculation" />
+				</entry>
+<!--					<entry>-->
+<!--						<key><value>12</value></key>-->
+<!--						<ref bean="scriptCalculation" />-->
+<!--					</entry>-->
+					<entry>
+						<key><value>14</value></key>
+						<ref bean="startUserLeaderCalculation" />
+					</entry>
+				
+					<entry>
+						<key><value>15</value></key>
+						<ref bean="prevUserLeaderCalculation" />
+					</entry>
+					<entry>
+						<key><value>13</value></key>
+						<ref bean="prevUserOrgLeaderCalculation" />
+					</entry>
+<!--					<entry>-->
+<!--						<key><value>16</value></key>-->
+<!--						<ref bean="pervTypeUserLeaderCalculation" />-->
+<!--					</entry>-->
+			</map>
+		</property> 
+	</bean>	
+
+</beans>

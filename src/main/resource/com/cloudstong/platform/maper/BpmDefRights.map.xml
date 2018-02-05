@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmDefRights">
+	<resultMap id="BpmDefRights" type="com.cloudstong.platform.third.bpm.model.BpmDefRights">
+		<id property="id" column="id" jdbcType="NUMERIC"/>
+		<result property="defKey" column="defKey" jdbcType="VARCHAR"/>
+		<result property="flowTypeId" column="flowTypeId" jdbcType="NUMERIC"/>
+		<result property="rightType" column="rightType" jdbcType="NUMERIC"/>
+		<result property="ownerId" column="ownerId" jdbcType="NUMERIC"/>
+		<result property="ownerName" column="ownerName" jdbcType="VARCHAR"/>
+		<result property="searchType" column="searchType" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		id,defKey,flowTypeId,rightType,ownerId,ownerName,searchType
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(id)"> AND id  =#{id} </if>
+			<if test="@Ognl@isNotEmpty(defKey)"> AND defKey  =#{defKey} </if>
+			<if test="@Ognl@isNotEmpty(flowTypeId)"> AND flowTypeId  =#{flowTypeId} </if>
+			<if test="@Ognl@isNotEmpty(rightType)"> AND rightType  =#{rightType} </if>
+			<if test="@Ognl@isNotEmpty(ownerId)"> AND ownerId  =#{ownerId} </if>
+			<if test="@Ognl@isNotEmpty(ownerName)"> AND ownerName  LIKE #{ownerName}  </if>
+			<if test="@Ognl@isNotEmpty(searchType)"> AND searchType  =#{searchType} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmDefRights">
+		INSERT INTO BPM_DEF_RIGHTS
+		(id,defKey,flowTypeId,rightType,ownerId,ownerName,searchType)
+		VALUES
+		(#{id,jdbcType=NUMERIC}, #{defKey,jdbcType=VARCHAR}, #{flowTypeId,jdbcType=NUMERIC}, #{rightType,jdbcType=NUMERIC}, #{ownerId,jdbcType=NUMERIC}, #{ownerName,jdbcType=VARCHAR}, #{searchType,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_DEF_RIGHTS 
+		WHERE
+		id=#{id}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmDefRights">
+		UPDATE BPM_DEF_RIGHTS SET
+		defKey=#{defKey,jdbcType=VARCHAR} , 
+		flowTypeId=#{flowTypeId,jdbcType=NUMERIC} , 
+		rightType=#{rightType,jdbcType=NUMERIC} , 
+		ownerId=#{ownerId,jdbcType=NUMERIC} , 
+		ownerName=#{ownerName,jdbcType=VARCHAR} , 
+		searchType=#{searchType,jdbcType=NUMERIC} 
+		WHERE
+		id=#{id}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmDefRights">
+		SELECT <include refid="columns"/>
+		FROM BPM_DEF_RIGHTS
+		WHERE
+		id=#{id}
+	</select>
+	
+	<select id="getAll" resultMap="BpmDefRights">
+		SELECT <include refid="columns"/>
+		FROM BPM_DEF_RIGHTS   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by id  desc
+		</if>
+	</select>
+	
+	
+	
+	<select id="getDefRight" resultMap="BpmDefRights">
+		SELECT <include refid="columns"/>
+		FROM BPM_DEF_RIGHTS 
+		where searchType =#{searchType} and defKey = #{defKey} and rightType = #{rightType} 
+	</select>
+	
+	<select id="getTypeRight" resultMap="BpmDefRights">
+		SELECT <include refid="columns"/>
+		FROM BPM_DEF_RIGHTS 
+		where searchType =#{searchType} and flowTypeId = #{typeId} and rightType = #{rightType} 
+	</select>
+	
+	
+	<delete id="delByTypeId" parameterType="java.lang.Long">
+		DELETE FROM BPM_DEF_RIGHTS 
+		WHERE flowTypeId=#{typeId}
+	</delete>
+	
+	<delete id="delByDefKey" parameterType="java.lang.String">
+		DELETE FROM BPM_DEF_RIGHTS 
+		WHERE defKey=#{defKey}
+	</delete>
+	
+	<select id="getByDefKey" resultMap="BpmDefRights" parameterType="java.lang.String">
+		SELECT <include refid="columns"/>
+		FROM BPM_DEF_RIGHTS 
+		where defKey = #{defKey}
+	</select>
+	
+	<select id="getByTypeId" resultMap="BpmDefRights" parameterType="java.lang.String">
+		SELECT <include refid="columns"/>
+		FROM BPM_DEF_RIGHTS 
+		where flowTypeId = #{typeId}
+	</select>
+
+
+</mapper>

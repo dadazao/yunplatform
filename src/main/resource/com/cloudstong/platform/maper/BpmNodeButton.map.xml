@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmNodeButton">
+	<resultMap id="BpmNodeButton" type="com.cloudstong.platform.third.bpm.model.BpmNodeButton">
+		<id property="id" column="ID" jdbcType="NUMERIC"/>
+		<result property="defId" column="DEFID" jdbcType="VARCHAR"/>
+		<result property="actdefid" column="ACTDEFID" jdbcType="VARCHAR"/>
+		<result property="isstartform" column="ISSTARTFORM" jdbcType="NUMERIC"/>
+		<result property="nodeid" column="NODEID" jdbcType="VARCHAR"/>
+		<result property="btnname" column="BTNNAME" jdbcType="VARCHAR"/>
+		<result property="iconclsname" column="ICONCLSNAME" jdbcType="VARCHAR"/>
+		<result property="operatortype" column="OPERATORTYPE" jdbcType="NUMERIC"/>
+		<result property="prevscript" column="PREVSCRIPT" jdbcType="VARCHAR"/>
+		<result property="afterscript" column="AFTERSCRIPT" jdbcType="VARCHAR"/>
+		<result property="nodetype" column="NODETYPE" jdbcType="NUMERIC"/>
+		<result property="sn" column="SN" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID,DEFID,ACTDEFID,ISSTARTFORM,NODEID,BTNNAME,ICONCLSNAME,OPERATORTYPE,PREVSCRIPT,AFTERSCRIPT,NODETYPE,SN
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(actdefid)"> AND ACTDEFID  LIKE #{actdefid}  </if>
+			<if test="@Ognl@isNotEmpty(isstartform)"> AND ISSTARTFORM  =#{isstartform} </if>
+			<if test="@Ognl@isNotEmpty(nodeid)"> AND NODEID  LIKE #{nodeid}  </if>
+			<if test="@Ognl@isNotEmpty(btnname)"> AND BTNNAME  LIKE #{btnname}  </if>
+			<if test="@Ognl@isNotEmpty(iconclsname)"> AND ICONCLSNAME  LIKE #{iconclsname}  </if>
+			<if test="@Ognl@isNotEmpty(operatortype)"> AND OPERATORTYPE  =#{operatortype} </if>
+			<if test="@Ognl@isNotEmpty(nodetype)"> AND NODETYPE  =#{nodetype} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeButton">
+		INSERT INTO BPM_NODE_BTN
+		(ID,DEFID,ACTDEFID,ISSTARTFORM,NODEID,BTNNAME,ICONCLSNAME,OPERATORTYPE,PREVSCRIPT,AFTERSCRIPT,NODETYPE,SN)
+		VALUES
+		(#{id,jdbcType=NUMERIC},#{defId,jdbcType=NUMERIC}, #{actdefid,jdbcType=VARCHAR}, #{isstartform,jdbcType=NUMERIC}, #{nodeid,jdbcType=VARCHAR}, #{btnname,jdbcType=VARCHAR}, #{iconclsname,jdbcType=VARCHAR}, #{operatortype,jdbcType=NUMERIC}, #{prevscript,jdbcType=VARCHAR}, #{afterscript,jdbcType=VARCHAR}, #{nodetype,jdbcType=NUMERIC}, #{sn,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_BTN 
+		WHERE
+		ID=#{id}
+	</delete>
+	
+	<delete id="delByStartForm" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_BTN  WHERE defId=#{defId} and isstartform=1
+	</delete>
+	
+	<delete id="delByNodeId" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_BTN  WHERE defId=#{defId} and nodeid=#{nodeId} and isstartform=0
+	</delete>
+	
+	<delete id="delByDefId" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_BTN  WHERE defId=#{defId} 
+	</delete>
+	
+	<delete id="delByActDefId" parameterType="java.lang.String">
+		DELETE FROM BPM_NODE_BTN
+		WHERE
+		actDefId=#{actDefId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeButton">
+		UPDATE BPM_NODE_BTN SET
+		DEFID=#{defId,jdbcType=VARCHAR} , 
+		ACTDEFID=#{actdefid,jdbcType=VARCHAR} , 
+		ISSTARTFORM=#{isstartform,jdbcType=NUMERIC} , 
+		NODEID=#{nodeid,jdbcType=VARCHAR} , 
+		BTNNAME=#{btnname,jdbcType=VARCHAR} , 
+		ICONCLSNAME=#{iconclsname,jdbcType=VARCHAR} , 
+		OPERATORTYPE=#{operatortype,jdbcType=NUMERIC} , 
+		PREVSCRIPT=#{prevscript,jdbcType=VARCHAR} , 
+		AFTERSCRIPT=#{afterscript,jdbcType=VARCHAR} , 
+		NODETYPE=#{nodetype,jdbcType=NUMERIC} , 
+		SN=#{sn,jdbcType=NUMERIC} 
+		WHERE
+		ID=#{id}
+	</update>
+	
+	<update id="updSn" parameterType="Map">
+		UPDATE BPM_NODE_BTN SET SN=#{sn,jdbcType=NUMERIC}  WHERE ID=#{id}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmNodeButton">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_BTN
+		WHERE
+		ID=#{id}
+	</select>
+	
+	<select id="getByDefId" parameterType="String" resultMap="BpmNodeButton">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_BTN
+		WHERE
+		defId=#{defId}  order by sn asc
+	</select>
+	
+	<select id="getByDefNodeId" parameterType="Map" resultMap="BpmNodeButton">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_BTN
+		WHERE
+		defId=#{defId} and NODEID=#{nodeId} and isstartform=0 order by sn asc
+	</select>
+	
+	<select id="getByStartForm" parameterType="String" resultMap="BpmNodeButton">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_BTN
+		WHERE defId=#{defId}  and isstartform=1 order by sn asc
+	</select>
+	
+	<select id="isStartFormExist" parameterType="Map"  resultType="Integer">
+		SELECT count(*)
+		FROM BPM_NODE_BTN
+		WHERE defId=#{defId}  and isstartform=1  and operatortype=#{operatortype}
+	</select>
+	
+	<select id="isExistByNodeId" parameterType="Map"  resultType="Integer">
+		SELECT count(*)
+		FROM BPM_NODE_BTN
+		WHERE defId=#{defId}  and isstartform=0  and operatortype=#{operatortype} and  NODEID=#{nodeId}
+	</select>
+	
+	<select id="isStartFormExistForUpd" parameterType="Map"  resultType="Integer">
+		SELECT count(*)
+		FROM BPM_NODE_BTN
+		WHERE defId=#{defId}  and isstartform=1  and operatortype=#{operatortype} and id &lt;>#{id}
+	</select>
+	
+	<select id="isExistByNodeIdForUpd" parameterType="Map"  resultType="Integer">
+		SELECT count(*)
+		FROM BPM_NODE_BTN
+		WHERE defId=#{defId}  and isstartform=0  and operatortype=#{operatortype} and  NODEID=#{nodeId}
+		and id &lt;>#{id}
+	</select>
+	
+	
+	<select id="getAll" resultMap="BpmNodeButton">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_BTN   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by ID  desc
+		</if>
+	</select>
+</mapper>

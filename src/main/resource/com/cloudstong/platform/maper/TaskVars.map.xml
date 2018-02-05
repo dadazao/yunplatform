@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloudstong.platform.third.bpm.model.TaskVars">
+	<resultMap id="TaskVars" type="com.cloudstong.platform.third.bpm.model.TaskVars">
+	<id property="id" column="ID_"  />
+    <result property="revision" column="REV_" />
+	<result property="type" column="TYPE_"  />
+	<result property="name" column="NAME_"  />
+    <result property="processInstanceId" column="PROC_INST_ID_"  />
+    <result property="executionId" column="EXECUTION_ID_"  />
+    <result property="taskId" column="TASK_ID_" />
+	<result property="byteArrayValueId" column="BYTEARRAY_ID_"  />
+	<result property="doubleValue" column="DOUBLE_"  />
+	<result property="textValue" column="TEXT_" />
+	<result property="textValue2" column="TEXT2_" />
+	<result property="longValue" column="LONG_" />
+	</resultMap>
+	
+	<sql id="columns">
+		ID_, REV_, TYPE_, NAME_, EXECUTION_ID_, PROC_INST_ID_, BYTEARRAY_ID_, DOUBLE_, LONG_, TEXT_, TEXT2_, TASK_ID_
+	</sql>
+	
+	<select id="getTaskVars"   resultMap="TaskVars">
+		SELECT <include refid="columns"/> FROM ACT_RU_VARIABLE  
+        where  type_ <![CDATA[ <>]]> 'serializable'
+        <if test="@Ognl@isNotEmpty(name)"> AND name_ LIKE #{name} </if>
+        <if test="@Ognl@isNotEmpty(executionId)"> AND EXECUTION_ID_=#{executionId} </if>
+    </select>
+   <update id="update" parameterType="com.cloudstong.platform.third.bpm.model.TaskVars">
+		UPDATE ACT_RU_VARIABLE SET
+		DOUBLE_=#{doubleValue,jdbcType=NUMERIC}, 
+		TEXT_=#{textValue,jdbcType=VARCHAR},
+		TEXT2_=#{textValue2,jdbcType=VARCHAR},
+		LONG_=#{longValue,jdbcType=NUMERIC}
+		WHERE
+		ID_=#{id}
+	</update>
+	<select id="getById" parameterType="String" resultMap="TaskVars">
+		SELECT ID_,REV_,TYPE_,NAME_,PROC_INST_ID_,EXECUTION_ID_,TASK_ID_,BYTEARRAY_ID_,DOUBLE_,TEXT_,TEXT2_,LONG_
+		FROM ACT_RU_VARIABLE
+		WHERE
+		ID_=#{id}
+	</select>
+  
+	
+    
+</mapper>

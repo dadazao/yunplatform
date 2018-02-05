@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmNodeWebService">
+	<resultMap id="BpmNodeWebService"
+		type="com.cloudstong.platform.third.bpm.model.BpmNodeWebService">
+		<id property="id" column="ID" jdbcType="NUMERIC" />
+		<result property="actDefId" column="ACTDEFID" jdbcType="VARCHAR" />
+		<result property="nodeId" column="NODEID" jdbcType="VARCHAR" />
+		<result property="document" column="DOCUMENT" jdbcType="CLOB" />
+	</resultMap>
+
+	<sql id="columns">
+		ID,ACTDEFID,NODEID,DOCUMENT
+	</sql>
+
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(id)"> AND ID =#{id} </if>
+			<if test="@Ognl@isNotEmpty(actDefId)"> AND ACTDEFID LIKE #{actDefId}  </if>
+			<if test="@Ognl@isNotEmpty(nodeId)"> AND NODEID LIKE #{nodeId}  </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeWebService">
+		INSERT INTO BPM_NODE_WEBSERVICE
+		(<include refid="columns" />)
+		VALUES
+		(#{id,jdbcType=NUMERIC},
+		#{actDefId,jdbcType=VARCHAR}, #{nodeId,jdbcType=VARCHAR},
+		#{document,jdbcType=CLOB})
+	</insert>
+
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM
+		BPM_NODE_WEBSERVICE
+		WHERE
+		ID=#{id}
+	</delete>
+
+	<delete id="delByActDefId" parameterType="java.lang.String">
+		DELETE FROM BPM_NODE_WEBSERVICE
+		WHERE
+		actDefId=#{actDefId}
+	</delete>
+
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeWebService">
+		UPDATE BPM_NODE_WEBSERVICE SET
+		ACTDEFID=#{actDefId,jdbcType=VARCHAR},
+		NODEID=#{nodeId,jdbcType=VARCHAR},
+		DOCUMENT=#{document,jdbcType=CLOB}
+		WHERE
+		ID=#{id}
+	</update>
+
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmNodeWebService">
+		SELECT
+		<include refid="columns" />
+		FROM BPM_NODE_WEBSERVICE
+		WHERE
+		ID=#{id}
+	</select>
+
+	<select id="getAll" resultMap="BpmNodeWebService">
+		SELECT
+		<include refid="columns" />
+		FROM BPM_NODE_WEBSERVICE
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+			order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+			order by ID desc
+		</if>
+	</select>
+
+	<select id="getBpmNodeWebService" parameterType="Map" resultMap="BpmNodeWebService">
+		SELECT
+		<include refid="columns" />
+		FROM BPM_NODE_WEBSERVICE
+		where		
+		nodeId=#{nodeId}
+		and actDefId=#{actDefId}
+	</select>
+
+	<delete id="deleteByNodeIdActDefId" parameterType="Map">
+		DELETE FROM
+		BPM_NODE_WEBSERVICE
+		where
+		nodeId=#{nodeId}
+		and actDefId=#{actDefId}
+	</delete>
+</mapper>

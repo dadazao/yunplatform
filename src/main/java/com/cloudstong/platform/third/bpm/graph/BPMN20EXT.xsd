@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.jee-soft.cn/BPMN20EXT" 
+xmlns:tns="http://www.jee-soft.cn/BPMN20EXT" 
+elementFormDefault="qualified">
+	<element name="order" type="int">
+		<annotation>
+			<documentation>Extension Element for task to indicate order sequence.</documentation>
+		</annotation>
+	</element>
+</schema>

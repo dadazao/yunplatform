@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmNodePrivilege">
+	<resultMap id="BpmNodePrivilege" type="com.cloudstong.platform.third.bpm.model.BpmNodePrivilege">
+		<id property="privilegeid" column="PRIVILEGEID" jdbcType="NUMERIC"/>
+		<result property="actdefid" column="ACTDEFID" jdbcType="VARCHAR"/>
+		<result property="nodeid" column="NODEID" jdbcType="VARCHAR"/>
+		<result property="privilegemode" column="PRIVILEGEMODE" jdbcType="NUMERIC"/>
+		<result property="usertype" column="USERTYPE" jdbcType="NUMERIC"/>
+		<result property="cmpnames" column="CMPNAMES" jdbcType="CLOB"/>
+		<result property="cmpids" column="CMPIDS" jdbcType="CLOB"/>
+	</resultMap>
+
+	<sql id="columns">
+		PRIVILEGEID,ACTDEFID,NODEID,PRIVILEGEMODE,USERTYPE,CMPNAMES,CMPIDS
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(privilegeid)"> AND PRIVILEGEID  =#{privilegeid} </if>
+			<if test="@Ognl@isNotEmpty(actdefid)"> AND ACTDEFID  LIKE #{actdefid}  </if>
+			<if test="@Ognl@isNotEmpty(nodeid)"> AND NODEID  LIKE #{nodeid}  </if>
+			<if test="@Ognl@isNotEmpty(privilegemode)"> AND PRIVILEGEMODE  =#{privilegemode} </if>
+			<if test="@Ognl@isNotEmpty(usertype)"> AND USERTYPE  =#{usertype} </if>
+			<if test="@Ognl@isNotEmpty(cmpnames)"> AND CMPNAMES  LIKE #{cmpnames}  </if>
+			<if test="@Ognl@isNotEmpty(cmpids)"> AND CMPIDS  LIKE #{cmpids}  </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodePrivilege">
+		INSERT INTO BPM_NODE_PRIVILEGE
+		(PRIVILEGEID,ACTDEFID,NODEID,PRIVILEGEMODE,USERTYPE,CMPNAMES,CMPIDS)
+		VALUES
+		(#{privilegeid,jdbcType=NUMERIC}, #{actdefid,jdbcType=VARCHAR}, #{nodeid,jdbcType=VARCHAR}, #{privilegemode,jdbcType=NUMERIC}, #{usertype,jdbcType=NUMERIC}, #{cmpnames,jdbcType=CLOB}, #{cmpids,jdbcType=CLOB})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_PRIVILEGE 
+		WHERE
+		PRIVILEGEID=#{privilegeid}
+	</delete>
+	
+	<delete id="delByDefIdAndNodeId" parameterType="Map">
+		DELETE FROM BPM_NODE_PRIVILEGE WHERE actDefId=#{actDefId} and nodeId=#{nodeId} 
+	</delete>
+	
+	<delete id="delByActDefId" parameterType="java.lang.String">
+		DELETE FROM BPM_NODE_PRIVILEGE
+		WHERE
+		actDefId=#{actDefId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodePrivilege">
+		UPDATE BPM_NODE_PRIVILEGE SET
+		ACTDEFID=#{actdefid,jdbcType=VARCHAR},
+		NODEID=#{nodeid,jdbcType=VARCHAR},
+		PRIVILEGEMODE=#{privilegemode,jdbcType=NUMERIC},
+		USERTYPE=#{usertype,jdbcType=NUMERIC},
+		CMPNAMES=#{cmpnames,jdbcType=CLOB},
+		CMPIDS=#{cmpids,jdbcType=CLOB}
+		WHERE
+		PRIVILEGEID=#{privilegeid}
+	</update>
+		    
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmNodePrivilege">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_PRIVILEGE
+		WHERE
+		PRIVILEGEID=#{privilegeid}
+	</select>
+	
+	<select id="getAll" resultMap="BpmNodePrivilege">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_PRIVILEGE   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by PRIVILEGEID  desc
+		</if>
+	</select>
+	
+	<select id="getPrivilegesByDefIdAndNodeId" resultMap="BpmNodePrivilege" parameterType="Map">
+		SELECT * FROM BPM_NODE_PRIVILEGE WHERE actDefId=#{actDefId} and nodeId=#{nodeId} 
+	</select>
+	
+	<select id="getPrivilegesByDefIdAndNodeIdAndMode" resultMap="BpmNodePrivilege" parameterType="Map">
+		SELECT * FROM BPM_NODE_PRIVILEGE WHERE actDefId=#{actDefId} and nodeId=#{nodeId} and (privilegeMode=0 or privilegeMode=#{privilegeMode})
+	</select>
+	
+</mapper>

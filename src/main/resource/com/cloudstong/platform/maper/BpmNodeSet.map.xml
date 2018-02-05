@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmNodeSet">
+	<resultMap id="BpmNodeSet" type="com.cloudstong.platform.third.bpm.model.BpmNodeSet">
+		<id property="setId" column="setId" jdbcType="NUMERIC"/>
+		<result property="defId" column="defId" jdbcType="NUMERIC"/>
+		<result property="nodeName" column="nodeName" jdbcType="VARCHAR"/>
+		<result property="nodeOrder" column="nodeOrder" jdbcType="NUMERIC"/>
+		<result property="nodeId" column="nodeId" jdbcType="VARCHAR"/>
+		<result property="formType" column="formType" jdbcType="NUMERIC"/>
+		<result property="formUrl" column="formUrl" jdbcType="VARCHAR"/>
+		<result property="formKey" column="formKey" jdbcType="NUMERIC"/>
+		<result property="actDefId" column="actDefId" jdbcType="VARCHAR"/>
+		<result property="formDefName" column="formDefName" jdbcType="VARCHAR"/>
+		<result property="nodeType" column="nodeType" jdbcType="NUMERIC"/>
+		<result property="joinTaskKey" column="joinTaskKey" jdbcType="VARCHAR"/>
+		<result property="joinTaskName" column="joinTaskName" jdbcType="VARCHAR"/>
+		<result property="beforeHandler" column="beforeHandler" jdbcType="VARCHAR"/>
+		<result property="afterHandler" column="afterHandler" jdbcType="VARCHAR"/>
+		<result property="jumpType" column="jumpType" jdbcType="VARCHAR"/>
+		<result property="isJumpForDef" column="isJumpForDef" jdbcType="NUMERIC"/>
+		<result property="isHideOption" column="isHideOption" jdbcType="NUMERIC"/>
+		<result property="isHidePath" column="isHidePath" jdbcType="NUMERIC"/>
+		<result property="detailUrl" column="detailUrl" jdbcType="VARCHAR"/>
+		<result property="isAllowMobile" column="isAllowMobile" jdbcType="NUMERIC" />
+		<result property="informType" column="informType" jdbcType="VARCHAR"/>
+	</resultMap>
+	<resultMap id="BpmNodeSetExt" extends="BpmNodeSet" type="com.cloudstong.platform.third.bpm.model.BpmNodeSet">
+		<result property="formDefId" column="formDefId" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		setId,defId,nodeName,nodeId,formType,formUrl,formKey,actDefId,formDefName,
+		nodeType,joinTaskKey,joinTaskName,beforeHandler,afterHandler,jumpType,
+		setType,isJumpForDef,isHideOption,isHidePath,detailUrl,isAllowMobile,nodeOrder,informType
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(setId)"> AND setId  =#{setId} </if>
+			<if test="@Ognl@isNotEmpty(defId)"> AND defId  =#{defId} </if>
+			<if test="@Ognl@isNotEmpty(nodeName)"> AND nodeName  LIKE #{nodeName}  </if>
+			<if test="@Ognl@isNotEmpty(actDefId)"> AND actDefId  =#{actDefId} </if>
+			<if test="@Ognl@isNotEmpty(nodeId)"> AND nodeId  LIKE #{nodeId}  </if>
+			<if test="@Ognl@isNotEmpty(formType)"> AND formType  =#{formType} </if>
+			<if test="@Ognl@isNotEmpty(formUrl)"> AND formUrl  LIKE #{formUrl}  </if>
+			<if test="@Ognl@isNotEmpty(formKey)"> AND formKey  =#{formKey} </if>
+			<if test="@Ognl@isNotEmpty(formDefName)"> AND formDefName  =#{formDefName} </if>
+			AND setType =0
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeSet">
+		INSERT INTO bpm_node_set
+		(<include refid="columns"/>)
+		VALUES
+		(#{setId,jdbcType=NUMERIC}, #{defId,jdbcType=NUMERIC}, #{nodeName,jdbcType=VARCHAR}, #{nodeId,jdbcType=VARCHAR}, 
+		#{formType,jdbcType=NUMERIC}, #{formUrl,jdbcType=VARCHAR}, #{formKey,jdbcType=NUMERIC}, #{actDefId,jdbcType=VARCHAR},
+		#{formDefName,jdbcType=VARCHAR}, #{nodeType,jdbcType=NUMERIC}, #{joinTaskKey,jdbcType=VARCHAR}, #{joinTaskName,jdbcType=VARCHAR}, 
+		#{beforeHandler,jdbcType=VARCHAR}, #{afterHandler,jdbcType=VARCHAR},
+		#{jumpType,jdbcType=VARCHAR},#{setType,jdbcType=NUMERIC},#{isJumpForDef,jdbcType=NUMERIC},
+		#{isHideOption,jdbcType=NUMERIC},#{isHidePath,jdbcType=NUMERIC},#{detailUrl,jdbcType=VARCHAR},#{isAllowMobile,jdbcType=NUMERIC},#{nodeOrder,jdbcType=NUMERIC},#{informType,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_SET 
+		WHERE
+		setId=#{setId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeSet">
+		UPDATE bpm_node_set SET
+		defId=#{defId,jdbcType=NUMERIC} , 
+		nodeName=#{nodeName,jdbcType=VARCHAR} , 
+		nodeId=#{nodeId,jdbcType=VARCHAR} , 
+		formType=#{formType,jdbcType=NUMERIC} , 
+		formUrl=#{formUrl,jdbcType=VARCHAR} , 
+		formKey=#{formKey,jdbcType=NUMERIC} , 
+		actDefId=#{actDefId,jdbcType=VARCHAR} , 
+		formDefName=#{formDefName,jdbcType=VARCHAR} , 
+		nodeType=#{nodeType,jdbcType=NUMERIC} , 
+		joinTaskKey=#{joinTaskKey,jdbcType=VARCHAR} , 
+		joinTaskName=#{joinTaskName,jdbcType=VARCHAR} , 
+		beforeHandler=#{beforeHandler,jdbcType=VARCHAR} , 
+		afterHandler=#{afterHandler,jdbcType=VARCHAR} ,
+		jumpType=#{jumpType,jdbcType=VARCHAR} ,
+		setType=#{setType,jdbcType=NUMERIC},
+		isJumpForDef=#{isJumpForDef,jdbcType=NUMERIC},
+		isHideOption=#{isHideOption,jdbcType=NUMERIC},
+		isHidePath=#{isHidePath,jdbcType=NUMERIC},
+		detailUrl=#{detailUrl,jdbcType=VARCHAR},
+		isAllowMobile=#{isAllowMobile,jdbcType=NUMERIC},
+		nodeOrder=#{nodeOrder,jdbcType=NUMERIC},
+		informType=#{informType,jdbcType=VARCHAR}
+		WHERE
+		setId=#{setId}
+	</update>
+	
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmNodeSet">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_SET
+		WHERE
+		setId=#{setId}
+	</select>
+	
+	<select id="getAll" resultMap="BpmNodeSet">
+		SELECT <include refid="columns"/>
+		FROM BPM_NODE_SET   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by nodeOrder  desc
+		</if>
+	</select>
+	
+	<select id="getByDefId" parameterType="java.lang.Long" resultMap="BpmNodeSet">
+		SELECT <include refid="columns"/>
+		FROM bpm_node_set
+		WHERE defId=#{defId} and setType=0
+		ORDER BY nodeOrder 
+	</select>
+	<select id="getAllByDefId" parameterType="java.lang.Long" resultMap="BpmNodeSet">
+		SELECT <include refid="columns"/>
+		FROM bpm_node_set
+		WHERE defId=#{defId}
+	</select>
+	<select id="getByActDef" parameterType="String" resultMap="BpmNodeSet">
+		SELECT <include refid="columns"/>
+		FROM bpm_node_set
+		WHERE actdefid=#{actDefId}  and setType=0
+		ORDER BY nodeOrder 
+	</select>
+	
+	<select id="getByActDefId" parameterType="String" resultMap="BpmNodeSet">
+	   SELECT a.setId,a.defId,a.nodeName,a.nodeId,a.formType,a.formUrl,a.formKey,a.actDefId,a.formDefName,a.nodeType,
+      a.joinTaskKey,a.joinTaskName,a.beforeHandler,a.afterHandler,
+      a.jumpType,a.setType,a.nodeOrder,b.formdefid
+      FROM bpm_node_set a left join bpm_form_def b
+      on a.formkey =b.formkey where a.actdefid=#{actDefId} 
+      and ((a.formtype=0 and b.isdefault=1 and b.ispublished=1) or a.formtype=-1 or a.formtype=1 ) 
+      ORDER BY nodeOrder
+	</select>
+	
+	<select id="getOnlineFormByActDefId" parameterType="String" resultMap="BpmNodeSet">
+	   SELECT a.setId,a.defId,a.nodeName,a.nodeId,a.formType,a.formUrl,a.formKey,a.actDefId,a.formDefName,a.nodeType,
+      a.joinTaskKey,a.joinTaskName,a.beforeHandler,a.afterHandler,
+      a.jumpType,a.setType,a.nodeOrder,b.formdefid
+      FROM bpm_node_set a  join bpm_form_def b
+      on a.formkey =b.formkey where a.actdefid=#{actDefId} 
+      and a.formtype=0 and b.isdefault=1 and b.ispublished=1 
+      ORDER BY nodeOrder
+	</select>
+	
+
+	<select id="getByDefIdNodeId" resultMap="BpmNodeSet">
+		SELECT *
+		FROM BPM_NODE_SET
+		WHERE defId=#{defId} and nodeId=#{nodeId} and setType=0
+	</select>
+	
+	<select id="getBySetType" resultMap="BpmNodeSet">
+		SELECT * FROM BPM_NODE_SET WHERE defId=#{defId} and setType=#{setType}
+	</select>
+	
+	<select id="getByActDefIdJoinTaskKey" resultMap="BpmNodeSet">
+		SELECT * FROM BPM_NODE_SET  where actDefId=#{actDefId} and joinTaskKey=#{joinTaskKey} and setType=0
+	</select>
+	
+	<select id="getByActDefIdNodeId" resultMap="BpmNodeSet">
+		SELECT *
+		FROM BPM_NODE_SET
+		WHERE actDefId=#{actDefId} and nodeId=#{nodeId} and setType=0
+	</select>
+	
+	<delete id="delByDefId" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_SET  WHERE defId=#{defId}
+	</delete>
+	
+	<delete id="delByStartGlobalDefId" parameterType="java.lang.Long">
+		DELETE FROM BPM_NODE_SET  WHERE defId=#{defId} and setType>=1
+	</delete>
+	
+	<select id="getByStartGlobal" resultMap="BpmNodeSet" parameterType="java.lang.Long">
+		SELECT * FROM BPM_NODE_SET WHERE defId=#{defId} and setType>=1
+	</select>
+	
+	<update id="updateIsJumpForDef" parameterType="java.util.Map">
+		update BPM_NODE_SET set isJumpForDef=#{isJumpForDef,jdbcType=NUMERIC} where nodeId=#{nodeId} and actDefId=#{actDefId}
+	</update>
+	
+	
+	
+</mapper>

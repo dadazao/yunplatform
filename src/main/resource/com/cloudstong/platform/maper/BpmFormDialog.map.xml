@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.form.model.BpmFormDialog">
+	<resultMap id="BpmFormDialog" type="com.cloudstong.platform.third.bpm.form.model.BpmFormDialog">
+		<id property="id" column="ID" jdbcType="NUMERIC"/>
+		<result property="name" column="NAME" jdbcType="VARCHAR"/>
+		<result property="alias" column="ALIAS" jdbcType="VARCHAR"/>
+		<result property="style" column="STYLE" jdbcType="NUMERIC"/>
+		<result property="width" column="WIDTH" jdbcType="NUMERIC"/>
+		<result property="height" column="HEIGHT" jdbcType="NUMERIC"/>
+		<result property="issingle" column="ISSINGLE" jdbcType="NUMERIC"/>
+		<result property="needpage" column="NEEDPAGE" jdbcType="NUMERIC"/>
+		<result property="istable" column="ISTABLE" jdbcType="NUMERIC"/>
+		<result property="objname" column="OBJNAME" jdbcType="VARCHAR"/>
+		<result property="displayfield" column="DISPLAYFIELD" jdbcType="VARCHAR"/>
+		<result property="conditionfield" column="CONDITIONFIELD" jdbcType="VARCHAR"/>
+		<result property="resultfield" column="RESULTFIELD" jdbcType="VARCHAR"/>
+		<result property="dsname" column="DSNAME" jdbcType="VARCHAR"/>
+		<result property="dsalias" column="DSALIAS" jdbcType="VARCHAR"/>
+		<result property="pagesize" column="pagesize" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID,NAME,ALIAS,STYLE,WIDTH,HEIGHT,ISSINGLE,NEEDPAGE,ISTABLE,OBJNAME,DISPLAYFIELD,CONDITIONFIELD,RESULTFIELD,DSNAME,DSALIAS,PAGESIZE
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			
+			<if test="@Ognl@isNotEmpty(name)"> AND NAME  LIKE #{name}  </if>
+			<if test="@Ognl@isNotEmpty(alias)"> AND ALIAS  LIKE #{alias}  </if>
+			<if test="@Ognl@isNotEmpty(dsalias)"> AND DSALIAS  LIKE #{dsalias}  </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormDialog">
+		INSERT INTO BPM_FORM_DIALOG
+		(ID,NAME,ALIAS,STYLE,WIDTH,HEIGHT,ISSINGLE,NEEDPAGE,ISTABLE,OBJNAME,DISPLAYFIELD,CONDITIONFIELD,RESULTFIELD,DSNAME,DSALIAS,PAGESIZE)
+		VALUES
+		(#{id,jdbcType=NUMERIC}, #{name,jdbcType=VARCHAR}, #{alias,jdbcType=VARCHAR},
+		 #{style,jdbcType=NUMERIC}, #{width,jdbcType=NUMERIC}, #{height,jdbcType=NUMERIC},
+		  #{issingle,jdbcType=NUMERIC}, #{needpage,jdbcType=NUMERIC}, #{istable,jdbcType=NUMERIC},
+		   #{objname,jdbcType=VARCHAR}, #{displayfield,jdbcType=VARCHAR}, #{conditionfield,jdbcType=VARCHAR}, 
+		   #{resultfield,jdbcType=VARCHAR}, #{dsname,jdbcType=VARCHAR}, #{dsalias,jdbcType=VARCHAR},#{pagesize,jdbcType=NUMERIC})
+	</insert>
+	
+	
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_FORM_DIALOG 
+		WHERE
+		ID=#{id}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.form.model.BpmFormDialog">
+		UPDATE BPM_FORM_DIALOG SET
+		NAME=#{name,jdbcType=VARCHAR} , 
+		ALIAS=#{alias,jdbcType=VARCHAR} , 
+		STYLE=#{style,jdbcType=NUMERIC} , 
+		WIDTH=#{width,jdbcType=NUMERIC} , 
+		HEIGHT=#{height,jdbcType=NUMERIC} , 
+		ISSINGLE=#{issingle,jdbcType=NUMERIC} , 
+		NEEDPAGE=#{needpage,jdbcType=NUMERIC} , 
+		ISTABLE=#{istable,jdbcType=NUMERIC} , 
+		OBJNAME=#{objname,jdbcType=VARCHAR} , 
+		DISPLAYFIELD=#{displayfield,jdbcType=VARCHAR} , 
+		CONDITIONFIELD=#{conditionfield,jdbcType=VARCHAR} , 
+		RESULTFIELD=#{resultfield,jdbcType=VARCHAR} , 
+		DSNAME=#{dsname,jdbcType=VARCHAR} , 
+		DSALIAS=#{dsalias,jdbcType=VARCHAR} ,
+		pagesize=#{pagesize,jdbcType=NUMERIC} 
+		WHERE
+		ID=#{id}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmFormDialog">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_DIALOG
+		WHERE
+		ID=#{id}
+	</select>
+	
+	
+	<select id="getByAlias" parameterType="String" resultMap="BpmFormDialog">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_DIALOG
+		WHERE
+		ALIAS=#{alias}
+	</select>
+	
+	<select id="isExistAlias" parameterType="String" resultType="Integer">
+		SELECT count(*) amount FROM BPM_FORM_DIALOG WHERE ALIAS=#{alias}
+	</select>
+	
+	<select id="isExistAliasForUpd" parameterType="Map" resultType="Integer">
+		SELECT count(*) amount FROM BPM_FORM_DIALOG WHERE id &lt;>#{id} and  ALIAS=#{alias}
+	</select>
+	
+	<select id="getAll" resultMap="BpmFormDialog">
+		SELECT <include refid="columns"/>
+		FROM BPM_FORM_DIALOG   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by ID  desc
+		</if>
+	</select>
+</mapper>

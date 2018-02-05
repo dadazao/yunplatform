@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="system" namespace="/pages/system" extends="default">
+		<action name="syslog*" class="com.cloudstong.platform.system.action.SysLogAction" method="{1}">
+			<result name="list">/WEB-INF/view/system/log/compexLogList.jsp</result>
+			<result name="view">/WEB-INF/view/system/log/compexLogView.jsp</result>
+			<result name="loglist">/WEB-INF/view/system/log/logList.jsp</result>
+		</action>
+		<action name="mysql*" class="com.cloudstong.platform.system.action.MysqlAction" method="{1}">
+		</action>
+		<action name="dbDriver*" class="com.cloudstong.platform.system.action.DbDriverAction" method="{1}">
+			<result name="list">/WEB-INF/view/system/dbDriver/compexDbDriverList.jsp</result>
+		</action>
+		<action name="logo*" class="com.cloudstong.platform.system.action.CompexLogoAction"	method="{1}">
+			<result name="list">/WEB-INF/view/system/logo/compexLogoList.jsp</result>
+			<result name="add">/WEB-INF/view/system/logo/logoEdit.jsp</result>
+			<result name="view">/WEB-INF/view/system/logo/logoView.jsp</result>
+		</action>
+		<action name="menu*" class="com.cloudstong.platform.system.action.MenuAction" method="{1}">
+		</action>
+	</package>
+
+	<package name="resource" namespace="/pages/resource" extends="default">
+		<action name="*compexlist" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="list">
+			<result name="list">/WEB-INF/view/core/compexDomainList.jsp</result>
+		</action>
+		<action name="*compexadd" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="add">
+			<result name="add">/WEB-INF/view/core/${template}</result>
+			<result name="input">/WEB-INF/view/core/${template}</result>
+		</action>
+		<action name="*compexedit" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="edit">
+			<result name="edit">/WEB-INF/view/core/${template}</result>
+			<result name="input">/WEB-INF/view/core/${template}</result>
+		</action>
+		<action name="*compexview" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="view">
+			<result name="view">/WEB-INF/view/core/${template}</result>
+		</action>
+		<action name="*compexsearch" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="search">
+			<result name="search">/WEB-INF/view/core/${template}</result>
+		</action>
+		<action name="*compexlistsub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="listsub">
+			<result name="listsub">/WEB-INF/view/core/compexDomainSubList.jsp</result>
+		</action>
+		<action name="*compexeditsub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="editsub">
+			<result name="editsub">/WEB-INF/view/core/${template}</result>
+			<result name="input">/WEB-INF/view/core/${template}</result>
+		</action>
+		<action name="*compexpreview" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="preview">
+			<result name="preview">/WEB-INF/view/core/compexDomainPreViewEdit.jsp</result>
+		</action>
+		<action name="*compexsingleList" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="singleList">
+			<result name="singleList">/WEB-INF/view/core/compexDomainSingleList.jsp</result>
+		</action>
+		<action name="*compexshowListHelp" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="showListHelp">
+			<result name="listhelp">/WEB-INF/view/core/help/listhelp.jsp</result>
+		</action>
+		<action name="*compexshowFormHelp" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="showFormHelp">
+			<result name="formhelp">/WEB-INF/view/core/help/formhelp.jsp</result>
+		</action>
+		<action name="*compexsave" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="save"/>
+		<action name="*compexdelete" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="delete"/>
+		<action name="*compexviewJson" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="viewJson"/>
+		<action name="*compexdataJson" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="dataJson"/>
+		<action name="*compexisdefault" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="isdefault"/>
+		<action name="*compexsavesub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="savesub"/>
+		<action name="*compexdeletesub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="deletesub"/>
+		<action name="*compexdataJsonsub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="dataJsonsub"/>
+		<action name="compex*" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="{1}"/>
+
+		<action name="table*" class="com.cloudstong.platform.resource.metadata.action.TableAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/metadata/compexTableList.jsp</result>
+			<result name="columncfg">/WEB-INF/view/resource/metadata/compexTableColumnConfig.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/metadata/compexTableEdit.jsp</result>
+			<result name="input">/WEB-INF/view/resource/metadata/compexTableEdit.jsp</result>
+			<result name="add">/WEB-INF/view/resource/metadata/compexTableEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/metadata/compexTableView.jsp</result>
+			<result name="search">/WEB-INF/view/resource/metadata/compexTableSearch.jsp</result>
+			<result name="meta">/WEB-INF/view/resource/metadata/metaColumnList.jsp</result>
+			<result name="history">/WEB-INF/view/resource/metadata/historyList.jsp</result>
+		</action>
+		<action name="column*" class="com.cloudstong.platform.resource.metadata.action.ColumnAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/metadata/compexColumnList.jsp</result>
+			<result name="columnList">/WEB-INF/view/resource/metadata/columnList.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/metadata/compexColumnEdit.jsp</result>
+			<result name="input">/WEB-INF/view/resource/metadata/compexColumnEdit.jsp</result>
+			<result name="add">/WEB-INF/view/resource/metadata/compexColumnEdit.jsp</result>
+			<result name="addColumn">/WEB-INF/view/resource/metadata/columnEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/metadata/compexColumnView.jsp</result>
+			<result name="search">/WEB-INF/view/resource/metadata/compexColumnSearch.jsp</result>
+		</action>
+		<action name="relation*" class="com.cloudstong.platform.resource.metadata.action.RelationAction"	method="{1}">
+			<result name="list">/WEB-INF/view/resource/metadata/compexRelationList.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/metadata/compexRelationEdit.jsp</result>
+			<result name="input">/WEB-INF/view/resource/metadata/compexRelationEdit.jsp</result>
+			<result name="add">/WEB-INF/view/resource/metadata/compexRelationEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/metadata/compexRelationView.jsp</result>
+		</action>
+		<action name="basecatalog*" class="com.cloudstong.platform.resource.catalog.action.CatalogAction" method="{1}">
+		</action>
+		
+		<action name="tabulation*" class="com.cloudstong.platform.resource.tabulation.action.TabulationAction" method="{1}">
+			<result name="add">/WEB-INF/view/resource/tabulation/tabulationEdit.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/tabulation/tabulationEdit.jsp</result>
+			<result name="formhelp">/WEB-INF/view/resource/tabulation/tabulationHelp.jsp</result>
+			<result name="list">/WEB-INF/view/resource/tabulation/compexTabulationList.jsp</result>
+			<result name="view">/WEB-INF/view/resource/tabulation/tabulationView.jsp</result>
+			<result name="addColumn">/WEB-INF/view/resource/tabulation/tabulationColumnEdit.jsp</result>
+			<result name="editColumn">/WEB-INF/view/resource/tabulation/tabulationColumnEdit.jsp</result>
+			<result name="listColumn">/WEB-INF/view/resource/tabulation/tabulationColumnList.jsp</result>
+			<result name="addQuery">/WEB-INF/view/resource/tabulation/tabulationQueryEdit.jsp</result>
+			<result name="editQuery">/WEB-INF/view/resource/tabulation/tabulationQueryEdit.jsp</result>
+			<result name="listQuery">/WEB-INF/view/resource/tabulation/tabulationQueryList.jsp</result>
+			<result name="addOpt">/WEB-INF/view/resource/tabulation/tabulationOptEdit.jsp</result>
+			<result name="editOpt">/WEB-INF/view/resource/tabulation/tabulationOptEdit.jsp</result>
+			<result name="listOpt">/WEB-INF/view/resource/tabulation/tabulationOptList.jsp</result>
+			<result name="addDetails">/WEB-INF/view/resource/tabulation/tabulationDetailsEdit.jsp</result>
+		</action>
+		<action name="tbutton*" class="com.cloudstong.platform.resource.tabulation.action.TabulationButtonAction" method="{1}">
+			<result name="addButton">/WEB-INF/view/resource/tabulation/tabulationButtonEdit.jsp</result>
+			<result name="editButton">/WEB-INF/view/resource/tabulation/tabulationButtonEdit.jsp</result>
+			<result name="listButton">/WEB-INF/view/resource/tabulation/tabulationButtonList.jsp</result>
+		</action>
+		
+		<action name="button*" class="com.cloudstong.platform.resource.button.action.CompexButtonAction" method="{1}">
+			<result name="detail">/WEB-INF/view/resource/button/buttonDetail.jsp</result>
+			<result name="list">/WEB-INF/view/resource/button/compexButtonList.jsp</result>
+			<result name="add">/WEB-INF/view/resource/button/compexButtonEdit.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/button/compexButtonEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/button/compexButtonView.jsp</result>
+		</action>
+		<action name="textBox*" class="com.cloudstong.platform.resource.textbox.action.TextBoxAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/textbox/compexTextBoxList.jsp</result>
+			<result name="add">/WEB-INF/view/resource/textbox/compexTextBoxEdit.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/textbox/compexTextBoxEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/textbox/compexTextBoxView.jsp</result>
+		</action>
+		<action name="radioMgt*" class="com.cloudstong.platform.resource.radio.action.RadioMgtAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/radio/compexRadioMgtList.jsp</result>
+			<result name="detail">/WEB-INF/view/resource/radio/radioMgtDetail.jsp</result>
+			<result name="add">/WEB-INF/view/resource/radio/compexRadioMgtEdit.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/radio/compexRadioMgtEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/radio/compexRadioMgtView.jsp</result>
+		</action>
+		<action name="checkboxMgt*" class="com.cloudstong.platform.resource.checkbox.action.CheckboxMgtAction"	method="{1}">
+			<result name="list">/WEB-INF/view/resource/checkbox/compexCheckboxMgtList.jsp</result>
+			<result name="detail">/WEB-INF/view/resource/checkbox/checkboxMgtDetail.jsp</result>
+			<result name="add">/WEB-INF/view/resource/checkbox/compexCheckboxMgtEdit.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/checkbox/compexCheckboxMgtEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/checkbox/compexCheckboxMgtView.jsp</result>
+		</action>
+		<action name="dateAction*" class="com.cloudstong.platform.resource.date.action.DateAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/date/compexDateList.jsp</result>
+			<result name="detail">/WEB-INF/view/resource/date/dateDetail.jsp</result>
+			<result name="add">/WEB-INF/view/resource/date/compexDateEdit.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/date/compexDateEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/date/compexDateView.jsp</result>
+			<result name="useinfoList">/WEB-INF/view/resource/date/dateyyList.jsp</result>
+		</action>
+		<action name="library*" class="com.cloudstong.platform.resource.template.action.TemplateLibraryAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/template/library/compexLibraryList.jsp</result>
+			<result name="add">/WEB-INF/view/resource/template/library/compexLibraryEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/template/library/compexLibraryView.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/template/library/compexLibraryEdit.jsp</result>
+		</action>
+		<action name="template*" class="com.cloudstong.platform.resource.template.action.TemplateAction" method="{1}">
+			<result name="baselist">/WEB-INF/view/resource/template/base/compexTemplateList.jsp</result>
+			<result name="baseadd">/WEB-INF/view/resource/template/base/compexTemplateEdit.jsp</result>
+			<result name="baseaddbyform">/WEB-INF/view/resource/template/base/compexTemplateEditByForm.jsp</result>
+			<result name="baseview">/WEB-INF/view/resource/template/base/compexTemplateView.jsp</result>
+			<result name="baseedit">/WEB-INF/view/resource/template/base/compexTemplateEdit.jsp</result>
+			<result name="comblist">/WEB-INF/view/resource/template/combination/compexTemplateList.jsp</result>
+			<result name="combadd">/WEB-INF/view/resource/template/combination/compexTemplateEdit.jsp</result>
+			<result name="combview">/WEB-INF/view/resource/template/combination/compexTemplateView.jsp</result>
+			<result name="combedit">/WEB-INF/view/resource/template/combination/compexTemplateEdit.jsp</result>
+		</action>
+		<action name="partition*" class="com.cloudstong.platform.resource.template.action.PartitionAction" method="{1}">
+			<result name="loadform">/WEB-INF/view/resource/template/combination/compexTemplatePartition.jsp</result>
+			<result name="loadlist">/WEB-INF/view/resource/template/combination/compexTemplatePartitionList.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/template/combination/compexTemplatePartition.jsp</result>
+			<result name="combedit">/WEB-INF/view/resource/template/combination/compexTemplateEdit.jsp</result>
+		</action>
+		<action name="print*" class="com.cloudstong.platform.resource.template.action.PrintAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/template/print/compexPrintList.jsp</result>
+			<result name="add">/WEB-INF/view/resource/template/print/compexPrintEdit.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/template/print/compexPrintEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/template/print/compexPrintView.jsp</result>
+		</action>
+		<action name="tree*" class="com.cloudstong.platform.resource.tree.action.MgrTreeAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/tree/compexTreeMgtList.jsp</result>
+			<result name="add">/WEB-INF/view/resource/tree/compexTreeMgtEdit.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/tree/compexTreeMgtEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/tree/compexTreeMgtView.jsp</result>
+			<result name="treeParam">/WEB-INF/view/resource/tree/compexTreeMgtShow.jsp</result>
+			<result name="addsingle">/WEB-INF/view/resource/tree/singleTableType.jsp</result>
+			<result name="addboth">/WEB-INF/view/resource/tree/bothTableType.jsp</result>
+			<result name="editsingle">/WEB-INF/view/resource/tree/singleTableType.jsp</result>
+			<result name="editboth">/WEB-INF/view/resource/tree/bothTableType.jsp</result>
+			<result name="personPage">/WEB-INF/view/resource/personChiose/personChoiseEdit.jsp</result>
+			<result name="userPage">/WEB-INF/view/resource/personChiose/userChoiseEdit.jsp</result>
+		</action>
+		<action name="useinfo*" class="com.cloudstong.platform.resource.useinfo.action.UseInfoAction" method="{1}">
+		</action>
+		<action name="enterpriseInfo*" class="com.cloudstong.platform.resource.enterinfo.action.EnterpriseInfoAction" method="{1}">
+		</action>
+		<action name="personChoise*" class="com.cloudstong.platform.resource.personChiose.action.PersonChioseAction" method="{1}">
+			<result name="page">/WEB-INF/view/resource/personChiose/personChoiseEdit.jsp</result>
+			<result name="userPage">/WEB-INF/view/resource/personChiose/userChoiseEdit.jsp</result>
+		</action>
+		<action name="userChoise*" class="com.cloudstong.platform.resource.userChiose.action.UserChioseAction" method="{1}">
+		</action>
+		<action name="uploadify*" class="com.cloudstong.platform.resource.uploadify.action.UploadifyAction" method="{1}">
+		</action>
+		<action name="uploadbox*" class="com.cloudstong.platform.resource.uploadbox.action.UploadBoxAction" method="{1}">
+		</action>
+		<action name="flexPaper*" class="com.cloudstong.platform.third.flexpaper.action.FlexPaperAction" method="{1}">
+			<result name="open">/WEB-INF/view/third/flexPaper/index.jsp</result>
+			<result name="flexPaperOpen">/WEB-INF/view/third/flexPaper/flexPaperOpen.jsp</result>
+		</action>
+		<action name="catalogTree*"	class="com.cloudstong.platform.resource.catalog.action.CompexCatalogAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/catalog/compexCatalogList.jsp</result>
+			<result name="add">/WEB-INF/view/resource/catalog/compexCatalogEdit.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/catalog/compexCatalogEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/catalog/compexCatalogView.jsp</result>
+		</action>
+		<action name="dictionarysCompex*" class="com.cloudstong.platform.resource.dictionary.action.CompexDictionaryAction"	method="{1}">
+			<result name="list">/WEB-INF/view/resource/dictionary/compexDictionaryList.jsp</result>
+			<result name="add">/WEB-INF/view/resource/dictionary/compexDictionaryEdit.jsp</result>
+			<result name="view">/WEB-INF/view/resource/dictionary/compexDictionaryView.jsp</result>
+			<result name="edit">/WEB-INF/view/resource/dictionary/compexDictionaryEdit.jsp</result>
+		</action>
+		<action name="seqCodeCompex*" class="com.cloudstong.platform.resource.seqcode.action.SeqCodeAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/seqcode/compexSeqcodeList.jsp</result>
+		</action>
+		<action name="join*" class="com.cloudstong.platform.resource.metadata.action.JoinAction" method="{1}">
+			<result name="list">/WEB-INF/view/core/compexJoinList.jsp</result>
+		</action>
+		<action name="imagepageCompex*"	class="com.cloudstong.platform.resource.imagepage.action.ImagePageAction" method="{1}">
+			<result name="list">/WEB-INF/view/resource/imagepage/compexImagePageList.jsp</result>
+			<result name="imgpage">/WEB-INF/view/resource/imagepage/imgpage.jsp</result>
+		</action>
+	</package>
+
+	<package name="third" namespace="/pages/third" extends="default">
+		<action name="definition*" class="com.cloudstong.platform.third.flow.action.DefinitionFlowAction" method="{1}">
+			<result name="list">/WEB-INF/view/third/flow/definition/compexDefinitionList.jsp</result>
+			<result name="add">/WEB-INF/view/third/flow/definition/compexDefinitionEdit.jsp</result>
+			<result name="view">/WEB-INF/view/third/flow/definition/compexDefinitionView.jsp</result>
+			<result name="processImage">/WEB-INF/view/third/flow/definition/processImage.jsp</result>
+			<result name="refForm">/WEB-INF/view/third/flow/definition/refForm.jsp</result>
+			<result name="flowForm">/WEB-INF/view/third/flow/definition/compexFlowFormEdit.jsp</result>
+			<result name="next">/WEB-INF/view/third/flow/definition/activitySelect.jsp</result>
+			<result name="startNext">/WEB-INF/view/third/flow/definition/startActivitySelect.jsp</result>
+			<result name="userChoise">/WEB-INF/view/third/flow/definition/userChoiseEdit.jsp</result>
+		</action>
+		<action name="jbpm*" class="com.cloudstong.platform.third.flow.action.JbpmAction" method="{1}">
+			<result name="tasklist">/WEB-INF/view/third/flow/jbpm/tasklist.jsp</result>
+			<result name="editFlow">/WEB-INF/view/third/flow/jbpm/compexFlowFormEdit.jsp</result>
+			<result name="flowInfo">/WEB-INF/view/third/flow/jbpm/flowInfo.jsp</result>
+		</action>
+		<action name="office*" class="com.cloudstong.platform.third.office.action.OfficeAction" method="{1}">
+		</action>
+	</package>
+	
+</struts>

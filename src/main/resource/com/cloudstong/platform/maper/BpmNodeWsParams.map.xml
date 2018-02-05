@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloudstong.platform.third.bpm.model.BpmNodeWsParams">
+	<resultMap id="BpmNodeWsParams" type="com.cloudstong.platform.third.bpm.model.BpmNodeWsParams">
+		<id property="id" column="ID" jdbcType="NUMERIC" />
+		<result property="webserviceId" column="WEBSERVICEID" jdbcType="NUMERIC" />
+		<result property="paraType" column="PARATYPE" jdbcType="NUMERIC" />
+		<result property="varId" column="VARID" jdbcType="NUMERIC" />
+		<result property="wsName" column="WSNAME" jdbcType="VARCHAR" />
+		<result property="type" column="TYPE" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="columns">
+		ID,WEBSERVICEID,PARATYPE,VARID,WSNAME,TYPE
+	</sql>
+
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(id)"> AND ID =#{id} </if>
+			<if test="@Ognl@isNotEmpty(webserviceId)"> AND WEBSERVICEID =#{webserviceId} </if>
+			<if test="@Ognl@isNotEmpty(paraType)"> AND PARATYPE =#{paraType} </if>
+			<if test="@Ognl@isNotEmpty(varId)"> AND VARID =#{varId} </if>
+			<if test="@Ognl@isNotEmpty(wsName)"> AND WSNAME LIKE #{wsName}  </if>
+			<if test="@Ognl@isNotEmpty(type)"> AND TYPE LIKE #{type}  </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeWsParams">
+		INSERT INTO BPM_NODE_WS_PARAMS
+		(ID,WEBSERVICEID,PARATYPE,VARID,WSNAME,TYPE)
+		VALUES
+		(#{id,jdbcType=NUMERIC}, #{webserviceId,jdbcType=NUMERIC},
+		#{paraType,jdbcType=NUMERIC}, #{varId,jdbcType=NUMERIC},
+		#{wsName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR})
+	</insert>
+
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM
+		BPM_NODE_WS_PARAMS
+		WHERE
+		ID=#{id}
+	</delete>
+
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.BpmNodeWsParams">
+		UPDATE BPM_NODE_WS_PARAMS SET
+		WEBSERVICEID=#{webserviceId,jdbcType=NUMERIC},
+		PARATYPE=#{paraType,jdbcType=NUMERIC},
+		VARID=#{varId,jdbcType=NUMERIC},
+		WSNAME=#{wsName,jdbcType=VARCHAR},
+		TYPE=#{type,jdbcType=VARCHAR}
+		WHERE
+		ID=#{id}
+	</update>
+
+	<select id="getById" parameterType="java.lang.Long" resultMap="BpmNodeWsParams">
+		SELECT
+		<include refid="columns" />
+		FROM BPM_NODE_WS_PARAMS
+		WHERE
+		ID=#{id}
+	</select>
+
+	<select id="getAll" resultMap="BpmNodeWsParams">
+		SELECT
+		<include refid="columns" />
+		FROM BPM_NODE_WS_PARAMS
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+			order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+			order by ID desc
+		</if>
+	</select>
+
+	<select id="getByWebserviceId" parameterType="Map" resultMap="BpmNodeWsParams">
+		SELECT
+		<include refid="columns" />
+		FROM BPM_NODE_WS_PARAMS
+		WHERE
+		WEBSERVICEID=#{webserviceId}
+	</select>
+
+
+	<delete id="delByWebserviceId" parameterType="java.lang.Long">
+		DELETE FROM
+		BPM_NODE_WS_PARAMS
+		WHERE
+		WEBSERVICEID=#{webserviceId}
+	</delete>
+
+</mapper>

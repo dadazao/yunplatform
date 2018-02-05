@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.activiti.engine.impl.persistence.entity.HistoricTaskInstanceEntity">
+
+<resultMap id="HistoricTaskInstanceEntity" type="org.activiti.engine.impl.persistence.entity.HistoricTaskInstanceEntity">
+	    <id property="id" column="ID_" jdbcType="VARCHAR"/>
+	    <result property="processDefinitionId" column="PROC_DEF_ID_" jdbcType="VARCHAR"/>
+	    <result property="taskDefinitionKey" column="TASK_DEF_KEY_" jdbcType="VARCHAR"/>
+	    <result property="processInstanceId" column="PROC_INST_ID_" jdbcType="VARCHAR"/>
+	    <result property="executionId" column="EXECUTION_ID_" jdbcType="VARCHAR"/>
+	    <result property="parentTaskId" column="PARENT_TASK_ID_" jdbcType="VARCHAR"/>
+	    <result property="name" column="NAME_" jdbcType="VARCHAR" />
+	    <result property="description" column="DESCRIPTION_" jdbcType="VARCHAR"/>
+	    <result property="owner" column="OWNER_" jdbcType="VARCHAR"/>
+	    <result property="assignee" column="ASSIGNEE_" jdbcType="VARCHAR"/>
+	    <result property="startTime" column="START_TIME_" jdbcType="TIMESTAMP" />
+	    <result property="endTime" column="END_TIME_" jdbcType="TIMESTAMP" />
+	    <result property="duration" column="DURATION_" jdbcType="NUMERIC"/>
+	    <result property="deleteReason" column="DELETE_REASON_" jdbcType="VARCHAR"/>
+	    <result property="priority" column="PRIORITY_" jdbcType="INTEGER"/>
+	    <result property="dueDate" column="DUE_DATE_" jdbcType="TIMESTAMP"/>
+  </resultMap>
+
+ <select id="getByInstanceIdAndNodeId" parameterType="java.util.Map" resultMap="HistoricTaskInstanceEntity">
+ 	select * from ACT_HI_TASKINST
+ 	where PROC_INST_ID_=#{actInstanceId} and TASK_DEF_KEY_=#{nodeId}
+ </select>
+</mapper>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.TaskReminder">
+	<resultMap id="TaskReminder" type="com.cloudstong.platform.third.bpm.model.TaskReminder">
+		<id property="taskDueId" column="taskDueId" jdbcType="NUMERIC"/>
+		<result property="actDefId" column="actDefId" jdbcType="VARCHAR"/>
+		<result property="nodeId" column="nodeId" jdbcType="VARCHAR"/>
+		<result property="reminderStart" column="reminderStart" jdbcType="NUMERIC"/>
+		<result property="reminderEnd" column="reminderEnd" jdbcType="NUMERIC"/>
+		<result property="times" column="times" jdbcType="NUMERIC"/>
+		<result property="mailContent" column="mailContent" jdbcType="CLOB"/>
+		<result property="msgContent" column="msgContent" jdbcType="CLOB"/>
+		<result property="smsContent" column="smsContent" jdbcType="CLOB"/>
+		<result property="action" column="action" jdbcType="NUMERIC"/>
+		<result property="script" column="script" jdbcType="VARCHAR"/>
+		<result property="completeTime" column="completeTime" jdbcType="NUMERIC"/>
+		<result property="condExp" column="condExp" jdbcType="CLOB"/>
+		<result property="name" column="name" jdbcType="VARCHAR"/>
+		<result property="relativeNodeId" column="relativeNodeId" jdbcType="VARCHAR"/>
+		<result property="relativeNodeType" column="relativeNodeType" jdbcType="NUMERIC"/>
+		<result property="relativeTimeType" column="relativeTimeType" jdbcType="NUMERIC"/>
+		<result property="assignerId" column="assignerId" jdbcType="NUMERIC"/>
+		<result property="assignerName" column="assignerName" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		taskDueId,actDefId,nodeId,reminderStart,reminderEnd,times,mailContent,msgContent,smsContent,action,script,completeTime,condExp,name,relativeNodeId,relativeNodeType,relativeTimeType,assignerId,assignerName
+	</sql>
+	
+	<sql id="dynamicWhere">
+		<where>
+			<if test="@Ognl@isNotEmpty(taskDueId)"> AND taskDueId  =#{taskDueId} </if>
+			<if test="@Ognl@isNotEmpty(actDefId)"> AND actDefId  LIKE #{actDefId}  </if>
+			<if test="@Ognl@isNotEmpty(nodeId)"> AND nodeId  LIKE #{nodeId}  </if>
+			<if test="@Ognl@isNotEmpty(reminderStart)"> AND reminderStart  =#{reminderStart} </if>
+			<if test="@Ognl@isNotEmpty(reminderEnd)"> AND reminderEnd  =#{reminderEnd} </if>
+			<if test="@Ognl@isNotEmpty(times)"> AND times  =#{times} </if>
+			<if test="@Ognl@isNotEmpty(mailContent)"> AND mailContent  LIKE #{mailContent}  </if>
+			<if test="@Ognl@isNotEmpty(msgContent)"> AND msgContent  LIKE #{msgContent}  </if>
+			<if test="@Ognl@isNotEmpty(smsContent)"> AND smsContent  LIKE #{smsContent}  </if>
+			<if test="@Ognl@isNotEmpty(action)"> AND action  =#{action} </if>
+			<if test="@Ognl@isNotEmpty(script)"> AND script  LIKE #{script}  </if>
+			<if test="@Ognl@isNotEmpty(completeTime)"> AND completeTime  =#{completeTime} </if>
+		</where>
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.TaskReminder">
+		INSERT INTO bpm_task_due
+		(<include refid="columns"/>)
+		VALUES
+		(#{taskDueId,jdbcType=NUMERIC}, #{actDefId,jdbcType=VARCHAR}, #{nodeId,jdbcType=VARCHAR}, #{reminderStart,jdbcType=NUMERIC}, #{reminderEnd,jdbcType=NUMERIC}, #{times,jdbcType=NUMERIC}, #{mailContent,jdbcType=CLOB}, #{msgContent,jdbcType=CLOB}, #{smsContent,jdbcType=CLOB}, #{action,jdbcType=NUMERIC}, #{script,jdbcType=VARCHAR}, #{completeTime,jdbcType=NUMERIC}, #{condExp,jdbcType=CLOB}, #{name,jdbcType=VARCHAR},#{relativeNodeId,jdbcType=VARCHAR},#{relativeNodeType,jdbcType=NUMERIC},#{relativeTimeType,jdbcType=NUMERIC},#{assignerId,jdbcType=NUMERIC},#{assignerName,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="delById" parameterType="java.lang.Long">
+		DELETE FROM BPM_TASK_DUE 
+		WHERE
+		taskDueId=#{taskDueId}
+	</delete>
+	
+	<delete id="delByActDefId" parameterType="java.lang.String">
+		DELETE FROM BPM_TASK_DUE
+		WHERE
+		actDefId=#{actDefId}
+	</delete>
+	
+	<update id="update" parameterType="com.cloudstong.platform.third.bpm.model.TaskReminder">
+		UPDATE bpm_task_due SET
+		actDefId=#{actDefId,jdbcType=VARCHAR} , 
+		nodeId=#{nodeId,jdbcType=VARCHAR} , 
+		reminderStart=#{reminderStart,jdbcType=NUMERIC} , 
+		reminderEnd=#{reminderEnd,jdbcType=NUMERIC} , 
+		times=#{times,jdbcType=NUMERIC} , 
+		mailContent=#{mailContent,jdbcType=CLOB} , 
+		msgContent=#{msgContent,jdbcType=CLOB} , 
+		smsContent=#{smsContent,jdbcType=CLOB} , 
+		action=#{action,jdbcType=NUMERIC} , 
+		script=#{script,jdbcType=VARCHAR} , 
+		completeTime=#{completeTime,jdbcType=NUMERIC} ,
+		condExp=#{condExp,jdbcType=CLOB} ,
+		name=#{name,jdbcType=VARCHAR} ,
+		relativeNodeId=#{relativeNodeId,jdbcType=VARCHAR} ,
+		relativeNodeType=#{relativeNodeType,jdbcType=NUMERIC} ,
+		relativeTimeType=#{relativeTimeType,jdbcType=NUMERIC},
+		assignerId=#{assignerId,jdbcType=NUMERIC} ,
+		assignerName=#{assignerName,jdbcType=VARCHAR}
+		WHERE
+		taskDueId=#{taskDueId}
+	</update>
+	
+	<select id="getById" parameterType="java.lang.Long" resultMap="TaskReminder">
+		SELECT <include refid="columns"/>
+		FROM BPM_TASK_DUE
+		WHERE
+		taskDueId=#{taskDueId}
+	</select>
+	
+	<select id="getAll" resultMap="TaskReminder">
+		SELECT <include refid="columns"/>
+		FROM BPM_TASK_DUE   
+		<include refid="dynamicWhere" />
+		<if test="@Ognl@isNotEmpty(orderField)">
+		order by ${orderField} ${orderSeq}
+		</if>
+		<if test="@Ognl@isEmpty(orderField)">
+		order by taskDueId  desc
+		</if>
+	</select>
+	
+	<select id="getByActDefAndNodeId" parameterType="Map" resultMap="TaskReminder">
+		SELECT <include refid="columns"/>
+		FROM BPM_TASK_DUE
+		WHERE
+		actDefId=#{actDefId} and nodeId=#{nodeId}
+	</select>
+	
+	<select id="isExistByActDefAndNodeId" parameterType="Map" resultType="Integer">
+		SELECT count(*) as amount
+		FROM BPM_TASK_DUE
+		WHERE
+		actDefId=#{actDefId} and nodeId=#{nodeId}
+	</select>
+	
+	<select id="getByActDefId" parameterType="java.lang.String" resultMap="TaskReminder">
+		SELECT <include refid="columns"/>
+		FROM BPM_TASK_DUE
+		WHERE
+		ACTDEFID=#{actDefId} 
+	</select>
+	
+	
+	
+</mapper>

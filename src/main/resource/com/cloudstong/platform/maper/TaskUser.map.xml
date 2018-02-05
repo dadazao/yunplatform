@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.cloudstong.platform.third.bpm.model.TaskUser">
+	<resultMap id="TaskUser" type="com.cloudstong.platform.third.bpm.model.TaskUser">
+		<id property="id" column="ID_" />
+		<result property="reversion" column="REV_" />
+		<result property="groupId" column="GROUP_ID_" />
+		<result property="type" column="TYPE_" />
+		<result property="userId" column="USER_ID_" />
+		<result property="taskId" column="TASK_ID_" />
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,REV_,GROUP_ID_,TYPE_,USER_ID_,TASK_ID_
+	</sql>
+
+	<insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.TaskUser">
+		INSERT INTO ACT_RU_IDENTITYLINK
+		(<include refid="columns"/>)
+		VALUES
+		(#{id},#{reversion},#{groupId},#{type},#{userId},#{taskId})
+	</insert>
+	
+	<select id="getByTaskId" resultMap="TaskUser">
+		select * from ACT_RU_IDENTITYLINK t where t.TASK_ID_=#{taskId}
+	</select>
+	
+	<delete id="delByInstanceId" parameterType="java.lang.Long">
+		delete  from ACT_RU_IDENTITYLINK a where exists (select 1 from  act_ru_task b where a.task_id_=b.id_ and b.proc_inst_id_=#{instanceId})
+	</delete>
+
+</mapper>
