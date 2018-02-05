@@ -30,8 +30,7 @@ import com.cloudstong.platform.email.service.ContactService;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class })
-@ContextConfiguration(locations = { "classpath:applicationContext-cache.xml", "classpath:applicationContext-dao.xml",
-		"classpath:applicationContext-resources.xml", "classpath:applicationContext-service.xml" })
+@ContextConfiguration(locations = { "classpath:applicationContext-test.xml"})
 public class ContactServiceTestCase {
 
 	@Resource

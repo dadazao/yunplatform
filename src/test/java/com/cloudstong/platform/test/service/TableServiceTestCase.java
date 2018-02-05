@@ -18,9 +18,7 @@ import com.cloudstong.platform.resource.catalog.service.CatalogService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class })
-@ContextConfiguration(locations = { 
-		"classpath:applicationContext-test.xml"
-})
+@ContextConfiguration(locations = {"classpath:applicationContext-test.xml"})
 public class TableServiceTestCase {
 
 	@Resource

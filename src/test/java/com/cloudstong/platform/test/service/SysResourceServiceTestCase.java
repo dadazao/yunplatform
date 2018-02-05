@@ -27,9 +27,7 @@ import com.cloudstong.platform.system.service.SysResourceService;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class })
-@ContextConfiguration(locations = { 
-		"classpath:applicationContext-test.xml"
-})
+@ContextConfiguration(locations = {"classpath:applicationContext-test.xml"})
 public class SysResourceServiceTestCase {
 	
 	@Resource

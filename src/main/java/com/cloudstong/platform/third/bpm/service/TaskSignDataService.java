@@ -13,6 +13,7 @@ import org.activiti.engine.impl.persistence.entity.TaskEntity;
 import org.activiti.engine.impl.pvm.process.ActivityImpl;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cloudstong.platform.core.common.AppContext;
@@ -40,7 +41,7 @@ public class TaskSignDataService {
 	@Resource
 	private SysUserDao sysUserDao;
 
-	@Resource
+	@Autowired(required=true)
 	private RuntimeService runtimeService;
 
 	@Resource

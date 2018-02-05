@@ -2,8 +2,6 @@ package com.cloudstong.platform.test.service;
 
 import javax.annotation.Resource;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -11,17 +9,12 @@ import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
-import com.cloudstong.business.employee.model.Detail;
-import com.cloudstong.business.employee.model.Employee;
 import com.cloudstong.business.employee.service.DetailService;
 import com.cloudstong.business.employee.service.EmployeeService;
-import com.cloudstong.platform.core.common.PageResult;
-import com.cloudstong.platform.core.common.QueryCriteria;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class })
-@ContextConfiguration(locations = { "classpath:applicationContext-cache.xml", "classpath:applicationContext-dao.xml",
-		"classpath:applicationContext-resources.xml", "classpath:applicationContext-service.xml" })
+@ContextConfiguration(locations = { "classpath:applicationContext-test.xml"})
 public class EmployeeServiceTestCase {
 	@Resource
 	private EmployeeService employeeService;
