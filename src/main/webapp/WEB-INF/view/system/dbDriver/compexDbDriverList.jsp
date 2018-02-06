@@ -26,7 +26,7 @@
 	});
 	
 	function eventCompexZDY(){
-		var urlString = "<%=basePath%>/pages/deployment/dbDriverenabled.action";
+		var urlString = "<%=basePath%>/pages/deployment/dbDriver/enabled.action";
 		var items = $("input[type='checkbox']:checked").length;
 		if(items == 1){
 			var param = $("#tableForm").find('input:checked').val();
@@ -40,7 +40,7 @@
 	}
 </script>
 </head>
-<c:set var="listurl" value="/pages/deployment/dbDriverlist.action"></c:set>
+<c:set var="listurl" value="/pages/deployment/dbDriver/list.action"></c:set>
 <c:set var="viewurl" value="/pages/resource/compexview.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

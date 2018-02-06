@@ -8,16 +8,19 @@ package com.cloudstong.platform.system.action;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
 import com.cloudstong.platform.core.common.PageResult;
-import com.cloudstong.platform.core.util.SqlUtil;
 import com.cloudstong.platform.resource.metadata.action.CompexDomainAction;
-import com.cloudstong.platform.system.dao.SysLogDao;
 import com.cloudstong.platform.system.model.SysLog;
 import com.cloudstong.platform.system.model.SysUser;
 import com.cloudstong.platform.system.service.SysLogService;
@@ -33,6 +36,14 @@ import com.cloudstong.platform.system.service.SysLogService;
  * Description:系统日志Action
  * 
  */
+
+@ParentPackage("default")
+@Namespace("/pages/system/syslog")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/system/log/compexLogList.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/system/log/compexLogView.jsp"),
+		@Result(name="loglist", location = "/WEB-INF/view/system/log/logList.jsp")
+})
 public class SysLogAction extends CompexDomainAction {
 
 	private static final long serialVersionUID = -3685313333678447912L;
@@ -49,6 +60,17 @@ public class SysLogAction extends CompexDomainAction {
 	@Resource
 	private SysLogService sysLogService;
 	
+	@Action("list")
+	public String list() {
+		return super.list();
+	}
+	
+	@Action("view")
+	public String view() throws Exception {
+		return super.view();
+	}
+	
+	@Action("savalog")
 	public String savelog(){
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		String catalogId = getRequest().getParameter("catalogId");
@@ -63,6 +85,7 @@ public class SysLogAction extends CompexDomainAction {
 		return NONE;
 	}
 	
+	@Action("loglist")
 	public String querylog(){
 		queryCriteria.setCurrentIndex((Integer.valueOf(this.pageNum) - 1) * this.numPerPage + 1);
 		queryCriteria.setPageSize(this.numPerPage);

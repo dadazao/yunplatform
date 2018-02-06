@@ -14,16 +14,16 @@
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
 		//新建ACTION URL
-		xjUrl = "<%=basePath%>/pages/resource/checkboxMgtadd.action?formId=${formId}&model=${model}&op=new";
+		xjUrl = "<%=basePath%>/pages/resource/checkbox/add.action?formId=${formId}&model=${model}&op=new";
 		//批量删除ACTION URL
-		plscUrl = "<%=basePath%>/pages/resource/checkboxMgtdelete.action?model=${model}&formId=${formId}";
-		ljscUrl = "<%=basePath%>/pages/resource/checkboxMgtlogicDelete.action?model=${model}&formId=${formId}";
+		plscUrl = "<%=basePath%>/pages/resource/checkbox/del.action?model=${model}&formId=${formId}";
+		ljscUrl = "<%=basePath%>/pages/resource/checkbox/logicDelete.action?model=${model}&formId=${formId}";
 		bzUrl = "<%=basePath%>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath%>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 	});
 </script>
 </head>
-<c:set var="listurl" value="/pages/resource/checkboxMgtlist.action"></c:set>
-<c:set var="viewurl" value="/pages/resource/checkboxMgtview.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<c:set var="listurl" value="/pages/resource/checkbox/list.action"></c:set>
+<c:set var="viewurl" value="/pages/resource/checkbox/view.action"></c:set>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

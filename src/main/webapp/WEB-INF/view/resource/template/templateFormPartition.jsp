@@ -35,7 +35,7 @@
 	}
 	
 	function setPinyin() {
-		var urlString = "<%=basePath %>/pages/resource/templateFormpinyin.action";
+		var urlString = "<%=basePath %>/pages/resource/template/Formpinyin.action";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -67,7 +67,7 @@
 		$("#biaodanlujing").val(urlString);
 	}
 	function publish() {
-		var urlString = "<%=basePath %>/pages/resource/tablepublish.action";
+		var urlString = "<%=basePath %>/pages/resource/table/publish.action";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -83,7 +83,7 @@
 	}
 //-->
 </script>
-<form method="post" action="<c:url value='/pages/resource/templatePartitionsavePatition.action'/>" class="pageForm required-validate"
+<form method="post" action="<c:url value='/pages/resource/template/PartitionsavePatition.action'/>" class="pageForm required-validate"
 	onsubmit="return LimitAttach(this, this.patitionFile.value);"
 	enctype="multipart/form-data">
 	<input id="partitionId" type=hidden name="patition.id"

@@ -161,7 +161,7 @@ public class DesktopItemAction extends BaseAction {
 			String html = "";
 			String methodUrl = desktopItem.getMethodUrl();
 			if (methodUrl == null || methodUrl.length() == 0) {
-				StringBuilder resultBuilder = new StringBuilder("<div class=\"portlet\" referedDesktopItem=\"").append(desktopItem.getId()).append("\"><div class=\"phead\"><div class=\"ptitle\"><img src=\"pages/resource/portal/image/titleicon.gif\" style=\"padding-top:5px;\">").append(desktopItem.getName()).append("</div><div class=\"poper\" style=\"padding-top:6px;\"><a href=\"#\" onclick=\"loadList('").append(desktopItem.getName()).append("','").append(desktopItem.getAlias()).append("','").append(desktopItem.getModuleUrl()).append("')\" style=\"text-decoration: none;\" title=\"列表查看所有信息\">更多</a></div></div><div class=\"pcontent\">").append(desktopItem.getTemplateHtml()).append("</div></div>");
+				StringBuilder resultBuilder = new StringBuilder("<div class=\"portlet\" referedDesktopItem=\"").append(desktopItem.getId()).append("\"><div class=\"phead\"><div class=\"ptitle\"><img src=\"images/portal/titleicon.gif\" style=\"padding-top:5px;\">").append(desktopItem.getName()).append("</div><div class=\"poper\" style=\"padding-top:6px;\"><a href=\"#\" onclick=\"loadList('").append(desktopItem.getName()).append("','").append(desktopItem.getAlias()).append("','").append(desktopItem.getModuleUrl()).append("')\" style=\"text-decoration: none;\" title=\"列表查看所有信息\">更多</a></div></div><div class=\"pcontent\">").append(desktopItem.getTemplateHtml()).append("</div></div>");
 				html = resultBuilder.toString();
 			} else {
 				Configuration config = FreeMarkerEngine.CONFIGURATION.getConfiguration();
@@ -174,7 +174,7 @@ public class DesktopItemAction extends BaseAction {
 				root.put("model", beanHelper.executeMethod(desktopItem.getMethodUrl(), getUser()));
 				template.process(root, strWriter);
 				String contentHtml = strWriter.toString();
-				StringBuilder resultBuilder = new StringBuilder("<div class=\"portlet\" referedDesktopItem=\"").append(desktopItem.getId()).append("\"><div class=\"phead\"><div class=\"ptitle\"><img src=\"pages/resource/portal/image/titleicon.gif\" style=\"padding-top:5px;\">").append(desktopItem.getName()).append("</div><div class=\"poper\" style=\"padding-top:6px;\"><a href=\"#\" onclick=\"loadList('").append(desktopItem.getName()).append("','").append(desktopItem.getAlias()).append("','").append(desktopItem.getModuleUrl()).append("')\" style=\"text-decoration: none;\" title=\"列表查看所有信息\">更多</a></div></div><div class=\"pcontent\">").append(contentHtml).append("</div></div>");
+				StringBuilder resultBuilder = new StringBuilder("<div class=\"portlet\" referedDesktopItem=\"").append(desktopItem.getId()).append("\"><div class=\"phead\"><div class=\"ptitle\"><img src=\"images/portal/titleicon.gif\" style=\"padding-top:5px;\">").append(desktopItem.getName()).append("</div><div class=\"poper\" style=\"padding-top:6px;\"><a href=\"#\" onclick=\"loadList('").append(desktopItem.getName()).append("','").append(desktopItem.getAlias()).append("','").append(desktopItem.getModuleUrl()).append("')\" style=\"text-decoration: none;\" title=\"列表查看所有信息\">更多</a></div></div><div class=\"pcontent\">").append(contentHtml).append("</div></div>");
 				html = resultBuilder.toString();
 			}
 			HttpServletResponse response = getResponse();

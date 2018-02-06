@@ -8,12 +8,12 @@
 <script type="text/javascript">
 <!--		
 	$(function(){
-		compexViewJson('<%=basePath %>/pages/resource/buttonviewJson.action?params=${params}&formId=${formId}');
+		compexViewJson('<%=basePath %>/pages/resource/button/viewJson.action?params=${params}&formId=${formId}');
 		$("#BC").attr("disabled","disabled");
 		$("#BC").attr("class","listbuttonDisable");
 		var params=$("#paramsId").val();
 		$("#domainId").val(params.split(";")[0].split(":")[1]);
-		xgUrl="<%=basePath %>/pages/resource/buttonedit.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl="<%=basePath %>/pages/resource/button/edit.action?formId=${formId}&params=${params}" + "&op=edit";
 		$('#yunDialog').attr('style', 'height: 100%;overflow-x:hidden;OVERFLOW-Y:auto;');
 		ns.common.mouseForButton();
 		

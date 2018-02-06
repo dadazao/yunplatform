@@ -18,17 +18,17 @@
 		fSelfHeight = '${form.height}';
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';		
-		xjUrl="<%=basePath%>/pages/resource/templateaddBase.action?op=new&formId=${formId}";
-		plscUrl="<%=basePath%>/pages/resource/templatedeleteBase.action?model=${model}&formId=${formId}";
-		ljscUrl="<%=basePath%>/pages/resource/templatelogicDeleteBase.action?model=${model}&formId=${formId}";
-		bcUrl = "<%=basePath%>/pages/resource/templatesaveBase.action";
+		xjUrl="<%=basePath%>/pages/resource/template/addBase.action?op=new&formId=${formId}";
+		plscUrl="<%=basePath%>/pages/resource/template/deleteBase.action?model=${model}&formId=${formId}";
+		ljscUrl="<%=basePath%>/pages/resource/template/logicDeleteBase.action?model=${model}&formId=${formId}";
+		bcUrl = "<%=basePath%>/pages/resource/template/saveBase.action";
 		bzUrl = "<%=basePath%>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath%>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 		ns.common.mouseForButton();
 	});
 </script>
 </head>
-<c:set var="listurl" value="/pages/resource/templatelistBase.action"></c:set>
-<c:set var="viewurl" value="/pages/resource/templateviewBase.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<c:set var="listurl" value="/pages/resource/template/listBase.action"></c:set>
+<c:set var="viewurl" value="/pages/resource/template/viewBase.action"></c:set>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

@@ -7,13 +7,13 @@
 <!--
 	$(function(){
 		$.ajaxSetup({async: false});
-		var urlString = "<%=basePath %>/pages/resource/dateActiondataJson.action?params=${params}&formId=${formId}";
+		var urlString = "<%=basePath %>/pages/resource/date/dataJson.action?params=${params}&formId=${formId}";
 		//生成查看/修改页面
 		compexDataJson(urlString);
 		//删除ACTION URL
-		scUrl = "<%=basePath %>/pages/resource/dateActionsingleDelete.action?params=${params}";
+		scUrl = "<%=basePath %>/pages/resource/date/singleDelete.action?params=${params}";
 		//保存ACTION URL
-		bcUrl = "<%=basePath %>/pages/resource/dateActionsave.action";
+		bcUrl = "<%=basePath %>/pages/resource/date/save.action";
 		//将修改按钮置灰
 		$("#XG").attr("disabled","disabled");
 		$("#XG").attr("class","listbuttonDisable");
@@ -26,7 +26,7 @@
 		
 		//$("#tabLiId").append("<li ><a ><span >使用信息</span></a></li>");
 		//$("#tabDivId").append("<div id='useinfoId' ></div>");
-		//$("#useinfoId").loadUrl("<%=basePath %>/pages/resource/dateActionformlist.action?params=${params}");
+		//$("#useinfoId").loadUrl("<%=basePath %>/pages/resource/date/formlist.action?params=${params}");
 		$.ajaxSetup({async: true});
 		formbzUrl = "<%=basePath %>/pages/resource/compexshowFormHelp.action?formId=${formId}";
 		ns.common.mouseForButton();

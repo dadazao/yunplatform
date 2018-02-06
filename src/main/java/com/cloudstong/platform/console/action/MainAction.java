@@ -49,7 +49,8 @@ import com.cloudstong.platform.system.service.ThemeService;
 @ParentPackage("default")
 @Namespace("/")
 @Results(value = { 
-		@Result(name = "index", location = "/index.jsp")
+		@Result(name = "index", location = "/index.jsp"),
+		@Result(name = "changePass", location = "/WEB-INF/view/home/changePass.jsp")
 })
 @SuppressWarnings("serial")
 public class MainAction extends BaseAction {
@@ -114,6 +115,11 @@ public class MainAction extends BaseAction {
 		writer.write(objectMapper.writeValueAsString(resutList));
 		
 		return NONE;
+	}
+	
+	@Action("changePass")
+	public String changePass() {
+		return "changePass";
 	}
 	
 	private List<Catalog> dataFilter(List<Catalog> lstResult, Long parentid, boolean hasRoot){

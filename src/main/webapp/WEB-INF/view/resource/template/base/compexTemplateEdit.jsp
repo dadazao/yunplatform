@@ -42,7 +42,7 @@
 			type : 'post',
 			async : false,
 			dataType : 'json',
-			url : '<%=basePath %>/pages/resource/templatecontent.action?templateId=' + $("#tblMobanyongtu").val(),
+			url : '<%=basePath %>/pages/resource/template/content.action?templateId=' + $("#tblMobanyongtu").val(),
 			success : function(data) {
 				$('#tblContent').val(data.content);
 			}
@@ -98,7 +98,7 @@
 			<div align="center">
 				<form onkeydown="return enterNotSubmit(event);" id="templateFormID"
 					method="post"
-					action="<%=basePath%>/pages/resource/templatesaveBase.action"
+					action="<%=basePath%>/pages/resource/template/saveBase.action"
 					class="pageForm required-validate"
 					onsubmit="return validateCallback(this, templateDialogAjaxDone);">
 					<div style="display: none;">

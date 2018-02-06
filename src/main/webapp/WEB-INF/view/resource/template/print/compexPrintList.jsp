@@ -17,17 +17,17 @@
 		fSelfHeight = '${form.height}';
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';;
-		xjUrl="<%=basePath %>/pages/resource/printadd.action?op=new&formId=${formId}";
-		plscUrl="<%=basePath %>/pages/resource/printdelete.action?model=${model}&formId=${formId}";
-		ljscUrl="<%=basePath %>/pages/resource/printlogicDelete.action?model=${model}&formId=${formId}";
-		bcUrl = "<%=basePath %>/pages/resource/printsave.action";
+		xjUrl="<%=basePath %>/pages/resource/print/add.action?op=new&formId=${formId}";
+		plscUrl="<%=basePath %>/pages/resource/print/del.action?model=${model}&formId=${formId}";
+		ljscUrl="<%=basePath %>/pages/resource/print/logicDelete.action?model=${model}&formId=${formId}";
+		bcUrl = "<%=basePath %>/pages/resource/print/save.action";
 		bzUrl = "<%=basePath %>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath %>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 		ns.common.mouseForButton();
 	});
 </script>
 </head>
-<c:set var="listurl" value="<%=basePath %>/pages/resource/printlist.action"></c:set>
-<c:set var="viewurl" value="<%=basePath %>/pages/resource/printview.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<c:set var="listurl" value="<%=basePath %>/pages/resource/print/list.action"></c:set>
+<c:set var="viewurl" value="<%=basePath %>/pages/resource/print/view.action"></c:set>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

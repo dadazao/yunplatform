@@ -7,13 +7,13 @@
 <script type="text/javascript">
 <!--
 	$(function(){
-		var urlString = "<%=basePath %>/pages/resource/textBoxdataJson.action?params=${params}&formId=${formId}";
+		var urlString = "<%=basePath %>/pages/resource/textBox/dataJson.action?params=${params}&formId=${formId}";
 		//生成查看/修改页面
 		compexDataJson(urlString);
 		//删除ACTION URL
-		scUrl = "<%=basePath %>/pages/resource/textBoxsingleDelete.action?params=${params}";
+		scUrl = "<%=basePath %>/pages/resource/textBox/singleDelete.action?params=${params}";
 		//保存ACTION URL
-		bcUrl = "<%=basePath %>/pages/resource/textBoxsave.action";
+		bcUrl = "<%=basePath %>/pages/resource/textBox/save.action";
 		//将修改按钮置灰
 		$("#XG").attr("disabled","disabled");
 		$("#XG").attr("class","listbuttonDisable");

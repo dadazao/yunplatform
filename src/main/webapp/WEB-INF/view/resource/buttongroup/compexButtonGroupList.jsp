@@ -53,5 +53,5 @@ function loadButtonConfig() {
 </head>
 <c:set var="listurl" value="<%=basePath %>/pages/resource/buttonGrouplist.action"></c:set>
 <c:set var="viewurl" value="<%=basePath %>/pages/resource/buttonGroupview.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

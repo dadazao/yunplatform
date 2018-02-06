@@ -11,6 +11,12 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
 import com.cloudstong.platform.core.common.Constants;
 import com.cloudstong.platform.core.common.PageResult;
 import com.cloudstong.platform.core.common.QueryCriteria;
@@ -34,6 +40,18 @@ import com.cloudstong.platform.system.model.SysUser;
  * 
  *         Description:字段管理Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/column")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/resource/metadata/compexColumnList.jsp"),
+		@Result(name="columnList", location = "/WEB-INF/view/resource/metadata/columnList.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/metadata/compexColumnEdit.jsp"),
+		@Result(name="input", location = "/WEB-INF/view/resource/metadata/compexColumnEdit.jsp"),
+		@Result(name="add", location = "/WEB-INF/view/resource/metadata/compexColumnEdit.jsp"),
+		@Result(name="addColumn", location = "/WEB-INF/view/resource/metadata/columnEdit.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/resource/metadata/compexColumnView.jsp"),
+		@Result(name="search", location = "/WEB-INF/view/resource/metadata/compexColumnSearch.jsp")
+})
 public class ColumnAction extends CompexDomainAction {
 
 	/**
@@ -100,6 +118,11 @@ public class ColumnAction extends CompexDomainAction {
 	 * 显示规则代码list
 	 */
 	private List<Dictionary> showRuleList;
+	
+	@Action("list")
+	public String list() {
+		return super.list();
+	}
 
 	/**
 	 * 
@@ -107,6 +130,7 @@ public class ColumnAction extends CompexDomainAction {
 	 * 
 	 * @return
 	 */
+	@Action("search")
 	public String search() {
 		queryCriteria = new QueryCriteria();
 		queryCriteria.setCurrentIndex(0);
@@ -118,6 +142,7 @@ public class ColumnAction extends CompexDomainAction {
 	/**
 	 * 增加字段
 	 */
+	@Action("add")
 	public String add() {
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -149,6 +174,7 @@ public class ColumnAction extends CompexDomainAction {
 	/**
 	 * 编辑字段
 	 */
+	@Action("edit")
 	public String edit() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 
@@ -175,6 +201,7 @@ public class ColumnAction extends CompexDomainAction {
 	/**
 	 * 保存字段
 	 */
+	@Action("save")
 	public String save() {
 		try {
 
@@ -250,6 +277,7 @@ public class ColumnAction extends CompexDomainAction {
 	/**
 	 * 删除字段
 	 */
+	@Action("del")
 	public String delete() throws IOException {
 		try {
 			if (selectedVOs != null) {
@@ -281,6 +309,7 @@ public class ColumnAction extends CompexDomainAction {
 	/**
 	 * 删除数据表字段
 	 */
+	@Action("deleteColumn")
 	public String deleteColumn() throws IOException {
 		try {
 			if (selectedSubIDs != null) {
@@ -308,6 +337,7 @@ public class ColumnAction extends CompexDomainAction {
 	/**
 	 * 删除字段
 	 */
+	@Action("logicDelete")
 	public String logicDelete() throws IOException {
 		try {
 			if (selectedVOs != null) {
@@ -339,6 +369,7 @@ public class ColumnAction extends CompexDomainAction {
 	/**
 	 * 编辑字段
 	 */
+	@Action("view")
 	public String view() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 
@@ -363,6 +394,7 @@ public class ColumnAction extends CompexDomainAction {
 	 * @return
 	 * @throws IOException
 	 */
+	@Action("subTable")
 	public String subTable() throws IOException {
 		Table table = tableService.findTableById(id);
 		String name = table.getTableName();
@@ -383,6 +415,7 @@ public class ColumnAction extends CompexDomainAction {
 	 * @return
 	 * @throws IOException
 	 */
+	@Action("publish")
 	public String publish() throws IOException {
 		this.column = columnService.findColumnById(id);
 		if (column.getIsPublish() == 0) {// 发布
@@ -412,6 +445,7 @@ public class ColumnAction extends CompexDomainAction {
 	 * @return
 	 * @throws Exception
 	 */
+	@Action("lock")
 	public String lock() throws Exception {
 		try {
 			SysUser user = (SysUser) getSession().getAttribute("user");
@@ -437,6 +471,7 @@ public class ColumnAction extends CompexDomainAction {
 	 * @return
 	 * @throws Exception
 	 */
+	@Action("unLock")
 	public String unLock() throws Exception {
 		try {
 			SysUser user = (SysUser) getSession().getAttribute("user");
@@ -474,6 +509,7 @@ public class ColumnAction extends CompexDomainAction {
 		}
 	}
 	
+	@Action("addColumn")
 	public String addColumn() throws Exception {
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -501,6 +537,7 @@ public class ColumnAction extends CompexDomainAction {
 		return "addColumn";
 	}
 	
+	@Action("editColumn")
 	public String editColumn() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		this.column = columnService.findColumnById(id);
@@ -522,6 +559,7 @@ public class ColumnAction extends CompexDomainAction {
 		return "addColumn";
 	}
 	
+	@Action("columnList")
 	public String columnList() {
 		this.numPerPage = 10;
 		queryCriteria = new QueryCriteria();

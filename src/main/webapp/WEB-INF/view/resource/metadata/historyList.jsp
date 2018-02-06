@@ -14,7 +14,7 @@
 
 <script type="text/javascript">
 	function viewMeta(version,id){
-		$.pdialog.open("<%=basePath %>/pages/resource/tablemetaHistory.action?version="+version + "&id=" + id,"ysDialog","元数据元素",{width:950,height:650,mask:true,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/resource/table/metaHistory.action?version="+version + "&id=" + id,"ysDialog","元数据元素",{width:950,height:650,mask:true,resizable:true});
 	}
 </script>
 

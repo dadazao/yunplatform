@@ -1,17 +1,17 @@
 package com.cloudstong.platform.system.action;
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 
 import com.cloudstong.platform.core.web.action.BaseAction;
-import com.cloudstong.platform.resource.metadata.model.Seqcode;
 import com.cloudstong.platform.system.model.MenuItem;
 import com.cloudstong.platform.system.model.SysUser;
 import com.cloudstong.platform.system.service.MenuService;
@@ -26,6 +26,11 @@ import com.cloudstong.platform.system.service.MenuService;
  * 
  * Description:菜单管理Action
  */
+@ParentPackage("default")
+@Namespace("/pages/system/menu")
+@Results(value = { 
+		@Result(name="menuhelp", location = "/WEB-INF/view/core/help/menuhelp.jsp")
+})
 public class MenuAction extends BaseAction{
 	
 	private Long id;
@@ -58,26 +63,11 @@ public class MenuAction extends BaseAction{
 	 * @return
 	 * @throws Exception
 	 */
+	@Action("load")
 	public String load() throws Exception{
 		List<MenuItem> menuItems = menuService.getDefaultMenu();
 		HttpServletRequest request = getRequest();
 		SysUser user = (SysUser)request.getSession().getAttribute("user");
-//		List<Seqcode> seqcodes = user.getSeqcode();
-//		List<MenuItem> result = new ArrayList<MenuItem>();
-//		for(int i=0;menuItems!=null && i< menuItems.size(); i++) {
-//			MenuItem item = menuItems.get(i);
-//			for(int j=0; seqcodes!=null && j<seqcodes.size(); j++) {
-//				Seqcode code = seqcodes.get(j);
-//				if(code.getTblValue().equals(item.getCatalogCode()) && !result.contains(item)) {
-//					result.add(item);
-//				}
-//			}
-//		}
-//		ObjectMapper mapper = new ObjectMapper();
-//		HttpServletResponse response = getResponse();
-//		response.setCharacterEncoding("utf-8");
-//		PrintWriter writer = response.getWriter();
-//		mapper.writeValue(writer, result);
 		return NONE;
 	}
 	
@@ -87,6 +77,7 @@ public class MenuAction extends BaseAction{
 	 * @return
 	 * @throws Exception
 	 */
+	@Action("change")
 	public String change() throws Exception{
 		try{
 			menuService.doUpdateMenu(id);
@@ -95,6 +86,10 @@ public class MenuAction extends BaseAction{
 			printJSON("fail", false);
 		}
 		return NONE;
+	}
+	
+	public String help() {
+		return "menuhelp";
 	}
 
 }

@@ -53,7 +53,7 @@
 		}
 		//判断是否可以删除  end
 		alertMsg.confirm("确定删除吗？",{okCall:function(){
-			var urlString = "<%=basePath%>/pages/system/logodelete.action";
+			var urlString = "<%=basePath%>/pages/system/logo/del.action";
 			var param = $("#logoForm").serialize();
 			urlString = urlString + "?" + param;
 			ajaxTodo(urlString,dialogRefresh);
@@ -90,7 +90,7 @@
 		refreshList(json);
 		$.ajax({
 	  		type:'POST',
-	  		url:'<%=basePath%>/pages/system/logoshowLogo.action',
+	  		url:'<%=basePath%>/pages/system/logo/showLogo.action',
 	  		success:function(data){
 	  			$('#logoImg').attr('src',data);
 	  		}
@@ -115,7 +115,7 @@
 			alertMsg.warn("只能选择一个LOGO！");
 			return;
 		}
-		$.pdialog.open("<%=basePath%>/pages/system/logoview.action?id="+value,"newDialog","LOGO预览",{width:800,height:600,mask:true,resizable:false});
+		$.pdialog.open("<%=basePath%>/pages/system/logo/view.action?id="+value,"newDialog","LOGO预览",{width:800,height:600,mask:true,resizable:false});
 	}
 	
 	function eventCompexLOGOMR(){
@@ -135,7 +135,7 @@
 </script>
 </head>
 <body>
-	<form id="pagerForm" method="post" action="<%=basePath %>/pages/system/logolist.action">
+	<form id="pagerForm" method="post" action="<%=basePath %>/pages/system/logo/list.action">
 		<input type="hidden" name="listId" value="${listId}"/>
 		<input type=hidden name="model" value="${model}"/>
 		<input type="hidden" name="status" value="${param.status}">
@@ -173,7 +173,7 @@
 	</div>
 	<div id="defaultQuery" class="pageHeader" style="height: ${tabulation.queryControl.queryControlHeight==0?'':tabulation.queryControl.queryControlHeight}px;width:${tabulation.queryControl.queryControlWidth}%">
 		<div class="searchBar">
-			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/system/logolist.action" method="post">
+			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/system/logo/list.action" method="post">
 				<table class="searchContent">
 					<tr>
 						<c:forEach items="${tabulation.tabulationColumnExtends}" var="ce" varStatus="status">
@@ -241,7 +241,7 @@
 		<div class="pagination" targetType="navTab" totalCount="${pageResult.totalCount}" numPerPage="${pageResult.pageSize }" pageNumShown="${tabulation.listControl.pageManage.showPageNumberCount }" currentPage="${pageResult.currentPage}"></div>
 	</div>
 	</c:if>
-	<form id="logoForm" name="logoForm" method="post" action="<c:url value='/pages/system/logosave.action'/>" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<form id="logoForm" name="logoForm" method="post" action="<c:url value='/pages/system/logo/save.action'/>" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
 		<table class="table" width="100%" layoutH="138">
 			<thead>
 				<tr>

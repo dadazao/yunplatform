@@ -13,7 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript">
 	ns.attachment.viewDocument = function(filepath){
-		$.pdialog.open("<%=basePath%>/pages/resource/flexPaperopen.action?filePathAndName="+filepath,"lbdyDialog","查看文件",{width:950,height:650,mask:true,resizable:true});
+		$.pdialog.open("<%=basePath%>/pages/resource/flexPaper/open.action?filePathAndName="+filepath,"lbdyDialog","查看文件",{width:950,height:650,mask:true,resizable:true});
 	}
 	
 	ns.attachment.attachmentDelete = function(){

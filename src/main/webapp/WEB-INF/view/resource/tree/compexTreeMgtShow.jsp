@@ -24,7 +24,7 @@ function loadTable() {
 			}
 		};
 	
-	var url = '<%=basePath %>/pages/resource/treeshowtreeByUrl.action';
+	var url = '<%=basePath %>/pages/resource/tree/showtreeByUrl.action';
 	var params = 'belongTable=${belongTable}&rootId=${rootId}&nameColumn=${nameColumn}&parentColumn=${parentColumn}&orderColumn=${orderColumn}&expand=false&expandLevel=1&showRoot=${showRoot}';
 	$.ajax({
 		url : url,

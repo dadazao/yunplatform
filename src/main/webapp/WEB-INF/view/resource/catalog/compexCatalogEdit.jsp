@@ -46,7 +46,7 @@
 	}
 
 	function listpage(){
-		var urlString = "<%=basePath %>/pages/resource/tabulationgetTabulations.action";
+		var urlString = "<%=basePath %>/pages/resource/tabulation/getTabulations.action";
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -65,7 +65,7 @@
 	}
 	
 	function imagepage(){
-		var urlString = "<%=basePath %>/pages/system/imagepageCompexgetImagePages.action";
+		var urlString = "<%=basePath %>/pages/system/imagePage/getImagePages.action";
 		$.ajax({
 			type:'post',
 			url: urlString,

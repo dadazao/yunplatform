@@ -42,7 +42,7 @@ function selfDialogAjaxDone(json) {
 	}
 }
 </script>
-<form method="post" action="<c:url value='/pages/system/logoadd.action'/>" class="pageForm required-validate" onsubmit="return LimitAttach(this,this.upload.value);" enctype="multipart/form-data">
+<form method="post" action="<c:url value='/pages/system/logo/add.action'/>" class="pageForm required-validate" onsubmit="return LimitAttach(this,this.upload.value);" enctype="multipart/form-data">
 	<div style="vertical-align: middle;">
 		<p>
 		<br>

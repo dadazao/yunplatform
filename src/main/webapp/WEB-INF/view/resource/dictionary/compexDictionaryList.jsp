@@ -17,17 +17,17 @@
 		fSelfHeight = '${form.height}';
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
-		xjUrl="<%=basePath %>/pages/resource/dictionarysCompexadd.action?op=new&formId=${formId}";
+		xjUrl="<%=basePath %>/pages/resource/dictionary/add.action?op=new&formId=${formId}";
 		plscUrl="<%=basePath %>/pages/resource/${simpleModel}compexdelete.action?model=${model}&formId=${formId}";
 		ljscUrl="<%=basePath %>/pages/resource/compexlogicDelete.action?model=${model}&formId=${formId}";
-		bcUrl = "<%=basePath %>/pages/resource/dictionarysCompexsave.action";
+		bcUrl = "<%=basePath %>/pages/resource/dictionary/save.action";
 		bzUrl = "<%=basePath %>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath %>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 		ns.common.mouseForButton();
 	});
 
 	function selectPreCode(){
-		var url="<%=basePath %>/pages/resource/treefetchShowTreeParamById.action?treeId=118&parentId=parentId&parentName=parentName";
+		var url="<%=basePath %>/pages/resource/tree/fetchShowTreeParamById.action?treeId=118&parentId=parentId&parentName=parentName";
 		$.pdialog.open(url,"selectDialog","选择",{width:300,height:600,mask:true,resizable:true});
 	}
 	
@@ -42,7 +42,7 @@
 </head>
 
 <body>
-	<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/dictionarysCompexlist.action">
+	<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/dictionary/list.action">
 		<input type="hidden" id="cloudstongListId" name="listId" value="${listId}"/>
 		<input type="hidden" id="cloudstongFormId" name="formId" value="${formId}"/>
 		<input type="hidden" name="model" value="${model}"/>
@@ -97,7 +97,7 @@
 	<c:if test="${hasDefaultQuery==true}">
 	<div id="defaultQuery" class="pageHeader" style="height: ${tabulation.queryControl.queryControlHeight==0?'':tabulation.queryControl.queryControlHeight}px;width:${tabulation.queryControl.queryControlWidth}%">
 		<div class="searchBar">
-			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/dictionarysCompexlist.action?queryTpe=0" method="post">
+			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/dictionary/list.action?queryTpe=0" method="post">
 				<table class="searchContent">
 					<tr>
 						<td align="right">
@@ -456,7 +456,7 @@
 										<c:when test="${tabulationOpt.button.buttonName=='发布'||tabulationOpt.button.buttonName=='撤回'}">
 											&nbsp;
 											<c:if test="${curruser==user.fullname}">
-											<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>/pages/resource/dictionarysCompexview.action','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.button.buttonName}</font></span></a>
+											<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>/pages/resource/dictionary/view.action','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.button.buttonName}</font></span></a>
 											</c:if>
 											<c:if test="${curruser!=user.fullname}">
 											<a style="cursor: default;" ><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:gray">${tabulationOpt.button.buttonName}</font></span></a>
@@ -469,7 +469,7 @@
 										</c:when>
 										<c:otherwise>
 											&nbsp;
-											<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>/pages/resource/dictionarysCompexview.action','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
+											<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>/pages/resource/dictionary/view.action','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
 											&nbsp;
 										</c:otherwise>
 									</c:choose>

@@ -27,7 +27,7 @@
 			$(document).ready(function() {
 <%--				$('ul[class="ztree"]').css({'height':(fDefaultHeight-150)+'px'});--%>
 				$.ajax({
-					url : "pages/resource/personChoisedepmUserTree.action?treeId=96408e4e0a3c421a867606dbb2503a6c",
+					url : "<%=basePath %>/pages/resource/personChoisedepmUserTree.action?treeId=96408e4e0a3c421a867606dbb2503a6c",
 					dataType : "json",
 					success : function(zNodes) {
 						$.fn.zTree.init($("#privilegeTree"), settings, zNodes);

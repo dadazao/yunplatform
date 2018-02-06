@@ -14,10 +14,10 @@
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
 		//新建ACTION URL
-		xjUrl = "<%=basePath%>/pages/resource/textBoxadd.action?formId=${formId}&model=${model}&op=new";
+		xjUrl = "<%=basePath%>/pages/resource/textBox/add.action?formId=${formId}&model=${model}&op=new";
 		//批量删除ACTION URL
-		plscUrl = "<%=basePath%>/pages/resource/textBoxdelete.action?model=${model}&formId=${formId}";
-		ljscUrl = "<%=basePath%>/pages/resource/textBoxlogicDelete.action?model=${model}&formId=${formId}";
+		plscUrl = "<%=basePath%>/pages/resource/textBox/del.action?model=${model}&formId=${formId}";
+		ljscUrl = "<%=basePath%>/pages/resource/textBox/logicDelete.action?model=${model}&formId=${formId}";
 		bcUrl = "<%=basePath%>/pages/resource/${simpleModel}compexsave.action";
 		bzUrl = "<%=basePath%>/pages/resource/${simpleModel}compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath%>/pages/resource/${simpleModel}compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
@@ -25,7 +25,7 @@
 		
 </script>
 </head>
-<c:set var="listurl" value="/pages/resource/textBoxlist.action"></c:set>
-<c:set var="viewurl" value="/pages/resource/textBoxview.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<c:set var="listurl" value="/pages/resource/textBox/list.action"></c:set>
+<c:set var="viewurl" value="/pages/resource/textBox/view.action"></c:set>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

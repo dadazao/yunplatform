@@ -12,7 +12,7 @@
 		$("#BC").attr("class","listbuttonDisable");
 		var params=$("#paramsId").val();
 		$("#domainId").val(params.split(";")[0].split(":")[1]);
-		xgUrl="<%=basePath %>/pages/system/dbDriveredit.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl="<%=basePath %>/pages/system/dbDriver/edit.action?formId=${formId}&params=${params}" + "&op=edit";
 	
 		$('#tabDivId').children().prepend($('#enabledDb').html());
 		$('#enabledDb').text('');
@@ -29,7 +29,7 @@
 		$.ajax({
 			type:'post',
 			dataType:'json',
-			url:'<%=basePath %>/pages/system/dbDriverconnDbTest.action?'+params+'ctp.connDsType='+$('#connDsType').val(),
+			url:'<%=basePath %>/pages/system/dbDriver/connDbTest.action?'+params+'ctp.connDsType='+$('#connDsType').val(),
 			success: function(data){
 				if(data.status == 'success'){
 					alertMsg.info(data.message);
@@ -57,7 +57,7 @@
 	
 	function connDbEnable(){
 		$.ajax({
-			url: '<%=basePath %>/pages/system/dbDriverchange.action?id='+$("#domainId").val(),
+			url: '<%=basePath %>/pages/system/dbDriver/change.action?id='+$("#domainId").val(),
 			dataType: 'json',
 			success: function(data){
 				if(data.status == 'info'){

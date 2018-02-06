@@ -14,6 +14,11 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.cloudstong.platform.core.common.QueryCriteria;
@@ -23,7 +28,6 @@ import com.cloudstong.platform.resource.dictionary.service.DictionaryService;
 import com.cloudstong.platform.resource.form.model.Form;
 import com.cloudstong.platform.resource.metadata.action.CompexDomainAction;
 import com.cloudstong.platform.resource.metadata.model.Column;
-import com.cloudstong.platform.resource.metadata.model.Seqcode;
 import com.cloudstong.platform.resource.metadata.model.Table;
 import com.cloudstong.platform.resource.metadata.service.ColumnService;
 import com.cloudstong.platform.resource.metadata.service.CompexDomainService;
@@ -46,7 +50,22 @@ import com.cloudstong.platform.system.model.SysUser;
  * 
  * Description:树模板Action
  */
-public class MgrTreeAction extends CompexDomainAction {
+@ParentPackage("default")
+@Namespace("/pages/resource/tree")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/resource/tree/compexTreeMgtList.jsp"),
+		@Result(name="add", location = "/WEB-INF/view/resource/tree/compexTreeMgtEdit.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/tree/compexTreeMgtEdit.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/resource/tree/compexTreeMgtView.jsp"),
+		@Result(name="treeParam", location = "/WEB-INF/view/resource/tree/compexTreeMgtShow.jsp"),
+		@Result(name="addsingle", location = "/WEB-INF/view/resource/tree/singleTableType.jsp"),
+		@Result(name="addboth", location = "/WEB-INF/view/resource/tree/bothTableType.jsp"),
+		@Result(name="editsingle", location = "/WEB-INF/view/resource/tree/singleTableType.jsp"),
+		@Result(name="editboth", location = "/WEB-INF/view/resource/tree/bothTableType.jsp"),
+		@Result(name="personPage", location = "/WEB-INF/view/resource/personChiose/personChoiseEdit.jsp"),
+		@Result(name="userPage", location = "/WEB-INF/view/resource/personChiose/userChoiseEdit.jsp")
+})
+public class TreeMgrAction extends CompexDomainAction {
 
 	/**
 	 * 主键
@@ -179,6 +198,12 @@ public class MgrTreeAction extends CompexDomainAction {
 	 * 操作数ID
 	 */
 	private Long treeId;
+	
+	@Action("del")
+	public String delete() throws Exception {
+		return super.delete();
+	}
+	
 	/**
 	 * Description:获取树类型选择列表数据
 	 * @return 树类型列表数据
@@ -194,6 +219,7 @@ public class MgrTreeAction extends CompexDomainAction {
 	 * Description:获取在显示树之前需要加载的参数值,返回显示树表单的json对象
 	 * @return forward
 	 */
+	@Action("fetchShowTreeParamAction")
 	public String fetchShowTreeParamAction() {
 		try {
 			String tableId = getRequest().getParameter("tableId");
@@ -228,6 +254,7 @@ public class MgrTreeAction extends CompexDomainAction {
 	 * Description:显示树
 	 * @return forward
 	 */
+	@Action("fetchShowTreeParamById")
 	public String fetchShowTreeParamById() {
 		treeId = Long.valueOf(getRequest().getParameter("treeId"));
 		MgrTree mgrTree = mgrTreeService.findMgrTreeById(treeId);
@@ -256,6 +283,7 @@ public class MgrTreeAction extends CompexDomainAction {
 	 * Description:显示树--类型2
 	 * @return forward
 	 */
+	@Action("fetchShowTreeParam")
 	public String fetchShowTreeParam() {
 		return "treeParam";
 	}
@@ -263,6 +291,7 @@ public class MgrTreeAction extends CompexDomainAction {
 	/* 
 	 * 显示树模板记录列表
 	 */
+	@Action("list")
 	public String list() {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		
@@ -273,10 +302,12 @@ public class MgrTreeAction extends CompexDomainAction {
 	/* 
 	 * 打开树模板新建页面
 	 */
+	@Action("add")
 	public String add() {
 		return super.add();
 	}
 	
+	@Action("addsingle")
 	public String addsingle() {
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -287,6 +318,7 @@ public class MgrTreeAction extends CompexDomainAction {
 		return "addsingle";
 	}
 	
+	@Action("addboth")
 	public String addboth() {
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -329,6 +361,7 @@ public class MgrTreeAction extends CompexDomainAction {
 	/* 
 	 * 保存树模板
 	 */
+	@Action("save")
 	public String save(){
 		HttpServletRequest request = getRequest();
 		SysUser user = (SysUser)request.getSession().getAttribute("user");
@@ -376,6 +409,7 @@ public class MgrTreeAction extends CompexDomainAction {
 	/* 
 	 * 查询树模板表单页面
 	 */
+	@Action("view")
 	public String view() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		
@@ -403,6 +437,7 @@ public class MgrTreeAction extends CompexDomainAction {
 	/* 
 	 * 编辑树模板表单页面
 	 */
+	@Action("edit")
 	public String edit() throws Exception {
 		mgrTree = this.mgrTreeService
 				.findMgrTreeById(parseParamsForID());
@@ -410,6 +445,7 @@ public class MgrTreeAction extends CompexDomainAction {
 		return super.edit();
 	}
 
+	@Action("editsingle")
 	public String editsingle() throws IOException {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		
@@ -417,6 +453,7 @@ public class MgrTreeAction extends CompexDomainAction {
 		return "editsingle";
 	}
 	
+	@Action("editboth")
 	public String editboth() throws IOException {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		
@@ -446,6 +483,7 @@ public class MgrTreeAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("getColumnParent")
 	public String getColumnParent() throws IOException {
 		try {
 			columnList = mgrTreeService.getColumnAll(id);
@@ -514,6 +552,7 @@ public class MgrTreeAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("getColumnParentChild")
 	public String getColumnParentChild() throws IOException {
 		try {
 			columnList = mgrTreeService.getColumnAll(id);
@@ -1055,7 +1094,7 @@ public class MgrTreeAction extends CompexDomainAction {
 						}
 					}
 				}
-				ztree.put("path", "pages/system/joinlist.action?listId="+tabulationId+"&dyncMapString.tbl_parentId="+id);
+				ztree.put("path", "/pages/resource/join/list.action?listId="+tabulationId+"&dyncMapString.tbl_parentId="+id);
 				ztree.put("gjTree", true);
 				_lstZtree.add(ztree);
 			}

@@ -6,6 +6,9 @@ import java.io.PrintWriter;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.cloudstong.platform.core.web.action.BaseAction;
@@ -22,6 +25,8 @@ import com.cloudstong.platform.resource.enterinfo.service.EnterpriseInfoService;
  * 
  * Description:企业信息Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/enterpriseInfo")
 public class EnterpriseInfoAction extends BaseAction {
 	
 	@Resource
@@ -32,6 +37,7 @@ public class EnterpriseInfoAction extends BaseAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("loadDefault")
 	public String loadDefault() throws IOException {
 		EnterpriseInfo info = enterpriseInfoService.findDefaultInfo();
 		ObjectMapper mapper = new ObjectMapper();

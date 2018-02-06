@@ -8,6 +8,12 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
 import com.cloudstong.platform.core.common.Constants;
 import com.cloudstong.platform.core.common.PageResult;
 import com.cloudstong.platform.core.common.QueryCriteria;
@@ -39,6 +45,13 @@ import com.cloudstong.platform.system.service.IUserService;
  * 
  * Description:列表按钮Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/tabulationButton")
+@Results(value = { 
+		@Result(name="addButton", location = "/WEB-INF/view/resource/tabulation/tabulationButtonEdit.jsp"),
+		@Result(name="editButton", location = "/WEB-INF/view/resource/tabulation/tabulationButtonEdit.jsp"),
+		@Result(name="listButton", location = "/WEB-INF/view/resource/tabulation/tabulationButtonList.jsp")
+})
 public class TabulationButtonAction extends BaseAction {
 	
 	private static final long serialVersionUID = 7070545034229748052L;
@@ -202,6 +215,7 @@ public class TabulationButtonAction extends BaseAction {
 	 * Description:加载列表按钮表单页面
 	 * @return forward
 	 */
+	@Action("add")
 	public String addButton() {
 		try {
 			String op =  getRequest().getParameter("op");
@@ -227,6 +241,7 @@ public class TabulationButtonAction extends BaseAction {
 	 * Description:显示列表按钮列表
 	 * @return forward
 	 */
+	@Action("list")
 	public String listButton() {
 		String op =  getRequest().getParameter("op");
 		getRequest().setAttribute("op", op);
@@ -259,6 +274,7 @@ public class TabulationButtonAction extends BaseAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("save")
 	public String save() throws IOException {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		
@@ -376,6 +392,7 @@ public class TabulationButtonAction extends BaseAction {
 	 * @return forward
 	 * @throws Exception
 	 */
+	@Action("edit")
 	public String edit() throws Exception {
 		String op =  getRequest().getParameter("op");
 		String marking = getRequest().getParameter("marking");
@@ -400,6 +417,7 @@ public class TabulationButtonAction extends BaseAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("del")
 	public String delete() throws IOException {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		
@@ -425,6 +443,7 @@ public class TabulationButtonAction extends BaseAction {
 	 * @return NONE
 	 * @throws Exception
 	 */
+	@Action("show")
 	public String showButton() throws Exception {
 		queryCriteria = new QueryCriteria();
 		queryCriteria.setPageSize(-1);

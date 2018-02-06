@@ -172,7 +172,7 @@
 													$.ajax({
 														type:'post',
 														dataType: 'json',
-														url: "pages/resource/personChoisedepmPersonChange.action?choisePerson="+"${ce.value}",
+														url: "<%=basePath %>/pages/resource/personChoise/depmPersonChange.action?choisePerson="+"${ce.value}",
 														success: function(data){
 															var _name='';
 															$.each(data,function (entryIndex,entry){

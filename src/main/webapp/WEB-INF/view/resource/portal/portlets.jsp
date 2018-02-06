@@ -9,7 +9,7 @@
 	<ul class="portlet" style="min-height: ${portlet.minHeight}px; max-height:${portlet.maxHeight}px;overflow:hidden;">
 		<div class="phead">
 			<div class="ptitle">
-				<img src="<c:url value="./pages/resource/portal/image/titleicon.gif"/>" style="padding-top:5px;">
+				<img src="<c:url value="/images/portal/titleicon.gif"/>" style="padding-top:5px;">
 				${portlet.name}
 			</div>
 			<div class="poper" style="padding-top:6px;"><a href="#" onclick="gotoList('${portlet.listId}','${portlet.name}');" style="text-decoration: none;" title="列表查看所有信息">更多</a> </div>
@@ -157,7 +157,7 @@
 													$.ajax({
 														type:'post',
 														dataType: 'json',
-														url: "/pages/resource/personChoisedepmPersonChange.action?choisePerson="+"${ce.value}",
+														url: "<%=basePath %>/pages/resource/personChoise/depmPersonChange.action?choisePerson="+"${ce.value}",
 														success: function(data){
 															var _name='';
 															$.each(data,function (entryIndex,entry){

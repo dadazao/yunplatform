@@ -71,7 +71,7 @@ function changeTabType(obj){
 }
 
 function xinjianmuban(){
-	$.pdialog.open("<%=basePath%>/pages/resource/templateaddBaseByForm.action?op=new&formId=109&tabop=${op}","newTemplateDialog","新建模板",{width:950,height:650,mask:true,resizable:true});
+	$.pdialog.open("<%=basePath%>/pages/resource/template/addBaseByForm.action?op=new&formId=109&tabop=${op}","newTemplateDialog","新建模板",{width:950,height:650,mask:true,resizable:true});
 }
 //-->
 </script>

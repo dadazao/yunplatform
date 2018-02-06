@@ -7,6 +7,11 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.cloudstong.platform.core.util.CacheUtil;
@@ -39,6 +44,19 @@ import com.cloudstong.platform.system.service.IUserService;
  * Description:
  */
 @SuppressWarnings("serial")
+@ParentPackage("default")
+@Namespace("/pages/resource/template")
+@Results(value = { 
+		@Result(name="baselist", location = "/WEB-INF/view/resource/template/base/compexTemplateList.jsp"),
+		@Result(name="baseadd", location = "/WEB-INF/view/resource/template/base/compexTemplateEdit.jsp"),
+		@Result(name="baseaddbyform", location = "/WEB-INF/view/resource/template/base/compexTemplateEditByForm.jsp"),
+		@Result(name="baseview", location = "/WEB-INF/view/resource/template/base/compexTemplateView.jsp"),
+		@Result(name="baseedit", location = "/WEB-INF/view/resource/template/base/compexTemplateEdit.jsp"),
+		@Result(name="comblist", location = "/WEB-INF/view/resource/template/combination/compexTemplateList.jsp"),
+		@Result(name="combadd", location = "/WEB-INF/view/resource/template/combination/compexTemplateEdit.jsp"),
+		@Result(name="combview", location = "/WEB-INF/view/resource/template/combination/compexTemplateView.jsp"),
+		@Result(name="combedit", location = "/WEB-INF/view/resource/template/combination/compexTemplateEdit.jsp")
+})
 public class TemplateAction extends CompexDomainAction {
 	/**
 	 * 表单模板管理的服务,<code>templateService</code>对象是TemplateService接口的一个实例.
@@ -73,6 +91,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * 
 	 * @return 页面标识
 	 */
+	@Action("listBase")
 	public String listBase() {
 		super.list();
 		return "baselist";
@@ -85,6 +104,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * 
 	 * @return 页面标识
 	 */
+	@Action("addBase")
 	public String addBase() {
 		try {
 			super.add();
@@ -102,6 +122,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * 
 	 * @return 页面标识
 	 */
+	@Action("addBaseByForm")
 	public String addBaseByForm() {
 		try {
 			super.add();
@@ -122,6 +143,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return none
 	 * @throws Exception
 	 */
+	@Action("saveBase")
 	public String saveBase() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		sysTemplate.setCreateBy(user.getId());
@@ -207,13 +229,6 @@ public class TemplateAction extends CompexDomainAction {
 		return content;
 	}
 	
-	
-	// 老版本的保存方法
-	//public String saveBase() throws Exception {
-	//	super.save();
-	//	return NONE;
-	//}
-	
 	/**
 	 * Description:返回表单模板详细页面
 	 * 
@@ -222,6 +237,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return 页面标识
 	 * @throws Exception
 	 */
+	@Action("viewBase")
 	public String viewBase() throws Exception {
 		super.view();
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -254,6 +270,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return 页面标识
 	 * @throws Exception
 	 */
+	@Action("editBase")
 	public String editBase() throws Exception {
 		super.edit();
 		sysTemplate = templateService.queryTemplateById(Long.valueOf(params.split(":")[1].split(";")[0]));
@@ -270,6 +287,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return none
 	 * @throws IOException
 	 */
+	@Action("copyBase")
 	public String copyBase() throws IOException {
 		String _sId = "";
 		if (params != null) {
@@ -290,7 +308,8 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return
 	 * @throws IOException
 	 */
-	public String deleteBase() throws IOException {
+	@Action("deleteBase")
+	public String deleteBase() throws Exception {
 			return super.delete();
 	}
 	
@@ -302,6 +321,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return
 	 * @throws IOException
 	 */
+	@Action("logicDeleteBase")
 	public String logicDeleteBase() throws IOException {
 			return super.logicDelete();
 	}
@@ -316,6 +336,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return none
 	 * @throws Exception
 	 */
+	@Action("content")
 	public String content() throws Exception{
 		Template template1 = new Template();
 		List<Template> _lstResult = templateService.selectLibary();
@@ -349,6 +370,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return 页面标识
 	 * @throws Exception
 	 */
+	@Action("listComb")
 	public String listComb() {
 		super.list();
 		return "comblist";
@@ -362,6 +384,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return 页面标识
 	 * @throws Exception
 	 */
+	@Action("addComb")
 	public String addComb() throws Exception {
 		super.add();
 		return "combadd";
@@ -375,6 +398,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return none
 	 * @throws Exception
 	 */
+	@Action("saveComb")
 	public String saveComb() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		sysTemplate.setCreateBy(user.getId());
@@ -395,6 +419,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return 页面标识
 	 * @throws Exception
 	 */
+	@Action("viewComb")
 	public String viewComb() throws Exception {
 		super.view();
 		return "combview";
@@ -449,6 +474,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return 页面标识
 	 * @throws Exception
 	 */
+	@Action("editComb")
 	public String editComb() throws Exception {
 		sysTemplate = templateService.queryTemplateById(Long.valueOf(params.split(":")[1].split(";")[0]));
 		sysTemplate.setTblContent(combContentChar(sysTemplate));
@@ -463,7 +489,8 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return 页面标识
 	 * @throws Exception
 	 */
-	public String deleteComb() throws IOException {
+	@Action("deleteComb")
+	public String deleteComb() throws Exception {
 		return super.delete();
 	}
 	
@@ -475,6 +502,7 @@ public class TemplateAction extends CompexDomainAction {
 	 * @return 页面标识
 	 * @throws Exception
 	 */
+	@Action("logicDeleteComb")
 	public String logicDeleteComb() throws IOException {
 		return super.logicDelete();
 	}

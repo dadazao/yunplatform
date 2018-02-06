@@ -141,7 +141,7 @@
 	}
 	
 	function showCodeDialog() {
-		$.pdialog.open("<%=basePath %>/pages/resource/treefetchShowTreeParam.action?belongTable=sys_dictionarys&rootId=1&nameColumn=tbl_name&parentColumn=tbl_parentId&orderColumn=tbl_dicOrder&expand=false&level=1&showRoot=true&parentName=parentName&parentId=parentId", "selectDialog", "选择代码", {width:300,height:600,mask:true,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/resource/tree/fetchShowTreeParam.action?belongTable=sys_dictionarys&rootId=1&nameColumn=tbl_name&parentColumn=tbl_parentId&orderColumn=tbl_dicOrder&expand=false&level=1&showRoot=true&parentName=parentName&parentId=parentId", "selectDialog", "选择代码", {width:300,height:600,mask:true,resizable:true});
 	}
 	
 	function showListOrder(value) {

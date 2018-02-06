@@ -7,7 +7,7 @@
 <script type="text/javascript">
 <!--
 	$(function(){
-		xgUrl = "<%=basePath %>/pages/resource/templateeditComb.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl = "<%=basePath %>/pages/resource/template/editComb.action?formId=${formId}&params=${params}" + "&op=edit";
 		addPartitionPage();
 		ns.common.mouseForButton();
 	});

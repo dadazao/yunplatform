@@ -1168,7 +1168,7 @@ public class CompexDomainAction extends BaseAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
-	public String delete() throws IOException {
+	public String delete() throws Exception {
 		try {
 			this.simpleDelete();
 			printJSON("success");

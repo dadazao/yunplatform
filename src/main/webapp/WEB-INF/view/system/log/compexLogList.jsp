@@ -28,8 +28,8 @@
 	});
 </script>
 </head>
-<c:set var="listurl" value="/pages/system/sysloglist.action"></c:set>
-<c:set var="viewurl" value="/pages/system/syslogview.action"></c:set>
+<c:set var="listurl" value="/pages/system/syslog/list.action"></c:set>
+<c:set var="viewurl" value="/pages/system/syslog/view.action"></c:set>
 <body>
 	<form id="pagerForm" method="post" action="${listurl}">
 		<input type="hidden" id="cloudstongListId" name="listId" value="${listId}"/>
@@ -457,7 +457,7 @@
 													$.ajax({
 														type:'post',
 														dataType: 'json',
-														url: "<%=basePath %>/pages/resource/personChoisedepmPersonChange.action?choisePerson="+"${ce.value}",
+														url: "<%=basePath %>/pages/resource/personChoise/depmPersonChange.action?choisePerson="+"${ce.value}",
 														success: function(data){
 															var _name='';
 															$.each(data,function (entryIndex,entry){

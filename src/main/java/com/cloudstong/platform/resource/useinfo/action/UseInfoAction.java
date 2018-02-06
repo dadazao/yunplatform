@@ -7,6 +7,11 @@ import java.util.Random;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.cloudstong.platform.core.web.action.BaseAction;
@@ -23,6 +28,11 @@ import com.cloudstong.platform.resource.useinfo.service.UseInfoService;
  * 
  * Description:使用信息Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/useinfo")
+@Results(value = { 
+		@Result(name="compStat", location = "/WEB-INF/view/resource/useinfo/compStat.jsp")
+})
 public class UseInfoAction extends BaseAction{
 
 	private static final long serialVersionUID = -8946726973799917047L;
@@ -42,12 +52,18 @@ public class UseInfoAction extends BaseAction{
 	public void setUseInfoService(UseInfoService useInfoService) {
 		this.useInfoService = useInfoService;
 	}
+	
+	@Action("compStat")
+	public String compStat() {
+		return "compStat";
+	}
 
 	/**
 	 * Description:统计各类组件的数量,返回json对象
 	 * @return NONE
 	 * @throws Exception
 	 */
+	@Action("state")
 	public String state() throws Exception{
 		List<ChartComp> comps = useInfoService.stat(number);
 		for(int i=0; i<number; i++){

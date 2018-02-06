@@ -13,8 +13,13 @@ import java.util.Properties;
 
 import javax.annotation.Resource;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
 import com.cloudstong.platform.core.util.DateUtil;
-import com.cloudstong.platform.core.util.SystemProperty;
 import com.cloudstong.platform.resource.metadata.action.CompexDomainAction;
 import com.cloudstong.platform.resource.metadata.model.SchemaColumns;
 import com.cloudstong.platform.resource.metadata.model.SchemaTables;
@@ -31,6 +36,8 @@ import com.cloudstong.platform.system.service.MysqlService;
  * 
  * Description:mysql数据库的备份与恢复
  */
+@ParentPackage("default")
+@Namespace("/pages/system/mysql")
 public class MysqlAction extends CompexDomainAction {
 	
 	@Resource
@@ -38,6 +45,7 @@ public class MysqlAction extends CompexDomainAction {
 	
 	private String filename;
 	
+	@Action("backup")
 	public String backup() {
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -150,6 +158,7 @@ public class MysqlAction extends CompexDomainAction {
 		return sbdSql;
 	}
 	
+	@Action("recover")
 	public String recover() throws IOException {
 		StringBuilder sdbSql = new StringBuilder();
 		Properties sp = (Properties) getSession().getAttribute("global");

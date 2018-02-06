@@ -10,7 +10,7 @@
 <!--
 
 	function exportZip(){
-		window.open("<%=basePath %>/pages/resource/catalogTreeexportZip.action?"+$("#exportForm").serialize());
+		window.open("<%=basePath %>/pages/resource/catalog/exportZip.action?"+$("#exportForm").serialize());
 	}
 //-->
 </script>

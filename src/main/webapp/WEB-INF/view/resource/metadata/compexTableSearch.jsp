@@ -4,7 +4,7 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+ "://"+request.getServerName() + ":"+request.getServerPort()+path;
 %>
-<form method="post" action="<c:url value='/pages/resource/tablelist.action'/>" onsubmit="return navTabSearch(this);">
+<form method="post" action="<c:url value='/pages/resource/table/list.action'/>" onsubmit="return navTabSearch(this);">
 	<div align="center">
   	 	<table width="98%" cellspacing="0" cellpadding="2" border="0" class="Input_Table">
 			<tr>

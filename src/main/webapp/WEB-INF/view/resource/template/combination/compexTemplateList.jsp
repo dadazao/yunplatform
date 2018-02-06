@@ -16,17 +16,17 @@
 		fSelfHeight = '${form.height}';
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
-		xjUrl="<%=basePath%>/pages/resource/templateaddComb.action?op=new&formId=${formId}";
-		plscUrl="<%=basePath%>/pages/resource/templatedeleteComb.action?model=${model}&formId=${formId}";
-		ljscUrl="<%=basePath%>/pages/resource/templatelogicDeleteComb.action?model=${model}&formId=${formId}";
-		bcUrl = "<%=basePath%>/pages/resource/templatesaveComb.action";
+		xjUrl="<%=basePath%>/pages/resource/template/addComb.action?op=new&formId=${formId}";
+		plscUrl="<%=basePath%>/pages/resource/template/deleteComb.action?model=${model}&formId=${formId}";
+		ljscUrl="<%=basePath%>/pages/resource/template/logicDeleteComb.action?model=${model}&formId=${formId}";
+		bcUrl = "<%=basePath%>/pages/resource/template/saveComb.action";
 		bzUrl = "<%=basePath%>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath%>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 		ns.common.mouseForButton();
 	});
 	
 	function loadPartition(){
-		$("#partitionFormDiv").loadUrl("<%=basePath%>/pages/resource/partitionloadPartitionForm.action");
+		$("#partitionFormDiv").loadUrl("<%=basePath%>/pages/resource/partition/loadPartitionForm.action");
 	}
 	
 	function addPartition(){
@@ -38,7 +38,7 @@
 		if($('#domainId').val() == ""){
 			alertMsg.warn("请先建立模板!");
 		}else{
-			var urlString = "<%=basePath%>/pages/resource/partitionsave.action?templateId=" + $('#domainId').val();
+			var urlString = "<%=basePath%>/pages/resource/partition/save.action?templateId=" + $('#domainId').val();
 			$.ajax({
 				type:'post',
 				url: urlString,
@@ -58,7 +58,7 @@
 		if($('#domainId').val() == ""){
 			alertMsg.warn("请先建立模板!");
 		}else{
-			var urlString = "<%=basePath%>/pages/resource/partitionsave.action?templateId=" + $('#domainId').val();
+			var urlString = "<%=basePath%>/pages/resource/partition/save.action?templateId=" + $('#domainId').val();
 			$.ajax({
 				type:'post',
 				url: urlString,
@@ -73,7 +73,7 @@
 	function deletePartition(){
 		alertMsg.confirm("确定要删除吗?", {okCall:
 			function(){
-	        	var urlString = "<%=basePath%>/pages/resource/partitiondelete.action";
+	        	var urlString = "<%=basePath%>/pages/resource/partition/del.action";
 				$.ajax({
 					type:'post',
 					url: urlString,
@@ -88,7 +88,7 @@
 	}
 	
 	function loadPartitionList() {
-		var urlString = "<%=basePath%>/pages/resource/partitionlist.action?templateId=" + $('#domainId').val();
+		var urlString = "<%=basePath%>/pages/resource/partition/list.action?templateId=" + $('#domainId').val();
 		$.ajaxSetup({async: false});
 		$("#partitionListDiv").load(urlString);	
 		initPagination();
@@ -96,7 +96,7 @@
 	}
 	
 	function loadEditPartition(id){
-		var urlString = "<%=basePath%>/pages/resource/partitionedit.action?templateId="+$('#domainId').val()+"&partitionId=" + id;
+		var urlString = "<%=basePath%>/pages/resource/partition/edit.action?templateId="+$('#domainId').val()+"&partitionId=" + id;
 		$('#partitionFormDiv').load(urlString);	
 	}
 	
@@ -108,7 +108,7 @@
 	}
 </script>
 </head>
-<c:set var="listurl" value="/pages/resource/templatelistComb.action"></c:set>
-<c:set var="viewurl" value="/pages/resource/templateviewComb.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<c:set var="listurl" value="/pages/resource/template/listComb.action"></c:set>
+<c:set var="viewurl" value="/pages/resource/template/viewComb.action"></c:set>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

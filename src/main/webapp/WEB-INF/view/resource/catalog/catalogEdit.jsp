@@ -44,7 +44,7 @@ function eventBC(){
 
 //-->
 </script>
-<form method="post" action="<c:url value='/pages/resource/catalogsave.action'/>" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+<form method="post" action="<c:url value='/pages/resource/catalog/save.action'/>" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
 	 <div>
 		 <input id="domainSubmit" type="submit" style="display:none;" />
 		 <input id="domId" type=hidden name="catalog.id" value="${catalog.id}"/>
@@ -103,7 +103,7 @@ function eventBC(){
 											<input id="parentId" name="catalog.parentId" value="${catalog.parentId}" type="hidden"/>
 										</td>
 										<td style="background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;">
-											<a id="selectDialog" rel="selectDialog" class="button" target="dialog" mask="true" resizable="true" width="300" height="600" href="<%=basePath %>/pages/resource/catalog/catalogTree.jsp" ><span>选择</</span></a>
+											<a id="selectDialog" rel="selectDialog" class="button" target="dialog" mask="true" resizable="true" width="300" height="600" href="<%=basePath %>/pages/resource/catalog/tree.action" ><span>选择</</span></a>
 										</td>
 									</tr>
 								</table>

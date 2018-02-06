@@ -1,10 +1,17 @@
 package com.cloudstong.platform.resource.date.action;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 
 import com.cloudstong.platform.core.common.PageResult;
 import com.cloudstong.platform.core.common.QueryCriteria;
@@ -16,6 +23,15 @@ import com.cloudstong.platform.resource.metadata.action.CompexDomainAction;
  * @author liuqi
  *
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/date")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/resource/date/compexDateList.jsp"),
+		@Result(name="add", location = "/WEB-INF/view/resource/date/compexDateEdit.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/date/compexDateEdit.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/resource/date/compexDateView.jsp"),
+		@Result(name="useinfoList", location = "/WEB-INF/view/resource/date/dateyyList.jsp")
+})
 public class DateAction extends CompexDomainAction {
 
 	/**
@@ -25,6 +41,51 @@ public class DateAction extends CompexDomainAction {
 
 	@Resource
 	private DateService dateService;
+	
+	@Action("list")
+	public String list() {
+		return super.list();
+	}
+	
+	@Action("add")
+	public String add() {
+		return super.add();
+	}
+	
+	@Action("edit")
+	public String edit() {
+		return super.add();
+	}
+	
+	@Action("view")
+	public String view() throws Exception {
+		return super.view();
+	}
+	
+	@Action("del")
+	public String delete() throws Exception {
+		return super.delete();
+	}
+	
+	@Action("dataJson")
+	public String dataJson() throws Exception {
+		return super.dataJson();
+	}
+	
+	@Action("viewJson")
+	public String viewJson() throws Exception {
+		return super.viewJson();
+	}
+	
+	@Action("singleDelete") 
+	public String singleDelete() throws Exception {
+		return super.simpleDelete();
+	}
+	
+	@Action("logicDelete") 
+	public String logicDelete() throws IOException  {
+		return super.logicDelete();
+	}
 
 	private String parseParams() {
 		if (this.params == null || this.params.isEmpty()) {
@@ -40,6 +101,7 @@ public class DateAction extends CompexDomainAction {
 	 * @return forward
 	 * @throws Exception
 	 */
+	@Action("formlist")
 	public String formlist() throws Exception {
 		this.dateId = parseParams();
 
@@ -75,6 +137,7 @@ public class DateAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws Exception
 	 */
+	@Action("canDelete")
 	public String canDelete() throws Exception {
 		String canDelete = "true";
 		if (selectedVOs != null) {

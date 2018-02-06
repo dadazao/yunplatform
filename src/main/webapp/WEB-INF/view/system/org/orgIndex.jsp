@@ -10,7 +10,7 @@
 	<script type="text/javascript">
 		$(function(){
 			$("#listId").width($("#desktop").width() - $("#treeId").width() - 11);
-			$("#treeId").load("<%=basePath %>/pages/system/org/orgSelfTree.jsp");
+			$("#treeId").load("<%=basePath %>/pages/system/org/selfTree.action");
 			$("#listId").loadUrl("<%=basePath %>/pages/system/org/orglist.action?sysOrg.parentId=1");			
 		});
 	</script>

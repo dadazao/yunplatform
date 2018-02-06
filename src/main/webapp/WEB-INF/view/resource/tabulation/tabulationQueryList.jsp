@@ -8,7 +8,7 @@
 			+ path;
 %>
 <form id="pagerForm" method="post"
-	action="<%=basePath %>/pages/resource/tabulationlistQuery.action?tabulationId=${tabulationId}">
+	action="<%=basePath %>/pages/resource/tabulation/listQuery.action?tabulationId=${tabulationId}">
 	<input type=hidden name="model" value="${model}" />
 	<input type="hidden" name="status" value="${param.status}">
 	<input type="hidden" name="pageNum" value="1" />

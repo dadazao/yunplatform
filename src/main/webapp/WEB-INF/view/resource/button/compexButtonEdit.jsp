@@ -7,7 +7,7 @@
 <script type="text/javascript">
 <!--		
 	$(function(){
-		compexDataJson('<%=basePath %>/pages/resource/buttondataJson.action?formId=${formId}&params=${params}&model=${model}&subDomainId=${subDomainId}&partitionId=${partitionId}');
+		compexDataJson('<%=basePath %>/pages/resource/button/dataJson.action?formId=${formId}&params=${params}&model=${model}&subDomainId=${subDomainId}&partitionId=${partitionId}');
 		$("#XG").attr("disabled","disabled");
 		$("#XG").attr("class","listbuttonDisable");
 		var params=$("#paramsId").val();

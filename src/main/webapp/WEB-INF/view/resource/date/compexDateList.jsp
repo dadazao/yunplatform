@@ -14,10 +14,10 @@
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
 		//新建ACTION URL
-		xjUrl = "<%=basePath%>/pages/resource/dateActionadd.action?formId=${formId}&model=${model}&op=new";
+		xjUrl = "<%=basePath%>/pages/resource/date/add.action?formId=${formId}&model=${model}&op=new";
 		//批量删除ACTION URL
-		plscUrl = "<%=basePath%>/pages/resource/dateActiondelete.action?model=${model}&formId=${formId}";
-		ljscUrl = "<%=basePath%>/pages/resource/dateActionlogicDelete.action?model=${model}&formId=${formId}";
+		plscUrl = "<%=basePath%>/pages/resource/date/del.action?model=${model}&formId=${formId}";
+		ljscUrl = "<%=basePath%>/pages/resource/date/logicDelete.action?model=${model}&formId=${formId}";
 		bcUrl = "<%=basePath%>/pages/resource/buttonGroupsave.action";
 		bzUrl = "<%=basePath%>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath%>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
@@ -25,7 +25,7 @@
 		
 </script>
 </head>
-<c:set var="listurl" value="/pages/resource/dateActionlist.action"></c:set>
-<c:set var="viewurl" value="/pages/resource/dateActionview.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<c:set var="listurl" value="/pages/resource/date/list.action"></c:set>
+<c:set var="viewurl" value="/pages/resource/date/view.action"></c:set>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

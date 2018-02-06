@@ -25,7 +25,7 @@
 			}
 		}
 		$('#tblContent').val(content);
-		xgUrl="<%=basePath %>/pages/resource/libraryedit.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl="<%=basePath %>/pages/resource/library/edit.action?formId=${formId}&params=${params}" + "&op=edit";
 		$('#BC').hide();
 		$('#XG').hide();
 		ns.common.mouseForButton();

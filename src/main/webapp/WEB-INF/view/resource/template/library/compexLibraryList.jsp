@@ -17,10 +17,10 @@
 		fSelfHeight = '${form.height}';
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
-		xjUrl="<%=basePath%>/pages/resource/libraryadd.action?op=new&formId=${formId}";
-		plscUrl="<%=basePath%>/pages/resource/librarydelete.action?model=${model}&formId=${formId}";
-		ljscUrl="<%=basePath%>/pages/resource/librarylogicDelete.action?model=${model}&formId=${formId}";
-		bcUrl = "<%=basePath%>/pages/resource/librarysave.action";
+		xjUrl="<%=basePath%>/pages/resource/library/add.action?op=new&formId=${formId}";
+		plscUrl="<%=basePath%>/pages/resource/library/del.action?model=${model}&formId=${formId}";
+		ljscUrl="<%=basePath%>/pages/resource/library/logicDelete.action?model=${model}&formId=${formId}";
+		bcUrl = "<%=basePath%>/pages/resource/library/save.action";
 		bzUrl = "<%=basePath%>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath%>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 		ns.common.mouseForButton();
@@ -28,7 +28,7 @@
 	
 </script>
 </head>
-<c:set var="listurl" value="/pages/resource/librarylist.action"></c:set>
-<c:set var="viewurl" value="/pages/resource/libraryview.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<c:set var="listurl" value="/pages/resource/library/list.action"></c:set>
+<c:set var="viewurl" value="/pages/resource/library/view.action"></c:set>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

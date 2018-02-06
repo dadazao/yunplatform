@@ -14,7 +14,7 @@
 		$("#BC").attr("class","listbuttonDisable");
 		var params=$("#paramsId").val();
 		$("#domainId").val(params.split(";")[0].split(":")[1]);
-		xgUrl="<%=basePath %>/pages/resource/catalogTreeedit.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl="<%=basePath %>/pages/resource/catalog/edit.action?formId=${formId}&params=${params}" + "&op=edit";
 		$('#yunDialog').attr('style', 'height: 100%;overflow-x:hidden;OVERFLOW-Y:auto;');
 		
 		$("#sys_catalog-tbl_listidCustomDiv").parent().parent().parent().hide();

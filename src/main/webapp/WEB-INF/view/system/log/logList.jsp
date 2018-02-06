@@ -15,7 +15,7 @@
 </script>
 </head>
 <body>	
-	<form id="pagerForm" method="post" action="<%=basePath %>/pages/system/syslogquerylog.action">
+	<form id="pagerForm" method="post" action="<%=basePath %>/pages/system/syslog/loglist.action">
 		<input type="hidden" name="pageNum" value="1" />
 		<input type="hidden" name="numPerPage" value="${pageResult.pageSize}" />
 		<input type="hidden" name="year" value="${year}"/>
@@ -23,7 +23,7 @@
 	</form>
 	<div id="defaultQuery" class="pageHeader">
 		<div class="searchBar">
-			<form id="defaultQueryForm" onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/system/syslogquerylog.action" method="post">
+			<form id="defaultQueryForm" onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/system/syslog/loglist.action" method="post">
 				<table class="searchContent">
 					<tr>
 						<td>年份</td>

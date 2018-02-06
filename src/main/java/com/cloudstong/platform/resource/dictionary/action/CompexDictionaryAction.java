@@ -7,6 +7,11 @@ import javax.annotation.Resource;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 
 import com.cloudstong.platform.core.util.CacheUtil;
 import com.cloudstong.platform.resource.dictionary.model.Dictionary;
@@ -22,6 +27,15 @@ import com.cloudstong.platform.system.model.SysUser;
  * 
  *         Description:代码Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/dictionary")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/resource/dictionary/compexDictionaryList.jsp"),
+		@Result(name="add", location = "/WEB-INF/view/resource/dictionary/compexDictionaryEdit.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/resource/dictionary/compexDictionaryView.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/dictionary/compexDictionaryEdit.jsp"),
+		@Result(name="tree", location = "/WEB-INF/view/resource/dictionaryTree.jsp")
+})
 public class CompexDictionaryAction extends CompexDomainAction {
 
 	private static final long serialVersionUID = -6145941366262062800L;
@@ -122,6 +136,7 @@ public class CompexDictionaryAction extends CompexDomainAction {
 	/*
 	 * 显示代码的列表
 	 */
+	@Action("list")
 	public String list() {
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -162,6 +177,7 @@ public class CompexDictionaryAction extends CompexDomainAction {
 	/*
 	 * 打开代码新建页面
 	 */
+	@Action("add")
 	public String add() {
 		super.add();
 		return "add";
@@ -170,6 +186,7 @@ public class CompexDictionaryAction extends CompexDomainAction {
 	/*
 	 * 显示编辑代码表单页面
 	 */
+	@Action("edit")
 	public String edit() throws Exception {
 		super.edit();
 		return "edit";
@@ -178,6 +195,7 @@ public class CompexDictionaryAction extends CompexDomainAction {
 	/*
 	 * 显示查看代码表单页面
 	 */
+	@Action("view")
 	public String view() throws Exception {
 		super.view();
 		return "view";
@@ -186,6 +204,7 @@ public class CompexDictionaryAction extends CompexDomainAction {
 	/*
 	 * 保存代码
 	 */
+	@Action("save")
 	public String save() {
 		try {
 			super.save();
@@ -210,6 +229,7 @@ public class CompexDictionaryAction extends CompexDomainAction {
 	/*
 	 * 根据parentId获取其下所有字典，返回JSON字典值和名键值对
 	 */
+	@Action("dics")
 	public String dics() {
 		Long parentId = Long.valueOf(getRequest().getParameter("parentId"));
 		try {

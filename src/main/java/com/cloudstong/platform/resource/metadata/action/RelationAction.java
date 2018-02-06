@@ -8,6 +8,12 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
 import com.cloudstong.platform.core.common.QueryCriteria;
 import com.cloudstong.platform.core.model.DomainVO;
 import com.cloudstong.platform.resource.dictionary.model.Dictionary;
@@ -26,6 +32,15 @@ import com.cloudstong.platform.system.model.SysUser;
  * 
  *         Description:表关系Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/relation")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/resource/metadata/compexRelationList.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/metadata/compexRelationEdit.jsp"),
+		@Result(name="input", location = "/WEB-INF/view/resource/metadata/compexRelationEdit.jsp"),
+		@Result(name="add", location = "/WEB-INF/view/resource/metadata/compexRelationEdit.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/resource/metadata/compexRelationView.jsp")
+})
 public class RelationAction extends CompexDomainAction {
 
 	private static final long serialVersionUID = 5913512081042872366L;
@@ -123,10 +138,16 @@ public class RelationAction extends CompexDomainAction {
 	public void setTableService(TableService tableService) {
 		this.tableService = tableService;
 	}
+	
+	@Action("list")
+	public String list() {
+		return super.list();
+	}
 
 	/*
 	 * 打开表关系新建页面
 	 */
+	@Action("add")
 	public String add() {
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -157,6 +178,7 @@ public class RelationAction extends CompexDomainAction {
 	/*
 	 * 保存表关系
 	 */
+	@Action("save")
 	public String save() throws Exception {
 		HttpServletRequest request = getRequest();
 		String mainId = request.getParameter("sys_relation-tbl_mainid");
@@ -229,6 +251,7 @@ public class RelationAction extends CompexDomainAction {
 	/*
 	 * 编辑表关系
 	 */
+	@Action("edit")
 	public String edit() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 
@@ -251,6 +274,7 @@ public class RelationAction extends CompexDomainAction {
 	/*
 	 * 删除表关系
 	 */
+	@Action("del")
 	public String delete() throws IOException {
 		try {
 			if (selectedVOs != null) {
@@ -270,6 +294,7 @@ public class RelationAction extends CompexDomainAction {
 	/*
 	 * 删除表关系
 	 */
+	@Action("logicDelete")
 	public String logicDelete() throws IOException {
 		try {
 			if (selectedVOs != null) {
@@ -307,6 +332,7 @@ public class RelationAction extends CompexDomainAction {
 	 * 
 	 * @return NONE
 	 */
+	@Action("singleDelete")
 	public String singleDelete() {
 		String retStr = null;
 		try {
@@ -325,6 +351,7 @@ public class RelationAction extends CompexDomainAction {
 	/*
 	 * 显示表关系查询页面
 	 */
+	@Action("view")
 	public String view() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 

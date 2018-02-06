@@ -35,7 +35,7 @@
 	}
 	
 	function setPinyin() {
-		var urlString = "<%=basePath %>/pages/resource/templateFormpinyin.action";
+		var urlString = "<%=basePath %>/pages/resource/template/Formpinyin.action";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -67,7 +67,7 @@
 		$("#biaodanlujing").val(urlString);
 	}
 	function publish() {
-		var urlString = "<%=basePath %>/pages/resource/tablepublish.action";
+		var urlString = "<%=basePath %>/pages/resource/table/publish.action";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -79,7 +79,7 @@
 	}
 	
 	function showTemplate(obj){
-		var urlString = "<%=basePath %>/pages/resource/partitionshowTemplate.action?partitionType=" + obj;
+		var urlString = "<%=basePath %>/pages/resource/partition/showTemplate.action?partitionType=" + obj;
 		$.ajax({
 			type:'post',
 			url: urlString,

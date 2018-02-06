@@ -1,7 +1,6 @@
 package com.cloudstong.platform.resource.template.action;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,12 +10,15 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import com.cloudstong.platform.core.common.QueryCriteria;
 import com.cloudstong.platform.core.model.Code;
 import com.cloudstong.platform.core.model.DomainVO;
-import com.cloudstong.platform.resource.form.model.Form;
 import com.cloudstong.platform.resource.form.model.FormColumnExtend;
 import com.cloudstong.platform.resource.form.model.Tab;
 import com.cloudstong.platform.resource.metadata.action.CompexDomainAction;
@@ -33,12 +35,45 @@ import com.cloudstong.platform.system.model.SysUser;
  * Description:主要负责打印模板的一些操作
  */
 @SuppressWarnings("serial")
+@ParentPackage("default")
+@Namespace("/pages/resource/print")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/resource/template/print/compexPrintList.jsp"),
+		@Result(name="add", location = "/WEB-INF/view/resource/template/print/compexPrintEdit.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/template/print/compexPrintEdit.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/resource/template/print/compexPrintView.jsp")
+})
 public class PrintAction extends CompexDomainAction{
 
 	/**
 	 * 字处理组件产生的文件的唯一标识,<code>recordId</code> 是String类的一个实例.
 	 */
 	private String recordId;
+	
+	@Action("list")
+	public String list() {
+		return super.list();
+	}
+	
+	@Action("add")
+	public String add() {
+		return super.add();
+	}
+	
+	@Action("edit")
+	public String edit() {
+		return super.add();
+	}
+	
+	@Action("view")
+	public String view() throws Exception {
+		return super.view();
+	}
+	
+	@Action("del")
+	public String delete() throws Exception {
+		return super.delete();
+	}
 	
 	/**
 	 * Description:得到当前表单的列信息(列名称,中文名称)
@@ -48,6 +83,7 @@ public class PrintAction extends CompexDomainAction{
 	 * @return none
 	 * @throws Exception
 	 */
+	@Action("tabColumn")
 	public String tabColumn() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		
@@ -91,6 +127,7 @@ public class PrintAction extends CompexDomainAction{
 	 * @return none
 	 * @throws Exception
 	 */
+	@Action("bookMarkJson")
 	public String bookMarkJson() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		
@@ -161,6 +198,7 @@ public class PrintAction extends CompexDomainAction{
 	 * @throws IOException
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Action("tableDataK")
 	public String tableDataK() throws IOException {
 		List<Map> _lstResult = compexDomainService.queryTableData(mainTable,params);
 		List<Map> _lstJsonTmp = new ArrayList<Map>();

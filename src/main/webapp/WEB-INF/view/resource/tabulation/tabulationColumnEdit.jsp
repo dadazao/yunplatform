@@ -53,7 +53,7 @@
 	}
 	
 	function showComBox() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationshowComBox.action?comBoxId=" + $("#comBoxValueId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/showComBox.action?comBoxId=" + $("#comBoxValueId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -64,7 +64,7 @@
 	}
 	
 	function showRelationTable() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationshowRelationTable.action?table=" + $("#relationTableId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/showRelationTable.action?table=" + $("#relationTableId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -75,7 +75,7 @@
 	}
 	
 	function showRelationColumn() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationshowRelationColumn.action?table=" + $("#relationTableSelectId option:selected").val() + "&column=" + $("#relationColumnId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/showRelationColumn.action?table=" + $("#relationTableSelectId option:selected").val() + "&column=" + $("#relationColumnId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -86,7 +86,7 @@
 	}
 	
 	function showCodeDialog() {
-		$.pdialog.open("<%=basePath %>/pages/resource/dictionaryTree.jsp?method=lookup", "selectDialog", "选择代码", {width:200,height:600,mask:true,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/resource/dictionary/tree.action?method=lookup", "selectDialog", "选择代码", {width:200,height:600,mask:true,resizable:true});
 	}
 	
 	$(function(){

@@ -20,18 +20,18 @@ $(function() {
 	selfXjTitle = '${form.xjTitle}';
 	selfWhTitle = '${form.whTitle}';
 	//新建ACTION URL
-	xjUrl = "<%=basePath%>/pages/resource/relationadd.action?op=new&formId=${formId}&model=${model}";
+	xjUrl = "<%=basePath%>/pages/resource/relation/add.action?op=new&formId=${formId}&model=${model}";
 	//批量删除ACTION URL
-	plscUrl = "<%=basePath%>/pages/resource/relationdelete.action?model=${model}&formId=${formId}";
-	lgscUrl = "<%=basePath%>/pages/resource/relationlogicDelete.action?model=${model}&formId=${formId}";
-	bcUrl = "<%=basePath%>/pages/resource/relationsave.action";
+	plscUrl = "<%=basePath%>/pages/resource/relation/del.action?model=${model}&formId=${formId}";
+	lgscUrl = "<%=basePath%>/pages/resource/relation/logicDelete.action?model=${model}&formId=${formId}";
+	bcUrl = "<%=basePath%>/pages/resource/relation/save.action";
 	bzUrl = "<%=basePath%>/pages/resource/compexshowListHelp.action?listId=${listId}";
 	mrUrl = "<%=basePath%>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 });
 
 </script>
 </head>
-<c:set var="listurl" value="/pages/resource/relationlist.action"></c:set>
+<c:set var="listurl" value="/pages/resource/relation/list.action"></c:set>
 <c:set var="viewurl" value="/pages/resource/compexview.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

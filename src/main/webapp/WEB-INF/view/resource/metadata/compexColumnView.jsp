@@ -15,7 +15,7 @@
 		$("#BCBXZ").hide();
 		var params=$("#paramsId").val();
 		$("#domainId").val(params.split(";")[0].split(":")[1]);
-		xgUrl="<%=basePath %>/pages/resource/columnedit.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl="<%=basePath %>/pages/resource/column/edit.action?formId=${formId}&params=${params}" + "&op=edit";
 		ns.common.mouseForButton();
 		
 		formbzUrl = "<%=basePath %>/pages/resource/compexshowFormHelp.action?formId=${formId}";

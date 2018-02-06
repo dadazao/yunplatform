@@ -18,14 +18,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import com.cloudstong.platform.core.cache.ICache;
-import com.cloudstong.platform.core.common.AppContext;
-import com.cloudstong.platform.core.common.Constants;
 import com.cloudstong.platform.core.exception.AppException;
-import com.cloudstong.platform.core.util.AppUtil;
-import com.cloudstong.platform.core.util.CacheUtil;
 import com.cloudstong.platform.core.util.CopyFileUtil;
 import com.cloudstong.platform.core.util.HandleFileUtil;
 import com.cloudstong.platform.core.util.ZipUtil;
@@ -46,6 +46,18 @@ import com.cloudstong.platform.system.util.SecurityUtil;
  * 
  * Description: 目录Action(配置模块)
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/catalog")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/resource/catalog/compexCatalogList.jsp"),
+		@Result(name="add", location = "/WEB-INF/view/resource/catalog/compexCatalogEdit.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/catalog/compexCatalogEdit.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/resource/catalog/compexCatalogView.jsp"),
+		@Result(name="tree", location = "/WEB-INF/view/resource/catalog/catalogTree.jsp"),
+		@Result(name="export", location = "/WEB-INF/view/resource/catalog/catalogExport.jsp"),
+		@Result(name="import", location = "/WEB-INF/view/resource/catalog/catalogImport.jsp"),
+		@Result(name="search", location = "/WEB-INF/view/resource/catalog/catalogSearch.jsp")
+})
 public class CompexCatalogAction extends CompexDomainAction {
 
 	Log logger = LogFactory.getLog(this.getClass());
@@ -71,8 +83,34 @@ public class CompexCatalogAction extends CompexDomainAction {
 	@Resource
 	private IPrivilegeService privilegeService;
 	
+	@Action("list")
+	public String list() {
+		return super.list();
+	}
+	
+	@Action("load")
 	public String load() throws Exception {
 		return NONE;
+	}
+	
+	@Action("tree")
+	public String tree()  {
+		return "tree";
+	}
+	
+	@Action("export")
+	public String export()  {
+		return "export";
+	}
+	
+	@Action("import")
+	public String imp()  {
+		return "import";
+	}
+	
+	@Action("search")
+	public String search()  {
+		return "search";
 	}
 	
 	/**
@@ -80,6 +118,7 @@ public class CompexCatalogAction extends CompexDomainAction {
 	 * @return
 	 * @throws IOException
 	 */
+	@Action("find")
 	public String find() throws IOException {
 		Catalog catalog = this.catalogService.findCatalogById(id);
 		HttpServletResponse response = getResponse();
@@ -90,6 +129,7 @@ public class CompexCatalogAction extends CompexDomainAction {
 		return NONE;
 	}
 	
+	@Action("save")
 	public String save(){
 		try {
 			super.save();
@@ -113,6 +153,7 @@ public class CompexCatalogAction extends CompexDomainAction {
 	 * 
 	 * @return
 	 */
+	@Action("exportZip")
 	public String exportZip() throws Exception{
 		HttpServletResponse response = getResponse();
 		response.setCharacterEncoding("UTF-8");
@@ -182,6 +223,7 @@ public class CompexCatalogAction extends CompexDomainAction {
 	 * @return
 	 * @throws IOException 
 	 */
+	@Action("importZip")
 	public String importZip() throws IOException {
 		String basepath = getRequest().getRealPath("/");
 		String biaoshi = uploadFileName[0].substring(0, uploadFileName[0].length()-4);
@@ -219,6 +261,7 @@ public class CompexCatalogAction extends CompexDomainAction {
 		return NONE;
 	}
 	
+	@Action("deleteAll")
 	public String deleteAll() throws Exception{
 		try{
 			Catalog catalog = catalogService.findCatalogById(id);
@@ -242,6 +285,7 @@ public class CompexCatalogAction extends CompexDomainAction {
 		return NONE;
 	}
 	
+	@Action("fintListId")
 	public String fintListId() throws Exception{
 		try {
 			HttpServletRequest request = getRequest();

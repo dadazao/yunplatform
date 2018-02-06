@@ -15,19 +15,19 @@
 <script type="text/javascript">
 	
 	function refreshNavTab() {
-		navTab.openTab("main", "<c:url value='/pages/resource/columnlist.action' />", { title:"字段管理", fresh:true, data:{} });
+		navTab.openTab("main", "<c:url value='/pages/resource/column/list.action' />", { title:"字段管理", fresh:true, data:{} });
 	}
 	
 	function openDialog() {
-		  $.pdialog.open("<%=basePath %>/pages/resource/columnadd.action?op=new","newDialog","新建",{width:1024,height:768,mask:true,resizable:false});
+		  $.pdialog.open("<%=basePath %>/pages/resource/column/add.action?op=new","newDialog","新建",{width:1024,height:768,mask:true,resizable:false});
 	}
 	
 	function openSearch() {
-		$.pdialog.open("<%=basePath %>/pages/resource/columnsearch.action","searchDialog","高级查询",{width:600,height:240,mask:false,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/resource/column/search.action","searchDialog","高级查询",{width:600,height:240,mask:false,resizable:true});
 	}
 	
 	function deleteDomains(){
-		var urlString = "<%=basePath%>/pages/resource/columndelete.action";
+		var urlString = "<%=basePath%>/pages/resource/column/del.action";
 		var param = $("#columnForm").serialize();
 		var result = urlString + "?" + param;
 		alertMsg.confirm("确定要删除吗?", {okCall:function(){ajaxTodo(result);}
@@ -35,7 +35,7 @@
 	}
 	
 	function publish() {
-		var urlString = "<%=basePath%>/pages/resource/columnpublish.action";
+		var urlString = "<%=basePath%>/pages/resource/column/publish.action";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -65,7 +65,7 @@
 	function eventCompexColumnLock(id) {
 		$.ajax( {
 			type : 'POST',
-			url : '<%=basePath%>/pages/resource/columnlock.action',
+			url : '<%=basePath%>/pages/resource/column/lock.action',
 			data: 'id=' + id,
 			dataType:"json",
 			success : function(json) {
@@ -77,7 +77,7 @@
 	function eventCompexColumnUnLock(id) {
 		$.ajax( {
 			type : 'POST',
-			url : '<%=basePath%>/pages/resource/columnunLock.action',
+			url : '<%=basePath%>/pages/resource/column/unLock.action',
 			data: 'id=' + id,
 			dataType:"json",
 			success : function(json) {
@@ -91,10 +91,10 @@
 		fSelfHeight = '${form.height}';
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
-		xjUrl="<%=basePath%>/pages/resource/columnadd.action?op=new&formId=${formId}";
-		plscUrl="<%=basePath%>/pages/resource/columndelete.action?model=${model}&formId=${formId}";
-		ljscUrl="<%=basePath%>/pages/resource/columnlogicDelete.action?model=${model}&formId=${formId}";
-		bcUrl = "<%=basePath%>/pages/resource/columnsave.action";
+		xjUrl="<%=basePath%>/pages/resource/column/add.action?op=new&formId=${formId}";
+		plscUrl="<%=basePath%>/pages/resource/column/del.action?model=${model}&formId=${formId}";
+		ljscUrl="<%=basePath%>/pages/resource/column/logicDelete.action?model=${model}&formId=${formId}";
+		bcUrl = "<%=basePath%>/pages/resource/column/save.action";
 		bzUrl = "<%=basePath%>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath%>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 		ns.common.mouseForButton();
@@ -105,7 +105,7 @@
 </head>
 
 <body>
-	<form id="pagerForm" name="pagerForm" method="post" action="<%=basePath %>/pages/resource/columnlist.action">
+	<form id="pagerForm" name="pagerForm" method="post" action="<%=basePath %>/pages/resource/column/list.action">
 		<input type="hidden" name="status" value="${param.status}">
 		<input type="hidden" name="dyncMapStringPrecise.tbl_tableId" value="${dyncMapStringPrecise.tbl_tableId}" />
 		<input type="hidden" name="dyncMapString.tbl_columnZhName" value="${dyncMapString.tbl_columnZhName}" />
@@ -138,7 +138,7 @@
 	</div>
 	<div id="defaultQuery" class="pageHeader" style="height: ${tabulation.queryControl.queryControlHeight==0?'':tabulation.queryControl.queryControlHeight}px;width:${tabulation.queryControl.queryControlWidth}%"> 
 		<div class="searchBar">
-			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/columnlist.action" method="post">
+			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/column/list.action" method="post">
 				<table class="searchContent">
 					<tr>
 						<c:forEach items="${tabulation.tabulationColumnExtends}" var="ce" varStatus="status">
@@ -348,7 +348,7 @@
 												<c:when test="${tabulationOpt.button.buttonName=='发布'||tabulationOpt.button.buttonName=='撤回'}">
 													&nbsp;
 													<c:if test="${curruser==user.fullname}">
-													<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>/pages/resource/columnview.action','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
+													<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>/pages/resource/column/view.action','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
 													</c:if>
 													<c:if test="${curruser!=user.fullname}">
 													<a style="cursor: default;" ><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:gray">${tabulationOpt.showName}</font></span></a>
@@ -357,7 +357,7 @@
 												</c:when>
 												<c:otherwise>
 													&nbsp;
-													<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>/pages/resource/columnview.action','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
+													<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>/pages/resource/column/view.action','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
 													&nbsp;
 												</c:otherwise>
 											</c:choose>

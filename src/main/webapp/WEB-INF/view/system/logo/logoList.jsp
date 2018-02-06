@@ -12,12 +12,12 @@
 <title>logo管理</title>
 <script type="text/javascript">
 	function addLogo(){
-		$.pdialog.open("<%=basePath%>/pages/system/logo/logoEdit.jsp","newDialog","上传",{width:450,height:140,mask:true,resizable:false});
+		$.pdialog.open("<%=basePath%>/pages/system/logo/edit.action","newDialog","上传",{width:450,height:140,mask:true,resizable:false});
 	}
 	
 	function deleteLogo(){
 		alertMsg.confirm("确定删除吗？",{okCall:function(){
-			var urlString = "<%=basePath%>/pages/system/logodelete.action";
+			var urlString = "<%=basePath%>/pages/system/logo/del.action";
 			var param = $("#logoForm").serialize();
 			urlString = urlString + "?" + param;
 			ajaxTodo(urlString);
@@ -41,13 +41,13 @@
 </script>
 </head>
 <body>
-	<form id="pagerForm" name="pagerForm" method="post" action="<%=basePath %>/pages/system/logolist.action">
+	<form id="pagerForm" name="pagerForm" method="post" action="<%=basePath %>/pages/system/logo/list.action">
 		<input type="hidden" name="status" value="${param.status}">
 		<input type="hidden" name="pageNum" value="1" />
 		<input type="hidden" name="numPerPage" value="${pageResult.pageSize}" />
 		<input type="hidden" name="orderField" value="${param.orderField}" />
 	</form>
-	<form method="post" id="logoForm" name="logoForm" action="<c:url value='/pages/system/logosave.action'/>" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<form method="post" id="logoForm" name="logoForm" action="<c:url value='/pages/system/logo/save.action'/>" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
 	<div class="pageContent">
 		<div class="panelBar">
 			<table><tr><td>

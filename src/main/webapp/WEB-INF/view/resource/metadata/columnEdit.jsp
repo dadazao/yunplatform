@@ -8,7 +8,7 @@
 <script type="text/javascript">
 <!--
 	function subTable() {
-		var urlString = "<%=basePath %>/pages/resource/columnsubTable.action";
+		var urlString = "<%=basePath %>/pages/resource/column/subTable.action";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -74,7 +74,7 @@
 			return;
 		}
 		
-		$("#tableColumnFormId").attr("action","<%=basePath %>/pages/resource/columnsave.action?column.tableId="+$("#tableId").val());
+		$("#tableColumnFormId").attr("action","<%=basePath %>/pages/resource/column/save.action?column.tableId="+$("#tableId").val());
 		$.ajaxSetup({async: false});
 		$("#tableColumnFormId").submit();
 		$.ajaxSetup({async: false});
@@ -86,7 +86,7 @@
 			alertMsg.warn('请先保存数据表！');
 			return;
 		}
-		$("#tableColumnFormId").attr("action","<%=basePath %>/pages/resource/columnsave.action?column.tableId="+$("#tableId").val());
+		$("#tableColumnFormId").attr("action","<%=basePath %>/pages/resource/column/save.action?column.tableId="+$("#tableId").val());
 		$.ajaxSetup({async: false});
 		$("#tableColumnFormId").submit();
 		$.ajaxSetup({async: true});
@@ -99,7 +99,7 @@
 			alertMsg.warn("请选择要删除的数据!");
 			return;
 		}
-		var urlString = "<%=basePath %>/pages/resource/columndeleteColumn.action";
+		var urlString = "<%=basePath %>/pages/resource/column/deleteColumn.action";
 		var result = urlString + "?" + params;
 			alertMsg.confirm("确定要删除吗?", {okCall:function(){ajaxTodo(result,loadTableColumnList);}
 		});

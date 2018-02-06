@@ -10,8 +10,8 @@
 	<script type="text/javascript">
 		$(function(){
 			$("#listId").width($("#desktop").width() - $("#treeId").width() - 11);
-			$("#treeId").load("<%=basePath %>/pages/system/privilege/catalogTree.jsp");
-			$("#listId").loadUrl("<%=basePath %>/pages/system/privilege/readme.jsp?height="+$("#container").height());	
+			$("#treeId").load("<%=basePath %>/pages/system/privilege/catalog.action");
+			$("#listId").loadUrl("<%=basePath %>/pages/system/privilege/readme.action?height="+$("#container").height());	
 		});
 	</script>
 </head>

@@ -10,7 +10,7 @@
 <script type="text/javascript">
 <!--
 //function modify() {
-//	var urlString = "<%=basePath %>/pages/resource/tabulationedit.action?tabulationId="+$("#tabulationId").val() + "&op=edit";
+//	var urlString = "<%=basePath %>/pages/resource/tabulation/edit.action?tabulationId="+$("#tabulationId").val() + "&op=edit";
 //	$.pdialog.reload(urlString);
 //}
 
@@ -24,20 +24,20 @@ $(function(){
 	loadTabulationOptList("view");
 	loadTabulationQuery("view");
 	loadTabulationQueryList("view");
-	xgUrl="<%=basePath %>/pages/resource/tabulationedit.action?tabulationId="+$("#tabulationId").val() + "&op=edit&formManageId=${formManageId}";
+	xgUrl="<%=basePath %>/pages/resource/tabulation/edit.action?tabulationId="+$("#tabulationId").val() + "&op=edit&formManageId=${formManageId}";
 	$("#BC").attr("disabled","disabled");
 	$("#BC").attr("class","listbuttonDisable");
 	$("#XG").attr("onclick","eventCompexFORMXG()");
 	$('#yunDialog').attr('style', 'height: 100%;overflow-x:hidden;OVERFLOW-Y:auto;');
 	ns.common.mouseForButton();
 	
-	formbzUrl = "<%=basePath %>/pages/resource/tabulationshowFormHelp.action";
+	formbzUrl = "<%=basePath %>/pages/resource/tabulation/showFormHelp.action";
 });
 
 //-->
 </script>
 <div id="yunDialog">
-<form id="buttontabulationId" method="post" action="<%=basePath %>/pages/resource/tabulationsave.action" class="pagetabulation required-validate" onsubmit="return validateCallback(this, selfDialogAjaxDone);">
+<form id="buttontabulationId" method="post" action="<%=basePath %>/pages/resource/tabulation/save.action" class="pagetabulation required-validate" onsubmit="return validateCallback(this, selfDialogAjaxDone);">
 	 <input id="tabulationId" type=hidden name="tabulation.id" value="${tabulation.id}"/>
  	 <div  class="buttonPanel">
 <%--		<button type="button" id="buttonXG" name="buttonXG" class="listbutton"  <c:if test="${op=='new' || op=='edit'}">disabled="disabled"</c:if> onClick="modify();">修 改</button>--%>

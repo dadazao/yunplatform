@@ -7,13 +7,13 @@
 <script type="text/javascript">
 <!--
 	$(function(){
-		var urlString = "<%=basePath %>/pages/resource/radioMgtviewJson.action?params=${params}&formId=${formId}";
+		var urlString = "<%=basePath %>/pages/resource/radio/viewJson.action?params=${params}&formId=${formId}";
 		//生成查看页面
 		compexViewJson(urlString);
 		//删除ACTION URL
-		scUrl = "<%=basePath %>/pages/resource/radioMgtsingleDelete.action?params=${params}";
+		scUrl = "<%=basePath %>/pages/resource/radio/singleDelete.action?params=${params}";
 		//修改ACTION URL
-		xgUrl = "<%=basePath %>/pages/resource/radioMgtedit.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl = "<%=basePath %>/pages/resource/radio/edit.action?formId=${formId}&params=${params}" + "&op=edit";
 		//将保存按钮置灰
 		$("#BC").attr("disabled","disabled");
 		$("#BC").attr("class","listbuttonDisable");

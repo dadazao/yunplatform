@@ -322,7 +322,7 @@ function eventCompexDY(){
 		}
 		var param = $("input[type='checkbox']:checked").val();
 		var id=param.substring(param.indexOf(":")+1,param.length-1);
-		$.pdialog.open(__basePath + "/pages/resource/catalog/catalogExport.jsp?id=" + id,"appDialog", "导出", {
+		$.pdialog.open(__basePath + "/pages/resource/catalog/export.action?id=" + id,"appDialog", "导出", {
 			width : 450,
 			height : 180,
 			mask : true,
@@ -332,7 +332,7 @@ function eventCompexDY(){
 	
 	//整个模块导入
 	function eventCompexDR(){
-		$.pdialog.open(__basePath + "/pages/resource/catalog/catalogImport.jsp","appDialog", "导入", {
+		$.pdialog.open(__basePath + "/pages/resource/catalog/import.action","appDialog", "导入", {
 			width : 400,
 			height : 150,
 			mask : true,
@@ -353,7 +353,7 @@ function eventCompexDY(){
 		}
 		var param = $("input[type='checkbox']:checked").val();
 		var id=param.substring(param.indexOf(":")+1,param.length-1);
-		var result = __basePath + "/pages/resource/catalogTreedeleteAll.action?id=" + id;
+		var result = __basePath + "/pages/resource/catalog/deleteAll.action?id=" + id;
 		alertMsg.confirm("该模块下所有数据，包括表单、列表、数据表<br><br>和字段都将清除，确定要彻底删除吗?", {okCall:function(){ajaxTodo(result,refreshList);}});
 	}
 	
@@ -662,7 +662,7 @@ function eventCompexDY(){
 			  		type:'POST',
 			  		async: false,
 			  		dataType:"json",
-			  		url:__basePath + '/pages/resource/enterpriseInfoloadDefault.action',
+			  		url:__basePath + '/pages/resource/enterpriseInfo/loadDefault.action',
 			  		success:function(data){
 						$("#systemCnName").html(data.systemCnName);
 						$("#systemEnName").html(data.systemEnName);
@@ -930,7 +930,7 @@ function eventCompexDY(){
 		}
 		
 		var id = param.substring(param.indexOf(":")+1,param.indexOf(";"));
-		var url = __basePath + "/pages/system/menuchange.action?id=" + id;
+		var url = __basePath + "/pages/system/menu/change.action?id=" + id;
 		ajaxTodo(url,refreshList);
 	}
 	
@@ -989,7 +989,7 @@ function eventCompexDY(){
 	 * 统计构件/组件信息
 	 */
 	function eventCompexTONGJITU(){
-		$.pdialog.open(__basePath + "/pages/resource/useinfo/compStat.jsp","compStat","构件/组件统计信息",{width:1000,height:700,mask:true,resizable:true});
+		$.pdialog.open(__basePath + "/pages/resource/useinfo/compStat.action","compStat","构件/组件统计信息",{width:1000,height:700,mask:true,resizable:true});
 	}
 	/**
 	 * 导出Excel表
@@ -1049,7 +1049,7 @@ function eventCompexDY(){
 	function eventCompexMYSQLSJBF(){
 		alertMsg.confirm("确定要备份数据吗?", 
 			{okCall:function(){
-				ajaxTodo(__basePath + "/pages/system/mysqlbackup.action",refreshList);
+				ajaxTodo(__basePath + "/pages/system/mysql/backup.action",refreshList);
 			}
 		});
 	}
@@ -1070,7 +1070,7 @@ function eventCompexDY(){
 					$.each(data,function(entryIndex, entry){
 						alertMsg.confirm("确定要恢复数据吗?", 
 							{okCall:function(){
-								ajaxTodo(__basePath + "/pages/system/mysqlrecover.action?filename="+entry.tbl_filename,refreshList);
+								ajaxTodo(__basePath + "/pages/system/mysql/recover.action?filename="+entry.tbl_filename,refreshList);
 							}
 						});
 					})
@@ -1090,11 +1090,11 @@ function eventCompexDY(){
 	}
 	
 	function eventCompexConfigColumns(tableid){
-		$.pdialog.open(__basePath + '/pages/resource/tablecolumnCfg.action?tableId='+tableid,"configColumnDialog","生成代码设置",{width:950,height:600,mask:true,resizable:false,minable:false,mixable:false});
+		$.pdialog.open(__basePath + '/pages/resource/table/columnCfg.action?tableId='+tableid,"configColumnDialog","生成代码设置",{width:950,height:600,mask:true,resizable:false,minable:false,mixable:false});
 	}
 	
 	function eventCompexBBBGNEW() {
-		var urlString = __basePath + '/pages/resource/tablechange.action';
+		var urlString = __basePath + '/pages/resource/table/change.action';
 		var items = $("input[type='checkbox']:checked").length;
 		if (items == 1) {
 			var param = $("#tableForm").find('input:checked').val();
@@ -1113,7 +1113,7 @@ function eventCompexDY(){
 	}
 	
 	function eventCompexLSBB(id) {
-		$.pdialog.open(__basePath + "/pages/resource/tablehistory.action?id=" + id,
+		$.pdialog.open(__basePath + "/pages/resource/table/history.action?id=" + id,
 				"lsbbDialog", "历史版本", {
 					width : 800,
 					height : 600,

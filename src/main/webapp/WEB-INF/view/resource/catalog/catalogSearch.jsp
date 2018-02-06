@@ -31,7 +31,7 @@
 								<input id="parentId" type="hidden" name="dyncMapLong.parentId" value="${catalog.parentId}" />
 							</td>
 							<td style="background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;">
-								<a id="selectDialog" rel="selectDialog" class="button" target="dialog" mask="true" resizable="true" width="200" height="600" href="<%=basePath %>/pages/system/tree/catalogTree.jsp" ><span>选择</</span></a>
+								<a id="selectDialog" rel="selectDialog" class="button" target="dialog" mask="true" resizable="true" width="200" height="600" href="<%=basePath %>/pages/system/resource/catalog/tree.action" ><span>选择</</span></a>
 							</td>
 						</tr>
 					</table>

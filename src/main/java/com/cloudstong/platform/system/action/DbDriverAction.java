@@ -5,6 +5,12 @@ import java.io.PrintWriter;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
 import com.cloudstong.platform.resource.metadata.action.CompexDomainAction;
 import com.cloudstong.platform.system.service.DataSourceService;
 
@@ -18,6 +24,11 @@ import com.cloudstong.platform.system.service.DataSourceService;
  * 
  * Description:数据源管理操作
  */
+@ParentPackage("default")
+@Namespace("/pages/system/dbDriver")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/system/dbDriver/compexDbDriverList.jsp")
+})
 public class DbDriverAction extends CompexDomainAction {
 	private static final long serialVersionUID = 1L;
 
@@ -34,6 +45,7 @@ public class DbDriverAction extends CompexDomainAction {
 	 * 
 	 * @return none
 	 */
+	@Action("enabled")
 	public String enabled() throws Exception {
 		try {
 			String _sId = "";
@@ -51,5 +63,10 @@ public class DbDriverAction extends CompexDomainAction {
 			printJSON("fail");
 		}
 		return NONE;
+	}
+	
+	@Action("list")
+	public String list() {
+		return super.list();
 	}
 }

@@ -35,6 +35,6 @@
 <c:set var="listurl" value="/pages/resource/${simpleModel}compexlist.action"></c:set>
 <c:set var="viewurl" value="/pages/resource/${simpleModel}compexview.action"></c:set>
 
-<%@include file="/pages/core/commonList.jsp"  %>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 
 </html>

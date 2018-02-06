@@ -39,7 +39,7 @@ function selfDialogAjaxDone(json) {
 }
 
 function getCode(){
-	var urlString = "<%=basePath %>/pages/resource/tabulationgetCode.action?tabulationName="+$("#tabulationName").val();
+	var urlString = "<%=basePath %>/pages/resource/tabulation/getCode.action?tabulationName="+$("#tabulationName").val();
 		$.ajax({
 			type:'post',
 			data:$("#buttontabulationIdFormID").serialize(),
@@ -74,7 +74,7 @@ $(function(){
 	$('#yunDialog').attr('style', 'height: 100%;overflow-x:hidden;OVERFLOW-Y:auto;');
 	ns.common.mouseForButton();
 	
-	formbzUrl = "<%=basePath %>/pages/resource/tabulationshowFormHelp.action";
+	formbzUrl = "<%=basePath %>/pages/resource/tabulation/showFormHelp.action";
 });
 
 //-->
@@ -110,7 +110,7 @@ $(function(){
       </div>
       <div class="tabsContent" >
       	<div align="center">
-      		<form id="buttontabulationIdFormID" onkeydown="return enterNotSubmit(event);" method="post" action="<%=basePath %>/pages/resource/tabulationsave.action" class="pagetabulation required-validate" onsubmit="return validateCallback(this, selfDialogAjaxDone);">
+      		<form id="buttontabulationIdFormID" onkeydown="return enterNotSubmit(event);" method="post" action="<%=basePath %>/pages/resource/tabulation/save.action" class="pagetabulation required-validate" onsubmit="return validateCallback(this, selfDialogAjaxDone);">
 			<div style="display:none;">	
 				<input id="tabulationId" type=hidden name="tabulation.id" value="${tabulation.id}"/>
 				<input id="buttontabulationSubmit" type="submit" name="submit"/>

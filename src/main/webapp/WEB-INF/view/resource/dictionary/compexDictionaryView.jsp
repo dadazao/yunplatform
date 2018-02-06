@@ -15,7 +15,7 @@
 		
 		var params=$("#paramsId").val();
 		$("#domainId").val(params.split(";")[0].split(":")[1]);
-		xgUrl="<%=basePath %>/pages/resource/dictionarysCompexedit.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl="<%=basePath %>/pages/resource/dictionary/edit.action?formId=${formId}&params=${params}" + "&op=edit";
 		$('#yunDialog').attr('style', 'height: 100%;overflow-x:hidden;OVERFLOW-Y:auto;');
 		ns.common.mouseForButton();
 		

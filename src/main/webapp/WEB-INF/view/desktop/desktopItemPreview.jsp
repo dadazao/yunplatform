@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="portlet">
 	<div class="phead">
 		<div class="ptitle">
-			<img src="pages/resource/portal/image/titleicon.gif" style="padding-top:5px;">
+			<img src="<%=basePath %>/images/portal/titleicon.gif" style="padding-top:5px;">
 			${desktopItem.name}
 		</div>
 		<div class="poper" style="padding-top:6px;"><a href="#" onclick="loadList('${desktopItem.name}','${desktopItem.alias}','${desktopItem.moduleUrl}')" style="text-decoration: none;" title="列表查看所有信息">更多</a> </div>

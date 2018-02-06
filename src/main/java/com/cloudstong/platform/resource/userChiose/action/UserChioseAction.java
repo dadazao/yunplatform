@@ -16,6 +16,9 @@ import java.util.Properties;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.cloudstong.platform.resource.metadata.action.CompexDomainAction;
@@ -34,6 +37,8 @@ import com.cloudstong.platform.system.model.SysUser;
  * Description:机构用户选择树Action
  * 
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/userChoise")
 public class UserChioseAction extends CompexDomainAction {
 	
 	private static final long serialVersionUID = 6971230938843146121L;
@@ -46,6 +51,7 @@ public class UserChioseAction extends CompexDomainAction {
 	 * @return NONE
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked", "static-access" })
+	@Action("depmUserTree")
 	public String depmUserTree(){
 		try {
 			List<Map> _lstZtree = new ArrayList<Map>();

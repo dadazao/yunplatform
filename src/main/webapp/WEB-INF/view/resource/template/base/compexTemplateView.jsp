@@ -8,7 +8,7 @@
 <script type="text/javascript">
 <!--
 	$(function(){
-		xgUrl="<%=basePath %>/pages/resource/templateeditBase.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl="<%=basePath %>/pages/resource/template/editBase.action?formId=${formId}&params=${params}" + "&op=edit";
 		ns.common.mouseForButton();
 		$tr = $('#templateView tr')
 		for(var i=6; i<$tr.length; i++){
@@ -78,7 +78,7 @@
 				<form
 					onsubmit="return validateCallback(this, compexSelfDialogAjaxDone);"
 					class="pageForm required-validate" method="post"
-					action="<%=basePath %>/pages/resource/templateBasecompexsave.action"
+					action="<%=basePath %>/pages/resource/template/Basecompexsave.action"
 					id="compexDomainTabEdit111157FormID" novalidate="novalidate">
 					<div style="display: none;" id="compexDomainTabEdit111157ParamDiv">
 						<input type="submit" name="submit"

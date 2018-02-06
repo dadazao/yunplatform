@@ -79,7 +79,7 @@
 			<div align="center">
 				<form onkeydown="return enterNotSubmit(event);" id="templateFormID"
 					method="post"
-					action="<%=basePath%>/pages/resource/templatesaveComb.action"
+					action="<%=basePath%>/pages/resource/template/saveComb.action"
 					class="pageForm required-validate"
 					onsubmit="return validateCallback(this, templateDialogAjaxDone);">
 					<div style="display: none;">

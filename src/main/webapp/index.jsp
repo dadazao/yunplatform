@@ -288,7 +288,7 @@
 			$.ajax( {
 				type : 'POST',
 				dataType:'json',
-				url : '<%=basePath%>/pages/system/menuload.action',
+				url : '<%=basePath%>/pages/system/menu/load.action',
 				success : function(data) {
 					for(var i=data.length-1;i>=0;i--) {
 						$("#homeSplitId").after("<li><a><span onclick=\"menuListener('"+data[i].menuItemName+"','"+data[i].catalogId+"','"+data[i].href+"')\" >"+data[i].menuItemName+"</span></a></li><li class='split_line' style='width:2px;'></li>");
@@ -302,15 +302,14 @@
 		function menuListener(title,catalogId,href){
 			showZtree("leftMenuTree","<%=basePath%>/pages/resource/treemenuChildren.action","rootId="+catalogId,leftMenuOnClick);
 			$("#navTitle").html(title);
-			navTab.openTab("main", "<%=basePath%>/pages/core/help/menuhelp.jsp?catalogId="+catalogId);
+			navTab.openTab("main", "<%=basePath%>/pages/core/help/menuhelp.action?catalogId="+catalogId);
 		}
 		
 		function loadContact(){
-			$.pdialog.open("<%=basePath%>/pages/resource/enterinfo/aboutus.jsp","aboutusDialog","关于我们",{width:630,height:360,mask:true,resizable:true});
 		}
 		
 		function changePassword() {
-			$.pdialog.open("<%=basePath%>/pages/home/changePass.jsp","changePasswordDialog","修改密码",{width:400,height:200,mask:true,resizable:true});
+			$.pdialog.open("<%=basePath%>/changePass.action","changePasswordDialog","修改密码",{width:400,height:200,mask:true,resizable:true});
 		}
 		
 		function loadList(name,alias,url){

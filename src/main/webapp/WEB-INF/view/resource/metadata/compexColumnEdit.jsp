@@ -7,7 +7,7 @@
 <script type="text/javascript">
 <!--
 	function subTable() {
-		var urlString = "<%=basePath %>/pages/resource/columnsubTable.action";
+		var urlString = "<%=basePath %>/pages/resource/column/subTable.action";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -98,7 +98,7 @@
 		</c:if>
 	</c:forEach>
 </div>
-<form onkeydown="return enterNotSubmit(event);" method="post" action="<%=basePath %>/pages/resource/columnsave.action" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+<form onkeydown="return enterNotSubmit(event);" method="post" action="<%=basePath %>/pages/resource/column/save.action" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
 	<div style="display:none;">
 		<input name="tableSubmit" id="columnSubmit" type="submit">
 	</div>

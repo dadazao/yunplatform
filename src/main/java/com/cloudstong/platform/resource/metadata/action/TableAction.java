@@ -12,6 +12,12 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
 import com.cloudstong.platform.core.common.PageResult;
 import com.cloudstong.platform.core.common.QueryCriteria;
 import com.cloudstong.platform.core.exception.AppException;
@@ -40,6 +46,19 @@ import com.cloudstong.platform.system.model.SysUser;
  * 
  *         Description:数据表管理Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/table")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/resource/metadata/compexTableList.jsp"),
+		@Result(name="columncfg", location = "/WEB-INF/view/resource/metadata/compexTableColumnConfig.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/metadata/compexTableEdit.jsp"),
+		@Result(name="input", location = "/WEB-INF/view/resource/metadata/compexTableEdit.jsp"),
+		@Result(name="add", location = "/WEB-INF/view/resource/metadata/compexTableEdit.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/resource/metadata/compexTableView.jsp"),
+		@Result(name="search", location = "/WEB-INF/view/resource/metadata/compexTableSearch.jsp"),
+		@Result(name="meta", location = "/WEB-INF/view/resource/metadata/metaColumnList.jsp"),
+		@Result(name="history", location = "/WEB-INF/view/resource/metadata/historyList.jsp")
+})
 public class TableAction extends CompexDomainAction {
 
 	/**
@@ -130,7 +149,13 @@ public class TableAction extends CompexDomainAction {
 	public String search() {
 		return "search";
 	}
+	
+	@Action("list")
+	public String list() {
+		return super.list();
+	}
 
+	@Action("view")
 	public String view() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 
@@ -150,6 +175,7 @@ public class TableAction extends CompexDomainAction {
 		return "view";
 	}
 
+	@Action("add")
 	public String add() {
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -174,6 +200,7 @@ public class TableAction extends CompexDomainAction {
 		return "add";
 	}
 
+	@Action("edit")
 	public String edit() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 
@@ -211,6 +238,7 @@ public class TableAction extends CompexDomainAction {
 	 * @author Jason Description: 数据表字段配置功能使用
 	 * @return
 	 */
+	@Action("columnCfg")
 	public String columnCfg() {
 		String tableid = getRequest().getParameter("tableId");
 		if (tableid != null) {
@@ -241,6 +269,7 @@ public class TableAction extends CompexDomainAction {
 	 * @author Jason Description: 数据表字段配置功能使用
 	 * @return
 	 */
+	@Action("saveColumnConfig")
 	public String saveColumnConfig() throws IOException {
 		String configStr = getRequest().getParameter("cfgcolumns");
 		if (configStr == null) {
@@ -263,6 +292,7 @@ public class TableAction extends CompexDomainAction {
 		return NONE;
 	}
 
+	@Action("save")
 	public String save() throws IOException {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		try {
@@ -311,6 +341,7 @@ public class TableAction extends CompexDomainAction {
 		return NONE;
 	}
 
+	@Action("del")
 	public String delete() throws IOException {
 		try {
 			if (selectedVOs != null) {
@@ -352,6 +383,7 @@ public class TableAction extends CompexDomainAction {
 		return NONE;
 	}
 
+	@Action("logicDelete")
 	public String logicDelete() throws IOException {
 		try {
 			if (selectedVOs != null) {
@@ -393,6 +425,7 @@ public class TableAction extends CompexDomainAction {
 		return NONE;
 	}
 
+	@Action("pinyin")
 	public String pinyin() throws IOException {
 		String pinyin = "";// Pinyin4jUtil.makeStringByStringSet(Pinyin4jUtil.getPinyin(tableZhName));
 		String[] str = pinyin.split(",");
@@ -424,11 +457,13 @@ public class TableAction extends CompexDomainAction {
 		return NONE;
 	}
 
+	@Action("publish")
 	public String publish() throws IOException {
 		this.table = tableService.findTableById(id);
 		return NONE;
 	}
 
+	@Action("lock")
 	public String lock() throws Exception {
 		try {
 			SysUser user = (SysUser) getSession().getAttribute("user");
@@ -447,6 +482,7 @@ public class TableAction extends CompexDomainAction {
 		return NONE;
 	}
 
+	@Action("unLock")
 	public String unLock() throws Exception {
 		try {
 			SysUser user = (SysUser) getSession().getAttribute("user");
@@ -465,6 +501,7 @@ public class TableAction extends CompexDomainAction {
 		return NONE;
 	}
 
+	@Action("change")
 	public String change() throws Exception {
 		SysUser user = (SysUser) getSession().getAttribute("user");
 		try {
@@ -477,6 +514,7 @@ public class TableAction extends CompexDomainAction {
 		return NONE;
 	}
 
+	@Action("history")
 	public String history() {
 		List historys = tableService.queryHistory(String.valueOf(id));
 		this.pageResult = new PageResult();
@@ -486,6 +524,7 @@ public class TableAction extends CompexDomainAction {
 		return "history";
 	}
 
+	@Action("metaHistory")
 	public String metaHistory() {
 		try {
 			List historys = tableService.queryMetaHistory(String.valueOf(id), version);

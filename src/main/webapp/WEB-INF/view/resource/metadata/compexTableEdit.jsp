@@ -12,7 +12,7 @@
 		loadTableColumnList();
 	}
 	function setPinyin() {
-		var urlString = "<%=basePath %>/pages/resource/tablepinyin.action";
+		var urlString = "<%=basePath %>/pages/resource/table/pinyin.action";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -25,7 +25,7 @@
 	}
 	
 	function publish() {
-		var urlString = "<%=basePath %>/pages/resource/tablepublish.action";
+		var urlString = "<%=basePath %>/pages/resource/table/publish.action";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -128,7 +128,7 @@
 		      </div>
 		      <div class="tabsContent" >
 			  		<div align="center">
-			  			<form onkeydown="return enterNotSubmit(event);" method="post" action="<c:url value='/pages/resource/tablesave.action'/>" class="pageForm required-validate" onsubmit="return validateCallback(this, tableDialogAjaxDone);">
+			  			<form onkeydown="return enterNotSubmit(event);" method="post" action="<c:url value='/pages/resource/table/save.action'/>" class="pageForm required-validate" onsubmit="return validateCallback(this, tableDialogAjaxDone);">
 			  			<div style="display:none;">
 							<input name="tableSubmit" id="tableSubmit" type="submit">
 							<input name="op" type="hidden" value="${op}">

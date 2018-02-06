@@ -12,7 +12,7 @@
 	  		type:'POST',
 	  		async: false,
 	  		dataType:"json",
-	  		url:'<%=basePath %>/pages/resource/enterpriseInfoloadDefault.action',
+	  		url:'<%=basePath %>/pages/resource/enterpriseInfo/loadDefault.action',
 	  		success:function(data){
 				$("#content").html(data.enterAbout);
 	  		}

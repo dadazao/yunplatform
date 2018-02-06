@@ -14,10 +14,10 @@
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
 		//新建ACTION URL
-		xjUrl = "<%=basePath%>/pages/resource/radioMgtadd.action?formId=${formId}&model=${model}&op=new";
+		xjUrl = "<%=basePath%>/pages/resource/radio/add.action?formId=${formId}&model=${model}&op=new";
 		//批量删除ACTION URL
-		plscUrl = "<%=basePath%>/pages/resource/radioMgtdelete.action?model=${model}&formId=${formId}";
-		ljscUrl = "<%=basePath%>/pages/resource/radioMgtlogicDelete.action?model=${model}&formId=${formId}";
+		plscUrl = "<%=basePath%>/pages/resource/radio/del.action?model=${model}&formId=${formId}";
+		ljscUrl = "<%=basePath%>/pages/resource/radio/logicDelete.action?model=${model}&formId=${formId}";
 		bzUrl = "<%=basePath%>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath%>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 	});
@@ -25,5 +25,5 @@
 </head>
 <c:set var="listurl" value="/pages/resource/radioMgtlist.action"></c:set>
 <c:set var="viewurl" value="/pages/resource/radioMgtview.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

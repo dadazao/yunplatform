@@ -46,7 +46,7 @@ function CfgColumn(){
 	}
 }
 var _tbodyHtml = '';
-$.getJSON('<%=basePath %>/pages/resource/tablelistColumns.action?tableName=${table.tableName}',function(data){
+$.getJSON('<%=basePath %>/pages/resource/table/listColumns.action?tableName=${table.tableName}',function(data){
 	$.each(data,function(index,column){
 		var cfgcolumn = new CfgColumn();
 		cfgcolumn.id = column.id;cfgcolumn.zhName = column.zhName;cfgcolumn.enName=column.enName;cfgcolumn.belongTable=column.belongTable;
@@ -152,7 +152,7 @@ function saveColumnConfig(){
 	if(oldName.trim()!=nName.trim()){
 		param.tableName = nName;
 	}
-	$.post('<%=basePath %>/pages/resource/tablesaveColumnConfig.action',param,refreshList,'json');
+	$.post('<%=basePath %>/pages/resource/table/saveColumnConfig.action',param,refreshList,'json');
 }
 
 function editTable(obj){

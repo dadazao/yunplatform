@@ -11,9 +11,9 @@
 		//生成查看页面
 		compexViewJson(urlString);
 		//删除ACTION URL
-		scUrl = "<%=basePath %>/pages/resource/checkboxMgtsingleDelete.action?params=${params}";
+		scUrl = "<%=basePath %>/pages/resource/checkbox/singleDelete.action?params=${params}";
 		//修改ACTION URL
-		xgUrl = "<%=basePath %>/pages/resource/checkboxMgtedit.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl = "<%=basePath %>/pages/resource/checkbox/edit.action?formId=${formId}&params=${params}" + "&op=edit";
 		//将保存按钮置灰
 		$("#BC").attr("disabled","disabled");
 		$("#SC").attr("disabled","disabled");

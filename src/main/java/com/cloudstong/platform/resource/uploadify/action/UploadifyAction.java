@@ -15,12 +15,13 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
 
 import com.cloudstong.platform.core.web.action.BaseAction;
 import com.cloudstong.platform.resource.attachment.model.Attachment;
 import com.cloudstong.platform.resource.attachment.service.AttachmentService;
-import com.cloudstong.platform.resource.enterinfo.model.EnterpriseInfo;
 import com.cloudstong.platform.resource.metadata.service.CompexDomainService;
 
 /**
@@ -33,6 +34,8 @@ import com.cloudstong.platform.resource.metadata.service.CompexDomainService;
  * 
  * Description:多文件上传组件Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/uploadify")
 public class UploadifyAction extends BaseAction {
 
 	private static final long serialVersionUID = 1L;
@@ -55,6 +58,7 @@ public class UploadifyAction extends BaseAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("showCompleteFile")
 	public String showCompleteFile() throws IOException {
 		String fileIds = getRequest().getParameter("fileIds") == null ? "" : getRequest().getParameter("fileIds")
 				.toString();
@@ -101,6 +105,7 @@ public class UploadifyAction extends BaseAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("showCompleteFileView")
 	public String showCompleteFileView() throws IOException {
 		String fileIds = getRequest().getParameter("fileIds") == null ? "" : getRequest().getParameter("fileIds")
 				.toString();
@@ -132,6 +137,7 @@ public class UploadifyAction extends BaseAction {
 	 * 
 	 * @return NONE
 	 */
+	@Action("deleteFile")
 	public String deleteFile() {
 		String model = getRequest().getParameter("model");
 		String column = getRequest().getParameter("column");
@@ -156,6 +162,7 @@ public class UploadifyAction extends BaseAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("showFile")
 	public String showFile() throws IOException {
 		String _fileId = getRequest().getParameter("fileId");
 		if (_fileId != null && !_fileId.equals("")) {

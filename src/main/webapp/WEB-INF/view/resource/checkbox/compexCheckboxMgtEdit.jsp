@@ -7,13 +7,13 @@
 <script type="text/javascript">
 <!--
 	$(function(){
-		var urlString = "<%=basePath %>/pages/resource/checkboxMgtdataJson.action?params=${params}&formId=${formId}";
+		var urlString = "<%=basePath %>/pages/resource/checkbox/dataJson.action?params=${params}&formId=${formId}";
 		//生成查看/修改页面
 		compexDataJson(urlString);
 		//删除ACTION URL
-		scUrl = "<%=basePath %>/pages/resource/checkboxMgtsingleDelete.action?params=${params}";
+		scUrl = "<%=basePath %>/pages/resource/checkbox/singleDelete.action?params=${params}";
 		//保存ACTION URL
-		bcUrl = "<%=basePath %>/pages/resource/checkboxMgtsave.action";
+		bcUrl = "<%=basePath %>/pages/resource/checkbox/save.action";
 		//将修改按钮置灰
 		$("#XG").attr("disabled","disabled");
 		$("#XG").attr("class","listbuttonDisable");

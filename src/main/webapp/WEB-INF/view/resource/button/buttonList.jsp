@@ -4,17 +4,17 @@
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme()+ "://"+request.getServerName() + ":"+request.getServerPort()+path;
-	String searchAction = basePath + "/pages/resource/buttonActionlist.action";
-	String modifyAction = basePath + "/pages/resource/buttonActionview.action";
+	String searchAction = basePath + "/pages/resource/button/list.action";
+	String modifyAction = basePath + "/pages/resource/button/view.action";
 %>
 <html>
 <head>
 <script type="text/javascript">
 	$(function() {
 		//新建ACTION URL
-		xjUrl = "<%=basePath%>/pages/resource/buttonActionadd.action?formId=${formId}&model=${model}";
+		xjUrl = "<%=basePath%>/pages/resource/button/add.action?formId=${formId}&model=${model}";
 		//批量删除ACTION URL
-		plscUrl = "<%=basePath%>/pages/resource/buttonActionbatchDelete.action?model=${model}";
+		plscUrl = "<%=basePath%>/pages/resource/button/batchDelete.action?model=${model}";
 	});
 		
 </script>

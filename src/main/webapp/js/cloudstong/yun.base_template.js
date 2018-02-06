@@ -455,7 +455,7 @@ function changeMbyt() {
 		type : 'POST',
 		async : false,
 		dataType : 'json',
-		url : __basePath+'/pages/resource/templatecontent.action?templateId=' + $("#sys_template-tbl_mobanyongtu").val(),
+		url : __basePath+'/pages/resource/template/content.action?templateId=' + $("#sys_template-tbl_mobanyongtu").val(),
 		success : function(data) {
 			if(data.templateChName=='空模板'){
 				$('#templateDesignDiv').html("");

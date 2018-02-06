@@ -19,7 +19,7 @@
 	${form.jiaoben}
 	
 	function getColumn() {
-		var urlString = "<%=basePath %>/pages/resource/treegetColumnParent.action?selectType=parentIdColumn";
+		var urlString = "<%=basePath %>/pages/resource/tree/getColumnParent.action?selectType=parentIdColumn";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -30,7 +30,7 @@
 			}
 		});
 		
-		var urlString = "<%=basePath %>/pages/resource/treegetColumnParent.action?selectType=nameColumn";
+		var urlString = "<%=basePath %>/pages/resource/tree/getColumnParent.action?selectType=nameColumn";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -41,7 +41,7 @@
 			}
 		});
 		
-		var urlString = "<%=basePath %>/pages/resource/treegetColumnParent.action?selectType=paiXu";
+		var urlString = "<%=basePath %>/pages/resource/tree/getColumnParent.action?selectType=paiXu";
 		$.ajax({
 			url: urlString,
 			async: true,
@@ -55,7 +55,7 @@
 	}
 
 	function getColumnChild() {
-		var urlString = "<%=basePath %>/pages/resource/treegetColumnParentChild.action?selectType=parentIdColumn";
+		var urlString = "<%=basePath %>/pages/resource/tree/getColumnParentChild.action?selectType=parentIdColumn";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -65,7 +65,7 @@
 			}
 		});
 		
-		var urlString = "<%=basePath %>/pages/resource/treegetColumnParentChild.action?selectType=nameColumn";
+		var urlString = "<%=basePath %>/pages/resource/tree/getColumnParentChild.action?selectType=nameColumn";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -75,7 +75,7 @@
 			}
 		});
 		
-		var urlString = "<%=basePath %>/pages/resource/treegetColumnParentChild.action?selectType=paiXu";
+		var urlString = "<%=basePath %>/pages/resource/tree/getColumnParentChild.action?selectType=paiXu";
 		$.ajax({
 			url: urlString,
 			async: true,
@@ -108,7 +108,7 @@
 	}
 	
 	function publish() {
-		var urlString = "<%=basePath %>/pages/resource/tablepublish.action";
+		var urlString = "<%=basePath %>/pages/resource/table/publish.action";
 		$.ajax({
 			url: urlString,
 			type:'post',
@@ -125,7 +125,7 @@
 		var disColumnId = $('#disColumnId').val();
 		var orderColumnId = $('#orderColumnId').val();
 		
-	    var url = '<%=basePath %>/pages/resource/treefetchShowTreeParamAction.action' +
+	    var url = '<%=basePath %>/pages/resource/tree/fetchShowTreeParamAction.action' +
 		 '?tableId='+tableId+'&columnId='+parentColumnId +
 		 '&disColumnId='+disColumnId+'&orderColumnId='+orderColumnId+'&parentName=parentName&parentId=parentId&showRoot=true';
 	    
@@ -147,9 +147,9 @@
 		});
 		var tableTypeUrl = '';
 		if(type=='1'){
-			tableTypeUrl = "<%=basePath %>/pages/resource/treeaddboth";
+			tableTypeUrl = "<%=basePath %>/pages/resource/tree/addboth";
 		}else{
-			tableTypeUrl = "<%=basePath %>/pages/resource/treeaddsingle";
+			tableTypeUrl = "<%=basePath %>/pages/resource/tree/addsingle";
 		}
 		$.ajax({
 		   url: tableTypeUrl,
@@ -170,9 +170,9 @@
 		if(op!='edit'){
 			var tableTypeUrl = '';
 			if(type=='1'){
-				tableTypeUrl = "<%=basePath %>/pages/resource/treeaddboth";
+				tableTypeUrl = "<%=basePath %>/pages/resource/tree/addboth";
 			}else{
-				tableTypeUrl = "<%=basePath %>/pages/resource/treeaddsingle";
+				tableTypeUrl = "<%=basePath %>/pages/resource/tree/addsingle";
 			}
 			$.ajax({
 			   url: tableTypeUrl,
@@ -185,9 +185,9 @@
 		}else{
 			var tableTypeUrl = '';
 			if(type=='1'){
-				tableTypeUrl = "<%=basePath %>/pages/resource/treeeditboth";
+				tableTypeUrl = "<%=basePath %>/pages/resource/tree/editboth";
 			}else{
-				tableTypeUrl = "<%=basePath %>/pages/resource/treeeditsingle";
+				tableTypeUrl = "<%=basePath %>/pages/resource/tree/editsingle";
 			}
 			$.ajax({
 			   url: tableTypeUrl,
@@ -201,7 +201,7 @@
 //-->
 </script>
 <div id="yunDialog">
-<form id="domainFormId" action="<%=basePath %>/pages/resource/treesave.action" method="post" class="pageForm required-validate" onsubmit="return validateCallback(this, treeSelfDialogAjaxDone);">
+<form id="domainFormId" action="<%=basePath %>/pages/resource/tree/save.action" method="post" class="pageForm required-validate" onsubmit="return validateCallback(this, treeSelfDialogAjaxDone);">
 <div  class="buttonPanel">
 	<div style="display:none;">
 		<input id="formId" name="formId" value="${formId}"/>

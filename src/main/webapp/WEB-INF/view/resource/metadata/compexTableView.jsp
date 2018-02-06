@@ -14,7 +14,7 @@
 		$("#SC").attr("class","listbuttonDisable");
 		var params=$("#paramsId").val();
 		$("#domainId").val(params.split(";")[0].split(":")[1]);
-		xgUrl="<%=basePath %>/pages/resource/tableedit.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl="<%=basePath %>/pages/resource/table/edit.action?formId=${formId}&params=${params}" + "&op=edit";
 		ns.common.mouseForButton();
 		
 		loadTableColumnForm();

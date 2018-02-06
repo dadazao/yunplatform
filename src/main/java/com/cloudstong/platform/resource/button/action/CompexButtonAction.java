@@ -1,5 +1,6 @@
 package com.cloudstong.platform.resource.button.action;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.annotation.Resource;
@@ -7,6 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.cloudstong.platform.resource.button.model.Button;
@@ -25,6 +31,14 @@ import com.cloudstong.platform.resource.metadata.action.CompexDomainAction;
  * 
  * Description: 按钮Action(配置模块)
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/button")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/resource/button/compexButtonList.jsp"),
+		@Result(name="add", location = "/WEB-INF/view/resource/button/compexButtonEdit.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/button/compexButtonEdit.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/resource/button/compexButtonView.jsp")
+})
 public class CompexButtonAction extends CompexDomainAction {
 
 	private static final long serialVersionUID = 5509123074759541009L;
@@ -72,11 +86,46 @@ public class CompexButtonAction extends CompexDomainAction {
 	@Resource
 	private ButtonGroupService buttonGroupService;
 	
+	@Action("list")
+	public String list() {
+		return super.list();
+	}
+	
+	@Action("add")
+	public String add() {
+		return super.add();
+	}
+	
+	@Action("edit")
+	public String edit() {
+		return super.add();
+	}
+	
+	@Action("view")
+	public String view() throws Exception {
+		return super.view();
+	}
+	
+	@Action("del")
+	public String delete() throws Exception {
+		return super.delete();
+	}
+	
+	@Action("singleDelete") 
+	public String singleDelete() throws Exception {
+		return super.simpleDelete();
+	}
+	
+	@Action("logicDelete") 
+	public String logicDelete() throws IOException  {
+		return super.logicDelete();
+	}
 	/**
 	 * 根据ID查找按钮信息，返回json对象
 	 * 
 	 * @return NONE
 	 */
+	@Action("findButtonByID")
 	public String findButtonByID() throws Exception {
 		button = buttonService.findByID(id);
 		ObjectMapper mapper = new ObjectMapper();
@@ -93,6 +142,7 @@ public class CompexButtonAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws Exception
 	 */
+	@Action("findButtonOrGroupByID")
 	public String findButtonOrGroupByID() throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
 		HttpServletResponse response = getResponse();

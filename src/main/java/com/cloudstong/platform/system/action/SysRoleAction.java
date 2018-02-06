@@ -51,7 +51,8 @@ import com.cloudstong.platform.system.service.SysRoleService;
 		@Result(name = "edit", location = "/WEB-INF/view/system/role/roleEdit.jsp"),
 		@Result(name = "userList", location = "/WEB-INF/view/system/role/userList.jsp"),
 		@Result(name = "catalogAuthList", location = "/WEB-INF/view/system/role/catalogAuthList.jsp"),
-		@Result(name = "dialog", location = "/WEB-INF/view/system/role/sysRoleDialog.jsp")
+		@Result(name = "dialog", location = "/WEB-INF/view/system/role/sysRoleDialog.jsp"),
+		@Result(name = "catalogTree", location = "/WEB-INF/view/system/role/catalogTree.jsp")
 })
 public class SysRoleAction extends BaseAction {
 
@@ -85,6 +86,11 @@ public class SysRoleAction extends BaseAction {
 	 */
 	public void setSysRole(SysRole sysRole) {
 		this.sysRole = sysRole;
+	}
+	
+	@Action("catalogTree")
+	public String catalogTree() {
+		return "catalogTree";
 	}
 	
 	@Action("dialog")
@@ -266,9 +272,9 @@ public class SysRoleAction extends BaseAction {
 			Map _topztree = new HashMap();
 			_topztree.put("id", "1");
 			_topztree.put("name", "全部角色");
-			_topztree.put("icon", "/images/icon/folderClose.gif");
-			_topztree.put("iconOpen", "/images/icon/folderOpen.gif");
-			_topztree.put("iconClose", "/images/icon/folderClose.gif");
+			_topztree.put("icon", "images/icon/folderClose.gif");
+			_topztree.put("iconOpen", "images/icon/folderOpen.gif");
+			_topztree.put("iconClose", "images/icon/folderClose.gif");
 			_topztree.put("open", true);
 			_lstZtree.add(_topztree);
 			List<SysRole> nodes = sysRoleService.selectAllRole();
@@ -277,9 +283,9 @@ public class SysRoleAction extends BaseAction {
 				ztree.put("id", role.getId());
 				ztree.put("pId", "1");
 				ztree.put("name", role.getRoleName());
-				ztree.put("icon", "/images/icon/folderClose.gif");
-				ztree.put("iconOpen", "/images/icon/folderOpen.gif");
-				ztree.put("iconClose", "/images/icon/folderClose.gif");
+				ztree.put("icon", "images/icon/folderClose.gif");
+				ztree.put("iconOpen", "images/icon/folderOpen.gif");
+				ztree.put("iconClose", "images/icon/folderClose.gif");
 				_lstZtree.add(ztree);
 			}
 			ObjectMapper objectMapper = new ObjectMapper();

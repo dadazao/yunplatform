@@ -30,7 +30,7 @@ function restartServer() {
 	$.ajax({
   		type:'POST',
   		async: false,
-  		url:'<%=basePath %>/pages/resource/catalogTreerestart.action',
+  		url:'<%=basePath %>/pages/resource/catalog/restart.action',
   		success:function(data){
 			eval(data);
   		}
@@ -39,7 +39,7 @@ function restartServer() {
 //-->
 </script>
   <body>
-  	<form method="post" action="<%=basePath %>/pages/resource/catalogTreeimportZip.action" class="pageForm required-validate" enctype="multipart/form-data" onsubmit="return iframeCallback(this, selfImportDialogAjaxDone);">
+  	<form method="post" action="<%=basePath %>/pages/resource/catalog/importZip.action" class="pageForm required-validate" enctype="multipart/form-data" onsubmit="return iframeCallback(this, selfImportDialogAjaxDone);">
   		<br>
 	    <table width="98%" cellspacing="0" cellpadding="2" border="0" class="Input_Table">
 			<tr>

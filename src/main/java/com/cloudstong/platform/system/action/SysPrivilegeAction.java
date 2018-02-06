@@ -7,7 +7,6 @@
 package com.cloudstong.platform.system.action;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,7 +60,10 @@ import com.cloudstong.platform.system.service.SysPrivilegeService;
 		@Result(name = "edit", location = "/WEB-INF/view/system/privilege/privilegeEdit.jsp"),
 		@Result(name = "addResource", location = "/WEB-INF/view/system/privilege/resourceEdit.jsp"),
 		@Result(name = "editResource", location = "/WEB-INF/view/system/privilege/resourceEdit.jsp"),
-		@Result(name = "resourceList", location = "/WEB-INF/view/system/privilege/resourceList.jsp")
+		@Result(name = "resourceList", location = "/WEB-INF/view/system/privilege/resourceList.jsp"),
+		@Result(name = "catalog", location = "/WEB-INF/view/system/privilege/catalogTree.jsp"),
+		@Result(name = "index", location = "/WEB-INF/view/system/privilege/privilegeIndex.jsp"),
+		@Result(name = "readme", location = "/WEB-INF/view/system/privilege/readme.jsp")
 })
 public class SysPrivilegeAction extends BaseAction {
 	@Resource
@@ -90,6 +92,21 @@ public class SysPrivilegeAction extends BaseAction {
 	private String status;
 	
 	private List<Dictionary> resourceTypes;
+	
+	@Action("index")
+	public String index() {
+		return "index";
+	}
+	
+	@Action("catalog")
+	public String catalog() {
+		return "catalog";
+	}
+	
+	@Action("readme")
+	public String readme() {
+		return "readme";
+	}
 
 	/**
 	 * Description:

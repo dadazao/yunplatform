@@ -58,7 +58,7 @@ function showButtonComment(){
 	var type = $("#buttonTYPE option:selected").val();
 	$.ajax({
   		type:'POST',
-  		url:"<%=basePath%>/pages/resource/buttonfindButtonOrGroupByID.action?id=" + value +"&type="+type,
+  		url:"<%=basePath%>/pages/resource/button/findButtonOrGroupByID.action?id=" + value +"&type="+type,
   		dataType:'json',
   		success:function(data){
 			if(data!=null){

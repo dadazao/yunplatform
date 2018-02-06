@@ -2,7 +2,12 @@ package com.cloudstong.platform.third.flexpaper.action;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 
 import com.cloudstong.platform.core.util.DocumentConverterUtil;
 import com.cloudstong.platform.core.util.PathUtil;
@@ -19,6 +24,12 @@ import com.cloudstong.platform.system.model.SysUser;
  * 
  * Description:文本域
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/flexPaper")
+@Results(value = { 
+		@Result(name="open", location = "/WEB-INF/view/third/flexPaper/index.jsp"),
+		@Result(name="flexPaperOpen", location = "/WEB-INF/view/third/flexPaper/flexPaperOpen.jsp")
+})
 public class FlexPaperAction extends CompexDomainAction {
 
 	private static final long serialVersionUID = 5066905381870932702L;
@@ -33,6 +44,7 @@ public class FlexPaperAction extends CompexDomainAction {
 	
 	private int fileNum;
 	
+	@Action("open")
 	public String open() throws IOException{
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");

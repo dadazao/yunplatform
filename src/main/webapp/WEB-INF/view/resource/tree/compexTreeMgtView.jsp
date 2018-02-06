@@ -15,7 +15,7 @@
 		$("#BCBXZ").attr("class","listbuttonDisable");
 		var params=$("#paramsId").val();
 		$("#domainId").val(params.split(";")[0].split(":")[1]);
-		xgUrl = "<%=basePath %>/pages/resource/treeedit.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl = "<%=basePath %>/pages/resource/tree/edit.action?formId=${formId}&params=${params}" + "&op=edit";
 		ns.common.mouseForButton();
 		
 		formbzUrl = "<%=basePath %>/pages/resource/compexshowFormHelp.action?formId=${formId}";
@@ -27,7 +27,7 @@
 		var disColumnId = $("#mgrTreedisColumnId").val();
 		var orderColumnId = $("#mgrTreeorderColumnId").val();
 		
-	    var url = '<%=basePath %>/pages/resource/treefetchShowTreeParamAction.action' +
+	    var url = '<%=basePath %>/pages/resource/tree/fetchShowTreeParamAction.action' +
 		 '?tableId='+tableId+'&columnId='+parentColumnId +
 		 '&disColumnId='+disColumnId+'&orderColumnId='+orderColumnId;
 	    

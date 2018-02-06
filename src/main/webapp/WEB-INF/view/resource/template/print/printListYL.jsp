@@ -32,7 +32,7 @@
 				
 				$.ajax( {
 					type : 'POST',
-					url : '<%=basePath %>/pages/resource/printtableData.action?mainTable=sys_dayinmoban&params=tbl_formId:'+$('#cloudstongFormId').val()+';tbl_types:1',
+					url : '<%=basePath %>/pages/resource/print/tableData.action?mainTable=sys_dayinmoban&params=tbl_formId:'+$('#cloudstongFormId').val()+';tbl_types:1',
 					dataType:'json',
 					success : function(data) {
 						var zNodes = '';

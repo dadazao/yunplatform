@@ -442,7 +442,7 @@ function setTableRowAndColumnNum(){
 }
 
 function loadPartition(){
-	$("#partitionFormDiv").loadUrl("pages/resource/partitionloadPartitionForm.action");
+	$("#partitionFormDiv").loadUrl(__basePath +"/pages/resource/partition/loadPartitionForm.action");
 }
 
 function addPartition(){
@@ -454,7 +454,7 @@ function addPartition(){
 	if($('#domainId').val() == ""){
 		alertMsg.warn("请先建立模板!");
 	}else{
-		var urlString = "pages/resource/partitionsave.action?templateId=" + $('#domainId').val();
+		var urlString = __basePath +"/pages/resource/partition/save.action?templateId=" + $('#domainId').val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -474,7 +474,7 @@ function updatePartition(){
 	if($('#domainId').val() == ""){
 		alertMsg.warn("请先建立模板!");
 	}else{
-		var urlString = "pages/resource/partitionsave.action?templateId=" + $('#domainId').val();
+		var urlString = __basePath +"/pages/resource/partition/save.action?templateId=" + $('#domainId').val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -489,7 +489,7 @@ function updatePartition(){
 function deletePartition(){
 	alertMsg.confirm("确定要删除吗?", {okCall:
 		function(){
-        	var urlString = "pages/resource/partitiondelete.action";
+        	var urlString = __basePath +"/pages/resource/partition/del.action";
 			$.ajax({
 				type:'post',
 				url: urlString,
@@ -504,7 +504,7 @@ function deletePartition(){
 }
 
 function loadPartitionList() {
-	var urlString = "pages/resource/partitionlist.action?templateId=" + $('#domainId').val();
+	var urlString = __basePath +"/pages/resource/partition/list.action?templateId=" + $('#domainId').val();
 	$.ajaxSetup({async: false});
 	$("#partitionListDiv").load(urlString);	
 	initPagination();
@@ -512,7 +512,7 @@ function loadPartitionList() {
 }
 
 function loadEditPartition(id){
-	var urlString = "pages/resource/partitionedit.action?templateId="+$('#domainId').val()+"&partitionId=" + id;
+	var urlString = __basePath +"/pages/resource/partition/edit.action?templateId="+$('#domainId').val()+"&partitionId=" + id;
 	$('#partitionFormDiv').load(urlString);	
 }
 

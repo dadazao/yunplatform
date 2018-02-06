@@ -49,7 +49,9 @@ import com.cloudstong.platform.system.service.SysPositionService;
 		@Result(name = "view", location = "/WEB-INF/view/system/position/form/positionView.jsp"),
 		@Result(name = "edit", location = "/WEB-INF/view/system/position/form/positionEdit.jsp"),
 		@Result(name = "userList", location = "/WEB-INF/view/system/position/userList.jsp"),
-		@Result(name = "setUserList", location = "/WEB-INF/view/system/position/setuserList.jsp")
+		@Result(name = "setUserList", location = "/WEB-INF/view/system/position/setuserList.jsp"),
+		@Result(name = "index", location = "/WEB-INF/view/system/position/positionIndex.jsp"),
+		@Result(name = "tree", location = "/WEB-INF/view/system/position/positionTree.jsp")
 })
 public class SysPositionAction extends BaseAction {
 	
@@ -65,6 +67,16 @@ public class SysPositionAction extends BaseAction {
 	private String userIds;
 	
 	private Long userPositionId;
+	
+	@Action("index")
+	public String index() {
+		return "index";
+	}
+	
+	@Action("tree")
+	public String tree() {
+		return "tree";
+	}
 	
 	@Action("positionadd")
 	public String add() {
@@ -171,9 +183,9 @@ public class SysPositionAction extends BaseAction {
 				ztree.put("id", position.getId());
 				ztree.put("pId", position.getParentId());
 				ztree.put("name", position.getPositionName());
-				ztree.put("icon", "/images/icon/folderClose.gif");
-				ztree.put("iconOpen", "/images/icon/folderOpen.gif");
-				ztree.put("iconClose", "/images/icon/folderClose.gif");
+				ztree.put("icon", "images/icon/folderClose.gif");
+				ztree.put("iconOpen", "images/icon/folderOpen.gif");
+				ztree.put("iconClose", "images/icon/folderClose.gif");
 				if (position.getId().equals(1l)) {
 					ztree.put("open", true);
 				}

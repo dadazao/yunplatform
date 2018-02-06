@@ -49,7 +49,7 @@
 	}
 	
 	$(function(){
-		$("#role_catalogtreeId").load("<%=basePath %>/pages/system/role/catalogTree.jsp?roleId="+"${param.roleId}");
+		$("#role_catalogtreeId").load("<%=basePath %>/pages/system/role/catalogTree.action?roleId="+"${param.roleId}");
 		ns.role.loadAllAuth();
 		ns.role.loadHasAuth();
 	});

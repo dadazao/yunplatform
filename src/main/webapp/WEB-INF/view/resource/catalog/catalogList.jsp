@@ -13,15 +13,15 @@
 <script type="text/javascript">
 
 	//function openDialog() {
-	//	$.pdialog.open("<%=basePath %>/pages/resource/catalogadd.action?op=new","newCatalogDialog","新建目录",{width:1024,height:768,mask:true,resizable:true});
+	//	$.pdialog.open("<%=basePath %>/pages/resource/catalog/add.action?op=new","newCatalogDialog","新建目录",{width:1024,height:768,mask:true,resizable:true});
 	//}
 	
 	function openSearch() {
-		$.pdialog.open("<%=basePath %>/pages/system/search/catalogSearch.jsp","searchCatalogDialog","高级查询",{width:620,height:250,mask:false,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/system/resource/catalog/search.action","searchCatalogDialog","高级查询",{width:620,height:250,mask:false,resizable:true});
 	}
 	
 	function deleteDomains(){
-		var urlString = "<%=basePath %>/pages/resource/catalogdelete.action";
+		var urlString = "<%=basePath %>/pages/resource/catalog/del.action";
 		var param = $("#tableForm").serialize();
 		var result = urlString + "?" + param ;
 		var items = $("input[name='selectedIDs']:checked").length;//
@@ -44,7 +44,7 @@
 	}
 	
 	function showCatalogTree() {
-		$.pdialog.open("<%=basePath %>/pages/resource/catalog/catalogTree.jsp","selectCatalogDialog","目录树",{width:300,height:600,mask:true,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/resource/catalog/tree.action","selectCatalogDialog","目录树",{width:300,height:600,mask:true,resizable:true});
 	}
 	
 	function search(){
@@ -52,15 +52,15 @@
 	}
 	
 	$(function() {
-		plscUrl = "<%=basePath %>/pages/resource/catalogbatchDelete.action?model=${model}";
+		plscUrl = "<%=basePath %>/pages/resource/catalog/batchDelete.action?model=${model}";
 		//新建ACTION URL
-		xjUrl = "<%=basePath %>/pages/resource/catalogadd.action?op=new&formId=${formId}&model=${model}";
+		xjUrl = "<%=basePath %>/pages/resource/catalog/add.action?op=new&formId=${formId}&model=${model}";
 	});
 	
 </script>
 </head>
 <body>
-	<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/cataloglist.action">
+	<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/catalog/list.action">
 		<input type=hidden name="model" value="catalog"/>
 		<input type="hidden" name="status" value="${param.status}">
 		<input type="hidden" name="catalog.name" value="${catalog.name}" />
@@ -88,7 +88,7 @@
 	</div>
 	<div class="pageHeader">
 		<div class="searchBar">
-			<form id="catalogformSubmitId" onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/cataloglist.action" method="post">
+			<form id="catalogformSubmitId" onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/catalog/list.action" method="post">
 				<table class="searchContent">
 					<tr>
 						<td>
@@ -159,7 +159,7 @@
 	                    <td>${catalog.path}</td>
 						<td align="center">
 							&nbsp;
-							<a target="dialog" mask="true" width="1024" height="768" href="<%=basePath %>/pages/resource/catalogview.action?id=${catalog.id}&model=${model}&formId=${formId}" target="navTab"><span>维护</span></a>
+							<a target="dialog" mask="true" width="1024" height="768" href="<%=basePath %>/pages/resource/catalog/view.action?id=${catalog.id}&model=${model}&formId=${formId}" target="navTab"><span>维护</span></a>
 							&nbsp;
 						</td>
 	                </tr>

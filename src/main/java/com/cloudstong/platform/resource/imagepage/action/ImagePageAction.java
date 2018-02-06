@@ -6,6 +6,11 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.cloudstong.platform.core.common.QueryCriteria;
@@ -23,6 +28,12 @@ import com.cloudstong.platform.resource.metadata.action.CompexDomainAction;
  * 
  * Description:图片页面Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/imagePage")
+@Results(value = { 
+		@Result(name = "list", location = "/WEB-INF/view/resource/imagepage/compexImagePageList.jsp"),
+		@Result(name = "imgpage", location = "/WEB-INF/view/resource/imagepage/imgpage.jsp"),
+})
 public class ImagePageAction extends CompexDomainAction {
 
 	private static final long serialVersionUID = -9024137631415230734L;
@@ -41,20 +52,21 @@ public class ImagePageAction extends CompexDomainAction {
 		this.imagePageService = imagePageService;
 	}
 
+	@Action("list")
 	public String list() {
-		super.list();
-		return "list";
+		return super.list();
 	}
 
 	/* 
 	 * 保存图片页面信息
 	 */
+	@Action("save")
 	public String save() {
 		try {
 			Long id = super.simpleSave();
 			if(id!=null&&!id.equals("")){
 				ImagePage imagePage = imagePageService.findImagePageById(id);
-				imagePage.setImagePagePath("pages/system/imagepageCompexshowImgPage.action?imgId=" + imagePage.getId());
+				imagePage.setImagePagePath("/pages/system/imagePage/showImgPage.action?imgId=" + imagePage.getId());
 				imagePageService.doUpdateImagePage(imagePage);
 			}
 			printJSON("success", false, id.toString());
@@ -71,6 +83,7 @@ public class ImagePageAction extends CompexDomainAction {
 	 * Description:显示图片页面
 	 * @return forward
 	 */
+	@Action("showImgPage")
 	public String showImgPage() {
 		Long id = Long.valueOf(getRequest().getParameter("imgId") == null ? "-1" : getRequest().getParameter("imgId"));
 		ImagePage imagePage = imagePageService.findImagePageById(id);
@@ -83,6 +96,7 @@ public class ImagePageAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws Exception
 	 */
+	@Action("getImagePages")
 	public String getImagePages() throws Exception {
 		QueryCriteria qc = new QueryCriteria();
 		qc.setPageSize(-1);

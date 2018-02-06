@@ -9,7 +9,7 @@
 	$(function(){
 		$('#templateViewTd').html($('#templateView').parent().html());
 		$('#templateView').parent().parent().parent().remove();
-		xgUrl="<%=basePath %>/pages/resource/templateeditBase.action?formId=${formId}&params=${params}" + "&op=edit";
+		xgUrl="<%=basePath %>/pages/resource/template/editBase.action?formId=${formId}&params=${params}" + "&op=edit";
 		ns.common.mouseForButton();
 	});
 //-->

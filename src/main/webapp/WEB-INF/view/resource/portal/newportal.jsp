@@ -64,7 +64,7 @@ function loadRight(){
 function loadChart(height) {
 	$.ajax( {
 		type : 'POST',
-		url : '<%=basePath%>/pages/resource/useinfostate.action?number=9',
+		url : '<%=basePath%>/pages/resource/useinfo/state.action?number=9',
 		dataType:'json',
 		async:false,
 		success : function(data) {
@@ -199,7 +199,7 @@ $(function(){
 		<ul class="portlet" style="min-height: 250px; max-height:250px;overflow:hidden;">
 		<div class="phead">
 			<div class="ptitle">
-				<img src="<c:url value="./pages/resource/portal/image/titleicon.gif"/>" style="padding-top:5px;">
+				<img src="<c:url value="/images/portal/titleicon.gif"/>" style="padding-top:5px;">
 				前十位构件/组件使用情况统计
 			</div>
 			<div class="poper" style="padding-top:6px;"><a href="#" onclick="gotoStat();" style="text-decoration: none;" title="列表查看所有信息">更多</a> </div>

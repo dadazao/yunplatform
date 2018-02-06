@@ -14,7 +14,7 @@
 	function changChart(value) {
 		$.ajax( {
 			type : 'POST',
-			url : '<%=basePath %>/pages/resource/useinfostate.action?number=15',
+			url : '<%=basePath %>/pages/resource/useinfo/state.action?number=15',
 			dataType:'json',
 			success : function(data) {
 				try{

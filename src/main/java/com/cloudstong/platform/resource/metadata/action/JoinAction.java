@@ -5,13 +5,23 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
 import com.cloudstong.platform.core.common.Constants;
 import com.cloudstong.platform.core.common.PageResult;
 import com.cloudstong.platform.resource.catalog.model.Catalog;
 import com.cloudstong.platform.resource.form.model.FormColumnExtend;
 import com.cloudstong.platform.system.model.SysUser;
 
-
+@ParentPackage("default")
+@Namespace("/pages/resource/join")
+@Results(value = { 
+		@Result(name="list", location = "/WEB-INF/view/core/compexJoinList.jsp")
+})
 public class JoinAction extends CompexDomainAction {
 
 	private static final long serialVersionUID = 1L;
@@ -21,6 +31,7 @@ public class JoinAction extends CompexDomainAction {
 	 * 
 	 * @return forward
 	 */
+	@Action("list")
 	public String list() {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		if (this.pageNum == null || "".equals(this.pageNum)) {

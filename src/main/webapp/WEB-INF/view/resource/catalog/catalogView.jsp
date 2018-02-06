@@ -7,16 +7,16 @@
 <script type="text/javascript">
 <!--
 	//function modify() {
-	//	var urlString = "<%=basePath %>/pages/resource/catalogedit.action?id="+$("#domId").val() + "&op=edit";
+	//	var urlString = "<%=basePath %>/pages/resource/catalog/edit.action?id="+$("#domId").val() + "&op=edit";
 	//	$.pdialog.reload(urlString);
 	//}
 
 	$(function(){
 		//修改ACTION URL
-		xgUrl ="<%=basePath %>/pages/resource/catalogedit.action?id="+$("#domId").val() + "&op=edit&model=${model}&formId=${formId}";
+		xgUrl ="<%=basePath %>/pages/resource/catalog/edit.action?id="+$("#domId").val() + "&op=edit&model=${model}&formId=${formId}";
 		//删除ACTION URL
 		var id = $('#domId').val();
-		scUrl = "<%=basePath %>/pages/resource/catalogsingleDelete.action?params=${params}&model=${model}&id="+id;
+		scUrl = "<%=basePath %>/pages/resource/catalog/singleDelete.action?params=${params}&model=${model}&id="+id;
 	});
 //-->
 </script>

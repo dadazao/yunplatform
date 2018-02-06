@@ -4,7 +4,7 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+ "://"+request.getServerName() + ":"+request.getServerPort()+path;
 %>
-<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/columncolumnList.action?tableId=${tableId}">
+<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/column/columnList.action?tableId=${tableId}">
 	<input type="hidden" name="pageNum" value="1" />
 	<input type="hidden" name="numPerPage" value="${pageResult.pageSize}" />
 	<input type="hidden" name="orderField" value="${param.orderField}" />

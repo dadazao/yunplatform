@@ -17,10 +17,10 @@
 		fSelfHeight = '${form.height}';
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
-		xjUrl="<%=basePath %>/pages/resource/catalogTreeadd.action?op=new&formId=${formId}";
+		xjUrl="<%=basePath %>/pages/resource/catalog/add.action?op=new&formId=${formId}";
 		plscUrl="<%=basePath %>/pages/resource/${simpleModel}compexdelete.action?model=${model}&formId=${formId}";
 		ljscUrl="<%=basePath %>/pages/resource/compexlogicDelete.action?model=${model}&formId=${formId}";
-		bcUrl = "<%=basePath %>/pages/resource/catalogTreesave.action";
+		bcUrl = "<%=basePath %>/pages/resource/catalog/save.action";
 		bzUrl = "<%=basePath %>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath %>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 		ns.common.mouseForButton();
@@ -28,7 +28,7 @@
 	
 </script>
 </head>
-<c:set var="listurl" value="/pages/resource/catalogTreelist.action"></c:set>
-<c:set var="viewurl" value="/pages/resource/catalogTreeview.action"></c:set>
-<%@include file="/pages/core/commonList.jsp"  %>
+<c:set var="listurl" value="/pages/resource/catalog/list.action"></c:set>
+<c:set var="viewurl" value="/pages/resource/catalog/view.action"></c:set>
+<%@include file="/WEB-INF/view/core/commonList.jsp"  %>
 </html>

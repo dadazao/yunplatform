@@ -10,7 +10,7 @@
 	<script type="text/javascript">
 		$(function(){
 			$("#listId").width($("#desktop").width() - $("#treeId").width() - 11);
-			$("#treeId").load("<%=basePath %>/pages/system/position/positionTree.jsp");
+			$("#treeId").load("<%=basePath %>/pages/system/position/tree.action");
 			$("#listId").loadUrl("<%=basePath %>/pages/system/position/positionlist.action?position.parentId=1");			
 		});
 	</script>

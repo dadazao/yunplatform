@@ -9,6 +9,11 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.cloudstong.platform.core.common.Constants;
@@ -57,6 +62,26 @@ import com.cloudstong.platform.system.model.SysUser;
  * 
  * Description:列表Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/tabulation")
+@Results(value = { 
+		@Result(name="add", location = "/WEB-INF/view/resource/tabulation/tabulationEdit.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/tabulation/tabulationEdit.jsp"),
+		@Result(name="formhelp", location = "/WEB-INF/view/resource/tabulation/tabulationHelp.jsp"),
+		@Result(name="list", location = "/WEB-INF/view/resource/tabulation/compexTabulationList.jsp"),
+		@Result(name="view", location = "/WEB-INF/view/resource/tabulation/tabulationView.jsp"),
+		@Result(name="addColumn", location = "/WEB-INF/view/resource/tabulation/tabulationColumnEdit.jsp"),
+		@Result(name="editColumn", location = "/WEB-INF/view/resource/tabulation/tabulationColumnEdit.jsp"),
+		@Result(name="listColumn", location = "/WEB-INF/view/resource/tabulation/tabulationColumnList.jsp"),
+		@Result(name="addQuery", location = "/WEB-INF/view/resource/tabulation/tabulationQueryEdit.jsp"),
+		@Result(name="editQuery", location = "/WEB-INF/view/resource/tabulation/tabulationQueryEdit.jsp"),
+		@Result(name="listQuery", location = "/WEB-INF/view/resource/tabulation/tabulationQueryList.jsp"),
+		@Result(name="addOpt", location = "/WEB-INF/view/resource/tabulation/tabulationOptEdit.jsp"),
+		@Result(name="editOpt", location = "/WEB-INF/view/resource/tabulation/tabulationOptEdit.jsp"),
+		@Result(name="listOpt", location = "/WEB-INF/view/resource/tabulation/tabulationOptList.jsp"),
+		@Result(name="addDetails", location = "/WEB-INF/view/resource/tabulation/tabulationDetailsEdit.jsp"),
+		@Result(name="search", location = "/WEB-INF/view/resource/tabulation/tabulationSearch.jsp")
+})
 public class TabulationAction extends CompexDomainAction {
 	
 	private static final long serialVersionUID = -1059607693138559139L;
@@ -312,6 +337,7 @@ public class TabulationAction extends CompexDomainAction {
 	/* 
 	 * 显示列表
 	 */
+	@Action("list")
 	public String list() {
 		super.list();
 		this.formManageId = tabulation.getFormId();
@@ -323,6 +349,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("getTabulations")
 	public String getTabulations() throws IOException {
 		QueryCriteria qc = new QueryCriteria();
 		qc.setPageSize(-1);
@@ -338,6 +365,7 @@ public class TabulationAction extends CompexDomainAction {
 	/* 
 	 * 打开列表新建页面
 	 */
+	@Action("add")
 	public String add() {
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -380,6 +408,7 @@ public class TabulationAction extends CompexDomainAction {
 	/* 
 	 * 保存列表信息
 	 */
+	@Action("save")
 	public String save() {
 		try {
 			
@@ -493,6 +522,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return
 	 * @throws IOException
 	 */
+	@Action("saveDetails")
 	public String saveDetails() throws IOException {
 		this.tabulationService.doUpdateTabulationDetails(tabulation);
 		printJSON("success", false);
@@ -502,6 +532,7 @@ public class TabulationAction extends CompexDomainAction {
 	/* 
 	 * 删除列表
 	 */
+	@Action("del")
 	public String delete() throws IOException {
 		try {
 			if (selectedIDs != null) {
@@ -527,6 +558,7 @@ public class TabulationAction extends CompexDomainAction {
 	/* 
 	 * 删除列表
 	 */
+	@Action("logicDelete")
 	public String logicDelete() throws IOException {
 		try {
 			if (selectedIDs != null) {
@@ -552,6 +584,7 @@ public class TabulationAction extends CompexDomainAction {
 	/* 
 	 * 查看列表信息
 	 */
+	@Action("view")
 	public String view() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 
@@ -600,6 +633,7 @@ public class TabulationAction extends CompexDomainAction {
 		return "view";
 	}
 
+	@Action("edit")
 	public String edit() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 
@@ -633,6 +667,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return forward
 	 * @throws Exception
 	 */
+	@Action("addColumn")
 	public String addColumn() throws Exception {
 		this.tabulationColumn = new TabulationColumn();
 		this.tabulation = tabulationService.findTabulationById(tabulationId);
@@ -650,6 +685,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return forward
 	 * @throws Exception
 	 */
+	@Action("addDetails")
 	public String addDetails() throws Exception {
 		this.tabulation = tabulationService.findTabulationById(tabulationId);
 		this.listControls = listControlService.findAllListControl();
@@ -660,6 +696,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * Description:显示列表字段列表
 	 * @return forward
 	 */
+	@Action("listColumn")
 	public String listColumn() {
 		this.numPerPage = 10;
 		queryCriteria = new QueryCriteria();
@@ -684,6 +721,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("saveColumn")
 	public String saveColumn() throws IOException {
 		this.tabulation = tabulationService.findTabulationById(tabulationColumn.getTableId());
 		Table table = tableService.findTableById(tabulation.getTableId());
@@ -712,6 +750,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("deleteColumn")
 	public String deleteColumn() throws IOException {
 		try {
 			if (selectedIDs != null) {
@@ -733,6 +772,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws Exception
 	 */
+	@Action("editColumn")
 	public String editColumn() throws Exception {
 		this.tabulation = tabulationService.findTabulationById(tabulationId);
 		this.tabulationColumn = tabulationService.findTabulationColumnById(tabulationColumnId);
@@ -749,6 +789,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("showColumn")
 	public String showColumn() throws IOException {
 		QueryCriteria qc = new QueryCriteria();
 		qc.addQueryCondition("tbl_tableId", tableId);
@@ -771,6 +812,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("showQueryColumn")
 	public String showQueryColumn() throws IOException {
 		QueryCriteria qc = new QueryCriteria();
 		qc.setPageSize(-1);
@@ -794,6 +836,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("getCode")
 	public String getCode() throws IOException {
 		HttpServletResponse response = getResponse();
 		response.setCharacterEncoding("UTF-8");
@@ -808,6 +851,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return forward
 	 * @throws Exception
 	 */
+	@Action("addQuery")
 	public String addQuery() throws Exception {
 		String op =  getRequest().getParameter("op");
 		getRequest().setAttribute("op", op);
@@ -837,6 +881,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * Description:显示列表筛选条件列表
 	 * @return forward
 	 */
+	@Action("listQuery")
 	public String listQuery() {
 		String op =  getRequest().getParameter("op");
 		getRequest().setAttribute("op", op);
@@ -864,6 +909,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("saveQuery")
 	public String saveQuery() throws IOException {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		if (user == null) {
@@ -896,6 +942,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("deleteQuery")
 	public String deleteQuery() throws IOException {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		if (user == null) {
@@ -925,6 +972,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return forward
 	 * @throws Exception
 	 */
+	@Action("editQuery")
 	public String editQuery() throws Exception {
 		this.tabulation = tabulationService.findTabulationById(tabulationId);
 		this.tabulationQuery = tabulationService.findTabulationQueryById(tabulationQueryId);
@@ -942,6 +990,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return forward
 	 * @throws Exception
 	 */
+	@Action("addOpt")
 	public String addOpt() throws Exception {
 		String op =  getRequest().getParameter("op");
 		getRequest().setAttribute("op", op);
@@ -965,6 +1014,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return forward
 	 * @throws IOException 
 	 */
+	@Action("listOpt")
 	public String listOpt() throws IOException {
 		try {
 			String op =  getRequest().getParameter("op");
@@ -1006,6 +1056,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("saveOpt")
 	public String saveOpt() throws IOException {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		tabulationOpt.setTabulationId(tabulationId);
@@ -1113,6 +1164,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("deleteOpt")
 	public String deleteOpt() throws IOException {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 
@@ -1138,6 +1190,7 @@ public class TabulationAction extends CompexDomainAction {
 	 * @return forward
 	 * @throws Exception
 	 */
+	@Action("editOpt")
 	public String editOpt() throws Exception {
 		String op =  getRequest().getParameter("op");
 		getRequest().setAttribute("op", op);
@@ -1155,6 +1208,7 @@ public class TabulationAction extends CompexDomainAction {
 		return "editOpt";
 	}
 	
+	@Action("findOptCount")
 	public String findOptCount() throws Exception{
 		HttpServletResponse response = getResponse();
 		response.setCharacterEncoding("UTF-8");
@@ -1169,6 +1223,7 @@ public class TabulationAction extends CompexDomainAction {
 		return NONE;
 	}
 
+	@Action("formhelp")
 	public String showFormHelp() {
 		return "formhelp";
 	}

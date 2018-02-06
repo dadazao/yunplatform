@@ -8,11 +8,11 @@
 <!--
 
 $(function(){
-	var urlString = "<%=basePath %>/pages/resource/relationsingleviewJson.action?params=${params}&formId=${formId}";
+	var urlString = "<%=basePath %>/pages/resource/relation/singleviewJson.action?params=${params}&formId=${formId}";
 	//生成查看页面
 	compexViewJson(urlString);
 	//修改ACTION URL
-	xgUrl = "<%=basePath %>/pages/resource/relationedit.action?formId=${formId}&relationId=${relation.id}&model=${model}" + "&op=edit";
+	xgUrl = "<%=basePath %>/pages/resource/relation/edit.action?formId=${formId}&relationId=${relation.id}&model=${model}" + "&op=edit";
 	//将保存按钮置灰
 	$("#BC").attr("disabled","disabled");
 	$("#BC").attr("class","listbuttonDisable");

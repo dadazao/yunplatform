@@ -7,6 +7,12 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
 import com.cloudstong.platform.core.common.PageResult;
 import com.cloudstong.platform.core.common.QueryCriteria;
 import com.cloudstong.platform.core.web.action.BaseAction;
@@ -28,6 +34,14 @@ import com.cloudstong.platform.system.model.SysUser;
  * 
  * Description:分区Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/partition")
+@Results(value = { 
+		@Result(name="loadform", location = "/WEB-INF/view/resource/template/combination/compexTemplatePartition.jsp"),
+		@Result(name="loadlist", location = "/WEB-INF/view/resource/template/combination/compexTemplatePartitionList.jsp"),
+		@Result(name="edit", location = "/WEB-INF/view/resource/template/combination/compexTemplatePartition.jsp"),
+		@Result(name="combedit", location = "/WEB-INF/view/resource/template/combination/compexTemplateEdit.jsp")
+})
 public class PartitionAction extends BaseAction {
 	
 	private static final long serialVersionUID = 5764031123935593758L;
@@ -132,6 +146,7 @@ public class PartitionAction extends BaseAction {
 	 * Description:显示分区列表
 	 * @return forward
 	 */
+	@Action("list")
 	public String list() {
 		try {
 			SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
@@ -172,6 +187,7 @@ public class PartitionAction extends BaseAction {
 	 * Description:加载分区表单页面
 	 * @return forward
 	 */
+	@Action("loadPartitionForm")
 	public String loadPartitionForm() {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		
@@ -189,6 +205,7 @@ public class PartitionAction extends BaseAction {
 	 * Description:保存分区
 	 * @return NONE
 	 */
+	@Action("save")
 	public String save() {
 		if (this.partition.getId() != null && !this.partition.getId().equals("")) {
 			partitionService.doUpdatePartition(partition);
@@ -204,6 +221,7 @@ public class PartitionAction extends BaseAction {
 	 * @return forward
 	 * @throws Exception
 	 */
+	@Action("edit")
 	public String edit() throws Exception {
 		SysUser user = (SysUser) getRequest().getSession().getAttribute("user");
 		
@@ -225,6 +243,7 @@ public class PartitionAction extends BaseAction {
 	 * @return
 	 * @throws IOException
 	 */
+	@Action("del")
 	public String delete() throws IOException {
 		try {
 			if (selectedIDs != null) {
@@ -246,6 +265,7 @@ public class PartitionAction extends BaseAction {
 	 * @return NONE
 	 * @throws Exception
 	 */
+	@Action("showTemplate")
 	public String showTemplate() throws Exception{
 		QueryCriteria queryCriteria = new QueryCriteria();
 		queryCriteria.setPageSize(-1);

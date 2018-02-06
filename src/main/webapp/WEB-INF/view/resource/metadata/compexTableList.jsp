@@ -17,10 +17,10 @@
 		fSelfHeight = '${form.height}';
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
-		xjUrl="<%=basePath%>/pages/resource/tableadd.action?op=new&formId=${formId}";
-		plscUrl="<%=basePath%>/pages/resource/tabledelete.action?model=${model}&formId=${formId}";
-		lgscUrl="<%=basePath%>/pages/resource/tablelogicDelete.action?model=${model}&formId=${formId}";
-		bcUrl = "<%=basePath%>/pages/resource/tablesave.action";
+		xjUrl="<%=basePath%>/pages/resource/table/add.action?op=new&formId=${formId}";
+		plscUrl="<%=basePath%>/pages/resource/table/del.action?model=${model}&formId=${formId}";
+		lgscUrl="<%=basePath%>/pages/resource/table/logicDelete.action?model=${model}&formId=${formId}";
+		bcUrl = "<%=basePath%>/pages/resource/table/save.action";
 		bzUrl = "<%=basePath%>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		mrUrl = "<%=basePath%>/pages/resource/compexisDefault.action?mainTable=${model}&colName=tbl_isdefault&";
 		ns.common.mouseForButton();
@@ -30,7 +30,7 @@
 	function eventCompexLock(id) {
 		$.ajax( {
 			type : 'POST',
-			url : '<%=basePath%>/pages/resource/tablelock.action',
+			url : '<%=basePath%>/pages/resource/table/lock.action',
 			data: 'id=' + id,
 			dataType:"json",
 			success : function(json) {
@@ -42,7 +42,7 @@
 	function eventCompexUnLock(id) {
 		$.ajax( {
 			type : 'POST',
-			url : '<%=basePath%>/pages/resource/tableunLock.action',
+			url : '<%=basePath%>/pages/resource/table/unLock.action',
 			data: 'id=' + id,
 			dataType:"json",
 			success : function(json) {
@@ -52,12 +52,12 @@
 	}
 	
 	function loadTableColumnForm() {
-		var urlString = "<%=basePath%>/pages/resource/columnaddColumn.action";
+		var urlString = "<%=basePath%>/pages/resource/column/addColumn.action";
 		$('#table_column_form_div').loadUrl(urlString);
 	}
 	
 	function loadTableColumnList() {
-		var urlString = "<%=basePath%>/pages/resource/columncolumnList.action?tableId=" + $("#tableId").val();
+		var urlString = "<%=basePath%>/pages/resource/column/columnList.action?tableId=" + $("#tableId").val();
 		$.ajaxSetup({async: false});
 		$('#table_column_list_div').load(urlString);	
 		initPagination();
@@ -65,14 +65,14 @@
 	}
 	
 	function loadEditTableColumn(id,str) {
-		var urlString = "<%=basePath%>/pages/resource/columneditColumn.action?id=" + id;
+		var urlString = "<%=basePath%>/pages/resource/column/editColumn.action?id=" + id;
 		$('#table_column_form_div').loadUrl(urlString);
 	}
 </script>
 </head>
 <body>
-	<c:set var="listurl" value="/pages/resource/tablelist.action"></c:set>
-	<c:set var="viewurl" value="/pages/resource/tableview.action"></c:set>
+	<c:set var="listurl" value="/pages/resource/table/list.action"></c:set>
+	<c:set var="viewurl" value="/pages/resource/table/view.action"></c:set>
 	<form id="pagerForm" method="post" action="${listurl}?queryType=${queryType}">
 		<input type="hidden" id="cloudstongListId" name="listId" value="${listId}"/>
 		<input type="hidden" id="cloudstongFormId" name="formId" value="${formId}"/>
@@ -135,10 +135,10 @@
 								<td class="queryTd">
 									<c:if test="${ce.formColumn.inputType==7}">
 										<c:if test="${ce.tableType != null && ce.tableType == 1}">
-											<input id="parentName${ce.formColumn.columnName}" name="dyncMapTempString.${ce.formColumn.columnName}" value="${dyncMapTempString[ce.formColumn.columnName]}" onclick="eventCompexMultiTREE('<%=basePath%>/pages/resource/treefetchShowTreeParamById.action?treeId=${ce.formColumn.compexId}&parentName=parentName${ce.formColumn.columnName}&parentId=parentId${ce.formColumn.columnName}')" type="text" readonly="true"/><input id="parentId${ce.formColumn.columnName}" name="dyncMapString.${ce.formColumn.columnName}" value="${dyncMapString[ce.formColumn.columnName]}" type="hidden"/>
+											<input id="parentName${ce.formColumn.columnName}" name="dyncMapTempString.${ce.formColumn.columnName}" value="${dyncMapTempString[ce.formColumn.columnName]}" onclick="eventCompexMultiTREE('<%=basePath%>/pages/resource/tree/fetchShowTreeParamById.action?treeId=${ce.formColumn.compexId}&parentName=parentName${ce.formColumn.columnName}&parentId=parentId${ce.formColumn.columnName}')" type="text" readonly="true"/><input id="parentId${ce.formColumn.columnName}" name="dyncMapString.${ce.formColumn.columnName}" value="${dyncMapString[ce.formColumn.columnName]}" type="hidden"/>
 										</c:if>
 										<c:if test="${ce.tableType != null && ce.tableType!=1}">
-											<input id="parentName${ce.formColumn.columnName}" name="dyncMapTempString.${ce.formColumn.columnName}" value="${dyncMapTempString[ce.formColumn.columnName]}" onclick="eventCompexTREE('<%=basePath%>/pages/resource/treefetchShowTreeParamById.action?treeId=${ce.formColumn.compexId}&parentName=parentName${ce.formColumn.columnName}&parentId=parentId${ce.formColumn.columnName}')" type="text" readonly="true"/><input id="parentId${ce.formColumn.columnName}" name="dyncMapString.${ce.formColumn.columnName}" value="${dyncMapString[ce.formColumn.columnName]}" type="hidden"/>
+											<input id="parentName${ce.formColumn.columnName}" name="dyncMapTempString.${ce.formColumn.columnName}" value="${dyncMapTempString[ce.formColumn.columnName]}" onclick="eventCompexTREE('<%=basePath%>/pages/resource/tree/fetchShowTreeParamById.action?treeId=${ce.formColumn.compexId}&parentName=parentName${ce.formColumn.columnName}&parentId=parentId${ce.formColumn.columnName}')" type="text" readonly="true"/><input id="parentId${ce.formColumn.columnName}" name="dyncMapString.${ce.formColumn.columnName}" value="${dyncMapString[ce.formColumn.columnName]}" type="hidden"/>
 										</c:if>
 									</c:if>
 									<c:if test="${ce.formColumn.inputType==0}">

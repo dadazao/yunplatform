@@ -19,7 +19,7 @@ function showOptButtonComment(){
 	var type = "0";
 	$.ajax({
   		type:'POST',
-  		url:'<%=basePath %>/pages/resource/buttonfindButtonOrGroupByID.action?id=' + value +"&type="+type,
+  		url:'<%=basePath %>/pages/resource/button/findButtonOrGroupByID.action?id=' + value +"&type="+type,
   		dataType:'json',
   		success:function(data){
 			$("#tabulationoptcomment").val(data.comment);

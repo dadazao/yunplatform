@@ -11,6 +11,10 @@ import java.net.URLEncoder;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+
 import com.cloudstong.platform.core.web.action.BaseAction;
 
 /**
@@ -23,6 +27,8 @@ import com.cloudstong.platform.core.web.action.BaseAction;
  * 
  * Description:上传文件框Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/uploadbox")
 public class UploadBoxAction extends BaseAction {
 
 	private static final long serialVersionUID = 1L;
@@ -33,6 +39,7 @@ public class UploadBoxAction extends BaseAction {
 	 * @return NONE
 	 * @throws IOException
 	 */
+	@Action("showSingleFile")
 	public String showSingleFile() throws IOException {
 		try {
 			String _path = new String(getRequest().getParameter("path").getBytes("iso-8859-1"), "utf-8");

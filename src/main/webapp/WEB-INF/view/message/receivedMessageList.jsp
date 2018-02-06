@@ -42,7 +42,7 @@
 	}
 	
 	ns.message.initTypeSelect = function(defaultValue){
-		$.post('<%=basePath%>/pages/resource/dictionarysCompexdics.action?parentId=10000002020000',null,function(data){
+		$.post('<%=basePath%>/pages/resource/dictionary/dics.action?parentId=10000002020000',null,function(data){
 			var _html = '';
 			$.each(data,function(index,item){
 				if(item.key==defaultValue){

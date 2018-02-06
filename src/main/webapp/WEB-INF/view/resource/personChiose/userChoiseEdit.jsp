@@ -32,7 +32,7 @@
 				$('#yunDialog').attr('style','height: 100%;OVERFLOW-x:hidden;OVERFLOW-Y:auto;');
 				$('ul[class="ztree"]').css({'height':(fDefaultHeight-100)+'px'});
 				$.ajax({
-					url : "<%=basePath %>/pages/resource/personChoisedepmUserTree.action",
+					url : "<%=basePath %>/pages/resource/personChoise/depmUserTree.action",
 					dataType : "json",
 					data: 'treeId=${treeId}',
 					success : function(zNodes) {

@@ -6,7 +6,7 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+ "://"+request.getServerName() + ":"+request.getServerPort()+path;
 %>
-	<form id="pagerForm" method="post" action='<%=basePath %>/pages/resource/dateActionformList.action?dateId=${dateId}'>
+	<form id="pagerForm" method="post" action='<%=basePath %>/pages/resource/date/formList.action?dateId=${dateId}'>
 		<input type=hidden name="model" value="${model}"/>
 		<input type="hidden" name="status" value="${param.status}">
 		<input type="hidden" name="pageNum" value="1" />

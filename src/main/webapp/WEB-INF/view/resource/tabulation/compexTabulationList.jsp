@@ -14,15 +14,15 @@
 <script type="text/javascript">
 
 	function openDialog() {
-		$.pdialog.open("<%=basePath %>/pages/resource/tabulationadd.action?op=new","newDialog","新建列表",{width:950,height:650,mask:true,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/resource/tabulation/add.action?op=new","newDialog","新建列表",{width:950,height:650,mask:true,resizable:true});
 	}
 	
 	function openSearch() {
-		$.pdialog.open("<%=basePath %>/pages/resource/tabulationSearch.jsp","searchDialog","高级查询",{width:620,height:250,mask:false,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/resource/tabulation/search.action","searchDialog","高级查询",{width:620,height:250,mask:false,resizable:true});
 	}
 	
 	function deleteDialog(){
-		var urlString = "<%=basePath %>/pages/resource/tabulationdelete.action";
+		var urlString = "<%=basePath %>/pages/resource/tabulation/del.action";
 		var param = $("#tableForm").serialize();
 		var result = urlString + "?" + param;
 		alertMsg.confirm("确定要删除吗?", {okCall:function(){ajaxTodo(result,refreshList);}});
@@ -35,18 +35,18 @@
     	}
 	}
 	function loadButton(str) {
-		var urlString = "<%=basePath %>/pages/resource/tbuttonaddButton.action?tabulationId="+$("#tabulationId").val()+"&op="+str;
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/add.action?tabulationId="+$("#tabulationId").val()+"&op="+str;
 		$('#buttonId').load(urlString);
 	}
 	function loadButtonList(str) {
-		var urlString = "<%=basePath %>/pages/resource/tbuttonlistButton.action?tabulationId=" + $("#tabulationId").val()+"&op="+str;
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/list.action?tabulationId=" + $("#tabulationId").val()+"&op="+str;
 		$.ajaxSetup({async: false});
 		$('#buttonListId').loadUrl(urlString);
 		initPagination();
 		$.ajaxSetup({async: true});
 	}
 	function loadEditTabulationButton(id,str) {
-		var urlString = "<%=basePath %>/pages/resource/tbuttonedit.action?tabulationId="+$("#tabulationId").val()+"&buttonId=" + id+"&op="+str+"&marking=list";
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/edit.action?tabulationId="+$("#tabulationId").val()+"&buttonId=" + id+"&op="+str+"&marking=list";
 		$('#buttonId').load(urlString);	
 	}
 	function addTabulationButton() {
@@ -59,7 +59,7 @@
 			return false;
 		}
 		$("#btnId").val("");
-		var urlString = "<%=basePath %>/pages/resource/tbuttonsave.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/save.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -85,7 +85,7 @@
 		if (!$tabulation.valid()) {
 			return false;
 		}
-		var urlString = "<%=basePath %>/pages/resource/tbuttonsave.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/save.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -108,7 +108,7 @@
 			return;
 		}
 		alertMsg.confirm("确定要删除吗?", {okCall:function(){
-				var urlString = "<%=basePath %>/pages/resource/tbuttondelete.action?tabulationId=" + $("#tabulationId").val();
+				var urlString = "<%=basePath %>/pages/resource/tabulationButton/del.action?tabulationId=" + $("#tabulationId").val();
 				$.ajax({
 					type:'post',
 					url: urlString,
@@ -124,7 +124,7 @@
 	}
 	
 	function showButton(v){
-		var urlString = "<%=basePath %>/pages/resource/tbuttonshowButton.action?buttonType=" + v;
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/show.action?buttonType=" + v;
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -147,18 +147,18 @@
 	}
 	
 	function loadtabulationColumn() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationaddColumn.action?tabulationId="+$("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/addColumn.action?tabulationId="+$("#tabulationId").val();
 		$('#tabulationColumnId').load(urlString);	
 	}
 	function loadtabulationColumnList() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationlistColumn.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/listColumn.action?tabulationId=" + $("#tabulationId").val();
 		$.ajaxSetup({async: false});
 		$('#tabulationColumnListId').loadUrl(urlString);	
 		initPagination();
 		$.ajaxSetup({async: true});
 	}
 	function loadEditTabulationColumn(id) {
-		var urlString = "<%=basePath %>/pages/resource/tabulationeditColumn.action?tabulationId="+$("#tabulationId").val()+"&tabulationColumnId=" + id;
+		var urlString = "<%=basePath %>/pages/resource/tabulation/editColumn.action?tabulationId="+$("#tabulationId").val()+"&tabulationColumnId=" + id;
 		$('#tabulationColumnId').load(urlString);	
 	}
 	function addTabulationColumn() {
@@ -168,7 +168,7 @@
 		}
 		
 		$("#fcId").val("");
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveColumn.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveColumn.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -184,7 +184,7 @@
 			return false;
 		}
 		
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveColumn.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveColumn.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -201,7 +201,7 @@
 			return;
 		}
 		alertMsg.confirm("确定要删除吗?", {okCall:function(){
-				var urlString = "<%=basePath %>/pages/resource/tabulationdeleteColumn.action";
+				var urlString = "<%=basePath %>/pages/resource/tabulation/deleteColumn.action";
 				$.ajax({
 					type:'post',
 					url: urlString,
@@ -218,7 +218,7 @@
 		$.pdialog.closeCurrent(); 
 	}
 	function showColumn(){
-		var urlString = "<%=basePath %>/pages/resource/tabulationshowColumn.action?id=" + $("#tableId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/showColumn.action?id=" + $("#tableId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -228,7 +228,7 @@
 		});
 	}
 	function showQueryColumn(){
-		var urlString = "<%=basePath %>/pages/resource/tabulationshowQueryColumn.action?tableId=" + $("#tableId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/showQueryColumn.action?tableId=" + $("#tableId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -239,7 +239,7 @@
 	}
 	
 	function loadTabulationDetails() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationaddDetails.action?tabulationId="+$("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/addDetails.action?tabulationId="+$("#tabulationId").val();
 		$('#tabulationDetailId').load(urlString);	
 	}
 	
@@ -252,7 +252,7 @@
 			alertMsg.warn('请先保存基本信息！');
 			return;
 		}
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveDetails.action";
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveDetails.action";
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -265,11 +265,11 @@
 	
 	//筛选条件tab
 	function loadTabulationQuery(str) {
-		var urlString = "<%=basePath %>/pages/resource/tabulationaddQuery.action?tabulationId="+$("#tabulationId").val()+"&op="+str;
+		var urlString = "<%=basePath %>/pages/resource/tabulation/addQuery.action?tabulationId="+$("#tabulationId").val()+"&op="+str;
 		$('#tabulationQueryId').load(urlString);	
 	}
 	function loadTabulationQueryList(str) {
-		var urlString = "<%=basePath %>/pages/resource/tabulationlistQuery.action?tabulationId=" + $("#tabulationId").val()+"&op="+str;
+		var urlString = "<%=basePath %>/pages/resource/tabulation/listQuery.action?tabulationId=" + $("#tabulationId").val()+"&op="+str;
 		$.ajaxSetup({async: false});
 		$('#tabulationQueryListId').loadUrl(urlString);	
 		initPagination();
@@ -282,7 +282,7 @@
 		}
 		
 		$("#tqId").val("");
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveQuery.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveQuery.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -299,7 +299,7 @@
 			return false;
 		}
 		
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveQuery.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveQuery.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -317,7 +317,7 @@
 			return;
 		}
 		alertMsg.confirm("确定要删除吗?", {okCall:function(){
-				var urlString = "<%=basePath %>/pages/resource/tabulationdeleteQuery.action?tabulationId=" + $("#tabulationId").val();
+				var urlString = "<%=basePath %>/pages/resource/tabulation/deleteQuery.action?tabulationId=" + $("#tabulationId").val();
 				$.ajax({
 					type:'post',
 					url: urlString,
@@ -332,17 +332,17 @@
 		});
 	}
 	function loadEditTabulationQuery(id,str) {
-		var urlString = "<%=basePath %>/pages/resource/tabulationeditQuery.action?tabulationId="+$("#tabulationId").val()+"&tabulationQueryId=" + id+"&op="+str;
+		var urlString = "<%=basePath %>/pages/resource/tabulation/editQuery.action?tabulationId="+$("#tabulationId").val()+"&tabulationQueryId=" + id+"&op="+str;
 		$('#tabulationQueryId').load(urlString);	
 	}
 	
 	//操作信息tab
 	function loadTabulationOpt(str) {
-		var urlString = "<%=basePath %>/pages/resource/tabulationaddOpt.action?tabulationId="+$("#tabulationId").val()+"&op="+str;
+		var urlString = "<%=basePath %>/pages/resource/tabulation/addOpt.action?tabulationId="+$("#tabulationId").val()+"&op="+str;
 		$('#tabulationOptId').load(urlString);	
 	}
 	function loadTabulationOptList(str) {
-		var urlString = "<%=basePath %>/pages/resource/tabulationlistOpt.action?tabulationId=" + $("#tabulationId").val()+"&op="+str;
+		var urlString = "<%=basePath %>/pages/resource/tabulation/listOpt.action?tabulationId=" + $("#tabulationId").val()+"&op="+str;
 		$.ajaxSetup({async: false});
 		$('#tabulationOptListId').loadUrl(urlString);	
 		initPagination();
@@ -358,7 +358,7 @@
 		if(optCount==null||optCount==""){
 			$.ajax({
 				type:'post',
-				url: "<%=basePath %>/pages/resource/tabulationfindOptCount.action?tabulationId=" + $("#tabulationId").val(),
+				url: "<%=basePath %>/pages/resource/tabulation/findOptCount.action?tabulationId=" + $("#tabulationId").val(),
 				async: false,
 				success: function(data){
 					alertMsg.info("保存成功");
@@ -374,7 +374,7 @@
 
 		$("#tqId").val("");
 		
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveOpt.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveOpt.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -400,7 +400,7 @@
 			if(optCount==null||optCount==""){
 				$.ajax({
 					type:'post',
-					url: "<%=basePath %>/pages/resource/tabulationfindOptCount.action?tabulationId=" + $("#tabulationId").val(),
+					url: "<%=basePath %>/pages/resource/tabulation/findOptCount.action?tabulationId=" + $("#tabulationId").val(),
 					async: false,
 					success: function(data){
 						optCount = data;
@@ -416,7 +416,7 @@
 			}
 		}
 		
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveOpt.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveOpt.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -439,7 +439,7 @@
 			return;
 		}
 		alertMsg.confirm("确定要删除吗?", {okCall:function(){
-				var urlString = "<%=basePath %>/pages/resource/tabulationdeleteOpt.action?tabulationId=" + $("#tabulationId").val();
+				var urlString = "<%=basePath %>/pages/resource/tabulation/deleteOpt.action?tabulationId=" + $("#tabulationId").val();
 				$.ajax({
 					type:'post',
 					url: urlString,
@@ -454,7 +454,7 @@
 		});
 	}
 	function loadEditTabulationOpt(id,str) {
-		var urlString = "<%=basePath %>/pages/resource/tabulationeditOpt.action?tabulationId="+$("#tabulationId").val()+"&tabulationOptId=" + id+"&op="+str+"&marking=list";
+		var urlString = "<%=basePath %>/pages/resource/tabulation/editOpt.action?tabulationId="+$("#tabulationId").val()+"&tabulationOptId=" + id+"&op="+str+"&marking=list";
 		$('#tabulationOptId').load(urlString);	
 	}
 	
@@ -463,10 +463,10 @@
 		fSelfHeight = '${form.height}';
 		selfXjTitle = '${form.xjTitle}';
 		selfWhTitle = '${form.whTitle}';
-		xjUrl="<%=basePath %>/pages/resource/tabulationadd.action?op=new&formManageId=${formManageId}";
-		bcUrl="<%=basePath %>/pages/resource/tabulationsave.action";
-		plscUrl="<%=basePath %>/pages/resource/tabulationdelete.action?model=liebiao&formId=${formId}";
-		ljscUrl="<%=basePath %>/pages/resource/tabulationlogicDelete.action?model=liebiao&formId=${formId}";
+		xjUrl="<%=basePath %>/pages/resource/tabulation/add.action?op=new&formManageId=${formManageId}";
+		bcUrl="<%=basePath %>/pages/resource/tabulation/save.action";
+		plscUrl="<%=basePath %>/pages/resource/tabulation/del.action?model=liebiao&formId=${formId}";
+		ljscUrl="<%=basePath %>/pages/resource/tabulation/logicDelete.action?model=liebiao&formId=${formId}";
 		bzUrl = "<%=basePath %>/pages/resource/compexshowListHelp.action?listId=${listId}";
 		ns.common.mouseForButton();
 		
@@ -475,7 +475,7 @@
 </head>
  
 <body>
-	<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/tabulationlist.action">
+	<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/tabulation/list.action">
 		<input type="hidden" id="cloudstongListId" name="listId" value="${listId}"/>
 		<input type="hidden" id="cloudstongFormId" name="formId" value="${formId}"/>
 		<input type="hidden" name="model" value="${model}"/>
@@ -526,7 +526,7 @@
 	<c:if test="${hasDefaultQuery==true}">
 	<div id="defaultQuery" class="pageHeader" style="height: ${tabulation.queryControl.queryControlHeight==0?'':tabulation.queryControl.queryControlHeight}px;width:${tabulation.queryControl.queryControlWidth}%">
 		<div class="searchBar">
-			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/tabulationlist.action?queryTpe=0" method="post">
+			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/tabulation/list.action?queryTpe=0" method="post">
 				<table class="searchContent">
 					<tr>
 						<c:forEach items="${tabulation.tabulationColumnExtends}" var="ce" varStatus="status">
@@ -875,7 +875,7 @@
 								<c:forEach items="${tabulation.tabulationOpts}" var="tabulationOpt" varStatus="ops">
 									<c:if test="${tabulationOpt.hasAuth=='0' && ops.count<=tabulation.listControl.operationManage.optManagerCount}">
 									&nbsp;
-									<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>/pages/resource/tabulationview.action','tabulationId=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.value}</c:if></c:forEach>&formManageId=${formManageId}')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
+									<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>/pages/resource/tabulation/view.action','tabulationId=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.value}</c:if></c:forEach>&formManageId=${formManageId}')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
 									&nbsp;
 									</c:if>
 								</c:forEach>

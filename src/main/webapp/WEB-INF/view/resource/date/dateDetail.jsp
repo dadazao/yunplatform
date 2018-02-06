@@ -14,28 +14,28 @@ $(function(){
 
 function initPageDiv(dateId){
 	if(dateId != ""){
-	   $('#Tab1').loadUrl("<%=basePath %>/pages/resource/dateActionfindById?dateId="+dateId+"&result=view","",function(){
+	   $('#Tab1').loadUrl("<%=basePath %>/pages/resource/date/findById?dateId="+dateId+"&result=view","",function(){
           $("#buttonBC").attr("disabled","disabled");
           $("#buttonSC").attr("disabled","disabled");
           $("#buttonBC").attr("class","listbuttonDisable");
           $("#buttonSC").attr("class","listbuttonDisable");
           
 	   });
-	   $('#Tab2').loadUrl("<%=basePath %>/pages/resource/dateActionformList.action?dateId="+dateId);
+	   $('#Tab2').loadUrl("<%=basePath %>/pages/resource/date/formList.action?dateId="+dateId);
 	}else{
-		$('#Tab1').loadUrl("<%=basePath %>/pages/resource/dateActionfindById?result=update","",function(){
+		$('#Tab1').loadUrl("<%=basePath %>/pages/resource/date/findById?result=update","",function(){
           $("#buttonBC").removeAttr("disabled");
           $("#buttonSC").removeAttr("disabled");
           $("#buttonXG").attr("disabled","disabled");
           .attr("class","listbuttonDisable");
 	   });
-		$('#Tab2').loadUrl("<%=basePath %>/pages/resource/dateActionformList.action");
+		$('#Tab2').loadUrl("<%=basePath %>/pages/resource/date/formList.action");
 	}
 }
 
 //修改
 function eventXG(){
-	$('#Tab1').loadUrl("<%=basePath %>/pages/resource/dateActionfindById?dateId=${date.id}&result=update","",function(){
+	$('#Tab1').loadUrl("<%=basePath %>/pages/resource/date/findById?dateId=${date.id}&result=update","",function(){
           $("#buttonBC").removeAttr("disabled");
           $("#buttonSC").removeAttr("disabled");
           $("#buttonXG").attr("disabled","disabled");
@@ -51,7 +51,7 @@ function eventBC(){
 function eventSC(){
   alertMsg.confirm("是否删除所选内容?", {
 		okCall: function(){
-			$("#dateForm").attr("action","<%=basePath %>/pages/resource/dateActiondoDel?dateId=${date.id}");
+			$("#dateForm").attr("action","<%=basePath %>/pages/resource/date/doDel?dateId=${date.id}");
             validateCallback($("#dateForm"),dialogAjaxDone);
 		}
   });

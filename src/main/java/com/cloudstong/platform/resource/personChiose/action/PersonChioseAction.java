@@ -9,6 +9,11 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.cloudstong.platform.resource.metadata.action.CompexDomainAction;
@@ -27,6 +32,12 @@ import com.cloudstong.platform.system.model.SysUser;
  * 
  *         Description:人员选择构件Action
  */
+@ParentPackage("default")
+@Namespace("/pages/resource/personChoise")
+@Results(value = { 
+		@Result(name="page", location = "/WEB-INF/view/resource/personChiose/personChoiseEdit.jsp"),
+		@Result(name="userPage", location = "/WEB-INF/view/resource/personChiose/userChoiseEdit.jsp")
+})
 public class PersonChioseAction extends CompexDomainAction {
 	/**
 	 * 操作人员选择构件的服务接口,<code>personChioseService</code>
@@ -68,6 +79,7 @@ public class PersonChioseAction extends CompexDomainAction {
 	 * @return NONE
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Action("depmPersonTree")
 	public String depmPersonTree() {
 		try {
 			MgrTree mgrTree = mgrTreeService.findMgrTreeById(treeId);
@@ -161,6 +173,7 @@ public class PersonChioseAction extends CompexDomainAction {
 		return usersTmp;
 	}
 	
+	@Action("page")
 	public String page() {
 		return "page";
 	}
@@ -170,6 +183,7 @@ public class PersonChioseAction extends CompexDomainAction {
 	 * 
 	 * @return NONE
 	 */
+	@Action("depmPersonChange")
 	public String depmPersonChange() {
 		try {
 			List<Person> _lstPerson = personChioseService.getPersons();
@@ -219,6 +233,7 @@ public class PersonChioseAction extends CompexDomainAction {
 	 * 
 	 * @return
 	 */
+	@Action("userPage")
 	public String userPage() {
 		return "userPage";
 	}
@@ -229,6 +244,7 @@ public class PersonChioseAction extends CompexDomainAction {
 	 * @return NONE
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Action("depmUserTree")
 	public String depmUserTree() {
 		try {
 			MgrTree mgrTree = mgrTreeService.findMgrTreeById(treeId);

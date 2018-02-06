@@ -14,15 +14,15 @@
 <script type="text/javascript">
 
 	function openDialog() {
-		$.pdialog.open("<%=basePath %>/pages/resource/tabulationadd.action?op=new","newDialog","新建列表",{width:950,height:650,mask:true,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/resource/tabulation/add.action?op=new","newDialog","新建列表",{width:950,height:650,mask:true,resizable:true});
 	}
 	
 	function openSearch() {
-		$.pdialog.open("<%=basePath %>/pages/resource/tabulationSearch.jsp","searchDialog","高级查询",{width:620,height:250,mask:false,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/resource/tabulation/search.action","searchDialog","高级查询",{width:620,height:250,mask:false,resizable:true});
 	}
 	
 	function deleteDialog(){
-		var urlString = "<%=basePath %>/pages/resource/tabulationdelete.action";
+		var urlString = "<%=basePath %>/pages/resource/tabulation/del.action";
 		var param = $("#tableForm").serialize();
 		var result = urlString + "?" + param;
 		alertMsg.confirm("确定要删除吗?", {okCall:function(){ajaxTodo(result,refreshList);}});
@@ -35,18 +35,18 @@
     	}
 	} 
 	function loadButton() {
-		var urlString = "<%=basePath %>/pages/resource/tbuttonaddButton.action?tabulationId="+$("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/add.action?tabulationId="+$("#tabulationId").val();
 		$('#buttonId').load(urlString);
 	}
 	function loadButtonList() {
-		var urlString = "<%=basePath %>/pages/resource/tbuttonlistButton.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/list.action?tabulationId=" + $("#tabulationId").val();
 		$.ajaxSetup({async: false});
 		$('#buttonListId').loadUrl(urlString);	
 		//initPagination();
 		$.ajaxSetup({async: true});
 	}
 	function loadEditTabulationButton(id) {
-		var urlString = "<%=basePath %>/pages/resource/tbuttonedit.action?tabulationId="+$("#tabulationId").val()+"&buttonId=" + id;
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/edit.action?tabulationId="+$("#tabulationId").val()+"&buttonId=" + id;
 		$('#buttonId').load(urlString);	
 	}
 	function addTabulationButton() {
@@ -55,7 +55,7 @@
 			return;
 		}
 		$("#btnId").val("");
-		var urlString = "<%=basePath %>/pages/resource/tbuttonsave.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/save.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -71,7 +71,7 @@
 			alertMsg.warn('请先保存基本信息！');
 			return;
 		}
-		var urlString = "<%=basePath %>/pages/resource/tbuttonsave.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/save.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -82,7 +82,7 @@
 		});
 	}
 	function deleteTabulationButton() {
-		var urlString = "<%=basePath %>/pages/resource/tbuttondelete.action";
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/del.action";
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -95,7 +95,7 @@
 	}
 	
 	function showButton(v){
-		var urlString = "<%=basePath %>/pages/resource/tbuttonshowButton.action?buttonType=" + v;
+		var urlString = "<%=basePath %>/pages/resource/tabulationButton/show.action?buttonType=" + v;
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -115,18 +115,18 @@
 	}
 	
 	function loadtabulationColumn() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationaddColumn.action?tabulationId="+$("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/addColumn.action?tabulationId="+$("#tabulationId").val();
 		$('#tabulationColumnId').load(urlString);	
 	}
 	function loadtabulationColumnList() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationlistColumn.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/listColumn.action?tabulationId=" + $("#tabulationId").val();
 		$.ajaxSetup({async: false});
 		$('#tabulationColumnListId').loadUrl(urlString);	
 		initPagination();
 		$.ajaxSetup({async: true});
 	}
 	function loadEditTabulationColumn(id) {
-		var urlString = "<%=basePath %>/pages/resource/tabulationeditColumn.action?tabulationId="+$("#tabulationId").val()+"&tabulationColumnId=" + id;
+		var urlString = "<%=basePath %>/pages/resource/tabulation/editColumn.action?tabulationId="+$("#tabulationId").val()+"&tabulationColumnId=" + id;
 		$('#tabulationColumnId').load(urlString);	
 	}
 	function addTabulationColumn() {
@@ -136,7 +136,7 @@
 		}
 		
 		$("#fcId").val("");
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveColumn.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveColumn.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -152,7 +152,7 @@
 			return false;
 		}
 		
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveColumn.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveColumn.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -163,7 +163,7 @@
 		});
 	}
 	function deleteTabulationColumn() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationdeleteColumn.action";
+		var urlString = "<%=basePath %>/pages/resource/tabulation/deleteColumn.action";
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -178,7 +178,7 @@
 		$.pdialog.closeCurrent(); 
 	}
 	function showColumn(){
-		var urlString = "<%=basePath %>/pages/resource/tabulationshowColumn.action?id=" + $("#tableId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/showColumn.action?id=" + $("#tableId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -188,7 +188,7 @@
 		});
 	}
 	function showQueryColumn(){
-		var urlString = "<%=basePath %>/pages/resource/tabulationshowQueryColumn.action?tableId=" + $("#tableId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/showQueryColumn.action?tableId=" + $("#tableId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -199,7 +199,7 @@
 	}
 	
 	function loadTabulationDetails() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationaddDetails.action?tabulationId="+$("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/addDetails.action?tabulationId="+$("#tabulationId").val();
 		$('#tabulationDetailId').load(urlString);	
 	}
 	
@@ -212,7 +212,7 @@
 			alertMsg.warn('请先保存基本信息！');
 			return;
 		}
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveDetails.action";
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveDetails.action";
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -225,11 +225,11 @@
 	
 	//筛选条件tab
 	function loadTabulationQuery() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationaddQuery.action?tabulationId="+$("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/addQuery.action?tabulationId="+$("#tabulationId").val();
 		$('#tabulationQueryId').load(urlString);	
 	}
 	function loadTabulationQueryList() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationlistQuery.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/listQuery.action?tabulationId=" + $("#tabulationId").val();
 		$.ajaxSetup({async: false});
 		$('#tabulationQueryListId').loadUrl(urlString);	
 		initPagination();
@@ -242,7 +242,7 @@
 		}
 		
 		$("#tqId").val("");
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveQuery.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveQuery.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -258,7 +258,7 @@
 			return false;
 		}
 		
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveQuery.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveQuery.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -269,7 +269,7 @@
 		});
 	}
 	function deleteTabulationQuery() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationdeleteQuery.action";
+		var urlString = "<%=basePath %>/pages/resource/tabulation/deleteQuery.action";
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -281,17 +281,17 @@
 		});
 	}
 	function loadEditTabulationQuery(id) {
-		var urlString = "<%=basePath %>/pages/resource/tabulationeditQuery.action?tabulationId="+$("#tabulationId").val()+"&tabulationQueryId=" + id;
+		var urlString = "<%=basePath %>/pages/resource/tabulation/editQuery.action?tabulationId="+$("#tabulationId").val()+"&tabulationQueryId=" + id;
 		$('#tabulationQueryId').load(urlString);	
 	}
 	
 	//操作信息tab
 	function loadTabulationOpt() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationaddOpt.action?tabulationId="+$("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/addOpt.action?tabulationId="+$("#tabulationId").val();
 		$('#tabulationOptId').load(urlString);	
 	}
 	function loadTabulationOptList() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationlistOpt.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/listOpt.action?tabulationId=" + $("#tabulationId").val();
 		$.ajaxSetup({async: false});
 		$('#tabulationOptListId').loadUrl(urlString);	
 		initPagination();
@@ -304,7 +304,7 @@
 		}
 		
 		$("#tqId").val("");
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveOpt.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveOpt.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -320,7 +320,7 @@
 			return false;
 		}
 		
-		var urlString = "<%=basePath %>/pages/resource/tabulationsaveOpt.action?tabulationId=" + $("#tabulationId").val();
+		var urlString = "<%=basePath %>/pages/resource/tabulation/saveOpt.action?tabulationId=" + $("#tabulationId").val();
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -331,7 +331,7 @@
 		});
 	}
 	function deleteTabulationOpt() {
-		var urlString = "<%=basePath %>/pages/resource/tabulationdeleteOpt.action";
+		var urlString = "<%=basePath %>/pages/resource/tabulation/deleteOpt.action";
 		$.ajax({
 			type:'post',
 			url: urlString,
@@ -343,20 +343,20 @@
 		});
 	}
 	function loadEditTabulationOpt(id) {
-		var urlString = "<%=basePath %>/pages/resource/tabulationeditOpt.action?tabulationId="+$("#tabulationId").val()+"&tabulationOptId=" + id;
+		var urlString = "<%=basePath %>/pages/resource/tabulation/editOpt.action?tabulationId="+$("#tabulationId").val()+"&tabulationOptId=" + id;
 		$('#tabulationOptId').load(urlString);	
 	}
 	
 	$(function(){
-		xjUrl="<%=basePath %>/pages/resource/tabulationadd.action?op=new&formManageId=${formManageId}";
-		bcUrl="<%=basePath %>/pages/resource/tabulationsave.action";
-		plscUrl="<%=basePath %>/pages/resource/tabulationdelete.action?model=liebiao";
+		xjUrl="<%=basePath %>/pages/resource/tabulation/add.action?op=new&formManageId=${formManageId}";
+		bcUrl="<%=basePath %>/pages/resource/tabulation/save.action";
+		plscUrl="<%=basePath %>/pages/resource/tabulation/del.action?model=liebiao";
 		ns.common.mouseForButton();
 	});
 </script>
 </head>
 <body>
-	<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/tabulationlist.action">
+	<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/tabulation/list.action">
 		<input type=hidden name="model" value="${model}"/>
 		<input type="hidden" name="status" value="${param.status}">
 		<input type="hidden" name="tabulation.tabulationName" value="${tabulation.tabulationName}">
@@ -386,7 +386,7 @@
 	</div>
 	<div class="pageHeader">
 		<div class="searchBar">
-			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/tabulationlist.action" method="post">
+			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/tabulation/list.action" method="post">
 				<input type="hidden" name="code" value="${code}">
 				<table class="searchContent">
 					<tr>
@@ -458,7 +458,7 @@
 						</td>
 						<td align="center">
 							&nbsp;
-							<a target="dialog" mask="true" width="950" height="650" href="<%=basePath %>/pages/resource/tabulationview.action?tabulationId=${tabulation.id}&formManageId=${formManageId}" target="navTab"><span>维护</span></a>
+							<a target="dialog" mask="true" width="950" height="650" href="<%=basePath %>/pages/resource/tabulation/view.action?tabulationId=${tabulation.id}&formManageId=${formManageId}" target="navTab"><span>维护</span></a>
 							&nbsp;
 						</td>
 	                </tr>

@@ -50,7 +50,9 @@ import com.cloudstong.platform.system.service.SysOrgService;
 		@Result(name = "view", location = "/WEB-INF/view/system/org/orgView.jsp"),
 		@Result(name = "edit", location = "/WEB-INF/view/system/org/orgEdit.jsp"),
 		@Result(name = "userList", location = "/WEB-INF/view/system/org/userList.jsp"),
-		@Result(name = "setUserList", location = "/WEB-INF/view/system/org/setuserList.jsp")
+		@Result(name = "setUserList", location = "/WEB-INF/view/system/org/setuserList.jsp"),
+		@Result(name = "index", location = "/WEB-INF/view/system/org/orgIndex.jsp"),
+		@Result(name = "selfTree", location = "/WEB-INF/view/system/org/orgSelfTree.jsp")
 })
 public class SysOrgAction extends BaseAction {
 
@@ -66,6 +68,16 @@ public class SysOrgAction extends BaseAction {
 	private String userIds;
 	
 	private Long userOrgId;
+	
+	@Action("index")
+	public String index() {
+		return "index";
+	}
+	
+	@Action("selfTree")
+	public String selfTree() {
+		return "selfTree";
+	}
 	
 	@Action("orgadd")
 	public String add() {
@@ -171,9 +183,9 @@ public class SysOrgAction extends BaseAction {
 				ztree.put("id", org.getId());
 				ztree.put("pId", org.getParentId());
 				ztree.put("name", org.getOrgName());
-				ztree.put("icon", "/images/icon/folderClose.gif");
-				ztree.put("iconOpen", "/images/icon/folderOpen.gif");
-				ztree.put("iconClose", "/images/icon/folderClose.gif");
+				ztree.put("icon", "images/icon/folderClose.gif");
+				ztree.put("iconOpen", "images/icon/folderOpen.gif");
+				ztree.put("iconClose", "images/icon/folderClose.gif");
 				if (org.getId().equals(1l)) {
 					ztree.put("open", true);
 				}

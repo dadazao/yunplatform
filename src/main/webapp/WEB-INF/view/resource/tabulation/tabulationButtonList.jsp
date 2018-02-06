@@ -6,7 +6,7 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+ "://"+request.getServerName() + ":"+request.getServerPort()+path;
 %>
-<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/tbuttonlistButton.action?tabulationId=${tabulationId}">
+<form id="pagerForm" method="post" action="<%=basePath %>/pages/resource/tabulationButton/list.action?tabulationId=${tabulationId}">
 	<input type=hidden name="model" value="${model}"/>
 	<input type="hidden" name="status" value="${param.status}">
 	<input type="hidden" name="tabulation.tabulationName" value="${tabulation.tabulationName}">
