@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-02-06 20:02:42
+Date: 2018-02-07 17:01:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2337,6 +2337,8 @@ CREATE TABLE `bus_product` (
 -- ----------------------------
 -- Records of bus_product
 -- ----------------------------
+INSERT INTO `bus_product` VALUES ('10000006280000', '2052751705', '2018-02-07 15:52:37', '2052751705', '2018-02-07 15:52:37', '0', '0', '电脑Dell', '5600', null);
+INSERT INTO `bus_product` VALUES ('10000006320000', '2052751705', '2018-02-07 16:33:45', '2052751705', '2018-02-07 16:33:45', '0', '0', 'thinkpad', '8000', null);
 
 -- ----------------------------
 -- Table structure for bus_productdetail
@@ -2475,157 +2477,6 @@ CREATE TABLE `sys_attachment` (
 -- ----------------------------
 -- Records of sys_attachment
 -- ----------------------------
-
--- ----------------------------
--- Table structure for sys_authcustomer
--- ----------------------------
-DROP TABLE IF EXISTS `sys_authcustomer`;
-CREATE TABLE `sys_authcustomer` (
-  `id` varchar(50) NOT NULL,
-  `comm_createBy` varchar(50) DEFAULT NULL,
-  `comm_createDate` timestamp NULL DEFAULT NULL,
-  `comm_updateBy` varchar(50) DEFAULT NULL,
-  `comm_updateDate` timestamp NULL DEFAULT NULL,
-  `comm_opt_counter` int(10) DEFAULT '0',
-  `comm_mark_for_delete` int(1) DEFAULT '0',
-  `tbl_name` varchar(50) DEFAULT NULL,
-  `tbl_linkman` varchar(10) DEFAULT NULL,
-  `tbl_mobile` varchar(30) DEFAULT NULL,
-  `tbl_email` varchar(50) DEFAULT NULL,
-  `tbl_tel` varchar(30) DEFAULT NULL,
-  `tbl_address` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sys_authcustomer
--- ----------------------------
-INSERT INTO `sys_authcustomer` VALUES ('10000005470000', '2052751705', '2013-11-22 10:59:05', '2052751705', '2013-11-26 14:40:55', '0', '0', '网易163', '张三', '186045455445', 'zhangsan@gmail.com', '010-527172463', '北京北三环五道口');
-INSERT INTO `sys_authcustomer` VALUES ('10000005470001', '2052751705', '2013-11-22 11:00:19', '2052751705', '2013-11-26 14:55:02', '0', '0', '百度在线', '李四', '185645665655', 'lisi@163.com', '010-123123123', '北京建外soho');
-INSERT INTO `sys_authcustomer` VALUES ('10000005580001', '2052751705', '2013-11-26 14:39:33', '2052751705', '2013-11-26 14:41:57', '0', '0', '美国易安信（EMC）公司', '王五', '18618615897', 'wangwu@emc.com', '', '');
-INSERT INTO `sys_authcustomer` VALUES ('10000005590000', '2052751705', '2014-08-05 02:00:53', '2052751705', '2014-08-05 02:00:53', '0', '0', '内部测试', 'Allan', '', '', '', '');
-
--- ----------------------------
--- Table structure for sys_authcustomer_hadware
--- ----------------------------
-DROP TABLE IF EXISTS `sys_authcustomer_hadware`;
-CREATE TABLE `sys_authcustomer_hadware` (
-  `id` varchar(50) NOT NULL,
-  `comm_createBy` varchar(50) DEFAULT NULL,
-  `comm_createDate` timestamp NULL DEFAULT NULL,
-  `comm_updateBy` varchar(50) DEFAULT NULL,
-  `comm_updateDate` timestamp NULL DEFAULT NULL,
-  `comm_opt_counter` int(10) DEFAULT '0',
-  `comm_mark_for_delete` int(1) DEFAULT '0',
-  `tbl_mac` varchar(50) DEFAULT NULL,
-  `tbl_computerkey` varchar(50) DEFAULT NULL,
-  `tbl_customerid` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sys_authcustomer_hadware
--- ----------------------------
-INSERT INTO `sys_authcustomer_hadware` VALUES ('10000005480000', '2052751705', '2013-11-22 15:49:08', '2052751705', '2013-11-22 15:49:08', '0', '0', '192.168.1.253', 'ID3301203000213', '10000005470001');
-INSERT INTO `sys_authcustomer_hadware` VALUES ('10000005520001', '2052751705', '2013-11-22 18:19:35', '2052751705', '2013-11-22 18:19:35', '0', '0', '444', '44', '10000005520000');
-INSERT INTO `sys_authcustomer_hadware` VALUES ('10000005490001', '2052751705', '2013-11-22 17:07:38', '2052751705', '2013-11-22 17:27:27', '0', '0', '1231231234', 'kkttt14', '10000005470000');
-INSERT INTO `sys_authcustomer_hadware` VALUES ('10000005520002', '2052751705', '2013-11-22 18:20:01', '2052751705', '2013-11-22 18:20:01', '0', '0', '333', '333', '10000005510000');
-INSERT INTO `sys_authcustomer_hadware` VALUES ('10000005520006', '2052751705', '2013-11-22 18:32:28', '2052751705', '2013-11-22 18:32:28', '0', '0', '31221', '132', '10000005470000');
-
--- ----------------------------
--- Table structure for sys_authkey
--- ----------------------------
-DROP TABLE IF EXISTS `sys_authkey`;
-CREATE TABLE `sys_authkey` (
-  `id` varchar(50) NOT NULL,
-  `comm_createBy` varchar(50) DEFAULT NULL,
-  `comm_createDate` timestamp NULL DEFAULT NULL,
-  `comm_updateBy` varchar(50) DEFAULT NULL,
-  `comm_updateDate` timestamp NULL DEFAULT NULL,
-  `comm_opt_counter` int(10) DEFAULT '0',
-  `comm_mark_for_delete` int(1) DEFAULT '0',
-  `tbl_templateid` varchar(50) DEFAULT NULL,
-  `tbl_sn` varchar(50) DEFAULT NULL,
-  `tbl_customerid` varchar(50) DEFAULT NULL,
-  `tbl_status` varchar(20) DEFAULT NULL,
-  `tbl_activationdate` timestamp NULL DEFAULT NULL,
-  `tbl_expirydate` timestamp NULL DEFAULT NULL,
-  `tbl_reminddate` timestamp NULL DEFAULT NULL,
-  `tbl_startdate` timestamp NULL DEFAULT NULL,
-  `tbl_enddate` timestamp NULL DEFAULT NULL,
-  `tbl_validdays` int(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sys_authkey
--- ----------------------------
-INSERT INTO `sys_authkey` VALUES ('10000005530000', '2052751705', '2013-11-25 15:34:50', '2052751705', '2013-11-25 15:34:50', '0', '0', '10000005450000', 'R1M3KWG5LH8M', '10000005470001', 'ACTIVED', '2013-11-25 00:00:00', '2013-12-25 00:00:00', '2013-12-15 00:00:00', '2013-11-25 00:00:00', '2013-12-25 00:00:00', '30');
-INSERT INTO `sys_authkey` VALUES ('10000005540000', '2052751705', '2013-11-25 16:14:41', '2052751705', '2013-11-25 16:14:41', '0', '0', '10000005440005', 'N81GE9CCA42Q', '10000005470001', 'UNACTIVE', null, null, null, '2013-11-25 00:00:00', '2013-12-25 00:00:00', '90');
-INSERT INTO `sys_authkey` VALUES ('10000005540001', '2052751705', '2013-11-25 16:15:26', '2052751705', '2013-11-25 16:37:59', '0', '0', '10000005440000', '0EY30HLQ66KH', '10000005470001', 'UNVALID', null, null, null, '2013-11-25 00:00:00', '2013-11-28 00:00:00', '100');
-INSERT INTO `sys_authkey` VALUES ('10000005540002', '2052751705', '2013-11-25 16:17:06', '2052751705', '2013-11-25 16:17:06', '0', '0', '10000005440000', '3YD3LAECA034', '10000005470001', 'UNVALID', null, null, null, '2013-11-25 00:00:00', '2013-11-28 00:00:00', '100');
-INSERT INTO `sys_authkey` VALUES ('10000005560000', '2052751705', '2013-11-25 17:32:06', '2052751705', '2013-11-25 17:32:06', '0', '0', '10000005460001', '06670HWTE9HC', '10000005470000', 'UNACTIVE', null, null, null, null, null, '80');
-INSERT INTO `sys_authkey` VALUES ('10000005560001', '2052751705', '2013-11-25 17:33:54', '2052751705', '2013-11-25 17:33:54', '0', '0', '10000005460001', '1QWN6J5MJAYI', '10000005470000', 'UNACTIVE', null, null, null, null, null, '80');
-INSERT INTO `sys_authkey` VALUES ('10000005570000', '2052751705', '2013-11-25 17:37:27', '2052751705', '2013-11-25 17:37:27', '0', '0', '10000005440004', 'NY5CVR1S7UAP', '10000005470000', 'UNACTIVE', null, null, null, null, null, '80');
-INSERT INTO `sys_authkey` VALUES ('10000005580002', '2052751705', '2013-11-26 14:45:00', '2052751705', '2013-11-26 14:45:00', '0', '0', '10000005580000', 'F015B06QM1BF', '10000005580001', 'UNACTIVE', null, null, null, null, null, '365');
-INSERT INTO `sys_authkey` VALUES ('10000005590001', '2052751705', '2014-08-05 02:01:40', '2052751705', '2014-08-05 02:01:40', '0', '0', '10000005440000', 'QS43R7XE743N', '10000005590000', 'UNACTIVE', null, null, null, '2014-08-05 00:00:00', null, '300');
-INSERT INTO `sys_authkey` VALUES ('10000005590003', '2052751705', '2014-08-05 02:03:59', '2052751705', '2014-08-05 02:03:59', '0', '0', '10000005590002', 'BV55RV15879Z', '10000005590000', 'UNACTIVE', null, null, null, '2014-08-05 00:00:00', null, '300');
-
--- ----------------------------
--- Table structure for sys_authproduct
--- ----------------------------
-DROP TABLE IF EXISTS `sys_authproduct`;
-CREATE TABLE `sys_authproduct` (
-  `id` varchar(50) NOT NULL,
-  `comm_createBy` varchar(50) DEFAULT NULL,
-  `comm_createDate` timestamp NULL DEFAULT NULL,
-  `comm_updateBy` varchar(50) DEFAULT NULL,
-  `comm_updateDate` timestamp NULL DEFAULT NULL,
-  `comm_opt_counter` int(10) DEFAULT '0',
-  `comm_mark_for_delete` int(1) DEFAULT '0',
-  `tbl_name` varchar(50) DEFAULT NULL,
-  `tbl_version` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sys_authproduct
--- ----------------------------
-INSERT INTO `sys_authproduct` VALUES ('10000005410000', '2052751705', '2013-11-21 14:04:41', '2052751705', '2013-11-21 14:17:26', '0', '0', '金政通koa办公系统', '5.0');
-INSERT INTO `sys_authproduct` VALUES ('10000005440002', '2052751705', '2013-11-21 18:00:19', '2052751705', '2013-11-21 18:00:19', '0', '0', '金政通kp1.1开发平台', '1.1');
-INSERT INTO `sys_authproduct` VALUES ('10000005440003', '2052751705', '2013-11-21 18:00:38', '2052751705', '2013-11-22 18:31:13', '0', '0', '金政通kp2.0开发平台', '2.0');
-
--- ----------------------------
--- Table structure for sys_authtemplate
--- ----------------------------
-DROP TABLE IF EXISTS `sys_authtemplate`;
-CREATE TABLE `sys_authtemplate` (
-  `id` varchar(50) NOT NULL,
-  `comm_createBy` varchar(50) DEFAULT NULL,
-  `comm_createDate` timestamp NULL DEFAULT NULL,
-  `comm_updateBy` varchar(50) DEFAULT NULL,
-  `comm_updateDate` timestamp NULL DEFAULT NULL,
-  `comm_opt_counter` int(10) DEFAULT '0',
-  `comm_mark_for_delete` int(1) DEFAULT '0',
-  `tbl_name` varchar(50) DEFAULT NULL,
-  `tbl_productid` varchar(50) DEFAULT NULL,
-  `tbl_authtype` varchar(20) DEFAULT NULL,
-  `tbl_startdate` timestamp NULL DEFAULT NULL,
-  `tbl_enddate` timestamp NULL DEFAULT NULL,
-  `tbl_validdays` int(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sys_authtemplate
--- ----------------------------
-INSERT INTO `sys_authtemplate` VALUES ('10000005440000', '2052751705', '2013-11-21 17:59:13', '2052751705', '2013-11-21 17:59:13', '0', '0', '办公模版1', '10000005410000', 'CLOUD', null, null, '30');
-INSERT INTO `sys_authtemplate` VALUES ('10000005450000', '2052751705', '2013-11-21 18:39:17', '2052751705', '2013-11-21 18:39:17', '0', '0', '开发模版2', '10000005440002', 'CLOUD', null, null, '80');
-INSERT INTO `sys_authtemplate` VALUES ('10000005440004', '2052751705', '2013-11-21 18:01:54', '2052751705', '2013-11-21 18:41:33', '0', '0', '开发模版10', '10000005440002', 'CLOUD', null, null, '20');
-INSERT INTO `sys_authtemplate` VALUES ('10000005440005', '2052751705', '2013-11-21 18:02:18', '2052751705', '2013-11-21 18:02:18', '0', '0', '开发模版1', '10000005440003', 'CLOUD', null, null, '50');
-INSERT INTO `sys_authtemplate` VALUES ('10000005460001', '2052751705', '2013-11-22 09:39:59', '2052751705', '2013-11-22 09:39:59', '0', '0', '办公模版2', '10000005410000', 'CLOUD', '2013-11-22 00:00:00', '2013-12-06 00:00:00', '30');
-INSERT INTO `sys_authtemplate` VALUES ('10000005580000', '2052751705', '2013-11-26 14:36:25', '2052751705', '2013-11-26 14:36:25', '0', '0', 'EMC集团授权产品', '10000005410000', 'NATIVE', null, null, '365');
-INSERT INTO `sys_authtemplate` VALUES ('10000005590002', '2052751705', '2014-08-05 02:03:28', '2052751705', '2014-08-05 02:03:28', '0', '0', '办公模板', '10000005410000', 'NATIVE', null, null, '300');
 
 -- ----------------------------
 -- Table structure for sys_autocomplete
@@ -7618,40 +7469,40 @@ INSERT INTO `sys_catalog` VALUES ('9', '54', '按钮', 'FUNC-20130304171521954-S
 INSERT INTO `sys_catalog` VALUES ('10', '54', '文本框', 'FUNC-20130304171521957-SYSM-00001', '0', '3', '2', '/pages/resource/textBox/list.action?listId=69', '2052751705', '2012-09-26 10:50:54', '2052751705', '2012-08-16 14:04:18', '0', '1', '管理文本框', null, '-1', '12', '-1', 'sys', '69', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('246', '29', '列表管理', 'FUNC-20130304171521959-SYSM-00001', null, null, '8', '/pages/resource/tabulation/list.action?listId=81', '2052751705', '2012-09-26 10:54:52', '2052751705', '2014-09-18 21:01:16', '0', '1', null, null, '-1', '12', '-1', 'sys', '81', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('50', '49', '表单模板', 'FUNC-20130304171521961-SYSM-00001', null, null, '1', '/pages/resource/template/listBase.action?listId=109', '2052751705', '2012-09-26 10:51:35', '2052751705', '2014-09-18 21:09:31', '0', '1', '使用模板元素组成或使用文件自定义基础模板', null, '-1', '12', '-1', 'sys', '109', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('109', '107', '行业公告', 'FUNC-20130304171521964-SYSM-00001', null, null, '1', '/pages/resource/897fd9fb98d1e1f2c08082124ee407eacompexlist.action?listId=100', '2052751705', '2012-09-26 10:52:34', '2052751705', '2013-01-07 15:03:36', '0', '1', '起草新的行业公告并管理起草完的行业公告', null, '-1', '12', '-1', 'bus', '100', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('109', '107', '行业公告', 'FUNC-20130304171521964-SYSM-00001', null, null, '1', '/pages/resource/140compexlist.action?listId=100', '2052751705', '2012-09-26 10:52:34', '2052751705', '2013-01-07 15:03:36', '0', '1', '起草新的行业公告并管理起草完的行业公告', null, '-1', '12', '-1', 'bus', '100', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('1', '0', '全部\r\n', 'FUNC-20130304171521969-SYSM-00001', '1', '0', '1', null, '2052751705', '2012-09-26 10:50:45', '2052751705', '2012-08-16 14:09:59', '0', '1', '作为根目录包括所有模块', null, '-1', '12', '-1', 'sys', '3392903', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('17', '54', '树组件', 'FUNC-20130304171521976-SYSM-00001', '0', '4', '12', '/pages/resource/tree/list.action?listId=74', '2052751705', '2012-09-26 10:51:01', '2052751705', '2014-09-16 21:17:04', '0', '1', '使用树类型表生成树', null, '-1', '12', '-1', 'sys', '74', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('20', '1', '系统管理', 'FUNC-20130304171521981-SYSM-00001', null, null, '21', null, '2052751705', '2012-09-26 10:51:04', '2052751705', '2013-10-16 08:49:35', '0', '1', '系统管理', null, '-1', '12', '-1', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('54', '29', '组件仓库', 'FUNC-20130304171521984-SYSM-00001', null, null, '12', null, '2052751705', '2012-09-26 10:51:39', '2052751705', '2014-09-18 21:06:27', '0', '1', '将所有组件归并为一类，统一管理', null, '-1', '12', '-1', 'sys', '-1', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('98', '29', '模块管理', 'FUNC-20130304171521986-SYSM-00001', null, null, '9', '/pages/resource/catalog/list.action?listId=76', '2052751705', '2012-09-26 10:52:23', '2052751705', '2014-09-18 21:08:42', '0', '1', '对所有系统模块进行分类层次化组织', null, '-1', '12', '-1', 'sys', '76', '777', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('29', '1', '配置开发', 'FUNC-20130304171521996-SYSM-00001', null, null, '2', null, '2052751705', '2012-09-26 10:51:14', '2052751705', '2014-09-19 07:32:54', '0', '1', '将所有业务设计模块归并在一起统一管理', null, '-1', '12', '-1', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('111', '107', '署内新闻', 'FUNC-201303041715223-SYSM-00001', null, null, '2', '/pages/resource/897fd9fb98d1e1f2c08082124ee407eacompexlist.action?listId=98', '2052751705', '2012-09-26 10:52:36', '2052751705', '2013-01-07 15:03:58', '0', '1', '起草新的署内新闻并管理起草完的署内新闻', null, '-1', '12', '-1', 'bus', '98', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('111', '107', '署内新闻', 'FUNC-201303041715223-SYSM-00001', null, null, '2', '/pages/resource/140compexlist.action?listId=98', '2052751705', '2012-09-26 10:52:36', '2052751705', '2013-01-07 15:03:58', '0', '1', '起草新的署内新闻并管理起草完的署内新闻', null, '-1', '12', '-1', 'bus', '98', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('49', '29', '模板管理', 'FUNC-201303041715226-SYSM-00001', null, null, '10', null, '2052751705', '2012-09-26 10:51:34', '2052751705', '2014-09-18 21:08:13', '0', '1', '将模板相关模块归并在一起统一管理', null, '-1', '12', '-1', 'sys', '-1', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('44', '54', '日期框', 'FUNC-201303041715228-SYSM-00001', null, null, '13', '/pages/resource/date/list.action?listId=66', '2052751705', '2012-09-26 10:51:29', '2052751705', '2012-08-24 13:46:22', '0', '1', '管理日期组件', null, '-1', '12', '-1', 'sys', '66', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('45', '29', '表关系', 'FUNC-2013030417152211-SYSM-00001', null, null, '4', '/pages/resource/relation/list.action?listId=87', '2052751705', '2012-09-26 10:51:30', '2052751705', '2012-08-16 13:49:26', '0', '1', '管理表关系', null, '-1', '12', '-1', 'sys', '87', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('258', '54', '单选框', 'FUNC-2013030417152213-SYSM-00001', null, null, '8', '/pages/resource/4a9239792f40b3d1784aa80534c3294acompexlist.action?listId=72', '2052751705', '2012-09-26 10:55:04', '2052751705', '2012-09-13 11:26:25', '0', '1', '单选框', null, '-1', '12', '-1', 'sys', '72', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('258', '54', '单选框', 'FUNC-2013030417152213-SYSM-00001', null, null, '8', '/pages/resource/77compexlist.action?listId=72', '2052751705', '2012-09-26 10:55:04', '2052751705', '2012-09-13 11:26:25', '0', '1', '单选框', null, '-1', '12', '-1', 'sys', '72', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('73', '54', '复选框', 'FUNC-2013030417152216-SYSM-00001', null, null, '9', '/pages/resource/checkbox/list.action?listId=73', '2052751705', '2012-09-26 10:51:58', '2052751705', '2012-08-21 08:53:03', '0', '1', '管理复选框', null, '-1', '12', '-1', 'sys', '73', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('74', '49', '模板库', 'FUNC-2013030417152218-SYSM-00001', null, null, '4', '/pages/resource/library/list.action?listId=149', '2052751705', '2012-09-26 10:51:59', '2052751705', '2014-09-18 21:11:11', '0', '1', '模板库', '模板库', '-1', '12', '-1', 'sys', '149', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('107', '290', '信息发布', 'FUNC-2013030417152220-SYSM-00001', null, null, '1', null, '2052751705', '2012-09-26 10:52:32', '2052751705', '2014-09-13 12:01:54', '0', '1', '起草新的待发布信息并管理起草完的待发布信息', null, '-1', '12', '-1', 'bus', '-1', '750', null, '-1', '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('115', '54', '文本编辑器', 'FUNC-2013030417152225-SYSM-00001', null, null, '4', '/pages/resource/355ec4321094f506824992b23cae888ccompexlist.action?listId=105', '2052751705', '2012-09-26 10:52:40', '2052751705', '2012-08-24 13:46:39', '0', '1', '管理文本编辑器', null, '-1', '12', '-1', 'sys', '105', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('115', '54', '文本编辑器', 'FUNC-2013030417152225-SYSM-00001', null, null, '4', '/pages/resource/146compexlist.action?listId=105', '2052751705', '2012-09-26 10:52:40', '2052751705', '2012-08-24 13:46:39', '0', '1', '管理文本编辑器', null, '-1', '12', '-1', 'sys', '105', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('125', '20', 'Logo管理', 'FUNC-2013030417152233-SYSM-00001', null, null, '2', '/pages/system/logo/list.action?listId=90', '2052751705', '2012-09-26 10:52:50', '2052751705', '2016-04-22 14:52:14', '0', '1', '管理Logo并切换系统当前使用的Logo', null, '-1', '12', '-1', 'sys', '90', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('122', '29', '数据字典', 'FUNC-2013030417152235-SYSM-00001', null, null, '6', '/pages/resource/dictionary/list.action?listId=88', '2052751705', '2012-09-26 10:52:47', '2052751705', '2013-01-03 17:56:43', '0', '1', '管理代码', null, '-1', '12', '-1', 'sys', '88', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('166', '20', '主题管理', 'FUNC-2013030417152247-SYSM-00001', null, null, '1', '/theme/list.action?listId=121', '2052751705', '2012-09-26 10:53:31', '2052751705', '2014-09-13 11:26:02', '0', '1', '主题管理，包括添加新主题和切换当前主题', null, '-1', '12', '-1', 'sys', '121', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('234', '54', '下拉框', 'FUNC-2013030417152272-SYSM-00001', null, null, '5', '/pages/resource/c1e70e791bb29c4e1c6b76dc00dcef27compexlist.action?listId=151', '2052751705', '2012-09-26 10:54:40', '2052751705', '2012-08-21 08:51:13', '0', '1', null, null, '-1', '12', '-1', 'sys', '151', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('235', '54', '搜索下拉框', 'FUNC-2013030417152275-SYSM-00001', null, null, '6', '/pages/resource/45d5af1063ec013e2bf2c01cf7cf43e2compexlist.action?listId=152', '2052751705', '2012-09-26 10:54:41', '2052751705', '2012-08-21 08:51:26', '0', '1', null, null, '-1', '12', '-1', 'sys', '152', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('236', '54', '上传文件框', 'FUNC-2013030417152277-SYSM-00001', null, null, '7', '/pages/resource/be78c38a327c433887378e65a538a46fcompexlist.action?listId=154', '2052751705', '2012-09-26 10:54:42', '2052751705', '2012-08-21 08:51:41', '0', '1', null, null, '-1', '12', '-1', 'sys', '154', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('237', '54', '文本域', 'FUNC-2013030417152279-SYSM-00001', null, null, '4', '/pages/resource/37c71d4f84b8c6dd3f89c1a74edab932compexlist.action?listId=150', '2052751705', '2012-09-26 10:54:43', '2052751705', '2012-08-21 08:50:58', '0', '1', null, null, '-1', '12', '-1', 'sys', '150', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('238', '54', '密码框', 'FUNC-2013030417152282-SYSM-00001', null, null, '10', '/pages/resource/5b296501d76a6b5bc0d7a9936c0873bacompexlist.action?listId=153', '2052751705', '2012-09-26 10:54:44', '2052751705', '2012-08-21 08:51:51', '0', '1', null, null, '-1', '12', '-1', 'sys', '153', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('10000004960025', '20', '子系统管理', null, null, null, '10', '/pages/resource/6263339e187c1b21dd4e29c2b8bc3369compexlist.action?listId=10000004960020', '2052751705', '2013-10-30 12:09:58', '2052751705', '2013-10-30 12:16:41', '0', '1', null, null, null, null, null, 'sys', '10000004960020', '777', null, null, '0', '0', 'subsystem', '1');
-INSERT INTO `sys_catalog` VALUES ('231', '10148233468', '组件信息', 'FUNC-2013030417152289-SYSM-00001', null, null, '1', '/pages/resource/1990af313dc01ac1721d561c547fb330compexlist.action?listId=144', '2052751705', '2012-09-26 10:54:37', '2052751705', '2014-09-13 12:04:35', '0', '1', '组件使用信息', null, '-1', '12', '-1', 'sys', '144', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('234', '54', '下拉框', 'FUNC-2013030417152272-SYSM-00001', null, null, '5', '/pages/resource/199compexlist.action?listId=151', '2052751705', '2012-09-26 10:54:40', '2052751705', '2012-08-21 08:51:13', '0', '1', null, null, '-1', '12', '-1', 'sys', '151', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('235', '54', '搜索下拉框', 'FUNC-2013030417152275-SYSM-00001', null, null, '6', '/pages/resource/200compexlist.action?listId=152', '2052751705', '2012-09-26 10:54:41', '2052751705', '2012-08-21 08:51:26', '0', '1', null, null, '-1', '12', '-1', 'sys', '152', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('236', '54', '上传文件框', 'FUNC-2013030417152277-SYSM-00001', null, null, '7', '/pages/resource/202compexlist.action?listId=154', '2052751705', '2012-09-26 10:54:42', '2052751705', '2012-08-21 08:51:41', '0', '1', null, null, '-1', '12', '-1', 'sys', '154', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('237', '54', '文本域', 'FUNC-2013030417152279-SYSM-00001', null, null, '4', '/pages/resource/201compexlist.action?listId=150', '2052751705', '2012-09-26 10:54:43', '2052751705', '2012-08-21 08:50:58', '0', '1', null, null, '-1', '12', '-1', 'sys', '150', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('238', '54', '密码框', 'FUNC-2013030417152282-SYSM-00001', null, null, '10', '/pages/resource/203compexlist.action?listId=153', '2052751705', '2012-09-26 10:54:44', '2052751705', '2012-08-21 08:51:51', '0', '1', null, null, '-1', '12', '-1', 'sys', '153', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('10000004960025', '20', '子系统管理', null, null, null, '10', '/pages/resource/10000004960006compexlist.action?listId=10000004960020', '2052751705', '2013-10-30 12:09:58', '2052751705', '2013-10-30 12:16:41', '0', '1', null, null, null, null, null, 'sys', '10000004960020', '777', null, null, '0', '0', 'subsystem', '1');
+INSERT INTO `sys_catalog` VALUES ('231', '10148233468', '组件信息', 'FUNC-2013030417152289-SYSM-00001', null, null, '1', '/pages/resource/195compexlist.action?listId=144', '2052751705', '2012-09-26 10:54:37', '2052751705', '2014-09-13 12:04:35', '0', '1', '组件使用信息', null, '-1', '12', '-1', 'sys', '144', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('241', '29', '表单管理', 'FUNC-2013030417152294-SYSM-00001', null, null, '7', '/pages/resource/form/list.action?listId=77', '2052751705', '2012-09-26 10:54:47', '2052751705', '2014-09-18 21:01:02', '0', '1', null, null, '-1', '12', '-1', 'sys', '77', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('250', '54', '分页组件', 'FUNC-2013030417152299-SYSM-00001', null, null, '17', '/pages/resource/f7849ed8839bcd68e8025ecfa433ce76compexlist.action?listId=128', '2052751705', '2012-09-26 10:54:56', '2052751705', '2014-09-16 21:17:19', '0', '1', '分页组件管理', null, '-1', '12', '-1', 'sys', '128', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('250', '54', '分页组件', 'FUNC-2013030417152299-SYSM-00001', null, null, '17', '/pages/resource/176compexlist.action?listId=128', '2052751705', '2012-09-26 10:54:56', '2052751705', '2014-09-16 21:17:19', '0', '1', '分页组件管理', null, '-1', '12', '-1', 'sys', '128', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000004860000', '20', '缓存管理', 'FUNC-20131026111309716-SYSM-00001', null, null, '7', '/pages/system/cache/config.action', '2052751705', '2013-10-26 11:13:09', '2052751705', '2013-10-26 19:24:44', '0', '1', '缓存管理', null, null, null, null, 'sys', '-1', '750', null, null, '0', '0', 'CACHE', '1');
-INSERT INTO `sys_catalog` VALUES ('254', '54', '代码级联', 'FUNC-20130304171522107-SYSM-00001', null, null, '11', '/pages/resource/a5b0664edf0fc8983aec6a70d85cdc34compexlist.action?listId=195', '2052751705', '2012-09-26 10:55:00', '2052751705', '2012-09-13 11:27:43', '0', '1', '代码级联管理', null, '-1', '12', '-1', 'sys', '195', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('270', '54', '多文件上传', 'FUNC-20130304171522109-SYSM-00001', null, null, '15', '/pages/resource/d269627338d270f08f3b2f4f5bbb58fccompexlist.action?listId=208', '2052751705', '2012-09-26 13:45:26', '2052751705', '2012-10-22 09:17:53', '0', '1', '多文件上传组件', null, '-1', '12', '-1', 'sys', '208', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('254', '54', '代码级联', 'FUNC-20130304171522107-SYSM-00001', null, null, '11', '/pages/resource/224compexlist.action?listId=195', '2052751705', '2012-09-26 10:55:00', '2052751705', '2012-09-13 11:27:43', '0', '1', '代码级联管理', null, '-1', '12', '-1', 'sys', '195', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('270', '54', '多文件上传', 'FUNC-20130304171522109-SYSM-00001', null, null, '15', '/pages/resource/999compexlist.action?listId=208', '2052751705', '2012-09-26 13:45:26', '2052751705', '2012-10-22 09:17:53', '0', '1', '多文件上传组件', null, '-1', '12', '-1', 'sys', '208', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('290', '1', '通用业务', 'FUNC-20130304171522116-SYSM-00001', null, null, '22', null, '2052751705', '2012-09-26 10:55:36', '2052751705', '2016-08-17 20:58:48', '0', '1', '通用业务', null, '-1', '12', '-1', 'sys', '-1', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('2006802974', '1', '组织用户', 'FUNC-20130304171522126-SYSM-00001', null, null, '5', null, '2052751705', '2012-10-26 17:35:24', '2052751705', '2014-09-13 11:26:51', '0', '1', '组织管理', null, '-1', '12', '-1', 'sys', '-1', '750', null, null, '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('101632707585', '20', '平台信息', 'FUNC-20130304171522131-SYSM-00001', null, null, '3', '/pages/resource/2fe991155a0989e01f05586e24f20a82compexlist.action?listId=2030733598', '2052751705', '2012-10-31 15:10:36', '2052751705', '2013-10-30 12:00:02', '0', '1', '平台信息', null, 'Arial, sans-serif', '12', '-1', 'sys', '2030733598', '750', null, null, '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('101632707585', '20', '平台信息', 'FUNC-20130304171522131-SYSM-00001', null, null, '3', '/pages/resource/2129021156compexlist.action?listId=2030733598', '2052751705', '2012-10-31 15:10:36', '2052751705', '2013-10-30 12:00:02', '0', '1', '平台信息', null, 'Arial, sans-serif', '12', '-1', 'sys', '2030733598', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10615401205', '49', '组合模板', 'FUNC-20130304171522136-SYSM-00001', null, null, '3', '/pages/resource/template/listComb.action?listId=1081243326', '2052751705', '2012-11-02 13:51:48', '2052751705', '2012-11-02 14:11:32', '0', '1', '组合模板', '组合模板', '-1', '12', '-1', 'sys', '1081243326', '750', null, null, '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('529645908', '20', '日志管理', 'FUNC-20130304171522141-SYSM-00001', null, null, '6', '/pages/system/syslog/loglist.action', '2052751705', '2012-12-06 13:38:37', '2052751705', '2013-10-25 17:07:22', '0', '1', '日志管理', null, 'Arial, sans-serif', '12', '#000000', 'sys', '101960425631', '777', null, '-1', '0', '0', 'LOG', '1');
 INSERT INTO `sys_catalog` VALUES ('10148233468', '1', '报表统计', 'FUNC-20130304171522163-SYSM-00001', null, null, '19', null, '2052751705', '2013-01-05 09:39:29', '2052751705', '2014-09-13 12:10:41', '0', '1', '平台统计', null, '-1', '12', '-1', 'sys', '-1', '750', null, null, '0', '0', null, '1');
@@ -7662,7 +7513,7 @@ INSERT INTO `sys_catalog` VALUES ('10000000140000', '2006802974', '用户', 'FUN
 INSERT INTO `sys_catalog` VALUES ('10000000200019', '2006802974', '权限', 'FUNC-20130906153957566-SYSM-00001', null, null, '5', '/pages/system/privilege/index.action', '2052751705', '2013-09-06 15:39:57', '2052751705', '2014-09-13 11:57:59', '0', '1', '功能权限', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000000410000', '1', '流程管理', 'FUNC-20130910113334713-SYSM-00001', null, null, '12', null, '2052751705', '2013-09-10 11:33:24', '2052751705', '2016-08-17 20:57:40', '0', '1', '流程管理', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000000410002', '10000000410000', '流程定义', 'FUNC-20130910113505170-SYSM-00001', null, null, '1', '/pages/third/bpm/bpmDefinition/list.action', '2052751705', '2013-09-10 11:35:05', '2052751705', '2016-04-22 14:53:49', '0', '1', '流程定义管理', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('10000000520006', '10000000410000', '流程分类', 'FUNC-20130910182758809-SYSM-00001', null, null, '5', '/pages/resource/59d6a407e6e30bee2a80a3dfb5cc4baccompexlist.action?listId=10000002930024', '2052751705', '2013-09-10 18:27:58', '2052751705', '2013-10-09 17:59:27', '0', '1', '流程分类', null, 'Arial, sans-serif', '12', '#000000', 'sys', '10000002930024', '750', null, '-1', '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('10000000520006', '10000000410000', '流程分类', 'FUNC-20130910182758809-SYSM-00001', null, null, '5', '/pages/resource/10000000590001compexlist.action?listId=10000002930024', '2052751705', '2013-09-10 18:27:58', '2052751705', '2013-10-09 17:59:27', '0', '1', '流程分类', null, 'Arial, sans-serif', '12', '#000000', 'sys', '10000002930024', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000001020000', '1', '邮件管理', 'FUNC-20130913143032297-SYSM-00001', null, null, '11', null, '2052751705', '2013-09-13 14:30:30', '2052751705', '2013-09-13 14:31:32', '0', '1', '邮件管理', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000001020002', '10000001020000', '邮箱', 'FUNC-20130913143227814-SYSM-00001', null, null, '1', '/pages/platform/email/mailAccount/mailbox.action', '2052751705', '2013-09-13 14:32:27', '2052751705', '2013-09-25 17:50:10', '0', '1', '邮箱', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000001020004', '10000001020000', '写邮件', 'FUNC-20130913143246182-SYSM-00001', null, null, '4', '/pages/platform/email/mailMessage/create.action', '2052751705', '2013-09-13 14:32:46', '2052751705', '2014-09-18 21:15:11', '0', '1', '发邮件', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
@@ -7674,7 +7525,7 @@ INSERT INTO `sys_catalog` VALUES ('10000002070012', '1', '桌面管理', 'FUNC-2
 INSERT INTO `sys_catalog` VALUES ('10000002070014', '10000002070012', '桌面栏目', 'FUNC-20130926134512821-SYSM-00001', null, null, '1', '/pages/platform/desktop/desktopItem/list.action', '2052751705', '2013-09-26 13:45:12', '2052751705', '2013-09-27 14:22:32', '0', '1', '桌面栏目', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000002070016', '10000002070012', '桌面布局', 'FUNC-20130926134527161-SYSM-00001', null, null, '2', '/pages/platform/desktop/desktopLayout/list.action', '2052751705', '2013-09-26 13:45:27', '2052751705', '2013-09-26 15:02:32', '0', '1', '桌面布局', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000002070018', '10000002070012', '个人桌面', 'FUNC-20130926134542317-SYSM-00001', null, null, '3', '/pages/platform/desktop/desktopDesign/design.action', '2052751705', '2013-09-26 13:45:42', '2052751705', '2014-09-18 21:13:13', '0', '1', '个人桌面设置', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('10000002270000', '54', '自动补齐框', 'FUNC-20130927142520461-SYSM-00001', null, null, '3', '/pages/resource/cf0270d961bcf6d52a0e383c43385320compexlist.action?listId=10000002270081', '2052751705', '2013-09-27 14:25:18', '2052751705', '2013-09-27 15:09:44', '0', '1', '自动补齐文本框', null, 'Arial, sans-serif', '12', '#000000', 'sys', '10000002270081', '750', null, '-1', '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('10000002270000', '54', '自动补齐框', 'FUNC-20130927142520461-SYSM-00001', null, null, '3', '/pages/resource/10000002270002compexlist.action?listId=10000002270081', '2052751705', '2013-09-27 14:25:18', '2052751705', '2013-09-27 15:09:44', '0', '1', '自动补齐文本框', null, 'Arial, sans-serif', '12', '#000000', 'sys', '10000002270081', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000002310000', '10000000410000', '流程日志', 'FUNC-2013092715120868-SYSM-00001', null, null, '6', '/pages/third/bpm/bpmRunLog/list.action', '2052751705', '2013-09-27 15:12:05', '2052751705', '2013-09-30 10:39:34', '0', '1', '流程日志', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000002310002', '10000000410000', '流程任务', 'FUNC-20130927151438149-SYSM-00001', null, null, '2', '/pages/third/bpm/task/list.action', '2052751705', '2013-09-27 15:14:38', '2052751705', '2013-10-09 11:02:15', '0', '1', '流程任务', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000002310004', '10000000410000', '流程实例', 'FUNC-20130927151458806-SYSM-00001', null, null, '3', '/pages/third/bpm/processRun/list.action', '2052751705', '2013-09-27 15:14:58', '2052751705', '2013-10-09 16:18:57', '0', '1', '流程实例', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
@@ -7684,20 +7535,19 @@ INSERT INTO `sys_catalog` VALUES ('10000002970000', '10148233468', '组件统计
 INSERT INTO `sys_catalog` VALUES ('10000003210002', '10000001540012', '发消息', 'FUNC-20131011174905797-SYSM-00001', null, null, '3', '/pages/platform/message/sentMessage/create.action', '2052751705', '2013-10-11 17:49:05', '2052751705', '2013-10-14 14:01:47', '0', '1', '发消息', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000005760007', '10000005760003', '已办事宜', 'FUNC-20140919080238379-SYSM-00001', null, null, '3', null, '2052751705', '2014-09-19 08:02:38', '2052751705', '2014-09-19 08:02:38', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '0', 'done', '0');
 INSERT INTO `sys_catalog` VALUES ('10000005760009', '10000005760003', '办结事宜', 'FUNC-20140919080332729-SYSM-00001', null, null, '4', null, '2052751705', '2014-09-19 08:03:32', '2052751705', '2016-08-17 21:02:47', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '1', 'completed', '0');
-INSERT INTO `sys_catalog` VALUES ('10000005700019', '290', '商品管理', 'FUNC-20140916134209181-SYSM-00001', null, null, '6', '/pages/resource/938c887c946eed108024a73dde006408compexlist.action?listId=10000005700015', '2052751705', '2014-09-16 13:42:09', '2052751705', '2014-09-16 13:42:09', '0', '1', null, null, null, null, null, 'bus', '10000005700015', '750', null, null, '0', '0', 'product', '0');
-INSERT INTO `sys_catalog` VALUES ('10000005710026', '54', '列表组件', 'FUNC-20140916202209762-SYSM-00001', null, null, '16', '/pages/resource/c95da5fb8100775517af10e1bd013020compexlist.action?listId=129', '2052751705', '2014-09-16 20:22:09', '2052751705', '2014-09-16 20:22:09', '0', '1', null, null, null, null, null, null, '129', '750', null, null, '0', '0', null, '0');
-INSERT INTO `sys_catalog` VALUES ('10000005710029', '54', '选择列', 'FUNC-20140916202929667-SYSM-00001', null, null, '18', '/pages/resource/f1f041ab25b80d478481b120e264a429compexlist.action?listId=125', '2052751705', '2014-09-16 20:29:29', '2052751705', '2014-09-16 20:29:29', '0', '1', null, null, null, null, null, null, '125', '750', null, null, '0', '0', null, '0');
-INSERT INTO `sys_catalog` VALUES ('10000005710031', '54', '序号列', 'FUNC-20140916203003985-SYSM-00001', null, null, '19', '/pages/resource/da4401e58a9f507dd0455688eb3b750dcompexlist.action?listId=126', '2052751705', '2014-09-16 20:30:03', '2052751705', '2014-09-16 20:30:03', '0', '1', null, null, null, null, null, null, '126', '750', null, null, '0', '0', null, '0');
-INSERT INTO `sys_catalog` VALUES ('10000005710033', '54', '操作列', 'FUNC-20140916203032983-SYSM-00001', null, null, '20', '/pages/resource/045f76d41fe9033c26841d56eeadc015compexlist.action?listId=127', '2052751705', '2014-09-16 20:30:32', '2052751705', '2014-09-16 20:30:32', '0', '1', null, null, null, null, null, null, '127', '750', null, null, '0', '0', null, '0');
-INSERT INTO `sys_catalog` VALUES ('10000005710035', '54', '查询组件', 'FUNC-20140916203250496-SYSM-00001', null, null, '21', '/pages/resource/ebee4d2197bc7fdc6948e35e53ed41e1compexlist.action?listId=142', '2052751705', '2014-09-16 20:32:50', '2052751705', '2014-09-16 20:32:50', '0', '1', null, null, null, null, null, null, '142', '750', null, null, '0', '0', null, '0');
-INSERT INTO `sys_catalog` VALUES ('10000005710037', '54', '高级查询', 'FUNC-20140916203319815-SYSM-00001', null, null, '22', '/pages/resource/57739cf792c16c9c3cf96a7c377c9594compexlist.action?listId=10169396274', '2052751705', '2014-09-16 20:33:19', '2052751705', '2014-09-16 20:33:19', '0', '1', null, null, null, null, null, null, '10169396274', '750', null, null, '0', '0', null, '0');
+INSERT INTO `sys_catalog` VALUES ('10000005700019', '290', '商品管理', 'FUNC-20140916134209181-SYSM-00001', null, null, '6', '/pages/resource/10000005610006compexlist.action?listId=10000005700015', '2052751705', '2014-09-16 13:42:09', '2052751705', '2014-09-16 13:42:09', '0', '1', null, null, null, null, null, 'bus', '10000005700015', '750', null, null, '0', '0', 'product', '0');
+INSERT INTO `sys_catalog` VALUES ('10000005710026', '54', '列表组件', 'FUNC-20140916202209762-SYSM-00001', null, null, '16', '/pages/resource/177compexlist.action?listId=129', '2052751705', '2014-09-16 20:22:09', '2052751705', '2014-09-16 20:22:09', '0', '1', null, null, null, null, null, null, '129', '750', null, null, '0', '0', null, '0');
+INSERT INTO `sys_catalog` VALUES ('10000005710029', '54', '选择列', 'FUNC-20140916202929667-SYSM-00001', null, null, '18', '/pages/resource/173compexlist.action?listId=125', '2052751705', '2014-09-16 20:29:29', '2052751705', '2014-09-16 20:29:29', '0', '1', null, null, null, null, null, null, '125', '750', null, null, '0', '0', null, '0');
+INSERT INTO `sys_catalog` VALUES ('10000005710031', '54', '序号列', 'FUNC-20140916203003985-SYSM-00001', null, null, '19', '/pages/resource/174compexlist.action?listId=126', '2052751705', '2014-09-16 20:30:03', '2052751705', '2014-09-16 20:30:03', '0', '1', null, null, null, null, null, null, '126', '750', null, null, '0', '0', null, '0');
+INSERT INTO `sys_catalog` VALUES ('10000005710033', '54', '操作列', 'FUNC-20140916203032983-SYSM-00001', null, null, '20', '/pages/resource/175compexlist.action?listId=127', '2052751705', '2014-09-16 20:30:32', '2052751705', '2014-09-16 20:30:32', '0', '1', null, null, null, null, null, null, '127', '750', null, null, '0', '0', null, '0');
+INSERT INTO `sys_catalog` VALUES ('10000005710035', '54', '查询组件', 'FUNC-20140916203250496-SYSM-00001', null, null, '21', '/pages/resource/193compexlist.action?listId=142', '2052751705', '2014-09-16 20:32:50', '2052751705', '2014-09-16 20:32:50', '0', '1', null, null, null, null, null, null, '142', '750', null, null, '0', '0', null, '0');
+INSERT INTO `sys_catalog` VALUES ('10000005710037', '54', '高级查询', 'FUNC-20140916203319815-SYSM-00001', null, null, '22', '/pages/resource/1080033644compexlist.action?listId=10169396274', '2052751705', '2014-09-16 20:33:19', '2052751705', '2014-09-16 20:33:19', '0', '1', null, null, null, null, null, null, '10169396274', '750', null, null, '0', '0', null, '0');
 INSERT INTO `sys_catalog` VALUES ('10000005760011', '10000005760003', '新建流程', 'FUNC-20140919080521539-SYSM-00001', null, null, '5', null, '2052751705', '2014-09-19 08:05:21', '2052751705', '2016-08-17 21:02:06', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '1', 'newProcess', '0');
 INSERT INTO `sys_catalog` VALUES ('10000005760013', '10000005760003', '我的请求', 'FUNC-20140919080622619-SYSM-00001', null, null, '6', null, '2052751705', '2014-09-19 08:06:22', '2052751705', '2016-08-17 21:01:27', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '1', 'myRequest', '0');
 INSERT INTO `sys_catalog` VALUES ('10000005760015', '10000005760003', '我的办结', 'FUNC-20140919080708129-SYSM-00001', null, null, '7', null, '2052751705', '2014-09-19 08:07:08', '2052751705', '2016-08-17 21:02:36', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '1', 'myDone', '0');
 INSERT INTO `sys_catalog` VALUES ('10000005760017', '10000005760003', '我的草稿', 'FUNC-20140919080802389-SYSM-00001', null, null, '8', null, '2052751705', '2014-09-19 08:08:02', '2052751705', '2016-08-17 21:01:07', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '1', 'myDraw', '0');
 INSERT INTO `sys_catalog` VALUES ('10000005760019', '10000005760003', '我的消息', 'FUNC-20140919081020400-SYSM-00001', null, null, '9', '/pages/platform/message/receivedMessage/list.action', '2052751705', '2014-09-19 08:10:20', '2052751705', '2014-09-19 08:12:24', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '0', 'newMessage', '0');
 INSERT INTO `sys_catalog` VALUES ('10000005760021', '10000005760003', '我的邮件', 'FUNC-20140919081059630-SYSM-00001', null, null, '10', '/pages/platform/email/mailAccount/mailbox.action', '2052751705', '2014-09-19 08:10:59', '2052751705', '2014-09-19 08:13:11', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '0', 'newEmail', '0');
-INSERT INTO `sys_catalog` VALUES ('10000005760022', '290', '商品', null, null, null, '8', '/pages/business/product/list.action', null, '2016-04-21 18:57:40', null, '0000-00-00 00:00:00', '0', '1', null, null, null, null, null, 'bus', null, '777', null, null, '0', '0', 'shangpin', '0');
 
 -- ----------------------------
 -- Table structure for sys_chaxunzujian
@@ -9356,63 +9206,6 @@ INSERT INTO `sys_columns` VALUES ('10000004960015', 'tbl_url', '访问地址', '
 INSERT INTO `sys_columns` VALUES ('10000003830000', 'tbl_columnEnName', '字段英文名', '2', 'sys_columns', 'varchar', '', '50', '0', '1', null, '英文名称', '2052751705', '2013-10-17 17:50:55', '2052751705', '2013-10-17 17:50:55', '0', null, '', '0', '0', 'columnEnName');
 INSERT INTO `sys_columns` VALUES ('10000003840000', 'tbl_alias', '别名', '3', 'sys_catalog', 'varchar', '', '100', '0', '1', null, '别名', '2052751705', '2013-10-18 10:12:10', '2052751705', '2013-10-18 10:12:10', '0', null, '', '0', '0', 'alias');
 INSERT INTO `sys_columns` VALUES ('10000005190168', 'tbl_url', '请求URL', '4', 'sys_button', 'varchar', '', '300', '0', '1', null, '', '2052751705', '2013-11-01 14:34:29', '2052751705', '2013-11-01 14:59:46', '0', null, '', '0', '0', 'url');
-INSERT INTO `sys_columns` VALUES ('10000005380001', 'comm_createBy', '创建人', '10000005380000', 'sys_authproduct', 'varchar', null, '50', '0', '1', null, '创建记录的人员', '2052751705', '2013-11-20 17:16:55', '2052751705', '2013-11-20 17:16:55', '0', null, null, '0', '0', 'createBy');
-INSERT INTO `sys_columns` VALUES ('10000005380002', 'comm_createDate', '创建时间', '10000005380000', 'sys_authproduct', 'timestamp', null, '50', '0', '1', null, '创建记录的时间', '2052751705', '2013-11-20 17:16:55', '2052751705', '2013-11-20 17:16:55', '0', null, null, '0', '0', 'createDate');
-INSERT INTO `sys_columns` VALUES ('10000005380003', 'comm_updateBy', '修改人', '10000005380000', 'sys_authproduct', 'varchar', null, '50', '0', '1', null, '修改记录的人员', '2052751705', '2013-11-20 17:16:55', '2052751705', '2013-11-20 17:16:55', '0', null, null, '0', '0', 'updateBy');
-INSERT INTO `sys_columns` VALUES ('10000005380004', 'comm_updateDate', '修改时间', '10000005380000', 'sys_authproduct', 'timestamp', null, '50', '0', '1', null, '修改记录的时间', '2052751705', '2013-11-20 17:16:55', '2052751705', '2013-11-20 17:16:55', '0', null, null, '0', '0', 'updateDate');
-INSERT INTO `sys_columns` VALUES ('10000005380005', 'comm_opt_counter', '版本号', '10000005380000', 'sys_authproduct', 'int', null, '10', '0', '1', null, '版本号', '2052751705', '2013-11-20 17:16:55', '2052751705', '2013-11-20 17:16:55', '0', null, null, '0', '0', 'version');
-INSERT INTO `sys_columns` VALUES ('10000005380006', 'comm_mark_for_delete', '删除标识', '10000005380000', 'sys_authproduct', 'int', null, '1', '0', '1', null, '删除标识', '2052751705', '2013-11-20 17:16:55', '2052751705', '2013-11-20 17:16:55', '0', null, null, '0', '0', 'deleteMark');
-INSERT INTO `sys_columns` VALUES ('10000005380007', 'tbl_name', '产品名称', '10000005380000', 'sys_authproduct', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 17:19:06', '2052751705', '2013-11-20 17:19:06', '0', null, '', '0', '0', 'name');
-INSERT INTO `sys_columns` VALUES ('10000005380008', 'tbl_version', '产品版本', '10000005380000', 'sys_authproduct', 'varchar', '', '10', '0', '1', null, '', '2052751705', '2013-11-20 17:19:55', '2052751705', '2013-11-20 17:19:55', '0', null, '', '0', '0', 'version');
-INSERT INTO `sys_columns` VALUES ('10000005380010', 'comm_createBy', '创建人', '10000005380009', 'sys_authtemplate', 'varchar', null, '50', '0', '1', null, '创建记录的人员', '2052751705', '2013-11-20 17:26:31', '2052751705', '2013-11-20 17:26:31', '0', null, null, '0', '0', 'createBy');
-INSERT INTO `sys_columns` VALUES ('10000005380011', 'comm_createDate', '创建时间', '10000005380009', 'sys_authtemplate', 'timestamp', null, '50', '0', '1', null, '创建记录的时间', '2052751705', '2013-11-20 17:26:31', '2052751705', '2013-11-20 17:26:31', '0', null, null, '0', '0', 'createDate');
-INSERT INTO `sys_columns` VALUES ('10000005380012', 'comm_updateBy', '修改人', '10000005380009', 'sys_authtemplate', 'varchar', null, '50', '0', '1', null, '修改记录的人员', '2052751705', '2013-11-20 17:26:31', '2052751705', '2013-11-20 17:26:31', '0', null, null, '0', '0', 'updateBy');
-INSERT INTO `sys_columns` VALUES ('10000005380013', 'comm_updateDate', '修改时间', '10000005380009', 'sys_authtemplate', 'timestamp', null, '50', '0', '1', null, '修改记录的时间', '2052751705', '2013-11-20 17:26:31', '2052751705', '2013-11-20 17:26:31', '0', null, null, '0', '0', 'updateDate');
-INSERT INTO `sys_columns` VALUES ('10000005380014', 'comm_opt_counter', '版本号', '10000005380009', 'sys_authtemplate', 'int', null, '10', '0', '1', null, '版本号', '2052751705', '2013-11-20 17:26:31', '2052751705', '2013-11-20 17:26:31', '0', null, null, '0', '0', 'version');
-INSERT INTO `sys_columns` VALUES ('10000005380015', 'comm_mark_for_delete', '删除标识', '10000005380009', 'sys_authtemplate', 'int', null, '1', '0', '1', null, '删除标识', '2052751705', '2013-11-20 17:26:31', '2052751705', '2013-11-20 17:26:31', '0', null, null, '0', '0', 'deleteMark');
-INSERT INTO `sys_columns` VALUES ('10000005380016', 'tbl_name', '模版名称', '10000005380009', 'sys_authtemplate', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 17:27:24', '2052751705', '2013-11-20 17:27:24', '0', null, '', '0', '0', 'name');
-INSERT INTO `sys_columns` VALUES ('10000005380017', 'tbl_productid', '产品id', '10000005380009', 'sys_authtemplate', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 17:33:56', '2052751705', '2013-11-20 17:33:56', '0', null, '', '0', '0', 'productid');
-INSERT INTO `sys_columns` VALUES ('10000005380018', 'tbl_authtype', '授权类型', '10000005380009', 'sys_authtemplate', 'varchar', '', '20', '0', '1', null, '', '2052751705', '2013-11-20 17:35:26', '2052751705', '2013-11-20 17:35:26', '0', null, '', '0', '0', 'authtype');
-INSERT INTO `sys_columns` VALUES ('10000005380019', 'tbl_startdate', '激活起始日期', '10000005380009', 'sys_authtemplate', 'timestamp', '', null, '0', '1', null, '', '2052751705', '2013-11-20 17:36:29', '2052751705', '2013-11-20 17:36:29', '0', null, '', '0', '0', 'startdate');
-INSERT INTO `sys_columns` VALUES ('10000005380020', 'tbl_enddate', '激活结束日期', '10000005380009', 'sys_authtemplate', 'timestamp', '', null, '0', '1', null, '', '2052751705', '2013-11-20 17:36:53', '2052751705', '2013-11-20 17:36:53', '0', null, '', '0', '0', 'enddate');
-INSERT INTO `sys_columns` VALUES ('10000005380021', 'tbl_validdays', '有效期', '10000005380009', 'sys_authtemplate', 'int', '', '10', '0', '1', null, '', '2052751705', '2013-11-20 17:37:21', '2052751705', '2013-11-20 17:40:32', '0', null, '', '0', '0', 'validdays');
-INSERT INTO `sys_columns` VALUES ('10000005380023', 'comm_createBy', '创建人', '10000005380022', 'sys_authkey', 'varchar', null, '50', '0', '1', null, '创建记录的人员', '2052751705', '2013-11-20 17:42:07', '2052751705', '2013-11-20 17:42:07', '0', null, null, '0', '0', 'createBy');
-INSERT INTO `sys_columns` VALUES ('10000005380024', 'comm_createDate', '创建时间', '10000005380022', 'sys_authkey', 'timestamp', null, '50', '0', '1', null, '创建记录的时间', '2052751705', '2013-11-20 17:42:07', '2052751705', '2013-11-20 17:42:07', '0', null, null, '0', '0', 'createDate');
-INSERT INTO `sys_columns` VALUES ('10000005380025', 'comm_updateBy', '修改人', '10000005380022', 'sys_authkey', 'varchar', null, '50', '0', '1', null, '修改记录的人员', '2052751705', '2013-11-20 17:42:07', '2052751705', '2013-11-20 17:42:07', '0', null, null, '0', '0', 'updateBy');
-INSERT INTO `sys_columns` VALUES ('10000005380026', 'comm_updateDate', '修改时间', '10000005380022', 'sys_authkey', 'timestamp', null, '50', '0', '1', null, '修改记录的时间', '2052751705', '2013-11-20 17:42:07', '2052751705', '2013-11-20 17:42:07', '0', null, null, '0', '0', 'updateDate');
-INSERT INTO `sys_columns` VALUES ('10000005380027', 'comm_opt_counter', '版本号', '10000005380022', 'sys_authkey', 'int', null, '10', '0', '1', null, '版本号', '2052751705', '2013-11-20 17:42:07', '2052751705', '2013-11-20 17:42:07', '0', null, null, '0', '0', 'version');
-INSERT INTO `sys_columns` VALUES ('10000005380028', 'comm_mark_for_delete', '删除标识', '10000005380022', 'sys_authkey', 'int', null, '1', '0', '1', null, '删除标识', '2052751705', '2013-11-20 17:42:07', '2052751705', '2013-11-20 17:42:07', '0', null, null, '0', '0', 'deleteMark');
-INSERT INTO `sys_columns` VALUES ('10000005380029', 'tbl_templateid', '授权模版id', '10000005380022', 'sys_authkey', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 17:43:11', '2052751705', '2013-11-20 17:43:11', '0', null, '', '0', '0', 'templateid');
-INSERT INTO `sys_columns` VALUES ('10000005380030', 'tbl_sn', '授权码', '10000005380022', 'sys_authkey', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 17:43:29', '2052751705', '2013-11-20 17:43:29', '0', null, '', '0', '0', 'sn');
-INSERT INTO `sys_columns` VALUES ('10000005380031', 'tbl_customerid', '客户id', '10000005380022', 'sys_authkey', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 17:43:45', '2052751705', '2013-11-20 17:43:45', '0', null, '', '0', '0', 'customerid');
-INSERT INTO `sys_columns` VALUES ('10000005380032', 'tbl_status', '授权码状态', '10000005380022', 'sys_authkey', 'varchar', '', '20', '0', '1', null, '', '2052751705', '2013-11-20 17:44:03', '2052751705', '2013-11-20 17:44:03', '0', null, '', '0', '0', 'status');
-INSERT INTO `sys_columns` VALUES ('10000005380033', 'tbl_activationdate', '激活日期', '10000005380022', 'sys_authkey', 'timestamp', '', null, '0', '1', null, '', '2052751705', '2013-11-20 17:44:45', '2052751705', '2013-11-20 17:44:45', '0', null, '', '0', '0', 'activationdate');
-INSERT INTO `sys_columns` VALUES ('10000005380034', 'tbl_expirydate', '失效日期', '10000005380022', 'sys_authkey', 'timestamp', '', null, '0', '1', null, '', '2052751705', '2013-11-20 17:45:01', '2052751705', '2013-11-20 17:45:01', '0', null, '', '0', '0', 'expirydate');
-INSERT INTO `sys_columns` VALUES ('10000005380035', 'tbl_reminddate', '到期提醒日期', '10000005380022', 'sys_authkey', 'timestamp', '', null, '0', '1', null, '', '2052751705', '2013-11-20 17:45:22', '2052751705', '2013-11-20 17:45:22', '0', null, '', '0', '0', 'reminddate');
-INSERT INTO `sys_columns` VALUES ('10000005380036', 'tbl_startdate', '激活起始日期', '10000005380022', 'sys_authkey', 'timestamp', '', null, '0', '1', null, '', '2052751705', '2013-11-20 17:45:41', '2052751705', '2013-11-20 17:45:41', '0', null, '', '0', '0', 'startdate');
-INSERT INTO `sys_columns` VALUES ('10000005380037', 'tbl_enddate', '激活结束日期', '10000005380022', 'sys_authkey', 'timestamp', '', '0', '0', '1', null, '', '2052751705', '2013-11-20 17:45:58', '2052751705', '2013-11-20 17:46:44', '0', null, '', '0', '0', 'enddate');
-INSERT INTO `sys_columns` VALUES ('10000005380038', 'tbl_validdays', '有效期', '10000005380022', 'sys_authkey', 'int', '', '10', '0', '1', null, '', '2052751705', '2013-11-20 17:46:32', '2052751705', '2013-11-20 17:46:56', '0', null, '', '0', '0', 'validdays');
-INSERT INTO `sys_columns` VALUES ('10000005380040', 'comm_createBy', '创建人', '10000005380039', 'sys_authcustomer', 'varchar', null, '50', '0', '1', null, '创建记录的人员', '2052751705', '2013-11-20 17:51:19', '2052751705', '2013-11-20 17:51:19', '0', null, null, '0', '0', 'createBy');
-INSERT INTO `sys_columns` VALUES ('10000005380041', 'comm_createDate', '创建时间', '10000005380039', 'sys_authcustomer', 'timestamp', null, '50', '0', '1', null, '创建记录的时间', '2052751705', '2013-11-20 17:51:19', '2052751705', '2013-11-20 17:51:19', '0', null, null, '0', '0', 'createDate');
-INSERT INTO `sys_columns` VALUES ('10000005380042', 'comm_updateBy', '修改人', '10000005380039', 'sys_authcustomer', 'varchar', null, '50', '0', '1', null, '修改记录的人员', '2052751705', '2013-11-20 17:51:19', '2052751705', '2013-11-20 17:51:19', '0', null, null, '0', '0', 'updateBy');
-INSERT INTO `sys_columns` VALUES ('10000005380043', 'comm_updateDate', '修改时间', '10000005380039', 'sys_authcustomer', 'timestamp', null, '50', '0', '1', null, '修改记录的时间', '2052751705', '2013-11-20 17:51:19', '2052751705', '2013-11-20 17:51:19', '0', null, null, '0', '0', 'updateDate');
-INSERT INTO `sys_columns` VALUES ('10000005380044', 'comm_opt_counter', '版本号', '10000005380039', 'sys_authcustomer', 'int', null, '10', '0', '1', null, '版本号', '2052751705', '2013-11-20 17:51:19', '2052751705', '2013-11-20 17:51:19', '0', null, null, '0', '0', 'version');
-INSERT INTO `sys_columns` VALUES ('10000005380045', 'comm_mark_for_delete', '删除标识', '10000005380039', 'sys_authcustomer', 'int', null, '1', '0', '1', null, '删除标识', '2052751705', '2013-11-20 17:51:19', '2052751705', '2013-11-20 17:51:19', '0', null, null, '0', '0', 'deleteMark');
-INSERT INTO `sys_columns` VALUES ('10000005380046', 'tbl_name', '客户名称', '10000005380039', 'sys_authcustomer', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 17:51:49', '2052751705', '2013-11-20 17:51:49', '0', null, '', '0', '0', 'name');
-INSERT INTO `sys_columns` VALUES ('10000005380047', 'tbl_linkman', '联系人', '10000005380039', 'sys_authcustomer', 'varchar', '', '10', '0', '1', null, '', '2052751705', '2013-11-20 18:04:01', '2052751705', '2013-11-20 18:04:01', '0', null, '', '0', '0', 'linkman');
-INSERT INTO `sys_columns` VALUES ('10000005380048', 'tbl_mobile', '手机', '10000005380039', 'sys_authcustomer', 'varchar', '', '30', '0', '1', null, '', '2052751705', '2013-11-20 18:04:15', '2052751705', '2013-11-20 18:04:15', '0', null, '', '0', '0', 'mobile');
-INSERT INTO `sys_columns` VALUES ('10000005380049', 'tbl_email', '邮箱', '10000005380039', 'sys_authcustomer', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 18:04:33', '2052751705', '2013-11-20 18:04:33', '0', null, '', '0', '0', 'email');
-INSERT INTO `sys_columns` VALUES ('10000005380050', 'tbl_tel', '公司电话', '10000005380039', 'sys_authcustomer', 'varchar', '', '30', '0', '1', null, '', '2052751705', '2013-11-20 18:05:03', '2052751705', '2013-11-20 18:06:08', '0', null, '', '0', '0', 'tel');
-INSERT INTO `sys_columns` VALUES ('10000005380051', 'tbl_address', '公司地址', '10000005380039', 'sys_authcustomer', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 18:05:27', '2052751705', '2013-11-20 18:05:27', '0', null, '', '0', '0', 'address');
-INSERT INTO `sys_columns` VALUES ('10000005380053', 'comm_createBy', '创建人', '10000005380052', 'sys_authcustomer_hadware', 'varchar', null, '50', '0', '1', null, '创建记录的人员', '2052751705', '2013-11-20 18:08:20', '2052751705', '2013-11-20 18:08:20', '0', null, null, '0', '0', 'createBy');
-INSERT INTO `sys_columns` VALUES ('10000005380054', 'comm_createDate', '创建时间', '10000005380052', 'sys_authcustomer_hadware', 'timestamp', null, '50', '0', '1', null, '创建记录的时间', '2052751705', '2013-11-20 18:08:20', '2052751705', '2013-11-20 18:08:20', '0', null, null, '0', '0', 'createDate');
-INSERT INTO `sys_columns` VALUES ('10000005380055', 'comm_updateBy', '修改人', '10000005380052', 'sys_authcustomer_hadware', 'varchar', null, '50', '0', '1', null, '修改记录的人员', '2052751705', '2013-11-20 18:08:20', '2052751705', '2013-11-20 18:08:20', '0', null, null, '0', '0', 'updateBy');
-INSERT INTO `sys_columns` VALUES ('10000005380056', 'comm_updateDate', '修改时间', '10000005380052', 'sys_authcustomer_hadware', 'timestamp', null, '50', '0', '1', null, '修改记录的时间', '2052751705', '2013-11-20 18:08:20', '2052751705', '2013-11-20 18:08:20', '0', null, null, '0', '0', 'updateDate');
-INSERT INTO `sys_columns` VALUES ('10000005380057', 'comm_opt_counter', '版本号', '10000005380052', 'sys_authcustomer_hadware', 'int', null, '10', '0', '1', null, '版本号', '2052751705', '2013-11-20 18:08:20', '2052751705', '2013-11-20 18:08:20', '0', null, null, '0', '0', 'version');
-INSERT INTO `sys_columns` VALUES ('10000005380058', 'comm_mark_for_delete', '删除标识', '10000005380052', 'sys_authcustomer_hadware', 'int', null, '1', '0', '1', null, '删除标识', '2052751705', '2013-11-20 18:08:20', '2052751705', '2013-11-20 18:08:20', '0', null, null, '0', '0', 'deleteMark');
-INSERT INTO `sys_columns` VALUES ('10000005380059', 'tbl_mac', 'Mac地址', '10000005380052', 'sys_authcustomer_hadware', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 18:09:10', '2052751705', '2013-11-20 18:09:10', '0', null, '', '0', '0', 'mac');
-INSERT INTO `sys_columns` VALUES ('10000005380060', 'tbl_computerkey', '机器码', '10000005380052', 'sys_authcustomer_hadware', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 18:09:34', '2052751705', '2013-11-20 18:09:34', '0', null, '', '0', '0', 'computerkey');
-INSERT INTO `sys_columns` VALUES ('10000005380061', 'tbl_customerid', '客户id', '10000005380052', 'sys_authcustomer_hadware', 'varchar', '', '50', '0', '1', null, '', '2052751705', '2013-11-20 18:09:54', '2052751705', '2013-11-20 18:09:54', '0', null, '', '0', '0', 'customerid');
 INSERT INTO `sys_columns` VALUES ('10000005610007', 'comm_createBy', '创建人', '10000005610006', 'bus_product', 'varchar', null, '50', '0', '1', null, '创建记录的人员', '2052751705', '2014-09-14 16:34:02', '2052751705', '2014-09-14 16:34:02', '0', null, null, '0', '0', 'createBy');
 INSERT INTO `sys_columns` VALUES ('10000005610008', 'comm_createDate', '创建时间', '10000005610006', 'bus_product', 'timestamp', null, '50', '0', '1', null, '创建记录的时间', '2052751705', '2014-09-14 16:34:02', '2052751705', '2014-09-14 16:34:02', '0', null, null, '0', '0', 'createDate');
 INSERT INTO `sys_columns` VALUES ('10000005610009', 'comm_updateBy', '修改人', '10000005610006', 'bus_product', 'varchar', null, '50', '0', '1', null, '修改记录的人员', '2052751705', '2014-09-14 16:34:02', '2052751705', '2014-09-14 16:34:02', '0', null, null, '0', '0', 'updateBy');
@@ -9513,6 +9306,236 @@ INSERT INTO `sys_contact` VALUES ('10000006050006', '2052751705', '2018-02-05 14
 INSERT INTO `sys_contact` VALUES ('10000006050007', '2052751705', '2018-02-05 14:37:43', null, null, '0', '0', '7@163.com', '2018-02-05 14:37:43', '2052751705');
 INSERT INTO `sys_contact` VALUES ('10000006050008', '2052751705', '2018-02-05 14:37:43', null, null, '0', '0', '8@163.com', '2018-02-05 14:37:43', '2052751705');
 INSERT INTO `sys_contact` VALUES ('10000006050009', '2052751705', '2018-02-05 14:37:43', null, null, '0', '0', '9@163.com', '2018-02-05 14:37:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006080000', '2052751705', '2018-02-07 10:00:45', null, null, '0', '0', '0@163.com', '2018-02-07 10:00:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006080001', '2052751705', '2018-02-07 10:00:45', null, null, '0', '0', '1@163.com', '2018-02-07 10:00:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006080002', '2052751705', '2018-02-07 10:00:45', null, null, '0', '0', '2@163.com', '2018-02-07 10:00:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006080003', '2052751705', '2018-02-07 10:00:45', null, null, '0', '0', '3@163.com', '2018-02-07 10:00:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006080004', '2052751705', '2018-02-07 10:00:45', null, null, '0', '0', '4@163.com', '2018-02-07 10:00:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006080005', '2052751705', '2018-02-07 10:00:45', null, null, '0', '0', '5@163.com', '2018-02-07 10:00:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006080006', '2052751705', '2018-02-07 10:00:45', null, null, '0', '0', '6@163.com', '2018-02-07 10:00:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006080007', '2052751705', '2018-02-07 10:00:45', null, null, '0', '0', '7@163.com', '2018-02-07 10:00:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006080008', '2052751705', '2018-02-07 10:00:45', null, null, '0', '0', '8@163.com', '2018-02-07 10:00:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006080009', '2052751705', '2018-02-07 10:00:45', null, null, '0', '0', '9@163.com', '2018-02-07 10:00:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006090000', '2052751705', '2018-02-07 10:05:17', null, null, '0', '0', '0@163.com', '2018-02-07 10:05:17', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006090001', '2052751705', '2018-02-07 10:05:17', null, null, '0', '0', '1@163.com', '2018-02-07 10:05:17', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006090002', '2052751705', '2018-02-07 10:05:17', null, null, '0', '0', '2@163.com', '2018-02-07 10:05:17', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006090003', '2052751705', '2018-02-07 10:05:17', null, null, '0', '0', '3@163.com', '2018-02-07 10:05:17', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006090004', '2052751705', '2018-02-07 10:05:17', null, null, '0', '0', '4@163.com', '2018-02-07 10:05:17', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006090005', '2052751705', '2018-02-07 10:05:17', null, null, '0', '0', '5@163.com', '2018-02-07 10:05:17', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006090006', '2052751705', '2018-02-07 10:05:17', null, null, '0', '0', '6@163.com', '2018-02-07 10:05:17', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006090007', '2052751705', '2018-02-07 10:05:17', null, null, '0', '0', '7@163.com', '2018-02-07 10:05:17', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006090008', '2052751705', '2018-02-07 10:05:17', null, null, '0', '0', '8@163.com', '2018-02-07 10:05:17', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006090009', '2052751705', '2018-02-07 10:05:17', null, null, '0', '0', '9@163.com', '2018-02-07 10:05:17', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006100000', '2052751705', '2018-02-07 10:09:40', null, null, '0', '0', '0@163.com', '2018-02-07 10:09:39', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006100001', '2052751705', '2018-02-07 10:09:40', null, null, '0', '0', '1@163.com', '2018-02-07 10:09:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006100002', '2052751705', '2018-02-07 10:09:40', null, null, '0', '0', '2@163.com', '2018-02-07 10:09:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006100003', '2052751705', '2018-02-07 10:09:40', null, null, '0', '0', '3@163.com', '2018-02-07 10:09:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006100004', '2052751705', '2018-02-07 10:09:40', null, null, '0', '0', '4@163.com', '2018-02-07 10:09:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006100005', '2052751705', '2018-02-07 10:09:40', null, null, '0', '0', '5@163.com', '2018-02-07 10:09:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006100006', '2052751705', '2018-02-07 10:09:40', null, null, '0', '0', '6@163.com', '2018-02-07 10:09:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006100007', '2052751705', '2018-02-07 10:09:40', null, null, '0', '0', '7@163.com', '2018-02-07 10:09:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006100008', '2052751705', '2018-02-07 10:09:40', null, null, '0', '0', '8@163.com', '2018-02-07 10:09:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006100009', '2052751705', '2018-02-07 10:09:40', null, null, '0', '0', '9@163.com', '2018-02-07 10:09:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006110000', '2052751705', '2018-02-07 10:10:45', null, null, '0', '0', '0@163.com', '2018-02-07 10:10:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006110001', '2052751705', '2018-02-07 10:10:45', null, null, '0', '0', '1@163.com', '2018-02-07 10:10:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006110002', '2052751705', '2018-02-07 10:10:45', null, null, '0', '0', '2@163.com', '2018-02-07 10:10:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006110003', '2052751705', '2018-02-07 10:10:45', null, null, '0', '0', '3@163.com', '2018-02-07 10:10:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006110004', '2052751705', '2018-02-07 10:10:45', null, null, '0', '0', '4@163.com', '2018-02-07 10:10:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006110005', '2052751705', '2018-02-07 10:10:45', null, null, '0', '0', '5@163.com', '2018-02-07 10:10:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006110006', '2052751705', '2018-02-07 10:10:45', null, null, '0', '0', '6@163.com', '2018-02-07 10:10:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006110007', '2052751705', '2018-02-07 10:10:45', null, null, '0', '0', '7@163.com', '2018-02-07 10:10:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006110008', '2052751705', '2018-02-07 10:10:45', null, null, '0', '0', '8@163.com', '2018-02-07 10:10:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006110009', '2052751705', '2018-02-07 10:10:45', null, null, '0', '0', '9@163.com', '2018-02-07 10:10:45', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006120000', '2052751705', '2018-02-07 10:12:04', null, null, '0', '0', '0@163.com', '2018-02-07 10:12:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006120001', '2052751705', '2018-02-07 10:12:04', null, null, '0', '0', '1@163.com', '2018-02-07 10:12:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006120002', '2052751705', '2018-02-07 10:12:04', null, null, '0', '0', '2@163.com', '2018-02-07 10:12:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006120003', '2052751705', '2018-02-07 10:12:04', null, null, '0', '0', '3@163.com', '2018-02-07 10:12:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006120004', '2052751705', '2018-02-07 10:12:04', null, null, '0', '0', '4@163.com', '2018-02-07 10:12:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006120005', '2052751705', '2018-02-07 10:12:04', null, null, '0', '0', '5@163.com', '2018-02-07 10:12:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006120006', '2052751705', '2018-02-07 10:12:04', null, null, '0', '0', '6@163.com', '2018-02-07 10:12:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006120007', '2052751705', '2018-02-07 10:12:04', null, null, '0', '0', '7@163.com', '2018-02-07 10:12:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006120008', '2052751705', '2018-02-07 10:12:04', null, null, '0', '0', '8@163.com', '2018-02-07 10:12:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006120009', '2052751705', '2018-02-07 10:12:04', null, null, '0', '0', '9@163.com', '2018-02-07 10:12:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006130000', '2052751705', '2018-02-07 10:14:04', null, null, '0', '0', '0@163.com', '2018-02-07 10:14:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006130001', '2052751705', '2018-02-07 10:14:04', null, null, '0', '0', '1@163.com', '2018-02-07 10:14:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006130002', '2052751705', '2018-02-07 10:14:04', null, null, '0', '0', '2@163.com', '2018-02-07 10:14:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006130003', '2052751705', '2018-02-07 10:14:04', null, null, '0', '0', '3@163.com', '2018-02-07 10:14:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006130004', '2052751705', '2018-02-07 10:14:04', null, null, '0', '0', '4@163.com', '2018-02-07 10:14:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006130005', '2052751705', '2018-02-07 10:14:04', null, null, '0', '0', '5@163.com', '2018-02-07 10:14:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006130006', '2052751705', '2018-02-07 10:14:04', null, null, '0', '0', '6@163.com', '2018-02-07 10:14:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006130007', '2052751705', '2018-02-07 10:14:04', null, null, '0', '0', '7@163.com', '2018-02-07 10:14:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006130008', '2052751705', '2018-02-07 10:14:04', null, null, '0', '0', '8@163.com', '2018-02-07 10:14:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006130009', '2052751705', '2018-02-07 10:14:04', null, null, '0', '0', '9@163.com', '2018-02-07 10:14:04', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006140000', '2052751705', '2018-02-07 10:18:58', null, null, '0', '0', '0@163.com', '2018-02-07 10:18:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006140001', '2052751705', '2018-02-07 10:18:58', null, null, '0', '0', '1@163.com', '2018-02-07 10:18:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006140002', '2052751705', '2018-02-07 10:18:58', null, null, '0', '0', '2@163.com', '2018-02-07 10:18:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006140003', '2052751705', '2018-02-07 10:18:58', null, null, '0', '0', '3@163.com', '2018-02-07 10:18:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006140004', '2052751705', '2018-02-07 10:18:58', null, null, '0', '0', '4@163.com', '2018-02-07 10:18:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006140005', '2052751705', '2018-02-07 10:18:58', null, null, '0', '0', '5@163.com', '2018-02-07 10:18:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006140006', '2052751705', '2018-02-07 10:18:58', null, null, '0', '0', '6@163.com', '2018-02-07 10:18:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006140007', '2052751705', '2018-02-07 10:18:58', null, null, '0', '0', '7@163.com', '2018-02-07 10:18:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006140008', '2052751705', '2018-02-07 10:18:58', null, null, '0', '0', '8@163.com', '2018-02-07 10:18:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006140009', '2052751705', '2018-02-07 10:18:58', null, null, '0', '0', '9@163.com', '2018-02-07 10:18:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006150000', '2052751705', '2018-02-07 10:19:53', null, null, '0', '0', '0@163.com', '2018-02-07 10:19:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006150001', '2052751705', '2018-02-07 10:19:53', null, null, '0', '0', '1@163.com', '2018-02-07 10:19:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006150002', '2052751705', '2018-02-07 10:19:53', null, null, '0', '0', '2@163.com', '2018-02-07 10:19:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006150003', '2052751705', '2018-02-07 10:19:53', null, null, '0', '0', '3@163.com', '2018-02-07 10:19:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006150004', '2052751705', '2018-02-07 10:19:53', null, null, '0', '0', '4@163.com', '2018-02-07 10:19:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006150005', '2052751705', '2018-02-07 10:19:53', null, null, '0', '0', '5@163.com', '2018-02-07 10:19:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006150006', '2052751705', '2018-02-07 10:19:53', null, null, '0', '0', '6@163.com', '2018-02-07 10:19:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006150007', '2052751705', '2018-02-07 10:19:53', null, null, '0', '0', '7@163.com', '2018-02-07 10:19:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006150008', '2052751705', '2018-02-07 10:19:53', null, null, '0', '0', '8@163.com', '2018-02-07 10:19:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006150009', '2052751705', '2018-02-07 10:19:53', null, null, '0', '0', '9@163.com', '2018-02-07 10:19:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006160000', '2052751705', '2018-02-07 10:20:40', null, null, '0', '0', '0@163.com', '2018-02-07 10:20:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006160001', '2052751705', '2018-02-07 10:20:40', null, null, '0', '0', '1@163.com', '2018-02-07 10:20:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006160002', '2052751705', '2018-02-07 10:20:40', null, null, '0', '0', '2@163.com', '2018-02-07 10:20:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006160003', '2052751705', '2018-02-07 10:20:40', null, null, '0', '0', '3@163.com', '2018-02-07 10:20:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006160004', '2052751705', '2018-02-07 10:20:40', null, null, '0', '0', '4@163.com', '2018-02-07 10:20:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006160005', '2052751705', '2018-02-07 10:20:40', null, null, '0', '0', '5@163.com', '2018-02-07 10:20:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006160006', '2052751705', '2018-02-07 10:20:40', null, null, '0', '0', '6@163.com', '2018-02-07 10:20:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006160007', '2052751705', '2018-02-07 10:20:40', null, null, '0', '0', '7@163.com', '2018-02-07 10:20:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006160008', '2052751705', '2018-02-07 10:20:40', null, null, '0', '0', '8@163.com', '2018-02-07 10:20:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006160009', '2052751705', '2018-02-07 10:20:40', null, null, '0', '0', '9@163.com', '2018-02-07 10:20:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006170000', '2052751705', '2018-02-07 10:28:23', null, null, '0', '0', '0@163.com', '2018-02-07 10:28:23', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006170001', '2052751705', '2018-02-07 10:28:23', null, null, '0', '0', '1@163.com', '2018-02-07 10:28:23', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006170002', '2052751705', '2018-02-07 10:28:23', null, null, '0', '0', '2@163.com', '2018-02-07 10:28:23', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006170003', '2052751705', '2018-02-07 10:28:23', null, null, '0', '0', '3@163.com', '2018-02-07 10:28:23', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006170004', '2052751705', '2018-02-07 10:28:23', null, null, '0', '0', '4@163.com', '2018-02-07 10:28:23', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006170005', '2052751705', '2018-02-07 10:28:23', null, null, '0', '0', '5@163.com', '2018-02-07 10:28:23', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006170006', '2052751705', '2018-02-07 10:28:23', null, null, '0', '0', '6@163.com', '2018-02-07 10:28:23', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006170007', '2052751705', '2018-02-07 10:28:23', null, null, '0', '0', '7@163.com', '2018-02-07 10:28:23', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006170008', '2052751705', '2018-02-07 10:28:23', null, null, '0', '0', '8@163.com', '2018-02-07 10:28:23', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006170009', '2052751705', '2018-02-07 10:28:23', null, null, '0', '0', '9@163.com', '2018-02-07 10:28:23', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006180000', '2052751705', '2018-02-07 10:31:01', null, null, '0', '0', '0@163.com', '2018-02-07 10:31:01', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006180001', '2052751705', '2018-02-07 10:31:01', null, null, '0', '0', '1@163.com', '2018-02-07 10:31:01', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006180002', '2052751705', '2018-02-07 10:31:01', null, null, '0', '0', '2@163.com', '2018-02-07 10:31:01', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006180003', '2052751705', '2018-02-07 10:31:01', null, null, '0', '0', '3@163.com', '2018-02-07 10:31:01', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006180004', '2052751705', '2018-02-07 10:31:01', null, null, '0', '0', '4@163.com', '2018-02-07 10:31:01', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006180005', '2052751705', '2018-02-07 10:31:01', null, null, '0', '0', '5@163.com', '2018-02-07 10:31:01', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006180006', '2052751705', '2018-02-07 10:31:01', null, null, '0', '0', '6@163.com', '2018-02-07 10:31:01', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006180007', '2052751705', '2018-02-07 10:31:01', null, null, '0', '0', '7@163.com', '2018-02-07 10:31:01', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006180008', '2052751705', '2018-02-07 10:31:01', null, null, '0', '0', '8@163.com', '2018-02-07 10:31:01', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006180009', '2052751705', '2018-02-07 10:31:01', null, null, '0', '0', '9@163.com', '2018-02-07 10:31:01', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006190000', '2052751705', '2018-02-07 10:31:40', null, null, '0', '0', '0@163.com', '2018-02-07 10:31:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006190001', '2052751705', '2018-02-07 10:31:40', null, null, '0', '0', '1@163.com', '2018-02-07 10:31:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006190002', '2052751705', '2018-02-07 10:31:40', null, null, '0', '0', '2@163.com', '2018-02-07 10:31:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006190003', '2052751705', '2018-02-07 10:31:40', null, null, '0', '0', '3@163.com', '2018-02-07 10:31:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006190004', '2052751705', '2018-02-07 10:31:40', null, null, '0', '0', '4@163.com', '2018-02-07 10:31:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006190005', '2052751705', '2018-02-07 10:31:40', null, null, '0', '0', '5@163.com', '2018-02-07 10:31:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006190006', '2052751705', '2018-02-07 10:31:40', null, null, '0', '0', '6@163.com', '2018-02-07 10:31:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006190007', '2052751705', '2018-02-07 10:31:40', null, null, '0', '0', '7@163.com', '2018-02-07 10:31:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006190008', '2052751705', '2018-02-07 10:31:40', null, null, '0', '0', '8@163.com', '2018-02-07 10:31:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006190009', '2052751705', '2018-02-07 10:31:40', null, null, '0', '0', '9@163.com', '2018-02-07 10:31:40', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006200000', '2052751705', '2018-02-07 10:42:53', null, null, '0', '0', '0@163.com', '2018-02-07 10:42:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006200001', '2052751705', '2018-02-07 10:42:53', null, null, '0', '0', '1@163.com', '2018-02-07 10:42:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006200002', '2052751705', '2018-02-07 10:42:53', null, null, '0', '0', '2@163.com', '2018-02-07 10:42:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006200003', '2052751705', '2018-02-07 10:42:53', null, null, '0', '0', '3@163.com', '2018-02-07 10:42:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006200004', '2052751705', '2018-02-07 10:42:53', null, null, '0', '0', '4@163.com', '2018-02-07 10:42:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006200005', '2052751705', '2018-02-07 10:42:53', null, null, '0', '0', '5@163.com', '2018-02-07 10:42:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006200006', '2052751705', '2018-02-07 10:42:53', null, null, '0', '0', '6@163.com', '2018-02-07 10:42:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006200007', '2052751705', '2018-02-07 10:42:53', null, null, '0', '0', '7@163.com', '2018-02-07 10:42:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006200008', '2052751705', '2018-02-07 10:42:53', null, null, '0', '0', '8@163.com', '2018-02-07 10:42:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006200009', '2052751705', '2018-02-07 10:42:53', null, null, '0', '0', '9@163.com', '2018-02-07 10:42:53', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006210000', '2052751705', '2018-02-07 10:51:43', null, null, '0', '0', '0@163.com', '2018-02-07 10:51:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006210001', '2052751705', '2018-02-07 10:51:43', null, null, '0', '0', '1@163.com', '2018-02-07 10:51:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006210002', '2052751705', '2018-02-07 10:51:43', null, null, '0', '0', '2@163.com', '2018-02-07 10:51:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006210003', '2052751705', '2018-02-07 10:51:43', null, null, '0', '0', '3@163.com', '2018-02-07 10:51:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006210004', '2052751705', '2018-02-07 10:51:43', null, null, '0', '0', '4@163.com', '2018-02-07 10:51:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006210005', '2052751705', '2018-02-07 10:51:43', null, null, '0', '0', '5@163.com', '2018-02-07 10:51:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006210006', '2052751705', '2018-02-07 10:51:43', null, null, '0', '0', '6@163.com', '2018-02-07 10:51:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006210007', '2052751705', '2018-02-07 10:51:43', null, null, '0', '0', '7@163.com', '2018-02-07 10:51:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006210008', '2052751705', '2018-02-07 10:51:43', null, null, '0', '0', '8@163.com', '2018-02-07 10:51:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006210009', '2052751705', '2018-02-07 10:51:43', null, null, '0', '0', '9@163.com', '2018-02-07 10:51:43', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006220000', '2052751705', '2018-02-07 10:52:31', null, null, '0', '0', '0@163.com', '2018-02-07 10:52:30', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006220001', '2052751705', '2018-02-07 10:52:31', null, null, '0', '0', '1@163.com', '2018-02-07 10:52:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006220002', '2052751705', '2018-02-07 10:52:31', null, null, '0', '0', '2@163.com', '2018-02-07 10:52:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006220003', '2052751705', '2018-02-07 10:52:31', null, null, '0', '0', '3@163.com', '2018-02-07 10:52:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006220004', '2052751705', '2018-02-07 10:52:31', null, null, '0', '0', '4@163.com', '2018-02-07 10:52:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006220005', '2052751705', '2018-02-07 10:52:31', null, null, '0', '0', '5@163.com', '2018-02-07 10:52:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006220006', '2052751705', '2018-02-07 10:52:31', null, null, '0', '0', '6@163.com', '2018-02-07 10:52:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006220007', '2052751705', '2018-02-07 10:52:31', null, null, '0', '0', '7@163.com', '2018-02-07 10:52:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006220008', '2052751705', '2018-02-07 10:52:31', null, null, '0', '0', '8@163.com', '2018-02-07 10:52:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006220009', '2052751705', '2018-02-07 10:52:31', null, null, '0', '0', '9@163.com', '2018-02-07 10:52:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006230000', '2052751705', '2018-02-07 11:33:07', null, null, '0', '0', '0@163.com', '2018-02-07 11:33:07', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006230001', '2052751705', '2018-02-07 11:33:07', null, null, '0', '0', '1@163.com', '2018-02-07 11:33:07', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006230002', '2052751705', '2018-02-07 11:33:07', null, null, '0', '0', '2@163.com', '2018-02-07 11:33:07', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006230003', '2052751705', '2018-02-07 11:33:07', null, null, '0', '0', '3@163.com', '2018-02-07 11:33:07', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006230004', '2052751705', '2018-02-07 11:33:07', null, null, '0', '0', '4@163.com', '2018-02-07 11:33:07', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006230005', '2052751705', '2018-02-07 11:33:07', null, null, '0', '0', '5@163.com', '2018-02-07 11:33:07', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006230006', '2052751705', '2018-02-07 11:33:07', null, null, '0', '0', '6@163.com', '2018-02-07 11:33:07', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006230007', '2052751705', '2018-02-07 11:33:07', null, null, '0', '0', '7@163.com', '2018-02-07 11:33:07', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006230008', '2052751705', '2018-02-07 11:33:07', null, null, '0', '0', '8@163.com', '2018-02-07 11:33:07', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006230009', '2052751705', '2018-02-07 11:33:07', null, null, '0', '0', '9@163.com', '2018-02-07 11:33:07', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006240000', '2052751705', '2018-02-07 11:44:31', null, null, '0', '0', '0@163.com', '2018-02-07 11:44:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006240001', '2052751705', '2018-02-07 11:44:31', null, null, '0', '0', '1@163.com', '2018-02-07 11:44:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006240002', '2052751705', '2018-02-07 11:44:31', null, null, '0', '0', '2@163.com', '2018-02-07 11:44:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006240003', '2052751705', '2018-02-07 11:44:31', null, null, '0', '0', '3@163.com', '2018-02-07 11:44:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006240004', '2052751705', '2018-02-07 11:44:31', null, null, '0', '0', '4@163.com', '2018-02-07 11:44:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006240005', '2052751705', '2018-02-07 11:44:31', null, null, '0', '0', '5@163.com', '2018-02-07 11:44:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006240006', '2052751705', '2018-02-07 11:44:31', null, null, '0', '0', '6@163.com', '2018-02-07 11:44:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006240007', '2052751705', '2018-02-07 11:44:31', null, null, '0', '0', '7@163.com', '2018-02-07 11:44:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006240008', '2052751705', '2018-02-07 11:44:31', null, null, '0', '0', '8@163.com', '2018-02-07 11:44:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006240009', '2052751705', '2018-02-07 11:44:31', null, null, '0', '0', '9@163.com', '2018-02-07 11:44:31', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006250000', '2052751705', '2018-02-07 11:49:22', null, null, '0', '0', '0@163.com', '2018-02-07 11:49:22', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006250001', '2052751705', '2018-02-07 11:49:22', null, null, '0', '0', '1@163.com', '2018-02-07 11:49:22', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006250002', '2052751705', '2018-02-07 11:49:22', null, null, '0', '0', '2@163.com', '2018-02-07 11:49:22', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006250003', '2052751705', '2018-02-07 11:49:22', null, null, '0', '0', '3@163.com', '2018-02-07 11:49:22', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006250004', '2052751705', '2018-02-07 11:49:22', null, null, '0', '0', '4@163.com', '2018-02-07 11:49:22', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006250005', '2052751705', '2018-02-07 11:49:22', null, null, '0', '0', '5@163.com', '2018-02-07 11:49:22', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006250006', '2052751705', '2018-02-07 11:49:22', null, null, '0', '0', '6@163.com', '2018-02-07 11:49:22', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006250007', '2052751705', '2018-02-07 11:49:22', null, null, '0', '0', '7@163.com', '2018-02-07 11:49:22', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006250008', '2052751705', '2018-02-07 11:49:22', null, null, '0', '0', '8@163.com', '2018-02-07 11:49:22', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006250009', '2052751705', '2018-02-07 11:49:22', null, null, '0', '0', '9@163.com', '2018-02-07 11:49:22', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006260000', '2052751705', '2018-02-07 11:56:18', null, null, '0', '0', '0@163.com', '2018-02-07 11:56:18', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006260001', '2052751705', '2018-02-07 11:56:18', null, null, '0', '0', '1@163.com', '2018-02-07 11:56:18', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006260002', '2052751705', '2018-02-07 11:56:18', null, null, '0', '0', '2@163.com', '2018-02-07 11:56:18', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006260003', '2052751705', '2018-02-07 11:56:18', null, null, '0', '0', '3@163.com', '2018-02-07 11:56:18', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006260004', '2052751705', '2018-02-07 11:56:18', null, null, '0', '0', '4@163.com', '2018-02-07 11:56:18', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006260005', '2052751705', '2018-02-07 11:56:18', null, null, '0', '0', '5@163.com', '2018-02-07 11:56:18', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006260006', '2052751705', '2018-02-07 11:56:18', null, null, '0', '0', '6@163.com', '2018-02-07 11:56:18', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006260007', '2052751705', '2018-02-07 11:56:18', null, null, '0', '0', '7@163.com', '2018-02-07 11:56:18', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006260008', '2052751705', '2018-02-07 11:56:18', null, null, '0', '0', '8@163.com', '2018-02-07 11:56:18', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006260009', '2052751705', '2018-02-07 11:56:18', null, null, '0', '0', '9@163.com', '2018-02-07 11:56:18', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006270000', '2052751705', '2018-02-07 13:39:24', null, null, '0', '0', '0@163.com', '2018-02-07 13:39:24', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006270001', '2052751705', '2018-02-07 13:39:24', null, null, '0', '0', '1@163.com', '2018-02-07 13:39:24', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006270002', '2052751705', '2018-02-07 13:39:24', null, null, '0', '0', '2@163.com', '2018-02-07 13:39:24', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006270003', '2052751705', '2018-02-07 13:39:24', null, null, '0', '0', '3@163.com', '2018-02-07 13:39:24', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006270004', '2052751705', '2018-02-07 13:39:24', null, null, '0', '0', '4@163.com', '2018-02-07 13:39:24', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006270005', '2052751705', '2018-02-07 13:39:24', null, null, '0', '0', '5@163.com', '2018-02-07 13:39:24', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006270006', '2052751705', '2018-02-07 13:39:24', null, null, '0', '0', '6@163.com', '2018-02-07 13:39:24', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006270007', '2052751705', '2018-02-07 13:39:24', null, null, '0', '0', '7@163.com', '2018-02-07 13:39:24', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006270008', '2052751705', '2018-02-07 13:39:24', null, null, '0', '0', '8@163.com', '2018-02-07 13:39:24', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006270009', '2052751705', '2018-02-07 13:39:24', null, null, '0', '0', '9@163.com', '2018-02-07 13:39:24', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006290000', '2052751705', '2018-02-07 16:08:58', null, null, '0', '0', '0@163.com', '2018-02-07 16:08:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006290001', '2052751705', '2018-02-07 16:08:58', null, null, '0', '0', '1@163.com', '2018-02-07 16:08:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006290002', '2052751705', '2018-02-07 16:08:58', null, null, '0', '0', '2@163.com', '2018-02-07 16:08:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006290003', '2052751705', '2018-02-07 16:08:58', null, null, '0', '0', '3@163.com', '2018-02-07 16:08:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006290004', '2052751705', '2018-02-07 16:08:58', null, null, '0', '0', '4@163.com', '2018-02-07 16:08:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006290005', '2052751705', '2018-02-07 16:08:58', null, null, '0', '0', '5@163.com', '2018-02-07 16:08:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006290006', '2052751705', '2018-02-07 16:08:58', null, null, '0', '0', '6@163.com', '2018-02-07 16:08:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006290007', '2052751705', '2018-02-07 16:08:58', null, null, '0', '0', '7@163.com', '2018-02-07 16:08:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006290008', '2052751705', '2018-02-07 16:08:58', null, null, '0', '0', '8@163.com', '2018-02-07 16:08:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006290009', '2052751705', '2018-02-07 16:08:58', null, null, '0', '0', '9@163.com', '2018-02-07 16:08:58', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006300000', '2052751705', '2018-02-07 16:20:27', null, null, '0', '0', '0@163.com', '2018-02-07 16:20:27', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006300001', '2052751705', '2018-02-07 16:20:27', null, null, '0', '0', '1@163.com', '2018-02-07 16:20:27', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006300002', '2052751705', '2018-02-07 16:20:27', null, null, '0', '0', '2@163.com', '2018-02-07 16:20:27', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006300003', '2052751705', '2018-02-07 16:20:27', null, null, '0', '0', '3@163.com', '2018-02-07 16:20:27', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006300004', '2052751705', '2018-02-07 16:20:27', null, null, '0', '0', '4@163.com', '2018-02-07 16:20:27', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006300005', '2052751705', '2018-02-07 16:20:27', null, null, '0', '0', '5@163.com', '2018-02-07 16:20:27', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006300006', '2052751705', '2018-02-07 16:20:27', null, null, '0', '0', '6@163.com', '2018-02-07 16:20:27', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006300007', '2052751705', '2018-02-07 16:20:27', null, null, '0', '0', '7@163.com', '2018-02-07 16:20:27', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006300008', '2052751705', '2018-02-07 16:20:27', null, null, '0', '0', '8@163.com', '2018-02-07 16:20:27', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006300009', '2052751705', '2018-02-07 16:20:27', null, null, '0', '0', '9@163.com', '2018-02-07 16:20:27', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006310000', '2052751705', '2018-02-07 16:30:44', null, null, '0', '0', '0@163.com', '2018-02-07 16:30:44', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006310001', '2052751705', '2018-02-07 16:30:44', null, null, '0', '0', '1@163.com', '2018-02-07 16:30:44', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006310002', '2052751705', '2018-02-07 16:30:44', null, null, '0', '0', '2@163.com', '2018-02-07 16:30:44', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006310003', '2052751705', '2018-02-07 16:30:44', null, null, '0', '0', '3@163.com', '2018-02-07 16:30:44', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006310004', '2052751705', '2018-02-07 16:30:44', null, null, '0', '0', '4@163.com', '2018-02-07 16:30:44', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006310005', '2052751705', '2018-02-07 16:30:44', null, null, '0', '0', '5@163.com', '2018-02-07 16:30:44', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006310006', '2052751705', '2018-02-07 16:30:44', null, null, '0', '0', '6@163.com', '2018-02-07 16:30:44', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006310007', '2052751705', '2018-02-07 16:30:44', null, null, '0', '0', '7@163.com', '2018-02-07 16:30:44', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006310008', '2052751705', '2018-02-07 16:30:44', null, null, '0', '0', '8@163.com', '2018-02-07 16:30:44', '2052751705');
+INSERT INTO `sys_contact` VALUES ('10000006310009', '2052751705', '2018-02-07 16:30:44', null, null, '0', '0', '9@163.com', '2018-02-07 16:30:44', '2052751705');
 
 -- ----------------------------
 -- Table structure for sys_datasources
@@ -9560,7 +9583,7 @@ CREATE TABLE `sys_db_id` (
 -- ----------------------------
 -- Records of sys_db_id
 -- ----------------------------
-INSERT INTO `sys_db_id` VALUES ('1', '10000', '6080000', '0');
+INSERT INTO `sys_db_id` VALUES ('1', '10000', '6330000', '0');
 
 -- ----------------------------
 -- Table structure for sys_desktopdesign
@@ -12125,32 +12148,32 @@ INSERT INTO `sys_resource` VALUES ('10000005130001', '2052751705', '2013-10-31 1
 INSERT INTO `sys_resource` VALUES ('10000005130010', '2052751705', '2013-10-31 17:13:04', '2052751705', '2013-10-31 17:13:04', '0', '0', '字段', '字段', '1', '1', '5', '/pages/resource/column/list.action?listId=86');
 INSERT INTO `sys_resource` VALUES ('10000005130013', '2052751705', '2013-10-31 17:13:08', '2052751705', '2013-10-31 17:13:08', '0', '0', '表关系', '表关系', '1', '1', '45', '/pages/resource/relation/list.action?listId=87');
 INSERT INTO `sys_resource` VALUES ('10000005130016', '2052751705', '2013-10-31 17:13:11', '2052751705', '2013-10-31 17:13:11', '0', '0', '表单模板', '表单模板', '1', '1', '50', '/pages/resource/template/listBase.action?listId=109');
-INSERT INTO `sys_resource` VALUES ('10000005130019', '2052751705', '2013-10-31 17:13:13', '2052751705', '2013-10-31 17:13:13', '0', '0', '数据字典', '数据字典', '1', '1', '122', '/pages/resource/dictionarysCompexlist.action?listId=88');
+INSERT INTO `sys_resource` VALUES ('10000005130019', '2052751705', '2013-10-31 17:13:13', '2052751705', '2013-10-31 17:13:13', '0', '0', '数据字典', '数据字典', '1', '1', '122', '/pages/resource/dictionary/list.action?listId=88');
 INSERT INTO `sys_resource` VALUES ('10000005130022', '2052751705', '2013-10-31 17:13:16', '2052751705', '2013-10-31 17:13:16', '0', '0', '表单', '表单', '1', '1', '241', '/pages/resource/form/list.action?listId=77');
-INSERT INTO `sys_resource` VALUES ('10000005130028', '2052751705', '2013-10-31 17:13:22', '2052751705', '2013-10-31 17:13:22', '0', '0', '模块', '模块', '1', '1', '98', '/pages/resource/catalogTree/list.action?listId=76');
+INSERT INTO `sys_resource` VALUES ('10000005130028', '2052751705', '2013-10-31 17:13:22', '2052751705', '2013-10-31 17:13:22', '0', '0', '模块', '模块', '1', '1', '98', '/pages/resource/catalog/list.action?listId=76');
 INSERT INTO `sys_resource` VALUES ('10000003970033', '2052751705', '2013-10-22 10:43:50', '2052751705', '2013-10-22 10:43:50', '0', '0', '模板', '模板访问权', '1', '1', '49', null);
 INSERT INTO `sys_resource` VALUES ('10000003970048', '2052751705', '2013-10-22 10:45:18', '2052751705', '2013-10-22 10:45:18', '0', '0', '构件', '构件访问权', '1', '1', '53', '/pages/resource/useinfo/compStat.jsp');
 INSERT INTO `sys_resource` VALUES ('10000005130037', '2052751705', '2013-10-31 17:13:38', '2052751705', '2013-10-31 17:13:38', '0', '0', '按钮', '按钮', '1', '1', '9', '/pages/resource/button/list.action?listId=71');
 INSERT INTO `sys_resource` VALUES ('10000005130040', '2052751705', '2013-10-31 17:13:41', '2052751705', '2013-10-31 17:13:41', '0', '0', '文本框', '文本框', '1', '1', '10', '/pages/resource/textBox/list.action?listId=69');
-INSERT INTO `sys_resource` VALUES ('10000005130043', '2052751705', '2013-10-31 17:13:44', '2052751705', '2013-10-31 17:13:44', '0', '0', '自动补齐文本框', '自动补齐文本框', '1', '1', '10000002270000', '/pages/resource/cf0270d961bcf6d52a0e383c43385320compexlist.action?listId=10000002270081');
-INSERT INTO `sys_resource` VALUES ('10000005130046', '2052751705', '2013-10-31 17:13:47', '2052751705', '2013-10-31 17:13:47', '0', '0', '文本域', '文本域', '1', '1', '237', '/pages/resource/37c71d4f84b8c6dd3f89c1a74edab932compexlist.action?listId=150');
-INSERT INTO `sys_resource` VALUES ('10000005130049', '2052751705', '2013-10-31 17:13:52', '2052751705', '2013-10-31 17:13:52', '0', '0', '下拉框', '下拉框', '1', '1', '234', '/pages/resource/c1e70e791bb29c4e1c6b76dc00dcef27compexlist.action?listId=151');
-INSERT INTO `sys_resource` VALUES ('10000005130058', '2052751705', '2013-10-31 17:14:01', '2052751705', '2013-10-31 17:14:01', '0', '0', '单选框', '单选框', '1', '1', '258', '/pages/resource/4a9239792f40b3d1784aa80534c3294acompexlist.action?listId=72');
-INSERT INTO `sys_resource` VALUES ('10000005130061', '2052751705', '2013-10-31 17:14:06', '2052751705', '2013-10-31 17:14:06', '0', '0', '复选框', '复选框', '1', '1', '73', '/pages/resource/checkboxMgtlist.action?listId=73');
-INSERT INTO `sys_resource` VALUES ('10000005130064', '2052751705', '2013-10-31 17:14:09', '2052751705', '2013-10-31 17:14:09', '0', '0', '密码框', '密码框', '1', '1', '238', '/pages/resource/5b296501d76a6b5bc0d7a9936c0873bacompexlist.action?listId=153');
-INSERT INTO `sys_resource` VALUES ('10000005130067', '2052751705', '2013-10-31 17:14:12', '2052751705', '2013-10-31 17:14:12', '0', '0', '代码级联', '代码级联', '1', '1', '254', '/pages/resource/a5b0664edf0fc8983aec6a70d85cdc34compexlist.action?listId=195');
+INSERT INTO `sys_resource` VALUES ('10000005130043', '2052751705', '2013-10-31 17:13:44', '2052751705', '2013-10-31 17:13:44', '0', '0', '自动补齐文本框', '自动补齐文本框', '1', '1', '10000002270000', '/pages/resource/10000002270002compexlist.action?listId=10000002270081');
+INSERT INTO `sys_resource` VALUES ('10000005130046', '2052751705', '2013-10-31 17:13:47', '2052751705', '2013-10-31 17:13:47', '0', '0', '文本域', '文本域', '1', '1', '237', '/pages/resource/201compexlist.action?listId=150');
+INSERT INTO `sys_resource` VALUES ('10000005130049', '2052751705', '2013-10-31 17:13:52', '2052751705', '2013-10-31 17:13:52', '0', '0', '下拉框', '下拉框', '1', '1', '234', '/pages/resource/199compexlist.action?listId=151');
+INSERT INTO `sys_resource` VALUES ('10000005130058', '2052751705', '2013-10-31 17:14:01', '2052751705', '2013-10-31 17:14:01', '0', '0', '单选框', '单选框', '1', '1', '258', '/pages/resource/77compexlist.action?listId=72');
+INSERT INTO `sys_resource` VALUES ('10000005130061', '2052751705', '2013-10-31 17:14:06', '2052751705', '2013-10-31 17:14:06', '0', '0', '复选框', '复选框', '1', '1', '73', '/pages/resource/checkbox/list.action?listId=73');
+INSERT INTO `sys_resource` VALUES ('10000005130064', '2052751705', '2013-10-31 17:14:09', '2052751705', '2013-10-31 17:14:09', '0', '0', '密码框', '密码框', '1', '1', '238', '/pages/resource/203compexlist.action?listId=153');
+INSERT INTO `sys_resource` VALUES ('10000005130067', '2052751705', '2013-10-31 17:14:12', '2052751705', '2013-10-31 17:14:12', '0', '0', '代码级联', '代码级联', '1', '1', '254', '/pages/resource/224compexlist.action?listId=195');
 INSERT INTO `sys_resource` VALUES ('10000003970084', '2052751705', '2013-10-22 10:47:07', '2052751705', '2013-10-22 10:47:07', '0', '0', '组件', '组件访问权', '1', '1', '54', null);
 INSERT INTO `sys_resource` VALUES ('10000005130070', '2052751705', '2013-10-31 17:14:19', '2052751705', '2013-10-31 17:14:19', '0', '0', '树', '树', '1', '1', '17', '/pages/resource/tree/list.action?listId=74');
-INSERT INTO `sys_resource` VALUES ('10000005130082', '2052751705', '2013-10-31 17:14:31', '2052751705', '2013-10-31 17:14:31', '0', '0', '选择列', '选择列', '1', '1', '172', '/pages/resource/f1f041ab25b80d478481b120e264a429compexlist.action?listId=125');
-INSERT INTO `sys_resource` VALUES ('10000005130085', '2052751705', '2013-10-31 17:14:35', '2052751705', '2013-10-31 17:14:35', '0', '0', '序号列', '序号列', '1', '1', '173', '/pages/resource/da4401e58a9f507dd0455688eb3b750dcompexlist.action?listId=126');
-INSERT INTO `sys_resource` VALUES ('10000005130088', '2052751705', '2013-10-31 17:14:38', '2052751705', '2013-10-31 17:14:38', '0', '0', '操作列', '操作列', '1', '1', '174', '/pages/resource/045f76d41fe9033c26841d56eeadc015compexlist.action?listId=127');
-INSERT INTO `sys_resource` VALUES ('10000005130091', '2052751705', '2013-10-31 17:14:42', '2052751705', '2013-10-31 17:14:42', '0', '0', '分页组件', '分页组件', '1', '1', '250', '/pages/resource/f7849ed8839bcd68e8025ecfa433ce76compexlist.action?listId=128');
-INSERT INTO `sys_resource` VALUES ('10000005130094', '2052751705', '2013-10-31 17:14:45', '2052751705', '2013-10-31 17:14:45', '0', '0', '查询组件', '查询组件', '1', '1', '227', '/pages/resource/ebee4d2197bc7fdc6948e35e53ed41e1compexlist.action?listId=142');
-INSERT INTO `sys_resource` VALUES ('10000005130100', '2052751705', '2013-10-31 17:14:51', '2052751705', '2013-10-31 17:14:51', '0', '0', '列表组件', '列表组件', '1', '1', '249', '/pages/resource/c95da5fb8100775517af10e1bd013020compexlist.action?listId=129');
+INSERT INTO `sys_resource` VALUES ('10000005130082', '2052751705', '2013-10-31 17:14:31', '2052751705', '2013-10-31 17:14:31', '0', '0', '选择列', '选择列', '1', '1', '172', '/pages/resource/173compexlist.action?listId=125');
+INSERT INTO `sys_resource` VALUES ('10000005130085', '2052751705', '2013-10-31 17:14:35', '2052751705', '2013-10-31 17:14:35', '0', '0', '序号列', '序号列', '1', '1', '173', '/pages/resource/174compexlist.action?listId=126');
+INSERT INTO `sys_resource` VALUES ('10000005130088', '2052751705', '2013-10-31 17:14:38', '2052751705', '2013-10-31 17:14:38', '0', '0', '操作列', '操作列', '1', '1', '174', '/pages/resource/175compexlist.action?listId=127');
+INSERT INTO `sys_resource` VALUES ('10000005130091', '2052751705', '2013-10-31 17:14:42', '2052751705', '2013-10-31 17:14:42', '0', '0', '分页组件', '分页组件', '1', '1', '250', '/pages/resource/176compexlist.action?listId=128');
+INSERT INTO `sys_resource` VALUES ('10000005130094', '2052751705', '2013-10-31 17:14:45', '2052751705', '2013-10-31 17:14:45', '0', '0', '查询组件', '查询组件', '1', '1', '227', '/pages/resource/193compexlist.action?listId=142');
+INSERT INTO `sys_resource` VALUES ('10000005130100', '2052751705', '2013-10-31 17:14:51', '2052751705', '2013-10-31 17:14:51', '0', '0', '列表组件', '列表组件', '1', '1', '249', '/pages/resource/177compexlist.action?listId=129');
 INSERT INTO `sys_resource` VALUES ('10000003970120', '2052751705', '2013-10-22 10:47:51', '2052751705', '2013-10-22 10:47:51', '0', '0', '组织管理', '组织管理访问权', '1', '1', '2006802974', null);
-INSERT INTO `sys_resource` VALUES ('10000005130103', '2052751705', '2013-10-31 17:14:57', '2052751705', '2013-10-31 17:14:57', '0', '0', '机构', '机构', '1', '1', '10609667429', '/pages/system/org/orgIndex.jsp');
+INSERT INTO `sys_resource` VALUES ('10000005130103', '2052751705', '2013-10-31 17:14:57', '2052751705', '2013-10-31 17:14:57', '0', '0', '机构', '机构', '1', '1', '10609667429', '/pages/system/org/index.action');
 INSERT INTO `sys_resource` VALUES ('10000005130106', '2052751705', '2013-10-31 17:15:00', '2052751705', '2013-10-31 17:15:00', '0', '0', '用户', '用户', '1', '1', '10000000140000', '/pages/system/user/userlist.action');
-INSERT INTO `sys_resource` VALUES ('10000005130109', '2052751705', '2013-10-31 17:15:03', '2052751705', '2013-10-31 17:15:03', '0', '0', '岗位', '岗位', '1', '1', '1963019503', '/pages/system/position/positionIndex.jsp');
+INSERT INTO `sys_resource` VALUES ('10000005130109', '2052751705', '2013-10-31 17:15:03', '2052751705', '2013-10-31 17:15:03', '0', '0', '岗位', '岗位', '1', '1', '1963019503', '/pages/system/position/index.action');
 INSERT INTO `sys_resource` VALUES ('10000005130112', '2052751705', '2013-10-31 17:15:06', '2052751705', '2013-10-31 17:15:06', '0', '0', '角色', '角色', '1', '1', '1059136970', '/pages/system/role/rolelist.action');
 INSERT INTO `sys_resource` VALUES ('10000003970147', '2052751705', '2013-10-22 10:48:13', '2052751705', '2013-10-22 10:48:13', '0', '0', '邮件管理', '邮件管理访问权', '1', '1', '10000001020000', null);
 INSERT INTO `sys_resource` VALUES ('10000005130127', '2052751705', '2013-10-31 17:15:28', '2052751705', '2013-10-31 17:15:28', '0', '0', '邮箱', '邮箱', '1', '1', '10000001020002', '/pages/platform/email/mailAccount/mailbox.action');
@@ -12167,39 +12190,38 @@ INSERT INTO `sys_resource` VALUES ('10000005130235', '2052751705', '2013-10-31 1
 INSERT INTO `sys_resource` VALUES ('10000003970234', '2052751705', '2013-10-22 10:49:50', '2052751705', '2013-10-22 10:49:50', '0', '0', '通用业务', '通用业务访问权', '1', '1', '290', null);
 INSERT INTO `sys_resource` VALUES ('10000003980001', '2052751705', '2013-10-22 11:53:48', '2052751705', '2013-10-22 11:53:48', '0', '0', '预留模块', '预留模块访问权', '1', '1', '1978637403', null);
 INSERT INTO `sys_resource` VALUES ('10000003980004', '2052751705', '2013-10-22 11:54:06', '2052751705', '2013-10-22 11:54:06', '0', '0', '平台页面', '平台页面访问权', '1', '1', '200', null);
-INSERT INTO `sys_resource` VALUES ('10000003980025', '2052751705', '2013-10-22 11:54:21', '2052751705', '2013-10-22 11:54:21', '0', '0', '图标管理', '图标管理访问权', '1', '1', '226', 'pages/resource/compexlist.action?listId=135');
-INSERT INTO `sys_resource` VALUES ('10000005130244', '2052751705', '2013-10-31 17:18:27', '2052751705', '2013-10-31 17:18:27', '0', '0', '日志管理', '日志管理', '1', '1', '529645908', '/pages/system/syslogquerylog.action');
-INSERT INTO `sys_resource` VALUES ('10000005130175', '2052751705', '2013-10-31 17:16:42', '2052751705', '2013-10-31 17:16:42', '0', '0', '构件/组件统计', '构件/组件统计', '1', '1', '10000002970000', '/pages/resource/useinfo/compStat.jsp');
-INSERT INTO `sys_resource` VALUES ('10000005130172', '2052751705', '2013-10-31 17:16:39', '2052751705', '2013-10-31 17:16:39', '0', '0', '构件/组件使用信息', '构件/组件使用信息', '1', '1', '231', '/pages/resource/1990af313dc01ac1721d561c547fb330compexlist.action?listId=144');
+INSERT INTO `sys_resource` VALUES ('10000005130244', '2052751705', '2013-10-31 17:18:27', '2052751705', '2013-10-31 17:18:27', '0', '0', '日志管理', '日志管理', '1', '1', '529645908', '/pages/system/syslog/loglist.action');
+INSERT INTO `sys_resource` VALUES ('10000005130175', '2052751705', '2013-10-31 17:16:42', '2052751705', '2013-10-31 17:16:42', '0', '0', '构件/组件统计', '构件/组件统计', '1', '1', '10000002970000', '/pages/resource/useinfo/compStat.action');
+INSERT INTO `sys_resource` VALUES ('10000005130172', '2052751705', '2013-10-31 17:16:39', '2052751705', '2013-10-31 17:16:39', '0', '0', '构件/组件使用信息', '构件/组件使用信息', '1', '1', '231', '/pages/resource/195compexlist.action?listId=144');
 INSERT INTO `sys_resource` VALUES ('10000005130169', '2052751705', '2013-10-31 17:16:34', '2052751705', '2013-10-31 17:16:34', '0', '0', '平台统计', '平台统计', '1', '1', '10148233468', null);
-INSERT INTO `sys_resource` VALUES ('10000005130238', '2052751705', '2013-10-31 17:18:22', '2052751705', '2013-10-31 17:18:22', '0', '0', '平台信息', '平台信息', '1', '1', '101632707585', '/pages/resource/2fe991155a0989e01f05586e24f20a82compexlist.action?listId=2030733598');
+INSERT INTO `sys_resource` VALUES ('10000005130238', '2052751705', '2013-10-31 17:18:22', '2052751705', '2013-10-31 17:18:22', '0', '0', '平台信息', '平台信息', '1', '1', '101632707585', '/pages/resource/2129021156compexlist.action?listId=2030733598');
 INSERT INTO `sys_resource` VALUES ('10000005130160', '2052751705', '2013-10-31 17:16:13', '2052751705', '2013-10-31 17:16:13', '0', '0', '个人桌面设置', '个人桌面设置', '1', '1', '10000002070018', '/pages/platform/desktop/desktopDesign/design.action');
 INSERT INTO `sys_resource` VALUES ('10000005130157', '2052751705', '2013-10-31 17:16:10', '2052751705', '2013-10-31 17:16:10', '0', '0', '桌面布局', '桌面布局', '1', '1', '10000002070016', '/pages/platform/desktop/desktopLayout/list.action');
 INSERT INTO `sys_resource` VALUES ('10000005130154', '2052751705', '2013-10-31 17:16:07', '2052751705', '2013-10-31 17:16:07', '0', '0', '桌面栏目', '桌面栏目', '1', '1', '10000002070014', '/pages/platform/desktop/desktopItem/list.action');
 INSERT INTO `sys_resource` VALUES ('10000005130121', '2052751705', '2013-10-31 17:15:16', '2052751705', '2013-10-31 17:15:16', '0', '0', '已发送消息', '已发送消息', '1', '1', '10000001540016', '/pages/platform/message/sentMessage/list.action');
 INSERT INTO `sys_resource` VALUES ('10000005130118', '2052751705', '2013-10-31 17:15:13', '2052751705', '2013-10-31 17:15:13', '0', '0', '收到的消息', '收到的消息', '1', '1', '10000001540014', '/pages/platform/message/receivedMessage/list.action');
 INSERT INTO `sys_resource` VALUES ('10000005130151', '2052751705', '2013-10-31 17:15:55', '2052751705', '2013-10-31 17:15:55', '0', '0', '流程日志', '流程日志', '1', '1', '10000002310000', '/pages/third/bpm/bpmRunLog/list.action');
-INSERT INTO `sys_resource` VALUES ('10000005130148', '2052751705', '2013-10-31 17:15:52', '2052751705', '2013-10-31 17:15:52', '0', '0', '流程分类', '流程分类', '1', '1', '10000000520006', '/pages/resource/59d6a407e6e30bee2a80a3dfb5cc4baccompexlist.action?listId=10000002930024');
+INSERT INTO `sys_resource` VALUES ('10000005130148', '2052751705', '2013-10-31 17:15:52', '2052751705', '2013-10-31 17:15:52', '0', '0', '流程分类', '流程分类', '1', '1', '10000000520006', '/pages/resource/10000000590001compexlist.action?listId=10000002930024');
 INSERT INTO `sys_resource` VALUES ('10000005130145', '2052751705', '2013-10-31 17:15:48', '2052751705', '2013-10-31 17:15:48', '0', '0', '流程历史', '流程历史', '1', '1', '10000002310006', '/pages/third/bpm/processRun/history.action');
 INSERT INTO `sys_resource` VALUES ('10000005130139', '2052751705', '2013-10-31 17:15:42', '2052751705', '2013-10-31 17:15:42', '0', '0', '流程任务', '流程任务', '1', '1', '10000002310002', '/pages/third/bpm/task/list.action');
 INSERT INTO `sys_resource` VALUES ('10000005130136', '2052751705', '2013-10-31 17:15:39', '2052751705', '2013-10-31 17:15:39', '0', '0', '流程定义', '流程定义', '1', '1', '10000000410002', '/pages/third/bpm/bpmDefinition/list.action');
 INSERT INTO `sys_resource` VALUES ('10000005130133', '2052751705', '2013-10-31 17:15:34', '2052751705', '2013-10-31 17:15:34', '0', '0', '邮件配置', '邮件配置', '1', '1', '10000001020006', '/pages/platform/email/mailAccount/list.action');
-INSERT INTO `sys_resource` VALUES ('10000005130115', '2052751705', '2013-10-31 17:15:09', '2052751705', '2013-10-31 17:15:09', '0', '0', '权限', '权限', '1', '1', '10000000200019', '/pages/system/privilege/privilegeIndex.jsp');
-INSERT INTO `sys_resource` VALUES ('10000005130097', '2052751705', '2013-10-31 17:14:48', '2052751705', '2013-10-31 17:14:48', '0', '0', '高级查询组件', '高级查询组件', '1', '1', '10150839289', '/pages/resource/57739cf792c16c9c3cf96a7c377c9594compexlist.action?listId=10169396274');
-INSERT INTO `sys_resource` VALUES ('10000005130079', '2052751705', '2013-10-31 17:14:28', '2052751705', '2013-10-31 17:14:28', '0', '0', '文本编辑器', '文本编辑器', '1', '1', '115', '/pages/resource/355ec4321094f506824992b23cae888ccompexlist.action?listId=105');
-INSERT INTO `sys_resource` VALUES ('10000005130076', '2052751705', '2013-10-31 17:14:25', '2052751705', '2013-10-31 17:14:25', '0', '0', '多文件上传', '多文件上传', '1', '1', '270', '/pages/resource/d269627338d270f08f3b2f4f5bbb58fccompexlist.action?listId=208');
-INSERT INTO `sys_resource` VALUES ('10000005130073', '2052751705', '2013-10-31 17:14:22', '2052751705', '2013-10-31 17:14:22', '0', '0', '日期组件', '日期组件', '1', '1', '44', '/pages/resource/dateAction/list.action?listId=66');
-INSERT INTO `sys_resource` VALUES ('10000005130055', '2052751705', '2013-10-31 17:13:58', '2052751705', '2013-10-31 17:13:58', '0', '0', '上传文件框', '上传文件框', '1', '1', '236', '/pages/resource/be78c38a327c433887378e65a538a46fcompexlist.action?listId=154');
-INSERT INTO `sys_resource` VALUES ('10000005130052', '2052751705', '2013-10-31 17:13:55', '2052751705', '2013-10-31 17:13:55', '0', '0', '搜索下拉框', '搜索下拉框', '1', '1', '235', '/pages/resource/45d5af1063ec013e2bf2c01cf7cf43e2compexlist.action?listId=152');
+INSERT INTO `sys_resource` VALUES ('10000005130115', '2052751705', '2013-10-31 17:15:09', '2052751705', '2013-10-31 17:15:09', '0', '0', '权限', '权限', '1', '1', '10000000200019', '/pages/system/privilege/index.action');
+INSERT INTO `sys_resource` VALUES ('10000005130097', '2052751705', '2013-10-31 17:14:48', '2052751705', '2013-10-31 17:14:48', '0', '0', '高级查询组件', '高级查询组件', '1', '1', '10150839289', '/pages/resource/1080033644compexlist.action?listId=10169396274');
+INSERT INTO `sys_resource` VALUES ('10000005130079', '2052751705', '2013-10-31 17:14:28', '2052751705', '2013-10-31 17:14:28', '0', '0', '文本编辑器', '文本编辑器', '1', '1', '115', '/pages/resource/146compexlist.action?listId=105');
+INSERT INTO `sys_resource` VALUES ('10000005130076', '2052751705', '2013-10-31 17:14:25', '2052751705', '2013-10-31 17:14:25', '0', '0', '多文件上传', '多文件上传', '1', '1', '270', '/pages/resource/999compexlist.action?listId=208');
+INSERT INTO `sys_resource` VALUES ('10000005130073', '2052751705', '2013-10-31 17:14:22', '2052751705', '2013-10-31 17:14:22', '0', '0', '日期组件', '日期组件', '1', '1', '44', '/pages/resource/date/list.action?listId=66');
+INSERT INTO `sys_resource` VALUES ('10000005130055', '2052751705', '2013-10-31 17:13:58', '2052751705', '2013-10-31 17:13:58', '0', '0', '上传文件框', '上传文件框', '1', '1', '236', '/pages/resource/202compexlist.action?listId=154');
+INSERT INTO `sys_resource` VALUES ('10000005130052', '2052751705', '2013-10-31 17:13:55', '2052751705', '2013-10-31 17:13:55', '0', '0', '搜索下拉框', '搜索下拉框', '1', '1', '235', '/pages/resource/200compexlist.action?listId=152');
 INSERT INTO `sys_resource` VALUES ('10000005130034', '2052751705', '2013-10-31 17:13:35', '2052751705', '2013-10-31 17:13:35', '0', '0', '组合模板', '组合模板', '1', '1', '10615401205', '/pages/resource/template/listComb.action?listId=1081243326');
-INSERT INTO `sys_resource` VALUES ('10000005130031', '2052751705', '2013-10-31 17:13:32', '2052751705', '2013-10-31 17:13:32', '0', '0', '表单模板库', '表单模板库', '1', '1', '74', '/pages/resource/librarylist?listId=149');
+INSERT INTO `sys_resource` VALUES ('10000005130031', '2052751705', '2013-10-31 17:13:32', '2052751705', '2013-10-31 17:13:32', '0', '0', '表单模板库', '表单模板库', '1', '1', '74', '/pages/resource/library/list.action?listId=149');
 INSERT INTO `sys_resource` VALUES ('10000005130025', '2052751705', '2013-10-31 17:13:19', '2052751705', '2013-10-31 17:13:19', '0', '0', '列表', '列表', '1', '1', '246', '/pages/resource/tabulation/list.action?listId=81');
 INSERT INTO `sys_resource` VALUES ('10000005130247', '2052751705', '2013-10-31 17:18:30', '2052751705', '2013-10-31 17:18:30', '0', '0', '缓存管理', '缓存管理', '1', '1', '10000004860000', '/pages/system/cache/config.action');
 INSERT INTO `sys_resource` VALUES ('10000005190018', '2052751705', '2013-11-01 14:22:44', '2052751705', '2013-11-01 14:22:44', '0', '0', '员工管理', '员工管理', '1', '1', '102094972486', '/pages/business/employee/list.action');
 INSERT INTO `sys_resource` VALUES ('10000005130166', '2052751705', '2013-10-31 17:16:16', '2052751705', '2013-10-31 17:16:16', '0', '0', '信息发布', '信息发布', '1', '1', '107', null);
-INSERT INTO `sys_resource` VALUES ('10000005130256', '2052751705', '2013-10-31 17:18:39', '2052751705', '2013-10-31 17:18:39', '0', '0', '子系统管理', '子系统管理', '1', '1', '10000004960025', '/pages/resource/6263339e187c1b21dd4e29c2b8bc3369compexlist.action?listId=10000004960020');
-INSERT INTO `sys_resource` VALUES ('10000005190061', '2052751705', '2013-11-01 14:24:23', '2052751705', '2013-11-01 14:24:23', '0', '0', '行业公告', '行业公告', '1', '1', '109', '/pages/resource/897fd9fb98d1e1f2c08082124ee407eacompexlist.action?listId=100');
-INSERT INTO `sys_resource` VALUES ('10000005190064', '2052751705', '2013-11-01 14:24:25', '2052751705', '2013-11-01 14:24:25', '0', '0', '署内新闻', '署内新闻', '1', '1', '111', '/pages/resource/897fd9fb98d1e1f2c08082124ee407eacompexlist.action?listId=98');
+INSERT INTO `sys_resource` VALUES ('10000005130256', '2052751705', '2013-10-31 17:18:39', '2052751705', '2013-10-31 17:18:39', '0', '0', '子系统管理', '子系统管理', '1', '1', '10000004960025', '/pages/resource/10000004960006compexlist.action?listId=10000004960020');
+INSERT INTO `sys_resource` VALUES ('10000005190061', '2052751705', '2013-11-01 14:24:23', '2052751705', '2013-11-01 14:24:23', '0', '0', '行业公告', '行业公告', '1', '1', '109', '/pages/resource/140compexlist.action?listId=100');
+INSERT INTO `sys_resource` VALUES ('10000005190064', '2052751705', '2013-11-01 14:24:25', '2052751705', '2013-11-01 14:24:25', '0', '0', '署内新闻', '署内新闻', '1', '1', '111', '/pages/resource/140compexlist.action?listId=98');
 
 -- ----------------------------
 -- Table structure for sys_riqizujian
@@ -12576,11 +12598,6 @@ INSERT INTO `sys_tables` VALUES ('10000002250003', 'sys_desktopitem', '桌面栏
 INSERT INTO `sys_tables` VALUES ('10000002270002', 'sys_autocomplete', '自动补齐文本框表', 'selfsystem', '0', '1', '2013-09-27 14:28:54', '1', '2013-10-26 11:51:07', '0', '', '0', '0', '1', null, null, '自动补齐文本框表', null, 'sys', '0', '1', 'autocomplete');
 INSERT INTO `sys_tables` VALUES ('10000002460000', 'sys_desktopdesign', '桌面设计表', 'selfsystem', '0', '1', '2013-09-29 15:49:57', '1', '2013-09-29 15:49:57', '0', '', '0', '0', '1', null, null, '桌面设计表', null, 'sys', '0', '1', 'desktop design');
 INSERT INTO `sys_tables` VALUES ('10000003080000', 'sys_metadataversion', '元数据版本', 'selfsystem', '0', '1', '2013-10-11 10:54:50', '1', '2013-10-11 10:54:50', '0', '', '0', '0', '1', null, null, '元数据版本', null, 'sys', '0', '1', 'metadata version');
-INSERT INTO `sys_tables` VALUES ('10000005380000', 'sys_authproduct', '授权产品表', 'selfsystem', '0', '1', '2013-11-20 17:16:55', '1', '2013-11-20 17:17:24', '0', '', '0', '0', '1', null, null, '', null, 'sys', '0', '1', 'authproduct');
-INSERT INTO `sys_tables` VALUES ('10000005380009', 'sys_authtemplate', '授权模版表', 'selfsystem', '0', '1', '2013-11-20 17:26:31', '1', '2013-11-20 17:26:31', '0', '', '0', '0', '1', null, null, '', null, 'sys', '0', '1', 'authtemplate');
-INSERT INTO `sys_tables` VALUES ('10000005380022', 'sys_authkey', '授权码表', 'selfsystem', '0', '1', '2013-11-20 17:42:07', '1', '2013-11-20 17:42:07', '0', '', '0', '0', '1', null, null, '', null, 'sys', '0', '1', 'authkey');
-INSERT INTO `sys_tables` VALUES ('10000005380039', 'sys_authcustomer', '客户基本信息表', 'selfsystem', '0', '1', '2013-11-20 17:51:19', '1', '2013-11-20 17:51:19', '0', '', '0', '0', '1', null, null, '', null, 'sys', '0', '1', 'authcustomer');
-INSERT INTO `sys_tables` VALUES ('10000005380052', 'sys_authcustomer_hadware', '客户硬件信息表', 'selfsystem', '0', '1', '2013-11-20 18:08:20', '1', '2013-11-20 18:08:20', '0', '', '0', '0', '1', null, null, '', null, 'sys', '0', '1', 'authcustomer_hadware');
 INSERT INTO `sys_tables` VALUES ('10000005610006', 'bus_product', '商品', 'selfsystem', '0', '1', '2014-09-14 16:34:01', '2052751705', '2014-09-14 16:34:01', '0', '', '0', '0', '1', null, null, '', null, 'bus', '0', '1', 'product');
 INSERT INTO `sys_tables` VALUES ('10000005610016', 'bus_pingjia', '评价', 'selfsystem', '0', '2052751705', '2014-09-14 16:37:42', '2052751705', '2014-09-14 16:37:42', '0', '', '0', '0', '1', null, null, '', null, 'bus', '0', '1', 'pingjia');
 
