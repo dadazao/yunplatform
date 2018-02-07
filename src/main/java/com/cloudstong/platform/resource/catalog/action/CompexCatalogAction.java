@@ -88,6 +88,21 @@ public class CompexCatalogAction extends CompexDomainAction {
 		return super.list();
 	}
 	
+	@Action("view")
+	public String view() throws Exception {
+		return super.view();
+	}
+	
+	@Action("add")
+	public String add() {
+		return super.add();
+	}
+	
+	@Action("edit")
+	public String edit() throws Exception {
+		return super.edit();
+	}
+	
 	@Action("load")
 	public String load() throws Exception {
 		return NONE;

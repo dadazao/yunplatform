@@ -14,11 +14,11 @@
 %>
 <html>
 	<head>
-		<link media="screen" type="text/css" rel="stylesheet" href="<%=path %>/themes/red/style.css">
-		<link media="print" type="text/css" rel="stylesheet" href="<%=path %>/themes/css/print.css">
-		<link media="screen" type="text/css" rel="stylesheet" href="<%=path %>/themes/css/jquery-ui.css">
-		<link media="screen" type="text/css" rel="stylesheet" href="<%=path %>/themes/css/core.css">
-		<link media="screen" type="text/css" rel="stylesheet" href="<%=path %>/js/uploadify/uploadify.css">
+		<link media="screen" type="text/css" rel="stylesheet" href="<%=basePath %>/themes/red/style.css">
+		<link media="print" type="text/css" rel="stylesheet" href="<%=basePath %>/themes/css/print.css">
+		<link media="screen" type="text/css" rel="stylesheet" href="<%=basePath %>/themes/css/jquery-ui.css">
+		<link media="screen" type="text/css" rel="stylesheet" href="<%=basePath %>/themes/css/core.css">
+		<link media="screen" type="text/css" rel="stylesheet" href="<%=basePath %>/js/uploadify/uploadify.css">
 		
 		<script src="<%=path%>/js/jquery/jquery-1.7.1.js" type="text/javascript"></script>
 		<script src="<%=path%>/js/cloudstong/yun.iweboffice.js" type="text/javascript"></script>

@@ -43,7 +43,7 @@ public class ContactServiceTestCase {
 			c.setEmail(i + "@163.com");
 			c.setLastUsedTime(new Date());
 			c.setUserId(2052751705L);
-			contactService.doSaveContact(c);
+			//contactService.doSaveContact(c);
 		}
 	}
 

@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$("#"+name).uploadify({
         	'buttonText' : '添加附件',
         	'method' : 'get',
-            'swf'      : '<%=basePath%>js/uploadify/uploadify.swf',
+            'swf'      : '<%=basePath%>/js/uploadify/uploadify.swf',
             'uploader' : '<%=basePath%>/pages/platform/email/mailAttachment/upload.action;jsessionid=${pageContext.session.id}',
             'formData' :{"mailId":"${mailMessage.id}"},
             'fileObjName':'uploadFiles',
@@ -113,12 +113,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		ns.email.currentInputbox = dom;
 	}
 	$(function(){
+		$.ajaxSetup({async: false});
 		ns.email.loadMailAccount();
 		ns.email.initUploadify('file_listenAudio');
 		ns.email.initContactTree('contactsTree');
 		$('#mailMessageTo').focus();
 		var totalHeight = $("#container .tabsPageContent").height();
 		$("#mailMessageForm textarea").height(totalHeight-35-170-70);
+		$.ajaxSetup({async: true});
 	});
 //-->
 </script>

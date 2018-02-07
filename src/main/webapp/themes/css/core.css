@@ -629,7 +629,7 @@ a.btnAttach{background-position: -183px 0}
 .leftpart {width: 28%;margin: auto;height: 500px;padding-left:3px;padding-top:2px;padding-right:0;}
 .middlepart {width: 40%;margin: auto;padding-top:2px;padding-left:0;padding-right:0;}
 .rightpart {width: 28%;margin: auto;height: 500px;padding-right:5px;padding-top:2px;padding-left:0;}
-.portlet {width: 99%;min-height: 200px;max-height:264px;overflow:hidden;margin: 2px auto;padding-left: 0;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border:1px solid #9C9C9C;}
+.portlet {width: 99%;min-height: 264px;max-height:264px;overflow:hidden;margin: 2px auto;padding-left: 0;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border:1px solid #9C9C9C;}
 .portaltable {margin: auto;width: 100%;}
 .treven {background-color: white;border-bottom: 1px #88A0AF dashed;height: 24px;}
 .trnoeven {background-color: #F7F4FF;border-bottom: 1px #88A0AF dashed;height: 24px;}
