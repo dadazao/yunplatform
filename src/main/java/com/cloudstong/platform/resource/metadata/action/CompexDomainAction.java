@@ -3109,10 +3109,10 @@ public class CompexDomainAction extends BaseAction {
 	public void setCurrentSaveId(Long currentSaveId) {
 		this.currentSaveId = currentSaveId;
 	}
-
+	
 	public String getSimpleModel() {
 		if(model != null) {
-			return EncryptUtil.Md5(model);
+			return model;
 		}else{
 			return null;
 		}
@@ -3121,6 +3121,5 @@ public class CompexDomainAction extends BaseAction {
 	public void setSimpleModel(String simpleModel) {
 		this.simpleModel = simpleModel;
 	}
-
 
 }

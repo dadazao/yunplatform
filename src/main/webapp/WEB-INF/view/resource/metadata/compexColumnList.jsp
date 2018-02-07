@@ -136,7 +136,7 @@
 			</td></tr></table>
 		</div>
 	</div>
-	<div id="defaultQuery" class="pageHeader" style="height: ${tabulation.queryControl.queryControlHeight==0?'':tabulation.queryControl.queryControlHeight}px;width:${tabulation.queryControl.queryControlWidth}%"> 
+	<div id="defaultQuery" class="pageHeader" style="height: ${tabulation.queryControl.queryControlHeight==0 ? '' : tabulation.queryControl.queryControlHeight}px;width:${tabulation.queryControl.queryControlWidth}%"> 
 		<div class="searchBar">
 			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/column/list.action" method="post">
 				<table class="searchContent">

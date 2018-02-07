@@ -2253,7 +2253,7 @@
 			disa="disabled='disabled'";
 			btclass="listbuttonDisable";
 		}
-		var _content_start = '<form id="compexDomainTabEditFormID" action="'+__basePath+'pages/resource/'+partitionForm.simpleModel+'compexsave.action" method="post" class="pageForm required-validate" onsubmit="return validateCallback(this, compexSelfDialogAjaxDone);">';
+		var _content_start = '<form id="compexDomainTabEditFormID" action="'+__basePath+'/pages/resource/'+partitionForm.simpleModel+'compexsave.action" method="post" class="pageForm required-validate" onsubmit="return validateCallback(this, compexSelfDialogAjaxDone);">';
 		_content_start += '<div  id="compexDomainTabEditParamDiv" style="display:none;">';
 		_content_start += '<input id="compexDomainTabEditSubmit" type="submit" name="submit"/>';
 		_content_start += '<input type="hidden" name="formId" value="<%=request.getParameter("formId")%>"/>';

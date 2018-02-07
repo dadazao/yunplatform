@@ -361,7 +361,7 @@
 				</thead>
 				<tbody class="data">
 					<c:forEach items="${copyUserList}" var="copyUserItem" varStatus="cnt">
-						<tr class="data-tr ${cnt.index%2==0?'odd':'even'}" >
+						<tr class="data-tr ${cnt.index%2==0 ? 'odd' : 'even'}" >
 							<td>
 								<input type="checkbox" name="nodeUserCk" value="${copyUserItem.id}"/>&nbsp;${cnt.count}						
 								<input type="hidden" name="sn" value="${copyUserItem.sn}"/>

@@ -157,30 +157,6 @@
     <url-pattern>/js/dwr/*</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>Kaptcha</servlet-name>
-    <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
-    <init-param>
-      <param-name>kaptcha.border</param-name>
-      <param-value>no</param-value>
-    </init-param>
-    <init-param>
-      <param-name>kaptcha.textproducer.font.color</param-name>
-      <param-value>black</param-value>
-    </init-param>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Kaptcha</servlet-name>
-    <url-pattern>/Kaptcha.jpg</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>OfficeServlet</servlet-name>
-    <servlet-class>com.cloudstong.platform.third.office.servlet.OfficeServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>OfficeServlet</servlet-name>
-    <url-pattern>/OfficeServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <servlet-name>CompexServlet</servlet-name>
     <servlet-class>com.cloudstong.platform.core.web.servlet.CompexServlet</servlet-class>
   </servlet>
@@ -190,7 +166,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>UploadFileServlet</servlet-name>
-    <servlet-class>com.cloudstong.platform.system.resource.editor.servlet.UploadFileServlet</servlet-class>
+    <servlet-class>com.cloudstong.platform.resource.editor.servlet.UploadFileServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>UploadFileServlet</servlet-name>

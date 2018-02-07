@@ -194,7 +194,7 @@ public class TaskAction extends BaseAction {
 		// 通过表单ID查找表单信息
 		Form form = formService.getFormByIdAndDomainVO(bpmNodeSet.getFormKey(), domainVOs, user);
 		String model = form.getTableName();
-		String simpleModel = EncryptUtil.Md5(model);
+		String simpleModel = model;
 
 		request.setAttribute("bpmDefinition", bpmDefinition);
 		request.setAttribute("isExtForm", isExtForm);

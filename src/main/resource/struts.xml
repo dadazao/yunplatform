@@ -61,5 +61,12 @@
         </global-exception-mappings>
     </package>
     
+    <package name="home" namespace="/" extends="struts-default">  
+	   <default-action-ref name="index" />  
+	   <action name="index" >  
+	       <result name="success">/login.jsp</result>  
+	   </action>  
+	</package>  
+    
     <include file="struts_yp.xml" />
 </struts>

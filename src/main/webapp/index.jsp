@@ -354,25 +354,10 @@
 		<div id="header">
 			<div>
 				<div style="width:100%; height:50px;">
-			    	<div style="float:left; padding-top:9px; margin-left:15px; width:42px; height:41px;"><img id="logoImg" src="<%=basePath %>/${logo.logoPath}" width="42" height="41" style="float: left;"/></div>
+			    	<div style="float:left; padding-top:9px; margin-left:15px; width:42px; height:41px;"><img id="logoImg" src="<%=basePath %>${logo.logoPath}" width="42" height="41" style="float: left;"/></div>
 			        <div style="float:left; padding-top:14px;margin-left:10px; height:43px;">
 			        	 <div id="systemCnName" style="color:#FFF; font-family:'微软雅黑'; font-size:21px; font-weight:bold; height:25px;">${enterpriseInfo.systemCnName}</div>
 			      	     <div id="systemEnName" style="color:#FFF; font-family:'微软雅黑'; font-size:12px; font-weight:bold; height:18px;">${enterpriseInfo.systemEnName}</div>
-			        </div>
-			        <div style="float:right;">
-			        	<table height="22" width="368px" cellspacing="0" cellpadding="0" border="0" background="<%=basePath%>/images/top/topright.gif" align="right">
-							<tbody>
-								<tr> 
-								  <td width="25%" align="center"><a style="cursor:pointer;" onclick="loadHome();"><img height="16" width="39" border="0/" src="<%=basePath%>/images/top/homepage.gif"></a></td>
-								  <td width="25%" align="center"><a style="cursor:pointer;" onclick="changePassword();"><img height="16" width="65" border="0/" src="<%=basePath%>/images/top/updatepwd.gif"></a></td>
-								  <td width="25%" align="center"><a style="cursor:pointer;" onclick="loadContact();"><img height="16" width="43" border="0/" src="<%=basePath%>/images/top/help.gif"></a></td>
-								  <td width="25%" align="center"><a style="cursor:pointer;" href="<%=basePath%>/logout"><img height="16" width="41" border="0/" src="<%=basePath%>/images/top/logoff.gif"></a></td>
-								</tr>
-							  </tbody>
-						</table>
-			        </div>
-			        <div style="float:right;color:#FFF;margin-top: 8px;margin-right: 30px;">
-			        	欢迎您，${user.fullname}
 			        </div>
 			    </div>
 			</div>

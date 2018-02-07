@@ -324,7 +324,7 @@ public class Form extends EntityBase {
 
 	public String getSimpleModel() {
 		if(tableName != null) {
-			return EncryptUtil.Md5(tableName);
+			return tableName;
 		}else{
 			return null;
 		}

@@ -15,7 +15,7 @@
 		$.post('<%=basePath%>/pages/platform/desktop/desktopItem/jsonSelect.action',null,function(data){
 			var _html = '';
 			$.each(data,function(i,obj){
-				var selected=(i==0?'selected="selected"':'');
+				var selected=(i==0 ? 'selected="selected"' : '');
 				_html+='<option value="'+obj.id+'"'+selected+'>'+obj.name+'</option>';
 			});
 			$('#'+selectID).empty().html(_html);
@@ -27,7 +27,7 @@
 		$.post('<%=basePath%>/pages/platform/desktop/desktopLayout/jsonSelect.action',null,function(data){
 			var _html = '';
 			$.each(data,function(i,obj){
-				var selected=(i==0?'selected="selected"':'');
+				var selected=(i==0 ? 'selected="selected"' : '');
 				_html+='<option value="'+obj.id+'"'+selected+'>'+obj.name+'</option>';
 			});
 			$('#desktopLayoutSelect').empty().html(_html);

@@ -53,8 +53,8 @@ $.getJSON('<%=basePath %>/pages/resource/table/listColumns.action?tableName=${ta
 		cfgcolumn.notNull = column.notNull;
 		cfgcolumn.inputType = column.inputType;
 		cfgcolumn.isView=column.isView; cfgcolumn.isInList=column.isInList;	cfgcolumn.isEdit=column.isEdit;	cfgcolumn.isQuery=column.isQuery;
-		cfgcolumn.formOrder = column.formOrder==0? (index+1):column.formOrder;
-		cfgcolumn.listOrder = column.listOrder==0? (index+1):column.listOrder;
+		cfgcolumn.formOrder = column.formOrder==0 ? (index+1) : column.formOrder;
+		cfgcolumn.listOrder = column.listOrder==0 ? (index+1) : column.listOrder;
 		
 		var _trHtml = '<tr id="'+cfgcolumn.id+'">'+
 		'<td class="tdClass" width="3%">'+(index+1)+'</td>'+

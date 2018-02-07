@@ -330,7 +330,7 @@
 				</thead>
 				<tbody class="data">
 					<c:forEach items="${receiverSettings}" var="item" varStatus="cnt">
-						<tr id="${item.id}" class="data-tr ${cnt.index%2==0?'odd':'even'}" >
+						<tr id="${item.id}" class="data-tr ${cnt.index%2== 0 ? 'odd' : 'even'}" >
 							<td>
 								<input type="checkbox" name="nodeUserCk" value="${item.id}"/>&nbsp;${cnt.count}						
 								<input type="hidden" name="sn" value="${item.sn}"/>

@@ -524,7 +524,7 @@
 		</div>
 	</div>
 	<c:if test="${hasDefaultQuery==true}">
-	<div id="defaultQuery" class="pageHeader" style="height: ${tabulation.queryControl.queryControlHeight==0?'':tabulation.queryControl.queryControlHeight}px;width:${tabulation.queryControl.queryControlWidth}%">
+	<div id="defaultQuery" class="pageHeader" style="height: ${tabulation.queryControl.queryControlHeight==0 ? '' : tabulation.queryControl.queryControlHeight}px;width:${tabulation.queryControl.queryControlWidth}%">
 		<div class="searchBar">
 			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/pages/resource/tabulation/list.action?queryTpe=0" method="post">
 				<table class="searchContent">
@@ -624,8 +624,8 @@
 		</div>
 	</div>
 	</c:if>
-	<div id="advanceQuery" align="center" class="pageHeader" style="display:none;height: ${tabulation.advanceQueryControl.queryControlHeight==0?'':tabulation.advanceQueryControl.queryControlHeight}px;">
-		<fieldset class="queryFieldset" style="height:${tabulation.advanceQueryControl.queryControlHeight==0?'':tabulation.advanceQueryControl.queryControlHeight-25}px;" >
+	<div id="advanceQuery" align="center" class="pageHeader" style="display:none;height: ${tabulation.advanceQueryControl.queryControlHeight==0 ? '' : tabulation.advanceQueryControl.queryControlHeight}px;">
+		<fieldset class="queryFieldset" style="height:${tabulation.advanceQueryControl.queryControlHeight==0 ? '' : tabulation.advanceQueryControl.queryControlHeight-25}px;" >
 			<legend style="border:0px;">查询项</legend>
 			<form onsubmit="return navTabSearch(this);" action="${listurl}?queryType=1" method="post">
 				<table width="95%"  class="queryTable" >
