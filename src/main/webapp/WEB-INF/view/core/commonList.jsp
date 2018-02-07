@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8"%>
 <script type="text/javascript">	
 	function listOrderAsc(columnName){
-		$("#orderForm", navTab.getCurrentPanel()).attr("action","<%=basePath %>/${listurl}?queryType=${queryType}&orderField="+columnName+"&orderDirection=asc");
+		$("#orderForm", navTab.getCurrentPanel()).attr("action","<%=basePath %>${listurl}?queryType=${queryType}&orderField="+columnName+"&orderDirection=asc");
 		$("#orderForm", navTab.getCurrentPanel()).submit();
 	}
 	
 	function listOrderDesc(columnName){
-		$("#orderForm", navTab.getCurrentPanel()).attr("action","<%=basePath %>/${listurl}?queryType=${queryType}&orderField="+columnName+"&orderDirection=desc");
+		$("#orderForm", navTab.getCurrentPanel()).attr("action","<%=basePath %>${listurl}?queryType=${queryType}&orderField="+columnName+"&orderDirection=desc");
 		$("#orderForm", navTab.getCurrentPanel()).submit();
 	}
 	
 </script>
 
 <body>
-	<form id="pagerForm" method="post" action="<%=basePath %>/${listurl}?queryType=${queryType}">
+	<form id="pagerForm" method="post" action="<%=basePath %>${listurl}?queryType=${queryType}">
 		<input type="hidden" id="cloudstongListId" name="listId" value="${listId}"/>
 		<input type="hidden" id="cloudstongFormId" name="formId" value="${formId}"/>
 		<input type="hidden" name="model" value="${model}"/>
@@ -47,7 +47,7 @@
 			</c:if>
 		</c:forEach>	
 	</form>
-	<form id="orderForm" onsubmit="return navTabSearch(this);" method="post" action="<%=basePath %>/${listurl}?queryType=${queryType}">
+	<form id="orderForm" onsubmit="return navTabSearch(this);" method="post" action="<%=basePath %>${listurl}?queryType=${queryType}">
 		<input type="hidden" id="cloudstongListId" name="listId" value="${listId}"/>
 		<input type="hidden" id="cloudstongFormId" name="formId" value="${formId}"/>
 		<input type="hidden" name="model" value="${model}"/>
@@ -102,7 +102,7 @@
 	<c:if test="${hasDefaultQuery==true}">
 	<div id="defaultQuery" class="pageHeader" style="height: ${tabulation.queryControl.queryControlHeight==0 ? '' : tabulation.queryControl.queryControlHeight}px;width:${tabulation.queryControl.queryControlWidth}%">
 		<div class="searchBar">
-			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/${listurl}?queryTpe=0" method="post">
+			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>${listurl}?queryTpe=0" method="post">
 				<table class="searchContent">
 					<tr>
 						<c:forEach items="${tabulation.tabulationColumnExtends}" var="ce" varStatus="status">
@@ -211,7 +211,7 @@
 	<div id="advanceQuery" align="center" class="pageHeader" style="display:none;height: ${tabulation.advanceQueryControl.queryControlHeight==0 ? '' : tabulation.advanceQueryControl.queryControlHeight}px;">
 		<fieldset class="queryFieldset" style="height:${tabulation.advanceQueryControl.queryControlHeight==0 ? '' : tabulation.advanceQueryControl.queryControlHeight-25}px;" >
 			<legend style="border:0px;">查询项</legend>
-			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>/${listurl}?queryType=1" method="post">
+			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>${listurl}?queryType=1" method="post">
 				<table width="95%"  class="queryTable" >
 						<c:forEach items="${tabulation.queryColumnExtends}" var="ce" varStatus="status">
 							<c:if test="${status.count%tabulation.advanceQueryControl.columnNumber==1 }">
