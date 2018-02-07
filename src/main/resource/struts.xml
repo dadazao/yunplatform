@@ -4,7 +4,6 @@
  
 <struts>
 	<!--  bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest" name="requestParser" class="org.beaver.webapp.filter.FileUploadMultiPartRequest" scope="default" optional="true" /-->
-
 	<constant name="struts.devMode" value="false"/>
     <constant name="struts.i18n.encoding" value="UTF-8"/>
     <constant name="struts.objectFactory" value="spring"/>
@@ -17,7 +16,7 @@
     <constant name="struts.codebehind.pathPrefix" value="pages"/>
     <constant name="struts.enable.SlashesInActionNames" value="false"/>
     <constant name="struts.convention.action.includeJars" value=".*/yp.*?jar(!/)?" />
-    <constant name="struts.action.excludePattern" value="/CompexServlet,/upload,/dwr/*,/ReportServer,/bpmImage,/UploadServlet,/*.gzjs" />
+    <constant name="struts.action.excludePattern" value="/*Servlet,/upload,/dwr/*,/ReportServer,/bpmImage,/*.gzjs" />
 	
     <package name="default" extends="struts-default">
         <interceptors>
@@ -61,12 +60,79 @@
         </global-exception-mappings>
     </package>
     
-    <package name="home" namespace="/" extends="struts-default">  
+    <package name="login" namespace="/" extends="struts-default">  
 	   <default-action-ref name="index" />  
 	   <action name="index" >  
 	       <result name="success">/login.jsp</result>  
 	   </action>  
 	</package>  
-    
-    <include file="struts_yp.xml" />
+	
+	<package name="resource" namespace="/pages/resource" extends="default">
+		<action name="*compexlist" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="list">
+			<result name="list">/WEB-INF/view/core/compexDomainList.jsp</result>
+		</action>
+		<action name="*compexadd" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="add">
+			<result name="add">/WEB-INF/view/core/${template}</result>
+			<result name="input">/WEB-INF/view/core/${template}</result>
+		</action>
+		<action name="*compexedit" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="edit">
+			<result name="edit">/WEB-INF/view/core/${template}</result>
+			<result name="input">/WEB-INF/view/core/${template}</result>
+		</action>
+		<action name="*compexview" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="view">
+			<result name="view">/WEB-INF/view/core/${template}</result>
+		</action>
+		<action name="*compexsearch" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="search">
+			<result name="search">/WEB-INF/view/core/${template}</result>
+		</action>
+		<action name="*compexlistsub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="listsub">
+			<result name="listsub">/WEB-INF/view/core/compexDomainSubList.jsp</result>
+		</action>
+		<action name="*compexeditsub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="editsub">
+			<result name="editsub">/WEB-INF/view/core/${template}</result>
+			<result name="input">/WEB-INF/view/core/${template}</result>
+		</action>
+		<action name="*compexpreview" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="preview">
+			<result name="preview">/WEB-INF/view/core/compexDomainPreViewEdit.jsp</result>
+		</action>
+		<action name="*compexsingleList" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="singleList">
+			<result name="singleList">/WEB-INF/view/core/compexDomainSingleList.jsp</result>
+		</action>
+		<action name="*compexshowListHelp" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="showListHelp">
+			<result name="listhelp">/WEB-INF/view/core/help/listhelp.jsp</result>
+		</action>
+		<action name="*compexshowFormHelp" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="showFormHelp">
+			<result name="formhelp">/WEB-INF/view/core/help/formhelp.jsp</result>
+		</action>
+		<action name="*compexsave" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="save"/>
+		<action name="*compexdelete" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="delete"/>
+		<action name="*compexviewJson" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="viewJson"/>
+		<action name="*compexdataJson" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="dataJson"/>
+		<action name="*compexisdefault" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="isdefault"/>
+		<action name="*compexsavesub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="savesub"/>
+		<action name="*compexdeletesub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="deletesub"/>
+		<action name="*compexdataJsonsub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="dataJsonsub"/>
+		<action name="*compexisCanDelete" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="isCanDelete"/>
+		<action name="*compexisCanRecall" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="isCanRecall"/>
+		<action name="*compexisEdit" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="isEdit"/>
+		<action name="*compexispassed" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="passed"/>
+		<action name="*compexrecall" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="recall"/>
+		<action name="*compexsimpleDelete" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="simpleDelete"/>
+		<action name="*compexlogicDelete" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="logicDelete"/>
+		<action name="*compexsimpleLogicDelete" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="simpleLogicDelete"/>
+		<action name="*compexsimpleSavesub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="simpleSavesub"/>
+		<action name="*compexsimpleDeletesub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="simpleDeletesub"/>
+		<action name="*compexshowTree" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="showTree"/>
+		<action name="*compexgetTreeTableType" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="getTreeTableType"/>
+		<action name="*compexshowUserName" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="showUserName"/>
+		<action name="*compexshowOrgName" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="showOrgName"/>
+		<action name="*compextableData" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="tableData"/>
+		<action name="*compexenabled" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="enabled"/>
+		<action name="*compexshowCaseCade" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="showCaseCade"/>
+		<action name="*compexshowCaseCadeName" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="showCaseCadeName"/>
+		<action name="*compexgetParentCodeByProg" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="getParentCodeByProg"/>
+		<action name="*compexexportExcel" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="exportExcel"/>
+		<action name="*compeximportExcel" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="importExcel"/>
+	</package>	
+	
 </struts>

@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<%@include file="/pages/third/bpm/nodeUserConditionJS.jsp" %>
+	<%@include file="/WEB-INF/view/third/bpm/nodeUserConditionJS.jsp" %>
 	<script type="text/javascript">
 		$(function(){
 			$("a.del").unbind("click");
@@ -139,7 +139,7 @@
 							<td class="tdClass">${i.count}</td>
 							<td class="tdClass">${nodeUserMap.nodeName}(${nodeUserMap.nodeId})</td>
 							<td class="tdClass">
-								<%@include file="/pages/third/bpm/nodeUserCondition.jsp" %>
+								<%@include file="/WEB-INF/view/third/bpm/nodeUserCondition.jsp" %>
 							</td>
 						</tr>
 					</c:forEach>

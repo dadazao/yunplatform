@@ -5,7 +5,7 @@
 
 <%
     String path = request.getContextPath();
-    String basePath = request.getScheme()+ "://"+request.getServerName() + ":"+request.getServerPort()+path+ "/";
+    String basePath = request.getScheme()+ "://"+request.getServerName() + ":"+request.getServerPort()+path;
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -73,7 +73,7 @@
 <body>
 	<c:set var="listurl" value="/pages/resource/table/list.action"></c:set>
 	<c:set var="viewurl" value="/pages/resource/table/view.action"></c:set>
-	<form id="pagerForm" method="post" action="${listurl}?queryType=${queryType}">
+	<form id="pagerForm" method="post" action="<%=basePath %>${listurl}?queryType=${queryType}">
 		<input type="hidden" id="cloudstongListId" name="listId" value="${listId}"/>
 		<input type="hidden" id="cloudstongFormId" name="formId" value="${formId}"/>
 		<input type="hidden" name="model" value="${model}"/>
@@ -124,7 +124,7 @@
 	<c:if test="${hasDefaultQuery==true}">
 	<div id="defaultQuery" class="pageHeader" style="height: ${tabulation.queryControl.queryControlHeight==0 ? '' : tabulation.queryControl.queryControlHeight}px;width:${tabulation.queryControl.queryControlWidth}%">
 		<div class="searchBar">
-			<form onsubmit="return navTabSearch(this);" action="${listurl}?queryTpe=0" method="post">
+			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>${listurl}?queryTpe=0" method="post">
 				<table class="searchContent">
 					<tr>
 						<c:forEach items="${tabulation.tabulationColumnExtends}" var="ce" varStatus="status">
@@ -234,7 +234,7 @@
 	<div id="advanceQuery" align="center" class="pageHeader" style="display:none;height: ${tabulation.advanceQueryControl.queryControlHeight==0 ? '' : tabulation.advanceQueryControl.queryControlHeight}px;">
 		<fieldset class="queryFieldset" style="height:${tabulation.advanceQueryControl.queryControlHeight==0 ? '' : tabulation.advanceQueryControl.queryControlHeight-25}px;" >
 			<legend style="border:0px;">查询项</legend>
-			<form onsubmit="return navTabSearch(this);" action="${listurl}?queryType=1" method="post">
+			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>${listurl}?queryType=1" method="post">
 				<table width="95%"  class="queryTable" >
 						<c:forEach items="${tabulation.queryColumnExtends}" var="ce" varStatus="status">
 							<c:if test="${status.count%tabulation.advanceQueryControl.columnNumber==1 }">
@@ -418,7 +418,7 @@
 												</c:if>
 												<c:if test="${ce.formColumn.defaultValue != '%username%' && ce.formColumn.defaultValue != '%orgname%'}">
 													<c:if test="${ce.formColumn.isLinkView == 1}">
-														<a href="#" onclick="eventCompexWH('${viewurl}','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="tce" ><c:if test="${tce.formColumn.columnName == \"id\"}">${tce.formColumn.belongTable}-${tce.formColumn.columnName}:${tce.value};</c:if></c:forEach>')" style="cursor: pointer;color: blue;text-decoration: underline;">${ce.value}</a>
+														<a href="#" onclick="eventCompexWH('<%=basePath %>${viewurl}','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="tce" ><c:if test="${tce.formColumn.columnName == \"id\"}">${tce.formColumn.belongTable}-${tce.formColumn.columnName}:${tce.value};</c:if></c:forEach>')" style="cursor: pointer;color: blue;text-decoration: underline;">${ce.value}</a>
 													</c:if>
 													<c:if test="${ce.formColumn.isLinkView == 0}">
 														<c:if test="${ce.formColumn.columnName != 'comm_createBy'}">${ce.value}</c:if>
@@ -496,7 +496,7 @@
 													<c:when test="${tabulationOpt.button.buttonName=='发布'||tabulationOpt.button.buttonName=='撤回'}">
 														&nbsp;
 														<c:if test="${curruser==user.fullname}">
-														<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('${viewurl}','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
+														<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>${viewurl}','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
 														</c:if>
 														<c:if test="${curruser!=user.fullname}">
 														<a style="cursor: default;" ><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:gray">${tabulationOpt.showName}</font></span></a>
@@ -510,7 +510,7 @@
 													</c:when>
 													<c:otherwise>
 														&nbsp;
-														<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('${viewurl}','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
+														<a style="cursor: pointer;" onclick="eventCompex${tabulationOpt.button.buttonBM}('<%=basePath %>${viewurl}','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="ce" ><c:if test="${ce.formColumn.columnName == \"id\"}">${ce.formColumn.belongTable}-${ce.formColumn.columnName}:${ce.value};</c:if></c:forEach>')"><span><font style="font-family:${tabulationOpt.button.buttonNameFontStyle};font-size: ${tabulationOpt.button.buttonNameFontSize}px;color:${tabulationOpt.button.buttonNameFontColor}">${tabulationOpt.showName}</font></span></a>
 														&nbsp;
 													</c:otherwise>
 												</c:choose>

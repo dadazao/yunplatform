@@ -13,7 +13,7 @@ public class SubSystem extends EntityBase {
 	
 	public static String CURRENT_SYSTEM = "YUNPLATFORM";
 
-	public static String DEFAULT_LOG = "/images/logo/logo_big.png";
+	public static String DEFAULT_LOG = "images/logo/logo_big.png";
 
 	public static short isLocal_Y = 1;
 	public static short isLocal_N = 0;

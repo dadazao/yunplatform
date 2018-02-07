@@ -338,6 +338,13 @@
 			//MessagePusher.onPageLoad();
 			//updateMessage();
 		}
+		function logout() {
+			alertMsg.confirm("您确定要登出吗?",{
+				okCall:function(){
+					location.href="<%=basePath%>/logout";
+				}
+			});
+		}
 	</script>
 
 	<style type="text/css">
@@ -359,6 +366,15 @@
 			        	 <div id="systemCnName" style="color:#FFF; font-family:'微软雅黑'; font-size:21px; font-weight:bold; height:25px;">${enterpriseInfo.systemCnName}</div>
 			      	     <div id="systemEnName" style="color:#FFF; font-family:'微软雅黑'; font-size:12px; font-weight:bold; height:18px;">${enterpriseInfo.systemEnName}</div>
 			        </div>
+			        <div style="float:right;padding: 20px 0px;margin-right:10px; color: #FFFFFF;font-size: 12px;">
+			        	${user.fullname}
+			        </div>
+			        <div style="float:right;padding: 15px 15px;cursor: pointer;">
+			        	<a onclick="logout();"><img src="<%=basePath%>/images/top/user.png"></a>
+			        </div>
+			        <div style="float:right;padding: 15px 15px;cursor: pointer;">
+			        	<a onclick="loadReceivedMessage();"><img src="<%=basePath%>/images/top/notice.png"></a>
+			        </div>			        
 			    </div>
 			</div>
 		</div>

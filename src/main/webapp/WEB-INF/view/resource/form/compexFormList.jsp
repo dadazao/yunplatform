@@ -557,7 +557,7 @@
 	<div id="advanceQuery" align="center" class="pageHeader" style="display:none;height: ${tabulation.advanceQueryControl.queryControlHeight==0 ? '' : tabulation.advanceQueryControl.queryControlHeight}px;">
 		<fieldset class="queryFieldset" style="height:${tabulation.advanceQueryControl.queryControlHeight==0 ? '' : tabulation.advanceQueryControl.queryControlHeight-25}px;" >
 			<legend style="border:0px;">查询项</legend>
-			<form onsubmit="return navTabSearch(this);" action="${listurl}?queryType=1" method="post">
+			<form onsubmit="return navTabSearch(this);" action="<%=basePath %>${listurl}?queryType=1" method="post">
 				<table width="95%"  class="queryTable" >
 						<c:forEach items="${tabulation.queryColumnExtends}" var="ce" varStatus="status">
 							<c:if test="${status.count%tabulation.advanceQueryControl.columnNumber==1 }">
@@ -735,7 +735,7 @@
 											</c:if>
 											<c:if test="${ce.formColumn.defaultValue != '%username%' && ce.formColumn.defaultValue != '%orgname%'}">
 												<c:if test="${ce.formColumn.isLinkView == 1}">
-													<a href="#" onclick="eventCompexWH('${viewurl}','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="tce" ><c:if test="${tce.formColumn.columnName == \"id\"}">${tce.formColumn.belongTable}-${tce.formColumn.columnName}:${tce.value};</c:if></c:forEach>')" style="cursor: pointer;color: blue;text-decoration: underline;">${ce.value}</a>
+													<a href="#" onclick="eventCompexWH('<%=basePath %>${viewurl}','formId=${formId}&params=<c:forEach items="${dom.tabulationColumnExtends}" var="tce" ><c:if test="${tce.formColumn.columnName == \"id\"}">${tce.formColumn.belongTable}-${tce.formColumn.columnName}:${tce.value};</c:if></c:forEach>')" style="cursor: pointer;color: blue;text-decoration: underline;">${ce.value}</a>
 												</c:if>
 												<c:if test="${ce.formColumn.isLinkView == 0}">
 													<c:if test="${ce.formColumn.columnName != 'comm_createBy'}">${ce.value}</c:if>
