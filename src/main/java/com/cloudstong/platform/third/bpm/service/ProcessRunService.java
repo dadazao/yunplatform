@@ -28,7 +28,6 @@ import org.springframework.stereotype.Service;
 import com.cloudstong.platform.core.common.AppContext;
 import com.cloudstong.platform.core.common.PageResult;
 import com.cloudstong.platform.core.common.QueryCriteria;
-import com.cloudstong.platform.core.jms.MessageProducer;
 import com.cloudstong.platform.core.model.InnerMessage;
 import com.cloudstong.platform.core.model.Mail;
 import com.cloudstong.platform.core.model.SmsMobile;
@@ -108,7 +107,7 @@ public class ProcessRunService {
 
 	@Resource
 	private SysUserDao sysUserDao;
-	private MessageProducer messageProducer;
+//	private MessageProducer messageProducer;
 
 	@Resource
 	private BpmFormRunService bpmFormRunService;
@@ -155,9 +154,9 @@ public class ProcessRunService {
 	@Resource
 	private SysUserService sysUserService;
 
-	public void setMessageProducer(MessageProducer producer) {
-		messageProducer = producer;
-	}
+//	public void setMessageProducer(MessageProducer producer) {
+//		messageProducer = producer;
+//	}
 
 	private void setNextTaskUser(ProcessCmd processCmd) {
 		if (processCmd.isBack().intValue() == 0) {
@@ -510,10 +509,10 @@ public class ProcessRunService {
 	}
 
 	public void notify(List<Task> taskList, String informTypes, String title, Map<String, String> msgTempMap) throws Exception {
-		if (messageProducer == null) {
-			log.debug("notify messageProducer is null ");
-			return;
-		}
+//		if (messageProducer == null) {
+//			log.debug("notify messageProducer is null ");
+//			return;
+//		}
 
 		if (msgTempMap == null)
 			msgTempMap = getDefaultTemp();
@@ -569,7 +568,7 @@ public class ProcessRunService {
 		innerMessage.setToName(receiverUser.getFullname());
 		innerMessage.setSendDate(new Date());
 
-		messageProducer.send(innerMessage);
+//		messageProducer.send(innerMessage);
 	}
 
 	private void sendShortMessage(SysUser receiverUser, String subject, String tempStr) throws Exception {
@@ -584,7 +583,7 @@ public class ProcessRunService {
 		smsMobile.setPhoneNumber(receiverUser.getMobile());
 		smsMobile.setSmsContent(tempStr);
 
-		messageProducer.send(smsMobile);
+//		messageProducer.send(smsMobile);
 	}
 
 	private void sendMail(SysUser receiverUser, String subject, String taskId, String tempStr) throws Exception {
@@ -601,7 +600,7 @@ public class ProcessRunService {
 		mailModel.setContent(tempStr);
 		mailModel.setSendDate(new Date());
 
-		messageProducer.send(mailModel);
+//		messageProducer.send(mailModel);
 	}
 
 	private void updOption(Map<String, String> optionsMap, String taskId) {

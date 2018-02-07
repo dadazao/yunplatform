@@ -15,7 +15,6 @@ import org.activiti.engine.delegate.JavaDelegate;
 import org.activiti.engine.impl.persistence.entity.ExecutionEntity;
 
 import com.cloudstong.platform.core.common.AppContext;
-import com.cloudstong.platform.core.jms.MessageProducer;
 import com.cloudstong.platform.core.model.InnerMessage;
 import com.cloudstong.platform.core.model.Mail;
 import com.cloudstong.platform.core.model.SmsMobile;
@@ -56,10 +55,10 @@ public class MessageTask implements JavaDelegate {
 
 		List list = getSendList(dataMap, params, varMap);
 
-		MessageProducer messageProducer = (MessageProducer) AppUtil.getBean("messageProducer");
-		if (messageProducer != null)
-			for (int i = 0; i < list.size(); i++)
-				messageProducer.send(list.get(i));
+//		MessageProducer messageProducer = (MessageProducer) AppUtil.getBean("messageProducer");
+//		if (messageProducer != null)
+//			for (int i = 0; i < list.size(); i++)
+//				messageProducer.send(list.get(i));
 	}
 
 	private List getSendList(Map<Integer, Message> dataMap, Map<String, Object> param, Map<String, Object> varsMap) {
