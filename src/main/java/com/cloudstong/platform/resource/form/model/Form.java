@@ -323,11 +323,7 @@ public class Form extends EntityBase {
 	}
 
 	public String getSimpleModel() {
-		if(tableName != null) {
-			return tableName;
-		}else{
-			return null;
-		}
+		return tableId.toString();
 	}
 
 	public void setSimpleModel(String simpleModel) {

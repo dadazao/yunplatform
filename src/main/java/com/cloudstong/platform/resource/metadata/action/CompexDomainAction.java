@@ -182,6 +182,11 @@ public class CompexDomainAction extends BaseAction {
 	protected String mainTable;
 	
 	/**
+	 * 主表ID
+	 */
+	protected Long mainTableId;
+	
+	/**
 	 * 主表简写
 	 */
 	protected String simpleModel;
@@ -466,6 +471,8 @@ public class CompexDomainAction extends BaseAction {
 			form = formService.findFormById(formId);
 			// 取出表单关联的主表
 			model = form.getTableName();
+			// 取出主表ID
+			mainTableId = form.getTableId();
 
 			// 返回分页结果
 			this.pageResult = new PageResult();
@@ -3036,12 +3043,16 @@ public class CompexDomainAction extends BaseAction {
 		this.currentSaveId = currentSaveId;
 	}
 	
+	public Long getMainTableId() {
+		return mainTableId;
+	}
+
+	public void setMainTableId(Long mainTableId) {
+		this.mainTableId = mainTableId;
+	}
+
 	public String getSimpleModel() {
-		if(model != null) {
-			return model;
-		}else{
-			return null;
-		}
+		return mainTableId.toString();
 	}
 
 	public void setSimpleModel(String simpleModel) {

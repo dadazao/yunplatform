@@ -29,17 +29,17 @@ public class CatalogServiceTestCase{
 	private JdbcTemplate jdbcTemplate;
 	
 	public void updateCatalogPath() {
-		String sql = "SELECT c.id,c.tbl_name,c.tbl_listid,c.tbl_path,b.tbl_zhubiao FROM `sys_catalog` c LEFT JOIN sys_liebiao l on c.tbl_listid=l.id LEFT JOIN sys_biaodan b on l.tbl_formid=b.id where b.tbl_zhubiao is not null and c.tbl_listid!=-1;";
+		String sql = "SELECT c.id,c.tbl_name,c.tbl_listid,c.tbl_path,b.tbl_zhubiao,b.tbl_zhubiaoid FROM `sys_catalog` c LEFT JOIN sys_liebiao l on c.tbl_listid=l.id LEFT JOIN sys_biaodan b on l.tbl_formid=b.id where b.tbl_zhubiao is not null and c.tbl_listid!=-1;";
 		List<Map<String,Object>> os = jdbcTemplate.queryForList(sql);
 		
 		String updateSql = "update sys_catalog set tbl_path=? where id=?";
 		for(Map<String,Object> o : os) {
 			Long id = (Long)o.get("id");
 			String path = (String)o.get("tbl_path");
-			Long listId = (Long)o.get("tbl_listId");
-			String zhubiao = (String)o.get("tbl_zhubiao");
+			Long listId = (Long)o.get("tbl_listid");
+			Long zhubiaoid = (Long)o.get("tbl_zhubiaoid");
 			if(path.contains("compexlist.action")) {
-				path = path.replace("compexlist.action", listId.toString()+"compexlist.action");
+				path = path.replace(listId.toString()+"compexlist.action", zhubiaoid.toString()+"compexlist.action");
 				jdbcTemplate.update(updateSql, new Object[]{path,id});
 				System.out.println(path);
 			}
