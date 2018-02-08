@@ -2398,7 +2398,7 @@ CREATE TABLE `bus_xinxifabu` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_flowstate` int(50) DEFAULT '-1',
   `comm_mark_for_delete` int(2) DEFAULT '0',
   PRIMARY KEY (`id`)
@@ -2414,29 +2414,29 @@ INSERT INTO `bus_xinxifabu` VALUES ('939773308', '1', '1', '关于出口退税�
 INSERT INTO `bus_xinxifabu` VALUES ('1150139918', '1', '2', '餐饮行业卫生状况堪忧', '1028000002', 'null', '2052751705', '2012-12-13 17:00:45', '2052751705', '2012-12-13 17:00:45', '-1', '0');
 INSERT INTO `bus_xinxifabu` VALUES ('1712471206', '0', 'null', '今年上半年贸易顺差稳中有降', '200100003', 'null', '2052751705', '2012-12-13 17:24:20', '2052751705', '2012-12-13 17:24:20', '-1', '0');
 INSERT INTO `bus_xinxifabu` VALUES ('102026891165', '0', 'null', '关于出口退税的最新规定', '200100005', 'null', '2052751705', '2012-12-13 17:24:34', '2052751705', '2012-12-13 17:24:34', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004800009', null, '2', '北京市对服务行业进行全面整顿', '1028000001', null, '2052751705', '2013-10-25 19:22:55', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004800008', null, '2', '餐饮行业卫生状况堪忧', '1028000002', null, '2052751705', '2013-10-25 19:22:55', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004800007', null, '1', '房地产市场继续保持调控', '1003000002', null, '2052751705', '2013-10-25 19:22:55', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004800006', null, '1', '央行连续下调准备金率', '1003000001', null, '2052751705', '2013-10-25 19:22:55', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004800005', null, '', '关于出口退税的最新规定', '200100005', null, '2052751705', '2013-10-25 19:22:55', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004800004', null, '', '关于出口退税的最新规定', '200100005', null, '2052751705', '2013-10-25 19:22:55', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004800003', null, '', '欧盟对中国企业发起新一轮反倾销', '200100004', null, '2052751705', '2013-10-25 19:22:55', '2052751705', '0000-00-00 00:00:00', '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004800009', null, '2', '北京市对服务行业进行全面整顿', '1028000001', null, '2052751705', '2013-10-25 19:22:55', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004800008', null, '2', '餐饮行业卫生状况堪忧', '1028000002', null, '2052751705', '2013-10-25 19:22:55', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004800007', null, '1', '房地产市场继续保持调控', '1003000002', null, '2052751705', '2013-10-25 19:22:55', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004800006', null, '1', '央行连续下调准备金率', '1003000001', null, '2052751705', '2013-10-25 19:22:55', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004800005', null, '', '关于出口退税的最新规定', '200100005', null, '2052751705', '2013-10-25 19:22:55', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004800004', null, '', '关于出口退税的最新规定', '200100005', null, '2052751705', '2013-10-25 19:22:55', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004800003', null, '', '欧盟对中国企业发起新一轮反倾销', '200100004', null, '2052751705', '2013-10-25 19:22:55', '2052751705', null, '-1', '0');
 INSERT INTO `bus_xinxifabu` VALUES ('101308180361', '0', '', '今年上半年贸易顺差稳中有降', '200100003', '', '2052751705', '2012-12-27 14:22:30', '2052751705', '2012-12-27 14:22:30', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004800002', null, '1', '欧盟对中国企业发起新一轮反倾销', '02', null, '2052751705', '2013-10-25 19:22:55', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004800001', null, '1', '各地海关加大对奢侈品走私的监察力度', '006', null, '2052751705', '2013-10-25 19:22:55', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004800000', null, '1', '关于出口退税的最新规定', '009', null, '2052751705', '2013-10-25 19:22:55', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004750013', null, '2', '北京市对服务行业进行全面整顿', '1028000001', null, '2052751705', '2013-10-25 19:21:11', '2052751705', '0000-00-00 00:00:00', '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004800002', null, '1', '欧盟对中国企业发起新一轮反倾销', '02', null, '2052751705', '2013-10-25 19:22:55', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004800001', null, '1', '各地海关加大对奢侈品走私的监察力度', '006', null, '2052751705', '2013-10-25 19:22:55', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004800000', null, '1', '关于出口退税的最新规定', '009', null, '2052751705', '2013-10-25 19:22:55', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004750013', null, '2', '北京市对服务行业进行全面整顿', '1028000001', null, '2052751705', '2013-10-25 19:21:11', '2052751705', null, '-1', '0');
 INSERT INTO `bus_xinxifabu` VALUES ('2052203518', '1', '1', '房地产市场继续保持调控', '1003000002', '房地产市场继续保持调控<br />', '2052751705', '2012-12-27 14:22:30', '2052751705', '2012-12-27 14:22:30', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004750012', null, '2', '餐饮行业卫生状况堪忧', '1028000002', null, '2052751705', '2013-10-25 19:21:11', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004750011', null, '', '关于出口退税的最新规定', '200100005', null, '2052751705', '2013-10-25 19:21:11', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004750010', null, '1', '央行连续下调准备金率', '1003000001', null, '2052751705', '2013-10-25 19:21:11', '2052751705', '0000-00-00 00:00:00', '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004750012', null, '2', '餐饮行业卫生状况堪忧', '1028000002', null, '2052751705', '2013-10-25 19:21:11', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004750011', null, '', '关于出口退税的最新规定', '200100005', null, '2052751705', '2013-10-25 19:21:11', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004750010', null, '1', '央行连续下调准备金率', '1003000001', null, '2052751705', '2013-10-25 19:21:11', '2052751705', null, '-1', '0');
 INSERT INTO `bus_xinxifabu` VALUES ('10259968544', '1', '1', '央行连续下调准备金率', '1003000001', '发发<br />', '2052751705', '2012-12-27 14:22:30', '2052751705', '2012-12-27 14:22:30', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004750009', null, '', '欧盟对中国企业发起新一轮反倾销', '200100004', null, '2052751705', '2013-10-25 19:21:11', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004750008', null, '1', '房地产市场继续保持调控', '1003000002', null, '2052751705', '2013-10-25 19:21:11', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004750007', null, '', '关于出口退税的最新规定', '200100005', null, '2052751705', '2013-10-25 19:21:11', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004750006', null, '1', '欧盟对中国企业发起新一轮反倾销', '02', null, '2052751705', '2013-10-25 19:21:11', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004750005', null, '1', '各地海关加大对奢侈品走私的监察力度', '006', null, '2052751705', '2013-10-25 19:21:11', '2052751705', '0000-00-00 00:00:00', '-1', '0');
-INSERT INTO `bus_xinxifabu` VALUES ('10000004750004', null, '1', '关于出口退税的最新规定', '009', null, '2052751705', '2013-10-25 19:21:11', '2052751705', '0000-00-00 00:00:00', '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004750009', null, '', '欧盟对中国企业发起新一轮反倾销', '200100004', null, '2052751705', '2013-10-25 19:21:11', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004750008', null, '1', '房地产市场继续保持调控', '1003000002', null, '2052751705', '2013-10-25 19:21:11', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004750007', null, '', '关于出口退税的最新规定', '200100005', null, '2052751705', '2013-10-25 19:21:11', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004750006', null, '1', '欧盟对中国企业发起新一轮反倾销', '02', null, '2052751705', '2013-10-25 19:21:11', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004750005', null, '1', '各地海关加大对奢侈品走私的监察力度', '006', null, '2052751705', '2013-10-25 19:21:11', '2052751705', null, '-1', '0');
+INSERT INTO `bus_xinxifabu` VALUES ('10000004750004', null, '1', '关于出口退税的最新规定', '009', null, '2052751705', '2013-10-25 19:21:11', '2052751705', null, '-1', '0');
 INSERT INTO `bus_xinxifabu` VALUES ('1260286117', '0', '', '今年上半年贸易顺差稳中有降', '200100003', '', '2052751705', '2012-12-27 14:22:30', '2052751705', '2012-12-27 14:22:30', '-1', '0');
 INSERT INTO `bus_xinxifabu` VALUES ('1062280519', '0', '', '欧盟对中国企业发起新一轮反倾销', '200100004', '', '2052751705', '2012-12-27 14:22:30', '2052751705', '2012-12-27 14:22:30', '-1', '0');
 INSERT INTO `bus_xinxifabu` VALUES ('10862913869', '0', '', '各地海关加大对奢侈品走私的监察力度', '200100001', '', '2052751705', '2012-12-27 14:22:30', '2052751705', '2012-12-27 14:22:30', '-1', '0');
@@ -6025,7 +6025,7 @@ CREATE TABLE `sys_biaodan` (
   `tbl_beizhu` varchar(1024) DEFAULT NULL,
   `tbl_zhubiao` varchar(50) DEFAULT NULL,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_width` int(11) DEFAULT NULL,
   `tbl_height` int(11) DEFAULT NULL,
   `tbl_jiaoben` text,
@@ -7190,7 +7190,7 @@ CREATE TABLE `sys_button` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_buttonCode` varchar(50) DEFAULT NULL,
   `tbl_comment` varchar(200) DEFAULT NULL,
   `tbl_systemteam` varchar(50) DEFAULT NULL,
@@ -7404,7 +7404,7 @@ CREATE TABLE `sys_buttongroup` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_type` varchar(20) DEFAULT NULL,
   `tbl_comment` varchar(50) DEFAULT NULL,
   `tbl_systemteam` varchar(50) DEFAULT NULL,
@@ -7437,7 +7437,7 @@ CREATE TABLE `sys_catalog` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `comm_status` int(2) DEFAULT '0',
   `tbl_type` int(11) DEFAULT '1',
   `tbl_comment` varchar(50) DEFAULT NULL,
@@ -7558,7 +7558,7 @@ CREATE TABLE `sys_chaxunzujian` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_name` varchar(100) DEFAULT NULL,
   `tbl_kuandu` int(11) DEFAULT NULL,
   `tbl_gaodu` int(11) DEFAULT NULL,
@@ -7595,7 +7595,7 @@ CREATE TABLE `sys_checkboxmgt` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_comment` varchar(50) DEFAULT NULL,
   `tbl_remark` varchar(255) DEFAULT NULL,
   `tbl_bianma` varchar(50) DEFAULT NULL,
@@ -7621,7 +7621,7 @@ CREATE TABLE `sys_codecasecade` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_compname` varchar(100) DEFAULT NULL,
   `tbl_width` int(11) DEFAULT NULL,
   `tbl_height` int(11) DEFAULT NULL,
@@ -7881,7 +7881,7 @@ CREATE TABLE `sys_columns` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `comm_status` int(20) DEFAULT '0',
   `tbl_columnCode` varchar(100) DEFAULT NULL,
   `tbl_remark` varchar(100) DEFAULT NULL,
@@ -8871,7 +8871,7 @@ INSERT INTO `sys_columns` VALUES ('21666976', 'tbl_name', '项目名称', '10766
 INSERT INTO `sys_columns` VALUES ('904782737', 'tbl_money', '项目金额', '1076655540', 'bus_project', 'varchar', '', '50', '0', '1', null, '项目金额', '2052751705', '2013-08-28 10:26:48', '2052751705', '2013-08-28 10:26:48', '0', null, '', '0', '0', 'money');
 INSERT INTO `sys_columns` VALUES ('526769453', 'tbl_employee_id', '关联字段', '1076655540', 'bus_project', 'bigint', '', '20', '0', '1', null, '关联字段', '2052751705', '2013-08-28 10:26:59', '2052751705', '2013-08-28 10:48:09', '0', null, '', '0', '0', 'employee_id');
 INSERT INTO `sys_columns` VALUES ('234324345', 'tbl_incremental', 'ID增量', '3453453434', 'sys_db_id', 'int', null, '11', '0', '1', null, 'ID增量', '1', '2013-08-30 13:06:34', '1', '2013-08-30 13:02:46', '0', null, null, '0', '0', 'incremental');
-INSERT INTO `sys_columns` VALUES ('234324346', 'tbl_bound', '边界值', '3453453434', 'sys_db_id', 'bigint', null, '20', '0', '1', null, '边界值', '1', '2013-08-30 13:07:50', '1', '0000-00-00 00:00:00', '0', null, null, '0', '0', 'bound');
+INSERT INTO `sys_columns` VALUES ('234324346', 'tbl_bound', '边界值', '3453453434', 'sys_db_id', 'bigint', null, '20', '0', '1', null, '边界值', '1', '2013-08-30 13:07:50', '1', null, '0', null, null, '0', '0', 'bound');
 INSERT INTO `sys_columns` VALUES ('10000000090000', 'comm_opt_counter', '版本号', '101838990416', 'sys_role', 'bigint', '', '10', '0', '1', null, '版本号', '2052751705', '2013-09-02 14:11:17', '1', '2013-09-02 14:15:30', '0', null, '', '0', '0', 'opt_counter');
 INSERT INTO `sys_columns` VALUES ('10000000090001', 'comm_mark_for_delete', '删除标记', '101838990416', 'sys_role', 'int', '0', '2', '0', '1', null, '删除标记', '2052751705', '2013-09-02 14:11:50', '1', '2013-09-02 14:15:20', '0', null, '', '0', '0', 'mark_for_delete');
 INSERT INTO `sys_columns` VALUES ('10000000200022', 'comm_createBy', '创建人', '10000000200021', 'sys_resource', 'varchar', null, '50', '0', '1', null, '创建记录的人员', '2052751705', '2013-09-06 16:23:57', '2052751705', '2013-09-06 16:23:57', '0', null, null, '0', '0', 'createBy');
@@ -9233,7 +9233,7 @@ CREATE TABLE `sys_combox` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_compname` varchar(100) DEFAULT NULL,
   `comm_status` int(2) DEFAULT '0',
   `tbl_kuandu` int(11) DEFAULT NULL,
@@ -9296,8 +9296,8 @@ CREATE TABLE `sys_datasources` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `tbl_xiugaishijian` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `tbl_xiugaishijian` timestamp NULL DEFAULT NULL,
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_comment` varchar(50) DEFAULT NULL,
   `tbl_remark` varchar(50) DEFAULT NULL,
   `comm_mark_for_delete` int(2) DEFAULT '0',
@@ -9424,7 +9424,7 @@ CREATE TABLE `sys_dictionarys` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `comm_status` int(2) DEFAULT '0',
   `tbl_comment` varchar(255) DEFAULT NULL,
   `tbl_remark` varchar(255) DEFAULT NULL,
@@ -9625,44 +9625,44 @@ INSERT INTO `sys_dictionarys` VALUES ('1356598497', '单文件上传', '5', null
 INSERT INTO `sys_dictionarys` VALUES ('102123742710', '模块类型', '0', null, '10645314771', null, '1', '2012-10-08 10:26:40', '1', '2013-01-04 10:26:59', '0', '模块类型', null, '14', 'BM102123742710', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('1066374567', '列表页面', '1', null, '102123742710', null, '1', '2012-10-08 18:01:00', '1', '2012-10-08 18:00:59', '0', '列表页面', null, '1', 'BM1066374567', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('1708394229', '图片页面', '3', null, '102123742710', null, '1', '2012-10-08 18:01:15', '1', '2012-10-08 18:01:15', '0', '图片页面', null, '3', 'BM1708394229', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('101889908018', '上传文件框', '4', null, '10697211258', null, '1', '2012-07-31 15:14:31', '1', '0000-00-00 00:00:00', '0', null, null, '5', 'BM101889908018', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('1118604102', '密码框', '5', null, '10697211258', null, '1', '2012-07-31 15:14:31', '1', '0000-00-00 00:00:00', '0', null, null, '6', 'BM1118604102', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('101889908018', '上传文件框', '4', null, '10697211258', null, '1', '2012-07-31 15:14:31', '1', null, '0', null, null, '5', 'BM101889908018', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('1118604102', '密码框', '5', null, '10697211258', null, '1', '2012-07-31 15:14:31', '1', null, '0', null, null, '6', 'BM1118604102', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('1425832974', '证件类型', 'ZJLX', null, '10643939011', null, '1', '2012-08-01 14:44:39', '1', '2012-10-26 17:26:39', '0', '证件类型', null, '5', 'BM1425832974', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('1749024381', '身份证', '1', null, '1425832974', null, '1', '2012-08-01 14:50:39', '1', '0000-00-00 00:00:00', '0', '身份证', null, '1', 'BM1749024381', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('101883595696', '工作证', '2', null, '1425832974', null, '1', '2012-08-01 14:51:24', '1', '0000-00-00 00:00:00', '0', '工作证', null, '2', 'BM101883595696', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('1749024381', '身份证', '1', null, '1425832974', null, '1', '2012-08-01 14:50:39', '1', null, '0', '身份证', null, '1', 'BM1749024381', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('101883595696', '工作证', '2', null, '1425832974', null, '1', '2012-08-01 14:51:24', '1', null, '0', '工作证', null, '2', 'BM101883595696', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('10521097184', '专业', 'ZYDM', null, '10662201707', null, '1', '2012-08-01 14:58:56', '1', '2012-10-26 15:42:23', '0', '专业', null, '6', 'BM10521097184', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('10578245124', '计算机', '1', null, '10521097184', null, '1', '2012-08-01 14:59:56', '1', '0000-00-00 00:00:00', '0', null, null, '1', 'BM10578245124', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('1924084632', '机械制造', '2', null, '10521097184', null, '1', '2012-08-01 15:00:35', '1', '0000-00-00 00:00:00', '0', null, null, '2', 'BM1924084632', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('944663910', '新闻', '3', null, '10521097184', null, '1', '2012-08-01 15:01:19', '1', '0000-00-00 00:00:00', '0', null, null, '3', 'BM944663910', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('1439501479', '经济', '4', null, '10521097184', null, '1', '2012-08-01 15:01:38', '1', '0000-00-00 00:00:00', '0', null, null, '4', 'BM1439501479', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('10578245124', '计算机', '1', null, '10521097184', null, '1', '2012-08-01 14:59:56', '1', null, '0', null, null, '1', 'BM10578245124', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('1924084632', '机械制造', '2', null, '10521097184', null, '1', '2012-08-01 15:00:35', '1', null, '0', null, null, '2', 'BM1924084632', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('944663910', '新闻', '3', null, '10521097184', null, '1', '2012-08-01 15:01:19', '1', null, '0', null, null, '3', 'BM944663910', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('1439501479', '经济', '4', null, '10521097184', null, '1', '2012-08-01 15:01:38', '1', null, '0', null, null, '4', 'BM1439501479', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('2079371075', '民族', 'MINZ', null, '10662201707', null, '1', '2012-08-01 15:02:15', '1', '2012-10-26 15:34:49', '0', '民族', null, '5', 'BM2079371075', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('1225120012', '汉族', '1', null, '2079371075', null, '1', '2012-08-01 15:02:41', '1', '2012-11-29 11:35:18', '0', '汉族', null, '1', 'BM1225120012', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('1133824530', '满族', '2', null, '2079371075', null, '1', '2012-08-01 15:03:17', '1', '0000-00-00 00:00:00', '0', null, null, '2', 'BM1133824530', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('438919833', '回族', '3', null, '2079371075', null, '1', '2012-08-01 15:03:35', '1', '0000-00-00 00:00:00', '0', null, null, '3', 'BM438919833', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('1133824530', '满族', '2', null, '2079371075', null, '1', '2012-08-01 15:03:17', '1', null, '0', null, null, '2', 'BM1133824530', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('438919833', '回族', '3', null, '2079371075', null, '1', '2012-08-01 15:03:35', '1', null, '0', null, null, '3', 'BM438919833', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('10897387990', '公文代码', 'GWDM', null, '10804194117', null, '1', '2012-10-10 11:24:17', '1', '2012-10-26 15:27:52', '0', '用于公文系统的常用代码', null, '2', 'BM10897387990', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('2065119926', '缓急', null, null, '10897387990', null, '1', '2012-08-01 18:13:38', '1', '0000-00-00 00:00:00', '0', '表示文件的紧急程度', null, '0', 'BM2065119926', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('1177581120', '紧急', '0', null, '2065119926', null, '1', '2012-08-01 18:14:09', '1', '0000-00-00 00:00:00', '0', null, null, '0', 'BM1177581120', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('1395698230', '常规', '1', null, '2065119926', null, '1', '2012-08-01 18:14:46', '1', '0000-00-00 00:00:00', '0', null, null, '1', 'BM1395698230', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('2065119926', '缓急', null, null, '10897387990', null, '1', '2012-08-01 18:13:38', '1', null, '0', '表示文件的紧急程度', null, '0', 'BM2065119926', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('1177581120', '紧急', '0', null, '2065119926', null, '1', '2012-08-01 18:14:09', '1', null, '0', null, null, '0', 'BM1177581120', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('1395698230', '常规', '1', null, '2065119926', null, '1', '2012-08-01 18:14:46', '1', null, '0', null, null, '1', 'BM1395698230', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('1995623401', '部门级别', 'BMJB', null, '871579673', null, '1', '2012-08-02 10:59:34', '1', '2012-10-26 15:38:34', '0', '部门级别', null, '1', 'BM1995623401', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('1944017982', '部级', '1', null, '1995623401', null, '1', '2012-08-02 11:00:51', '1', '2012-09-11 09:52:13', '0', '部级', null, '1', 'BM1944017982', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('485597912', '科级', '4', null, '1995623401', null, '1', '2012-08-02 11:01:24', '1', '2012-09-11 09:52:37', '0', '科级', null, '4', 'BM485597912', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('10455521001', '司局级', '2', null, '1995623401', null, '1', '2012-08-02 11:01:56', '1', '0000-00-00 00:00:00', '0', null, null, '2', 'BM10455521001', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('101713761394', '处级', '3', null, '1995623401', null, '1', '2012-08-02 11:02:20', '1', '0000-00-00 00:00:00', '0', null, null, '3', 'BM101713761394', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('10455521001', '司局级', '2', null, '1995623401', null, '1', '2012-08-02 11:01:56', '1', null, '0', null, null, '2', 'BM10455521001', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('101713761394', '处级', '3', null, '1995623401', null, '1', '2012-08-02 11:02:20', '1', null, '0', null, null, '3', 'BM101713761394', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('171872722', '干事', '5', null, '1995623401', null, '1', '2012-08-02 11:11:36', '1', '2012-09-11 09:52:55', '0', '干事', null, '5', 'BM171872722', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('212161540', '保存并新增', 'BCBXZ', null, '2005642002', null, '1', '2012-09-29 09:53:38', '1', '2012-08-02 14:11:25', '0', '保存并新增', null, '58', 'BM212161540', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('63729665', '角色类型', 'JSMC', null, '831446044', null, '1', '2011-08-02 14:06:10', '1', '2012-10-26 16:56:27', '0', '角色类型', null, '3', 'BM63729665', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('1466381236', '发送消息', 'FSXX', null, '2005642002', null, '1', '2012-12-03 11:26:23', '1', '2012-12-03 11:26:23', '0', '发送消息', null, '7', 'BM1466381236', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('101513857135', '管理员', '1', null, '63729665', null, '1', '2011-08-02 14:07:29', '1', '0000-00-00 00:00:00', '0', '对系统进行常规性的管理操作', null, '1', 'BM101513857135', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('101513857135', '管理员', '1', null, '63729665', null, '1', '2011-08-02 14:07:29', '1', null, '0', '对系统进行常规性的管理操作', null, '1', 'BM101513857135', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('729326535', '用户', '2', null, '63729665', null, '1', '2012-08-02 14:06:27', '1', '2012-11-05 17:05:23', '0', '用户', null, '2', 'BM729326535', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('102084322290', '编码符号', 'BMFH', null, '10645314771', null, '1', '2011-08-02 15:25:16', '1', '2012-10-26 17:18:55', '0', '系统生成编码是对每一个元素区分的英文符号', null, '16', 'BM102084322290', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('10772786329', 'AN', '0', null, '102084322290', null, '1', '2012-09-24 17:38:15', '1', '0000-00-00 00:00:00', '0', '按钮的编码符号', null, '1', 'BM10772786329', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('192684755', 'BD', '1', null, '102084322290', null, '1', '2012-09-24 17:38:15', '1', '0000-00-00 00:00:00', '0', '表单的编码符号', null, '2', 'BM192684755', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('10772786329', 'AN', '0', null, '102084322290', null, '1', '2012-09-24 17:38:15', '1', null, '0', '按钮的编码符号', null, '1', 'BM10772786329', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('192684755', 'BD', '1', null, '102084322290', null, '1', '2012-09-24 17:38:15', '1', null, '0', '表单的编码符号', null, '2', 'BM192684755', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('10526186950', '测试代码', '0', null, '1', null, '1', '2012-10-10 11:24:17', '1', '2012-09-07 09:13:10', '0', '测试代码', null, '8', 'BM10526186950', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('869477232', '比赛项目', null, null, '10526186950', null, '1', '2012-08-03 11:32:30', '1', '0000-00-00 00:00:00', '0', null, null, '0', 'BM869477232', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('101046901196', '参见比赛', null, null, '869477232', null, '1', '2012-08-03 11:32:59', '1', '0000-00-00 00:00:00', '0', null, null, '0', 'BM101046901196', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('869477232', '比赛项目', null, null, '10526186950', null, '1', '2012-08-03 11:32:30', '1', null, '0', null, null, '0', 'BM869477232', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('101046901196', '参见比赛', null, null, '869477232', null, '1', '2012-08-03 11:32:59', '1', null, '0', null, null, '0', 'BM101046901196', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('1975551363', '拉拉队', '2', null, '869477232', null, '1', '2012-08-03 11:34:08', '1', '2012-08-03 11:34:15', '0', null, null, '2', 'BM1975551363', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('1198125217', 'shentong', 'shentong', null, '541570363', null, '1', '2012-08-08 13:31:55', '1', '2012-08-08 13:29:52', '0', null, null, '5', 'BM1198125217', 'sys', '0');
-INSERT INTO `sys_dictionarys` VALUES ('146471276', 'shentong驱动', 'com.oscar.Driver', null, '10829920941', null, '1', '2012-08-03 16:34:36', '1', '0000-00-00 00:00:00', '0', null, null, '3', 'BM146471276', 'sys', '0');
+INSERT INTO `sys_dictionarys` VALUES ('146471276', 'shentong驱动', 'com.oscar.Driver', null, '10829920941', null, '1', '2012-08-03 16:34:36', '1', null, '0', null, null, '3', 'BM146471276', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('1405398486', '已审核', '3', null, '101683640526', null, '1', '2012-08-08 09:49:02', '1', '2012-08-08 09:46:24', '0', null, null, '0', 'BM1405398486', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('101306030600', '未通过', '2', null, '101683640526', null, '1', '2012-08-07 18:44:13', '1', '2012-08-07 18:44:13', '0', null, null, '2', 'BM101306030600', 'sys', '0');
 INSERT INTO `sys_dictionarys` VALUES ('10215532771', '密级', null, null, '10897387990', null, '1', '2012-08-07 18:41:47', '1', '2012-08-07 18:41:47', '0', null, null, '0', 'BM10215532771', 'sys', '0');
@@ -10128,7 +10128,7 @@ CREATE TABLE `sys_layout` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_topHeight` varchar(8) DEFAULT NULL,
   `tbl_leftWidth` varchar(8) DEFAULT NULL,
   `tbl_footHeight` varchar(8) DEFAULT NULL,
@@ -10168,7 +10168,7 @@ CREATE TABLE `sys_liebiao` (
   `tbl_remarks` varchar(1024) DEFAULT NULL,
   `tbl_beizhu` varchar(1024) DEFAULT NULL,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_listcontrolid` bigint(20) DEFAULT NULL,
   `tbl_querycontrolid` varchar(50) DEFAULT NULL,
   `tbl_systemteam` varchar(50) DEFAULT NULL,
@@ -10215,7 +10215,7 @@ INSERT INTO `sys_liebiao` VALUES ('143', '布局管理类表', '1', '2012-09-26 
 INSERT INTO `sys_liebiao` VALUES ('149', '模板库列表', '1', '2012-09-26 13:09:02', 'TABN-20130304171522498-SYSM-00001', null, '', '17', '/pages/resource/149compexlist.action?listId=149', null, '1', '1', '154', '维护', '1', '模板库列表', '模板库列表', '1', '2012-08-20 18:39:53', '1', '1', 'sys', '-1', '0');
 INSERT INTO `sys_liebiao` VALUES ('150', '文本域管理列表', '1', '2012-09-26 13:09:03', 'TABN-20130304171522500-SYSM-00001', null, null, null, '/pages/resource/150compexlist.action?listId=150', null, '1', '1', '155', '维护', '1', '文本域管理列表', '', '1', '2012-09-20 17:55:09', '4', '1', 'sys', '-1', '0');
 INSERT INTO `sys_liebiao` VALUES ('144', '构件/组件使用信息列表', '1', '2012-09-26 13:09:00', 'TABN-20130304171522503-SYSM-00001', null, null, null, '/pages/resource/144compexlist.action?listId=144', null, '1', '1', '150', '维护', '1', '构件/组件使用信息列表', '', '1', '2013-03-05 15:16:22', '2', '1', 'sys', '-1', '0');
-INSERT INTO `sys_liebiao` VALUES ('148', '菜单管理列表', '1', '2012-09-26 13:09:01', 'TABN-20130304171522505-SYSM-00001', null, '', '14', '/pages/resource/148compexlist.action?listId=148', null, '1', '1', '151', '维护', '1', '', '', '1', '0000-00-00 00:00:00', '1', '1', 'sys', '-1', '0');
+INSERT INTO `sys_liebiao` VALUES ('148', '菜单管理列表', '1', '2012-09-26 13:09:01', 'TABN-20130304171522505-SYSM-00001', null, '', '14', '/pages/resource/148compexlist.action?listId=148', null, '1', '1', '151', '维护', '1', '', '', '1', null, '1', '1', 'sys', '-1', '0');
 INSERT INTO `sys_liebiao` VALUES ('152', '搜索下拉框列表', '1', '2012-09-26 13:09:05', 'TABN-20130304171522508-SYSM-00001', null, null, null, '/pages/resource/152compexlist.action?listId=152', null, '1', '1', '153', '维护', '1', '搜索下拉框列表', '', '1', '2012-09-20 17:55:59', '4', '1', 'sys', '-1', '0');
 INSERT INTO `sys_liebiao` VALUES ('153', '密码框管理列表', '1', '2012-09-26 13:09:06', 'TABN-20130304171522510-SYSM-00001', null, null, null, '/pages/resource/153compexlist.action?listId=153', null, '1', '1', '157', '维护', '1', '密码框管理列表', '', '1', '2012-11-28 10:19:56', '1', '1', 'sys', '-1', '0');
 INSERT INTO `sys_liebiao` VALUES ('154', '上传文件框管理列表', '1', '2012-09-26 13:09:07', 'TABN-20130304171522513-SYSM-00001', null, null, null, '/pages/resource/154compexlist.action?listId=154', null, '1', '1', '156', '维护', '1', '上传文件框管理列表', '', '1', '2012-09-20 17:56:25', '4', '1', 'sys', '-1', '0');
@@ -10466,7 +10466,7 @@ CREATE TABLE `sys_liebiaooperation` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_name` varchar(100) DEFAULT NULL,
   `tbl_kuandu` int(11) DEFAULT NULL,
   `tbl_danwei` varchar(20) DEFAULT NULL,
@@ -10498,7 +10498,7 @@ CREATE TABLE `sys_liebiaoorder` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_name` varchar(100) DEFAULT NULL,
   `tbl_kuandu` int(11) DEFAULT NULL,
   `tbl_danwei` varchar(20) DEFAULT NULL,
@@ -10528,7 +10528,7 @@ CREATE TABLE `sys_liebiaopagination` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_name` varchar(100) DEFAULT NULL,
   `tbl_pagesize` int(11) DEFAULT NULL,
   `tbl_shownumbercount` int(11) DEFAULT NULL,
@@ -10560,7 +10560,7 @@ CREATE TABLE `sys_liebiaoquery` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updatedate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updatedate` timestamp NULL DEFAULT NULL,
   `tbl_condition` int(11) DEFAULT NULL,
   `tbl_relation` int(11) DEFAULT NULL,
   `tbl_order` int(10) DEFAULT NULL,
@@ -10571,20 +10571,20 @@ CREATE TABLE `sys_liebiaoquery` (
 -- ----------------------------
 -- Records of sys_liebiaoquery
 -- ----------------------------
-INSERT INTO `sys_liebiaoquery` VALUES ('15', null, '139', '537', '', null, '2012-07-19 17:42:30', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('16', null, '139', '537', '', null, '2012-07-19 17:42:33', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('17', null, '139', '537', '', null, '2012-07-19 17:42:34', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('18', null, '139', '537', '1', null, '2012-07-19 17:42:38', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('19', '110', '55', '333', '1', null, '2012-07-26 14:52:50', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('1335368694', '109', '55', '480193083', '0', null, '2012-11-02 13:35:24', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('21', '88', '9', '87', '0', null, '2012-07-26 18:09:49', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('22', '98', '140', '568', '0', null, '2012-07-31 17:35:54', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('29', '203', '220', '1574', '目录权限', null, '2012-09-14 14:36:11', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('474640443', '80', '5', '567', '0', null, '2012-10-10 11:18:14', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('626747804', '1081243326', '55', '480193083', '1', null, '2012-11-02 13:51:41', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('2036186124', '124', '171', '944', '0', null, '2013-03-07 16:29:34', null, '0000-00-00 00:00:00', '2', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('101002544183', '100', '140', '568', '1', null, '2013-03-12 12:46:40', null, '0000-00-00 00:00:00', '1', '1', null, '0');
-INSERT INTO `sys_liebiaoquery` VALUES ('10000002930036', '10000002930024', '10000000590001', '10000000590011', '0', null, '2013-10-09 18:01:44', null, '0000-00-00 00:00:00', '0', '1', '1', '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('15', null, '139', '537', '', null, '2012-07-19 17:42:30', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('16', null, '139', '537', '', null, '2012-07-19 17:42:33', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('17', null, '139', '537', '', null, '2012-07-19 17:42:34', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('18', null, '139', '537', '1', null, '2012-07-19 17:42:38', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('19', '110', '55', '333', '1', null, '2012-07-26 14:52:50', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('1335368694', '109', '55', '480193083', '0', null, '2012-11-02 13:35:24', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('21', '88', '9', '87', '0', null, '2012-07-26 18:09:49', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('22', '98', '140', '568', '0', null, '2012-07-31 17:35:54', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('29', '203', '220', '1574', '目录权限', null, '2012-09-14 14:36:11', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('474640443', '80', '5', '567', '0', null, '2012-10-10 11:18:14', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('626747804', '1081243326', '55', '480193083', '1', null, '2012-11-02 13:51:41', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('2036186124', '124', '171', '944', '0', null, '2013-03-07 16:29:34', null, null, '2', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('101002544183', '100', '140', '568', '1', null, '2013-03-12 12:46:40', null, null, '1', '1', null, '0');
+INSERT INTO `sys_liebiaoquery` VALUES ('10000002930036', '10000002930024', '10000000590001', '10000000590011', '0', null, '2013-10-09 18:01:44', null, null, '0', '1', '1', '0');
 
 -- ----------------------------
 -- Table structure for sys_liebiaoselect
@@ -10595,7 +10595,7 @@ CREATE TABLE `sys_liebiaoselect` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_name` varchar(100) DEFAULT NULL,
   `tbl_width` int(11) DEFAULT NULL,
   `tbl_danwei` varchar(20) DEFAULT NULL,
@@ -10650,7 +10650,7 @@ CREATE TABLE `sys_liebiaozujian` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_name` varchar(100) DEFAULT NULL,
   `tbl_selectid` varchar(50) DEFAULT NULL,
   `tbl_orderid` bigint(20) DEFAULT NULL,
@@ -10717,7 +10717,7 @@ CREATE TABLE `sys_logo` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_background` varchar(50) DEFAULT NULL,
   `tbl_zhuti` bigint(20) DEFAULT NULL,
   `tbl_comment` varchar(255) DEFAULT NULL,
@@ -10848,7 +10848,7 @@ CREATE TABLE `sys_menu` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_caidanmingcheng` varchar(50) DEFAULT NULL,
   `tbl_gongnengshuoming` varchar(500) DEFAULT NULL,
   `tbl_beizhu` varchar(500) DEFAULT NULL,
@@ -10872,7 +10872,7 @@ CREATE TABLE `sys_menuitem` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_itemname` varchar(50) DEFAULT NULL,
   `tbl_itemorder` varchar(10) DEFAULT NULL,
   `tbl_ziti` varchar(50) DEFAULT NULL,
@@ -10971,7 +10971,7 @@ CREATE TABLE `sys_oprtbutton` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_oprtname` varchar(50) DEFAULT NULL,
   `tbl_shunxu` int(11) DEFAULT NULL,
   `tbl_buttonid` bigint(20) DEFAULT NULL,
@@ -11054,77 +11054,77 @@ INSERT INTO `sys_oprtbutton` VALUES ('100', null, '2012-09-17 11:44:12', null, '
 INSERT INTO `sys_oprtbutton` VALUES ('101', null, '2012-09-17 11:44:12', null, '2012-09-17 11:44:12', null, null, '1340071401633', '200', 'TABN_BUTN-20130304171529767-SYSM-00001', '维护', 'WH', null, '0');
 INSERT INTO `sys_oprtbutton` VALUES ('102', null, '2012-09-17 11:44:12', null, '2012-09-17 11:44:12', null, null, '1340071401633', '201', 'TABN_BUTN-20130304171529770-SYSM-00001', '维护', 'WH', null, '0');
 INSERT INTO `sys_oprtbutton` VALUES ('104', null, '2012-09-17 11:44:12', null, '2012-09-17 11:44:12', null, '1', '1340071401633', '203', 'TABN_BUTN-20130304171529774-SYSM-00001', '维护', 'WH', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('106', null, '2012-09-20 13:57:54', null, '0000-00-00 00:00:00', null, '1', '1340071401668', '199', 'TABN_BUTN-20130304171529777-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('107', null, '2012-09-20 13:58:00', null, '0000-00-00 00:00:00', null, '2', '1340071401669', '199', 'TABN_BUTN-20130304171529780-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('108', null, '2012-09-20 14:33:48', null, '0000-00-00 00:00:00', null, null, '1340071401633', '206', 'TABN_BUTN-20130304171529783-SYSM-00001', '维护', 'WH', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('109', null, '2012-09-20 17:48:09', null, '0000-00-00 00:00:00', null, '1', '1340071401668', '71', 'TABN_BUTN-20130304171529786-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('110', null, '2012-09-20 17:48:13', null, '0000-00-00 00:00:00', null, '2', '1340071401669', '71', 'TABN_BUTN-20130304171529789-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('111', null, '2012-09-20 17:54:27', null, '0000-00-00 00:00:00', null, '1', '1340071401668', '80', 'TABN_BUTN-20130304171529792-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('112', null, '2012-09-20 17:54:31', null, '0000-00-00 00:00:00', null, '2', '1340071401669', '80', 'TABN_BUTN-20130304171529795-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('113', null, '2012-09-20 17:55:00', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '69', 'TABN_BUTN-20130304171529798-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('114', null, '2012-09-20 17:55:03', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '69', 'TABN_BUTN-20130304171529801-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('115', null, '2012-09-20 17:55:25', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '150', 'TABN_BUTN-20130304171529804-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('116', null, '2012-09-20 17:55:27', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '150', 'TABN_BUTN-20130304171529808-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('117', null, '2012-09-20 17:56:01', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '151', 'TABN_BUTN-20130304171529812-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('118', null, '2012-09-20 17:55:58', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '151', 'TABN_BUTN-20130304171529815-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('119', null, '2012-09-20 17:56:16', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '152', 'TABN_BUTN-20130304171529819-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('120', null, '2012-09-20 17:56:19', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '152', 'TABN_BUTN-20130304171529822-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('121', null, '2012-09-20 17:56:41', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '154', 'TABN_BUTN-20130304171529825-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('122', null, '2012-09-20 17:56:44', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '154', 'TABN_BUTN-20130304171529828-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('123', null, '2012-09-20 17:57:16', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '72', 'TABN_BUTN-20130304171529831-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('124', null, '2012-09-20 17:57:19', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '72', 'TABN_BUTN-20130304171529834-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('125', null, '2012-09-20 17:57:43', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '73', 'TABN_BUTN-20130304171529838-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('126', null, '2012-09-20 17:57:46', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '73', 'TABN_BUTN-20130304171529841-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('127', null, '2012-09-20 17:58:22', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '74', 'TABN_BUTN-20130304171529844-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('128', null, '2012-09-20 17:58:25', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '74', 'TABN_BUTN-20130304171529847-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('135', null, '2012-09-20 18:00:05', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '195', 'TABN_BUTN-20130304171529851-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('136', null, '2012-09-20 18:00:08', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '195', 'TABN_BUTN-20130304171529854-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('137', null, '2012-09-20 18:00:33', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '66', 'TABN_BUTN-20130304171529858-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('138', null, '2012-09-20 18:00:36', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '66', 'TABN_BUTN-20130304171529861-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('139', null, '2012-09-20 18:01:39', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '105', 'TABN_BUTN-20130304171529864-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('140', null, '2012-09-20 18:01:42', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '105', 'TABN_BUTN-20130304171529868-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('143', null, '2012-09-20 18:02:23', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '142', 'TABN_BUTN-20130304171529872-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('144', null, '2012-09-20 18:02:27', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '142', 'TABN_BUTN-20130304171529876-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('145', null, '2012-09-20 18:03:04', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '129', 'TABN_BUTN-20130304171529879-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('146', null, '2012-09-20 18:03:09', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '129', 'TABN_BUTN-20130304171529883-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('147', null, '2012-09-20 18:03:39', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '128', 'TABN_BUTN-20130304171529886-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('148', null, '2012-09-20 18:03:43', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '128', 'TABN_BUTN-20130304171529889-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('150', null, '2012-09-21 17:37:04', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '208', 'TABN_BUTN-20130304171529897-SYSM-00001', '维护', 'WH', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('151', null, '2012-09-24 13:58:06', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '208', 'TABN_BUTN-20130304171529904-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('152', null, '2012-09-24 13:58:09', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '208', 'TABN_BUTN-20130304171529907-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('155', null, '2012-09-26 18:01:17', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '210', 'TABN_BUTN-20130304171529910-SYSM-00001', '维护', 'WH', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('123946440', null, '2012-11-01 18:14:08', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '418796937', 'TABN_BUTN-20130304171530134-SYSM-00001', '维护', 'WH', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('636876591', null, '2012-12-24 16:31:16', null, '0000-00-00 00:00:00', null, '2', '221075092', '101457725003', 'TABN_BUTN-2013031213412249-SYSM-00001', '选择权限组', 'XZQXZ', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('1091196364', null, '2012-12-24 16:23:38', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '101457725003', 'TABN_BUTN-20130304171530387-SYSM-00001', '维护', 'WH', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('1117527226', null, '2012-10-12 11:08:50', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '153', 'TABN_BUTN-20130304171530260-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('1282030221', null, '2012-10-31 15:21:17', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '2030733598', 'TABN_BUTN-2013030417153083-SYSM-00001', '维护', 'WH', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('1364443978', null, '2012-10-31 16:04:33', null, '0000-00-00 00:00:00', null, '1', '10829094252', '213', 'TABN_BUTN-20130304171530358-SYSM-00001', '查看文件', 'CKWJ', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('1636576213', null, '2012-10-12 11:10:06', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '125', 'TABN_BUTN-20130304171530400-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('2046073015', null, '2012-10-12 11:11:14', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '127', 'TABN_BUTN-20130304171530368-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10279743433', null, '2012-10-12 11:10:35', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '126', 'TABN_BUTN-20130304171530257-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10497789310', null, '2012-12-24 15:00:04', null, '0000-00-00 00:00:00', null, '3', '221075092', '170', 'TABN_BUTN-20130312134235528-SYSM-00001', '选择权限', 'XZQX', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10539920405', null, '2012-10-22 09:47:54', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '10169396274', 'TABN_BUTN-20130304171530391-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10771132004', null, '2012-10-12 11:11:12', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '127', 'TABN_BUTN-20130304171530397-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('101069277661', null, '2012-11-02 13:51:36', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '1081243326', 'TABN_BUTN-20130304171529761-SYSM-00001', '维护', 'WH', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('101102466691', null, '2012-10-12 11:09:00', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '153', 'TABN_BUTN-20130304171530270-SYSM-00001', '撤回', 'CHEHUI', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('101224586299', null, '2012-12-06 15:37:39', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '101960425631', 'TABN_BUTN-20130304171530264-SYSM-00001', '维护', 'WH', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('101545519882', null, '2012-10-22 09:45:09', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '10169396274', 'TABN_BUTN-20130304171529924-SYSM-00001', '维护', 'WH', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('101688181881', null, '2012-10-12 11:10:32', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '126', 'TABN_BUTN-20130304171530394-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('101839516969', null, '2013-01-15 13:33:32', null, '0000-00-00 00:00:00', null, '2', '1604850926', '113', 'TABN_BUTN-20130304171530364-SYSM-00001', '选择角色', 'XZJS', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('102032732274', null, '2012-10-22 09:47:49', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '10169396274', 'TABN_BUTN-2013030417153060-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('102078645530', null, '2012-10-12 11:10:04', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '125', 'TABN_BUTN-2013030417153040-SYSM-00001', '发布', 'FABU', null, '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000002270089', null, '2013-09-27 15:08:09', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '10000002270081', 'TABN_BUTN-20130927150818983-SYSM-00001', '维护', 'WH', '列表维护按钮', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000002270102', null, '2013-09-27 15:15:04', null, '0000-00-00 00:00:00', null, '2', '1340071401668', '10000002270081', 'TABN_BUTN-2013092715151484-SYSM-00001', '发布', 'FABU', '发布', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000002270105', null, '2013-09-27 15:15:09', null, '0000-00-00 00:00:00', null, '3', '1340071401669', '10000002270081', 'TABN_BUTN-20130927151518935-SYSM-00001', '撤回', 'CHEHUI', '撤回', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000002930032', null, '2013-10-09 17:58:36', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '10000002930024', 'TABN_BUTN-20131009175907382-SYSM-00001', '维护', 'WH', '列表维护按钮', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000003760006', null, '2013-10-16 14:18:29', null, '0000-00-00 00:00:00', '', '1', '1340071401633', '10000003760002', null, '维护', 'WH', '列表维护按钮', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000003760014', null, '2013-10-16 14:22:13', null, '0000-00-00 00:00:00', '', '1', '1340071401633', '10000003760010', null, '维护', 'WH', '列表维护按钮', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000003760022', null, '2013-10-16 14:30:50', null, '0000-00-00 00:00:00', '', '1', '1340071401633', '10000003760018', null, '维护', 'WH', '列表维护按钮', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000003760030', null, '2013-10-16 14:36:28', null, '0000-00-00 00:00:00', '', '1', '1340071401633', '10000003760026', null, '维护', 'WH', '列表维护按钮', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000003760038', null, '2013-10-16 14:43:26', null, '0000-00-00 00:00:00', '', '1', '1340071401633', '10000003760034', null, '维护', 'WH', '列表维护按钮', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000004960024', null, '2013-10-30 12:09:58', null, '0000-00-00 00:00:00', '', '2', '1340071401633', '10000004960020', null, '维护', 'WH', '列表维护按钮', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000004980002', null, '2013-10-30 13:25:04', null, '0000-00-00 00:00:00', null, '1', '221075092', '10000004960020', 'TABN_BUTN-20131030132500811-SYSM-00001', '访问', 'VISIT', '访问', '0');
-INSERT INTO `sys_oprtbutton` VALUES ('10000005720064', null, '2014-09-17 09:40:31', null, '0000-00-00 00:00:00', null, '1', '1340071401633', '10000005700015', 'TABN_BUTN-20140917094031735-SYSM-00001', '维护', 'WH', '列表维护按钮', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('106', null, '2012-09-20 13:57:54', null, null, null, '1', '1340071401668', '199', 'TABN_BUTN-20130304171529777-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('107', null, '2012-09-20 13:58:00', null, null, null, '2', '1340071401669', '199', 'TABN_BUTN-20130304171529780-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('108', null, '2012-09-20 14:33:48', null, null, null, null, '1340071401633', '206', 'TABN_BUTN-20130304171529783-SYSM-00001', '维护', 'WH', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('109', null, '2012-09-20 17:48:09', null, null, null, '1', '1340071401668', '71', 'TABN_BUTN-20130304171529786-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('110', null, '2012-09-20 17:48:13', null, null, null, '2', '1340071401669', '71', 'TABN_BUTN-20130304171529789-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('111', null, '2012-09-20 17:54:27', null, null, null, '1', '1340071401668', '80', 'TABN_BUTN-20130304171529792-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('112', null, '2012-09-20 17:54:31', null, null, null, '2', '1340071401669', '80', 'TABN_BUTN-20130304171529795-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('113', null, '2012-09-20 17:55:00', null, null, null, '2', '1340071401668', '69', 'TABN_BUTN-20130304171529798-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('114', null, '2012-09-20 17:55:03', null, null, null, '3', '1340071401669', '69', 'TABN_BUTN-20130304171529801-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('115', null, '2012-09-20 17:55:25', null, null, null, '2', '1340071401668', '150', 'TABN_BUTN-20130304171529804-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('116', null, '2012-09-20 17:55:27', null, null, null, '3', '1340071401669', '150', 'TABN_BUTN-20130304171529808-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('117', null, '2012-09-20 17:56:01', null, null, null, '2', '1340071401668', '151', 'TABN_BUTN-20130304171529812-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('118', null, '2012-09-20 17:55:58', null, null, null, '3', '1340071401669', '151', 'TABN_BUTN-20130304171529815-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('119', null, '2012-09-20 17:56:16', null, null, null, '2', '1340071401668', '152', 'TABN_BUTN-20130304171529819-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('120', null, '2012-09-20 17:56:19', null, null, null, '3', '1340071401669', '152', 'TABN_BUTN-20130304171529822-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('121', null, '2012-09-20 17:56:41', null, null, null, '2', '1340071401668', '154', 'TABN_BUTN-20130304171529825-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('122', null, '2012-09-20 17:56:44', null, null, null, '3', '1340071401669', '154', 'TABN_BUTN-20130304171529828-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('123', null, '2012-09-20 17:57:16', null, null, null, '2', '1340071401668', '72', 'TABN_BUTN-20130304171529831-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('124', null, '2012-09-20 17:57:19', null, null, null, '3', '1340071401669', '72', 'TABN_BUTN-20130304171529834-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('125', null, '2012-09-20 17:57:43', null, null, null, '2', '1340071401668', '73', 'TABN_BUTN-20130304171529838-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('126', null, '2012-09-20 17:57:46', null, null, null, '3', '1340071401669', '73', 'TABN_BUTN-20130304171529841-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('127', null, '2012-09-20 17:58:22', null, null, null, '2', '1340071401668', '74', 'TABN_BUTN-20130304171529844-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('128', null, '2012-09-20 17:58:25', null, null, null, '3', '1340071401669', '74', 'TABN_BUTN-20130304171529847-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('135', null, '2012-09-20 18:00:05', null, null, null, '2', '1340071401668', '195', 'TABN_BUTN-20130304171529851-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('136', null, '2012-09-20 18:00:08', null, null, null, '3', '1340071401669', '195', 'TABN_BUTN-20130304171529854-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('137', null, '2012-09-20 18:00:33', null, null, null, '2', '1340071401668', '66', 'TABN_BUTN-20130304171529858-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('138', null, '2012-09-20 18:00:36', null, null, null, '3', '1340071401669', '66', 'TABN_BUTN-20130304171529861-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('139', null, '2012-09-20 18:01:39', null, null, null, '2', '1340071401668', '105', 'TABN_BUTN-20130304171529864-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('140', null, '2012-09-20 18:01:42', null, null, null, '3', '1340071401669', '105', 'TABN_BUTN-20130304171529868-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('143', null, '2012-09-20 18:02:23', null, null, null, '2', '1340071401668', '142', 'TABN_BUTN-20130304171529872-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('144', null, '2012-09-20 18:02:27', null, null, null, '3', '1340071401669', '142', 'TABN_BUTN-20130304171529876-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('145', null, '2012-09-20 18:03:04', null, null, null, '2', '1340071401668', '129', 'TABN_BUTN-20130304171529879-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('146', null, '2012-09-20 18:03:09', null, null, null, '3', '1340071401669', '129', 'TABN_BUTN-20130304171529883-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('147', null, '2012-09-20 18:03:39', null, null, null, '2', '1340071401668', '128', 'TABN_BUTN-20130304171529886-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('148', null, '2012-09-20 18:03:43', null, null, null, '3', '1340071401669', '128', 'TABN_BUTN-20130304171529889-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('150', null, '2012-09-21 17:37:04', null, null, null, '1', '1340071401633', '208', 'TABN_BUTN-20130304171529897-SYSM-00001', '维护', 'WH', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('151', null, '2012-09-24 13:58:06', null, null, null, '2', '1340071401668', '208', 'TABN_BUTN-20130304171529904-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('152', null, '2012-09-24 13:58:09', null, null, null, '3', '1340071401669', '208', 'TABN_BUTN-20130304171529907-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('155', null, '2012-09-26 18:01:17', null, null, null, '1', '1340071401633', '210', 'TABN_BUTN-20130304171529910-SYSM-00001', '维护', 'WH', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('123946440', null, '2012-11-01 18:14:08', null, null, null, '1', '1340071401633', '418796937', 'TABN_BUTN-20130304171530134-SYSM-00001', '维护', 'WH', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('636876591', null, '2012-12-24 16:31:16', null, null, null, '2', '221075092', '101457725003', 'TABN_BUTN-2013031213412249-SYSM-00001', '选择权限组', 'XZQXZ', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('1091196364', null, '2012-12-24 16:23:38', null, null, null, '1', '1340071401633', '101457725003', 'TABN_BUTN-20130304171530387-SYSM-00001', '维护', 'WH', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('1117527226', null, '2012-10-12 11:08:50', null, null, null, '2', '1340071401668', '153', 'TABN_BUTN-20130304171530260-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('1282030221', null, '2012-10-31 15:21:17', null, null, null, '1', '1340071401633', '2030733598', 'TABN_BUTN-2013030417153083-SYSM-00001', '维护', 'WH', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('1364443978', null, '2012-10-31 16:04:33', null, null, null, '1', '10829094252', '213', 'TABN_BUTN-20130304171530358-SYSM-00001', '查看文件', 'CKWJ', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('1636576213', null, '2012-10-12 11:10:06', null, null, null, '3', '1340071401669', '125', 'TABN_BUTN-20130304171530400-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('2046073015', null, '2012-10-12 11:11:14', null, null, null, '3', '1340071401669', '127', 'TABN_BUTN-20130304171530368-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10279743433', null, '2012-10-12 11:10:35', null, null, null, '3', '1340071401669', '126', 'TABN_BUTN-20130304171530257-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10497789310', null, '2012-12-24 15:00:04', null, null, null, '3', '221075092', '170', 'TABN_BUTN-20130312134235528-SYSM-00001', '选择权限', 'XZQX', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10539920405', null, '2012-10-22 09:47:54', null, null, null, '3', '1340071401669', '10169396274', 'TABN_BUTN-20130304171530391-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10771132004', null, '2012-10-12 11:11:12', null, null, null, '2', '1340071401668', '127', 'TABN_BUTN-20130304171530397-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('101069277661', null, '2012-11-02 13:51:36', null, null, null, '1', '1340071401633', '1081243326', 'TABN_BUTN-20130304171529761-SYSM-00001', '维护', 'WH', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('101102466691', null, '2012-10-12 11:09:00', null, null, null, '3', '1340071401669', '153', 'TABN_BUTN-20130304171530270-SYSM-00001', '撤回', 'CHEHUI', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('101224586299', null, '2012-12-06 15:37:39', null, null, null, '1', '1340071401633', '101960425631', 'TABN_BUTN-20130304171530264-SYSM-00001', '维护', 'WH', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('101545519882', null, '2012-10-22 09:45:09', null, null, null, '1', '1340071401633', '10169396274', 'TABN_BUTN-20130304171529924-SYSM-00001', '维护', 'WH', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('101688181881', null, '2012-10-12 11:10:32', null, null, null, '2', '1340071401668', '126', 'TABN_BUTN-20130304171530394-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('101839516969', null, '2013-01-15 13:33:32', null, null, null, '2', '1604850926', '113', 'TABN_BUTN-20130304171530364-SYSM-00001', '选择角色', 'XZJS', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('102032732274', null, '2012-10-22 09:47:49', null, null, null, '2', '1340071401668', '10169396274', 'TABN_BUTN-2013030417153060-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('102078645530', null, '2012-10-12 11:10:04', null, null, null, '2', '1340071401668', '125', 'TABN_BUTN-2013030417153040-SYSM-00001', '发布', 'FABU', null, '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000002270089', null, '2013-09-27 15:08:09', null, null, null, '1', '1340071401633', '10000002270081', 'TABN_BUTN-20130927150818983-SYSM-00001', '维护', 'WH', '列表维护按钮', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000002270102', null, '2013-09-27 15:15:04', null, null, null, '2', '1340071401668', '10000002270081', 'TABN_BUTN-2013092715151484-SYSM-00001', '发布', 'FABU', '发布', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000002270105', null, '2013-09-27 15:15:09', null, null, null, '3', '1340071401669', '10000002270081', 'TABN_BUTN-20130927151518935-SYSM-00001', '撤回', 'CHEHUI', '撤回', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000002930032', null, '2013-10-09 17:58:36', null, null, null, '1', '1340071401633', '10000002930024', 'TABN_BUTN-20131009175907382-SYSM-00001', '维护', 'WH', '列表维护按钮', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000003760006', null, '2013-10-16 14:18:29', null, null, '', '1', '1340071401633', '10000003760002', null, '维护', 'WH', '列表维护按钮', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000003760014', null, '2013-10-16 14:22:13', null, null, '', '1', '1340071401633', '10000003760010', null, '维护', 'WH', '列表维护按钮', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000003760022', null, '2013-10-16 14:30:50', null, null, '', '1', '1340071401633', '10000003760018', null, '维护', 'WH', '列表维护按钮', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000003760030', null, '2013-10-16 14:36:28', null, null, '', '1', '1340071401633', '10000003760026', null, '维护', 'WH', '列表维护按钮', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000003760038', null, '2013-10-16 14:43:26', null, null, '', '1', '1340071401633', '10000003760034', null, '维护', 'WH', '列表维护按钮', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000004960024', null, '2013-10-30 12:09:58', null, null, '', '2', '1340071401633', '10000004960020', null, '维护', 'WH', '列表维护按钮', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000004980002', null, '2013-10-30 13:25:04', null, null, null, '1', '221075092', '10000004960020', 'TABN_BUTN-20131030132500811-SYSM-00001', '访问', 'VISIT', '访问', '0');
+INSERT INTO `sys_oprtbutton` VALUES ('10000005720064', null, '2014-09-17 09:40:31', null, null, null, '1', '1340071401633', '10000005700015', 'TABN_BUTN-20140917094031735-SYSM-00001', '维护', 'WH', '列表维护按钮', '0');
 
 -- ----------------------------
 -- Table structure for sys_org
@@ -11135,7 +11135,7 @@ CREATE TABLE `sys_org` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_parentId` bigint(20) DEFAULT NULL,
   `tbl_name` varchar(100) DEFAULT NULL,
   `tbl_bumenzhineng` varchar(50) DEFAULT NULL,
@@ -11363,7 +11363,7 @@ CREATE TABLE `sys_passwordbox` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_compname` varchar(100) DEFAULT NULL,
   `comm_status` int(11) DEFAULT '0',
   `tbl_kuandu` int(11) DEFAULT NULL,
@@ -11699,7 +11699,7 @@ CREATE TABLE `sys_radiomgt` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_comment` varchar(50) DEFAULT NULL,
   `tbl_remark` varchar(255) DEFAULT NULL,
   `tbl_bianma` varchar(50) DEFAULT NULL,
@@ -11797,7 +11797,7 @@ CREATE TABLE `sys_relation` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_systemteam` varchar(50) DEFAULT NULL,
   `tbl_connecttype` varchar(2) DEFAULT NULL,
   `comm_mark_for_delete` int(2) DEFAULT '0',
@@ -11808,7 +11808,7 @@ CREATE TABLE `sys_relation` (
 -- ----------------------------
 -- Records of sys_relation
 -- ----------------------------
-INSERT INTO `sys_relation` VALUES ('42', '197', 'sys_menu', '198', 'sys_menuitem', '1', '菜单和菜单项中间表', null, '1', '2012-09-21 16:34:06', '1', '0000-00-00 00:00:00', 'sys', '2', '0', null);
+INSERT INTO `sys_relation` VALUES ('42', '197', 'sys_menu', '198', 'sys_menuitem', '1', '菜单和菜单项中间表', null, '1', '2012-09-21 16:34:06', '1', null, 'sys', '2', '0', null);
 INSERT INTO `sys_relation` VALUES ('10000006010009', '10000005610006', 'bus_product', '10000006010000', 'bus_productdetail', '0', '', null, '2052751705', '2016-04-21 19:46:40', '2052751705', '2016-04-21 19:46:40', null, '1', '0', 'tbl_product_id');
 INSERT INTO `sys_relation` VALUES ('336280120', '101838990416', 'sys_role', '218', 'sys_roles', '1', '角色对应的权限组', '角色对应的权限组', '1', '2012-12-25 09:41:37', '1', '2012-12-25 09:41:37', 'sys', '2', '0', null);
 INSERT INTO `sys_relation` VALUES ('10303011302', '150', 'sys_usr', '101838990416', 'sys_role', '3', '用户角色中间表', '用户角色中间表', '1', '2012-12-25 15:14:15', '1', '2012-12-25 15:14:15', 'sys', '2', '0', null);
@@ -11831,7 +11831,7 @@ CREATE TABLE `sys_renyuan` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_zhiwu` varchar(50) DEFAULT NULL,
   `tbl_yuangongbianhao` varchar(10) DEFAULT NULL,
   `tbl_chushengnianyue` date DEFAULT NULL,
@@ -11977,7 +11977,7 @@ CREATE TABLE `sys_riqizujian` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_dateremark` varchar(1024) DEFAULT NULL,
   `tbl_bianma` varchar(50) DEFAULT NULL,
   `tbl_remark` varchar(1024) DEFAULT NULL,
@@ -12132,7 +12132,7 @@ CREATE TABLE `sys_searchcombox` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_compname` varchar(100) DEFAULT NULL,
   `comm_status` int(2) DEFAULT '0',
   `tbl_kuandu` int(11) DEFAULT NULL,
@@ -12229,7 +12229,7 @@ CREATE TABLE `sys_tables` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `comm_status` int(20) DEFAULT '0',
   `tbl_remark` varchar(100) DEFAULT NULL,
   `tbl_hasForeignKey` int(11) DEFAULT NULL,
@@ -12319,7 +12319,7 @@ INSERT INTO `sys_tables` VALUES ('10751640741', 'sys_user_org', '用户机构中
 INSERT INTO `sys_tables` VALUES ('1996265818', 'bus_detail', '员工详细信息表', 'selfsystem', '0', '2052751705', '2013-08-27 12:30:43', '2052751705', '2013-08-27 12:30:43', '0', '', '0', '0', '1', null, null, '员工详细信息表', null, 'bus', '0', '1', 'detail');
 INSERT INTO `sys_tables` VALUES ('1816520415', 'sys_user_part', '用户角色中间表', 'selfsystem', '0', '1', '2013-08-27 19:01:22', '1', '2013-08-27 19:01:22', '0', '', '0', '0', '1', null, null, '用户角色中间表', null, 'sys', '0', '1', 'user part');
 INSERT INTO `sys_tables` VALUES ('1076655540', 'bus_project', '项目表', 'selfsystem', '0', '2052751705', '2013-08-28 10:26:18', '2052751705', '2013-08-28 10:26:18', '0', '', '0', '0', '1', null, null, '项目表', null, 'bus', '0', '1', 'project');
-INSERT INTO `sys_tables` VALUES ('3453453434', 'sys_db_id', '生成唯一ID表', 'selfsystem', '0', '1', '2013-08-30 13:02:43', '1', '0000-00-00 00:00:00', '0', '0', '0', '0', '1', null, null, '生成唯一ID表', null, 'sys', '0', '1', 'db id');
+INSERT INTO `sys_tables` VALUES ('3453453434', 'sys_db_id', '生成唯一ID表', 'selfsystem', '0', '1', '2013-08-30 13:02:43', '1', null, '0', '0', '0', '0', '1', null, null, '生成唯一ID表', null, 'sys', '0', '1', 'db id');
 INSERT INTO `sys_tables` VALUES ('10000000200021', 'sys_resource', '资源表', 'selfsystem', '0', '1', '2013-09-06 16:23:57', '1', '2013-09-06 16:23:57', '0', '', '0', '0', '1', null, null, '资源表', null, 'sys', '0', '1', 'resource');
 INSERT INTO `sys_tables` VALUES ('10000000230013', 'sys_role_privilege', '角色权限中间表', 'selfsystem', '0', '1', '2013-09-09 10:51:02', '1', '2013-09-09 10:51:02', '0', '', '0', '0', '1', null, null, '角色权限中间表', null, 'sys', '0', '1', 'role privilege');
 INSERT INTO `sys_tables` VALUES ('10000000230020', 'sys_privilege_resource', '权限资源中间表', 'selfsystem', '0', '1', '2013-09-09 10:52:08', '1', '2013-09-09 10:52:08', '0', '', '0', '0', '1', null, null, '权限资源中间表', null, 'sys', '0', '1', 'privilege resource');
@@ -12359,7 +12359,7 @@ CREATE TABLE `sys_template` (
   `tbl_comment` varchar(512) DEFAULT NULL,
   `tbl_remark` varchar(512) DEFAULT NULL,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_tds` int(4) DEFAULT NULL,
   `tbl_mobanyongtu` varchar(50) DEFAULT '0',
   `tbl_trs` int(11) DEFAULT '0',
@@ -12392,7 +12392,7 @@ INSERT INTO `sys_template` VALUES ('139', '树模板', '0', '', '', '2052751705'
 INSERT INTO `sys_template` VALUES ('140', '表关系管理模板', '0', null, null, '2052751705', '2012-09-21 14:16:11', '0', '1', '<table id=\"templateView\" class=\"Input_Table\" style=\"width: 100%;\" border=\"0\" cellspacing=\"0\" cellpadding=\"2\">\r\n<tbody>\r\n<tr>\r\n<td class=\"Input_Table_Label\" width=\"10%\"><div id=\'compexDomainTabEdit_label_t1\'></div></td>\r\n<td width=\"40%\"><div id=\'compexDomainTabEdit_value_t1\'></div></td>\r\n<td class=\"Input_Table_Label\" width=\"10%\"><div id=\'compexDomainTabEdit_label_t2\'></div></td>\r\n<td width=\"40%\"><div id=\'compexDomainTabEdit_value_t2\'></div></td>\r\n</tr>\r\n<tr>\r\n<td class=\"Input_Table_Label\" width=\"10%\" height=\"25px\"><div id=\'compexDomainTabEdit_label_t3\'></div></td>\r\n<td width=\"40%\" height=\"25px\"><div id=\'compexDomainTabEdit_value_t3\'></div></td>\r\n<td class=\"Input_Table_Label\" width=\"10%\" height=\"25px\"><div id=\'compexDomainTabEdit_label_t4\'></div></td>\r\n<td width=\"40%\" height=\"25px\"><div id=\'compexDomainTabEdit_value_t4\'></div></td>\r\n</tr>\r\n<tr>\r\n<td class=\"Input_Table_Label\" width=\"10%\" height=\"25px\"><div id=\'compexDomainTabEdit_label_t5\'></div></td>\r\n<td colspan=\"3\" width=\"40%\" height=\"25px\"><div id=\'compexDomainTabEdit_value_t5\'></div></td>\r\n</tr>\r\n</tbody>\r\n</table>', '表关系管理模板', '', '2052751705', '2014-09-14 20:34:29', '4', '2', '3', 'sys', '0');
 INSERT INTO `sys_template` VALUES ('145', '机构管理模板', '0', null, null, '2052751705', '2012-09-25 18:08:54', '0', '1', '<table id=\"templateView\" class=\"Input_Table\" style=\"width: 100%;\" border=\"0\" cellspacing=\"0\" cellpadding=\"2\">\r\n<tbody>\r\n<tr>\r\n<td class=\"Input_Table_Label\" width=\"10%\" height=\"25\"><div id=\'compexDomainTabEdit_label_t1\'></div></td>\r\n<td width=\"40%\" height=\"25\"><div id=\'compexDomainTabEdit_value_t1\'></div></td>\r\n<td class=\"Input_Table_Label\" width=\"10%\" height=\"25\"><div id=\'compexDomainTabEdit_label_t2\'></div></td>\r\n<td width=\"40%\" height=\"25\"><div id=\'compexDomainTabEdit_value_t2\'></div></td>\r\n</tr>\r\n<tr>\r\n<td class=\"Input_Table_Label\" style=\"width: 10%; height: 25px;\"><div id=\'compexDomainTabEdit_label_t3\'></div></td>\r\n<td colspan=\"3\" width=\"40%\" height=\"25\"><div id=\'compexDomainTabEdit_value_t3\'></div></td>\r\n</tr>\r\n<tr>\r\n<td class=\"Input_Table_Label\" width=\"10%\" height=\"25\"><div id=\'compexDomainTabEdit_label_t4\'></div></td>\r\n<td width=\"40%\" height=\"25\"><div id=\'compexDomainTabEdit_value_t4\'></div></td>\r\n<td class=\"Input_Table_Label\" width=\"10%\" height=\"25\"><div id=\'compexDomainTabEdit_label_t5\'></div></td>\r\n<td width=\"40%\" height=\"25\"><div id=\'compexDomainTabEdit_value_t5\'></div></td>\r\n</tr>\r\n<tr>\r\n<td class=\"Input_Table_Label\" width=\"10%\" height=\"25\"><div id=\'compexDomainTabEdit_label_t6\'></div></td>\r\n<td colspan=\"3\" width=\"90%\" height=\"25\"><div id=\'compexDomainTabEdit_value_t6\'></div></td>\r\n</tr>\r\n</tbody>\r\n</table>', '机构管理模板', '', '2052751705', '2013-01-14 19:19:15', '4', '-1', '4', 'sys', '0');
 INSERT INTO `sys_template` VALUES ('158', '主题管理模板', '0', '', '', '2052751705', '2012-08-07 10:14:21', '0', '1', '<table id=\"templateView\" width=\"100%\" cellspacing=\"0\" cellpadding=\"2\" border=\"0\" class=\"Input_Table\"><tbody><tr><td class=\"Input_Table_Label\" height=\"25px\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t1\"></div></td><td height=\"25px\" width=\"40%\"><div id=\"compexDomainTabEdit_value_t1\"></div></td><td class=\"Input_Table_Label\" height=\"25px\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t2\"></div></td><td height=\"25px\" width=\"40%\"><div id=\"compexDomainTabEdit_value_t2\"></div></td></tr><tr><td class=\"Input_Table_Label\" height=\"25px\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t3\"></div></td><td colspan=\"3\" height=\"25px\" width=\"90%\"><div id=\"compexDomainTabEdit_value_t3\"></div></td></tr><tr><td class=\"Input_Table_Label\" height=\"25px\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t4\"></div></td><td colspan=\"3\" height=\"25px\" width=\"90%\"><div id=\"compexDomainTabEdit_value_t4\"></div></td></tr></tbody></tabel>', '主题管理模板', '', '2052751705', '2012-08-16 10:26:26', '4', '2', '0', 'sys', '0');
-INSERT INTO `sys_template` VALUES ('200', '菜单管理模板', '0', '', '', '2052751705', '2012-08-17 11:00:25', '0', '1', '<table id=\"templateView\" width=\"100%\" cellspacing=\"0\" cellpadding=\"2\" border=\"0\" class=\"Input_Table\">								<tbody><tr><td class=\"Input_Table_Label\" index=\"1,1\" height=\"25px\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t1\"></div></td><td index=\"1,2\" colspan=\"3\" height=\"25px\" width=\"90%\"><div id=\"compexDomainTabEdit_value_t1\"></div></td></tr><tr><td class=\"Input_Table_Label\" index=\"2,1\" height=\"25px\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t2\"></div></td><td index=\"2,2\" colspan=\"3\" height=\"25px\" width=\"90%\"><div id=\"compexDomainTabEdit_value_t2\"></div></td></tr><tr><td class=\"Input_Table_Label\" index=\"3,1\" height=\"25px\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t3\"></div></td><td index=\"3,2\" colspan=\"3\" height=\"25px\" width=\"90%\"><div id=\"compexDomainTabEdit_value_t3\"></div></td></tr></tbody></tabel>', '', '', '2052751705', '0000-00-00 00:00:00', '4', '2', '0', 'sys', '0');
+INSERT INTO `sys_template` VALUES ('200', '菜单管理模板', '0', '', '', '2052751705', '2012-08-17 11:00:25', '0', '1', '<table id=\"templateView\" width=\"100%\" cellspacing=\"0\" cellpadding=\"2\" border=\"0\" class=\"Input_Table\">								<tbody><tr><td class=\"Input_Table_Label\" index=\"1,1\" height=\"25px\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t1\"></div></td><td index=\"1,2\" colspan=\"3\" height=\"25px\" width=\"90%\"><div id=\"compexDomainTabEdit_value_t1\"></div></td></tr><tr><td class=\"Input_Table_Label\" index=\"2,1\" height=\"25px\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t2\"></div></td><td index=\"2,2\" colspan=\"3\" height=\"25px\" width=\"90%\"><div id=\"compexDomainTabEdit_value_t2\"></div></td></tr><tr><td class=\"Input_Table_Label\" index=\"3,1\" height=\"25px\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t3\"></div></td><td index=\"3,2\" colspan=\"3\" height=\"25px\" width=\"90%\"><div id=\"compexDomainTabEdit_value_t3\"></div></td></tr></tbody></tabel>', '', '', '2052751705', null, '4', '2', '0', 'sys', '0');
 INSERT INTO `sys_template` VALUES ('183', '选择列模板', '0', null, null, '2052751705', '2012-09-21 15:34:32', '0', '1', '<table id=\"templateView\" width=\"100%\" cellspacing=\"0\" cellpadding=\"2\" border=\"0\" class=\"Input_Table\"><tbody><tr width=\"100%\" index=\"1\" height=\"25px\"><td class=\"Input_Table_Label\" style=\";;;;\" index=\"1,1\" belong=\"label\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t1\"></div></td><td style=\";;\" index=\"1,2\" belong=\"value\" width=\"40%\"><div id=\"compexDomainTabEdit_value_t1\"></div></td><td class=\"Input_Table_Label\" style=\";;;\" index=\"1,3\" belong=\"label\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t2\"></div></td><td style=\";\" index=\"1,4\" belong=\"value\" width=\"40%\"><div id=\"compexDomainTabEdit_value_t2\"></div></td></tr><tr width=\"100%\" index=\"2\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"2,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t3\"></div></td><td index=\"2,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t3\"></div></td><td class=\"Input_Table_Label\" index=\"2,3\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t4\"></div></td><td index=\"2,4\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t4\"></div></td></tr><tr width=\"100%\" index=\"3\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"3,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t5\"></div></td><td index=\"3,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t5\"></div></td><td class=\"Input_Table_Label\" index=\"3,3\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t6\"></div></td><td index=\"3,4\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t6\"></div></td></tr><tr width=\"100%\" index=\"4\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"4,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t7\"></div></td><td colspan=\"3\" index=\"4,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t7\"></div></td></tr><tr width=\"100%\" index=\"5\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"5,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t8\"></div></td><td colspan=\"3\" index=\"5,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t8\"></div></td></tr><tr width=\"100%\" index=\"6\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"6,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t9\"></div></td><td colspan=\"3\" index=\"6,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t9\"></div></td></tr></tbody></table>', '选择列模板', null, '2052751705', '2012-10-25 13:31:52', '4', '-1', '6', 'sys', '0');
 INSERT INTO `sys_template` VALUES ('184', '序号列模板', '0', null, null, '2052751705', '2012-08-13 15:02:53', '0', '1', '<table id=\"templateView\" width=\"100%\" cellspacing=\"0\" cellpadding=\"2\" border=\"0\" class=\"Input_Table\"><tbody><tr width=\"100%\" index=\"1\" height=\"25px\"><td class=\"Input_Table_Label\" style=\";;;;;;;\" index=\"1,1\" belong=\"label\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t1\"></div></td><td style=\";;;\" index=\"1,2\" belong=\"value\" width=\"40%\"><div id=\"compexDomainTabEdit_value_t1\"></div></td><td class=\"Input_Table_Label\" style=\";;;;;;\" index=\"1,3\" belong=\"label\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t2\"></div></td><td style=\";;;;\" index=\"1,4\" belong=\"value\" width=\"40%\"><div id=\"compexDomainTabEdit_value_t2\"></div></td></tr><tr width=\"100%\" index=\"2\" height=\"25px\"><td class=\"Input_Table_Label\" style=\";;\" index=\"2,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t3\"></div></td><td index=\"2,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t3\"></div></td><td class=\"Input_Table_Label\" index=\"2,3\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t4\"></div></td><td index=\"2,4\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t4\"></div></td></tr><tr width=\"100%\" index=\"3\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"3,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t5\"></div></td><td index=\"3,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t5\"></div></td><td class=\"Input_Table_Label\" index=\"3,3\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t6\"></div></td><td index=\"3,4\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t6\"></div></td></tr><tr width=\"100%\" index=\"4\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"4,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t7\"></div></td><td colspan=\"3\" style=\";\" index=\"4,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t7\"></div></td></tr><tr width=\"100%\" index=\"5\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"5,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t8\"></div></td><td colspan=\"3\" index=\"5,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t8\"></div></td></tr></tbody></table>', '序号列模板', null, '2052751705', '2012-10-25 13:33:23', '4', '-1', '5', 'sys', '0');
 INSERT INTO `sys_template` VALUES ('185', '操作列模板', '0', null, null, '2052751705', '2012-09-21 15:36:42', '0', '1', '<table id=\"templateView\" width=\"100%\" cellspacing=\"0\" cellpadding=\"2\" border=\"0\" class=\"Input_Table\"><tbody><tr width=\"100%\" index=\"1\" height=\"25px\"><td class=\"Input_Table_Label\" style=\";;;;;\" index=\"1,1\" belong=\"label\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t1\"></div></td><td style=\";;;\" index=\"1,2\" belong=\"value\" width=\"40%\"><div id=\"compexDomainTabEdit_value_t1\"></div></td><td class=\"Input_Table_Label\" style=\";;\" index=\"1,3\" belong=\"label\" width=\"10%\"><div id=\"compexDomainTabEdit_label_t2\"></div></td><td style=\";\" index=\"1,4\" belong=\"value\" width=\"40%\"><div id=\"compexDomainTabEdit_value_t2\"></div></td></tr><tr width=\"100%\" index=\"2\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"2,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t3\"></div></td><td index=\"2,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t3\"></div></td><td class=\"Input_Table_Label\" index=\"2,3\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t4\"></div></td><td index=\"2,4\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t4\"></div></td></tr><tr width=\"100%\" index=\"3\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"3,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t5\"></div></td><td index=\"3,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t5\"></div></td><td class=\"Input_Table_Label\" index=\"3,3\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t6\"></div></td><td index=\"3,4\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t6\"></div></td></tr><tr width=\"100%\" index=\"4\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"4,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t7\"></div></td><td colspan=\"3\" index=\"4,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t7\"></div></td></tr><tr width=\"100%\" index=\"5\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"5,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t8\"></div></td><td colspan=\"3\" index=\"5,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t8\"></div></td></tr><tr width=\"100%\" index=\"6\" height=\"25px\"><td class=\"Input_Table_Label\" index=\"6,1\" belong=\"label\"><div id=\"compexDomainTabEdit_label_t9\"></div></td><td colspan=\"3\" index=\"6,2\" belong=\"value\"><div id=\"compexDomainTabEdit_value_t9\"></div></td></tr></tbody></table>', '操作列模板', null, '2052751705', '2012-10-25 13:34:29', '4', '-1', '6', 'sys', '0');
@@ -12458,7 +12458,7 @@ CREATE TABLE `sys_templatecomb` (
   `tbl_comment` varchar(512) DEFAULT NULL,
   `tbl_remark` varchar(512) DEFAULT NULL,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_tds` int(4) DEFAULT NULL,
   `tbl_mobanyongtu` int(2) DEFAULT '0',
   `tbl_trs` int(2) DEFAULT NULL,
@@ -12471,7 +12471,7 @@ CREATE TABLE `sys_templatecomb` (
 -- Records of sys_templatecomb
 -- ----------------------------
 INSERT INTO `sys_templatecomb` VALUES ('16', '标准组合模版', '0', 'combinationStandard.jsp', 'CombinationStandard.jpg', '1', '2012-06-18 11:36:25', '1', '0', null, null, null, '1', '2012-07-19 17:32:26', '4', null, '0', 'sys', '0');
-INSERT INTO `sys_templatecomb` VALUES ('202', '菜单项组合模板', '0', '', '', '1', '2012-08-17 11:21:58', '1', '1', '<table id=\"templateView\" class=\"Input_Table\" width=\"100%\" align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tbody><tr width=\"100%\" index=\"1\" height=\"25px\"><td index=\"1,1\" width=\"100%\"><div id=\"partitionForm1\"></div></td></tr><tr width=\"100%\" index=\"2\" height=\"25px\"><td index=\"2,1\" width=\"100%\"><div id=\"partitionList1\"></div></td></tr></tbody></table>', '', '', null, '0000-00-00 00:00:00', '4', null, '0', 'sys', '0');
+INSERT INTO `sys_templatecomb` VALUES ('202', '菜单项组合模板', '0', '', '', '1', '2012-08-17 11:21:58', '1', '1', '<table id=\"templateView\" class=\"Input_Table\" width=\"100%\" align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tbody><tr width=\"100%\" index=\"1\" height=\"25px\"><td index=\"1,1\" width=\"100%\"><div id=\"partitionForm1\"></div></td></tr><tr width=\"100%\" index=\"2\" height=\"25px\"><td index=\"2,1\" width=\"100%\"><div id=\"partitionList1\"></div></td></tr></tbody></table>', '', '', null, null, '4', null, '0', 'sys', '0');
 INSERT INTO `sys_templatecomb` VALUES ('328', '标准多对多组合模板', '0', '', '', '1', '2012-09-06 17:33:47', '1', '1', '<table id=\"templateView\" class=\"Input_Table\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" align=\"left\" border=\"0\"><tbody><tr width=\"100%\" index=\"1\" height=\"25px\"><td index=\"1,1\" width=\"100%\"><div id=\"partitionForm1\"></div></td></tr><tr width=\"100%\" index=\"2\" height=\"25px\"><td index=\"2,1\" width=\"100%\"><div id=\"partitionList1\"></div></td></tr></tbody></table>', '标准多对多组合模板', '', '1', '2012-09-06 18:25:38', '0', null, '0', 'sys', '0');
 INSERT INTO `sys_templatecomb` VALUES ('10952187791', '门户组合模板', '0', null, null, '1', '2012-11-01 15:15:11', '1', '0', '<table id=\"templateView\" class=\"Input_Table\" align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tbody><tr width=\"100%\" index=\"1\" height=\"25px\"><td index=\"1,1\" width=\"100%\"><div id=\"partitionForm1\"></div></td></tr><tr width=\"100%\" index=\"2\" height=\"25px\"><td index=\"2,1\" width=\"100%\"><div id=\"partitionForm1\"></div></td></tr></tbody></table>', '门户组合模板', null, '1', '2012-11-01 15:15:11', '4', '-1', '4', 'sys', '0');
 
@@ -12484,7 +12484,7 @@ CREATE TABLE `sys_templatelibrary` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_mobanmingcheng` varchar(20) DEFAULT NULL,
   `tbl_gongnengshuoming` text,
   `tbl_beizhu` text,
@@ -12514,7 +12514,7 @@ CREATE TABLE `sys_textarea` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_compname` varchar(100) DEFAULT NULL,
   `comm_status` int(2) DEFAULT '0',
   `tbl_kuandu` int(11) DEFAULT NULL,
@@ -12554,7 +12554,7 @@ CREATE TABLE `sys_textbox` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_isdefault` varchar(11) DEFAULT '0',
   `tbl_systemteam` varchar(50) DEFAULT NULL,
   `tbl_passed` int(2) DEFAULT '0',
@@ -12584,7 +12584,7 @@ CREATE TABLE `sys_texteditor` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_editorid` varchar(50) DEFAULT NULL,
   `tbl_bianma` varchar(50) DEFAULT NULL,
   `tbl_isdefault` varchar(11) DEFAULT '0',
@@ -12609,7 +12609,7 @@ CREATE TABLE `sys_theme` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_themeName` varchar(100) DEFAULT NULL,
   `tbl_biaoshi` varchar(100) DEFAULT NULL,
   `tbl_gongnengshuoming` varchar(500) DEFAULT NULL,
@@ -12653,7 +12653,7 @@ CREATE TABLE `sys_tree` (
   `tbl_type` bigint(50) DEFAULT NULL,
   `tbl_comment` varchar(512) DEFAULT NULL,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_bianma` varchar(50) DEFAULT NULL,
   `tbl_isdefault` varchar(11) DEFAULT '0',
   `tbl_systemteam` varchar(50) DEFAULT NULL,
@@ -12688,7 +12688,7 @@ CREATE TABLE `sys_uploadfilebox` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_compname` varchar(100) DEFAULT NULL,
   `comm_status` int(2) DEFAULT '0',
   `tbl_kuandu` int(11) DEFAULT NULL,
@@ -12753,7 +12753,7 @@ CREATE TABLE `sys_useinfo` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_yewuid` bigint(20) DEFAULT NULL,
   `tbl_zujianid` bigint(20) DEFAULT NULL,
   `tbl_yewumingchen` varchar(512) DEFAULT NULL,
@@ -13462,655 +13462,655 @@ INSERT INTO `sys_useinfo` VALUES ('7195', '1', '2012-09-14 14:49:28', '1', '2012
 INSERT INTO `sys_useinfo` VALUES ('7196', '1', '2012-09-14 14:49:47', '1', '2012-09-17 11:46:23', '203', '1340005570406', '用户分类策略表单', '宽103高5通用文本域', 'BMWB100910000120120625172914', '表单元素', '1743', '1', '0');
 INSERT INTO `sys_useinfo` VALUES ('7197', '1', '2012-09-14 14:50:04', '1', '2012-09-17 11:46:23', '203', '1340005570406', '用户分类策略表单', '宽103高5通用文本域', 'BMWB100910000120120625172914', '表单元素', '1744', '1', '0');
 INSERT INTO `sys_useinfo` VALUES ('7199', '1', '2012-09-14 15:50:46', '1', '2012-09-17 11:46:23', '204', '1338432717931', '按钮权限管理表单', '表单按钮组按钮', '', '表单按钮', '269', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('7288', '1', '2012-09-26 17:58:11', '1', '0000-00-00 00:00:00', '212', '1338432717931', '学员信息管理表单（勿删）', '表单按钮组按钮', '', '表单按钮', '276', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('7295', '1', '2012-09-27 19:05:09', '1', '0000-00-00 00:00:00', '214', '1340071401665', '测试业务', '导出按钮', null, '表单按钮', '278', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('7296', '1', '2012-09-27 19:05:14', '1', '0000-00-00 00:00:00', '214', '1340071401664', '测试业务', '导入按钮', null, '表单按钮', '279', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('149529', '1', '2012-12-05 13:23:03', '1', '0000-00-00 00:00:00', '76', '1340071401664', '目录管理列表', '导入按钮', null, '列表按钮', '685861352', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('4185846', '1', '2013-01-15 13:33:21', '1', '0000-00-00 00:00:00', '113', '1604850926', '用户管理列表', '自定义宽70高24按钮', null, '列表操作按钮', '101839516969', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('12460992', '1', '2012-10-26 16:12:35', '1', '0000-00-00 00:00:00', '115', '1340071401667', '图片页面管理表单', '帮助按钮', null, '表单按钮', '462447724', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('15554517', '1', '2012-10-26 14:47:04', '1', '0000-00-00 00:00:00', '190', '1338430888400', '帮助管理列表', '删除按钮', null, '列表按钮', '10305760668', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('19229035', '1', '2012-10-26 14:52:02', '1', '0000-00-00 00:00:00', '98', '1338178130578', '部内通知', '新建按钮', null, '列表按钮', '797414316', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('36728786', '1', '2013-02-21 17:17:45', '1', '0000-00-00 00:00:00', '102075173809', '1340071401633', '及时通讯列表', '维护按钮', null, '列表操作按钮', '1063849912', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('37790800', '2052751705', '2013-03-22 15:35:54', null, '0000-00-00 00:00:00', '213', '1338430659228', '学员信息管理表单', '修改按钮', null, '表单按钮', '1730436375', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('56455672', '1', '2012-10-26 14:54:04', '1', '0000-00-00 00:00:00', '122', '1338430888400', '海关口岸传真电报列表', '删除按钮', null, '列表按钮', '101240801507', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('65595192', '1', '2012-10-26 16:21:05', '1', '0000-00-00 00:00:00', '214', '1338446858775', '组合模板列表', '帮助按钮', null, '列表按钮', '1115490576', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('65597958', '1', '2012-10-31 15:14:45', '1', '0000-00-00 00:00:00', '101664390156', '1338430659228', '企业信息管理表单', '修改按钮', null, '表单按钮', '18943836', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('76284685', '1', '2013-01-24 16:34:23', '1', '0000-00-00 00:00:00', '10269177854', '1824188855', '测试编码xxx', '流转按钮', '', '列表按钮', '1607168420', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('88877405', '1', '2012-10-26 14:26:41', '1', '0000-00-00 00:00:00', '64', '1338176658578', '数据表管理表单', '保存按钮', null, '表单按钮', '10740548542', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('91654873', '1', '2012-10-26 14:57:30', '1', '0000-00-00 00:00:00', '143', '1338430888400', '布局管理类表', '删除按钮', null, '列表按钮', '257755846', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('95588949', '1', '2012-10-26 16:17:16', '1', '0000-00-00 00:00:00', '103', '1340071401667', '文本编辑器表单', '帮助按钮', null, '表单按钮', '1089895545', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101115063', '1', '2012-12-24 16:22:47', '1', '0000-00-00 00:00:00', '101457725003', '1338178130578', '角色列表', '新建按钮', null, '列表按钮', '101272116092', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101604916', '1', '2012-10-26 16:18:24', '1', '0000-00-00 00:00:00', '69', '1340071401667', 'LOGO管理表单', '帮助按钮', null, '表单按钮', '1132416015', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('109337297', '1', '2012-10-26 14:20:40', '1', '0000-00-00 00:00:00', '69', '1338430659228', 'LOGO管理表单', '修改按钮', null, '表单按钮', '101381913162', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('109864415', '1', '2012-10-26 14:14:56', '1', '0000-00-00 00:00:00', '70', '1338430659228', 'CSS管理表单', '修改按钮', null, '表单按钮', '1549716041', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('119002739', '1', '2012-10-26 14:14:26', '1', '0000-00-00 00:00:00', '103', '1338176658578', '文本编辑器表单', '保存按钮', null, '表单按钮', '1017684146', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('122719749', '1', '2012-10-26 14:21:35', '1', '0000-00-00 00:00:00', '125', '1338430659228', '主题管理表单', '修改按钮', null, '表单按钮', '102082281990', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('138725057', '1', '2012-10-26 14:47:58', '1', '0000-00-00 00:00:00', '81', '1338178130578', '列表管理列表', '新建按钮', null, '列表按钮', '101222385529', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('145845414', '1', '2012-10-26 16:12:01', '1', '0000-00-00 00:00:00', '208', '1340071401667', '权限管理表单', '帮助按钮', null, '表单按钮', '10602635033', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('169113795', '1', '2012-10-26 14:47:44', '1', '0000-00-00 00:00:00', '109', '1338430888400', '表单模板列表', '删除按钮', null, '列表按钮', '218871103', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('175723456', '1', '2012-10-26 16:16:03', '1', '0000-00-00 00:00:00', '126', '1340071401667', '海关口岸传真电报表单', '帮助按钮', null, '表单按钮', '101876899290', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('185946830', '1', '2013-01-04 14:00:50', '1', '0000-00-00 00:00:00', '10616645975', '1340071401633', 'GW流程管理列表', '维护按钮', null, '列表操作按钮', '13173212', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('195238499', '1', '2013-03-07 11:55:58', '1', '0000-00-00 00:00:00', '1054632662', '1339482608765', '学员2222', '表单选项卡保存按钮', null, '表单按钮', '101246758043', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('196970600', '1', '2013-03-11 10:58:12', '1', '0000-00-00 00:00:00', '1338913833', '1338176658578', '学员2', '保存', '', '表单按钮', '175395099', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('199546342', '1', '2013-02-21 17:17:07', '1', '0000-00-00 00:00:00', '102075173809', '1338446858775', '及时通讯列表', '帮助按钮', null, '列表按钮', '10872842496', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('200430041', '1', '2012-10-26 16:12:09', '1', '0000-00-00 00:00:00', '203', '1340071401667', '权限策略管理表单', '帮助按钮', null, '表单按钮', '1415655294', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('222490707', '1', '2012-10-26 16:29:17', '1', '0000-00-00 00:00:00', '114', '1338446858775', '图片页面管理列表', '帮助按钮', null, '列表按钮', '753725579', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('223291989', '1', '2013-03-04 16:26:21', '1', '0000-00-00 00:00:00', '101138973087', '1338430888400', '测试列表', '删除按钮', null, '列表按钮', '1822701407', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('225667587', '1', '2012-10-26 14:32:59', '1', '0000-00-00 00:00:00', '71', '1338430888400', '按钮管理列表', '删除按钮', null, '列表按钮', '101940741132', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('237427116', '1', '2012-10-26 14:54:01', '1', '0000-00-00 00:00:00', '122', '1338178130578', '海关口岸传真电报列表', '新建按钮', null, '列表按钮', '1062219751', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('243300126', '1', '2012-10-26 14:32:53', '1', '0000-00-00 00:00:00', '71', '1338178130578', '按钮管理列表', '新建按钮', null, '列表按钮', '10402199064', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('258291086', '1', '2012-10-26 16:18:38', '1', '0000-00-00 00:00:00', '105', '1340071401667', '信息发布表单', '帮助按钮', null, '表单按钮', '1227312294', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('258735190', '1', '2012-10-26 14:27:02', '1', '0000-00-00 00:00:00', '128', '1338430659228', '机构管理表单', '修改按钮', null, '表单按钮', '101568444306', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('268108991', '1', '2013-02-21 15:39:10', '1', '0000-00-00 00:00:00', '1508238003', '1340071401667', '报表表单', '帮助按钮', null, '表单按钮', '10354878665', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('272053104', '1', '2012-10-26 14:36:30', '1', '0000-00-00 00:00:00', '129', '1338430888400', '列表组件列表', '删除按钮', null, '列表按钮', '1253232451', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('284539412', '1', '2012-10-26 16:12:42', '1', '0000-00-00 00:00:00', '200', '1340071401667', '数据查询管理表单', '帮助按钮', null, '表单按钮', '1058261778', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('296556876', '1', '2012-10-26 16:23:51', '1', '0000-00-00 00:00:00', '112', '1338446858775', '字处理组件列表', '帮助按钮', null, '列表按钮', '1033267531', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('297552405', '1', '2012-10-26 16:21:58', '1', '0000-00-00 00:00:00', '125', '1338446858775', '选择列列表', '帮助按钮', null, '列表按钮', '10441691779', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('298788622', '1', '2012-10-26 14:41:08', '1', '0000-00-00 00:00:00', '69', '1338430888400', '文本框管理列表', '删除按钮', null, '列表按钮', '101310989649', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('310416264', '1', '2012-10-26 16:17:23', '1', '0000-00-00 00:00:00', '53', '1340071401667', '日期组件管理表单', '帮助按钮', null, '表单按钮', '1089667214', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('323203264', '1', '2012-10-26 14:36:25', '1', '0000-00-00 00:00:00', '129', '1338178130578', '列表组件列表', '新建按钮', null, '列表按钮', '10273543552', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('327485786', '1', '2012-10-26 16:27:00', '1', '0000-00-00 00:00:00', '149', '1338446858775', '模板库列表', '帮助按钮', null, '列表按钮', '101054492781', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('334635364', '1', '2012-10-26 14:51:32', '1', '0000-00-00 00:00:00', '92', '1338430888400', 'JS脚本管理列表', '删除按钮', null, '列表按钮', '101644918034', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('335811335', '1', '2013-03-04 16:26:29', '1', '0000-00-00 00:00:00', '101138973087', '1338446858775', '测试列表', '帮助按钮', null, '列表按钮', '101263402704', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('336490934', '1', '2012-10-26 14:20:08', '1', '0000-00-00 00:00:00', '61', '1338176658578', '复选框管理表单', '保存按钮', null, '表单按钮', '10487981773', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('338070779', '1', '2013-02-21 18:04:11', '1', '0000-00-00 00:00:00', '101364029444', '1338176658578', '工作流组件表单', '保存按钮', null, '表单按钮', '129724696', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('338678103', '2', '2013-03-14 09:53:39', null, '0000-00-00 00:00:00', '131', '787835602', '提示信息界面管理列表', '默认按钮', null, '列表按钮', '146', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('355509092', '1', '2013-02-21 18:13:09', '1', '0000-00-00 00:00:00', '10364593661', '1338430888400', '工作流组件列表', '删除按钮', null, '列表按钮', '499814841', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('355910927', '1', '2013-01-14 11:29:56', '1', '0000-00-00 00:00:00', '151', '1338176658578', '菜单管理表单', '保存按钮', null, '表单按钮', '529381670', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('365716349', '1', '2013-01-04 13:54:02', '1', '0000-00-00 00:00:00', '17810378', '1824188855', 'GW发文管理表单', '流转按钮', '', '表单按钮', '1316777925', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('366843683', '1', '2012-10-26 16:20:38', '1', '0000-00-00 00:00:00', '10169396274', '1338446858775', '高级查询列表', '帮助按钮', null, '列表按钮', '10990080124', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('380220304', '1', '2013-03-12 10:29:01', '1', '0000-00-00 00:00:00', '10592028476', '1338430659228', '角色表单', '修改', null, '表单按钮', '10143189140', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('386337065', '1', '2013-02-18 16:43:12', '1', '0000-00-00 00:00:00', '101339765555', '101588525942', 'MYSQL数据备份记录列表', '数据恢复按钮', null, '列表按钮', '81197290', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('388013248', '1', '2012-10-26 14:55:49', '1', '0000-00-00 00:00:00', '131', '1338430888400', '提示信息界面管理列表', '删除按钮', null, '列表按钮', '10564831046', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('392617837', '1', '2013-03-19 13:15:01', null, '0000-00-00 00:00:00', '213', '1338185221078', '学员信息管理表单', '表单选项卡删除按钮', null, '表单按钮', '10950631941', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('394633718', '1', '2012-12-24 16:23:24', '1', '0000-00-00 00:00:00', '101457725003', '1338446858775', '角色列表', '帮助按钮', null, '列表按钮', '348590119', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('410996673', '1', '2012-10-26 16:26:00', '1', '0000-00-00 00:00:00', '202', '1338446858775', '用户分类管理列表', '帮助按钮', null, '列表按钮', '102033301729', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('419926137', '1', '2012-12-25 14:40:47', '1', '0000-00-00 00:00:00', '114', '1338176658578', '用户管理表单', '保存按钮', '', '表单按钮', '10905511913', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('429197257', '1', '2013-03-04 17:20:37', '1', '0000-00-00 00:00:00', '1109601088', '1338176658578', '测试表单', '保存按钮', '', '表单按钮', '1048404056', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('436010751', '1', '2012-12-25 14:41:35', '1', '0000-00-00 00:00:00', '114', '1338176658578', '用户管理表单', '保存按钮', null, '表单按钮', '1767278436', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('441565559', '2052751705', '2013-04-16 17:22:37', null, '0000-00-00 00:00:00', '200193328', '1340071401633', 'aaa', '维护按钮', null, '列表操作按钮', '1730534879', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('451353656', '1', '2012-10-26 16:18:02', '1', '0000-00-00 00:00:00', '146', '1340071401667', '布局管理表单', '帮助按钮', null, '表单按钮', '10666865870', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('464466002', '1', '2012-10-26 14:55:29', '1', '0000-00-00 00:00:00', '130', '1338178130578', '表单界面管理列表', '新建按钮', null, '列表按钮', '304006278', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('464830511', '1', '2012-10-26 14:39:09', '1', '0000-00-00 00:00:00', '73', '787835602', '复选框管理列表', '默认按钮', null, '列表按钮', '202', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('479354955', '1', '2013-03-19 13:13:25', null, '0000-00-00 00:00:00', '213', '1339482578375', '学员信息管理表单', '表单选项卡添加按钮', null, '表单按钮', '1465106520', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('480150629', '1', '2012-10-26 16:29:02', '1', '0000-00-00 00:00:00', '107', '1338446858775', '公文模板列表', '帮助按钮', null, '列表按钮', '101511580242', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('497530300', '1', '2013-02-21 17:47:22', '1', '0000-00-00 00:00:00', '10920024955', '1338430888400', '邮件组件列表', '删除按钮', null, '列表按钮', '10411225159', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('497791830', '1', '2012-10-26 14:57:14', '1', '0000-00-00 00:00:00', '135', '1338430888400', '图标管理列表', '删除按钮', null, '列表按钮', '10847413172', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('499637180', '1', '2012-10-26 14:41:05', '1', '0000-00-00 00:00:00', '69', '1338178130578', '文本框管理列表', '新建按钮', null, '列表按钮', '10561624575', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('501153305', '1', '2013-02-22 11:44:39', '1', '0000-00-00 00:00:00', '10652032678', '1338430888400', '字处理列表', '删除按钮', null, '列表按钮', '101797730173', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('514024297', '1', '2013-02-21 16:21:52', '1', '0000-00-00 00:00:00', '10714079160', '1338430888400', '报表列表', '删除按钮', null, '列表按钮', '101147985721', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('517936251', '1', '2012-10-26 16:17:03', '1', '0000-00-00 00:00:00', '133', '1340071401667', '表单界面管理表单', '帮助按钮', null, '表单按钮', '102008134755', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('532650205', '1', '2012-10-26 16:21:50', '1', '0000-00-00 00:00:00', '126', '1338446858775', '序号列列表', '帮助按钮', null, '列表按钮', '1438647590', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('596219014', '1', '2012-10-26 14:52:19', '1', '0000-00-00 00:00:00', '100', '1338430888400', '行业公告', '删除按钮', null, '列表按钮', '2040683583', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('599795304', '1', '2012-11-05 16:57:20', '1', '0000-00-00 00:00:00', '418796937', '787835602', '门户列表', '默认按钮', null, '列表按钮', '292971121', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('601036622', '1', '2013-03-07 12:03:17', '1', '0000-00-00 00:00:00', '101146831838', '1339482608765', '学员2222', '表单选项卡保存按钮', null, '表单按钮', '10457124721', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('601525074', '1', '2012-12-06 15:44:40', '1', '0000-00-00 00:00:00', '101960425631', '1340071401633', '系统日志列表', '维护按钮', null, '列表操作按钮', '101224586299', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('601782559', '1', '2012-10-26 14:38:00', '1', '0000-00-00 00:00:00', '195', '1338178130578', '代码级联管理列表', '新建按钮', null, '列表按钮', '10595159457', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('608989180', '1', '2012-10-26 14:35:54', '1', '0000-00-00 00:00:00', '125', '1338430888400', '选择列列表', '删除按钮', null, '列表按钮', '1963348403', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('618846541', '1', '2012-10-26 14:21:05', '1', '0000-00-00 00:00:00', '66', '1338176658578', '表关系管理表单', '保存按钮', null, '表单按钮', '10664339482', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('635071787', '1', '2012-10-26 16:26:33', '1', '0000-00-00 00:00:00', '109', '1338446858775', '表单模板列表', '帮助按钮', null, '列表按钮', '10395494809', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('639488072', '1', '2013-02-21 17:07:30', '1', '0000-00-00 00:00:00', '819584023', '1338430659228', '及时通讯组件表单', '修改按钮', null, '表单按钮', '101806983957', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('642825978', '1', '2013-01-04 13:59:33', '1', '0000-00-00 00:00:00', '101964978862', '1338176658578', 'GW流程管理表单', '保存按钮', '', '表单按钮', '10330963347', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('656591418', '1', '2013-02-18 16:43:00', '1', '0000-00-00 00:00:00', '101339765555', '101588525942', 'MYSQL数据备份记录列表', '数据备份按钮', null, '列表按钮', '1086856887', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('662000459', '1', '2012-10-31 10:01:55', '1', '0000-00-00 00:00:00', '1805110464', '1340071401668', '测试列表2', '发布按钮', null, '列表操作按钮', '101045108100', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('673891798', '1', '2012-10-29 11:54:18', '1', '0000-00-00 00:00:00', '68', '1338176658578', '代码管理表单', '保存按钮', null, '表单按钮', '1973489479', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('675185984', '1', '2012-10-26 14:20:05', '1', '0000-00-00 00:00:00', '61', '1338430659228', '复选框管理表单', '修改按钮', null, '表单按钮', '101323431092', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('678296886', '1', '2012-10-26 14:37:43', '1', '0000-00-00 00:00:00', '66', '1338178130578', '日期组件列表', '新建按钮', null, '列表按钮', '10900581727', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('688761763', '1', '2012-10-26 14:37:16', '1', '0000-00-00 00:00:00', '112', '787835602', '字处理组件列表', '默认按钮', null, '列表按钮', '184', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('690553800', '1', '2012-10-26 14:58:35', '1', '0000-00-00 00:00:00', '148', '787835602', '菜单管理列表', '默认按钮', null, '列表按钮', '158', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('705443722', '1', '2012-12-17 17:03:11', '1', '0000-00-00 00:00:00', '1534494048', '1338176658578', '测试权限', '保存按钮', '', '表单按钮', '10129595331', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('723132667', '1', '2012-10-26 16:16:42', '1', '0000-00-00 00:00:00', '137', '1340071401667', '高级查询界面管理表单', '帮助按钮', null, '表单按钮', '41053825', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('729635339', '1', '2012-10-26 14:26:24', '1', '0000-00-00 00:00:00', '135', '1338430659228', '列表组件表单', '修改按钮', null, '表单按钮', '715667447', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('730408028', '1', '2012-10-26 16:15:25', '1', '0000-00-00 00:00:00', '156', '1340071401667', '上传文件框管理表单', '帮助按钮', null, '表单按钮', '10533133929', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('749518735', '1', '2012-12-11 13:37:22', '1', '0000-00-00 00:00:00', '2072797554', '1338176658578', '报表模板表单', '保存按钮', '', '表单按钮', '10983961101', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('762684740', '1', '2012-10-26 16:19:09', '1', '0000-00-00 00:00:00', '129', '1340071401667', '选择列管理表单', '帮助按钮', null, '表单按钮', '10927751433', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('765073095', '1', '2012-10-26 14:32:35', '1', '0000-00-00 00:00:00', '206', '1338178130578', '功能级权限管理列表', '新建按钮', null, '列表按钮', '10263382619', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('773939590', '1', '2012-10-26 14:57:33', '1', '0000-00-00 00:00:00', '143', '787835602', '布局管理类表', '默认按钮', null, '列表按钮', '155', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('775931545', '1', '2012-10-26 16:13:58', '1', '0000-00-00 00:00:00', '59', '1340071401667', '按钮管理表单', '帮助按钮', null, '表单按钮', '699508453', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('784028716', '1', '2012-10-26 14:33:25', '1', '0000-00-00 00:00:00', '214', '1338430888400', '组合模板列表', '删除按钮', null, '列表按钮', '101691102084', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('802987420', '1', '2012-10-26 16:24:27', '1', '0000-00-00 00:00:00', '195', '1338446858775', '代码级联管理列表', '帮助按钮', null, '列表按钮', '101611820984', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('825306998', '1', '2012-10-26 16:15:38', '1', '0000-00-00 00:00:00', '78', '1340071401667', '数据源管理表单', '帮助按钮', null, '表单按钮', '10766135653', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('846308732', '1', '2013-03-19 17:01:43', null, '0000-00-00 00:00:00', '1480825201', '101588525942', '组合模板表单', '自定义按钮宽70高24按钮', null, '表单按钮', '1334647130', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('861749248', '1', '2012-10-26 14:56:24', '1', '0000-00-00 00:00:00', '133', '1338178130578', '高级查询界面管理列表', '新建按钮', null, '列表按钮', '1017077084', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('865153649', '1', '2013-02-21 16:21:37', '1', '0000-00-00 00:00:00', '10714079160', '1338178130578', '报表列表', '新建按钮', null, '列表按钮', '780115994', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('865478781', '1', '2012-10-26 14:48:02', '1', '0000-00-00 00:00:00', '81', '1338430888400', '列表管理列表', '删除按钮', null, '列表按钮', '592290544', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('867125784', '1', '2012-10-26 16:11:34', '1', '0000-00-00 00:00:00', '216', '1340071401667', '文档管理表单', '帮助按钮', null, '表单按钮', '263743253', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('881337446', '1', '2012-12-03 11:04:50', '1', '0000-00-00 00:00:00', '101470572327', '1338446858775', '发件箱列表', '帮助按钮', null, '列表按钮', '101525841099', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('882774649', '1', '2013-02-22 11:37:10', '1', '0000-00-00 00:00:00', '1866983405', '1340071401667', '字处理表单', '帮助按钮', null, '表单按钮', '611677454', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('885596032', '1', '2012-10-26 16:10:41', '1', '0000-00-00 00:00:00', '101051915201', '1340071401667', '编码管理表单', '帮助按钮', null, '表单按钮', '101580612571', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('886358106', '1', '2012-10-26 14:45:39', '1', '0000-00-00 00:00:00', '204', '1338430888400', '权限策略列表', '删除按钮', null, '列表按钮', '10145370110', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('900388930', '1', '2012-10-26 14:34:38', '1', '0000-00-00 00:00:00', '208', '1338178130578', '多文件上传组件', '新建按钮', null, '列表按钮', '978078314', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('901569614', '1', '2012-10-26 14:50:14', '1', '0000-00-00 00:00:00', '85', '1338178130578', '数据表管理列表', '新建按钮', null, '列表按钮', '101023230190', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('912312182', '1', '2012-10-26 16:13:29', '1', '0000-00-00 00:00:00', '189', '1340071401667', '角色管理表单', '帮助按钮', null, '表单按钮', '10733462019', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('916695343', '1', '2013-02-21 17:47:59', '1', '0000-00-00 00:00:00', '10920024955', '1340071401633', '邮件组件列表', '维护按钮', null, '列表操作按钮', '10682587771', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('941929812', '1', '2012-10-26 14:20:53', '1', '0000-00-00 00:00:00', '66', '1338430659228', '表关系管理表单', '修改按钮', null, '表单按钮', '1005619542', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('945406689', '1', '2013-03-05 15:36:07', '1', '0000-00-00 00:00:00', '134', '1338430659228', '提示信息界面管理表单', '修改按钮', null, '表单按钮', '1968208323', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('949354850', '1', '2012-10-26 16:11:00', '1', '0000-00-00 00:00:00', '101875302853', '1340071401667', '高级查询表单', '帮助按钮', null, '表单按钮', '101694082574', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('961069149', '1', '2012-10-26 16:15:31', '1', '0000-00-00 00:00:00', '157', '1340071401667', '密码框管理表单', '帮助按钮', null, '表单按钮', '132425215', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('968438596', '1', '2012-10-26 16:28:46', '1', '0000-00-00 00:00:00', '100', '1338446858775', '行业公告', '帮助按钮', null, '列表按钮', '170445420', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('971536939', '1', '2012-10-26 16:31:07', '1', '0000-00-00 00:00:00', '76', '1338446858775', '目录管理列表', '帮助按钮', null, '列表按钮', '112195810', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1006366075', '1', '2012-10-26 16:27:57', '1', '0000-00-00 00:00:00', '88', '1338446858775', '代码管理列表', '帮助按钮', null, '列表按钮', '1643659214', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1006800147', '1', '2012-10-31 09:58:03', '1', '0000-00-00 00:00:00', '101019829173', '1338178130578', '测试表单1', '新建按钮', null, '表单按钮', '1708305398', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1014602503', '1', '2013-03-07 12:03:17', '1', '0000-00-00 00:00:00', '101146831838', '1338430659228', '学员2222', '修改按钮', null, '表单按钮', '640380176', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1014720982', '1', '2013-02-22 10:53:17', '1', '0000-00-00 00:00:00', '102075173809', '1340071401669', '即时通讯列表', '撤回按钮', null, '列表操作按钮', '1904728048', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('1016191535', '1', '2012-11-02 13:51:04', '1', '0000-00-00 00:00:00', '1081243326', '1340071401633', '组合模板列表', '维护按钮', null, '列表操作按钮', '101069277661', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('1018110912', '1', '2012-10-26 14:40:25', '1', '0000-00-00 00:00:00', '151', '1338430888400', '下拉框管理列表', '删除按钮', null, '列表按钮', '1166025673', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1019405812', '1', '2012-10-26 14:46:52', '1', '0000-00-00 00:00:00', '201', '1338430888400', '数据查询列表', '删除按钮', null, '列表按钮', '202481330', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1022267106', '1', '2012-10-31 15:20:43', '1', '0000-00-00 00:00:00', '2030733598', '1338430888400', '企业信息管理列表', '删除按钮', null, '列表按钮', '1187665625', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1023996906', '1', '2012-10-26 14:15:33', '1', '0000-00-00 00:00:00', '136', '1338176658578', '树界面管理表单', '保存按钮', null, '表单按钮', '10246149210', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1028399154', '1', '2013-02-21 18:09:17', '1', '0000-00-00 00:00:00', '10364593661', '1340071401633', '工作流组件列表', '维护按钮', null, '列表操作按钮', '10611866905', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('1028542121', '1', '2012-10-26 16:14:23', '1', '0000-00-00 00:00:00', '113', '1340071401667', '字处理组件管理表单', '帮助按钮', null, '表单按钮', '101266981799', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1031409873', '1', '2012-12-25 13:47:08', '1', '0000-00-00 00:00:00', '101457725003', '1338430888400', '角色列表', '删除按钮', null, '列表按钮', '333195710', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1036201157', '1', '2012-10-26 14:39:24', '1', '0000-00-00 00:00:00', '72', '1338430888400', '单选框管理列表', '删除按钮', null, '列表按钮', '10166295824', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1037963101', '1', '2012-10-26 14:36:44', '1', '0000-00-00 00:00:00', '142', '1338178130578', '查询组件列表', '新建按钮', null, '列表按钮', '1781406787', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1041814065', '1', '2012-10-26 14:37:07', '1', '0000-00-00 00:00:00', '112', '1338178130578', '字处理组件列表', '新建按钮', null, '列表按钮', '970592951', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1041925564', '1', '2012-10-26 14:40:53', '1', '0000-00-00 00:00:00', '150', '787835602', '文本域管理列表', '默认按钮', null, '列表按钮', '196', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1042225993', '1', '2013-03-12 09:52:09', '1', '0000-00-00 00:00:00', '76', '1338178130578', '模块管理列表', '新建', null, '列表按钮', '10996136128', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1043659537', '1', '2012-10-26 14:40:02', '1', '0000-00-00 00:00:00', '152', '1338430888400', '搜索下拉框列表', '删除按钮', null, '列表按钮', '10780064768', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1045486472', '1', '2013-02-22 13:57:32', '1', '0000-00-00 00:00:00', '10652032678', '787835602', '字处理列表', '默认按钮', null, '列表按钮', '101545638598', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1054136040', '1', '2012-10-26 16:16:29', '1', '0000-00-00 00:00:00', '71', '1340071401667', 'JS脚本管理', '帮助按钮', null, '表单按钮', '1971395856', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1060391582', '1', '2013-03-02 11:02:13', null, '0000-00-00 00:00:00', '101189843881', '1338176658578', 'aaa', '保存', '', '表单按钮', '1095522931', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1061277842', '1', '2012-10-26 16:29:41', '1', '0000-00-00 00:00:00', '122', '1338446858775', '海关口岸传真电报列表', '帮助按钮', null, '列表按钮', '1913924738', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1064966469', '1', '2012-10-26 16:24:20', '1', '0000-00-00 00:00:00', '66', '1338446858775', '日期组件列表', '帮助按钮', null, '列表按钮', '10880217396', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1065293834', '1', '2012-10-26 14:35:02', '1', '0000-00-00 00:00:00', '207', '1338178130578', '打印模板列表', '新建按钮', null, '列表按钮', '101878073234', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1067343607', '1', '2012-12-05 14:39:35', '1', '0000-00-00 00:00:00', '151', '1339482578375', '菜单管理表单', '添加按钮', null, '表单按钮', '102012411171', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1069218960', '1', '2012-12-03 11:04:42', '1', '0000-00-00 00:00:00', '101470572327', '1338178130578', '发件箱列表', '新建按钮', null, '列表按钮', '437272155', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1069920293', '1', '2012-10-26 14:28:39', '1', '0000-00-00 00:00:00', '110', '1338430659228', '组合模板管理表单', '修改按钮', null, '表单按钮', '101766507052', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1071859756', '1', '2012-10-26 16:25:03', '1', '0000-00-00 00:00:00', '154', '1338446858775', '上传文件框管理列表', '帮助按钮', null, '列表按钮', '101288198791', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1075147240', '1', '2012-11-01 18:13:29', '1', '0000-00-00 00:00:00', '418796937', '1338178130578', '门户列表', '新建按钮', null, '列表按钮', '1544805607', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1077301762', '1', '2012-10-26 14:26:38', '1', '0000-00-00 00:00:00', '64', '1338430659228', '数据表管理表单', '修改按钮', null, '表单按钮', '10123912911', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1087563603', '1', '2013-01-04 11:36:04', '1', '0000-00-00 00:00:00', '10616645975', '1338178130578', 'GW流程管理列表', '新建按钮', null, '列表按钮', '596346992', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1109598245', '1', '2012-10-26 16:11:19', '1', '0000-00-00 00:00:00', '114', '1340071401667', '用户管理表单', '帮助按钮', null, '表单按钮', '101703723779', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1123890832', '1', '2013-02-22 11:44:50', '1', '0000-00-00 00:00:00', '10652032678', '1338446858775', '字处理列表', '帮助按钮', null, '列表按钮', '101888753930', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1127162464', '1', '2012-10-26 16:29:48', '1', '0000-00-00 00:00:00', '124', '1338446858775', '机构管理列表', '帮助按钮', null, '列表按钮', '739683003', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1142842269', '1', '2012-10-26 14:25:41', '1', '0000-00-00 00:00:00', '130', '1338176658578', '序号列管理表单', '保存按钮', null, '表单按钮', '10559596262', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1153147208', '1', '2012-10-26 14:57:47', '1', '0000-00-00 00:00:00', '91', '1338430888400', 'CSS管理列表', '删除按钮', null, '列表按钮', '739255838', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1177048380', '1', '2012-10-26 16:30:51', '1', '0000-00-00 00:00:00', '143', '1338446858775', '布局管理类表', '帮助按钮', null, '列表按钮', '599529661', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1178462375', '1', '2013-01-04 11:36:15', '1', '0000-00-00 00:00:00', '10616645975', '1338430888400', 'GW流程管理列表', '删除按钮', null, '列表按钮', '10806700346', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1181390695', '1', '2012-10-26 14:50:44', '1', '0000-00-00 00:00:00', '88', '1338178130578', '代码管理列表', '新建按钮', null, '列表按钮', '10644153839', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1185214499', '1', '2013-01-24 16:42:00', '1', '0000-00-00 00:00:00', '101901716751', '1824188855', '测试编码xxxxx', '流转按钮', '', '表单按钮', '10504527546', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1209621232', '1', '2012-10-26 16:25:10', '1', '0000-00-00 00:00:00', '152', '1338446858775', '搜索下拉框列表', '帮助按钮', null, '列表按钮', '1905550247', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1223743849', '1', '2012-10-31 15:19:39', '1', '0000-00-00 00:00:00', '2030733598', '1338178130578', '企业信息管理列表', '新建按钮', null, '列表按钮', '953673338', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1244115549', '1', '2013-01-23 10:29:04', '1', '0000-00-00 00:00:00', '119', '1338430659228', '系统元素管理表单', '修改按钮', null, '表单按钮', '101640620804', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1246348743', '1', '2013-03-07 12:03:17', '1', '0000-00-00 00:00:00', '101146831838', '1340071401667', '学员2222', '表单帮助按钮', null, '表单按钮', '890372563', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1248659488', '1', '2012-10-26 14:56:27', '1', '0000-00-00 00:00:00', '133', '1338430888400', '高级查询界面管理列表', '删除按钮', null, '列表按钮', '10555769962', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1258606540', '1', '2013-02-21 17:07:45', '1', '0000-00-00 00:00:00', '819584023', '1338176658578', '及时通讯组件表单', '保存按钮', null, '表单按钮', '45311474', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1259548248', '1', '2013-01-04 11:39:44', '1', '0000-00-00 00:00:00', '101964978862', '1338176658578', 'GW流程管理表单', '保存按钮', null, '表单按钮', '333592275', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1260248217', '1', '2012-10-26 14:51:29', '1', '0000-00-00 00:00:00', '92', '1338178130578', 'JS脚本管理列表', '新建按钮', null, '列表按钮', '10663411230', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1284272353', '1', '2012-11-05 16:34:45', '1', '0000-00-00 00:00:00', '1583336940', '1339482578375', '门户表单', '添加按钮', null, '表单按钮', '633149190', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1296587249', '1', '2012-12-24 16:23:30', '1', '0000-00-00 00:00:00', '101457725003', '1340071401633', '角色列表', '维护按钮', null, '列表操作按钮', '1091196364', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('1314479762', '1', '2012-12-11 13:40:53', '1', '0000-00-00 00:00:00', '101390140804', '1338178130578', '报表模板列表', '新建按钮', null, '列表按钮', '817473439', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1314704337', '1', '2012-10-26 16:25:18', '1', '0000-00-00 00:00:00', '151', '1338446858775', '下拉框管理列表', '帮助按钮', null, '列表按钮', '101198729524', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1324959526', '1', '2012-10-26 16:15:51', '1', '0000-00-00 00:00:00', '58', '1340071401667', '文本框管理表单', '帮助按钮', null, '表单按钮', '101365958591', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1337971374', '1', '2012-10-26 16:19:15', '1', '0000-00-00 00:00:00', '130', '1340071401667', '序号列管理表单', '帮助按钮', null, '表单按钮', '10311061328', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1343344799', '1', '2012-10-26 14:38:46', '1', '0000-00-00 00:00:00', '74', '787835602', '树管理列表', '默认按钮', null, '列表按钮', '203', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1354106721', '1', '2012-10-26 14:49:01', '1', '0000-00-00 00:00:00', '77', '1338430888400', '表单管理列表', '删除按钮', null, '列表按钮', '101653663867', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1365753223', '1', '2012-10-26 16:18:45', '1', '0000-00-00 00:00:00', '125', '1340071401667', '主题管理表单', '帮助按钮', null, '表单按钮', '10252149288', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1373958623', '1', '2012-10-26 16:30:43', '1', '0000-00-00 00:00:00', '135', '1338446858775', '图标管理列表', '帮助按钮', null, '列表按钮', '550344205', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1387703916', '1', '2012-10-26 14:57:27', '1', '0000-00-00 00:00:00', '143', '1338178130578', '布局管理类表', '新建按钮', null, '列表按钮', '1439875138', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1398766652', '1', '2012-10-26 14:32:17', '1', '0000-00-00 00:00:00', '10169396274', '1338178130578', '高级查询列表', '新建按钮', null, '列表按钮', '1520196249', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1402261446', '1', '2013-03-07 11:55:58', '1', '0000-00-00 00:00:00', '1054632662', '1340071401667', '学员2222', '表单帮助按钮', null, '表单按钮', '101901297948', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1415480336', '1', '2012-10-31 15:20:52', '1', '0000-00-00 00:00:00', '2030733598', '1340071401633', '企业信息管理列表', '维护按钮', null, '列表操作按钮', '1282030221', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('1421565013', '1', '2013-02-21 17:47:31', '1', '0000-00-00 00:00:00', '10920024955', '1338446858775', '邮件组件列表', '帮助按钮', null, '列表按钮', '1268908875', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1428383468', '1', '2013-03-11 10:58:13', '1', '0000-00-00 00:00:00', '1338913833', '1338430659228', '学员2', '修改', null, '表单按钮', '1693636147', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1430727477', '1', '2012-10-26 16:14:45', '1', '0000-00-00 00:00:00', '151', '1340071401667', '菜单管理表单', '帮助按钮', null, '表单按钮', '101615195836', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1433695333', '1', '2012-11-21 17:30:49', '1', '0000-00-00 00:00:00', '195', '1604850926', '打印模板表单', '自定义宽70高24按钮', null, '表单按钮', '10471413510', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1438748620', '1', '2012-10-26 14:39:21', '1', '0000-00-00 00:00:00', '72', '1338178130578', '单选框管理列表', '新建按钮', null, '列表按钮', '10969365974', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1440356002', '1', '2012-10-26 16:26:09', '1', '0000-00-00 00:00:00', '201', '1338446858775', '数据查询列表', '帮助按钮', null, '列表按钮', '1616574052', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1447983780', '1', '2012-10-26 14:39:46', '1', '0000-00-00 00:00:00', '154', '787835602', '上传文件框管理列表', '默认按钮', null, '列表按钮', '199', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1452591706', '1', '2013-03-19 16:58:53', null, '0000-00-00 00:00:00', '121', '787835602', '主题管理列表', '默认按钮', null, '列表按钮', '101679176971', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1472269137', '1', '2012-10-26 14:35:32', '1', '0000-00-00 00:00:00', '126', '1338178130578', '序号列列表', '新建按钮', null, '列表按钮', '101454046952', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1480828103', '1', '2012-10-26 16:31:15', '1', '0000-00-00 00:00:00', '121', '1338446858775', '主题管理列表', '帮助按钮', null, '列表按钮', '101278560709', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1481360351', '1', '2012-10-26 14:40:06', '1', '0000-00-00 00:00:00', '152', '787835602', '搜索下拉框列表', '默认按钮', null, '列表按钮', '198', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1496113856', '1', '2012-10-26 14:55:18', '1', '0000-00-00 00:00:00', '124', '1338430888400', '机构管理列表', '删除按钮', null, '列表按钮', '204370373', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1502763479', '1', '2012-10-26 14:15:18', '1', '0000-00-00 00:00:00', '134', '1338176658578', '提示信息界面管理表单', '保存按钮', null, '表单按钮', '1053270092', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1505140351', '1', '2012-10-26 16:30:04', '1', '0000-00-00 00:00:00', '131', '1338446858775', '提示信息界面管理列表', '帮助按钮', null, '列表按钮', '757697796', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1511194343', '1', '2012-10-26 16:10:17', '1', '0000-00-00 00:00:00', '101051915201', '1338176658578', '编码管理表单', '保存按钮', '', '表单按钮', '1780375180', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1526904184', '1', '2013-02-21 18:04:00', '1', '0000-00-00 00:00:00', '101364029444', '1338430659228', '工作流组件表单', '修改按钮', null, '表单按钮', '101769984498', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1529777387', '1', '2012-12-11 18:00:15', '1', '0000-00-00 00:00:00', '101960425631', '101588525942', '系统日志列表', '统计按钮', null, '列表按钮', '1731981315', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1534775366', '1', '2012-10-31 16:30:11', '1', '0000-00-00 00:00:00', '2030733598', '787835602', '企业信息管理列表', '默认按钮', null, '列表按钮', '1098641546', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1562950712', '1', '2012-10-26 14:56:48', '1', '0000-00-00 00:00:00', '134', '1338430888400', '字体管理列表', '删除按钮', null, '列表按钮', '101354416974', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1572186934', '1', '2012-10-26 14:50:17', '1', '0000-00-00 00:00:00', '85', '1338430888400', '数据表管理列表', '删除按钮', null, '列表按钮', '2059383230', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1580828744', '1', '2012-10-26 16:17:55', '1', '0000-00-00 00:00:00', '68', '1340071401667', '代码管理表单', '帮助按钮', null, '表单按钮', '1701186054', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1584807909', '1', '2013-02-21 18:09:38', '1', '0000-00-00 00:00:00', '10364593661', '1340071401669', '工作流组件列表', '撤回按钮', null, '列表操作按钮', '1806333752', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('1587840953', '1', '2012-10-26 14:47:02', '1', '0000-00-00 00:00:00', '190', '1338178130578', '帮助管理列表', '新建按钮', null, '列表按钮', '102133061445', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1589301455', '1', '2012-10-26 16:19:49', '1', '0000-00-00 00:00:00', '128', '1340071401667', '机构管理表单', '帮助按钮', null, '表单按钮', '10183531993', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1589666806', '1', '2013-01-04 11:39:12', '1', '0000-00-00 00:00:00', '101964978862', '1338430659228', 'GW流程管理表单', '修改按钮', null, '表单按钮', '539754856', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1600215599', '1', '2012-10-26 14:41:30', '1', '0000-00-00 00:00:00', '80', '1338430888400', '按钮组管理列表', '删除按钮', null, '列表按钮', '10820036136', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1629169924', '1', '2012-10-26 14:21:50', '1', '0000-00-00 00:00:00', '106', '1338430659228', '公文模板管理表单', '修改按钮', null, '表单按钮', '986759665', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1634785727', '1', '2012-10-26 14:35:51', '1', '0000-00-00 00:00:00', '125', '1338178130578', '选择列列表', '新建按钮', null, '列表按钮', '101776411435', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1644806463', '1', '2013-01-04 13:59:11', '1', '0000-00-00 00:00:00', '101964978862', '1339482578375', 'GW流程管理表单', '添加按钮', null, '表单按钮', '101746148832', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1654820146', '1', '2013-03-11 10:58:14', '1', '0000-00-00 00:00:00', '1338913833', '1339482608765', '学员2', '表单选项卡保存', null, '表单按钮', '1040852849', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1663618138', '1', '2012-10-26 16:29:56', '1', '0000-00-00 00:00:00', '130', '1338446858775', '表单界面管理列表', '帮助按钮', null, '列表按钮', '777174723', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1681274306', '1', '2012-10-26 14:53:50', '1', '0000-00-00 00:00:00', '118', '1338430888400', '系统元素管理列表', '删除按钮', null, '列表按钮', '10639509495', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1686541969', '1', '2012-10-26 14:36:07', '1', '0000-00-00 00:00:00', '128', '1338430888400', '分页列表', '删除按钮', null, '列表按钮', '1570220135', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1687186434', '1', '2012-10-26 14:39:06', '1', '0000-00-00 00:00:00', '73', '1338430888400', '复选框管理列表', '删除按钮', null, '列表按钮', '101555170253', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1691197745', '1', '2012-10-26 14:52:05', '1', '0000-00-00 00:00:00', '98', '1338430888400', '部内通知', '删除按钮', null, '列表按钮', '10730220964', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1693145314', '1', '2012-10-26 14:56:30', '1', '0000-00-00 00:00:00', '133', '787835602', '高级查询界面管理列表', '默认按钮', null, '列表按钮', '148', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1694695999', '1', '2012-10-26 14:55:33', '1', '0000-00-00 00:00:00', '130', '1338430888400', '表单界面管理列表', '删除按钮', null, '列表按钮', '1552635725', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1709676169', '1', '2012-10-26 14:38:42', '1', '0000-00-00 00:00:00', '74', '1338430888400', '树管理列表', '删除按钮', null, '列表按钮', '1210416298', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1712513528', '1', '2012-10-26 14:21:38', '1', '0000-00-00 00:00:00', '125', '1338176658578', '主题管理表单', '保存按钮', null, '表单按钮', '2068092021', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1713872747', '1', '2012-10-26 16:22:10', '1', '0000-00-00 00:00:00', '128', '1338446858775', '分页列表', '帮助按钮', null, '列表按钮', '101472292419', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1726189059', '1', '2012-10-26 14:38:03', '1', '0000-00-00 00:00:00', '195', '1338430888400', '代码级联管理列表', '删除按钮', null, '列表按钮', '1163290227', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1730132411', '1', '2013-01-24 16:43:21', '1', '0000-00-00 00:00:00', '10129738054', '1824188855', '测试编码xxxxx', '流转按钮', '', '列表按钮', '369706366', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1731763929', '1', '2012-12-11 13:41:22', '1', '0000-00-00 00:00:00', '101390140804', '1338430888400', '报表模板列表', '删除按钮', null, '列表按钮', '101093864560', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1733830464', '1', '2012-10-26 16:20:57', '1', '0000-00-00 00:00:00', '71', '1338446858775', '按钮管理列表', '帮助按钮', null, '列表按钮', '59544656', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1739788588', '1', '2012-10-26 14:51:43', '1', '0000-00-00 00:00:00', '93', '1338178130578', '数据源管理列表', '新建按钮', null, '列表按钮', '1006862743', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1740352230', '1', '2012-12-17 17:05:01', '1', '0000-00-00 00:00:00', '10690887604', '1338178130578', '测试权限列表', '新建按钮', null, '列表按钮', '1066948347', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1742760844', '1', '2013-03-02 13:21:24', null, '0000-00-00 00:00:00', '101501856239', '1340071401633', 'aaa', '维护按钮', null, '列表操作按钮', '10960531438', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('1762535532', '1', '2012-12-24 16:19:09', '1', '0000-00-00 00:00:00', '10592028476', '1338176658578', '角色表单', '保存按钮', '', '表单按钮', '10753843977', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1765960688', '1', '2012-10-31 16:30:16', '1', '0000-00-00 00:00:00', '2030733598', '1338446858775', '企业信息管理列表', '帮助按钮', null, '列表按钮', '587716684', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1766891280', '1', '2012-10-26 16:31:22', '1', '0000-00-00 00:00:00', '148', '1338446858775', '菜单管理列表', '帮助按钮', null, '列表按钮', '24447126', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1781162578', '1', '2013-01-04 11:36:24', '1', '0000-00-00 00:00:00', '10616645975', '1338446858775', 'GW流程管理列表', '帮助按钮', null, '列表按钮', '101539766449', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1783707386', '1', '2013-01-04 11:27:17', '1', '0000-00-00 00:00:00', '101715128192', '1338446858775', 'GW发文管理列表', '帮助按钮', null, '列表按钮', '284189836', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1787995092', '1', '2013-02-21 18:08:50', '1', '0000-00-00 00:00:00', '10364593661', '1338446858775', '工作流组件列表', '帮助按钮', null, '列表按钮', '1471821131', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1795129603', '1', '2012-10-26 16:30:59', '1', '0000-00-00 00:00:00', '91', '1338446858775', 'CSS管理列表', '帮助按钮', null, '列表按钮', '1746382420', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1814729437', '1', '2012-10-26 16:24:47', '1', '0000-00-00 00:00:00', '73', '1338446858775', '复选框管理列表', '帮助按钮', null, '列表按钮', '101970765780', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1820417761', '1', '2012-10-26 14:40:21', '1', '0000-00-00 00:00:00', '151', '1338178130578', '下拉框管理列表', '新建按钮', null, '列表按钮', '2089692588', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1825281041', '1', '2012-10-26 14:36:04', '1', '0000-00-00 00:00:00', '128', '1338178130578', '分页列表', '新建按钮', null, '列表按钮', '252431560', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1829190844', '2', '2013-03-14 09:53:15', null, '0000-00-00 00:00:00', '130', '787835602', '表单界面管理列表', '默认按钮', null, '列表按钮', '145', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1836641962', '1', '2013-02-22 11:45:24', '1', '0000-00-00 00:00:00', '10652032678', '1340071401668', '字处理列表', '发布按钮', null, '列表操作按钮', '1194181425', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('1856690256', '1', '2012-10-26 16:18:32', '1', '0000-00-00 00:00:00', '66', '1340071401667', '表关系管理表单', '帮助按钮', null, '表单按钮', '10308740450', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1874761213', '1', '2012-10-26 16:27:49', '1', '0000-00-00 00:00:00', '87', '1338446858775', '表关系管理列表', '帮助按钮', null, '列表按钮', '1238554240', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1898022860', '1', '2013-02-21 17:42:02', '1', '0000-00-00 00:00:00', '101696535990', '1338430659228', '邮件组件表单模板', '修改按钮', null, '表单按钮', '87362621', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1934092016', '1', '2012-10-26 14:37:26', '1', '0000-00-00 00:00:00', '105', '1338178130578', '文本编辑器列表', '新建按钮', null, '列表按钮', '10276333540', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1943318518', '1', '2012-10-26 16:25:26', '1', '0000-00-00 00:00:00', '150', '1338446858775', '文本域管理列表', '帮助按钮', null, '列表按钮', '1863279402', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1944312442', '1', '2012-10-26 16:20:00', '1', '0000-00-00 00:00:00', '145', '1340071401667', '查询组件管理表单', '帮助按钮', null, '表单按钮', '1038531241', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1950401674', '1', '2013-02-21 16:22:05', '1', '0000-00-00 00:00:00', '10714079160', '1338446858775', '报表列表', '帮助按钮', null, '列表按钮', '101079333683', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1952238149', '1', '2012-10-26 16:19:29', '1', '0000-00-00 00:00:00', '132', '1340071401667', '分页表单', '帮助按钮', null, '表单按钮', '101771685971', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1978310708', '1', '2013-02-21 18:04:20', '1', '0000-00-00 00:00:00', '101364029444', '1340071401667', '工作流组件表单', '帮助按钮', null, '表单按钮', '101957169728', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('1985513715', '1', '2012-10-26 14:54:16', '1', '0000-00-00 00:00:00', '124', '1338178130578', '机构管理列表', '新建按钮', null, '列表按钮', '1801682359', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1985921646', '1', '2012-11-02 11:26:21', '1', '0000-00-00 00:00:00', '285812414', '1338446858775', '组合模板列表', '帮助按钮', null, '列表按钮', '1695033308', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1987506628', '1', '2012-10-26 14:40:45', '1', '0000-00-00 00:00:00', '150', '1338178130578', '文本域管理列表', '新建按钮', null, '列表按钮', '10236668932', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('1993309146', '1', '2013-03-05 17:31:08', '1', '0000-00-00 00:00:00', '1949172960', '1340071401633', '收件箱列表', '维护按钮', null, '列表操作按钮', '10392287379', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('2005102089', '1', '2012-12-27 14:06:02', '1', '0000-00-00 00:00:00', '1583336940', '1340071401667', '门户表单', '帮助按钮', null, '表单按钮', '10815879831', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2010294354', '1', '2012-10-26 14:48:58', '1', '0000-00-00 00:00:00', '77', '1338178130578', '表单管理列表', '新建按钮', null, '列表按钮', '10771112597', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2011927775', '1', '2012-11-05 14:54:23', '1', '0000-00-00 00:00:00', '65', '1340071401667', '字段管理表单', '帮助按钮', null, '表单按钮', '101959066885', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2012418778', '1', '2012-10-26 14:56:51', '1', '0000-00-00 00:00:00', '134', '787835602', '字体管理列表', '默认按钮', null, '列表按钮', '150', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2033196135', '1', '2013-02-22 11:36:59', '1', '0000-00-00 00:00:00', '1866983405', '1338176658578', '字处理表单', '保存按钮', null, '表单按钮', '10948772270', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2035895791', '1', '2012-10-26 16:12:26', '1', '0000-00-00 00:00:00', '95', '1340071401667', '部内通知表单', '帮助按钮', null, '表单按钮', '10840753587', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2041808450', '1', '2012-10-31 15:15:00', '1', '0000-00-00 00:00:00', '101664390156', '1338176658578', '企业信息管理表单', '保存按钮', null, '表单按钮', '102005059328', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2046810442', '1', '2012-10-26 14:34:51', '1', '0000-00-00 00:00:00', '208', '787835602', '多文件上传组件', '默认按钮', null, '列表按钮', '513922117', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2048282602', '1', '2012-10-26 14:21:21', '1', '0000-00-00 00:00:00', '105', '1338176658578', '信息发布表单', '保存按钮', null, '表单按钮', '101029427495', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2055548997', '1', '2012-10-26 16:26:42', '1', '0000-00-00 00:00:00', '81', '1338446858775', '列表管理列表', '帮助按钮', null, '列表按钮', '10134843457', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2058960482', '1', '2012-12-25 14:41:02', '1', '0000-00-00 00:00:00', '114', '1339482578375', '用户管理表单', '添加按钮', null, '表单按钮', '240', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2065027786', '1', '2012-10-26 14:49:19', '1', '0000-00-00 00:00:00', '86', '1338430888400', '字段管理列表', '删除按钮', null, '列表按钮', '1953900931', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2070371268', '1', '2013-02-21 18:08:31', '1', '0000-00-00 00:00:00', '10364593661', '1338178130578', '工作流组件列表', '新建按钮', null, '列表按钮', '1573327464', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2076878595', '1', '2012-10-31 09:59:37', '1', '0000-00-00 00:00:00', '762014768', '1340071401633', '测试列表1', '维护按钮', null, '列表操作按钮', '881235206', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('2077595529', '1', '2012-10-26 14:35:17', '1', '0000-00-00 00:00:00', '127', '1338178130578', '操作列列表', '新建按钮', null, '列表按钮', '1004966798', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2081909569', '1', '2013-02-22 11:44:28', '1', '0000-00-00 00:00:00', '10652032678', '1338178130578', '字处理列表', '新建按钮', null, '列表按钮', '101794822437', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2083172278', '1', '2013-01-04 11:26:23', '1', '0000-00-00 00:00:00', '101715128192', '1338178130578', 'GW发文管理列表', '新建按钮', null, '列表按钮', '79332666', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2083436991', '1', '2012-10-26 14:25:36', '1', '0000-00-00 00:00:00', '130', '1338430659228', '序号列管理表单', '修改按钮', null, '表单按钮', '10717188971', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2084342232', '1', '2012-10-26 14:27:05', '1', '0000-00-00 00:00:00', '128', '1338176658578', '机构管理表单', '保存按钮', null, '表单按钮', '559476055', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2093352917', '1', '2013-02-22 10:42:57', '1', '0000-00-00 00:00:00', '102075173809', '787835602', '即时通讯列表', '默认按钮', null, '列表按钮', '886424609', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2099229604', '2052751705', '2013-03-19 13:16:39', null, '0000-00-00 00:00:00', '213', '1339482608765', '学员信息管理表单', '表单选项卡保存按钮', null, '表单按钮', '101160476175', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2103327905', '1', '2012-10-26 14:57:16', '1', '0000-00-00 00:00:00', '135', '787835602', '图标管理列表', '默认按钮', null, '列表按钮', '152', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2114981795', '1', '2012-10-26 16:13:05', '1', '0000-00-00 00:00:00', '193', '1340071401667', '代码级联管理表单', '帮助按钮', null, '表单按钮', '10261610262', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2123986980', '1', '2012-10-26 14:39:28', '1', '0000-00-00 00:00:00', '72', '787835602', '单选框管理列表', '默认按钮', null, '列表按钮', '201', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2126087641', '1', '2012-12-24 16:28:17', '1', '0000-00-00 00:00:00', '10592028476', '1340071401667', '角色表单', '帮助按钮', null, '表单按钮', '165905299', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2126781716', '1', '2012-12-11 13:37:10', '1', '0000-00-00 00:00:00', '2072797554', '1338430659228', '报表模板表单', '修改按钮', null, '表单按钮', '101430204196', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2129876434', '1', '2012-10-26 16:26:18', '1', '0000-00-00 00:00:00', '190', '1338446858775', '帮助管理列表', '帮助按钮', null, '列表按钮', '102067138116', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2137069839', '1', '2012-10-26 14:41:24', '1', '0000-00-00 00:00:00', '80', '1338178130578', '按钮组管理列表', '新建按钮', null, '列表按钮', '101076397660', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2140766633', '1', '2012-10-26 14:28:42', '1', '0000-00-00 00:00:00', '110', '1338176658578', '组合模板管理表单', '保存按钮', null, '表单按钮', '323252126', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('2144025786', '1', '2012-10-26 14:39:39', '1', '0000-00-00 00:00:00', '154', '1338178130578', '上传文件框管理列表', '新建按钮', null, '列表按钮', '239662287', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('2147189539', '1', '2012-10-26 16:15:17', '1', '0000-00-00 00:00:00', '153', '1340071401667', '搜索下拉框管理表单', '帮助按钮', null, '表单按钮', '10587355953', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10151601952', '1', '2013-01-04 13:52:13', '1', '0000-00-00 00:00:00', '101715128192', '1338430888400', 'GW发文管理列表', '删除按钮', null, '列表按钮', '1977965499', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10162994775', '1', '2012-10-26 16:12:57', '1', '0000-00-00 00:00:00', '195', '1340071401667', '打印模板表单', '帮助按钮', null, '表单按钮', '101744762957', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10173726041', '1', '2013-02-19 15:52:10', '1', '0000-00-00 00:00:00', '1949172960', '1338430888400', '收件箱列表', '删除按钮', null, '列表按钮', '1422392155', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10184839353', '1', '2012-10-26 14:51:47', '1', '0000-00-00 00:00:00', '93', '1338430888400', '数据源管理列表', '删除按钮', null, '列表按钮', '1837303087', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10188999878', '1', '2012-10-26 16:18:17', '1', '0000-00-00 00:00:00', '77', '1340071401667', '按钮组管理表单', '帮助按钮', null, '表单按钮', '10524924114', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10189957927', '2052751705', '2013-04-16 17:22:31', null, '0000-00-00 00:00:00', '200193328', '1338178130578', 'aaa', '新建按钮', null, '列表按钮', '101411061446', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10197637528', '1', '2012-10-18 13:56:53', '1', '0000-00-00 00:00:00', '206', '101588525942', '权限列表', '权限生产按钮', null, '列表按钮', '236', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10205961539', '1', '2012-10-26 16:14:53', '1', '0000-00-00 00:00:00', '150', '1340071401667', '使用信息表单', '帮助按钮', null, '表单按钮', '1063724888', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10216299564', '1', '2012-10-26 14:46:48', '1', '0000-00-00 00:00:00', '201', '1338178130578', '数据查询列表', '新建按钮', null, '列表按钮', '815562915', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10218567997', '1', '2012-10-26 14:50:32', '1', '0000-00-00 00:00:00', '87', '1338430888400', '表关系管理列表', '删除按钮', null, '列表按钮', '102002388364', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10252420978', '1', '2012-11-02 11:25:20', '1', '0000-00-00 00:00:00', '285812414', '1338178130578', '组合模板列表', '新建按钮', null, '列表按钮', '433010734', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10264565783', '1', '2012-10-26 14:35:06', '1', '0000-00-00 00:00:00', '207', '1338430888400', '打印模板列表', '删除按钮', null, '列表按钮', '425692104', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10271571845', '1', '2012-11-02 13:39:04', '1', '0000-00-00 00:00:00', '1480825201', '1338176658578', '组合模板表单', '保存按钮', '', '表单按钮', '101609628323', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10286010127', '1', '2012-10-26 14:50:29', '1', '0000-00-00 00:00:00', '87', '1338178130578', '表关系管理列表', '新建按钮', null, '列表按钮', '10327679649', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10286027205', '1', '2012-10-26 14:26:13', '1', '0000-00-00 00:00:00', '132', '1338176658578', '分页表单', '保存按钮', null, '表单按钮', '909410189', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10288939086', '1', '2012-10-26 14:46:31', '1', '0000-00-00 00:00:00', '202', '1338178130578', '用户分类管理列表', '新建按钮', null, '列表按钮', '101155709613', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10291445251', '1', '2013-03-04 16:25:46', '1', '0000-00-00 00:00:00', '628090189', '1340071401667', '测试表单', '帮助按钮', null, '表单按钮', '489063233', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10313380801', '2052751705', '2013-04-15 15:36:34', null, '0000-00-00 00:00:00', '213', '1340071401667', '学员信息管理表单', '表单帮助按钮', null, '表单按钮', '215634284', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10314261974', '1', '2012-10-26 16:18:59', '1', '0000-00-00 00:00:00', '110', '1340071401667', '组合模板管理表单', '帮助按钮', null, '表单按钮', '101659168538', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10327180808', '1', '2013-01-04 13:53:52', '1', '0000-00-00 00:00:00', '17810378', '1597240014', 'GW发文管理表单', '发布按钮', '', '表单按钮', '675718207', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10347934354', '1', '2012-11-02 13:50:35', '1', '0000-00-00 00:00:00', '1081243326', '1338178130578', '组合模板列表', '新建按钮', null, '列表按钮', '10617419045', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10351422550', '1', '2012-10-26 16:17:39', '1', '0000-00-00 00:00:00', '134', '1340071401667', '提示信息界面管理表单', '帮助按钮', null, '表单按钮', '10262395084', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10355283543', '1', '2012-10-26 14:53:36', '1', '0000-00-00 00:00:00', '115', '1338430888400', '人员管理列表', '删除按钮', null, '列表按钮', '1753093162', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10366388138', '1', '2012-10-26 16:24:02', '1', '0000-00-00 00:00:00', '105', '1338446858775', '文本编辑器列表', '帮助按钮', null, '列表按钮', '1088011774', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10371548671', '1', '2013-02-21 16:27:19', '1', '0000-00-00 00:00:00', '10714079160', '1340071401668', '报表列表', '发布按钮', null, '列表操作按钮', '2008455357', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10374777306', '1', '2012-10-26 16:19:36', '1', '0000-00-00 00:00:00', '135', '1340071401667', '列表组件表单', '帮助按钮', null, '表单按钮', '10279175193', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10378346768', '2', '2013-03-14 09:54:20', null, '0000-00-00 00:00:00', '132', '787835602', '树界面管理列表', '默认按钮', null, '列表按钮', '147', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10380884592', '1', '2012-10-26 14:41:42', '1', '0000-00-00 00:00:00', '204', '1338178130578', '权限策略列表', '新建按钮', null, '列表按钮', '260285678', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10383000451', '1', '2013-03-11 10:58:12', '1', '0000-00-00 00:00:00', '1338913833', '1339482578375', '学员2', '表单选项卡添加', null, '表单按钮', '770342999', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10401989913', '1', '2012-10-26 16:15:07', '1', '0000-00-00 00:00:00', '152', '1340071401667', '下拉框管理表单', '帮助按钮', null, '表单按钮', '425437085', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10437292313', '1', '2012-10-26 14:49:15', '1', '0000-00-00 00:00:00', '86', '1338178130578', '字段管理列表', '新建按钮', null, '列表按钮', '101699422719', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10471271573', '1', '2012-10-26 14:55:45', '1', '0000-00-00 00:00:00', '131', '1338178130578', '提示信息界面管理列表', '新建按钮', null, '列表按钮', '199802275', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10471798839', '1', '2012-10-26 16:30:35', '1', '0000-00-00 00:00:00', '134', '1338446858775', '字体管理列表', '帮助按钮', null, '列表按钮', '1051223459', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10471830658', '1', '2012-10-26 14:38:08', '1', '0000-00-00 00:00:00', '195', '787835602', '代码级联管理列表', '默认按钮', null, '列表按钮', '1099323676', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10484079659', '1', '2012-10-26 14:27:18', '1', '0000-00-00 00:00:00', '145', '1338430659228', '查询组件管理表单', '修改按钮', null, '表单按钮', '101614685105', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10504722078', '1', '2013-02-22 11:04:33', '1', '0000-00-00 00:00:00', '10714079160', '787835602', '报表列表', '默认按钮', null, '列表按钮', '1393877830', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10509522714', '1', '2013-01-14 21:40:21', '1', '0000-00-00 00:00:00', '95306207', '1338430659228', '车辆管理表单', '修改按钮', null, '表单按钮', '101693985823', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10511923852', '1', '2012-12-17 17:05:08', '1', '0000-00-00 00:00:00', '10690887604', '1340071401633', '测试权限列表', '维护按钮', null, '列表操作按钮', '1336164191', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10515732690', '1', '2012-10-26 14:19:31', '1', '0000-00-00 00:00:00', '68', '1340071401627', '代码管理表单', '保存并新增按钮', null, '表单按钮', '1805980024', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10524269765', '1', '2012-10-26 16:31:29', '1', '0000-00-00 00:00:00', '153', '1338446858775', '密码管理列表', '帮助按钮', null, '列表按钮', '10837614913', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10543617968', '1', '2012-11-05 16:25:21', '1', '0000-00-00 00:00:00', '418796937', '1338430888400', '门户列表', '删除按钮', null, '列表按钮', '1613536594', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10550906533', '1', '2012-10-26 16:14:36', '1', '0000-00-00 00:00:00', '154', '1340071401667', '模板库表单', '帮助按钮', null, '表单按钮', '10176979136', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10552043906', '1', '2013-01-24 16:33:06', '1', '0000-00-00 00:00:00', '1087447579', '1338176658578', '测试编码xxx', '保存按钮', '', '表单按钮', '852796753', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10586573125', '1', '2012-10-26 16:13:18', '1', '0000-00-00 00:00:00', '191', '1340071401667', '帮助管理表单', '帮助按钮', null, '表单按钮', '1738668690', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10592014078', '1', '2013-02-21 15:38:57', '1', '0000-00-00 00:00:00', '1508238003', '1338176658578', '报表表单', '保存按钮', null, '表单按钮', '25916249', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10595180927', '1', '2013-02-21 18:20:48', '1', '0000-00-00 00:00:00', '102075173809', '1340071401668', '即时通讯列表', '发布按钮', null, '列表操作按钮', '10871624361', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10603758681', '1', '2012-10-26 16:30:23', '1', '0000-00-00 00:00:00', '133', '1338446858775', '高级查询界面管理列表', '帮助按钮', null, '列表按钮', '1353999398', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10604592153', '1', '2012-10-26 14:56:10', '1', '0000-00-00 00:00:00', '132', '1338430888400', '树界面管理列表', '删除按钮', null, '列表按钮', '1079053616', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10605555640', '1', '2012-10-26 14:46:35', '1', '0000-00-00 00:00:00', '202', '1338430888400', '用户分类管理列表', '删除按钮', null, '列表按钮', '101895036183', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10615912956', '1', '2012-10-26 16:12:18', '1', '0000-00-00 00:00:00', '97', '1340071401667', '行业公告表单', '帮助按钮', null, '表单按钮', '737299153', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10622924145', '1', '2012-10-26 16:28:53', '1', '0000-00-00 00:00:00', '106', '1338446858775', '信息发布列表', '帮助按钮', null, '列表按钮', '101619861503', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10628155066', '1', '2012-10-26 14:26:27', '1', '0000-00-00 00:00:00', '135', '1338176658578', '列表组件表单', '保存按钮', null, '表单按钮', '10791066011', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10629247896', '1', '2012-10-26 16:27:39', '1', '0000-00-00 00:00:00', '85', '1338446858775', '数据表管理列表', '帮助按钮', null, '列表按钮', '786985687', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10637159184', '1', '2013-01-14 21:47:03', '1', '0000-00-00 00:00:00', '101535848877', '1338178130578', '车辆管理列表', '新建按钮', null, '列表按钮', '666523141', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10653521424', '1', '2012-10-26 14:53:14', '1', '0000-00-00 00:00:00', '114', '1338178130578', '图片页面管理列表', '新建按钮', null, '列表按钮', '101514040270', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10671167406', '1', '2013-01-14 21:47:09', '1', '0000-00-00 00:00:00', '101535848877', '1338430888400', '车辆管理列表', '删除按钮', null, '列表按钮', '101081550043', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10675310965', '1', '2012-11-01 17:55:29', '1', '0000-00-00 00:00:00', '1583336940', '1338430659228', '门户表单', '修改按钮', null, '表单按钮', '101619535205', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10682350857', '1', '2013-02-19 15:50:33', '1', '0000-00-00 00:00:00', '101470572327', '1338430888400', '发件箱列表', '删除按钮', null, '列表按钮', '10473068340', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10682653363', '1', '2013-03-04 16:27:00', '1', '0000-00-00 00:00:00', '101138973087', '1340071401633', '测试列表', '维护按钮', null, '列表操作按钮', '10975823646', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10686007333', '1', '2012-10-26 14:38:39', '1', '0000-00-00 00:00:00', '74', '1338178130578', '树管理列表', '新建按钮', null, '列表按钮', '373861360', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10700029728', '1', '2013-03-12 13:42:35', null, '0000-00-00 00:00:00', '170', '221075092', '权限组列表', '自定义链接按钮', null, '列表操作按钮', '10497789310', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10707237283', '1', '2013-03-02 10:40:12', null, '0000-00-00 00:00:00', '259984016', '1338178130578', 'aaa', '新建', null, '列表按钮', '1639570010', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10729156667', '1', '2012-10-26 14:20:43', '1', '0000-00-00 00:00:00', '69', '1338176658578', 'LOGO管理表单', '保存按钮', null, '表单按钮', '40086860', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10733644674', '1', '2012-10-26 16:21:41', '1', '0000-00-00 00:00:00', '127', '1338446858775', '操作列列表', '帮助按钮', null, '列表按钮', '222535965', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10737539663', '1', '2012-11-01 17:55:33', '1', '0000-00-00 00:00:00', '1583336940', '1338176658578', '门户表单', '保存按钮', null, '表单按钮', '101637533365', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10740737567', '1', '2012-10-26 16:30:12', '1', '0000-00-00 00:00:00', '132', '1338446858775', '树界面管理列表', '帮助按钮', null, '列表按钮', '1029647673', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10743320771', '1', '2012-10-26 16:27:20', '1', '0000-00-00 00:00:00', '86', '1338446858775', '字段管理列表', '帮助按钮', null, '列表按钮', '1083413852', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10761754241', '1', '2012-10-26 16:28:12', '1', '0000-00-00 00:00:00', '92', '1338446858775', 'JS脚本管理列表', '帮助按钮', null, '列表按钮', '641798315', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10763461223', '1', '2013-02-21 17:47:12', '1', '0000-00-00 00:00:00', '10920024955', '1338178130578', '邮件组件列表', '新建按钮', null, '列表按钮', '10116372513', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10774532039', '1', '2013-01-04 13:44:06', '1', '0000-00-00 00:00:00', '17810378', '1338176658578', 'GW发文管理表单', '保存公文按钮', '', '表单按钮', '1086669360', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10782457124', '1', '2013-02-21 17:25:49', '1', '0000-00-00 00:00:00', '102075173809', '1338430888400', '即时通讯列表', '删除按钮', null, '列表按钮', '101177246896', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10790181867', '1', '2012-10-26 14:39:02', '1', '0000-00-00 00:00:00', '73', '1338178130578', '复选框管理列表', '新建按钮', null, '列表按钮', '1094457447', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10790196307', '1', '2012-10-26 16:29:33', '1', '0000-00-00 00:00:00', '118', '1338446858775', '系统元素管理列表', '帮助按钮', null, '列表按钮', '952614976', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10805823681', '1', '2013-02-21 17:42:12', '1', '0000-00-00 00:00:00', '101696535990', '1338176658578', '邮件组件表单模板', '保存按钮', null, '表单按钮', '994329426', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10813885820', '1', '2012-10-26 14:58:50', '1', '0000-00-00 00:00:00', '153', '1338430888400', '密码管理列表', '删除按钮', null, '列表按钮', '10412586028', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10817013519', '1', '2012-10-26 16:11:51', '1', '0000-00-00 00:00:00', '209', '1340071401667', '多文件上传组件管理表单', '帮助按钮', null, '表单按钮', '827495180', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10821774929', '1', '2012-10-26 14:50:47', '1', '0000-00-00 00:00:00', '88', '1338430888400', '代码管理列表', '删除按钮', null, '列表按钮', '10513608527', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10831644195', '1', '2012-12-11 13:41:30', '1', '0000-00-00 00:00:00', '101390140804', '1340071401633', '报表模板列表', '维护按钮', null, '列表操作按钮', '101638892793', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10844731358', '1', '2012-10-26 16:18:52', '1', '0000-00-00 00:00:00', '106', '1340071401667', '公文模板管理表单', '帮助按钮', null, '表单按钮', '1944093620', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10864011014', '1', '2013-03-07 12:03:16', '1', '0000-00-00 00:00:00', '101146831838', '1338176658578', '学员2222', '保存按钮', '', '表单按钮', '862246158', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10868284964', '1', '2012-10-26 16:29:25', '1', '0000-00-00 00:00:00', '115', '1338446858775', '人员管理列表', '帮助按钮', null, '列表按钮', '553043132', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10874159614', '1', '2012-10-26 14:19:50', '1', '0000-00-00 00:00:00', '146', '1338176658578', '布局管理表单', '保存按钮', null, '表单按钮', '1330983551', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10899322767', '1', '2013-03-04 16:25:05', '1', '0000-00-00 00:00:00', '628090189', '1338430659228', '测试表单', '修改按钮', null, '表单按钮', '1649237461', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10914162067', '1', '2013-03-07 11:55:57', '1', '0000-00-00 00:00:00', '1054632662', '1338430659228', '学员2222', '修改按钮', null, '表单按钮', '10540161820', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10929355484', '1', '2012-10-26 14:58:45', '1', '0000-00-00 00:00:00', '153', '1338178130578', '密码管理列表', '新建按钮', null, '列表按钮', '1904259465', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10945395696', '1', '2012-10-26 14:32:39', '1', '0000-00-00 00:00:00', '206', '1338430888400', '功能级权限管理列表', '删除按钮', null, '列表按钮', '1477250111', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10949477241', '1', '2012-10-26 14:27:21', '1', '0000-00-00 00:00:00', '145', '1338176658578', '查询组件管理表单', '保存按钮', null, '表单按钮', '361319354', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10950192769', '1', '2012-10-26 14:37:50', '1', '0000-00-00 00:00:00', '66', '787835602', '日期组件列表', '默认按钮', null, '列表按钮', '204', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10953665331', '1', '2012-10-26 14:58:31', '1', '0000-00-00 00:00:00', '148', '1338430888400', '菜单管理列表', '删除按钮', null, '列表按钮', '101880512957', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10964921268', '1', '2012-11-02 13:50:44', '1', '0000-00-00 00:00:00', '1081243326', '1338430888400', '组合模板列表', '删除按钮', null, '列表按钮', '323248541', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10970157512', '1', '2012-10-26 16:17:09', '1', '0000-00-00 00:00:00', '60', '1340071401667', '单选框管理表单', '帮助按钮', null, '表单按钮', '1725839467', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10973544465', '1', '2012-10-26 14:37:47', '1', '0000-00-00 00:00:00', '66', '1338430888400', '日期组件列表', '删除按钮', null, '列表按钮', '101421929468', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10987791334', '1', '2012-10-26 14:57:07', '1', '0000-00-00 00:00:00', '135', '1338178130578', '图标管理列表', '新建按钮', null, '列表按钮', '10447707838', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10996457991', '1', '2012-11-02 11:26:28', '1', '0000-00-00 00:00:00', '285812414', '1340071401633', '组合模板列表', '维护按钮', null, '列表操作按钮', '468818568', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('101009566421', '1', '2012-10-26 14:56:05', '1', '0000-00-00 00:00:00', '132', '1338178130578', '树界面管理列表', '新建按钮', null, '列表按钮', '630101471', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101017092618', '1', '2012-10-26 16:27:11', '1', '0000-00-00 00:00:00', '77', '1338446858775', '表单管理列表', '帮助按钮', null, '列表按钮', '10231706700', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101027858461', '1', '2012-10-26 16:19:22', '1', '0000-00-00 00:00:00', '131', '1340071401667', '操作列管理表单', '帮助按钮', null, '表单按钮', '709059876', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101037944264', '1', '2013-03-07 11:55:56', '1', '0000-00-00 00:00:00', '1054632662', '1338176658578', '学员2222', '保存按钮', '', '表单按钮', '10709816174', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101040570103', '1', '2013-03-12 13:41:22', null, '0000-00-00 00:00:00', '101457725003', '221075092', '角色列表', '自定义链接按钮', null, '列表操作按钮', '636876591', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('101061395803', '1', '2012-10-26 14:39:43', '1', '0000-00-00 00:00:00', '154', '1338430888400', '上传文件框管理列表', '删除按钮', null, '列表按钮', '1980299190', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101101922118', '1', '2012-10-26 11:11:41', '1', '0000-00-00 00:00:00', '1306066709', '101588525942', '编码管理列表', '初始化按钮', null, '列表按钮', '101043929231', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101102162114', '1', '2012-10-26 16:28:37', '1', '0000-00-00 00:00:00', '98', '1338446858775', '部内通知', '帮助按钮', null, '列表按钮', '10477886642', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101102235194', '1', '2012-10-26 14:57:45', '1', '0000-00-00 00:00:00', '91', '1338178130578', 'CSS管理列表', '新建按钮', null, '列表按钮', '101457915257', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101117953034', '1', '2012-10-26 14:58:54', '1', '0000-00-00 00:00:00', '153', '787835602', '密码管理列表', '默认按钮', null, '列表按钮', '200', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101126255324', '1', '2013-02-21 16:33:39', '1', '0000-00-00 00:00:00', '10714079160', '1340071401633', '报表列表', '维护按钮', null, '列表操作按钮', '10754407706', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('101133664563', '1', '2012-10-26 16:13:51', '1', '0000-00-00 00:00:00', '119', '1340071401667', '系统元素管理表单', '帮助按钮', null, '表单按钮', '10725533733', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101134418019', '1', '2013-01-30 11:23:43', '1', '0000-00-00 00:00:00', '98', '1373066303', '部内通知', '导出Excel按钮', null, '列表按钮', '10176954331', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101138110979', '1', '2012-12-03 13:38:37', '1', '0000-00-00 00:00:00', '101470572327', '1340071401633', '发件箱列表', '维护按钮', null, '列表操作按钮', '761721953', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('101143562602', '1', '2012-10-26 14:25:51', '1', '0000-00-00 00:00:00', '131', '1338430659228', '操作列管理表单', '修改按钮', null, '表单按钮', '859827828', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101144053648', '1', '2012-10-26 14:34:12', '1', '0000-00-00 00:00:00', '213', '1338430888400', '文档管理列表', '删除按钮', null, '列表按钮', '10854623272', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101147912835', '1', '2013-02-21 18:09:28', '1', '0000-00-00 00:00:00', '10364593661', '1340071401668', '工作流组件列表', '发布按钮', null, '列表操作按钮', '540567243', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('101150821607', '1', '2012-10-26 16:12:49', '1', '0000-00-00 00:00:00', '201', '1340071401667', '用户分类管理表单', '帮助按钮', null, '表单按钮', '197839007', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101151971164', '1', '2013-03-07 11:55:56', '1', '0000-00-00 00:00:00', '1054632662', '1338185221078', '学员2222', '表单选项卡删除按钮', null, '表单按钮', '2029890682', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101170097811', '1', '2012-10-26 14:52:43', '1', '0000-00-00 00:00:00', '107', '1338178130578', '公文模板列表', '新建按钮', null, '列表按钮', '101505165939', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101175294388', '1', '2012-10-26 14:53:47', '1', '0000-00-00 00:00:00', '118', '1338178130578', '系统元素管理列表', '新建按钮', null, '列表按钮', '2006649670', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101185626682', '1', '2012-10-26 16:10:23', '1', '0000-00-00 00:00:00', '101051915201', '1338430659228', '编码管理表单', '修改按钮', null, '表单按钮', '1489475142', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101191508377', '1', '2012-10-26 16:15:45', '1', '0000-00-00 00:00:00', '139', '1340071401667', '字体管理表单', '帮助按钮', null, '表单按钮', '101076382638', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101194128742', '1', '2012-10-26 14:19:47', '1', '0000-00-00 00:00:00', '146', '1338430659228', '布局管理表单', '修改按钮', null, '表单按钮', '10373782778', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101200742381', '1', '2012-10-26 14:20:27', '1', '0000-00-00 00:00:00', '77', '1338176658578', '按钮组管理表单', '保存按钮', null, '表单按钮', '1950397504', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101206421493', '1', '2012-10-26 14:15:30', '1', '0000-00-00 00:00:00', '136', '1338430659228', '树界面管理表单', '修改按钮', null, '表单按钮', '101510300409', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101209723341', '1', '2012-10-26 14:53:18', '1', '0000-00-00 00:00:00', '114', '1338430888400', '图片页面管理列表', '删除按钮', null, '列表按钮', '185270537', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101210296414', '1', '2012-11-01 18:13:49', '1', '0000-00-00 00:00:00', '418796937', '1340071401633', '门户列表', '维护按钮', null, '列表操作按钮', '123946440', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('101212768365', '1', '2012-10-26 14:53:32', '1', '0000-00-00 00:00:00', '115', '1338178130578', '人员管理列表', '新建按钮', null, '列表按钮', '10482541452', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101227467086', '1', '2012-10-26 16:18:11', '1', '0000-00-00 00:00:00', '61', '1340071401667', '复选框管理表单', '帮助按钮', null, '表单按钮', '1609968255', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101243239485', '1', '2013-02-22 10:49:57', '1', '0000-00-00 00:00:00', '10920024955', '787835602', '邮件组件列表', '默认按钮', null, '列表按钮', '101980566413', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101281011640', '1', '2012-10-26 14:35:21', '1', '0000-00-00 00:00:00', '127', '1338430888400', '操作列列表', '删除按钮', null, '列表按钮', '1112664119', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101284124717', '1', '2012-10-26 16:22:23', '1', '0000-00-00 00:00:00', '129', '1338446858775', '列表组件列表', '帮助按钮', null, '列表按钮', '1937282157', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101297821466', '1', '2013-03-04 17:22:10', '1', '0000-00-00 00:00:00', '1904294009', '1338178130578', '测试列表', '新建按钮', null, '列表按钮', '10308517204', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101300121237', '1', '2012-10-26 16:26:25', '1', '0000-00-00 00:00:00', '170', '1338446858775', '角色管理列表', '帮助按钮', null, '列表按钮', '109081569', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101301203842', '1', '2013-02-22 10:50:21', '1', '0000-00-00 00:00:00', '10364593661', '787835602', '工作流组件列表', '默认按钮', null, '列表按钮', '1406384206', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101308762074', '1', '2012-10-26 14:32:21', '1', '0000-00-00 00:00:00', '10169396274', '1338430888400', '高级查询列表', '删除按钮', null, '列表按钮', '1380124339', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101313391591', '1', '2012-10-26 14:52:29', '1', '0000-00-00 00:00:00', '106', '1338178130578', '信息发布列表', '新建按钮', null, '列表按钮', '2102209110', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101319461761', '1', '2012-10-31 15:15:19', '1', '0000-00-00 00:00:00', '101664390156', '1340071401667', '企业信息管理表单', '帮助按钮', null, '表单按钮', '10335455892', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101320014976', '1', '2012-10-26 16:11:27', '1', '0000-00-00 00:00:00', '72', '1340071401667', '表单管理表单', '帮助按钮', null, '表单按钮', '102077457612', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101323733862', '1', '2012-10-26 16:23:28', '1', '0000-00-00 00:00:00', '142', '1338446858775', '查询组件列表', '帮助按钮', null, '列表按钮', '960941762', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101326314176', '1', '2012-10-26 14:52:57', '1', '0000-00-00 00:00:00', '113', '1338178130578', '用户管理列表', '新建按钮', null, '列表按钮', '101294043420', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101327646144', '1', '2012-10-26 16:20:48', '1', '0000-00-00 00:00:00', '206', '1338446858775', '功能级权限管理列表', '帮助按钮', null, '列表按钮', '228563769', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101344918777', '1', '2013-02-21 17:16:42', '1', '0000-00-00 00:00:00', '102075173809', '1338178130578', '及时通讯列表', '新建按钮', null, '列表按钮', '1923575786', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101347992927', '1', '2012-10-26 14:14:42', '1', '0000-00-00 00:00:00', '53', '1338176658578', '日期组件管理表单', '保存按钮', null, '表单按钮', '1271268804', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101353621161', '1', '2012-10-26 14:25:24', '1', '0000-00-00 00:00:00', '129', '1338176658578', '选择列管理表单', '保存按钮', null, '表单按钮', '825954627', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101354536177', '1', '2012-10-26 14:51:17', '1', '0000-00-00 00:00:00', '90', '1338178130578', 'LOGO管理列表', '新建按钮', null, '列表按钮', '234', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101377893744', '1', '2012-10-26 14:52:46', '1', '0000-00-00 00:00:00', '107', '1338430888400', '公文模板列表', '删除按钮', null, '列表按钮', '1845861712', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101397631585', '1', '2012-10-26 14:52:16', '1', '0000-00-00 00:00:00', '100', '1338178130578', '行业公告', '新建按钮', null, '列表按钮', '868354722', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101401124835', '1', '2012-10-26 16:28:26', '1', '0000-00-00 00:00:00', '93', '1338446858775', '数据源管理列表', '帮助按钮', null, '列表按钮', '1102241294', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101404207179', '1', '2012-10-26 14:47:34', '1', '0000-00-00 00:00:00', '109', '1338178130578', '表单模板列表', '新建按钮', null, '列表按钮', '10188208029', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101414952695', '1', '2012-10-26 14:15:00', '1', '0000-00-00 00:00:00', '70', '1338176658578', 'CSS管理表单', '保存按钮', null, '表单按钮', '185252991', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101429787833', '1', '2012-10-26 16:11:42', '1', '0000-00-00 00:00:00', '116', '1340071401667', '人员管理表单', '帮助按钮', null, '表单按钮', '1088173211', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101435541003', '1', '2012-10-26 14:14:38', '1', '0000-00-00 00:00:00', '53', '1338430659228', '日期组件管理表单', '修改按钮', null, '表单按钮', '387358786', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101440858354', '1', '2012-10-26 14:58:16', '1', '0000-00-00 00:00:00', '121', '1338430888400', '主题管理列表', '删除按钮', null, '列表按钮', '109277909', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101447378257', '1', '2012-12-05 14:46:18', '1', '0000-00-00 00:00:00', '151', '1338176658578', '菜单管理表单', '保存按钮', '', '表单按钮', '1309436444', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101452226394', '1', '2012-10-26 14:21:54', '1', '0000-00-00 00:00:00', '106', '1338176658578', '公文模板管理表单', '保存按钮', null, '表单按钮', '924032190', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101452398719', '1', '2012-12-05 13:23:16', '1', '0000-00-00 00:00:00', '76', '1340071401665', '目录管理列表', '导出按钮', null, '列表按钮', '101644672827', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101467767257', '1', '2012-10-26 16:16:56', '1', '0000-00-00 00:00:00', '62', '1340071401667', '树管理表单', '帮助按钮', null, '表单按钮', '10231466698', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101468376845', '1', '2012-10-31 09:59:12', '1', '0000-00-00 00:00:00', '762014768', '1338178130578', '测试列表1', '新建按钮', null, '列表按钮', '1770413535', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101473973312', '1', '2012-10-26 14:58:28', '1', '0000-00-00 00:00:00', '148', '1338178130578', '菜单管理列表', '新建按钮', null, '列表按钮', '1999535708', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101476207467', '1', '2012-10-26 16:15:00', '1', '0000-00-00 00:00:00', '155', '1340071401667', '文本域管理表单', '帮助按钮', null, '表单按钮', '1503297307', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101480520536', '1', '2013-02-21 16:27:32', '1', '0000-00-00 00:00:00', '10714079160', '1340071401669', '报表列表', '撤回按钮', null, '列表操作按钮', '102115803243', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('101481833381', '1', '2012-10-26 14:25:54', '1', '0000-00-00 00:00:00', '131', '1338176658578', '操作列管理表单', '保存按钮', null, '表单按钮', '101099998042', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101495861201', '1', '2012-10-26 14:36:49', '1', '0000-00-00 00:00:00', '142', '1338430888400', '查询组件列表', '删除按钮', null, '列表按钮', '374821618', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101498572533', '1', '2013-02-21 17:48:08', '1', '0000-00-00 00:00:00', '10920024955', '1340071401668', '邮件组件列表', '发布按钮', null, '列表操作按钮', '10953584439', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('101528232148', '1', '2013-03-04 16:24:56', '1', '0000-00-00 00:00:00', '628090189', '1338176658578', '测试表单', '保存按钮', '', '表单按钮', '10431498050', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101537139266', '1', '2012-10-26 14:19:19', '1', '0000-00-00 00:00:00', '68', '1338430659228', '代码管理表单', '修改按钮', null, '表单按钮', '683698985', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101546280531', '1', '2012-10-26 14:25:23', '1', '0000-00-00 00:00:00', '129', '1338430659228', '选择列管理表单', '修改按钮', null, '表单按钮', '102054171744', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101549966186', '1', '2012-10-26 16:25:33', '1', '0000-00-00 00:00:00', '69', '1338446858775', '文本框管理列表', '帮助按钮', null, '列表按钮', '682920908', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101563630721', '1', '2012-12-03 11:43:16', '1', '0000-00-00 00:00:00', '101029015533', '26438670', '发件箱表单', '发送按钮', null, '表单按钮', '4962455', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101569928283', '1', '2012-10-26 16:24:55', '1', '0000-00-00 00:00:00', '72', '1338446858775', '单选框管理列表', '帮助按钮', null, '列表按钮', '101973645341', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101570866678', '1', '2013-03-12 14:06:57', null, '0000-00-00 00:00:00', '101339765555', '1338430888400', '数据备份恢复列表', '批量删除', null, '列表按钮', '1239435227', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101573557368', '1', '2012-10-26 16:16:10', '1', '0000-00-00 00:00:00', '140', '1340071401667', '图标管理表单', '帮助按钮', null, '表单按钮', '1774116740', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101585857248', '1', '2012-10-26 14:53:00', '1', '0000-00-00 00:00:00', '113', '1338430888400', '用户管理列表', '删除按钮', null, '列表按钮', '955041803', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101591890148', '1', '2012-12-14 11:20:45', '1', '0000-00-00 00:00:00', '124', '101588525942', '机构管理列表', '同步按钮', null, '列表按钮', '102337364', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101595358589', '1', '2012-10-26 16:17:32', '1', '0000-00-00 00:00:00', '70', '1340071401667', 'CSS管理表单', '帮助按钮', null, '表单按钮', '101809590030', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101602381809', '1', '2013-02-22 11:45:17', '1', '0000-00-00 00:00:00', '10652032678', '1340071401633', '字处理列表', '维护按钮', null, '列表操作按钮', '314328138', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('101614814165', '1', '2013-03-11 10:58:14', '1', '0000-00-00 00:00:00', '1338913833', '1340071401667', '学员2', '表单帮助', null, '表单按钮', '101294477911', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101630623100', '1', '2012-10-26 14:58:02', '1', '0000-00-00 00:00:00', '76', '1338430888400', '目录管理列表', '删除按钮', null, '列表按钮', '10520548199', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101636932929', '1', '2013-02-21 15:38:48', '1', '0000-00-00 00:00:00', '1508238003', '1338430659228', '报表表单', '修改按钮', null, '表单按钮', '58149433', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101642536737', '1', '2012-10-26 14:20:23', '1', '0000-00-00 00:00:00', '77', '1338430659228', '按钮组管理表单', '修改按钮', null, '表单按钮', '101935134670', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101661850094', '1', '2012-10-26 16:25:53', '1', '0000-00-00 00:00:00', '204', '1338446858775', '权限策略列表', '帮助按钮', null, '列表按钮', '10401627702', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101665755715', '1', '2013-02-21 17:07:58', '1', '0000-00-00 00:00:00', '819584023', '1340071401667', '及时通讯组件表单', '帮助按钮', null, '表单按钮', '1338133178', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101672713201', '1', '2012-10-26 14:33:21', '1', '0000-00-00 00:00:00', '214', '1338178130578', '组合模板列表', '新建按钮', null, '列表按钮', '101005339753', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101673892200', '1', '2012-10-26 14:39:58', '1', '0000-00-00 00:00:00', '152', '1338178130578', '搜索下拉框列表', '新建按钮', null, '列表按钮', '1224849195', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101680472725', '1', '2012-10-26 14:47:16', '1', '0000-00-00 00:00:00', '170', '1338178130578', '角色管理列表', '新建按钮', null, '列表按钮', '10255577501', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101684217365', '1', '2012-11-02 13:50:57', '1', '0000-00-00 00:00:00', '1081243326', '1338446858775', '组合模板列表', '帮助按钮', null, '列表按钮', '1620152370', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101686926966', '1', '2012-10-26 14:51:50', '1', '0000-00-00 00:00:00', '93', '787835602', '数据源管理列表', '默认按钮', null, '列表按钮', '194', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101693424948', '1', '2012-10-26 16:21:34', '1', '0000-00-00 00:00:00', '207', '1338446858775', '打印模板列表', '帮助按钮', null, '列表按钮', '627757825', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101695629730', '1', '2012-11-05 14:54:13', '1', '0000-00-00 00:00:00', '65', '1340071401627', '字段管理表单', '保存并新增按钮', null, '表单按钮', '712883809', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101729212442', '1', '2013-02-22 11:36:43', '1', '0000-00-00 00:00:00', '1866983405', '1338430659228', '字处理表单', '修改按钮', null, '表单按钮', '10378371219', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101732338914', '1', '2012-11-09 09:30:06', '1', '0000-00-00 00:00:00', '208', '1338446858775', '多文件上传组件', '帮助按钮', null, '列表按钮', '1066957213', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101738212771', '1', '2012-10-26 14:40:28', '1', '0000-00-00 00:00:00', '151', '787835602', '下拉框管理列表', '默认按钮', null, '列表按钮', '197', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101738225872', '1', '2012-11-02 14:04:58', '1', '0000-00-00 00:00:00', '1480825201', '1338430659228', '组合模板表单', '修改按钮', null, '表单按钮', '1791016946', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101745265020', '1', '2012-11-02 11:26:07', '1', '0000-00-00 00:00:00', '285812414', '1338430888400', '组合模板列表', '删除按钮', null, '列表按钮', '10556398945', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101752698240', '1', '2012-10-26 16:24:35', '1', '0000-00-00 00:00:00', '74', '1338446858775', '树管理列表', '帮助按钮', null, '列表按钮', '1089927321', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101769209600', '1', '2013-01-24 17:12:00', '1', '0000-00-00 00:00:00', '10129738054', '1338178130578', '测试编码xxxxx', '新建按钮', null, '列表按钮', '938137336', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101769519107', '1', '2012-10-26 14:37:33', '1', '0000-00-00 00:00:00', '105', '787835602', '文本编辑器列表', '默认按钮', null, '列表按钮', '205', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101776779488', '1', '2012-10-26 14:34:47', '1', '0000-00-00 00:00:00', '208', '1338430888400', '多文件上传组件', '删除按钮', null, '列表按钮', '327907736', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101786216762', '1', '2013-03-11 10:58:12', '1', '0000-00-00 00:00:00', '1338913833', '1338185221078', '学员2', '表单选项卡删除', null, '表单按钮', '1689235587', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101832489772', '1', '2013-03-19 17:27:29', null, '0000-00-00 00:00:00', '1583336940', '1338176658578', '门户表单', '保存按钮', '', '表单按钮', '10879935365', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101837173452', '1', '2013-03-04 16:26:14', '1', '0000-00-00 00:00:00', '101138973087', '1338178130578', '测试列表', '新建按钮', null, '列表按钮', '10405472665', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101847452257', '1', '2013-03-02 11:04:19', null, '0000-00-00 00:00:00', '101501856239', '1338178130578', 'aaa', '新建', null, '列表按钮', '1027424650', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101849319028', '1', '2012-10-26 16:11:07', '1', '0000-00-00 00:00:00', '67', '1340071401667', '目录管理表单', '帮助按钮', null, '表单按钮', '10840335390', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101853741813', '1', '2013-02-21 17:42:23', '1', '0000-00-00 00:00:00', '101696535990', '1340071401667', '邮件组件表单模板', '帮助按钮', null, '表单按钮', '101694070380', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101860436303', '1', '2012-10-31 09:59:28', '1', '0000-00-00 00:00:00', '762014768', '1338185221078', '测试列表1', '删除按钮', null, '列表按钮', '82351081', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101902315739', '1', '2012-10-26 14:37:30', '1', '0000-00-00 00:00:00', '105', '1338430888400', '文本编辑器列表', '删除按钮', null, '列表按钮', '101783033698', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101909053240', '1', '2012-11-02 13:39:25', '1', '0000-00-00 00:00:00', '1480825201', '1340071401667', '组合模板表单', '帮助按钮', null, '表单按钮', '437207424', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101948342858', '1', '2013-03-12 10:10:20', '1', '0000-00-00 00:00:00', '1306066709', '1338446858775', '编码管理列表', '列表帮助', null, '列表按钮', '1306839801', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101948734148', '1', '2012-10-26 14:52:32', '1', '0000-00-00 00:00:00', '106', '1338430888400', '信息发布列表', '删除按钮', null, '列表按钮', '10902058477', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101949895351', '1', '2012-10-26 14:47:19', '1', '0000-00-00 00:00:00', '170', '1338430888400', '角色管理列表', '删除按钮', null, '列表按钮', '1729292139', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101952675764', '1', '2012-10-26 14:37:11', '1', '0000-00-00 00:00:00', '112', '1338430888400', '字处理组件列表', '删除按钮', null, '列表按钮', '2013019604', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101964657993', '1', '2012-10-26 14:58:13', '1', '0000-00-00 00:00:00', '121', '1338178130578', '主题管理列表', '新建按钮', null, '列表按钮', '2042755207', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101972306255', '1', '2013-02-22 11:45:34', '1', '0000-00-00 00:00:00', '10652032678', '1340071401669', '字处理列表', '撤回按钮', null, '列表操作按钮', '10350744869', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('101987654198', '1', '2012-10-31 10:00:19', '1', '0000-00-00 00:00:00', '101019829173', '1338176658578', '测试表单1', '保存按钮', '', '表单按钮', '101961152780', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101990248071', '1', '2013-01-14 21:40:38', '1', '0000-00-00 00:00:00', '95306207', '1338176658578', '车辆管理表单', '保存按钮', '', '表单按钮', '102047330896', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('101997612951', '1', '2012-10-26 16:25:45', '1', '0000-00-00 00:00:00', '80', '1338446858775', '按钮组管理列表', '帮助按钮', null, '列表按钮', '10926878845', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('101999270600', '1', '2013-02-21 17:48:16', '1', '0000-00-00 00:00:00', '10920024955', '1340071401669', '邮件组件列表', '撤回按钮', null, '列表操作按钮', '1754703632', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('102003672650', '1', '2012-10-26 16:29:09', '1', '0000-00-00 00:00:00', '113', '1338446858775', '用户管理列表', '帮助按钮', null, '列表按钮', '1214500779', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('102012358258', '1', '2012-12-27 14:07:37', '1', '0000-00-00 00:00:00', '418796937', '1338446858775', '门户列表', '帮助按钮', null, '列表按钮', '10126852666', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('102016454242', '1', '2012-10-26 14:56:45', '1', '0000-00-00 00:00:00', '134', '1338178130578', '字体管理列表', '新建按钮', null, '列表按钮', '773650024', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('102019100833', '1', '2012-10-26 16:16:21', '1', '0000-00-00 00:00:00', '73', '1340071401667', '列表管理表单', '帮助按钮', null, '表单按钮', '101734447100', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('102020980407', '1', '2013-03-05 15:33:50', '1', '0000-00-00 00:00:00', '69', '787835602', '文本框管理列表', '默认按钮', null, '列表按钮', '195', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('102028384997', '1', '2012-10-26 14:35:35', '1', '0000-00-00 00:00:00', '126', '1338430888400', '序号列列表', '删除按钮', null, '列表按钮', '1773054897', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('102032466325', '1', '2012-10-26 16:27:29', '1', '0000-00-00 00:00:00', '144', '1338446858775', '使用信息列表', '帮助按钮', null, '列表按钮', '10313900253', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('102045756429', '1', '2012-10-31 10:01:07', '1', '0000-00-00 00:00:00', '101178580425', '101588525942', '测试表单2', '初始化按钮', null, '表单按钮', '2137214847', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('102051263203', '1', '2012-10-26 16:21:17', '1', '0000-00-00 00:00:00', '213', '1338446858775', '文档管理列表', '帮助按钮', null, '列表按钮', '101628469033', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('102055271089', '1', '2013-01-04 11:40:18', '1', '0000-00-00 00:00:00', '17810378', '1338430659228', 'GW发文管理表单', '修改按钮', null, '表单按钮', '960281430', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('102062225249', '1', '2012-10-26 16:17:46', '1', '0000-00-00 00:00:00', '136', '1340071401667', '树界面管理表单', '帮助按钮', null, '表单按钮', '1047839444', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('102099571568', '1', '2012-10-26 14:21:18', '1', '0000-00-00 00:00:00', '105', '1338430659228', '信息发布表单', '修改按钮', null, '表单按钮', '101220368167', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('102111792227', '2052751705', '2013-03-20 17:54:37', null, '0000-00-00 00:00:00', '213', '1338176658578', '学员信息管理表单', '保存按钮', '', '表单按钮', '101292813029', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('102117343644', '1', '2013-03-07 12:03:16', '1', '0000-00-00 00:00:00', '101146831838', '1338185221078', '学员2222', '表单选项卡删除按钮', null, '表单按钮', '1870226016', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('102128246309', '1', '2012-10-26 14:40:50', '1', '0000-00-00 00:00:00', '150', '1338430888400', '文本域管理列表', '删除按钮', null, '列表按钮', '101624490974', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('102143392842', '1', '2012-10-26 14:26:10', '1', '0000-00-00 00:00:00', '132', '1338430659228', '分页表单', '修改按钮', null, '表单按钮', '570210925', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000000880019', '2052751705', '2013-09-13 09:46:51', null, '0000-00-00 00:00:00', '10000000880013', '1338430659228', '测试表单A', '修改按钮', null, '表单按钮', '10000000880017', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000000880022', '2052751705', '2013-09-13 09:47:07', null, '0000-00-00 00:00:00', '10000000880013', '1338176658578', '测试表单A', '保存按钮', '', '表单按钮', '10000000880020', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000000880028', '2052751705', '2013-09-13 09:50:36', null, '0000-00-00 00:00:00', '10000000880024', '1338178130578', '测试列表A', '新建按钮', null, '列表按钮', '10000000880026', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000000880031', '2052751705', '2013-09-13 09:50:53', null, '0000-00-00 00:00:00', '10000000880024', '1338430888400', '测试列表A', '批量删除按钮', null, '列表按钮', '10000000880029', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000000880034', '2052751705', '2013-09-13 09:51:13', null, '0000-00-00 00:00:00', '10000000880024', '1340071401633', '测试列表A', '维护按钮', null, '列表操作按钮', '10000000880032', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000000890112', '2052751705', '2013-09-13 11:07:34', null, '0000-00-00 00:00:00', '10000000880013', '1339482578375', '测试表单A', '表单选项卡添加按钮', null, '表单按钮', '10000000890084', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000000890113', '2052751705', '2013-09-13 11:07:39', null, '0000-00-00 00:00:00', '10000000880013', '1339482608765', '测试表单A', '表单选项卡保存按钮', null, '表单按钮', '10000000890087', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000000890114', '2052751705', '2013-09-13 11:07:44', null, '0000-00-00 00:00:00', '10000000880013', '1338185221078', '测试表单A', '表单选项卡删除按钮', null, '表单按钮', '10000000890090', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270031', '2052751705', '2013-09-27 14:51:29', null, '0000-00-00 00:00:00', '10000002270019', '1338430659228', '自动补齐文本框表单', '修改按钮', null, '表单按钮', '10000002270029', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270034', '2052751705', '2013-09-27 14:51:35', null, '0000-00-00 00:00:00', '10000002270019', '1338176658578', '自动补齐文本框表单', '保存按钮', '', '表单按钮', '10000002270032', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270074', '2052751705', '2013-09-27 15:02:21', null, '0000-00-00 00:00:00', '10000002270019', '1338271717968', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270069', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270077', '2052751705', '2013-09-27 15:03:11', null, '0000-00-00 00:00:00', '10000002270019', '1340937219162', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270071', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270078', '2052751705', '2013-09-27 15:03:22', null, '0000-00-00 00:00:00', '10000002270019', '1340937219162', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270073', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270079', '2052751705', '2013-09-27 15:03:49', null, '0000-00-00 00:00:00', '10000002270019', '2', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270059', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270080', '2052751705', '2013-09-27 15:04:03', null, '0000-00-00 00:00:00', '10000002270019', '1338271717968', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270056', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270085', '2052751705', '2013-09-27 15:07:46', null, '0000-00-00 00:00:00', '10000002270081', '1338178130578', '自动补齐文本框管理列表', '新建按钮', null, '列表按钮', '10000002270083', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270088', '2052751705', '2013-09-27 15:08:02', null, '0000-00-00 00:00:00', '10000002270081', '1338430888400', '自动补齐文本框管理列表', '批量删除按钮', null, '列表按钮', '10000002270086', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270091', '2052751705', '2013-09-27 15:08:19', null, '0000-00-00 00:00:00', '10000002270081', '1340071401633', '自动补齐文本框管理列表', '维护按钮', null, '列表操作按钮', '10000002270089', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270098', '2052751705', '2013-09-27 15:14:50', null, '0000-00-00 00:00:00', '10000002270081', '787835602', '自动补齐文本框管理列表', '默认按钮', null, '列表按钮', '10000002270096', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270101', '2052751705', '2013-09-27 15:15:07', null, '0000-00-00 00:00:00', '10000002270081', '1338446858775', '自动补齐文本框管理列表', '列表帮助按钮', null, '列表按钮', '10000002270099', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270104', '2052751705', '2013-09-27 15:15:14', null, '0000-00-00 00:00:00', '10000002270081', '1340071401668', '自动补齐文本框管理列表', '发布按钮', null, '列表操作按钮', '10000002270102', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002270107', '2052751705', '2013-09-27 15:15:19', null, '0000-00-00 00:00:00', '10000002270081', '1340071401669', '自动补齐文本框管理列表', '撤回按钮', null, '列表操作按钮', '10000002270105', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002350001', '2052751705', '2013-09-27 16:55:20', null, '0000-00-00 00:00:00', '10000002270019', '10000002270095', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270035', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002400000', '2052751705', '2013-09-29 11:22:05', null, '0000-00-00 00:00:00', '213', '10000002270095', '学员信息管理表单', '', '', '表单元素', '521360656', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002900002', '2052751705', '2013-10-09 16:37:04', null, '0000-00-00 00:00:00', '10000002630001', '1338430659228', '流程分类表单', '修改按钮', null, '表单按钮', '10000002900000', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002900005', '2052751705', '2013-10-09 16:37:11', null, '0000-00-00 00:00:00', '10000002630001', '1338176658578', '流程分类表单', '保存按钮', '', '表单按钮', '10000002900003', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002930028', '2052751705', '2013-10-09 17:58:25', null, '0000-00-00 00:00:00', '10000002930024', '1338178130578', '流程分类列表', '新建按钮', null, '列表按钮', '10000002930026', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002930031', '2052751705', '2013-10-09 17:58:42', null, '0000-00-00 00:00:00', '10000002930024', '1338430888400', '流程分类列表', '批量删除按钮', null, '列表按钮', '10000002930029', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002930034', '2052751705', '2013-10-09 17:59:07', null, '0000-00-00 00:00:00', '10000002930024', '1340071401633', '流程分类列表', '维护按钮', null, '列表操作按钮', '10000002930032', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000002930038', '2052751705', '2013-10-09 18:04:35', null, '0000-00-00 00:00:00', '10000002630001', '10000002930037', '流程分类表单', '', '', '表单元素', '10000002930009', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000003060004', '2052751705', '2013-10-11 09:19:16', null, '0000-00-00 00:00:00', '64', '1340071401667', '数据表表单', '表单帮助按钮', null, '表单按钮', '904929086', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000003070003', '2052751705', '2013-10-11 09:43:12', null, '0000-00-00 00:00:00', '85', '101588525942', '数据表管理列表', '自定义按钮宽70高24按钮', null, '列表按钮', '10000003070000', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000003540003', '2052751705', '2013-10-14 10:55:09', null, '0000-00-00 00:00:00', '211', '1340071401633', '学员信息管理列表', '维护按钮', null, '列表操作按钮', '10000003540001', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000003540012', '2052751705', '2013-10-14 10:58:16', null, '0000-00-00 00:00:00', '211', '1338178130578', '学员信息管理列表', '新建按钮', null, '列表按钮', '10000003540010', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000003540015', '2052751705', '2013-10-14 10:58:22', null, '0000-00-00 00:00:00', '211', '1338430888400', '学员信息管理列表', '批量删除按钮', null, '列表按钮', '10000003540013', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000003540018', '2052751705', '2013-10-14 10:58:30', null, '0000-00-00 00:00:00', '211', '1338446858775', '学员信息管理列表', '列表帮助按钮', null, '列表按钮', '10000003540016', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004330004', '2052751705', '2013-10-24 13:25:54', null, '0000-00-00 00:00:00', '10000004330000', '1339482802455', '111111', '列表删除按钮', null, '列表按钮', '10000004330002', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004400001', '2052751705', '2013-10-24 16:47:36', null, '0000-00-00 00:00:00', '97', '1338271717968', '行业公告表单', '', '', '表单元素', '740', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004400002', '2052751705', '2013-10-24 16:47:45', null, '0000-00-00 00:00:00', '97', '1338271717968', '行业公告表单', '', '', '表单元素', '1849304351', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004410000', '2052751705', '2013-10-24 16:52:43', null, '0000-00-00 00:00:00', '97', '1340085958657', '行业公告表单', '', '', '表单元素', '742', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004410001', '2052751705', '2013-10-24 16:53:08', null, '0000-00-00 00:00:00', '95', '1340085958657', '署内新闻表单', '', '', '表单元素', '360', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004480005', '2052751705', '2013-10-25 08:30:01', null, '0000-00-00 00:00:00', '213', '2', '学员信息管理表单', '', '', '表单元素', '10000003390004', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004570025', '2052751705', '2013-10-25 12:01:20', null, '0000-00-00 00:00:00', '10000004570012', '1338430659228', '房产信息表单', '修改按钮', null, '表单按钮', '10000004570023', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004570028', '2052751705', '2013-10-25 12:01:27', null, '0000-00-00 00:00:00', '10000004570012', '1338176658578', '房产信息表单', '保存按钮', '', '表单按钮', '10000004570026', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004570050', '2052751705', '2013-10-25 12:02:49', null, '0000-00-00 00:00:00', '10000004570012', '1340937219162', '房产信息表单', null, null, '表单元素', '10000004570041', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004800012', '2052751705', '2013-10-25 19:59:07', null, '0000-00-00 00:00:00', '211', '1373066303', '学员信息管理列表', '导出Excel按钮', null, '列表按钮', '10000004800010', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004800015', '2052751705', '2013-10-25 19:59:13', null, '0000-00-00 00:00:00', '211', '500070979', '学员信息管理列表', 'Excel导入按钮', null, '列表按钮', '10000004800013', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810047', '2052751705', '2013-10-25 19:41:51', null, '0000-00-00 00:00:00', '10000004810010', '1339482578375', 'aaaaa', '表单选项卡添加按钮', null, '表单按钮', '10000004810045', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810050', '2052751705', '2013-10-25 19:41:52', null, '0000-00-00 00:00:00', '10000004810010', '1339482608765', 'aaaaa', '表单选项卡保存按钮', null, '表单按钮', '10000004810048', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810053', '2052751705', '2013-10-25 19:41:52', null, '0000-00-00 00:00:00', '10000004810010', '1338185221078', 'aaaaa', '表单选项卡删除按钮', null, '表单按钮', '10000004810051', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810066', '2052751705', '2013-10-25 19:41:53', null, '0000-00-00 00:00:00', '10000004810010', '1338430659228', 'aaaaa', '修改按钮', null, '表单按钮', '10000004810064', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810069', '2052751705', '2013-10-25 19:41:53', null, '0000-00-00 00:00:00', '10000004810010', '1338176658578', 'aaaaa', '保存按钮', '', '表单按钮', '10000004810067', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810072', '2052751705', '2013-10-25 19:41:53', null, '0000-00-00 00:00:00', '10000004810010', '1340071401667', 'aaaaa', '表单帮助按钮', null, '表单按钮', '10000004810070', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810110', '2052751705', '2013-10-25 20:21:32', null, '0000-00-00 00:00:00', '10000004810073', '1339482578375', 'aaaaa', '表单选项卡添加按钮', null, '表单按钮', '10000004810108', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810113', '2052751705', '2013-10-25 20:21:32', null, '0000-00-00 00:00:00', '10000004810073', '1339482608765', 'aaaaa', '表单选项卡保存按钮', null, '表单按钮', '10000004810111', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810116', '2052751705', '2013-10-25 20:21:32', null, '0000-00-00 00:00:00', '10000004810073', '1338185221078', 'aaaaa', '表单选项卡删除按钮', null, '表单按钮', '10000004810114', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810129', '2052751705', '2013-10-25 20:21:33', null, '0000-00-00 00:00:00', '10000004810073', '1338430659228', 'aaaaa', '修改按钮', null, '表单按钮', '10000004810127', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810132', '2052751705', '2013-10-25 20:21:33', null, '0000-00-00 00:00:00', '10000004810073', '1338176658578', 'aaaaa', '保存按钮', '', '表单按钮', '10000004810130', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004810135', '2052751705', '2013-10-25 20:21:33', null, '0000-00-00 00:00:00', '10000004810073', '1340071401667', 'aaaaa', '表单帮助按钮', null, '表单按钮', '10000004810133', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004960030', '2052751705', '2013-10-30 12:10:16', null, '0000-00-00 00:00:00', '10000004960018', '1338430659228', '子系统表单', '修改按钮', null, '表单按钮', '10000004960028', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004960033', '2052751705', '2013-10-30 12:10:22', null, '0000-00-00 00:00:00', '10000004960018', '1338176658578', '子系统表单', '保存按钮', '', '表单按钮', '10000004960031', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004960035', '2052751705', '2013-10-30 12:10:31', null, '0000-00-00 00:00:00', '10000004960018', '1338264437781', '子系统表单', '', '', '表单元素', '10000004960034', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004960039', '2052751705', '2013-10-30 12:10:32', null, '0000-00-00 00:00:00', '10000004960018', '1338264437781', '子系统表单', '', '', '表单元素', '10000004960038', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004960043', '2052751705', '2013-10-30 12:10:32', null, '0000-00-00 00:00:00', '10000004960018', '1338264437781', '子系统表单', '', '', '表单元素', '10000004960042', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004960051', '2052751705', '2013-10-30 12:10:32', null, '0000-00-00 00:00:00', '10000004960018', '1338264437781', '子系统表单', '', '', '表单元素', '10000004960050', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004960054', '2052751705', '2013-10-30 12:10:51', null, '0000-00-00 00:00:00', '10000004960018', '1340005570406', '子系统表单', null, null, '表单元素', '10000004960046', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000004980004', '2052751705', '2013-10-30 13:25:01', null, '0000-00-00 00:00:00', '10000004960020', '221075092', '子系统列表', '自定义链接按钮按钮', null, '列表操作按钮', '10000004980002', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005110030', '2052751705', '2013-10-31 13:53:08', null, '0000-00-00 00:00:00', '64', '1338264437781', '数据表表单', '', '', '表单元素', '10000005110029', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005110032', '2052751705', '2013-10-31 13:55:11', null, '0000-00-00 00:00:00', '65', '1338264437781', '字段管理表单', '', '', '表单元素', '10000005110031', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005120061', '2052751705', '2013-10-31 15:29:02', null, '0000-00-00 00:00:00', '64', '1338264437781', '数据表表单', '', '', '表单元素', '10000005120060', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005120062', '2052751705', '2013-10-31 15:31:38', null, '0000-00-00 00:00:00', '64', '1338271717968', '数据表表单', '', '', '表单元素', '10000005120058', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005120063', '2052751705', '2013-10-31 15:35:48', null, '0000-00-00 00:00:00', '72', '1340085958542', '表单管理表单', '', '', '表单元素', '1434', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005120064', '2052751705', '2013-10-31 15:37:27', null, '0000-00-00 00:00:00', '73', '1340085958542', '列表管理表单', '', '', '表单元素', '1439', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005190171', '2052751705', '2013-11-01 14:36:49', null, '0000-00-00 00:00:00', '59', '1340085958657', '按钮管理表单', '', '', '表单元素', '10000005190169', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280036', '2052751705', '2013-11-02 17:26:50', null, '0000-00-00 00:00:00', '10000005280030', '1338430659228', '房产信息表单', '修改按钮', null, '表单按钮', '10000005280034', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280039', '2052751705', '2013-11-02 17:27:00', null, '0000-00-00 00:00:00', '10000005280030', '1338176658578', '房产信息表单', '表单保存按钮', '', '表单按钮', '10000005280037', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280042', '2052751705', '2013-11-02 17:27:21', null, '0000-00-00 00:00:00', '10000005280030', '1340071401667', '房产信息表单', '表单帮助按钮', null, '表单按钮', '10000005280040', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280044', '2052751705', '2013-11-02 17:27:25', null, '0000-00-00 00:00:00', '10000005280030', '1338264437781', '房产信息表单', '', '', '表单元素', '10000005280043', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280048', '2052751705', '2013-11-02 17:27:25', null, '0000-00-00 00:00:00', '10000005280030', '1338264437781', '房产信息表单', '', '', '表单元素', '10000005280047', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280052', '2052751705', '2013-11-02 17:27:26', null, '0000-00-00 00:00:00', '10000005280030', '1338264437781', '房产信息表单', '', '', '表单元素', '10000005280051', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280060', '2052751705', '2013-11-02 17:27:26', null, '0000-00-00 00:00:00', '10000005280030', '1338264437781', '房产信息表单', '', '', '表单元素', '10000005280059', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280063', '2052751705', '2013-11-02 17:27:43', null, '0000-00-00 00:00:00', '10000005280030', '1340937219162', '房产信息表单', null, null, '表单元素', '10000005280055', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280068', '2052751705', '2013-11-02 17:28:39', null, '0000-00-00 00:00:00', '10000005280064', '1338178130578', '房产信息列表', '新建按钮', null, '列表按钮', '10000005280066', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280071', '2052751705', '2013-11-02 17:28:56', null, '0000-00-00 00:00:00', '10000005280064', '1338430888400', '房产信息列表', '列表批量删除按钮', null, '列表按钮', '10000005280069', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280074', '2052751705', '2013-11-02 17:29:06', null, '0000-00-00 00:00:00', '10000005280064', '1338446858775', '房产信息列表', '列表帮助按钮', null, '列表按钮', '10000005280072', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280077', '2052751705', '2013-11-02 17:29:21', null, '0000-00-00 00:00:00', '10000005280064', '1340071401633', '房产信息列表', '主列表维护按钮', null, '列表操作按钮', '10000005280075', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280086', '2052751705', '2013-11-02 17:40:16', null, '0000-00-00 00:00:00', '10000005280080', '1338178130578', '房产信息列表', '新建按钮', null, '列表按钮', '10000005280084', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280089', '2052751705', '2013-11-02 17:40:25', null, '0000-00-00 00:00:00', '10000005280080', '1338430888400', '房产信息列表', '列表批量删除按钮', null, '列表按钮', '10000005280087', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280092', '2052751705', '2013-11-02 17:40:35', null, '0000-00-00 00:00:00', '10000005280080', '1338446858775', '房产信息列表', '列表帮助按钮', null, '列表按钮', '10000005280090', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005280095', '2052751705', '2013-11-02 17:40:45', null, '0000-00-00 00:00:00', '10000005280080', '1340071401633', '房产信息列表', '主列表维护按钮', null, '列表操作按钮', '10000005280093', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005310015', '2052751705', '2013-11-03 17:43:07', null, '0000-00-00 00:00:00', '10000005310002', '1338430659228', 'hh表单', '修改按钮', null, '表单按钮', '10000005310013', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005310018', '2052751705', '2013-11-03 17:43:16', null, '0000-00-00 00:00:00', '10000005310002', '1338176658578', 'hh表单', '表单保存按钮', '', '表单按钮', '10000005310016', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005310020', '2052751705', '2013-11-03 17:43:19', null, '0000-00-00 00:00:00', '10000005310002', '1338264437781', 'hh表单', '', '', '表单元素', '10000005310019', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005310024', '2052751705', '2013-11-03 17:43:19', null, '0000-00-00 00:00:00', '10000005310002', '1338264437781', 'hh表单', '', '', '表单元素', '10000005310023', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005350000', '2052751705', '2013-11-04 11:45:05', null, '0000-00-00 00:00:00', '213', '1', '学员信息管理表单', null, null, '表单元素', '10000003390000', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005610033', '2052751705', '2014-09-14 16:48:58', null, '0000-00-00 00:00:00', '10000005610026', '1338430659228', '商品表单', '修改按钮', null, '表单按钮', '10000005610031', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005610039', '2052751705', '2014-09-14 16:49:21', null, '0000-00-00 00:00:00', '10000005610026', '1340071401667', '商品表单', '表单帮助按钮', null, '表单按钮', '10000005610037', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005610040', '2052751705', '2014-09-14 16:49:48', null, '0000-00-00 00:00:00', '10000005610026', '1338176658578', '商品表单', '表单保存按钮', '', '表单按钮', '10000005610034', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005610068', '2052751705', '2014-09-14 17:00:59', null, '0000-00-00 00:00:00', '10000005610065', '1338178130578', '商品列表', '新建按钮', null, '列表按钮', '10000005610066', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005610071', '2052751705', '2014-09-14 17:01:16', null, '0000-00-00 00:00:00', '10000005610065', '1338430888400', '商品列表', '列表批量删除按钮', null, '列表按钮', '10000005610069', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005610074', '2052751705', '2014-09-14 17:01:29', null, '0000-00-00 00:00:00', '10000005610065', '1338446858775', '商品列表', '列表帮助按钮', null, '列表按钮', '10000005610072', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005610077', '2052751705', '2014-09-14 17:01:57', null, '0000-00-00 00:00:00', '10000005610065', '1340071401633', '商品列表', '主列表维护按钮', null, '列表操作按钮', '10000005610075', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005650001', '2052751705', '2014-09-14 20:12:18', null, '0000-00-00 00:00:00', '109', '101588525942', '表单模板列表', '自定义按钮宽70高24按钮', null, '列表按钮', '172', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005650002', '2052751705', '2014-09-14 21:15:45', null, '0000-00-00 00:00:00', '109', '101588525942', '表单模板表单', '自定义按钮宽70高24按钮', null, '表单按钮', '1818602868', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005660000', '2052751705', '2014-09-15 07:26:32', null, '0000-00-00 00:00:00', '109', '1338264437781', '表单模板表单', '', '', '表单元素', '1950', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005670002', '2052751705', '2014-09-15 07:54:44', null, '0000-00-00 00:00:00', '109', '1340071401667', '表单模板表单', '表单帮助按钮', null, '表单按钮', '10000005670000', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005690002', '2052751705', '2014-09-16 09:21:52', null, '0000-00-00 00:00:00', '68', '1340085958657', '数据字典表单', '', '', '表单元素', '10000005690000', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005700011', '2052751705', '2014-09-16 13:19:19', null, '0000-00-00 00:00:00', '77', '101588525942', '表单管理列表', '自定义按钮宽70高24按钮', null, '列表按钮', '101933588506', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005700023', '2052751705', '2014-09-16 13:43:55', null, '0000-00-00 00:00:00', '10000005700015', '1338178130578', '商品管理列表', '新建按钮', null, '列表按钮', '10000005700021', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005700026', '2052751705', '2014-09-16 13:44:07', null, '0000-00-00 00:00:00', '10000005700015', '1338430888400', '商品管理列表', '列表批量删除按钮', null, '列表按钮', '10000005700024', '3', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005700031', '2052751705', '2014-09-16 13:49:28', null, '0000-00-00 00:00:00', '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005700030', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005700035', '2052751705', '2014-09-16 13:49:28', null, '0000-00-00 00:00:00', '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005700034', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005710000', '2052751705', '2014-09-16 19:51:05', null, '0000-00-00 00:00:00', '67', '1338271717968', '模块表单', '', '', '表单元素', '10176295137', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005710019', '2052751705', '2014-09-16 19:57:29', null, '0000-00-00 00:00:00', '10000005710002', '1338430659228', 'tt', '修改按钮', null, '表单按钮', '10000005710017', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005710022', '2052751705', '2014-09-16 19:57:30', null, '0000-00-00 00:00:00', '10000005710002', '1338176658578', 'tt', '表单保存按钮', '', '表单按钮', '10000005710020', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005710025', '2052751705', '2014-09-16 19:57:30', null, '0000-00-00 00:00:00', '10000005710002', '1340071401667', 'tt', '表单帮助按钮', null, '表单按钮', '10000005710023', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005710028', '2052751705', '2014-09-16 20:27:27', null, '0000-00-00 00:00:00', '67', '1338271717968', '模块表单', '', '', '表单元素', '10000003040000', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005720066', '2052751705', '2014-09-17 09:40:31', null, '0000-00-00 00:00:00', '10000005700015', '1340071401633', '商品管理列表', '主列表维护按钮', null, '列表操作按钮', '10000005720064', '4', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005750001', '2052751705', '2014-09-17 20:16:22', null, '0000-00-00 00:00:00', '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750000', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005750005', '2052751705', '2014-09-17 20:16:22', null, '0000-00-00 00:00:00', '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750004', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005750009', '2052751705', '2014-09-17 20:16:22', null, '0000-00-00 00:00:00', '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750008', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005750013', '2052751705', '2014-09-17 20:16:43', null, '0000-00-00 00:00:00', '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750012', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005750017', '2052751705', '2014-09-17 20:16:44', null, '0000-00-00 00:00:00', '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750016', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005750021', '2052751705', '2014-09-17 20:16:52', null, '0000-00-00 00:00:00', '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750020', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005750023', '2052751705', '2014-09-17 20:16:53', null, '0000-00-00 00:00:00', '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750022', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005750026', '2052751705', '2014-09-17 20:24:37', null, '0000-00-00 00:00:00', '10000005610026', '1339482578375', '商品表单', '表单选项卡添加按钮', null, '表单按钮', '10000005750024', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005750029', '2052751705', '2014-09-17 20:24:48', null, '0000-00-00 00:00:00', '10000005610026', '1339482608765', '商品表单', '表单选项卡保存按钮', null, '表单按钮', '10000005750027', '2', '0');
-INSERT INTO `sys_useinfo` VALUES ('10000005750032', '2052751705', '2014-09-17 20:24:56', null, '0000-00-00 00:00:00', '10000005610026', '1338185221078', '商品表单', '表单选项卡删除按钮', null, '表单按钮', '10000005750030', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('7288', '1', '2012-09-26 17:58:11', '1', null, '212', '1338432717931', '学员信息管理表单（勿删）', '表单按钮组按钮', '', '表单按钮', '276', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('7295', '1', '2012-09-27 19:05:09', '1', null, '214', '1340071401665', '测试业务', '导出按钮', null, '表单按钮', '278', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('7296', '1', '2012-09-27 19:05:14', '1', null, '214', '1340071401664', '测试业务', '导入按钮', null, '表单按钮', '279', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('149529', '1', '2012-12-05 13:23:03', '1', null, '76', '1340071401664', '目录管理列表', '导入按钮', null, '列表按钮', '685861352', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('4185846', '1', '2013-01-15 13:33:21', '1', null, '113', '1604850926', '用户管理列表', '自定义宽70高24按钮', null, '列表操作按钮', '101839516969', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('12460992', '1', '2012-10-26 16:12:35', '1', null, '115', '1340071401667', '图片页面管理表单', '帮助按钮', null, '表单按钮', '462447724', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('15554517', '1', '2012-10-26 14:47:04', '1', null, '190', '1338430888400', '帮助管理列表', '删除按钮', null, '列表按钮', '10305760668', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('19229035', '1', '2012-10-26 14:52:02', '1', null, '98', '1338178130578', '部内通知', '新建按钮', null, '列表按钮', '797414316', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('36728786', '1', '2013-02-21 17:17:45', '1', null, '102075173809', '1340071401633', '及时通讯列表', '维护按钮', null, '列表操作按钮', '1063849912', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('37790800', '2052751705', '2013-03-22 15:35:54', null, null, '213', '1338430659228', '学员信息管理表单', '修改按钮', null, '表单按钮', '1730436375', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('56455672', '1', '2012-10-26 14:54:04', '1', null, '122', '1338430888400', '海关口岸传真电报列表', '删除按钮', null, '列表按钮', '101240801507', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('65595192', '1', '2012-10-26 16:21:05', '1', null, '214', '1338446858775', '组合模板列表', '帮助按钮', null, '列表按钮', '1115490576', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('65597958', '1', '2012-10-31 15:14:45', '1', null, '101664390156', '1338430659228', '企业信息管理表单', '修改按钮', null, '表单按钮', '18943836', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('76284685', '1', '2013-01-24 16:34:23', '1', null, '10269177854', '1824188855', '测试编码xxx', '流转按钮', '', '列表按钮', '1607168420', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('88877405', '1', '2012-10-26 14:26:41', '1', null, '64', '1338176658578', '数据表管理表单', '保存按钮', null, '表单按钮', '10740548542', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('91654873', '1', '2012-10-26 14:57:30', '1', null, '143', '1338430888400', '布局管理类表', '删除按钮', null, '列表按钮', '257755846', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('95588949', '1', '2012-10-26 16:17:16', '1', null, '103', '1340071401667', '文本编辑器表单', '帮助按钮', null, '表单按钮', '1089895545', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101115063', '1', '2012-12-24 16:22:47', '1', null, '101457725003', '1338178130578', '角色列表', '新建按钮', null, '列表按钮', '101272116092', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101604916', '1', '2012-10-26 16:18:24', '1', null, '69', '1340071401667', 'LOGO管理表单', '帮助按钮', null, '表单按钮', '1132416015', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('109337297', '1', '2012-10-26 14:20:40', '1', null, '69', '1338430659228', 'LOGO管理表单', '修改按钮', null, '表单按钮', '101381913162', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('109864415', '1', '2012-10-26 14:14:56', '1', null, '70', '1338430659228', 'CSS管理表单', '修改按钮', null, '表单按钮', '1549716041', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('119002739', '1', '2012-10-26 14:14:26', '1', null, '103', '1338176658578', '文本编辑器表单', '保存按钮', null, '表单按钮', '1017684146', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('122719749', '1', '2012-10-26 14:21:35', '1', null, '125', '1338430659228', '主题管理表单', '修改按钮', null, '表单按钮', '102082281990', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('138725057', '1', '2012-10-26 14:47:58', '1', null, '81', '1338178130578', '列表管理列表', '新建按钮', null, '列表按钮', '101222385529', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('145845414', '1', '2012-10-26 16:12:01', '1', null, '208', '1340071401667', '权限管理表单', '帮助按钮', null, '表单按钮', '10602635033', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('169113795', '1', '2012-10-26 14:47:44', '1', null, '109', '1338430888400', '表单模板列表', '删除按钮', null, '列表按钮', '218871103', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('175723456', '1', '2012-10-26 16:16:03', '1', null, '126', '1340071401667', '海关口岸传真电报表单', '帮助按钮', null, '表单按钮', '101876899290', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('185946830', '1', '2013-01-04 14:00:50', '1', null, '10616645975', '1340071401633', 'GW流程管理列表', '维护按钮', null, '列表操作按钮', '13173212', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('195238499', '1', '2013-03-07 11:55:58', '1', null, '1054632662', '1339482608765', '学员2222', '表单选项卡保存按钮', null, '表单按钮', '101246758043', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('196970600', '1', '2013-03-11 10:58:12', '1', null, '1338913833', '1338176658578', '学员2', '保存', '', '表单按钮', '175395099', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('199546342', '1', '2013-02-21 17:17:07', '1', null, '102075173809', '1338446858775', '及时通讯列表', '帮助按钮', null, '列表按钮', '10872842496', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('200430041', '1', '2012-10-26 16:12:09', '1', null, '203', '1340071401667', '权限策略管理表单', '帮助按钮', null, '表单按钮', '1415655294', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('222490707', '1', '2012-10-26 16:29:17', '1', null, '114', '1338446858775', '图片页面管理列表', '帮助按钮', null, '列表按钮', '753725579', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('223291989', '1', '2013-03-04 16:26:21', '1', null, '101138973087', '1338430888400', '测试列表', '删除按钮', null, '列表按钮', '1822701407', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('225667587', '1', '2012-10-26 14:32:59', '1', null, '71', '1338430888400', '按钮管理列表', '删除按钮', null, '列表按钮', '101940741132', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('237427116', '1', '2012-10-26 14:54:01', '1', null, '122', '1338178130578', '海关口岸传真电报列表', '新建按钮', null, '列表按钮', '1062219751', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('243300126', '1', '2012-10-26 14:32:53', '1', null, '71', '1338178130578', '按钮管理列表', '新建按钮', null, '列表按钮', '10402199064', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('258291086', '1', '2012-10-26 16:18:38', '1', null, '105', '1340071401667', '信息发布表单', '帮助按钮', null, '表单按钮', '1227312294', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('258735190', '1', '2012-10-26 14:27:02', '1', null, '128', '1338430659228', '机构管理表单', '修改按钮', null, '表单按钮', '101568444306', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('268108991', '1', '2013-02-21 15:39:10', '1', null, '1508238003', '1340071401667', '报表表单', '帮助按钮', null, '表单按钮', '10354878665', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('272053104', '1', '2012-10-26 14:36:30', '1', null, '129', '1338430888400', '列表组件列表', '删除按钮', null, '列表按钮', '1253232451', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('284539412', '1', '2012-10-26 16:12:42', '1', null, '200', '1340071401667', '数据查询管理表单', '帮助按钮', null, '表单按钮', '1058261778', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('296556876', '1', '2012-10-26 16:23:51', '1', null, '112', '1338446858775', '字处理组件列表', '帮助按钮', null, '列表按钮', '1033267531', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('297552405', '1', '2012-10-26 16:21:58', '1', null, '125', '1338446858775', '选择列列表', '帮助按钮', null, '列表按钮', '10441691779', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('298788622', '1', '2012-10-26 14:41:08', '1', null, '69', '1338430888400', '文本框管理列表', '删除按钮', null, '列表按钮', '101310989649', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('310416264', '1', '2012-10-26 16:17:23', '1', null, '53', '1340071401667', '日期组件管理表单', '帮助按钮', null, '表单按钮', '1089667214', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('323203264', '1', '2012-10-26 14:36:25', '1', null, '129', '1338178130578', '列表组件列表', '新建按钮', null, '列表按钮', '10273543552', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('327485786', '1', '2012-10-26 16:27:00', '1', null, '149', '1338446858775', '模板库列表', '帮助按钮', null, '列表按钮', '101054492781', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('334635364', '1', '2012-10-26 14:51:32', '1', null, '92', '1338430888400', 'JS脚本管理列表', '删除按钮', null, '列表按钮', '101644918034', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('335811335', '1', '2013-03-04 16:26:29', '1', null, '101138973087', '1338446858775', '测试列表', '帮助按钮', null, '列表按钮', '101263402704', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('336490934', '1', '2012-10-26 14:20:08', '1', null, '61', '1338176658578', '复选框管理表单', '保存按钮', null, '表单按钮', '10487981773', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('338070779', '1', '2013-02-21 18:04:11', '1', null, '101364029444', '1338176658578', '工作流组件表单', '保存按钮', null, '表单按钮', '129724696', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('338678103', '2', '2013-03-14 09:53:39', null, null, '131', '787835602', '提示信息界面管理列表', '默认按钮', null, '列表按钮', '146', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('355509092', '1', '2013-02-21 18:13:09', '1', null, '10364593661', '1338430888400', '工作流组件列表', '删除按钮', null, '列表按钮', '499814841', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('355910927', '1', '2013-01-14 11:29:56', '1', null, '151', '1338176658578', '菜单管理表单', '保存按钮', null, '表单按钮', '529381670', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('365716349', '1', '2013-01-04 13:54:02', '1', null, '17810378', '1824188855', 'GW发文管理表单', '流转按钮', '', '表单按钮', '1316777925', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('366843683', '1', '2012-10-26 16:20:38', '1', null, '10169396274', '1338446858775', '高级查询列表', '帮助按钮', null, '列表按钮', '10990080124', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('380220304', '1', '2013-03-12 10:29:01', '1', null, '10592028476', '1338430659228', '角色表单', '修改', null, '表单按钮', '10143189140', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('386337065', '1', '2013-02-18 16:43:12', '1', null, '101339765555', '101588525942', 'MYSQL数据备份记录列表', '数据恢复按钮', null, '列表按钮', '81197290', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('388013248', '1', '2012-10-26 14:55:49', '1', null, '131', '1338430888400', '提示信息界面管理列表', '删除按钮', null, '列表按钮', '10564831046', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('392617837', '1', '2013-03-19 13:15:01', null, null, '213', '1338185221078', '学员信息管理表单', '表单选项卡删除按钮', null, '表单按钮', '10950631941', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('394633718', '1', '2012-12-24 16:23:24', '1', null, '101457725003', '1338446858775', '角色列表', '帮助按钮', null, '列表按钮', '348590119', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('410996673', '1', '2012-10-26 16:26:00', '1', null, '202', '1338446858775', '用户分类管理列表', '帮助按钮', null, '列表按钮', '102033301729', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('419926137', '1', '2012-12-25 14:40:47', '1', null, '114', '1338176658578', '用户管理表单', '保存按钮', '', '表单按钮', '10905511913', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('429197257', '1', '2013-03-04 17:20:37', '1', null, '1109601088', '1338176658578', '测试表单', '保存按钮', '', '表单按钮', '1048404056', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('436010751', '1', '2012-12-25 14:41:35', '1', null, '114', '1338176658578', '用户管理表单', '保存按钮', null, '表单按钮', '1767278436', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('441565559', '2052751705', '2013-04-16 17:22:37', null, null, '200193328', '1340071401633', 'aaa', '维护按钮', null, '列表操作按钮', '1730534879', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('451353656', '1', '2012-10-26 16:18:02', '1', null, '146', '1340071401667', '布局管理表单', '帮助按钮', null, '表单按钮', '10666865870', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('464466002', '1', '2012-10-26 14:55:29', '1', null, '130', '1338178130578', '表单界面管理列表', '新建按钮', null, '列表按钮', '304006278', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('464830511', '1', '2012-10-26 14:39:09', '1', null, '73', '787835602', '复选框管理列表', '默认按钮', null, '列表按钮', '202', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('479354955', '1', '2013-03-19 13:13:25', null, null, '213', '1339482578375', '学员信息管理表单', '表单选项卡添加按钮', null, '表单按钮', '1465106520', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('480150629', '1', '2012-10-26 16:29:02', '1', null, '107', '1338446858775', '公文模板列表', '帮助按钮', null, '列表按钮', '101511580242', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('497530300', '1', '2013-02-21 17:47:22', '1', null, '10920024955', '1338430888400', '邮件组件列表', '删除按钮', null, '列表按钮', '10411225159', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('497791830', '1', '2012-10-26 14:57:14', '1', null, '135', '1338430888400', '图标管理列表', '删除按钮', null, '列表按钮', '10847413172', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('499637180', '1', '2012-10-26 14:41:05', '1', null, '69', '1338178130578', '文本框管理列表', '新建按钮', null, '列表按钮', '10561624575', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('501153305', '1', '2013-02-22 11:44:39', '1', null, '10652032678', '1338430888400', '字处理列表', '删除按钮', null, '列表按钮', '101797730173', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('514024297', '1', '2013-02-21 16:21:52', '1', null, '10714079160', '1338430888400', '报表列表', '删除按钮', null, '列表按钮', '101147985721', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('517936251', '1', '2012-10-26 16:17:03', '1', null, '133', '1340071401667', '表单界面管理表单', '帮助按钮', null, '表单按钮', '102008134755', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('532650205', '1', '2012-10-26 16:21:50', '1', null, '126', '1338446858775', '序号列列表', '帮助按钮', null, '列表按钮', '1438647590', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('596219014', '1', '2012-10-26 14:52:19', '1', null, '100', '1338430888400', '行业公告', '删除按钮', null, '列表按钮', '2040683583', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('599795304', '1', '2012-11-05 16:57:20', '1', null, '418796937', '787835602', '门户列表', '默认按钮', null, '列表按钮', '292971121', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('601036622', '1', '2013-03-07 12:03:17', '1', null, '101146831838', '1339482608765', '学员2222', '表单选项卡保存按钮', null, '表单按钮', '10457124721', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('601525074', '1', '2012-12-06 15:44:40', '1', null, '101960425631', '1340071401633', '系统日志列表', '维护按钮', null, '列表操作按钮', '101224586299', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('601782559', '1', '2012-10-26 14:38:00', '1', null, '195', '1338178130578', '代码级联管理列表', '新建按钮', null, '列表按钮', '10595159457', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('608989180', '1', '2012-10-26 14:35:54', '1', null, '125', '1338430888400', '选择列列表', '删除按钮', null, '列表按钮', '1963348403', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('618846541', '1', '2012-10-26 14:21:05', '1', null, '66', '1338176658578', '表关系管理表单', '保存按钮', null, '表单按钮', '10664339482', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('635071787', '1', '2012-10-26 16:26:33', '1', null, '109', '1338446858775', '表单模板列表', '帮助按钮', null, '列表按钮', '10395494809', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('639488072', '1', '2013-02-21 17:07:30', '1', null, '819584023', '1338430659228', '及时通讯组件表单', '修改按钮', null, '表单按钮', '101806983957', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('642825978', '1', '2013-01-04 13:59:33', '1', null, '101964978862', '1338176658578', 'GW流程管理表单', '保存按钮', '', '表单按钮', '10330963347', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('656591418', '1', '2013-02-18 16:43:00', '1', null, '101339765555', '101588525942', 'MYSQL数据备份记录列表', '数据备份按钮', null, '列表按钮', '1086856887', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('662000459', '1', '2012-10-31 10:01:55', '1', null, '1805110464', '1340071401668', '测试列表2', '发布按钮', null, '列表操作按钮', '101045108100', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('673891798', '1', '2012-10-29 11:54:18', '1', null, '68', '1338176658578', '代码管理表单', '保存按钮', null, '表单按钮', '1973489479', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('675185984', '1', '2012-10-26 14:20:05', '1', null, '61', '1338430659228', '复选框管理表单', '修改按钮', null, '表单按钮', '101323431092', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('678296886', '1', '2012-10-26 14:37:43', '1', null, '66', '1338178130578', '日期组件列表', '新建按钮', null, '列表按钮', '10900581727', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('688761763', '1', '2012-10-26 14:37:16', '1', null, '112', '787835602', '字处理组件列表', '默认按钮', null, '列表按钮', '184', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('690553800', '1', '2012-10-26 14:58:35', '1', null, '148', '787835602', '菜单管理列表', '默认按钮', null, '列表按钮', '158', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('705443722', '1', '2012-12-17 17:03:11', '1', null, '1534494048', '1338176658578', '测试权限', '保存按钮', '', '表单按钮', '10129595331', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('723132667', '1', '2012-10-26 16:16:42', '1', null, '137', '1340071401667', '高级查询界面管理表单', '帮助按钮', null, '表单按钮', '41053825', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('729635339', '1', '2012-10-26 14:26:24', '1', null, '135', '1338430659228', '列表组件表单', '修改按钮', null, '表单按钮', '715667447', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('730408028', '1', '2012-10-26 16:15:25', '1', null, '156', '1340071401667', '上传文件框管理表单', '帮助按钮', null, '表单按钮', '10533133929', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('749518735', '1', '2012-12-11 13:37:22', '1', null, '2072797554', '1338176658578', '报表模板表单', '保存按钮', '', '表单按钮', '10983961101', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('762684740', '1', '2012-10-26 16:19:09', '1', null, '129', '1340071401667', '选择列管理表单', '帮助按钮', null, '表单按钮', '10927751433', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('765073095', '1', '2012-10-26 14:32:35', '1', null, '206', '1338178130578', '功能级权限管理列表', '新建按钮', null, '列表按钮', '10263382619', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('773939590', '1', '2012-10-26 14:57:33', '1', null, '143', '787835602', '布局管理类表', '默认按钮', null, '列表按钮', '155', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('775931545', '1', '2012-10-26 16:13:58', '1', null, '59', '1340071401667', '按钮管理表单', '帮助按钮', null, '表单按钮', '699508453', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('784028716', '1', '2012-10-26 14:33:25', '1', null, '214', '1338430888400', '组合模板列表', '删除按钮', null, '列表按钮', '101691102084', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('802987420', '1', '2012-10-26 16:24:27', '1', null, '195', '1338446858775', '代码级联管理列表', '帮助按钮', null, '列表按钮', '101611820984', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('825306998', '1', '2012-10-26 16:15:38', '1', null, '78', '1340071401667', '数据源管理表单', '帮助按钮', null, '表单按钮', '10766135653', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('846308732', '1', '2013-03-19 17:01:43', null, null, '1480825201', '101588525942', '组合模板表单', '自定义按钮宽70高24按钮', null, '表单按钮', '1334647130', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('861749248', '1', '2012-10-26 14:56:24', '1', null, '133', '1338178130578', '高级查询界面管理列表', '新建按钮', null, '列表按钮', '1017077084', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('865153649', '1', '2013-02-21 16:21:37', '1', null, '10714079160', '1338178130578', '报表列表', '新建按钮', null, '列表按钮', '780115994', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('865478781', '1', '2012-10-26 14:48:02', '1', null, '81', '1338430888400', '列表管理列表', '删除按钮', null, '列表按钮', '592290544', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('867125784', '1', '2012-10-26 16:11:34', '1', null, '216', '1340071401667', '文档管理表单', '帮助按钮', null, '表单按钮', '263743253', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('881337446', '1', '2012-12-03 11:04:50', '1', null, '101470572327', '1338446858775', '发件箱列表', '帮助按钮', null, '列表按钮', '101525841099', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('882774649', '1', '2013-02-22 11:37:10', '1', null, '1866983405', '1340071401667', '字处理表单', '帮助按钮', null, '表单按钮', '611677454', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('885596032', '1', '2012-10-26 16:10:41', '1', null, '101051915201', '1340071401667', '编码管理表单', '帮助按钮', null, '表单按钮', '101580612571', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('886358106', '1', '2012-10-26 14:45:39', '1', null, '204', '1338430888400', '权限策略列表', '删除按钮', null, '列表按钮', '10145370110', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('900388930', '1', '2012-10-26 14:34:38', '1', null, '208', '1338178130578', '多文件上传组件', '新建按钮', null, '列表按钮', '978078314', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('901569614', '1', '2012-10-26 14:50:14', '1', null, '85', '1338178130578', '数据表管理列表', '新建按钮', null, '列表按钮', '101023230190', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('912312182', '1', '2012-10-26 16:13:29', '1', null, '189', '1340071401667', '角色管理表单', '帮助按钮', null, '表单按钮', '10733462019', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('916695343', '1', '2013-02-21 17:47:59', '1', null, '10920024955', '1340071401633', '邮件组件列表', '维护按钮', null, '列表操作按钮', '10682587771', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('941929812', '1', '2012-10-26 14:20:53', '1', null, '66', '1338430659228', '表关系管理表单', '修改按钮', null, '表单按钮', '1005619542', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('945406689', '1', '2013-03-05 15:36:07', '1', null, '134', '1338430659228', '提示信息界面管理表单', '修改按钮', null, '表单按钮', '1968208323', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('949354850', '1', '2012-10-26 16:11:00', '1', null, '101875302853', '1340071401667', '高级查询表单', '帮助按钮', null, '表单按钮', '101694082574', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('961069149', '1', '2012-10-26 16:15:31', '1', null, '157', '1340071401667', '密码框管理表单', '帮助按钮', null, '表单按钮', '132425215', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('968438596', '1', '2012-10-26 16:28:46', '1', null, '100', '1338446858775', '行业公告', '帮助按钮', null, '列表按钮', '170445420', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('971536939', '1', '2012-10-26 16:31:07', '1', null, '76', '1338446858775', '目录管理列表', '帮助按钮', null, '列表按钮', '112195810', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1006366075', '1', '2012-10-26 16:27:57', '1', null, '88', '1338446858775', '代码管理列表', '帮助按钮', null, '列表按钮', '1643659214', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1006800147', '1', '2012-10-31 09:58:03', '1', null, '101019829173', '1338178130578', '测试表单1', '新建按钮', null, '表单按钮', '1708305398', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1014602503', '1', '2013-03-07 12:03:17', '1', null, '101146831838', '1338430659228', '学员2222', '修改按钮', null, '表单按钮', '640380176', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1014720982', '1', '2013-02-22 10:53:17', '1', null, '102075173809', '1340071401669', '即时通讯列表', '撤回按钮', null, '列表操作按钮', '1904728048', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('1016191535', '1', '2012-11-02 13:51:04', '1', null, '1081243326', '1340071401633', '组合模板列表', '维护按钮', null, '列表操作按钮', '101069277661', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('1018110912', '1', '2012-10-26 14:40:25', '1', null, '151', '1338430888400', '下拉框管理列表', '删除按钮', null, '列表按钮', '1166025673', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1019405812', '1', '2012-10-26 14:46:52', '1', null, '201', '1338430888400', '数据查询列表', '删除按钮', null, '列表按钮', '202481330', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1022267106', '1', '2012-10-31 15:20:43', '1', null, '2030733598', '1338430888400', '企业信息管理列表', '删除按钮', null, '列表按钮', '1187665625', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1023996906', '1', '2012-10-26 14:15:33', '1', null, '136', '1338176658578', '树界面管理表单', '保存按钮', null, '表单按钮', '10246149210', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1028399154', '1', '2013-02-21 18:09:17', '1', null, '10364593661', '1340071401633', '工作流组件列表', '维护按钮', null, '列表操作按钮', '10611866905', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('1028542121', '1', '2012-10-26 16:14:23', '1', null, '113', '1340071401667', '字处理组件管理表单', '帮助按钮', null, '表单按钮', '101266981799', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1031409873', '1', '2012-12-25 13:47:08', '1', null, '101457725003', '1338430888400', '角色列表', '删除按钮', null, '列表按钮', '333195710', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1036201157', '1', '2012-10-26 14:39:24', '1', null, '72', '1338430888400', '单选框管理列表', '删除按钮', null, '列表按钮', '10166295824', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1037963101', '1', '2012-10-26 14:36:44', '1', null, '142', '1338178130578', '查询组件列表', '新建按钮', null, '列表按钮', '1781406787', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1041814065', '1', '2012-10-26 14:37:07', '1', null, '112', '1338178130578', '字处理组件列表', '新建按钮', null, '列表按钮', '970592951', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1041925564', '1', '2012-10-26 14:40:53', '1', null, '150', '787835602', '文本域管理列表', '默认按钮', null, '列表按钮', '196', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1042225993', '1', '2013-03-12 09:52:09', '1', null, '76', '1338178130578', '模块管理列表', '新建', null, '列表按钮', '10996136128', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1043659537', '1', '2012-10-26 14:40:02', '1', null, '152', '1338430888400', '搜索下拉框列表', '删除按钮', null, '列表按钮', '10780064768', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1045486472', '1', '2013-02-22 13:57:32', '1', null, '10652032678', '787835602', '字处理列表', '默认按钮', null, '列表按钮', '101545638598', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1054136040', '1', '2012-10-26 16:16:29', '1', null, '71', '1340071401667', 'JS脚本管理', '帮助按钮', null, '表单按钮', '1971395856', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1060391582', '1', '2013-03-02 11:02:13', null, null, '101189843881', '1338176658578', 'aaa', '保存', '', '表单按钮', '1095522931', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1061277842', '1', '2012-10-26 16:29:41', '1', null, '122', '1338446858775', '海关口岸传真电报列表', '帮助按钮', null, '列表按钮', '1913924738', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1064966469', '1', '2012-10-26 16:24:20', '1', null, '66', '1338446858775', '日期组件列表', '帮助按钮', null, '列表按钮', '10880217396', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1065293834', '1', '2012-10-26 14:35:02', '1', null, '207', '1338178130578', '打印模板列表', '新建按钮', null, '列表按钮', '101878073234', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1067343607', '1', '2012-12-05 14:39:35', '1', null, '151', '1339482578375', '菜单管理表单', '添加按钮', null, '表单按钮', '102012411171', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1069218960', '1', '2012-12-03 11:04:42', '1', null, '101470572327', '1338178130578', '发件箱列表', '新建按钮', null, '列表按钮', '437272155', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1069920293', '1', '2012-10-26 14:28:39', '1', null, '110', '1338430659228', '组合模板管理表单', '修改按钮', null, '表单按钮', '101766507052', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1071859756', '1', '2012-10-26 16:25:03', '1', null, '154', '1338446858775', '上传文件框管理列表', '帮助按钮', null, '列表按钮', '101288198791', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1075147240', '1', '2012-11-01 18:13:29', '1', null, '418796937', '1338178130578', '门户列表', '新建按钮', null, '列表按钮', '1544805607', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1077301762', '1', '2012-10-26 14:26:38', '1', null, '64', '1338430659228', '数据表管理表单', '修改按钮', null, '表单按钮', '10123912911', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1087563603', '1', '2013-01-04 11:36:04', '1', null, '10616645975', '1338178130578', 'GW流程管理列表', '新建按钮', null, '列表按钮', '596346992', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1109598245', '1', '2012-10-26 16:11:19', '1', null, '114', '1340071401667', '用户管理表单', '帮助按钮', null, '表单按钮', '101703723779', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1123890832', '1', '2013-02-22 11:44:50', '1', null, '10652032678', '1338446858775', '字处理列表', '帮助按钮', null, '列表按钮', '101888753930', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1127162464', '1', '2012-10-26 16:29:48', '1', null, '124', '1338446858775', '机构管理列表', '帮助按钮', null, '列表按钮', '739683003', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1142842269', '1', '2012-10-26 14:25:41', '1', null, '130', '1338176658578', '序号列管理表单', '保存按钮', null, '表单按钮', '10559596262', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1153147208', '1', '2012-10-26 14:57:47', '1', null, '91', '1338430888400', 'CSS管理列表', '删除按钮', null, '列表按钮', '739255838', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1177048380', '1', '2012-10-26 16:30:51', '1', null, '143', '1338446858775', '布局管理类表', '帮助按钮', null, '列表按钮', '599529661', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1178462375', '1', '2013-01-04 11:36:15', '1', null, '10616645975', '1338430888400', 'GW流程管理列表', '删除按钮', null, '列表按钮', '10806700346', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1181390695', '1', '2012-10-26 14:50:44', '1', null, '88', '1338178130578', '代码管理列表', '新建按钮', null, '列表按钮', '10644153839', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1185214499', '1', '2013-01-24 16:42:00', '1', null, '101901716751', '1824188855', '测试编码xxxxx', '流转按钮', '', '表单按钮', '10504527546', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1209621232', '1', '2012-10-26 16:25:10', '1', null, '152', '1338446858775', '搜索下拉框列表', '帮助按钮', null, '列表按钮', '1905550247', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1223743849', '1', '2012-10-31 15:19:39', '1', null, '2030733598', '1338178130578', '企业信息管理列表', '新建按钮', null, '列表按钮', '953673338', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1244115549', '1', '2013-01-23 10:29:04', '1', null, '119', '1338430659228', '系统元素管理表单', '修改按钮', null, '表单按钮', '101640620804', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1246348743', '1', '2013-03-07 12:03:17', '1', null, '101146831838', '1340071401667', '学员2222', '表单帮助按钮', null, '表单按钮', '890372563', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1248659488', '1', '2012-10-26 14:56:27', '1', null, '133', '1338430888400', '高级查询界面管理列表', '删除按钮', null, '列表按钮', '10555769962', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1258606540', '1', '2013-02-21 17:07:45', '1', null, '819584023', '1338176658578', '及时通讯组件表单', '保存按钮', null, '表单按钮', '45311474', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1259548248', '1', '2013-01-04 11:39:44', '1', null, '101964978862', '1338176658578', 'GW流程管理表单', '保存按钮', null, '表单按钮', '333592275', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1260248217', '1', '2012-10-26 14:51:29', '1', null, '92', '1338178130578', 'JS脚本管理列表', '新建按钮', null, '列表按钮', '10663411230', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1284272353', '1', '2012-11-05 16:34:45', '1', null, '1583336940', '1339482578375', '门户表单', '添加按钮', null, '表单按钮', '633149190', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1296587249', '1', '2012-12-24 16:23:30', '1', null, '101457725003', '1340071401633', '角色列表', '维护按钮', null, '列表操作按钮', '1091196364', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('1314479762', '1', '2012-12-11 13:40:53', '1', null, '101390140804', '1338178130578', '报表模板列表', '新建按钮', null, '列表按钮', '817473439', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1314704337', '1', '2012-10-26 16:25:18', '1', null, '151', '1338446858775', '下拉框管理列表', '帮助按钮', null, '列表按钮', '101198729524', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1324959526', '1', '2012-10-26 16:15:51', '1', null, '58', '1340071401667', '文本框管理表单', '帮助按钮', null, '表单按钮', '101365958591', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1337971374', '1', '2012-10-26 16:19:15', '1', null, '130', '1340071401667', '序号列管理表单', '帮助按钮', null, '表单按钮', '10311061328', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1343344799', '1', '2012-10-26 14:38:46', '1', null, '74', '787835602', '树管理列表', '默认按钮', null, '列表按钮', '203', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1354106721', '1', '2012-10-26 14:49:01', '1', null, '77', '1338430888400', '表单管理列表', '删除按钮', null, '列表按钮', '101653663867', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1365753223', '1', '2012-10-26 16:18:45', '1', null, '125', '1340071401667', '主题管理表单', '帮助按钮', null, '表单按钮', '10252149288', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1373958623', '1', '2012-10-26 16:30:43', '1', null, '135', '1338446858775', '图标管理列表', '帮助按钮', null, '列表按钮', '550344205', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1387703916', '1', '2012-10-26 14:57:27', '1', null, '143', '1338178130578', '布局管理类表', '新建按钮', null, '列表按钮', '1439875138', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1398766652', '1', '2012-10-26 14:32:17', '1', null, '10169396274', '1338178130578', '高级查询列表', '新建按钮', null, '列表按钮', '1520196249', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1402261446', '1', '2013-03-07 11:55:58', '1', null, '1054632662', '1340071401667', '学员2222', '表单帮助按钮', null, '表单按钮', '101901297948', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1415480336', '1', '2012-10-31 15:20:52', '1', null, '2030733598', '1340071401633', '企业信息管理列表', '维护按钮', null, '列表操作按钮', '1282030221', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('1421565013', '1', '2013-02-21 17:47:31', '1', null, '10920024955', '1338446858775', '邮件组件列表', '帮助按钮', null, '列表按钮', '1268908875', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1428383468', '1', '2013-03-11 10:58:13', '1', null, '1338913833', '1338430659228', '学员2', '修改', null, '表单按钮', '1693636147', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1430727477', '1', '2012-10-26 16:14:45', '1', null, '151', '1340071401667', '菜单管理表单', '帮助按钮', null, '表单按钮', '101615195836', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1433695333', '1', '2012-11-21 17:30:49', '1', null, '195', '1604850926', '打印模板表单', '自定义宽70高24按钮', null, '表单按钮', '10471413510', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1438748620', '1', '2012-10-26 14:39:21', '1', null, '72', '1338178130578', '单选框管理列表', '新建按钮', null, '列表按钮', '10969365974', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1440356002', '1', '2012-10-26 16:26:09', '1', null, '201', '1338446858775', '数据查询列表', '帮助按钮', null, '列表按钮', '1616574052', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1447983780', '1', '2012-10-26 14:39:46', '1', null, '154', '787835602', '上传文件框管理列表', '默认按钮', null, '列表按钮', '199', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1452591706', '1', '2013-03-19 16:58:53', null, null, '121', '787835602', '主题管理列表', '默认按钮', null, '列表按钮', '101679176971', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1472269137', '1', '2012-10-26 14:35:32', '1', null, '126', '1338178130578', '序号列列表', '新建按钮', null, '列表按钮', '101454046952', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1480828103', '1', '2012-10-26 16:31:15', '1', null, '121', '1338446858775', '主题管理列表', '帮助按钮', null, '列表按钮', '101278560709', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1481360351', '1', '2012-10-26 14:40:06', '1', null, '152', '787835602', '搜索下拉框列表', '默认按钮', null, '列表按钮', '198', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1496113856', '1', '2012-10-26 14:55:18', '1', null, '124', '1338430888400', '机构管理列表', '删除按钮', null, '列表按钮', '204370373', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1502763479', '1', '2012-10-26 14:15:18', '1', null, '134', '1338176658578', '提示信息界面管理表单', '保存按钮', null, '表单按钮', '1053270092', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1505140351', '1', '2012-10-26 16:30:04', '1', null, '131', '1338446858775', '提示信息界面管理列表', '帮助按钮', null, '列表按钮', '757697796', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1511194343', '1', '2012-10-26 16:10:17', '1', null, '101051915201', '1338176658578', '编码管理表单', '保存按钮', '', '表单按钮', '1780375180', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1526904184', '1', '2013-02-21 18:04:00', '1', null, '101364029444', '1338430659228', '工作流组件表单', '修改按钮', null, '表单按钮', '101769984498', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1529777387', '1', '2012-12-11 18:00:15', '1', null, '101960425631', '101588525942', '系统日志列表', '统计按钮', null, '列表按钮', '1731981315', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1534775366', '1', '2012-10-31 16:30:11', '1', null, '2030733598', '787835602', '企业信息管理列表', '默认按钮', null, '列表按钮', '1098641546', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1562950712', '1', '2012-10-26 14:56:48', '1', null, '134', '1338430888400', '字体管理列表', '删除按钮', null, '列表按钮', '101354416974', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1572186934', '1', '2012-10-26 14:50:17', '1', null, '85', '1338430888400', '数据表管理列表', '删除按钮', null, '列表按钮', '2059383230', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1580828744', '1', '2012-10-26 16:17:55', '1', null, '68', '1340071401667', '代码管理表单', '帮助按钮', null, '表单按钮', '1701186054', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1584807909', '1', '2013-02-21 18:09:38', '1', null, '10364593661', '1340071401669', '工作流组件列表', '撤回按钮', null, '列表操作按钮', '1806333752', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('1587840953', '1', '2012-10-26 14:47:02', '1', null, '190', '1338178130578', '帮助管理列表', '新建按钮', null, '列表按钮', '102133061445', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1589301455', '1', '2012-10-26 16:19:49', '1', null, '128', '1340071401667', '机构管理表单', '帮助按钮', null, '表单按钮', '10183531993', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1589666806', '1', '2013-01-04 11:39:12', '1', null, '101964978862', '1338430659228', 'GW流程管理表单', '修改按钮', null, '表单按钮', '539754856', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1600215599', '1', '2012-10-26 14:41:30', '1', null, '80', '1338430888400', '按钮组管理列表', '删除按钮', null, '列表按钮', '10820036136', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1629169924', '1', '2012-10-26 14:21:50', '1', null, '106', '1338430659228', '公文模板管理表单', '修改按钮', null, '表单按钮', '986759665', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1634785727', '1', '2012-10-26 14:35:51', '1', null, '125', '1338178130578', '选择列列表', '新建按钮', null, '列表按钮', '101776411435', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1644806463', '1', '2013-01-04 13:59:11', '1', null, '101964978862', '1339482578375', 'GW流程管理表单', '添加按钮', null, '表单按钮', '101746148832', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1654820146', '1', '2013-03-11 10:58:14', '1', null, '1338913833', '1339482608765', '学员2', '表单选项卡保存', null, '表单按钮', '1040852849', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1663618138', '1', '2012-10-26 16:29:56', '1', null, '130', '1338446858775', '表单界面管理列表', '帮助按钮', null, '列表按钮', '777174723', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1681274306', '1', '2012-10-26 14:53:50', '1', null, '118', '1338430888400', '系统元素管理列表', '删除按钮', null, '列表按钮', '10639509495', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1686541969', '1', '2012-10-26 14:36:07', '1', null, '128', '1338430888400', '分页列表', '删除按钮', null, '列表按钮', '1570220135', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1687186434', '1', '2012-10-26 14:39:06', '1', null, '73', '1338430888400', '复选框管理列表', '删除按钮', null, '列表按钮', '101555170253', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1691197745', '1', '2012-10-26 14:52:05', '1', null, '98', '1338430888400', '部内通知', '删除按钮', null, '列表按钮', '10730220964', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1693145314', '1', '2012-10-26 14:56:30', '1', null, '133', '787835602', '高级查询界面管理列表', '默认按钮', null, '列表按钮', '148', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1694695999', '1', '2012-10-26 14:55:33', '1', null, '130', '1338430888400', '表单界面管理列表', '删除按钮', null, '列表按钮', '1552635725', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1709676169', '1', '2012-10-26 14:38:42', '1', null, '74', '1338430888400', '树管理列表', '删除按钮', null, '列表按钮', '1210416298', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1712513528', '1', '2012-10-26 14:21:38', '1', null, '125', '1338176658578', '主题管理表单', '保存按钮', null, '表单按钮', '2068092021', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1713872747', '1', '2012-10-26 16:22:10', '1', null, '128', '1338446858775', '分页列表', '帮助按钮', null, '列表按钮', '101472292419', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1726189059', '1', '2012-10-26 14:38:03', '1', null, '195', '1338430888400', '代码级联管理列表', '删除按钮', null, '列表按钮', '1163290227', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1730132411', '1', '2013-01-24 16:43:21', '1', null, '10129738054', '1824188855', '测试编码xxxxx', '流转按钮', '', '列表按钮', '369706366', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1731763929', '1', '2012-12-11 13:41:22', '1', null, '101390140804', '1338430888400', '报表模板列表', '删除按钮', null, '列表按钮', '101093864560', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1733830464', '1', '2012-10-26 16:20:57', '1', null, '71', '1338446858775', '按钮管理列表', '帮助按钮', null, '列表按钮', '59544656', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1739788588', '1', '2012-10-26 14:51:43', '1', null, '93', '1338178130578', '数据源管理列表', '新建按钮', null, '列表按钮', '1006862743', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1740352230', '1', '2012-12-17 17:05:01', '1', null, '10690887604', '1338178130578', '测试权限列表', '新建按钮', null, '列表按钮', '1066948347', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1742760844', '1', '2013-03-02 13:21:24', null, null, '101501856239', '1340071401633', 'aaa', '维护按钮', null, '列表操作按钮', '10960531438', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('1762535532', '1', '2012-12-24 16:19:09', '1', null, '10592028476', '1338176658578', '角色表单', '保存按钮', '', '表单按钮', '10753843977', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1765960688', '1', '2012-10-31 16:30:16', '1', null, '2030733598', '1338446858775', '企业信息管理列表', '帮助按钮', null, '列表按钮', '587716684', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1766891280', '1', '2012-10-26 16:31:22', '1', null, '148', '1338446858775', '菜单管理列表', '帮助按钮', null, '列表按钮', '24447126', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1781162578', '1', '2013-01-04 11:36:24', '1', null, '10616645975', '1338446858775', 'GW流程管理列表', '帮助按钮', null, '列表按钮', '101539766449', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1783707386', '1', '2013-01-04 11:27:17', '1', null, '101715128192', '1338446858775', 'GW发文管理列表', '帮助按钮', null, '列表按钮', '284189836', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1787995092', '1', '2013-02-21 18:08:50', '1', null, '10364593661', '1338446858775', '工作流组件列表', '帮助按钮', null, '列表按钮', '1471821131', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1795129603', '1', '2012-10-26 16:30:59', '1', null, '91', '1338446858775', 'CSS管理列表', '帮助按钮', null, '列表按钮', '1746382420', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1814729437', '1', '2012-10-26 16:24:47', '1', null, '73', '1338446858775', '复选框管理列表', '帮助按钮', null, '列表按钮', '101970765780', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1820417761', '1', '2012-10-26 14:40:21', '1', null, '151', '1338178130578', '下拉框管理列表', '新建按钮', null, '列表按钮', '2089692588', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1825281041', '1', '2012-10-26 14:36:04', '1', null, '128', '1338178130578', '分页列表', '新建按钮', null, '列表按钮', '252431560', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1829190844', '2', '2013-03-14 09:53:15', null, null, '130', '787835602', '表单界面管理列表', '默认按钮', null, '列表按钮', '145', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1836641962', '1', '2013-02-22 11:45:24', '1', null, '10652032678', '1340071401668', '字处理列表', '发布按钮', null, '列表操作按钮', '1194181425', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('1856690256', '1', '2012-10-26 16:18:32', '1', null, '66', '1340071401667', '表关系管理表单', '帮助按钮', null, '表单按钮', '10308740450', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1874761213', '1', '2012-10-26 16:27:49', '1', null, '87', '1338446858775', '表关系管理列表', '帮助按钮', null, '列表按钮', '1238554240', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1898022860', '1', '2013-02-21 17:42:02', '1', null, '101696535990', '1338430659228', '邮件组件表单模板', '修改按钮', null, '表单按钮', '87362621', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1934092016', '1', '2012-10-26 14:37:26', '1', null, '105', '1338178130578', '文本编辑器列表', '新建按钮', null, '列表按钮', '10276333540', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1943318518', '1', '2012-10-26 16:25:26', '1', null, '150', '1338446858775', '文本域管理列表', '帮助按钮', null, '列表按钮', '1863279402', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1944312442', '1', '2012-10-26 16:20:00', '1', null, '145', '1340071401667', '查询组件管理表单', '帮助按钮', null, '表单按钮', '1038531241', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1950401674', '1', '2013-02-21 16:22:05', '1', null, '10714079160', '1338446858775', '报表列表', '帮助按钮', null, '列表按钮', '101079333683', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1952238149', '1', '2012-10-26 16:19:29', '1', null, '132', '1340071401667', '分页表单', '帮助按钮', null, '表单按钮', '101771685971', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1978310708', '1', '2013-02-21 18:04:20', '1', null, '101364029444', '1340071401667', '工作流组件表单', '帮助按钮', null, '表单按钮', '101957169728', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('1985513715', '1', '2012-10-26 14:54:16', '1', null, '124', '1338178130578', '机构管理列表', '新建按钮', null, '列表按钮', '1801682359', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1985921646', '1', '2012-11-02 11:26:21', '1', null, '285812414', '1338446858775', '组合模板列表', '帮助按钮', null, '列表按钮', '1695033308', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1987506628', '1', '2012-10-26 14:40:45', '1', null, '150', '1338178130578', '文本域管理列表', '新建按钮', null, '列表按钮', '10236668932', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('1993309146', '1', '2013-03-05 17:31:08', '1', null, '1949172960', '1340071401633', '收件箱列表', '维护按钮', null, '列表操作按钮', '10392287379', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('2005102089', '1', '2012-12-27 14:06:02', '1', null, '1583336940', '1340071401667', '门户表单', '帮助按钮', null, '表单按钮', '10815879831', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2010294354', '1', '2012-10-26 14:48:58', '1', null, '77', '1338178130578', '表单管理列表', '新建按钮', null, '列表按钮', '10771112597', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2011927775', '1', '2012-11-05 14:54:23', '1', null, '65', '1340071401667', '字段管理表单', '帮助按钮', null, '表单按钮', '101959066885', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2012418778', '1', '2012-10-26 14:56:51', '1', null, '134', '787835602', '字体管理列表', '默认按钮', null, '列表按钮', '150', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2033196135', '1', '2013-02-22 11:36:59', '1', null, '1866983405', '1338176658578', '字处理表单', '保存按钮', null, '表单按钮', '10948772270', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2035895791', '1', '2012-10-26 16:12:26', '1', null, '95', '1340071401667', '部内通知表单', '帮助按钮', null, '表单按钮', '10840753587', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2041808450', '1', '2012-10-31 15:15:00', '1', null, '101664390156', '1338176658578', '企业信息管理表单', '保存按钮', null, '表单按钮', '102005059328', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2046810442', '1', '2012-10-26 14:34:51', '1', null, '208', '787835602', '多文件上传组件', '默认按钮', null, '列表按钮', '513922117', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2048282602', '1', '2012-10-26 14:21:21', '1', null, '105', '1338176658578', '信息发布表单', '保存按钮', null, '表单按钮', '101029427495', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2055548997', '1', '2012-10-26 16:26:42', '1', null, '81', '1338446858775', '列表管理列表', '帮助按钮', null, '列表按钮', '10134843457', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2058960482', '1', '2012-12-25 14:41:02', '1', null, '114', '1339482578375', '用户管理表单', '添加按钮', null, '表单按钮', '240', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2065027786', '1', '2012-10-26 14:49:19', '1', null, '86', '1338430888400', '字段管理列表', '删除按钮', null, '列表按钮', '1953900931', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2070371268', '1', '2013-02-21 18:08:31', '1', null, '10364593661', '1338178130578', '工作流组件列表', '新建按钮', null, '列表按钮', '1573327464', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2076878595', '1', '2012-10-31 09:59:37', '1', null, '762014768', '1340071401633', '测试列表1', '维护按钮', null, '列表操作按钮', '881235206', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('2077595529', '1', '2012-10-26 14:35:17', '1', null, '127', '1338178130578', '操作列列表', '新建按钮', null, '列表按钮', '1004966798', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2081909569', '1', '2013-02-22 11:44:28', '1', null, '10652032678', '1338178130578', '字处理列表', '新建按钮', null, '列表按钮', '101794822437', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2083172278', '1', '2013-01-04 11:26:23', '1', null, '101715128192', '1338178130578', 'GW发文管理列表', '新建按钮', null, '列表按钮', '79332666', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2083436991', '1', '2012-10-26 14:25:36', '1', null, '130', '1338430659228', '序号列管理表单', '修改按钮', null, '表单按钮', '10717188971', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2084342232', '1', '2012-10-26 14:27:05', '1', null, '128', '1338176658578', '机构管理表单', '保存按钮', null, '表单按钮', '559476055', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2093352917', '1', '2013-02-22 10:42:57', '1', null, '102075173809', '787835602', '即时通讯列表', '默认按钮', null, '列表按钮', '886424609', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2099229604', '2052751705', '2013-03-19 13:16:39', null, null, '213', '1339482608765', '学员信息管理表单', '表单选项卡保存按钮', null, '表单按钮', '101160476175', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2103327905', '1', '2012-10-26 14:57:16', '1', null, '135', '787835602', '图标管理列表', '默认按钮', null, '列表按钮', '152', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2114981795', '1', '2012-10-26 16:13:05', '1', null, '193', '1340071401667', '代码级联管理表单', '帮助按钮', null, '表单按钮', '10261610262', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2123986980', '1', '2012-10-26 14:39:28', '1', null, '72', '787835602', '单选框管理列表', '默认按钮', null, '列表按钮', '201', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2126087641', '1', '2012-12-24 16:28:17', '1', null, '10592028476', '1340071401667', '角色表单', '帮助按钮', null, '表单按钮', '165905299', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2126781716', '1', '2012-12-11 13:37:10', '1', null, '2072797554', '1338430659228', '报表模板表单', '修改按钮', null, '表单按钮', '101430204196', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2129876434', '1', '2012-10-26 16:26:18', '1', null, '190', '1338446858775', '帮助管理列表', '帮助按钮', null, '列表按钮', '102067138116', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2137069839', '1', '2012-10-26 14:41:24', '1', null, '80', '1338178130578', '按钮组管理列表', '新建按钮', null, '列表按钮', '101076397660', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2140766633', '1', '2012-10-26 14:28:42', '1', null, '110', '1338176658578', '组合模板管理表单', '保存按钮', null, '表单按钮', '323252126', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('2144025786', '1', '2012-10-26 14:39:39', '1', null, '154', '1338178130578', '上传文件框管理列表', '新建按钮', null, '列表按钮', '239662287', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('2147189539', '1', '2012-10-26 16:15:17', '1', null, '153', '1340071401667', '搜索下拉框管理表单', '帮助按钮', null, '表单按钮', '10587355953', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10151601952', '1', '2013-01-04 13:52:13', '1', null, '101715128192', '1338430888400', 'GW发文管理列表', '删除按钮', null, '列表按钮', '1977965499', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10162994775', '1', '2012-10-26 16:12:57', '1', null, '195', '1340071401667', '打印模板表单', '帮助按钮', null, '表单按钮', '101744762957', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10173726041', '1', '2013-02-19 15:52:10', '1', null, '1949172960', '1338430888400', '收件箱列表', '删除按钮', null, '列表按钮', '1422392155', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10184839353', '1', '2012-10-26 14:51:47', '1', null, '93', '1338430888400', '数据源管理列表', '删除按钮', null, '列表按钮', '1837303087', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10188999878', '1', '2012-10-26 16:18:17', '1', null, '77', '1340071401667', '按钮组管理表单', '帮助按钮', null, '表单按钮', '10524924114', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10189957927', '2052751705', '2013-04-16 17:22:31', null, null, '200193328', '1338178130578', 'aaa', '新建按钮', null, '列表按钮', '101411061446', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10197637528', '1', '2012-10-18 13:56:53', '1', null, '206', '101588525942', '权限列表', '权限生产按钮', null, '列表按钮', '236', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10205961539', '1', '2012-10-26 16:14:53', '1', null, '150', '1340071401667', '使用信息表单', '帮助按钮', null, '表单按钮', '1063724888', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10216299564', '1', '2012-10-26 14:46:48', '1', null, '201', '1338178130578', '数据查询列表', '新建按钮', null, '列表按钮', '815562915', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10218567997', '1', '2012-10-26 14:50:32', '1', null, '87', '1338430888400', '表关系管理列表', '删除按钮', null, '列表按钮', '102002388364', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10252420978', '1', '2012-11-02 11:25:20', '1', null, '285812414', '1338178130578', '组合模板列表', '新建按钮', null, '列表按钮', '433010734', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10264565783', '1', '2012-10-26 14:35:06', '1', null, '207', '1338430888400', '打印模板列表', '删除按钮', null, '列表按钮', '425692104', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10271571845', '1', '2012-11-02 13:39:04', '1', null, '1480825201', '1338176658578', '组合模板表单', '保存按钮', '', '表单按钮', '101609628323', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10286010127', '1', '2012-10-26 14:50:29', '1', null, '87', '1338178130578', '表关系管理列表', '新建按钮', null, '列表按钮', '10327679649', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10286027205', '1', '2012-10-26 14:26:13', '1', null, '132', '1338176658578', '分页表单', '保存按钮', null, '表单按钮', '909410189', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10288939086', '1', '2012-10-26 14:46:31', '1', null, '202', '1338178130578', '用户分类管理列表', '新建按钮', null, '列表按钮', '101155709613', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10291445251', '1', '2013-03-04 16:25:46', '1', null, '628090189', '1340071401667', '测试表单', '帮助按钮', null, '表单按钮', '489063233', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10313380801', '2052751705', '2013-04-15 15:36:34', null, null, '213', '1340071401667', '学员信息管理表单', '表单帮助按钮', null, '表单按钮', '215634284', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10314261974', '1', '2012-10-26 16:18:59', '1', null, '110', '1340071401667', '组合模板管理表单', '帮助按钮', null, '表单按钮', '101659168538', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10327180808', '1', '2013-01-04 13:53:52', '1', null, '17810378', '1597240014', 'GW发文管理表单', '发布按钮', '', '表单按钮', '675718207', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10347934354', '1', '2012-11-02 13:50:35', '1', null, '1081243326', '1338178130578', '组合模板列表', '新建按钮', null, '列表按钮', '10617419045', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10351422550', '1', '2012-10-26 16:17:39', '1', null, '134', '1340071401667', '提示信息界面管理表单', '帮助按钮', null, '表单按钮', '10262395084', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10355283543', '1', '2012-10-26 14:53:36', '1', null, '115', '1338430888400', '人员管理列表', '删除按钮', null, '列表按钮', '1753093162', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10366388138', '1', '2012-10-26 16:24:02', '1', null, '105', '1338446858775', '文本编辑器列表', '帮助按钮', null, '列表按钮', '1088011774', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10371548671', '1', '2013-02-21 16:27:19', '1', null, '10714079160', '1340071401668', '报表列表', '发布按钮', null, '列表操作按钮', '2008455357', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10374777306', '1', '2012-10-26 16:19:36', '1', null, '135', '1340071401667', '列表组件表单', '帮助按钮', null, '表单按钮', '10279175193', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10378346768', '2', '2013-03-14 09:54:20', null, null, '132', '787835602', '树界面管理列表', '默认按钮', null, '列表按钮', '147', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10380884592', '1', '2012-10-26 14:41:42', '1', null, '204', '1338178130578', '权限策略列表', '新建按钮', null, '列表按钮', '260285678', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10383000451', '1', '2013-03-11 10:58:12', '1', null, '1338913833', '1339482578375', '学员2', '表单选项卡添加', null, '表单按钮', '770342999', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10401989913', '1', '2012-10-26 16:15:07', '1', null, '152', '1340071401667', '下拉框管理表单', '帮助按钮', null, '表单按钮', '425437085', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10437292313', '1', '2012-10-26 14:49:15', '1', null, '86', '1338178130578', '字段管理列表', '新建按钮', null, '列表按钮', '101699422719', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10471271573', '1', '2012-10-26 14:55:45', '1', null, '131', '1338178130578', '提示信息界面管理列表', '新建按钮', null, '列表按钮', '199802275', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10471798839', '1', '2012-10-26 16:30:35', '1', null, '134', '1338446858775', '字体管理列表', '帮助按钮', null, '列表按钮', '1051223459', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10471830658', '1', '2012-10-26 14:38:08', '1', null, '195', '787835602', '代码级联管理列表', '默认按钮', null, '列表按钮', '1099323676', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10484079659', '1', '2012-10-26 14:27:18', '1', null, '145', '1338430659228', '查询组件管理表单', '修改按钮', null, '表单按钮', '101614685105', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10504722078', '1', '2013-02-22 11:04:33', '1', null, '10714079160', '787835602', '报表列表', '默认按钮', null, '列表按钮', '1393877830', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10509522714', '1', '2013-01-14 21:40:21', '1', null, '95306207', '1338430659228', '车辆管理表单', '修改按钮', null, '表单按钮', '101693985823', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10511923852', '1', '2012-12-17 17:05:08', '1', null, '10690887604', '1340071401633', '测试权限列表', '维护按钮', null, '列表操作按钮', '1336164191', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10515732690', '1', '2012-10-26 14:19:31', '1', null, '68', '1340071401627', '代码管理表单', '保存并新增按钮', null, '表单按钮', '1805980024', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10524269765', '1', '2012-10-26 16:31:29', '1', null, '153', '1338446858775', '密码管理列表', '帮助按钮', null, '列表按钮', '10837614913', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10543617968', '1', '2012-11-05 16:25:21', '1', null, '418796937', '1338430888400', '门户列表', '删除按钮', null, '列表按钮', '1613536594', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10550906533', '1', '2012-10-26 16:14:36', '1', null, '154', '1340071401667', '模板库表单', '帮助按钮', null, '表单按钮', '10176979136', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10552043906', '1', '2013-01-24 16:33:06', '1', null, '1087447579', '1338176658578', '测试编码xxx', '保存按钮', '', '表单按钮', '852796753', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10586573125', '1', '2012-10-26 16:13:18', '1', null, '191', '1340071401667', '帮助管理表单', '帮助按钮', null, '表单按钮', '1738668690', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10592014078', '1', '2013-02-21 15:38:57', '1', null, '1508238003', '1338176658578', '报表表单', '保存按钮', null, '表单按钮', '25916249', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10595180927', '1', '2013-02-21 18:20:48', '1', null, '102075173809', '1340071401668', '即时通讯列表', '发布按钮', null, '列表操作按钮', '10871624361', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10603758681', '1', '2012-10-26 16:30:23', '1', null, '133', '1338446858775', '高级查询界面管理列表', '帮助按钮', null, '列表按钮', '1353999398', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10604592153', '1', '2012-10-26 14:56:10', '1', null, '132', '1338430888400', '树界面管理列表', '删除按钮', null, '列表按钮', '1079053616', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10605555640', '1', '2012-10-26 14:46:35', '1', null, '202', '1338430888400', '用户分类管理列表', '删除按钮', null, '列表按钮', '101895036183', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10615912956', '1', '2012-10-26 16:12:18', '1', null, '97', '1340071401667', '行业公告表单', '帮助按钮', null, '表单按钮', '737299153', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10622924145', '1', '2012-10-26 16:28:53', '1', null, '106', '1338446858775', '信息发布列表', '帮助按钮', null, '列表按钮', '101619861503', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10628155066', '1', '2012-10-26 14:26:27', '1', null, '135', '1338176658578', '列表组件表单', '保存按钮', null, '表单按钮', '10791066011', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10629247896', '1', '2012-10-26 16:27:39', '1', null, '85', '1338446858775', '数据表管理列表', '帮助按钮', null, '列表按钮', '786985687', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10637159184', '1', '2013-01-14 21:47:03', '1', null, '101535848877', '1338178130578', '车辆管理列表', '新建按钮', null, '列表按钮', '666523141', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10653521424', '1', '2012-10-26 14:53:14', '1', null, '114', '1338178130578', '图片页面管理列表', '新建按钮', null, '列表按钮', '101514040270', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10671167406', '1', '2013-01-14 21:47:09', '1', null, '101535848877', '1338430888400', '车辆管理列表', '删除按钮', null, '列表按钮', '101081550043', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10675310965', '1', '2012-11-01 17:55:29', '1', null, '1583336940', '1338430659228', '门户表单', '修改按钮', null, '表单按钮', '101619535205', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10682350857', '1', '2013-02-19 15:50:33', '1', null, '101470572327', '1338430888400', '发件箱列表', '删除按钮', null, '列表按钮', '10473068340', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10682653363', '1', '2013-03-04 16:27:00', '1', null, '101138973087', '1340071401633', '测试列表', '维护按钮', null, '列表操作按钮', '10975823646', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10686007333', '1', '2012-10-26 14:38:39', '1', null, '74', '1338178130578', '树管理列表', '新建按钮', null, '列表按钮', '373861360', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10700029728', '1', '2013-03-12 13:42:35', null, null, '170', '221075092', '权限组列表', '自定义链接按钮', null, '列表操作按钮', '10497789310', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10707237283', '1', '2013-03-02 10:40:12', null, null, '259984016', '1338178130578', 'aaa', '新建', null, '列表按钮', '1639570010', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10729156667', '1', '2012-10-26 14:20:43', '1', null, '69', '1338176658578', 'LOGO管理表单', '保存按钮', null, '表单按钮', '40086860', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10733644674', '1', '2012-10-26 16:21:41', '1', null, '127', '1338446858775', '操作列列表', '帮助按钮', null, '列表按钮', '222535965', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10737539663', '1', '2012-11-01 17:55:33', '1', null, '1583336940', '1338176658578', '门户表单', '保存按钮', null, '表单按钮', '101637533365', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10740737567', '1', '2012-10-26 16:30:12', '1', null, '132', '1338446858775', '树界面管理列表', '帮助按钮', null, '列表按钮', '1029647673', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10743320771', '1', '2012-10-26 16:27:20', '1', null, '86', '1338446858775', '字段管理列表', '帮助按钮', null, '列表按钮', '1083413852', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10761754241', '1', '2012-10-26 16:28:12', '1', null, '92', '1338446858775', 'JS脚本管理列表', '帮助按钮', null, '列表按钮', '641798315', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10763461223', '1', '2013-02-21 17:47:12', '1', null, '10920024955', '1338178130578', '邮件组件列表', '新建按钮', null, '列表按钮', '10116372513', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10774532039', '1', '2013-01-04 13:44:06', '1', null, '17810378', '1338176658578', 'GW发文管理表单', '保存公文按钮', '', '表单按钮', '1086669360', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10782457124', '1', '2013-02-21 17:25:49', '1', null, '102075173809', '1338430888400', '即时通讯列表', '删除按钮', null, '列表按钮', '101177246896', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10790181867', '1', '2012-10-26 14:39:02', '1', null, '73', '1338178130578', '复选框管理列表', '新建按钮', null, '列表按钮', '1094457447', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10790196307', '1', '2012-10-26 16:29:33', '1', null, '118', '1338446858775', '系统元素管理列表', '帮助按钮', null, '列表按钮', '952614976', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10805823681', '1', '2013-02-21 17:42:12', '1', null, '101696535990', '1338176658578', '邮件组件表单模板', '保存按钮', null, '表单按钮', '994329426', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10813885820', '1', '2012-10-26 14:58:50', '1', null, '153', '1338430888400', '密码管理列表', '删除按钮', null, '列表按钮', '10412586028', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10817013519', '1', '2012-10-26 16:11:51', '1', null, '209', '1340071401667', '多文件上传组件管理表单', '帮助按钮', null, '表单按钮', '827495180', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10821774929', '1', '2012-10-26 14:50:47', '1', null, '88', '1338430888400', '代码管理列表', '删除按钮', null, '列表按钮', '10513608527', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10831644195', '1', '2012-12-11 13:41:30', '1', null, '101390140804', '1340071401633', '报表模板列表', '维护按钮', null, '列表操作按钮', '101638892793', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10844731358', '1', '2012-10-26 16:18:52', '1', null, '106', '1340071401667', '公文模板管理表单', '帮助按钮', null, '表单按钮', '1944093620', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10864011014', '1', '2013-03-07 12:03:16', '1', null, '101146831838', '1338176658578', '学员2222', '保存按钮', '', '表单按钮', '862246158', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10868284964', '1', '2012-10-26 16:29:25', '1', null, '115', '1338446858775', '人员管理列表', '帮助按钮', null, '列表按钮', '553043132', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10874159614', '1', '2012-10-26 14:19:50', '1', null, '146', '1338176658578', '布局管理表单', '保存按钮', null, '表单按钮', '1330983551', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10899322767', '1', '2013-03-04 16:25:05', '1', null, '628090189', '1338430659228', '测试表单', '修改按钮', null, '表单按钮', '1649237461', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10914162067', '1', '2013-03-07 11:55:57', '1', null, '1054632662', '1338430659228', '学员2222', '修改按钮', null, '表单按钮', '10540161820', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10929355484', '1', '2012-10-26 14:58:45', '1', null, '153', '1338178130578', '密码管理列表', '新建按钮', null, '列表按钮', '1904259465', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10945395696', '1', '2012-10-26 14:32:39', '1', null, '206', '1338430888400', '功能级权限管理列表', '删除按钮', null, '列表按钮', '1477250111', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10949477241', '1', '2012-10-26 14:27:21', '1', null, '145', '1338176658578', '查询组件管理表单', '保存按钮', null, '表单按钮', '361319354', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10950192769', '1', '2012-10-26 14:37:50', '1', null, '66', '787835602', '日期组件列表', '默认按钮', null, '列表按钮', '204', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10953665331', '1', '2012-10-26 14:58:31', '1', null, '148', '1338430888400', '菜单管理列表', '删除按钮', null, '列表按钮', '101880512957', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10964921268', '1', '2012-11-02 13:50:44', '1', null, '1081243326', '1338430888400', '组合模板列表', '删除按钮', null, '列表按钮', '323248541', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10970157512', '1', '2012-10-26 16:17:09', '1', null, '60', '1340071401667', '单选框管理表单', '帮助按钮', null, '表单按钮', '1725839467', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10973544465', '1', '2012-10-26 14:37:47', '1', null, '66', '1338430888400', '日期组件列表', '删除按钮', null, '列表按钮', '101421929468', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10987791334', '1', '2012-10-26 14:57:07', '1', null, '135', '1338178130578', '图标管理列表', '新建按钮', null, '列表按钮', '10447707838', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10996457991', '1', '2012-11-02 11:26:28', '1', null, '285812414', '1340071401633', '组合模板列表', '维护按钮', null, '列表操作按钮', '468818568', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('101009566421', '1', '2012-10-26 14:56:05', '1', null, '132', '1338178130578', '树界面管理列表', '新建按钮', null, '列表按钮', '630101471', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101017092618', '1', '2012-10-26 16:27:11', '1', null, '77', '1338446858775', '表单管理列表', '帮助按钮', null, '列表按钮', '10231706700', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101027858461', '1', '2012-10-26 16:19:22', '1', null, '131', '1340071401667', '操作列管理表单', '帮助按钮', null, '表单按钮', '709059876', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101037944264', '1', '2013-03-07 11:55:56', '1', null, '1054632662', '1338176658578', '学员2222', '保存按钮', '', '表单按钮', '10709816174', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101040570103', '1', '2013-03-12 13:41:22', null, null, '101457725003', '221075092', '角色列表', '自定义链接按钮', null, '列表操作按钮', '636876591', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('101061395803', '1', '2012-10-26 14:39:43', '1', null, '154', '1338430888400', '上传文件框管理列表', '删除按钮', null, '列表按钮', '1980299190', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101101922118', '1', '2012-10-26 11:11:41', '1', null, '1306066709', '101588525942', '编码管理列表', '初始化按钮', null, '列表按钮', '101043929231', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101102162114', '1', '2012-10-26 16:28:37', '1', null, '98', '1338446858775', '部内通知', '帮助按钮', null, '列表按钮', '10477886642', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101102235194', '1', '2012-10-26 14:57:45', '1', null, '91', '1338178130578', 'CSS管理列表', '新建按钮', null, '列表按钮', '101457915257', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101117953034', '1', '2012-10-26 14:58:54', '1', null, '153', '787835602', '密码管理列表', '默认按钮', null, '列表按钮', '200', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101126255324', '1', '2013-02-21 16:33:39', '1', null, '10714079160', '1340071401633', '报表列表', '维护按钮', null, '列表操作按钮', '10754407706', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('101133664563', '1', '2012-10-26 16:13:51', '1', null, '119', '1340071401667', '系统元素管理表单', '帮助按钮', null, '表单按钮', '10725533733', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101134418019', '1', '2013-01-30 11:23:43', '1', null, '98', '1373066303', '部内通知', '导出Excel按钮', null, '列表按钮', '10176954331', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101138110979', '1', '2012-12-03 13:38:37', '1', null, '101470572327', '1340071401633', '发件箱列表', '维护按钮', null, '列表操作按钮', '761721953', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('101143562602', '1', '2012-10-26 14:25:51', '1', null, '131', '1338430659228', '操作列管理表单', '修改按钮', null, '表单按钮', '859827828', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101144053648', '1', '2012-10-26 14:34:12', '1', null, '213', '1338430888400', '文档管理列表', '删除按钮', null, '列表按钮', '10854623272', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101147912835', '1', '2013-02-21 18:09:28', '1', null, '10364593661', '1340071401668', '工作流组件列表', '发布按钮', null, '列表操作按钮', '540567243', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('101150821607', '1', '2012-10-26 16:12:49', '1', null, '201', '1340071401667', '用户分类管理表单', '帮助按钮', null, '表单按钮', '197839007', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101151971164', '1', '2013-03-07 11:55:56', '1', null, '1054632662', '1338185221078', '学员2222', '表单选项卡删除按钮', null, '表单按钮', '2029890682', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101170097811', '1', '2012-10-26 14:52:43', '1', null, '107', '1338178130578', '公文模板列表', '新建按钮', null, '列表按钮', '101505165939', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101175294388', '1', '2012-10-26 14:53:47', '1', null, '118', '1338178130578', '系统元素管理列表', '新建按钮', null, '列表按钮', '2006649670', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101185626682', '1', '2012-10-26 16:10:23', '1', null, '101051915201', '1338430659228', '编码管理表单', '修改按钮', null, '表单按钮', '1489475142', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101191508377', '1', '2012-10-26 16:15:45', '1', null, '139', '1340071401667', '字体管理表单', '帮助按钮', null, '表单按钮', '101076382638', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101194128742', '1', '2012-10-26 14:19:47', '1', null, '146', '1338430659228', '布局管理表单', '修改按钮', null, '表单按钮', '10373782778', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101200742381', '1', '2012-10-26 14:20:27', '1', null, '77', '1338176658578', '按钮组管理表单', '保存按钮', null, '表单按钮', '1950397504', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101206421493', '1', '2012-10-26 14:15:30', '1', null, '136', '1338430659228', '树界面管理表单', '修改按钮', null, '表单按钮', '101510300409', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101209723341', '1', '2012-10-26 14:53:18', '1', null, '114', '1338430888400', '图片页面管理列表', '删除按钮', null, '列表按钮', '185270537', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101210296414', '1', '2012-11-01 18:13:49', '1', null, '418796937', '1340071401633', '门户列表', '维护按钮', null, '列表操作按钮', '123946440', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('101212768365', '1', '2012-10-26 14:53:32', '1', null, '115', '1338178130578', '人员管理列表', '新建按钮', null, '列表按钮', '10482541452', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101227467086', '1', '2012-10-26 16:18:11', '1', null, '61', '1340071401667', '复选框管理表单', '帮助按钮', null, '表单按钮', '1609968255', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101243239485', '1', '2013-02-22 10:49:57', '1', null, '10920024955', '787835602', '邮件组件列表', '默认按钮', null, '列表按钮', '101980566413', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101281011640', '1', '2012-10-26 14:35:21', '1', null, '127', '1338430888400', '操作列列表', '删除按钮', null, '列表按钮', '1112664119', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101284124717', '1', '2012-10-26 16:22:23', '1', null, '129', '1338446858775', '列表组件列表', '帮助按钮', null, '列表按钮', '1937282157', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101297821466', '1', '2013-03-04 17:22:10', '1', null, '1904294009', '1338178130578', '测试列表', '新建按钮', null, '列表按钮', '10308517204', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101300121237', '1', '2012-10-26 16:26:25', '1', null, '170', '1338446858775', '角色管理列表', '帮助按钮', null, '列表按钮', '109081569', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101301203842', '1', '2013-02-22 10:50:21', '1', null, '10364593661', '787835602', '工作流组件列表', '默认按钮', null, '列表按钮', '1406384206', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101308762074', '1', '2012-10-26 14:32:21', '1', null, '10169396274', '1338430888400', '高级查询列表', '删除按钮', null, '列表按钮', '1380124339', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101313391591', '1', '2012-10-26 14:52:29', '1', null, '106', '1338178130578', '信息发布列表', '新建按钮', null, '列表按钮', '2102209110', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101319461761', '1', '2012-10-31 15:15:19', '1', null, '101664390156', '1340071401667', '企业信息管理表单', '帮助按钮', null, '表单按钮', '10335455892', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101320014976', '1', '2012-10-26 16:11:27', '1', null, '72', '1340071401667', '表单管理表单', '帮助按钮', null, '表单按钮', '102077457612', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101323733862', '1', '2012-10-26 16:23:28', '1', null, '142', '1338446858775', '查询组件列表', '帮助按钮', null, '列表按钮', '960941762', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101326314176', '1', '2012-10-26 14:52:57', '1', null, '113', '1338178130578', '用户管理列表', '新建按钮', null, '列表按钮', '101294043420', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101327646144', '1', '2012-10-26 16:20:48', '1', null, '206', '1338446858775', '功能级权限管理列表', '帮助按钮', null, '列表按钮', '228563769', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101344918777', '1', '2013-02-21 17:16:42', '1', null, '102075173809', '1338178130578', '及时通讯列表', '新建按钮', null, '列表按钮', '1923575786', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101347992927', '1', '2012-10-26 14:14:42', '1', null, '53', '1338176658578', '日期组件管理表单', '保存按钮', null, '表单按钮', '1271268804', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101353621161', '1', '2012-10-26 14:25:24', '1', null, '129', '1338176658578', '选择列管理表单', '保存按钮', null, '表单按钮', '825954627', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101354536177', '1', '2012-10-26 14:51:17', '1', null, '90', '1338178130578', 'LOGO管理列表', '新建按钮', null, '列表按钮', '234', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101377893744', '1', '2012-10-26 14:52:46', '1', null, '107', '1338430888400', '公文模板列表', '删除按钮', null, '列表按钮', '1845861712', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101397631585', '1', '2012-10-26 14:52:16', '1', null, '100', '1338178130578', '行业公告', '新建按钮', null, '列表按钮', '868354722', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101401124835', '1', '2012-10-26 16:28:26', '1', null, '93', '1338446858775', '数据源管理列表', '帮助按钮', null, '列表按钮', '1102241294', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101404207179', '1', '2012-10-26 14:47:34', '1', null, '109', '1338178130578', '表单模板列表', '新建按钮', null, '列表按钮', '10188208029', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101414952695', '1', '2012-10-26 14:15:00', '1', null, '70', '1338176658578', 'CSS管理表单', '保存按钮', null, '表单按钮', '185252991', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101429787833', '1', '2012-10-26 16:11:42', '1', null, '116', '1340071401667', '人员管理表单', '帮助按钮', null, '表单按钮', '1088173211', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101435541003', '1', '2012-10-26 14:14:38', '1', null, '53', '1338430659228', '日期组件管理表单', '修改按钮', null, '表单按钮', '387358786', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101440858354', '1', '2012-10-26 14:58:16', '1', null, '121', '1338430888400', '主题管理列表', '删除按钮', null, '列表按钮', '109277909', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101447378257', '1', '2012-12-05 14:46:18', '1', null, '151', '1338176658578', '菜单管理表单', '保存按钮', '', '表单按钮', '1309436444', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101452226394', '1', '2012-10-26 14:21:54', '1', null, '106', '1338176658578', '公文模板管理表单', '保存按钮', null, '表单按钮', '924032190', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101452398719', '1', '2012-12-05 13:23:16', '1', null, '76', '1340071401665', '目录管理列表', '导出按钮', null, '列表按钮', '101644672827', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101467767257', '1', '2012-10-26 16:16:56', '1', null, '62', '1340071401667', '树管理表单', '帮助按钮', null, '表单按钮', '10231466698', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101468376845', '1', '2012-10-31 09:59:12', '1', null, '762014768', '1338178130578', '测试列表1', '新建按钮', null, '列表按钮', '1770413535', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101473973312', '1', '2012-10-26 14:58:28', '1', null, '148', '1338178130578', '菜单管理列表', '新建按钮', null, '列表按钮', '1999535708', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101476207467', '1', '2012-10-26 16:15:00', '1', null, '155', '1340071401667', '文本域管理表单', '帮助按钮', null, '表单按钮', '1503297307', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101480520536', '1', '2013-02-21 16:27:32', '1', null, '10714079160', '1340071401669', '报表列表', '撤回按钮', null, '列表操作按钮', '102115803243', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('101481833381', '1', '2012-10-26 14:25:54', '1', null, '131', '1338176658578', '操作列管理表单', '保存按钮', null, '表单按钮', '101099998042', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101495861201', '1', '2012-10-26 14:36:49', '1', null, '142', '1338430888400', '查询组件列表', '删除按钮', null, '列表按钮', '374821618', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101498572533', '1', '2013-02-21 17:48:08', '1', null, '10920024955', '1340071401668', '邮件组件列表', '发布按钮', null, '列表操作按钮', '10953584439', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('101528232148', '1', '2013-03-04 16:24:56', '1', null, '628090189', '1338176658578', '测试表单', '保存按钮', '', '表单按钮', '10431498050', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101537139266', '1', '2012-10-26 14:19:19', '1', null, '68', '1338430659228', '代码管理表单', '修改按钮', null, '表单按钮', '683698985', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101546280531', '1', '2012-10-26 14:25:23', '1', null, '129', '1338430659228', '选择列管理表单', '修改按钮', null, '表单按钮', '102054171744', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101549966186', '1', '2012-10-26 16:25:33', '1', null, '69', '1338446858775', '文本框管理列表', '帮助按钮', null, '列表按钮', '682920908', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101563630721', '1', '2012-12-03 11:43:16', '1', null, '101029015533', '26438670', '发件箱表单', '发送按钮', null, '表单按钮', '4962455', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101569928283', '1', '2012-10-26 16:24:55', '1', null, '72', '1338446858775', '单选框管理列表', '帮助按钮', null, '列表按钮', '101973645341', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101570866678', '1', '2013-03-12 14:06:57', null, null, '101339765555', '1338430888400', '数据备份恢复列表', '批量删除', null, '列表按钮', '1239435227', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101573557368', '1', '2012-10-26 16:16:10', '1', null, '140', '1340071401667', '图标管理表单', '帮助按钮', null, '表单按钮', '1774116740', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101585857248', '1', '2012-10-26 14:53:00', '1', null, '113', '1338430888400', '用户管理列表', '删除按钮', null, '列表按钮', '955041803', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101591890148', '1', '2012-12-14 11:20:45', '1', null, '124', '101588525942', '机构管理列表', '同步按钮', null, '列表按钮', '102337364', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101595358589', '1', '2012-10-26 16:17:32', '1', null, '70', '1340071401667', 'CSS管理表单', '帮助按钮', null, '表单按钮', '101809590030', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101602381809', '1', '2013-02-22 11:45:17', '1', null, '10652032678', '1340071401633', '字处理列表', '维护按钮', null, '列表操作按钮', '314328138', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('101614814165', '1', '2013-03-11 10:58:14', '1', null, '1338913833', '1340071401667', '学员2', '表单帮助', null, '表单按钮', '101294477911', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101630623100', '1', '2012-10-26 14:58:02', '1', null, '76', '1338430888400', '目录管理列表', '删除按钮', null, '列表按钮', '10520548199', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101636932929', '1', '2013-02-21 15:38:48', '1', null, '1508238003', '1338430659228', '报表表单', '修改按钮', null, '表单按钮', '58149433', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101642536737', '1', '2012-10-26 14:20:23', '1', null, '77', '1338430659228', '按钮组管理表单', '修改按钮', null, '表单按钮', '101935134670', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101661850094', '1', '2012-10-26 16:25:53', '1', null, '204', '1338446858775', '权限策略列表', '帮助按钮', null, '列表按钮', '10401627702', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101665755715', '1', '2013-02-21 17:07:58', '1', null, '819584023', '1340071401667', '及时通讯组件表单', '帮助按钮', null, '表单按钮', '1338133178', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101672713201', '1', '2012-10-26 14:33:21', '1', null, '214', '1338178130578', '组合模板列表', '新建按钮', null, '列表按钮', '101005339753', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101673892200', '1', '2012-10-26 14:39:58', '1', null, '152', '1338178130578', '搜索下拉框列表', '新建按钮', null, '列表按钮', '1224849195', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101680472725', '1', '2012-10-26 14:47:16', '1', null, '170', '1338178130578', '角色管理列表', '新建按钮', null, '列表按钮', '10255577501', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101684217365', '1', '2012-11-02 13:50:57', '1', null, '1081243326', '1338446858775', '组合模板列表', '帮助按钮', null, '列表按钮', '1620152370', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101686926966', '1', '2012-10-26 14:51:50', '1', null, '93', '787835602', '数据源管理列表', '默认按钮', null, '列表按钮', '194', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101693424948', '1', '2012-10-26 16:21:34', '1', null, '207', '1338446858775', '打印模板列表', '帮助按钮', null, '列表按钮', '627757825', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101695629730', '1', '2012-11-05 14:54:13', '1', null, '65', '1340071401627', '字段管理表单', '保存并新增按钮', null, '表单按钮', '712883809', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101729212442', '1', '2013-02-22 11:36:43', '1', null, '1866983405', '1338430659228', '字处理表单', '修改按钮', null, '表单按钮', '10378371219', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101732338914', '1', '2012-11-09 09:30:06', '1', null, '208', '1338446858775', '多文件上传组件', '帮助按钮', null, '列表按钮', '1066957213', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101738212771', '1', '2012-10-26 14:40:28', '1', null, '151', '787835602', '下拉框管理列表', '默认按钮', null, '列表按钮', '197', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101738225872', '1', '2012-11-02 14:04:58', '1', null, '1480825201', '1338430659228', '组合模板表单', '修改按钮', null, '表单按钮', '1791016946', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101745265020', '1', '2012-11-02 11:26:07', '1', null, '285812414', '1338430888400', '组合模板列表', '删除按钮', null, '列表按钮', '10556398945', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101752698240', '1', '2012-10-26 16:24:35', '1', null, '74', '1338446858775', '树管理列表', '帮助按钮', null, '列表按钮', '1089927321', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101769209600', '1', '2013-01-24 17:12:00', '1', null, '10129738054', '1338178130578', '测试编码xxxxx', '新建按钮', null, '列表按钮', '938137336', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101769519107', '1', '2012-10-26 14:37:33', '1', null, '105', '787835602', '文本编辑器列表', '默认按钮', null, '列表按钮', '205', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101776779488', '1', '2012-10-26 14:34:47', '1', null, '208', '1338430888400', '多文件上传组件', '删除按钮', null, '列表按钮', '327907736', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101786216762', '1', '2013-03-11 10:58:12', '1', null, '1338913833', '1338185221078', '学员2', '表单选项卡删除', null, '表单按钮', '1689235587', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101832489772', '1', '2013-03-19 17:27:29', null, null, '1583336940', '1338176658578', '门户表单', '保存按钮', '', '表单按钮', '10879935365', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101837173452', '1', '2013-03-04 16:26:14', '1', null, '101138973087', '1338178130578', '测试列表', '新建按钮', null, '列表按钮', '10405472665', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101847452257', '1', '2013-03-02 11:04:19', null, null, '101501856239', '1338178130578', 'aaa', '新建', null, '列表按钮', '1027424650', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101849319028', '1', '2012-10-26 16:11:07', '1', null, '67', '1340071401667', '目录管理表单', '帮助按钮', null, '表单按钮', '10840335390', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101853741813', '1', '2013-02-21 17:42:23', '1', null, '101696535990', '1340071401667', '邮件组件表单模板', '帮助按钮', null, '表单按钮', '101694070380', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101860436303', '1', '2012-10-31 09:59:28', '1', null, '762014768', '1338185221078', '测试列表1', '删除按钮', null, '列表按钮', '82351081', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101902315739', '1', '2012-10-26 14:37:30', '1', null, '105', '1338430888400', '文本编辑器列表', '删除按钮', null, '列表按钮', '101783033698', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101909053240', '1', '2012-11-02 13:39:25', '1', null, '1480825201', '1340071401667', '组合模板表单', '帮助按钮', null, '表单按钮', '437207424', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101948342858', '1', '2013-03-12 10:10:20', '1', null, '1306066709', '1338446858775', '编码管理列表', '列表帮助', null, '列表按钮', '1306839801', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101948734148', '1', '2012-10-26 14:52:32', '1', null, '106', '1338430888400', '信息发布列表', '删除按钮', null, '列表按钮', '10902058477', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101949895351', '1', '2012-10-26 14:47:19', '1', null, '170', '1338430888400', '角色管理列表', '删除按钮', null, '列表按钮', '1729292139', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101952675764', '1', '2012-10-26 14:37:11', '1', null, '112', '1338430888400', '字处理组件列表', '删除按钮', null, '列表按钮', '2013019604', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101964657993', '1', '2012-10-26 14:58:13', '1', null, '121', '1338178130578', '主题管理列表', '新建按钮', null, '列表按钮', '2042755207', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101972306255', '1', '2013-02-22 11:45:34', '1', null, '10652032678', '1340071401669', '字处理列表', '撤回按钮', null, '列表操作按钮', '10350744869', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('101987654198', '1', '2012-10-31 10:00:19', '1', null, '101019829173', '1338176658578', '测试表单1', '保存按钮', '', '表单按钮', '101961152780', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101990248071', '1', '2013-01-14 21:40:38', '1', null, '95306207', '1338176658578', '车辆管理表单', '保存按钮', '', '表单按钮', '102047330896', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('101997612951', '1', '2012-10-26 16:25:45', '1', null, '80', '1338446858775', '按钮组管理列表', '帮助按钮', null, '列表按钮', '10926878845', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('101999270600', '1', '2013-02-21 17:48:16', '1', null, '10920024955', '1340071401669', '邮件组件列表', '撤回按钮', null, '列表操作按钮', '1754703632', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('102003672650', '1', '2012-10-26 16:29:09', '1', null, '113', '1338446858775', '用户管理列表', '帮助按钮', null, '列表按钮', '1214500779', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('102012358258', '1', '2012-12-27 14:07:37', '1', null, '418796937', '1338446858775', '门户列表', '帮助按钮', null, '列表按钮', '10126852666', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('102016454242', '1', '2012-10-26 14:56:45', '1', null, '134', '1338178130578', '字体管理列表', '新建按钮', null, '列表按钮', '773650024', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('102019100833', '1', '2012-10-26 16:16:21', '1', null, '73', '1340071401667', '列表管理表单', '帮助按钮', null, '表单按钮', '101734447100', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('102020980407', '1', '2013-03-05 15:33:50', '1', null, '69', '787835602', '文本框管理列表', '默认按钮', null, '列表按钮', '195', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('102028384997', '1', '2012-10-26 14:35:35', '1', null, '126', '1338430888400', '序号列列表', '删除按钮', null, '列表按钮', '1773054897', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('102032466325', '1', '2012-10-26 16:27:29', '1', null, '144', '1338446858775', '使用信息列表', '帮助按钮', null, '列表按钮', '10313900253', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('102045756429', '1', '2012-10-31 10:01:07', '1', null, '101178580425', '101588525942', '测试表单2', '初始化按钮', null, '表单按钮', '2137214847', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('102051263203', '1', '2012-10-26 16:21:17', '1', null, '213', '1338446858775', '文档管理列表', '帮助按钮', null, '列表按钮', '101628469033', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('102055271089', '1', '2013-01-04 11:40:18', '1', null, '17810378', '1338430659228', 'GW发文管理表单', '修改按钮', null, '表单按钮', '960281430', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('102062225249', '1', '2012-10-26 16:17:46', '1', null, '136', '1340071401667', '树界面管理表单', '帮助按钮', null, '表单按钮', '1047839444', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('102099571568', '1', '2012-10-26 14:21:18', '1', null, '105', '1338430659228', '信息发布表单', '修改按钮', null, '表单按钮', '101220368167', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('102111792227', '2052751705', '2013-03-20 17:54:37', null, null, '213', '1338176658578', '学员信息管理表单', '保存按钮', '', '表单按钮', '101292813029', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('102117343644', '1', '2013-03-07 12:03:16', '1', null, '101146831838', '1338185221078', '学员2222', '表单选项卡删除按钮', null, '表单按钮', '1870226016', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('102128246309', '1', '2012-10-26 14:40:50', '1', null, '150', '1338430888400', '文本域管理列表', '删除按钮', null, '列表按钮', '101624490974', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('102143392842', '1', '2012-10-26 14:26:10', '1', null, '132', '1338430659228', '分页表单', '修改按钮', null, '表单按钮', '570210925', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000000880019', '2052751705', '2013-09-13 09:46:51', null, null, '10000000880013', '1338430659228', '测试表单A', '修改按钮', null, '表单按钮', '10000000880017', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000000880022', '2052751705', '2013-09-13 09:47:07', null, null, '10000000880013', '1338176658578', '测试表单A', '保存按钮', '', '表单按钮', '10000000880020', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000000880028', '2052751705', '2013-09-13 09:50:36', null, null, '10000000880024', '1338178130578', '测试列表A', '新建按钮', null, '列表按钮', '10000000880026', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000000880031', '2052751705', '2013-09-13 09:50:53', null, null, '10000000880024', '1338430888400', '测试列表A', '批量删除按钮', null, '列表按钮', '10000000880029', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000000880034', '2052751705', '2013-09-13 09:51:13', null, null, '10000000880024', '1340071401633', '测试列表A', '维护按钮', null, '列表操作按钮', '10000000880032', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000000890112', '2052751705', '2013-09-13 11:07:34', null, null, '10000000880013', '1339482578375', '测试表单A', '表单选项卡添加按钮', null, '表单按钮', '10000000890084', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000000890113', '2052751705', '2013-09-13 11:07:39', null, null, '10000000880013', '1339482608765', '测试表单A', '表单选项卡保存按钮', null, '表单按钮', '10000000890087', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000000890114', '2052751705', '2013-09-13 11:07:44', null, null, '10000000880013', '1338185221078', '测试表单A', '表单选项卡删除按钮', null, '表单按钮', '10000000890090', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270031', '2052751705', '2013-09-27 14:51:29', null, null, '10000002270019', '1338430659228', '自动补齐文本框表单', '修改按钮', null, '表单按钮', '10000002270029', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270034', '2052751705', '2013-09-27 14:51:35', null, null, '10000002270019', '1338176658578', '自动补齐文本框表单', '保存按钮', '', '表单按钮', '10000002270032', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270074', '2052751705', '2013-09-27 15:02:21', null, null, '10000002270019', '1338271717968', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270069', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270077', '2052751705', '2013-09-27 15:03:11', null, null, '10000002270019', '1340937219162', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270071', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270078', '2052751705', '2013-09-27 15:03:22', null, null, '10000002270019', '1340937219162', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270073', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270079', '2052751705', '2013-09-27 15:03:49', null, null, '10000002270019', '2', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270059', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270080', '2052751705', '2013-09-27 15:04:03', null, null, '10000002270019', '1338271717968', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270056', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270085', '2052751705', '2013-09-27 15:07:46', null, null, '10000002270081', '1338178130578', '自动补齐文本框管理列表', '新建按钮', null, '列表按钮', '10000002270083', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270088', '2052751705', '2013-09-27 15:08:02', null, null, '10000002270081', '1338430888400', '自动补齐文本框管理列表', '批量删除按钮', null, '列表按钮', '10000002270086', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270091', '2052751705', '2013-09-27 15:08:19', null, null, '10000002270081', '1340071401633', '自动补齐文本框管理列表', '维护按钮', null, '列表操作按钮', '10000002270089', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270098', '2052751705', '2013-09-27 15:14:50', null, null, '10000002270081', '787835602', '自动补齐文本框管理列表', '默认按钮', null, '列表按钮', '10000002270096', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270101', '2052751705', '2013-09-27 15:15:07', null, null, '10000002270081', '1338446858775', '自动补齐文本框管理列表', '列表帮助按钮', null, '列表按钮', '10000002270099', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270104', '2052751705', '2013-09-27 15:15:14', null, null, '10000002270081', '1340071401668', '自动补齐文本框管理列表', '发布按钮', null, '列表操作按钮', '10000002270102', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002270107', '2052751705', '2013-09-27 15:15:19', null, null, '10000002270081', '1340071401669', '自动补齐文本框管理列表', '撤回按钮', null, '列表操作按钮', '10000002270105', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002350001', '2052751705', '2013-09-27 16:55:20', null, null, '10000002270019', '10000002270095', '自动补齐文本框管理表单', '', '', '表单元素', '10000002270035', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002400000', '2052751705', '2013-09-29 11:22:05', null, null, '213', '10000002270095', '学员信息管理表单', '', '', '表单元素', '521360656', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002900002', '2052751705', '2013-10-09 16:37:04', null, null, '10000002630001', '1338430659228', '流程分类表单', '修改按钮', null, '表单按钮', '10000002900000', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002900005', '2052751705', '2013-10-09 16:37:11', null, null, '10000002630001', '1338176658578', '流程分类表单', '保存按钮', '', '表单按钮', '10000002900003', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002930028', '2052751705', '2013-10-09 17:58:25', null, null, '10000002930024', '1338178130578', '流程分类列表', '新建按钮', null, '列表按钮', '10000002930026', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002930031', '2052751705', '2013-10-09 17:58:42', null, null, '10000002930024', '1338430888400', '流程分类列表', '批量删除按钮', null, '列表按钮', '10000002930029', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002930034', '2052751705', '2013-10-09 17:59:07', null, null, '10000002930024', '1340071401633', '流程分类列表', '维护按钮', null, '列表操作按钮', '10000002930032', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000002930038', '2052751705', '2013-10-09 18:04:35', null, null, '10000002630001', '10000002930037', '流程分类表单', '', '', '表单元素', '10000002930009', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000003060004', '2052751705', '2013-10-11 09:19:16', null, null, '64', '1340071401667', '数据表表单', '表单帮助按钮', null, '表单按钮', '904929086', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000003070003', '2052751705', '2013-10-11 09:43:12', null, null, '85', '101588525942', '数据表管理列表', '自定义按钮宽70高24按钮', null, '列表按钮', '10000003070000', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000003540003', '2052751705', '2013-10-14 10:55:09', null, null, '211', '1340071401633', '学员信息管理列表', '维护按钮', null, '列表操作按钮', '10000003540001', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000003540012', '2052751705', '2013-10-14 10:58:16', null, null, '211', '1338178130578', '学员信息管理列表', '新建按钮', null, '列表按钮', '10000003540010', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000003540015', '2052751705', '2013-10-14 10:58:22', null, null, '211', '1338430888400', '学员信息管理列表', '批量删除按钮', null, '列表按钮', '10000003540013', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000003540018', '2052751705', '2013-10-14 10:58:30', null, null, '211', '1338446858775', '学员信息管理列表', '列表帮助按钮', null, '列表按钮', '10000003540016', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004330004', '2052751705', '2013-10-24 13:25:54', null, null, '10000004330000', '1339482802455', '111111', '列表删除按钮', null, '列表按钮', '10000004330002', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004400001', '2052751705', '2013-10-24 16:47:36', null, null, '97', '1338271717968', '行业公告表单', '', '', '表单元素', '740', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004400002', '2052751705', '2013-10-24 16:47:45', null, null, '97', '1338271717968', '行业公告表单', '', '', '表单元素', '1849304351', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004410000', '2052751705', '2013-10-24 16:52:43', null, null, '97', '1340085958657', '行业公告表单', '', '', '表单元素', '742', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004410001', '2052751705', '2013-10-24 16:53:08', null, null, '95', '1340085958657', '署内新闻表单', '', '', '表单元素', '360', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004480005', '2052751705', '2013-10-25 08:30:01', null, null, '213', '2', '学员信息管理表单', '', '', '表单元素', '10000003390004', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004570025', '2052751705', '2013-10-25 12:01:20', null, null, '10000004570012', '1338430659228', '房产信息表单', '修改按钮', null, '表单按钮', '10000004570023', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004570028', '2052751705', '2013-10-25 12:01:27', null, null, '10000004570012', '1338176658578', '房产信息表单', '保存按钮', '', '表单按钮', '10000004570026', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004570050', '2052751705', '2013-10-25 12:02:49', null, null, '10000004570012', '1340937219162', '房产信息表单', null, null, '表单元素', '10000004570041', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004800012', '2052751705', '2013-10-25 19:59:07', null, null, '211', '1373066303', '学员信息管理列表', '导出Excel按钮', null, '列表按钮', '10000004800010', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004800015', '2052751705', '2013-10-25 19:59:13', null, null, '211', '500070979', '学员信息管理列表', 'Excel导入按钮', null, '列表按钮', '10000004800013', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810047', '2052751705', '2013-10-25 19:41:51', null, null, '10000004810010', '1339482578375', 'aaaaa', '表单选项卡添加按钮', null, '表单按钮', '10000004810045', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810050', '2052751705', '2013-10-25 19:41:52', null, null, '10000004810010', '1339482608765', 'aaaaa', '表单选项卡保存按钮', null, '表单按钮', '10000004810048', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810053', '2052751705', '2013-10-25 19:41:52', null, null, '10000004810010', '1338185221078', 'aaaaa', '表单选项卡删除按钮', null, '表单按钮', '10000004810051', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810066', '2052751705', '2013-10-25 19:41:53', null, null, '10000004810010', '1338430659228', 'aaaaa', '修改按钮', null, '表单按钮', '10000004810064', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810069', '2052751705', '2013-10-25 19:41:53', null, null, '10000004810010', '1338176658578', 'aaaaa', '保存按钮', '', '表单按钮', '10000004810067', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810072', '2052751705', '2013-10-25 19:41:53', null, null, '10000004810010', '1340071401667', 'aaaaa', '表单帮助按钮', null, '表单按钮', '10000004810070', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810110', '2052751705', '2013-10-25 20:21:32', null, null, '10000004810073', '1339482578375', 'aaaaa', '表单选项卡添加按钮', null, '表单按钮', '10000004810108', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810113', '2052751705', '2013-10-25 20:21:32', null, null, '10000004810073', '1339482608765', 'aaaaa', '表单选项卡保存按钮', null, '表单按钮', '10000004810111', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810116', '2052751705', '2013-10-25 20:21:32', null, null, '10000004810073', '1338185221078', 'aaaaa', '表单选项卡删除按钮', null, '表单按钮', '10000004810114', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810129', '2052751705', '2013-10-25 20:21:33', null, null, '10000004810073', '1338430659228', 'aaaaa', '修改按钮', null, '表单按钮', '10000004810127', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810132', '2052751705', '2013-10-25 20:21:33', null, null, '10000004810073', '1338176658578', 'aaaaa', '保存按钮', '', '表单按钮', '10000004810130', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004810135', '2052751705', '2013-10-25 20:21:33', null, null, '10000004810073', '1340071401667', 'aaaaa', '表单帮助按钮', null, '表单按钮', '10000004810133', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004960030', '2052751705', '2013-10-30 12:10:16', null, null, '10000004960018', '1338430659228', '子系统表单', '修改按钮', null, '表单按钮', '10000004960028', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004960033', '2052751705', '2013-10-30 12:10:22', null, null, '10000004960018', '1338176658578', '子系统表单', '保存按钮', '', '表单按钮', '10000004960031', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004960035', '2052751705', '2013-10-30 12:10:31', null, null, '10000004960018', '1338264437781', '子系统表单', '', '', '表单元素', '10000004960034', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004960039', '2052751705', '2013-10-30 12:10:32', null, null, '10000004960018', '1338264437781', '子系统表单', '', '', '表单元素', '10000004960038', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004960043', '2052751705', '2013-10-30 12:10:32', null, null, '10000004960018', '1338264437781', '子系统表单', '', '', '表单元素', '10000004960042', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004960051', '2052751705', '2013-10-30 12:10:32', null, null, '10000004960018', '1338264437781', '子系统表单', '', '', '表单元素', '10000004960050', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004960054', '2052751705', '2013-10-30 12:10:51', null, null, '10000004960018', '1340005570406', '子系统表单', null, null, '表单元素', '10000004960046', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000004980004', '2052751705', '2013-10-30 13:25:01', null, null, '10000004960020', '221075092', '子系统列表', '自定义链接按钮按钮', null, '列表操作按钮', '10000004980002', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005110030', '2052751705', '2013-10-31 13:53:08', null, null, '64', '1338264437781', '数据表表单', '', '', '表单元素', '10000005110029', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005110032', '2052751705', '2013-10-31 13:55:11', null, null, '65', '1338264437781', '字段管理表单', '', '', '表单元素', '10000005110031', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005120061', '2052751705', '2013-10-31 15:29:02', null, null, '64', '1338264437781', '数据表表单', '', '', '表单元素', '10000005120060', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005120062', '2052751705', '2013-10-31 15:31:38', null, null, '64', '1338271717968', '数据表表单', '', '', '表单元素', '10000005120058', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005120063', '2052751705', '2013-10-31 15:35:48', null, null, '72', '1340085958542', '表单管理表单', '', '', '表单元素', '1434', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005120064', '2052751705', '2013-10-31 15:37:27', null, null, '73', '1340085958542', '列表管理表单', '', '', '表单元素', '1439', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005190171', '2052751705', '2013-11-01 14:36:49', null, null, '59', '1340085958657', '按钮管理表单', '', '', '表单元素', '10000005190169', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280036', '2052751705', '2013-11-02 17:26:50', null, null, '10000005280030', '1338430659228', '房产信息表单', '修改按钮', null, '表单按钮', '10000005280034', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280039', '2052751705', '2013-11-02 17:27:00', null, null, '10000005280030', '1338176658578', '房产信息表单', '表单保存按钮', '', '表单按钮', '10000005280037', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280042', '2052751705', '2013-11-02 17:27:21', null, null, '10000005280030', '1340071401667', '房产信息表单', '表单帮助按钮', null, '表单按钮', '10000005280040', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280044', '2052751705', '2013-11-02 17:27:25', null, null, '10000005280030', '1338264437781', '房产信息表单', '', '', '表单元素', '10000005280043', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280048', '2052751705', '2013-11-02 17:27:25', null, null, '10000005280030', '1338264437781', '房产信息表单', '', '', '表单元素', '10000005280047', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280052', '2052751705', '2013-11-02 17:27:26', null, null, '10000005280030', '1338264437781', '房产信息表单', '', '', '表单元素', '10000005280051', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280060', '2052751705', '2013-11-02 17:27:26', null, null, '10000005280030', '1338264437781', '房产信息表单', '', '', '表单元素', '10000005280059', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280063', '2052751705', '2013-11-02 17:27:43', null, null, '10000005280030', '1340937219162', '房产信息表单', null, null, '表单元素', '10000005280055', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280068', '2052751705', '2013-11-02 17:28:39', null, null, '10000005280064', '1338178130578', '房产信息列表', '新建按钮', null, '列表按钮', '10000005280066', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280071', '2052751705', '2013-11-02 17:28:56', null, null, '10000005280064', '1338430888400', '房产信息列表', '列表批量删除按钮', null, '列表按钮', '10000005280069', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280074', '2052751705', '2013-11-02 17:29:06', null, null, '10000005280064', '1338446858775', '房产信息列表', '列表帮助按钮', null, '列表按钮', '10000005280072', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280077', '2052751705', '2013-11-02 17:29:21', null, null, '10000005280064', '1340071401633', '房产信息列表', '主列表维护按钮', null, '列表操作按钮', '10000005280075', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280086', '2052751705', '2013-11-02 17:40:16', null, null, '10000005280080', '1338178130578', '房产信息列表', '新建按钮', null, '列表按钮', '10000005280084', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280089', '2052751705', '2013-11-02 17:40:25', null, null, '10000005280080', '1338430888400', '房产信息列表', '列表批量删除按钮', null, '列表按钮', '10000005280087', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280092', '2052751705', '2013-11-02 17:40:35', null, null, '10000005280080', '1338446858775', '房产信息列表', '列表帮助按钮', null, '列表按钮', '10000005280090', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005280095', '2052751705', '2013-11-02 17:40:45', null, null, '10000005280080', '1340071401633', '房产信息列表', '主列表维护按钮', null, '列表操作按钮', '10000005280093', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005310015', '2052751705', '2013-11-03 17:43:07', null, null, '10000005310002', '1338430659228', 'hh表单', '修改按钮', null, '表单按钮', '10000005310013', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005310018', '2052751705', '2013-11-03 17:43:16', null, null, '10000005310002', '1338176658578', 'hh表单', '表单保存按钮', '', '表单按钮', '10000005310016', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005310020', '2052751705', '2013-11-03 17:43:19', null, null, '10000005310002', '1338264437781', 'hh表单', '', '', '表单元素', '10000005310019', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005310024', '2052751705', '2013-11-03 17:43:19', null, null, '10000005310002', '1338264437781', 'hh表单', '', '', '表单元素', '10000005310023', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005350000', '2052751705', '2013-11-04 11:45:05', null, null, '213', '1', '学员信息管理表单', null, null, '表单元素', '10000003390000', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005610033', '2052751705', '2014-09-14 16:48:58', null, null, '10000005610026', '1338430659228', '商品表单', '修改按钮', null, '表单按钮', '10000005610031', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005610039', '2052751705', '2014-09-14 16:49:21', null, null, '10000005610026', '1340071401667', '商品表单', '表单帮助按钮', null, '表单按钮', '10000005610037', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005610040', '2052751705', '2014-09-14 16:49:48', null, null, '10000005610026', '1338176658578', '商品表单', '表单保存按钮', '', '表单按钮', '10000005610034', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005610068', '2052751705', '2014-09-14 17:00:59', null, null, '10000005610065', '1338178130578', '商品列表', '新建按钮', null, '列表按钮', '10000005610066', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005610071', '2052751705', '2014-09-14 17:01:16', null, null, '10000005610065', '1338430888400', '商品列表', '列表批量删除按钮', null, '列表按钮', '10000005610069', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005610074', '2052751705', '2014-09-14 17:01:29', null, null, '10000005610065', '1338446858775', '商品列表', '列表帮助按钮', null, '列表按钮', '10000005610072', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005610077', '2052751705', '2014-09-14 17:01:57', null, null, '10000005610065', '1340071401633', '商品列表', '主列表维护按钮', null, '列表操作按钮', '10000005610075', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005650001', '2052751705', '2014-09-14 20:12:18', null, null, '109', '101588525942', '表单模板列表', '自定义按钮宽70高24按钮', null, '列表按钮', '172', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005650002', '2052751705', '2014-09-14 21:15:45', null, null, '109', '101588525942', '表单模板表单', '自定义按钮宽70高24按钮', null, '表单按钮', '1818602868', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005660000', '2052751705', '2014-09-15 07:26:32', null, null, '109', '1338264437781', '表单模板表单', '', '', '表单元素', '1950', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005670002', '2052751705', '2014-09-15 07:54:44', null, null, '109', '1340071401667', '表单模板表单', '表单帮助按钮', null, '表单按钮', '10000005670000', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005690002', '2052751705', '2014-09-16 09:21:52', null, null, '68', '1340085958657', '数据字典表单', '', '', '表单元素', '10000005690000', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005700011', '2052751705', '2014-09-16 13:19:19', null, null, '77', '101588525942', '表单管理列表', '自定义按钮宽70高24按钮', null, '列表按钮', '101933588506', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005700023', '2052751705', '2014-09-16 13:43:55', null, null, '10000005700015', '1338178130578', '商品管理列表', '新建按钮', null, '列表按钮', '10000005700021', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005700026', '2052751705', '2014-09-16 13:44:07', null, null, '10000005700015', '1338430888400', '商品管理列表', '列表批量删除按钮', null, '列表按钮', '10000005700024', '3', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005700031', '2052751705', '2014-09-16 13:49:28', null, null, '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005700030', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005700035', '2052751705', '2014-09-16 13:49:28', null, null, '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005700034', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005710000', '2052751705', '2014-09-16 19:51:05', null, null, '67', '1338271717968', '模块表单', '', '', '表单元素', '10176295137', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005710019', '2052751705', '2014-09-16 19:57:29', null, null, '10000005710002', '1338430659228', 'tt', '修改按钮', null, '表单按钮', '10000005710017', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005710022', '2052751705', '2014-09-16 19:57:30', null, null, '10000005710002', '1338176658578', 'tt', '表单保存按钮', '', '表单按钮', '10000005710020', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005710025', '2052751705', '2014-09-16 19:57:30', null, null, '10000005710002', '1340071401667', 'tt', '表单帮助按钮', null, '表单按钮', '10000005710023', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005710028', '2052751705', '2014-09-16 20:27:27', null, null, '67', '1338271717968', '模块表单', '', '', '表单元素', '10000003040000', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005720066', '2052751705', '2014-09-17 09:40:31', null, null, '10000005700015', '1340071401633', '商品管理列表', '主列表维护按钮', null, '列表操作按钮', '10000005720064', '4', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005750001', '2052751705', '2014-09-17 20:16:22', null, null, '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750000', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005750005', '2052751705', '2014-09-17 20:16:22', null, null, '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750004', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005750009', '2052751705', '2014-09-17 20:16:22', null, null, '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750008', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005750013', '2052751705', '2014-09-17 20:16:43', null, null, '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750012', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005750017', '2052751705', '2014-09-17 20:16:44', null, null, '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750016', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005750021', '2052751705', '2014-09-17 20:16:52', null, null, '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750020', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005750023', '2052751705', '2014-09-17 20:16:53', null, null, '10000005610026', '1338264437781', '商品表单', '', '', '表单元素', '10000005750022', '1', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005750026', '2052751705', '2014-09-17 20:24:37', null, null, '10000005610026', '1339482578375', '商品表单', '表单选项卡添加按钮', null, '表单按钮', '10000005750024', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005750029', '2052751705', '2014-09-17 20:24:48', null, null, '10000005610026', '1339482608765', '商品表单', '表单选项卡保存按钮', null, '表单按钮', '10000005750027', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000005750032', '2052751705', '2014-09-17 20:24:56', null, null, '10000005610026', '1338185221078', '商品表单', '表单选项卡删除按钮', null, '表单按钮', '10000005750030', '2', '0');
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -14123,7 +14123,7 @@ CREATE TABLE `sys_user` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_yonghuxingming` varchar(50) DEFAULT NULL,
   `tbl_mobile` varchar(50) DEFAULT NULL,
   `tbl_email` varchar(50) DEFAULT NULL,
@@ -14238,7 +14238,7 @@ CREATE TABLE `sys_xitongyuansu` (
   `comm_createBy` bigint(20) DEFAULT NULL,
   `comm_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comm_updateBy` bigint(20) DEFAULT NULL,
-  `comm_updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comm_updateDate` timestamp NULL DEFAULT NULL,
   `tbl_name` varchar(100) DEFAULT NULL,
   `tbl_bianmafuhao` varchar(50) DEFAULT NULL,
   `tbl_duiyingshujubiao` varchar(50) DEFAULT NULL,
