@@ -241,6 +241,7 @@ public class ColumnAction extends CompexDomainAction {
 					}
 					column.setUpdateDate(new Date());
 					column.setUpdateBy(user.getId());
+					column.setColumnName(Constants.COLUMN_NAME_PREFIX + column.getColumnName());
 					this.columnService.doUpdateColumn(column, dyncMap);
 				} else {
 					if (this.columnService.isColumnZhNameDouble(column.getTableId(), column.getColumnZhName(), column.getId())) {

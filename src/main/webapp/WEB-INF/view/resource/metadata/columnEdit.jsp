@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+ "://"+request.getServerName() + ":"+request.getServerPort()+path;
@@ -122,7 +123,7 @@
 				</td>
 				<td align="left" >
 					<span id="prefix" style="float: left;height:25px;line-height:25px;">tbl_</span>
-					<input id="pinyinId" maxlength="24" type="text" name="column.columnName" value="${column.columnName}"  class="textInput required pinyin" style="width:180px;float:left;"/><!-- <span class="star">*</span> -->
+					<input id="pinyinId" maxlength="24" type="text" name="column.columnName" value='${fn:substringAfter(column.columnName,"_")}'  class="textInput required pinyin" style="width:180px;float:left;"/><!-- <span class="star">*</span> -->
 				</td>
 			</tr>
 			<tr>

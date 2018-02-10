@@ -251,6 +251,7 @@ public class TableAction extends CompexDomainAction {
 	 * @author Jason Description: 数据表字段配置功能使用
 	 * @return
 	 */
+	@Action("listColumns")
 	public void listColumns() throws IOException {
 		List<ConfigColumn> list = null;
 		String tableName = getRequest().getParameter("tableName");
