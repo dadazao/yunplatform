@@ -124,7 +124,7 @@
 									</c:if>
 									<c:if test="${ce.formColumn.inputType==1}">
 										<c:if test="${fn:containsIgnoreCase(ce.formColumn.dataType, 'varchar')}">
-											<select name="dyncMapString.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;">
+											<select name="dyncMapString.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;height:${ce.component.comboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapString[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -132,7 +132,7 @@
 											</select>
 										</c:if>
 										<c:if test="${ce.formColumn.dataType=='int'}">
-											<select name="dyncMapInteger.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;">
+											<select name="dyncMapInteger.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;height:${ce.component.comboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapInteger[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -140,7 +140,7 @@
 											</select>
 										</c:if>
 										<c:if test="${ce.formColumn.dataType=='bigint'}">
-											<select name="dyncMapLong.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;">
+											<select name="dyncMapLong.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;height:${ce.component.comboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapLong[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -157,7 +157,7 @@
 									</c:if>
 									<c:if test="${ce.formColumn.inputType==8}">
 										<c:if test="${fn:containsIgnoreCase(ce.formColumn.dataType, 'varchar')}">
-											<select id="queryselect${status.count}" name="dyncMapStringPrecise.${ce.formColumn.columnName}" belong="list" style="width: ${ce.component.searchComboxWidth}px;">
+											<select id="queryselect${status.count}" name="dyncMapStringPrecise.${ce.formColumn.columnName}" belong="list" style="width: ${ce.component.searchComboxWidth}px;height:${ce.component.searchComboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapStringPrecise[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -165,7 +165,7 @@
 											</select>
 										</c:if>
 										<c:if test="${ce.formColumn.dataType=='bigint'}">
-											<select id="queryselect${status.count}" name="dyncMapLong.${ce.formColumn.columnName}" style="width: ${ce.component.searchComboxWidth}px;">
+											<select id="queryselect${status.count}" name="dyncMapLong.${ce.formColumn.columnName}" style="width: ${ce.component.searchComboxWidth}px;height:${ce.component.searchComboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapLong[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -173,7 +173,7 @@
 											</select>
 										</c:if>
 										<c:if test="${ce.formColumn.dataType=='int'}">
-											<select id="queryselect${status.count}" name="dyncMapInteger.${ce.formColumn.columnName}" style="width: ${ce.component.searchComboxWidth}px;">
+											<select id="queryselect${status.count}" name="dyncMapInteger.${ce.formColumn.columnName}" style="width: ${ce.component.searchComboxWidth}px;height:${ce.component.searchComboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapInteger[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -227,7 +227,7 @@
 									</c:if>
 									<c:if test="${ce.formColumn.inputType==1}">
 										<c:if test="${fn:containsIgnoreCase(ce.formColumn.dataType, 'varchar')}">
-											<select name="dyncMapString.${ce.formColumn.columnName}" style="width: 127px;">
+											<select name="dyncMapString.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;height:${ce.component.comboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapString[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -235,7 +235,7 @@
 											</select>
 										</c:if>
 										<c:if test="${ce.formColumn.dataType=='int'}">
-											<select name="dyncMapInteger.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;">
+											<select name="dyncMapInteger.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;height:${ce.component.comboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapInteger[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -243,7 +243,7 @@
 											</select>
 										</c:if>
 										<c:if test="${ce.formColumn.dataType=='bigint'}">
-											<select name="dyncMapLong.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;">
+											<select name="dyncMapLong.${ce.formColumn.columnName}" style="width: ${ce.component.comboxWidth}px;height:${ce.component.comboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapLong[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -269,7 +269,7 @@
 									</c:if>
 									<c:if test="${ce.formColumn.inputType==8}">
 										<c:if test="${fn:containsIgnoreCase(ce.formColumn.dataType, 'varchar')}">
-											<select id="queryselect${status.count}" name="dyncMapStringPrecise.${ce.formColumn.columnName}" style="width: ${ce.component.searchComboxWidth}px;">
+											<select id="queryselect${status.count}" name="dyncMapStringPrecise.${ce.formColumn.columnName}" style="width: ${ce.component.searchComboxWidth}px;height:${ce.component.searchComboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapStringPrecise[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -277,7 +277,7 @@
 											</select>
 										</c:if>
 										<c:if test="${ce.formColumn.dataType=='bigint'}">
-											<select id="queryselect${status.count}" name="dyncMapLong.${ce.formColumn.columnName}" style="width: ${ce.component.searchComboxWidth}px;">
+											<select id="queryselect${status.count}" name="dyncMapLong.${ce.formColumn.columnName}" style="width: ${ce.component.searchComboxWidth}px;height:${ce.component.searchComboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapLong[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>
@@ -285,7 +285,7 @@
 											</select>
 										</c:if>
 										<c:if test="${ce.formColumn.dataType=='int'}">
-											<select id="queryselect${status.count}" name="dyncMapInteger.${ce.formColumn.columnName}" style="width: ${ce.component.searchComboxWidth}px;">
+											<select id="queryselect${status.count}" name="dyncMapInteger.${ce.formColumn.columnName}" style="width: ${ce.component.searchComboxWidth}px;height:${ce.component.searchComboxHeight}px;">
 												<option value="-1">全部</option>
 												<c:forEach items="${ce.codes}" var="code">
 													<option value="${code.value}" <c:if test="${dyncMapInteger[ce.formColumn.columnName]==code.value}">selected</c:if> >${code.text}</option>

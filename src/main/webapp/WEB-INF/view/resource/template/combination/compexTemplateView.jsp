@@ -3,7 +3,7 @@
     String path1 = request.getContextPath();
     String basePath1 = request.getScheme()+ "://"+request.getServerName() + ":"+request.getServerPort()+path1;
 %>
-<%@include file="/pages/core/compexDomainView.jsp"  %>	
+<%@include file="/WEB-INF/view/core/compexDomainView.jsp"  %>	
 <script type="text/javascript">
 <!--
 	$(function(){

@@ -108,14 +108,14 @@
 		<action name="*compexdelete" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="delete"/>
 		<action name="*compexviewJson" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="viewJson"/>
 		<action name="*compexdataJson" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="dataJson"/>
-		<action name="*compexisdefault" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="isdefault"/>
+		<action name="*compexisDefault" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="isDefault"/>
 		<action name="*compexsavesub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="savesub"/>
 		<action name="*compexdeletesub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="deletesub"/>
 		<action name="*compexdataJsonsub" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="dataJsonsub"/>
 		<action name="*compexisCanDelete" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="isCanDelete"/>
 		<action name="*compexisCanRecall" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="isCanRecall"/>
 		<action name="*compexisEdit" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="isEdit"/>
-		<action name="*compexispassed" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="passed"/>
+		<action name="*compexpassed" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="passed"/>
 		<action name="*compexrecall" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="recall"/>
 		<action name="*compexsimpleDelete" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="simpleDelete"/>
 		<action name="*compexlogicDelete" class="com.cloudstong.platform.resource.metadata.action.CompexDomainAction" method="logicDelete"/>

@@ -15,7 +15,7 @@ ns.role.addInRoleList = function(obj,id,name){
 			}
 		});
 		if(flag){
-			$("#selectRoleList").append("<tr id='"+id+"'><td height='14px' align='center'>"+name+"<div style='display:none' belong='roleIds'>"+id+"</div><div style='display:none' belong='roleNames'>"+name+"</div></td><td height='14px' align='center'><div onclick='ns.role.deleteTr(this)' style='cursor: pointer;width:12px;height:12px; background-image: url(\"images/jquery/ui-icons_cd0a0a_256x240.png\");background-repeat: no-repeat;background-position: -99px -131px;'></div></td></tr>");
+			$("#selectRoleList").append("<tr id='"+id+"'><td height='14px' align='center'>"+name+"<div style='display:none' belong='roleIds'>"+id+"</div><div style='display:none' belong='roleNames'>"+name+"</div></td><td height='14px' align='center'><div onclick='ns.role.deleteTr(this)' style='cursor: pointer;width:12px;height:12px; background-image: url(\"<%=basePath%>/themes/css/images/ui-icons_cd0a0a_256x240.png\");background-repeat: no-repeat;background-position: -99px -131px;'></div></td></tr>");
 		}
 	}else{
 		$("#"+id).remove();

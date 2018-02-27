@@ -35,7 +35,7 @@ import com.cloudstong.platform.core.web.action.BaseAction;
 	@Result(name = "list", location = "/WEB-INF/view/business/employee/employeeList.jsp"),
 	@Result(name = "add", location = "/WEB-INF/view/business/employee/employeeEdit.jsp"),
 	@Result(name = "edit", location = "/WEB-INF/view/business/employee/employeeEdit.jsp"),
-	@Result(name = "view", location = "/WEB-INF/view/business/employee/employeeView.jsp")
+	@Result(name = "view", location = "/WEB-INF/view/business/employee/employeeView.jsp")	
 })
 public class EmployeeAction extends BaseAction {
 

@@ -235,9 +235,9 @@ body { background:#FAECEF;}
 		
 .split_line{ height:34px; margin-top:1px;background-image:url(./images/split_line.png);background-repeat:no-repeat;background-position:center;}
 	
-.listbutton {background-repeat: repeat-x;background-position: left top;padding-bottom:3px;border-top: #cdbebb 1px solid;border-bottom: #cdbebb 1px solid;	border-right: #cdbebb 1px solid;border-left: #cdbebb 1px solid;font-size: 12px;background:url('./images/b4.gif');width:60px;height: 24px;}
-.listbuttonOver {background-repeat: repeat-x;background-position: left top;padding-bottom:3px;border-top: #cdbebb 1px solid;border-bottom: #cdbebb 1px solid;	border-right: #cdbebb 1px solid;border-left: #cdbebb 1px solid;font-size: 12px;background:url('./images/b6.gif');width:60px;height: 24px;}
-.listbuttonDisable {color:grey;background-repeat: repeat-x;background-position: left top;padding-bottom:3px;border-top: #cdbebb 1px solid;border-bottom: #cdbebb 1px solid;	border-right: #cdbebb 1px solid;border-left: #cdbebb 1px solid;font-size: 12px;background:url('./images/b5.gif');width:60px;height: 24px;}
+.listbutton {background-repeat: repeat-x;background-position: left top;border-top: #cdbebb 1px solid;border-bottom: #cdbebb 1px solid;	border-right: #cdbebb 1px solid;border-left: #cdbebb 1px solid;font-size: 12px;background:url('./images/b4.gif');width:60px;height: 24px;}
+.listbuttonOver {background-repeat: repeat-x;background-position: left top;border-top: #cdbebb 1px solid;border-bottom: #cdbebb 1px solid;	border-right: #cdbebb 1px solid;border-left: #cdbebb 1px solid;font-size: 12px;background:url('./images/b6.gif');width:60px;height: 24px;}
+.listbuttonDisable {color:grey;background-repeat: repeat-x;background-position: left top;border-top: #cdbebb 1px solid;border-bottom: #cdbebb 1px solid;	border-right: #cdbebb 1px solid;border-left: #cdbebb 1px solid;font-size: 12px;background:url('./images/b5.gif');width:60px;height: 24px;}
 .operatingbutton{background-repeat: repeat-x;background-position: left top;border-right: #cdbebb 1px solid;padding-top: 2px;border-top: #cdbebb 1px solid;padding-left: 2px;font-size: 12px;background:url('./images/b4.gif');border-left: #cdbebb 1px solid;cursor: hand;color: black;border-bottom: #cdbebb 1px solid;text-align:center;width:60px;height: 24px;background-repeat: repeat-x;background-position: left top;padding-top: 2px;}
 
 .tableClass{padding:0px; margin:0px; overflow:auto; padding:0px; border-left:1px #d0d0d0 solid;background-color:#FFFFFF;}

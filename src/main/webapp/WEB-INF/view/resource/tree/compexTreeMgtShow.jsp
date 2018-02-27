@@ -105,14 +105,13 @@ function eventSearchNodes() {
 		overflow-x: hidden;
 		background-color:#FFFFFF;
 	}
-	input.empty {color:black;}
+	input.empty {color:black;width:200px;}
 </style>
 <ul>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="30%">快速检索:</td>
-    <td width="60%"><input type="text" id="nodesByName" value="" class="empty" /></td>
-    <td width="10%"><button onclick="eventSearchNodes();" style="width:60px;height:24px;" class="listbutton" type="button">检索</button></td>
+    <td width="80%"><input type="text" id="nodesByName" class="empty" /></td>
+    <td width="20%"><button onclick="eventSearchNodes();" style="width:60px;height:24px;" class="listbutton" type="button">检索</button></td>
   </tr>
 </table>
 </ul><br/>

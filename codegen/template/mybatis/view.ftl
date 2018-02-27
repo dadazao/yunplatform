@@ -19,7 +19,7 @@
 		$("#${subTable.variables.class?uncap_first}Tab").loadUrl('${mainTable.namespace}/${subTable.variables.class?uncap_first}/view.action?${mainTable.variables.class?uncap_first}Id='+$('#domainId').val());
 			<#else>
 		$("#tabDivId").append('<div id="${subTable.variables.class?uncap_first}Tab"></div>');
-		$("#${subTable.variables.class?uncap_first}Tab").loadUrl('${mainTable.namespace}/${subTable.variables.class?uncap_first}Tab.jsp');
+		$("#${subTable.variables.class?uncap_first}Tab").loadUrl('${mainTable.namespace}/tab.action');
 			</#if>
 		</#list>
 	});

@@ -488,7 +488,7 @@ public class TabulationAction extends CompexDomainAction {
 				tabulationId = this.tabulationService.doSaveTabulation(tabulation);
 				Tabulation t = tabulationService.findTabulationById(tabulationId);
 				Form form = formService.findFormById(t.getFormId());
-				t.setTabulationPath("/pages/resource/"+EncryptUtil.Md5(form.getMainTable()!=null?form.getMainTable():"")+"compexlist.action?listId=" + tabulationId);
+				t.setTabulationPath("/pages/resource/"+form.getTableId()+"compexlist.action?listId=" + tabulationId);
 				//更新列表路径
 				this.tabulationService.doUpdateTabulationPath(t);
 

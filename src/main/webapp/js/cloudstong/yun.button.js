@@ -62,11 +62,11 @@ function eventCompexDY(){
 			alertMsg.warn("请选择需要打印的数据!");
 			return;
 		}
-		$.pdialog.open(__basePath + "/pages/resource/template/print/printListYL.jsp","lbdyDialog","列表打印预览",{width:fSelfWidth,height:fSelfHeight,mask:true,resizable:true});
+		$.pdialog.open(__basePath + "/pages/resource/template/printListPreview.action","lbdyDialog","列表打印预览",{width:fSelfWidth,height:fSelfHeight,mask:true,resizable:true});
     }
 
 	function eventCompexBDDY(){
-		$.pdialog.open(__basePath + "/pages/resource/template/print/printFormYL.jsp","bddyDialog","表单打印预览",{width:fSelfWidth,height:fSelfHeight,mask:true,resizable:true});
+		$.pdialog.open(__basePath + "/pages/resource/template/printFormPreview.action","bddyDialog","表单打印预览",{width:fSelfWidth,height:fSelfHeight,mask:true,resizable:true});
 	}
 	
 	function eventCompexXJ(){
@@ -548,7 +548,7 @@ function eventCompexDY(){
 	}
 	
 	function eventCompexMBYL(){
-		$.pdialog.open(__basePath + "/pages/resource/template/base/templateYL.jsp","mbylDialog","表单预览",{width:fDefaultWidth,height:fDefaultHeight,mask:true,resizable:true});
+		$.pdialog.open(__basePath + "/pages/resource/template/preview.action","mbylDialog","表单预览",{width:fDefaultWidth,height:fDefaultHeight,mask:true,resizable:true});
 	}
 	
 	function eventCompexFORMQY(){

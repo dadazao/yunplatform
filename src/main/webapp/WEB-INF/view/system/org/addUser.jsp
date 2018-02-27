@@ -38,7 +38,7 @@
 	}
 	
 	$(function(){
-		$("#orgtreeId").load("<%=basePath %>/pages/system/org/orgUserTree.jsp");
+		$("#orgtreeId").load("<%=basePath %>/pages/system/org/orgUserTree.action");
 		ns.org.loadAllUser();
 	});
 //-->

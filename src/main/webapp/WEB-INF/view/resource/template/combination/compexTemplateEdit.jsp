@@ -61,7 +61,7 @@
 <div class="buttonPanel">
 	<button onclick="eventCompexXG();" style="width:60px;heith:24px;" class="listbuttonDisable" name="b1" id="XG" type="button" disabled="disabled">修改</button>	
 	<button onclick="eventCompexTemplateBC();" style="width:60px;heith:24px;" class="listbutton" name="b2" id="BC" type="button">保存</button>	
-	<button onclick="eventCompexBDDY();" style="width:70px;heith:24px;" class="listbutton" name="b4" id="BDDY" type="button">打印预览</button>
+	<!-- <button onclick="eventCompexBDDY();" style="width:70px;heith:24px;" class="listbutton" name="b4" id="BDDY" type="button">预览</button> -->
 	<button onclick="eventCompexFORMBZ();" style="width:60px;heith:24px;" class="listbutton" name="b3" id="FORMBZ" type="button">帮助</button>		
 </div>
 <div id="yunDialog">
@@ -127,7 +127,7 @@
 								</label>
 							</td>
 							<td colspan="3" align="left" width="90%">
-								<textarea cols="120" rows="6" name="sysTemplate.tblComment" id="tblComment" class="textInput required">${sysTemplate.tblComment}</textarea>
+								<textarea cols="120" rows="6" name="sysTemplate.tblComment" id="tblComment" class="textInput">${sysTemplate.tblComment}</textarea>
 							</td>
 						</tr>
 					</table>

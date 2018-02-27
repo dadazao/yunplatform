@@ -7,7 +7,7 @@
 <script type="text/javascript">
 <!--
 ns.org.addUser = function(){
-	$.pdialog.open("<%=basePath %>/pages/system/org/addUser.jsp?orgId="+$("#orgId").val(),"addUserDialog","添加用户",{width:800,height:500,mask:true,resizable:true});
+	$.pdialog.open("<%=basePath %>/pages/system/org/addUser.action?orgId="+$("#orgId").val(),"addUserDialog","添加用户",{width:800,height:500,mask:true,resizable:true});
 }
 
 ns.org.deleteUser = function(){

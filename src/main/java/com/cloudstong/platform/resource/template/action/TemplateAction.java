@@ -52,10 +52,13 @@ import com.cloudstong.platform.system.service.IUserService;
 		@Result(name="baseaddbyform", location = "/WEB-INF/view/resource/template/base/compexTemplateEditByForm.jsp"),
 		@Result(name="baseview", location = "/WEB-INF/view/resource/template/base/compexTemplateView.jsp"),
 		@Result(name="baseedit", location = "/WEB-INF/view/resource/template/base/compexTemplateEdit.jsp"),
+		@Result(name="preview", location = "/WEB-INF/view/resource/template/base/templatePreview.jsp"),
+		@Result(name="printFormPreview", location = "/WEB-INF/view/resource/template/print/printFormPreview.jsp"),
+		@Result(name="printListPreview", location = "/WEB-INF/view/resource/template/print/printListPreview.jsp"),
 		@Result(name="comblist", location = "/WEB-INF/view/resource/template/combination/compexTemplateList.jsp"),
 		@Result(name="combadd", location = "/WEB-INF/view/resource/template/combination/compexTemplateEdit.jsp"),
 		@Result(name="combview", location = "/WEB-INF/view/resource/template/combination/compexTemplateView.jsp"),
-		@Result(name="combedit", location = "/WEB-INF/view/resource/template/combination/compexTemplateEdit.jsp")
+		@Result(name="combedit", location = "/WEB-INF/view/resource/template/combination/compexTemplateEdit.jsp")		
 })
 public class TemplateAction extends CompexDomainAction {
 	/**
@@ -84,6 +87,20 @@ public class TemplateAction extends CompexDomainAction {
 	
 	private List<Dictionary> templateTypeList;
 
+	@Action("preview")
+	public String preview() {
+		return "preview";
+	}
+	
+	@Action("printFormPreview")
+	public String printFormPreview() {
+		return "printFormPreview";
+	}
+	
+	@Action("printListPreview")
+	public String printListPreview() {
+		return "printListPreview";
+	}
 	/**
 	 * Description:返回表单模板列表所有数据
 	 * 
@@ -212,6 +229,7 @@ public class TemplateAction extends CompexDomainAction {
 	 */
 	public String templateContentChar(SysTemplate sysTemplate){
 		String content = sysTemplate.getTblContent();
+		content = content.replaceAll("&nbsp;", "");
 		String[] strs = content.split("<div id=\"compexDomainTabEdit_label_t");
 		for (int i = 0; i < strs.length; i++) {
 			content = content.replace("<div id=\"compexDomainTabEdit_label_t"+(i+1)+"\"></div>", "【数据字段,"+(i+1)+"】");

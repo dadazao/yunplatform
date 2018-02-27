@@ -34,7 +34,9 @@ import com.cloudstong.platform.core.web.action.BaseAction;
 @Namespace("/pages/business/employee/project")
 @Results(value = {
 		@Result(name = "edit", location = "/WEB-INF/view/business/employee/projectEdit.jsp"),
-		@Result(name = "sublist", location = "/WEB-INF/view/business/employee/projectList.jsp"), })
+		@Result(name = "sublist", location = "/WEB-INF/view/business/employee/projectList.jsp"), 
+		@Result(name = "tab", location = "/WEB-INF/view/business/employee/projectTab.jsp")
+})
 public class ProjectAction extends BaseAction {
 
 	@Resource
@@ -105,6 +107,11 @@ public class ProjectAction extends BaseAction {
 		pageResult = projectService.queryProject(queryCriteria);
 
 		return "sublist";
+	}
+	
+	@Action("tab")
+	public String tab() {
+		return "tab";
 	}
 	
 	public Project getProject() {

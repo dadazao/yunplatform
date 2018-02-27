@@ -52,7 +52,9 @@ import com.cloudstong.platform.system.service.SysOrgService;
 		@Result(name = "userList", location = "/WEB-INF/view/system/org/userList.jsp"),
 		@Result(name = "setUserList", location = "/WEB-INF/view/system/org/setuserList.jsp"),
 		@Result(name = "index", location = "/WEB-INF/view/system/org/orgIndex.jsp"),
-		@Result(name = "selfTree", location = "/WEB-INF/view/system/org/orgSelfTree.jsp")
+		@Result(name = "orgUserTree", location = "/WEB-INF/view/system/org/orgUserTree.jsp"),
+		@Result(name = "selfTree", location = "/WEB-INF/view/system/org/orgSelfTree.jsp"),
+		@Result(name = "addUser", location = "/WEB-INF/view/system/org/addUser.jsp")
 })
 public class SysOrgAction extends BaseAction {
 
@@ -77,6 +79,16 @@ public class SysOrgAction extends BaseAction {
 	@Action("selfTree")
 	public String selfTree() {
 		return "selfTree";
+	}
+	
+	@Action("orgUserTree")
+	public String orgUserTree() {
+		return "orgUserTree";
+	}
+	
+	@Action("addUser")
+	public String addUser() {
+		return "addUser";
 	}
 	
 	@Action("orgadd")
@@ -149,10 +161,10 @@ public class SysOrgAction extends BaseAction {
 		queryCriteria = new QueryCriteria();
 		if(sysOrg != null) {
 			if(sysOrg.getParentId()!=null && !sysOrg.getParentId().equals(0l) && !sysOrg.getParentId().equals(1l)){
-				queryCriteria.addQueryCondition("tbl_parentId", sysOrg.getParentId());
+				queryCriteria.addQueryCondition("o1.tbl_parentId", sysOrg.getParentId());
 			}
 			if(sysOrg.getOrgName()!=null && !sysOrg.getOrgName().equals("")){
-				queryCriteria.addQueryCondition("tbl_name", "%"+sysOrg.getOrgName().trim()+"%");
+				queryCriteria.addQueryCondition("o1.tbl_name", "%"+sysOrg.getOrgName().trim()+"%");
 			}
 		}
 		if (this.pageNum == null || "".equals(this.pageNum)) {
@@ -234,7 +246,7 @@ public class SysOrgAction extends BaseAction {
 	}
 	
 	@Action("orgaddUser")
-	public String addUser(){
+	public String orgaddUser(){
 		orgService.doAddUser(userIds,orgId);
 		return NONE;
 	}

@@ -57,6 +57,8 @@
 			<list>
 				<value>/login.*</value>
 				<value>/error.*</value>
+				<value>/pages/resource/template/saveBase.action</value>
+				<value>/pages/resource/template/saveComb.action</value>
 			</list>
 		</property>
 	</bean>

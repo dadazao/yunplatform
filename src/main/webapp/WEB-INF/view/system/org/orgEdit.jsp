@@ -12,7 +12,7 @@
 	
 	ns.org.selfDialogAjaxDone = function(json) {
 		$("#orgId").val(json.domainId);
-		$("#treeId").load("<%=basePath %>/pages/system/org/orgSelfTree.jsp");
+		$("#treeId").load("<%=basePath %>/pages/system/org/selfTree.action");
 		refreshList(json);
 	}
 	

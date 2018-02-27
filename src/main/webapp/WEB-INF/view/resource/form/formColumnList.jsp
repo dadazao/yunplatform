@@ -1,7 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<script type="text/javascript" src="../../../../js/edittable/edittable.js"></script>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+ "://"+request.getServerName() + ":"+request.getServerPort()+path;
@@ -11,6 +10,7 @@
 	.input{width:110px;}
 -->
 </style>
+<script type="text/javascript" src="<%=basePath %>/js/edittable/edittable.js"></script>
 <script type="text/javascript">
 <!--
 $(function () {

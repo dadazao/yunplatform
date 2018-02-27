@@ -63,7 +63,7 @@
 		          	<tr>
 		          		<td width="33%"></td>
 			          	<td>
-			          		<div onclick="ns.user.deleteUserPosition('${userPosition.id}')" style="cursor: pointer;width:12px;height:12px; background-image: url('images/jquery/ui-icons_cd0a0a_256x240.png');background-repeat: no-repeat;background-position: -99px -131px;"></div>
+			          		<div onclick="ns.user.deleteUserPosition('${userPosition.id}')" style="cursor: pointer;width:12px;height:12px; background-image: url('<%=basePath%>/themes/css/images/ui-icons_cd0a0a_256x240.png');background-repeat: no-repeat;background-position: -99px -131px;"></div>
 			          	</td>
 			          	<td width="33%"></td>
 		          	</tr>

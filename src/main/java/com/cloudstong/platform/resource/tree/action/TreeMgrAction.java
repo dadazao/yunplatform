@@ -814,6 +814,7 @@ public class TreeMgrAction extends CompexDomainAction {
 	 */
 	private boolean showRoot;
 	
+	@Action("showCatalogTree")
 	public String showCatalogTree() throws Exception{
 //		SysUser user = (SysUser)getSession().getAttribute("user");
 //		Map<String, Seqcode> curUserSeqcode= user.getCurUserSeqcode();
@@ -922,6 +923,7 @@ public class TreeMgrAction extends CompexDomainAction {
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Action("showtreeByUrl")
 	public String showtreeByUrl(){
 		try {
 			List<Map> lstTmp = mgrTreeService.queryTreeByParam(belongTable, orderColumn, orderType);
@@ -1142,6 +1144,7 @@ public class TreeMgrAction extends CompexDomainAction {
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Action("menuChildren")
 	public String menuChildren() throws IOException {
 		List<Map> _lstResultTmp = (List<Map>)getSession().getAttribute("treeResult");
 		List<Map> _lstResult = dataFilter(_lstResultTmp, rootId, "pId", false);
@@ -1184,6 +1187,7 @@ public class TreeMgrAction extends CompexDomainAction {
 		return NONE;
 	}
 	
+	@Action("comment")
 	public String comment(){
 		try {
 			List<Catalog> _lstResult = mgrTreeService.getCommentById(rootId);
@@ -1199,10 +1203,12 @@ public class TreeMgrAction extends CompexDomainAction {
 		return NONE;
 	}
 	
+	@Action("showTreeById")
 	public String showTreeById(){
 		return NONE;
 	}
 	
+	@Action("JoinTree")
 	public String JoinTree(){
 		return NONE;
 	}

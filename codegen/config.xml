@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="codegen.xsd">
 	
-	<datasource path="${project.dir}/src/resource/global.properties"/> 
+	<datasource path="${project.dir}/src/main/resource/global.properties"/> 
 	
 	<variables>
 		<variable name="developer" value="Allan"/>
@@ -27,44 +27,44 @@
 	</templates>
 	
 	<files basePath="${project.dir}">
-		<file refTemplate="model" fileName="{class}.java" dir="src/main/{package}/model" />
-		<file refTemplate="dao" fileName="{class}Dao.java" dir="src/main/{package}/dao"/>
-		<file refTemplate="daolImpl" fileName="{class}DaoImpl.java" dir="src/main/{package}/dao/impl"/>
+		<file refTemplate="model" fileName="{class}.java" dir="src/main/java/{package}/model" />
+		<file refTemplate="dao" fileName="{class}Dao.java" dir="src/main/java/{package}/dao"/>
+		<file refTemplate="daolImpl" fileName="{class}DaoImpl.java" dir="src/main/java/{package}/dao/impl"/>
 		
-		<file refTemplate="service" fileName="{class}Service.java" dir="src/main/{package}/service"/>
-		<file refTemplate="serviceImpl" fileName="{class}ServiceImpl.java" dir="src/main/{package}/service/impl"/>
+		<file refTemplate="service" fileName="{class}Service.java" dir="src/main/java/{package}/service"/>
+		<file refTemplate="serviceImpl" fileName="{class}ServiceImpl.java" dir="src/main/java/{package}/service/impl"/>
 		
-		<file refTemplate="action" fileName="{class}Action.java" dir="src/main/{package}/action"/>
+		<file refTemplate="action" fileName="{class}Action.java" dir="src/main/java/{package}/action"/>
 		
-		<file refTemplate="list" fileName="{class}List.jsp" dir="WebContent/{page}" table="main,1:n"/>
-		<file refTemplate="edit" fileName="{class}Edit.jsp" dir="WebContent/{page}"/>
-		<file refTemplate="view" fileName="{class}View.jsp" dir="WebContent/{page}" table="main,1:1"/>
-		<file refTemplate="tab" fileName="{class}Tab.jsp" dir="WebContent/{page}" table="1:n" />
-		<file refTemplate="mapper" fileName="{class}.map.xml" dir="src/resource/com/cloudstong/business/maper"/>
-		<file refTemplate="en_US_properties" fileName="ApplicationResources_en_US.properties" dir="src/resource" append="true"/>
-		<file refTemplate="zh_CN_properties" fileName="ApplicationResources_zh_CN.properties" dir="src/resource" append="true"/>
-		<file refTemplate="namespace" fileName="namespace.js" dir="WebContent/js/common" table="main" append="true"/>
+		<file refTemplate="list" fileName="{class}List.jsp" dir="src/main/webapp/WEB-INF/view/{page}" table="main,1:n"/>
+		<file refTemplate="edit" fileName="{class}Edit.jsp" dir="src/main/webapp/WEB-INF/view/{page}"/>
+		<file refTemplate="view" fileName="{class}View.jsp" dir="src/main/webapp/WEB-INF/view/{page}" table="main,1:1"/>
+		<file refTemplate="tab" fileName="{class}Tab.jsp" dir="src/main/webapp/WEB-INF/view/{page}" table="1:n" />
+		<file refTemplate="mapper" fileName="{class}.map.xml" dir="src/main/resource/com/cloudstong/business/maper"/>
+		<file refTemplate="en_US_properties" fileName="ApplicationResources_en_US.properties" dir="src/main/resource" append="true"/>
+		<file refTemplate="zh_CN_properties" fileName="ApplicationResources_zh_CN.properties" dir="src/main/resource" append="true"/>
+		<file refTemplate="namespace" fileName="namespace.js" dir="src/main/webapp/js/common" table="main" append="true"/>
 	</files>
 <!--
 	<table tableName="bus_xiantao">
 		<variable name="class" value="Peach"/>
-		<variable name="page" value="pages/business/peach"/>
+		<variable name="page" value="business/peach"/>
 		<variable name="package" value="com.cloudstong.business.peach"/>
 	</table>
 	-->
 	<!-- <table tableName="bus_fruits">
 		<variable name="class" value="Fruit"/>
-		<variable name="page" value="pages/business/fruit"/>
+		<variable name="page" value="business/fruit"/>
 		<variable name="package" value="com.cloudstong.business.fruit"/>
 		<subtables>
 			<subtable tableName="bus_fruitdetail" relation="1:1" foreignKey="tbl_fruit_id">
 				<variable name="class" value="FruitDetail"/>
-				<variable name="page" value="pages/business/fruit"/>
+				<variable name="page" value="business/fruit"/>
 				<variable name="package" value="com.cloudstong.business.fruit"/>
 			</subtable>
 			<subtable tableName="bus_ftypes" relation="1:n" foreignKey="tbl_fruit_id">
 				<variable name="class" value="FruitType" />
-				<variable name="page" value="pages/business/fruit"/>
+				<variable name="page" value="business/fruit"/>
 				<variable name="package" value="com.cloudstong.business.fruit"/>
 			</subtable>
 		</subtables>
@@ -72,17 +72,17 @@
 	
 	<table tableName="bus_product">
 		<variable name="class" value="Product"/>
-		<variable name="page" value="pages/business/product"/>
+		<variable name="page" value="business/product"/>
 		<variable name="package" value="com.cloudstong.business.product"/>
 		<subtables>
 			<subtable tableName="bus_productdetail" relation="1:1" foreignKey="tbl_product_id">
 				<variable name="class" value="ProductDetail"/>
-				<variable name="page" value="pages/business/product"/>
+				<variable name="page" value="business/product"/>
 				<variable name="package" value="com.cloudstong.business.product"/>
 			</subtable>
 			<subtable tableName="bus_pingjia" relation="1:n" foreignKey="tbl_product_id">
 				<variable name="class" value="Pingjia" />
-				<variable name="page" value="pages/business/product"/>
+				<variable name="page" value="business/product"/>
 				<variable name="package" value="com.cloudstong.business.product"/>
 			</subtable>
 		</subtables>

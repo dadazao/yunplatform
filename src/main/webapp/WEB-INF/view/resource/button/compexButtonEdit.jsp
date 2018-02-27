@@ -58,27 +58,10 @@
 		formbzUrl = "<%=basePath %>/pages/resource/compexshowFormHelp.action?formId=${formId}";
 		
 		var edit = "${op}";
-		if(edit == 'new') {
-			loadDefaultFont();
-		}
 		ns.common.mouseForButton();
 
 	});
 
-	//获得缺省的字体
-	function loadDefaultFont() {
-		$.ajax({
-			type:'POST',
-			url:'<%=basePath %>/pages/deployment/fontload.action',
-		    dataType:'json',
-			success:function(data){
-				$("#sys_button-tbl_buttonNameFontSize").val((data.fontSize));
-				$("#sys_button-tbl_buttonNameFontStyle").val(data.fontFamily);
-				$("#sys_button-tbl_buttonNameFontColor").val(data.color);
-			}
-		});
-	}
-	
 	function initButtonCssStyle(){
 		$('#btn').attr("value",$("#button_buttonName").val());
 		$('#btn').css("fontFamily",$("#button_buttonNameFontStyle").val());

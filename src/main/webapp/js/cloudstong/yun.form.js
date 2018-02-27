@@ -730,7 +730,7 @@
 													"<input id='parentId"+name+"' name='"+name+"' value='"+value+"' type='hidden'/>" +
 													"</td>" +
 													"<td style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'>" +
-													"<button style='width:44px;height:20px;' type='button' class='listbutton' onclick=\"eventCompexMultiTREE("+__basePath+"'/pages/resource/tree/fetchShowTreeParamById.action?treeId="+fc.compexId+"&parentName=parentName"+name+"&parentId=parentId"+name+"')\">选择</button></td></tr></table>");
+													"<button style='width:44px;height:20px;' type='button' class='listbutton' onclick=\"eventCompexMultiTREE('"+__basePath+"/pages/resource/tree/fetchShowTreeParamById.action?treeId="+fc.compexId+"&parentName=parentName"+name+"&parentId=parentId"+name+"')\">选择</button></td></tr></table>");
 											}else{
 												$('#' + temp+tab.id + '_value_t' + l).html(
 													"<table cellspacing='0' cellpadding='0' border='0'>" +
@@ -739,7 +739,7 @@
 													"<input id='parentId"+name+"' name='"+name+"' value='"+value+"' type='hidden'/>" +
 													"</td>" +
 													"<td style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'>" +
-													"<button style='width:44px;height:20px;' type='button' class='listbutton' onclick=\"eventCompexTREE("+__basePath+"'/pages/resource/tree/fetchShowTreeParamById.action?treeId="+fc.compexId+"&parentName=parentName"+name+"&parentId=parentId"+name+"')\">选择</button></td></tr></table>");	
+													"<button style='width:44px;height:20px;' type='button' class='listbutton' onclick=\"eventCompexTREE('"+__basePath+"/pages/resource/tree/fetchShowTreeParamById.action?treeId="+fc.compexId+"&parentName=parentName"+name+"&parentId=parentId"+name+"')\">选择</button></td></tr></table>");	
 											}
 											
 										}
@@ -947,7 +947,7 @@
 												}
 											});
 											}
-											$("#" + temp+tab.id + "_value_t" + l).html("<textarea id='person_"+name+"' rows='5' cols='103' disabled>" + showValue +"</textarea><input type='hidden' id='"+name+"' name='" + name + "' value='"+hideValue+"'><br/><button  id='personSelectDialog' type='button' class='listbutton' onclick=\"eventCompexPersonTREE("+__basePath+"'/pages/resource/personChoise/page.action?personChoiseName=person_"+name+"&personChoiseId="+name+"')\">选择</button>");
+											$("#" + temp+tab.id + "_value_t" + l).html("<textarea id='person_"+name+"' rows='5' cols='103' disabled>" + showValue +"</textarea><input type='hidden' id='"+name+"' name='" + name + "' value='"+hideValue+"'><br/><button  id='personSelectDialog' type='button' class='listbutton' onclick=\"eventCompexPersonTREE('"+__basePath+"/pages/resource/personChoise/page.action?personChoiseName=person_"+name+"&personChoiseId="+name+"')\">选择</button>");
 										}
 									}else{
 										$("#" + temp+tab.id + "_value_t" + l).html("<font color='red'>无权限</font>");
@@ -1275,7 +1275,7 @@
 														}
 													});
 												}
-												$('#' + ptemplateFileName+tab.id+partition.id + '_value_t' + l).html("<table cellspacing='0' cellpadding='0' border='0'><tr><td align='left' style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><input id='parentName"+name+"' type='text' class='"+required+"' readonly='true' value='"+parentName+"'/>"+xinghao+"<input id='parentId"+name+"' name='"+name+"' value='"+value+"' type='hidden'/></td><td style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><button style='width:44px;height:20px;' type='button' class='listbutton' onclick=\"eventCompexTREE("+__basePath+"'/pages/resource/tree/fetchShowTreeParamById.action?treeId="+fc.compexId+"&parentName=parentName"+name+"&parentId=parentId"+name+"')\">选择</button></td></tr></table>");
+												$('#' + ptemplateFileName+tab.id+partition.id + '_value_t' + l).html("<table cellspacing='0' cellpadding='0' border='0'><tr><td align='left' style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><input id='parentName"+name+"' type='text' class='"+required+"' readonly='true' value='"+parentName+"'/>"+xinghao+"<input id='parentId"+name+"' name='"+name+"' value='"+value+"' type='hidden'/></td><td style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><button style='width:44px;height:20px;' type='button' class='listbutton' onclick=\"eventCompexTREE('"+__basePath+"/pages/resource/tree/fetchShowTreeParamById.action?treeId="+fc.compexId+"&parentName=parentName"+name+"&parentId=parentId"+name+"')\">选择</button></td></tr></table>");
 											}
 											if(fc.inputType ==9){//自定义
 												$("#" + ptemplateFileName+tab.id+partition.id + "_value_t" + l).html("<div id='"+name+"Custom'></div>");
@@ -1444,7 +1444,7 @@
 													}
 												});
 												}
-												$("#" + ptemplateFileName+tab.id+partition.id + "_value_t" + l).html("<textarea id='person_"+name+"' rows='5' cols='103' disabled>" + showValue +"</textarea><input type='hidden' id='"+name+"' name='" + name + "' value='"+hideValue+"'><br/><button  id='personSelectDialog' type='button' class='listbutton' onclick=\"eventCompexPersonTREE("+__basePath+"'/pages/resource/personChoise/page.action?personChoiseName=person_"+name+"&personChoiseId="+name+"')\">选择</button>");
+												$("#" + ptemplateFileName+tab.id+partition.id + "_value_t" + l).html("<textarea id='person_"+name+"' rows='5' cols='103' disabled>" + showValue +"</textarea><input type='hidden' id='"+name+"' name='" + name + "' value='"+hideValue+"'><br/><button  id='personSelectDialog' type='button' class='listbutton' onclick=\"eventCompexPersonTREE('"+__basePath+"/pages/resource/personChoise/page.action?personChoiseName=person_"+name+"&personChoiseId="+name+"')\">选择</button>");
 											}
 		
 										}else{
@@ -2132,7 +2132,7 @@
 														}
 													});
 												}
-												$('#' + ptemplateFileName+tab.id+partition.id + '_value_t' + l).html("<table cellspacing='0' cellpadding='0' border='0'><tr><td align='left' style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><input disabled='disabled' id='parentName"+name+"' type='text' class='"+required+"' readonly='true' value='"+parentName+"'/>"+xinghao+"<input id='parentId"+name+"' name='"+name+"' value='"+value+"' type='hidden'/></td><td style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><button disabled='disabled' style='width:44px;height:20px;' type='button' class='listbutton' onclick=\"eventCompexTREE("+__basePath+"'/pages/resource/tree/fetchShowTreeParamById.action?treeId="+fc.compexId+"&parentName=parentName"+name+"&parentId=parentId"+name+"')\">选择</button></td></tr></table>");
+												$('#' + ptemplateFileName+tab.id+partition.id + '_value_t' + l).html("<table cellspacing='0' cellpadding='0' border='0'><tr><td align='left' style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><input disabled='disabled' id='parentName"+name+"' type='text' class='"+required+"' readonly='true' value='"+parentName+"'/>"+xinghao+"<input id='parentId"+name+"' name='"+name+"' value='"+value+"' type='hidden'/></td><td style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><button disabled='disabled' style='width:44px;height:20px;' type='button' class='listbutton' onclick=\"eventCompexTREE('"+__basePath+"/pages/resource/tree/fetchShowTreeParamById.action?treeId="+fc.compexId+"&parentName=parentName"+name+"&parentId=parentId"+name+"')\">选择</button></td></tr></table>");
 											}
 											if(fc.inputType ==9){//自定义
 												$("#" + ptemplateFileName+tab.id+partition.id + "_value_t" + l).html("<div id='"+name+"Custom'></div>");
@@ -2509,7 +2509,7 @@
 									}
 								});
 							}
-							$('#' + ptemplateFileName+partition.tabId+partition.id + '_value_t' + l).html("<table cellspacing='0' cellpadding='0' border='0'><tr><td align='left' style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><input "+disa+" id='parentName"+name+"' type='text' class='"+required+"' readonly='true' value='"+parentName+"'/>"+xinghao+"<input id='parentId"+name+"' name='"+name+"' value='"+value+"' type='hidden'/></td><td style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><button "+disa+" style='width:44px;height:20px;' type='button' class='listbutton' onclick=\"eventCompexTREE("+__basePath+"'/pages/resource/tree/fetchShowTreeParamById.action?treeId="+fc.compexId+"&parentName=parentName"+name+"&parentId=parentId"+name+"')\">选择</button></td></tr></table>");
+							$('#' + ptemplateFileName+partition.tabId+partition.id + '_value_t' + l).html("<table cellspacing='0' cellpadding='0' border='0'><tr><td align='left' style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><input "+disa+" id='parentName"+name+"' type='text' class='"+required+"' readonly='true' value='"+parentName+"'/>"+xinghao+"<input id='parentId"+name+"' name='"+name+"' value='"+value+"' type='hidden'/></td><td style='background-color: #FFFFFF;border-bottom: #CECCCD 0px solid;border-right: #CECCCD 0px solid;'><button "+disa+" style='width:44px;height:20px;' type='button' class='listbutton' onclick=\"eventCompexTREE('"+__basePath+"/pages/resource/tree/fetchShowTreeParamById.action?treeId="+fc.compexId+"&parentName=parentName"+name+"&parentId=parentId"+name+"')\">选择</button></td></tr></table>");
 						}
 						if(fc.inputType ==9){//自定义
 							$("#" + ptemplateFileName+partition.tabId+partition.id + "_value_t" + l).html("<div id='"+name+"Custom'></div>");

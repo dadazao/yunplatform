@@ -66,7 +66,7 @@
 	<div  class="buttonPanel">
 		<button class="listbutton" name="b1" id="XG" type="button">修改</button>
 		<button class="listbutton" name="b2" id="BC" type="button">保存</button>
-		<button class="listbutton" name="b3" id="DY" type="button">打印</button>
+		<!-- <button class="listbutton" name="b3" id="DY" type="button">打印</button> -->
 		<button class="listbutton" name="b4" id="BZ" type="button">帮助</button>
 	</div>
 	<div class="tabs">

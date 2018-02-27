@@ -206,7 +206,7 @@ $(function(){
 				   </tr>
 				   <tr>
 				     <td class="Input_Table_Label" align="left"><label>&nbsp;功能说明</label></td>
-				     <td colspan="3" align="left"><textarea id="remarks" name="tabulation.remarks" class="textInput required" rows="6" cols="103" >${tabulation.remarks}</textarea><!-- <span class="star">*</span> --></td>
+				     <td colspan="3" align="left"><textarea id="remarks" name="tabulation.remarks" class="textInput" rows="6" cols="103" >${tabulation.remarks}</textarea></td>
 				   </tr>
 		  	 	</table>
 			</form>

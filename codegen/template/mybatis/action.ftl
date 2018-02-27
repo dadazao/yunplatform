@@ -41,7 +41,9 @@ import com.cloudstong.platform.core.web.action.BaseAction;
 	<#elseif mainTable.relation=="1:n">
 @Results(value = {
 		@Result(name = "edit", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
-		@Result(name = "sublist", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}List.jsp"), })
+		@Result(name = "sublist", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}List.jsp"), 
+		@Result(name = "tab", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Tab.jsp")
+})
 	</#if>
 <#else><#--主表-->
 @Namespace("/${mainTable.namespace}")
@@ -49,7 +51,7 @@ import com.cloudstong.platform.core.web.action.BaseAction;
 	@Result(name = "list", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}List.jsp"),
 	@Result(name = "add", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
 	@Result(name = "edit", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
-	@Result(name = "view", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}View.jsp")
+	@Result(name = "view", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}View.jsp")	
 })
 </#if>
 public class ${mainTable.variables.class}Action extends BaseAction {
@@ -188,6 +190,11 @@ public class ${mainTable.variables.class}Action extends BaseAction {
 
 		return "sublist";
 	}
+	
+	@Action("tab")
+	public String tab() {
+		return "tab";
+	}
 	<#elseif mainTable.sub==false>
 	@Action("list")
 	public String list() {
@@ -220,6 +227,7 @@ public class ${mainTable.variables.class}Action extends BaseAction {
 		return "list";
 	}
 	</#if>
+	
 	<#--增加方法-->
 	<#if mainTable.sub==false>
 	@Action("add")
@@ -228,7 +236,7 @@ public class ${mainTable.variables.class}Action extends BaseAction {
 		return "add";
 	}
 	</#if>
-	
+		
 	public ${mainTable.variables.class} get${mainTable.variables.class}() {
 		return ${mainTable.variables.class?uncap_first};
 	}

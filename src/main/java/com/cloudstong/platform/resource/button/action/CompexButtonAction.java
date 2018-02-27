@@ -120,6 +120,20 @@ public class CompexButtonAction extends CompexDomainAction {
 	public String logicDelete() throws IOException  {
 		return super.logicDelete();
 	}
+	
+	@Action("viewJson") 
+	public String viewJson() throws Exception {
+		return super.viewJson();
+	}
+	
+	@Action("dataJson") 
+	public String dataJson() throws Exception {
+		return super.dataJson();
+	}
+	@Action("save") 
+	public String save() throws Exception {
+		return super.save();
+	}
 	/**
 	 * 根据ID查找按钮信息，返回json对象
 	 * 
