@@ -29,7 +29,7 @@ yunplatform是基于JavaEE开源、轻量级的企业敏捷开发与管理平台
 9、流程多版本管理  
 10、流程表单多版本管理  
 11、流程任务的灵活人员运算处理  
-
+  
 # 权限管理：  
 1、RBAC（Role Based Access Control）。  
 2、基于Spring Security 4.2.4，通过拦截任意URL资源是否分配给用户的角色来判断有无访问权限。  
