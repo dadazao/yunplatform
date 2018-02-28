@@ -34,7 +34,7 @@
 	}
 	
 	$(function(){
-		$("#orgtreeId").load("<%=basePath %>/pages/system/role/orgTree.jsp");
+		$("#orgtreeId").load("<%=basePath %>/pages/system/role/orgTree.action");
 		ns.role.loadAllUser();
 	});
 //-->

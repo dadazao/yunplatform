@@ -45,7 +45,7 @@ public class LogoDaoImpl implements LogoDao {
 	}
 
 	@Override
-	@CacheEvict(value = "themeCache", allEntries = true, beforeInvocation = true)
+	@CacheEvict(value = {"themeCache","domainCache"}, allEntries = true, beforeInvocation = true)
 	public void insert(Logo logo) {
 		String sql = "insert into sys_logo(id,tbl_logomingcheng,tbl_suozailujing)values(?,?,?)";
 		Object[] params = new Object[] { UniqueIdUtil.genId(), logo.getLogoName(),
@@ -79,7 +79,7 @@ public class LogoDaoImpl implements LogoDao {
 	}
 
 	@Override
-	@CacheEvict(value = "themeCache", allEntries = true, beforeInvocation = true)
+	@CacheEvict(value = {"themeCache","domainCache"}, allEntries = true, beforeInvocation = true)
 	public void delete(Long[] ids) {
 		for (int i = 0; i < ids.length; i++) {
 			Logo logo = this.findLogoById(ids[i]);
@@ -102,7 +102,7 @@ public class LogoDaoImpl implements LogoDao {
 	}
 
 	@Override
-	@CacheEvict(value = "themeCache", allEntries = true, beforeInvocation = true)
+	@CacheEvict(value = {"themeCache","domainCache"}, allEntries = true, beforeInvocation = true)
 	public void update(Long id) {
 		try {
 			String allUsql = "update sys_logo set tbl_isdefault = 0";

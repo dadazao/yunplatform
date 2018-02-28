@@ -54,9 +54,8 @@
 							<td align="left" width="50%">
 								<input maxlength="50" type="text" name="sysUser.username" value="${sysUser.username}"  class="textInput required" style="width:180px;"/>
 							</td>
-							<td rowspan="10">
-								上传照片：
-								<input type="file" name="upload"/>
+							<td rowspan="10" align="center">
+								<input type="file" name="upload" style='color: transparent;'/>
 								<input type="hidden" name="sysUser.userPic" value="${sysUser.userPic }">
 							</td>
 						</tr>

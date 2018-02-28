@@ -49,7 +49,7 @@
 	}
 </script>
 <div id="projectSubEditDiv">
-	<form id="projectSubEditForm" method="post" class="pageForm required-validate" onsubmit="return validateCallback(this, refreshList);" novalidate="novalidate">
+	<form id="projectSubEditForm" method="post" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogRefresh);" novalidate="novalidate">
 		<div style="display: none">
 			<input type="hidden" name="project.id" value="${project.id}" />
 		</div>

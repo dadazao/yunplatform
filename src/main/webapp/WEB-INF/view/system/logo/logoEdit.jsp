@@ -46,7 +46,7 @@ function selfDialogAjaxDone(json) {
 	<div style="vertical-align: middle;">
 		<p>
 		<br>
-			选择logo：<input type="file" name="upload">
+			选择logo：<input type="file" name="upload" style='color: transparent;'>
 		</p>
 		<br>
 		<br>

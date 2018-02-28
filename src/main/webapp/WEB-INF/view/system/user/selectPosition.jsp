@@ -8,7 +8,7 @@
 <script type="text/javascript">
 <!--
 	$(function(){
-		$("#allPositionTreeDiv").load("<%=basePath %>/pages/system/user/positionTree.jsp");
+		$("#allPositionTreeDiv").load("<%=basePath %>/pages/system/user/positionTree.action");
 		$("#selectedPositionListDiv").loadUrl("<%=basePath %>/pages/system/user/userselectedPositionList.action?userId="+$("#userId").val());
 	});
 	

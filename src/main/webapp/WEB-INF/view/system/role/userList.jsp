@@ -7,7 +7,7 @@
 <script type="text/javascript">
 <!--
 ns.role.addUser = function(){
-	$.pdialog.open("<%=basePath %>/pages/system/role/addUser.jsp?roleId="+$("#roleId").val(),"addUserDialog","添加用户",{width:800,height:500,mask:true,resizable:true});
+	$.pdialog.open("<%=basePath %>/pages/system/role/addUser.action?roleId="+$("#roleId").val(),"addUserDialog","添加用户",{width:800,height:500,mask:true,resizable:true});
 }
 
 ns.role.deleteUser = function(){

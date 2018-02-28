@@ -35,7 +35,7 @@
 						</tr>
 						<tr>
 							<td align="left" class="Input_Table_Label" width="10%">内容</td>
-							<td align="left">${receivedMessage.content}</td>
+							<td align="left" style="padding: 15px;">${receivedMessage.content}</td>
 						</tr>
 					</table>
 				</div>

@@ -51,7 +51,7 @@
 								${sysUser.username}
 							</td>
 							<td rowspan="10">
-								<img src="${sysUser.userPic}">
+								<img src="<%=basePath %>${sysUser.userPic}">
 							</td>
 						</tr>
 						<tr>

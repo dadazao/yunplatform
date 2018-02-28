@@ -26,7 +26,7 @@
 	}
 	
 	ns.role.assignAuth = function(id){
-		$.pdialog.open("<%=basePath %>/pages/system/role/assignAuth.jsp?roleId="+id,"assignAuthDialog","权限分配",{width:950,height:650,mask:true,resizable:true});
+		$.pdialog.open("<%=basePath %>/pages/system/role/assignAuth.action?roleId="+id,"assignAuthDialog","权限分配",{width:950,height:650,mask:true,resizable:true});
 	}
 	
 	ns.role.roleDelete = function(){

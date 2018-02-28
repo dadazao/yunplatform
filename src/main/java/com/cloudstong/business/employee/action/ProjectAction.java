@@ -33,6 +33,7 @@ import com.cloudstong.platform.core.web.action.BaseAction;
 @ParentPackage("default")
 @Namespace("/pages/business/employee/project")
 @Results(value = {
+		@Result(name = "add", location = "/WEB-INF/view/business/employee/projectEdit.jsp"),
 		@Result(name = "edit", location = "/WEB-INF/view/business/employee/projectEdit.jsp"),
 		@Result(name = "sublist", location = "/WEB-INF/view/business/employee/projectList.jsp"), 
 		@Result(name = "tab", location = "/WEB-INF/view/business/employee/projectTab.jsp")
@@ -64,6 +65,11 @@ public class ProjectAction extends BaseAction {
 			}
 		}
 		return NONE;
+	}
+	@Action("add")
+	public String add() {
+		project = new Project();
+		return "add";
 	}
 	@Action("edit")
 	public String edit() {

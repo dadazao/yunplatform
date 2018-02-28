@@ -51,7 +51,13 @@ import com.cloudstong.platform.system.service.SysUserService;
 		@Result(name = "edit", location = "/WEB-INF/view/system/user/userEdit.jsp"),
 		@Result(name = "resetPassword", location = "/WEB-INF/view/system/user/resetPassword.jsp"),
 		@Result(name = "resetStatus", location = "/WEB-INF/view/system/user/resetStatus.jsp"),
-		@Result(name = "dialog", location = "/WEB-INF/view/system/user/sysUserDialog.jsp")
+		@Result(name = "dialog", location = "/WEB-INF/view/system/user/sysUserDialog.jsp"),
+		@Result(name = "selectOrg", location = "/WEB-INF/view/system/user/selectOrg.jsp"),
+		@Result(name = "selectPosition", location = "/WEB-INF/view/system/user/selectPosition.jsp"),
+		@Result(name = "selectRole", location = "/WEB-INF/view/system/user/selectRole.jsp"),
+		@Result(name = "orgTree", location = "/WEB-INF/view/system/user/orgTree.jsp"),
+		@Result(name = "positionTree", location = "/WEB-INF/view/system/user/positionTree.jsp"),
+		@Result(name = "roleTree", location = "/WEB-INF/view/system/user/roleTree.jsp")
 })
 public class SysUserAction extends BaseAction {
 	@Resource
@@ -101,6 +107,36 @@ public class SysUserAction extends BaseAction {
 	private String newPassword;
 	
 	private String reNewPassword;
+	
+	@Action("selectOrg")
+	public String selectOrg() {
+		return "selectOrg";
+	}
+	
+	@Action("selectPosition")
+	public String selectPosition() {
+		return "selectPosition";
+	}
+	
+	@Action("selectRole")
+	public String selectRole() {
+		return "selectRole";
+	}
+	
+	@Action("orgTree")
+	public String orgTree() {
+		return "orgTree";
+	}
+	
+	@Action("positionTree")
+	public String positionTree() {
+		return "positionTree";
+	}
+	
+	@Action("roleTree")
+	public String roleTree() {
+		return "roleTree";
+	}
 	
 	@Action("dialog")
 	public String dialog() {
@@ -290,6 +326,8 @@ public class SysUserAction extends BaseAction {
 		}
 		queryCriteria.setCurrentPage(this.pageNum);
 		queryCriteria.setPageSize(this.numPerPage);
+		queryCriteria.setOrderField("comm_createDate");
+		queryCriteria.setOrderDirection("desc");
 		try {
 			this.pageResult = sysUserService.queryUser(queryCriteria);
 		} catch (Exception e) {

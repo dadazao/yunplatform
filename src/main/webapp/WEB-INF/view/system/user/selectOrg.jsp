@@ -8,7 +8,7 @@
 <script type="text/javascript">
 <!--
 	$(function(){
-		$("#allOrgTreeDiv").load("<%=basePath %>/pages/system/user/orgTree.jsp");
+		$("#allOrgTreeDiv").load("<%=basePath %>/pages/system/user/orgTree.action");
 		$("#selectedOrgListDiv").loadUrl("<%=basePath %>/pages/system/user/userselectedOrgList.action?userId="+$("#userId").val());
 	});
 	

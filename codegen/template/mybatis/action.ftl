@@ -36,10 +36,13 @@ import com.cloudstong.platform.core.web.action.BaseAction;
 <#if mainTable.sub>
 @Namespace("/${mainTable.namespace}/${mainTable.variables.class?uncap_first}")
 	<#if mainTable.relation=="1:1">
-@Results(value = { @Result(name = "edit", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
-		@Result(name = "view", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}View.jsp") })
+@Results(value = { 
+		@Result(name = "edit", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
+		@Result(name = "view", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}View.jsp") 
+})
 	<#elseif mainTable.relation=="1:n">
 @Results(value = {
+		@Result(name = "add", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
 		@Result(name = "edit", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
 		@Result(name = "sublist", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}List.jsp"), 
 		@Result(name = "tab", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Tab.jsp")
@@ -194,6 +197,12 @@ public class ${mainTable.variables.class}Action extends BaseAction {
 	@Action("tab")
 	public String tab() {
 		return "tab";
+	}
+	
+	@Action("add")
+	public String add() {
+		${mainTable.variables.class?uncap_first} = new ${mainTable.variables.class}();
+		return "add";
 	}
 	<#elseif mainTable.sub==false>
 	@Action("list")

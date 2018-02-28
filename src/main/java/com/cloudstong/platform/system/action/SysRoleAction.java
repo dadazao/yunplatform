@@ -52,7 +52,10 @@ import com.cloudstong.platform.system.service.SysRoleService;
 		@Result(name = "userList", location = "/WEB-INF/view/system/role/userList.jsp"),
 		@Result(name = "catalogAuthList", location = "/WEB-INF/view/system/role/catalogAuthList.jsp"),
 		@Result(name = "dialog", location = "/WEB-INF/view/system/role/sysRoleDialog.jsp"),
-		@Result(name = "catalogTree", location = "/WEB-INF/view/system/role/catalogTree.jsp")
+		@Result(name = "catalogTree", location = "/WEB-INF/view/system/role/catalogTree.jsp"),
+		@Result(name = "addUser", location = "/WEB-INF/view/system/role/addUser.jsp"),
+		@Result(name = "assignAuth", location = "/WEB-INF/view/system/role/assignAuth.jsp"),
+		@Result(name = "orgTree", location = "/WEB-INF/view/system/role/orgTree.jsp")
 })
 public class SysRoleAction extends BaseAction {
 
@@ -86,6 +89,21 @@ public class SysRoleAction extends BaseAction {
 	 */
 	public void setSysRole(SysRole sysRole) {
 		this.sysRole = sysRole;
+	}
+	
+	@Action("addUser")
+	public String addUser() {
+		return "addUser";
+	}
+	
+	@Action("assignAuth")
+	public String assignAuth() {
+		return "assignAuth";
+	}
+	
+	@Action("orgTree")
+	public String orgTree() {
+		return "orgTree";
 	}
 	
 	@Action("catalogTree")
@@ -229,7 +247,7 @@ public class SysRoleAction extends BaseAction {
 	}
 	
 	@Action("roleaddUser")
-	public String addUser(){
+	public String roleaddUser(){
 		sysRoleService.doAddUser(userIds,roleId);
 		return NONE;
 	}

@@ -8,7 +8,7 @@
 <script type="text/javascript">
 <!--
 	$(function(){
-		$("#allRoleTreeDiv").load("<%=basePath %>/pages/system/user/roleTree.jsp");
+		$("#allRoleTreeDiv").load("<%=basePath %>/pages/system/user/roleTree.action");
 		$("#selectedRoleListDiv").loadUrl("<%=basePath %>/pages/system/user/userselectedRoleList.action?userId="+$("#userId").val());
 	});
 	

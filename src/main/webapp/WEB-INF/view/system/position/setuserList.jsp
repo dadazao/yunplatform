@@ -7,7 +7,7 @@
 <script type="text/javascript">
 <!--
 ns.position.setAddUser = function(){
-	$.pdialog.open("<%=basePath %>/pages/system/position/addUser.jsp?positionId=${positionId}&forward=setUserList","addUserDialog","添加用户",{width:800,height:500,mask:true,resizable:true});
+	$.pdialog.open("<%=basePath %>/pages/system/position/addUser.action?positionId=${positionId}&forward=setUserList","addUserDialog","添加用户",{width:800,height:500,mask:true,resizable:true});
 }
 //-->
 </script>

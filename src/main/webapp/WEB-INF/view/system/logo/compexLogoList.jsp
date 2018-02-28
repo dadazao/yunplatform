@@ -92,7 +92,7 @@
 	  		type:'POST',
 	  		url:'<%=basePath%>/pages/system/logo/showLogo.action',
 	  		success:function(data){
-	  			$('#logoImg').attr('src',data);
+	  			$('#logoImg').attr('src','<%=basePath%>'+data);
 	  		}
 	  	});
 	}

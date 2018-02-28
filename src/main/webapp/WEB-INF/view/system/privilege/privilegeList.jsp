@@ -167,7 +167,7 @@
 			data : param,
 			success : function(data) {
 				alertMsg.info("操作成功!");
-				refresh();
+				dialogRefresh();
 			}
 		});
 	}
@@ -187,7 +187,7 @@
 			data : param,
 			success : function(data) {
 				alertMsg.info("操作成功!");
-				refresh();
+				dialogRefresh();
 			}
 		});
 	}

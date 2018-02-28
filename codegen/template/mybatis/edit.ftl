@@ -27,7 +27,7 @@
 		$("#${subTable.variables.class?uncap_first}Tab").loadUrl('${mainTable.namespace}/${subTable.variables.class?uncap_first}/edit.action?${mainTable.variables.class?uncap_first}Id='+$('#domainId').val());
 		<#else>
 		$("#tabDivId").append('<div id="${subTable.variables.class?uncap_first}Tab"></div>');
-		$("#${subTable.variables.class?uncap_first}Tab").loadUrl('${mainTable.namespace}/${subTable.variables.class?uncap_first}Tab.jsp');
+		$("#${subTable.variables.class?uncap_first}Tab").loadUrl('${mainTable.namespace}/${subTable.variables.class?uncap_first}/tab.action');
 		</#if>
 	</#list>
 	});

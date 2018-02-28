@@ -38,7 +38,7 @@
 	}
 	
 	$(function(){
-		$("#orgtreeId").load("<%=basePath %>/pages/system/position/orgTree.jsp");
+		$("#orgtreeId").load("<%=basePath %>/pages/system/position/orgTree.action");
 		ns.position.loadAllUser();
 	});
 //-->

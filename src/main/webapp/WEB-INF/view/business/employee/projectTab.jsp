@@ -21,7 +21,7 @@
 		if(domainId){
 			$("#projectSubEditDiv").loadUrl('<%=basePath %>/pages/business/employee/project/edit.action?projectId='+domainId);
 		}else{
-			$("#projectSubEditDiv").loadUrl('<%=basePath %>/pages/business/employee/projectEdit.jsp');
+			$("#projectSubEditDiv").loadUrl('<%=basePath %>/pages/business/employee/project/add.action');
 		}
 	}
 	

@@ -42,17 +42,17 @@
 	}
 	
 	ns.user.loadOrgTabList = function(){
-		var urlString = "<%=basePath %>/pages/system/user/selectOrg.jsp";
+		var urlString = "<%=basePath %>/pages/system/user/selectOrg.action";
 		$('#orgTabList').loadUrl(urlString);
 	}
 	
 	ns.user.loadPositionTabList = function(){
-		var urlString = "<%=basePath %>/pages/system/user/selectPosition.jsp";
+		var urlString = "<%=basePath %>/pages/system/user/selectPosition.action";
 		$('#positionTabList').loadUrl(urlString);
 	}
 	
 	ns.user.loadRoleTabList = function(){
-		var urlString = "<%=basePath %>/pages/system/user/selectRole.jsp";
+		var urlString = "<%=basePath %>/pages/system/user/selectRole.action";
 		$('#roleTabList').loadUrl(urlString);
 	}
 	

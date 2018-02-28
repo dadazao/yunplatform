@@ -51,11 +51,7 @@ Namespace.Register("ns.desktop");
 Namespace.Register("ns.desktop.index");
 Namespace.Register("ns.desktop.layoutDesign");
 Namespace.Register("ns.employee");
-Namespace.Register("ns.car");
-Namespace.Register("ns.carInfo");
-Namespace.Register("ns.carItem");
 Namespace.Register("ns.project");
-Namespace.Register("ns.document");
-Namespace.Register("ns.peach");
+Namespace.Register("ns.detail");
 Namespace.Register("ns.product");
 //###end_namespace####//

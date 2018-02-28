@@ -669,9 +669,9 @@
 										if(fc.inputType == 5){//上传文件
 											var uploadbox = fce.component;
 											if(op == "new"){
-												$("#" + temp+tab.id + "_value_t" + l).html("<input class='"+required+"' style='width:"+uploadbox.uploadBoxWidth+"px;height:"+uploadbox.uploadBoxHeight+"px;' type='file' id='"+name+"' name='upload'/>"+xinghao );
+												$("#" + temp+tab.id + "_value_t" + l).html("<input class='"+required+"' style='width:"+uploadbox.uploadBoxWidth+"px;height:"+uploadbox.uploadBoxHeight+"px;color: transparent;' type='file' id='"+name+"' name='upload'/>"+xinghao );
 											}else{
-												$("#" + temp+tab.id + "_value_t" + l).html("<input type='file' style='width:"+uploadbox.uploadBoxWidth+"px;height:"+uploadbox.uploadBoxHeight+"px;' id='"+name+"' name='upload'/>");
+												$("#" + temp+tab.id + "_value_t" + l).html("<input type='file' style='width:"+uploadbox.uploadBoxWidth+"px;height:"+uploadbox.uploadBoxHeight+"px;color: transparent;' id='"+name+"' name='upload'/>");
 											}
 										}
 										if(fc.inputType == 6) {//日期组件

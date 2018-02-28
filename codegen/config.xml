@@ -36,10 +36,10 @@
 		
 		<file refTemplate="action" fileName="{class}Action.java" dir="src/main/java/{package}/action"/>
 		
-		<file refTemplate="list" fileName="{class}List.jsp" dir="src/main/webapp/WEB-INF/view/{page}" table="main,1:n"/>
-		<file refTemplate="edit" fileName="{class}Edit.jsp" dir="src/main/webapp/WEB-INF/view/{page}"/>
-		<file refTemplate="view" fileName="{class}View.jsp" dir="src/main/webapp/WEB-INF/view/{page}" table="main,1:1"/>
-		<file refTemplate="tab" fileName="{class}Tab.jsp" dir="src/main/webapp/WEB-INF/view/{page}" table="1:n" />
+		<file refTemplate="list" fileName="{class}List.jsp" dir="src/main/webapp/{page}" table="main,1:n"/>
+		<file refTemplate="edit" fileName="{class}Edit.jsp" dir="src/main/webapp/{page}"/>
+		<file refTemplate="view" fileName="{class}View.jsp" dir="src/main/webapp/{page}" table="main,1:1"/>
+		<file refTemplate="tab" fileName="{class}Tab.jsp" dir="src/main/webapp/{page}" table="1:n" />
 		<file refTemplate="mapper" fileName="{class}.map.xml" dir="src/main/resource/com/cloudstong/business/maper"/>
 		<file refTemplate="en_US_properties" fileName="ApplicationResources_en_US.properties" dir="src/main/resource" append="true"/>
 		<file refTemplate="zh_CN_properties" fileName="ApplicationResources_zh_CN.properties" dir="src/main/resource" append="true"/>
@@ -72,17 +72,17 @@
 	
 	<table tableName="bus_product">
 		<variable name="class" value="Product"/>
-		<variable name="page" value="business/product"/>
+		<variable name="page" value="WEB-INF/view/business/product"/>
 		<variable name="package" value="com.cloudstong.business.product"/>
 		<subtables>
 			<subtable tableName="bus_productdetail" relation="1:1" foreignKey="tbl_product_id">
 				<variable name="class" value="ProductDetail"/>
-				<variable name="page" value="business/product"/>
+				<variable name="page" value="WEB-INF/view/business/product"/>
 				<variable name="package" value="com.cloudstong.business.product"/>
 			</subtable>
 			<subtable tableName="bus_pingjia" relation="1:n" foreignKey="tbl_product_id">
 				<variable name="class" value="Pingjia" />
-				<variable name="page" value="business/product"/>
+				<variable name="page" value="WEB-INF/view/business/product"/>
 				<variable name="package" value="com.cloudstong.business.product"/>
 			</subtable>
 		</subtables>

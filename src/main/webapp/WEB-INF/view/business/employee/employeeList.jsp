@@ -88,7 +88,7 @@
 						</td>
 						<td>
 							<button type="button" class="listbutton" onclick="ns.common.query('defaultQueryForm');">查询</button>
-							<button type="button" class="listbutton" onclick="ns.common.showQuery(1);">高级查询</button>
+							<!-- <button type="button" class="listbutton" onclick="ns.common.showQuery(1);">高级查询</button> -->
 						</td>
 					</tr>
 				</table>

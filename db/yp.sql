@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-02-27 16:12:31
+Date: 2018-02-28 16:56:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1303,6 +1303,7 @@ CREATE TABLE `bus_detail` (
 -- ----------------------------
 -- Records of bus_detail
 -- ----------------------------
+INSERT INTO `bus_detail` VALUES ('10000006550001', '2052751705', '2018-02-28 16:34:22', null, null, '0', '0', '123', '1', '10000006550000');
 
 -- ----------------------------
 -- Table structure for bus_device
@@ -1348,6 +1349,7 @@ CREATE TABLE `bus_employee` (
 -- ----------------------------
 -- Records of bus_employee
 -- ----------------------------
+INSERT INTO `bus_employee` VALUES ('10000006550000', '2052751705', '2018-02-28 16:34:15', null, null, '水电费', '123', '2018-02-28', '213', null, '0');
 
 -- ----------------------------
 -- Table structure for bus_pingjia
@@ -1363,13 +1365,14 @@ CREATE TABLE `bus_pingjia` (
   `comm_mark_for_delete` int(1) DEFAULT '0',
   `tbl_scorce` varchar(50) DEFAULT NULL,
   `tbl_xxms` longtext,
-  `tbl_product_id` bigint(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bus_pingjia
 -- ----------------------------
+INSERT INTO `bus_pingjia` VALUES ('10000006540010', null, null, null, null, '0', '0', '21', '12');
+INSERT INTO `bus_pingjia` VALUES ('10000006540012', null, null, null, null, '0', '0', '2323', '21213');
 
 -- ----------------------------
 -- Table structure for bus_product
@@ -1416,6 +1419,22 @@ CREATE TABLE `bus_productdetail` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for bus_product_pingjia
+-- ----------------------------
+DROP TABLE IF EXISTS `bus_product_pingjia`;
+CREATE TABLE `bus_product_pingjia` (
+  `id` varchar(50) NOT NULL,
+  `tbl_mainid` varchar(50) DEFAULT NULL,
+  `tbl_subid` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bus_product_pingjia
+-- ----------------------------
+INSERT INTO `bus_product_pingjia` VALUES ('10000006540013', '10000006540009', '10000006540012');
+
+-- ----------------------------
 -- Table structure for bus_project
 -- ----------------------------
 DROP TABLE IF EXISTS `bus_project`;
@@ -1436,6 +1455,8 @@ CREATE TABLE `bus_project` (
 -- ----------------------------
 -- Records of bus_project
 -- ----------------------------
+INSERT INTO `bus_project` VALUES ('10000006550002', '2052751705', '2018-02-28 16:34:27', null, null, '0', '0', '213', '12', '10000006550001');
+INSERT INTO `bus_project` VALUES ('10000006550003', '2052751705', '2018-02-28 16:38:51', null, null, '0', '0', '水电费', '23', '10000006550000');
 
 -- ----------------------------
 -- Table structure for bus_xinxifabu
@@ -1655,7 +1676,7 @@ INSERT INTO `sys_biaodan` VALUES ('73', '列表管理表单', '1', '2012-09-26 1
 INSERT INTO `sys_biaodan` VALUES ('153', '搜索下拉框管理表单', '1', '2012-09-26 13:13:21', 'FORM-20130304171522840-SYSM-00001', '0', null, null, '搜索下拉框管理表单', '', 'sys_searchcombox', '2052751705', '2014-09-16 20:42:45', '950', '650', '$(\"#sys_searchcombox-tbl_gaodu\").attr(\"disabled\",\"true\");', '', '', '200', 'sys', '0');
 INSERT INTO `sys_biaodan` VALUES ('77', '按钮组管理表单', '1', '2012-09-26 13:12:46', 'FORM-20130304171522845-SYSM-00001', '0', '', null, '定制及维护单个按钮组', '', 'sys_buttongroup', '1', '2012-11-30 13:21:20', '950', '650', null, null, null, '5', 'sys', '0');
 INSERT INTO `sys_biaodan` VALUES ('78', '数据源管理表单', '1', '2012-09-26 13:12:47', 'FORM-20130304171522847-SYSM-00001', '0', '', null, '配置及维护单个数据源', '', 'sys_dataSources', '1', '2012-08-17 11:45:41', '950', '650', null, null, null, '133', 'sys', '0');
-INSERT INTO `sys_biaodan` VALUES ('97', '行业公告表单', '1', '2012-09-26 13:12:49', 'FORM-20130304171522849-SYSM-00001', '0', '', null, '行业公告', '', 'bus_xinxifabu', '2052751705', '2013-10-25 19:38:54', '950', '650', null, null, null, '140', 'sys', '0');
+INSERT INTO `sys_biaodan` VALUES ('97', '行业公告表单', '1', '2012-09-26 13:12:49', 'FORM-20130304171522849-SYSM-00001', '0', '', null, '行业公告', '', 'bus_xinxifabu', '2052751705', '2018-02-28 15:56:56', '950', '650', null, null, null, '140', 'sys', '0');
 INSERT INTO `sys_biaodan` VALUES ('95', '署内新闻表单', '1', '2012-09-26 13:12:48', 'FORM-20130304171522851-SYSM-00001', '0', null, null, '部内通知表单', '', 'bus_xinxifabu', '2052751705', '2013-10-24 16:53:08', '950', '650', '', '', '', '140', 'sys', '0');
 INSERT INTO `sys_biaodan` VALUES ('105', '信息发布表单', '1', '2012-09-26 13:12:51', 'FORM-20130304171522854-SYSM-00001', '0', '', null, '编辑及维护单条待发布信息', '', 'bus_xinxifabu', '1', '2012-08-16 14:29:43', '950', '650', null, null, null, '140', 'sys', '0');
 INSERT INTO `sys_biaodan` VALUES ('145', '查询组件管理表单', '1', '2012-09-26 13:46:40', 'FORM-20130304171522858-SYSM-00001', '0', '', null, '定制及维护单个查询组件', '', 'sys_chaxunzujian', '2052751705', '2014-09-16 20:51:26', '950', '650', null, null, null, '193', 'sys', '0');
@@ -1692,7 +1713,7 @@ INSERT INTO `sys_biaodan` VALUES ('1033968184', '数据备份记录表单', '1',
 INSERT INTO `sys_biaodan` VALUES ('10592028476', '角色表单', '1', '2012-12-24 16:15:32', 'FORM-20130304171522951-SYSM-00001', '0', null, null, '', '', 'sys_role', '2052751705', '2013-03-25 15:23:42', '950', '650', '', '新建对话框', '维护对话框', '101838990416', 'sys', '0');
 INSERT INTO `sys_biaodan` VALUES ('10000002630001', '流程分类表单', '2052751705', '2013-09-30 12:03:37', 'FORM-2013093012033782-SYSM-00001', '0', null, null, '流程分类表单', '', 'bpm_type', '2052751705', '2013-10-09 18:07:21', '950', '650', '', '新建对话框', '维护对话框', '10000000590001', 'bpm', '0');
 INSERT INTO `sys_biaodan` VALUES ('10000002270019', '自动补齐文本框管理表单', '2052751705', '2013-09-27 14:50:14', 'FORM-20130927145014345-SYSM-00001', '0', null, null, '自动补齐文本框管理表单', '', 'sys_autocomplete', '2052751705', '2014-09-16 20:39:59', '950', '650', '', '新建对话框', '维护对话框', '10000002270002', 'sys', '0');
-INSERT INTO `sys_biaodan` VALUES ('10000005610026', '商品表单', '2052751705', '2014-09-14 16:41:29', 'FORM-20140914164129670-SYSM-00001', '0', null, null, '', null, 'bus_product', '2052751705', '2014-09-17 20:24:56', '950', '650', '', '新建对话框', '维护对话框', '10000005610006', 'bus', '0');
+INSERT INTO `sys_biaodan` VALUES ('10000005610026', '商品表单', '2052751705', '2014-09-14 16:41:29', 'FORM-20140914164129670-SYSM-00001', '0', null, null, '', null, 'bus_product', '2052751705', '2018-02-28 16:44:33', '950', '650', '', '新建对话框', '维护对话框', '10000005610006', 'bus', '0');
 
 -- ----------------------------
 -- Table structure for sys_biaodanbutton
@@ -2106,7 +2127,7 @@ INSERT INTO `sys_biaodansheji` VALUES ('610', '174', 'sys_logo', '2', '1', '3', 
 INSERT INTO `sys_biaodansheji` VALUES ('1108', '696', 'sys_logo', '13', '1', '8', '0', '0', '3', '1', '69', '37', null, '86', null, '0', '101765427474', null, null, null, null, '0', null, '-1', null, null, null, null, '0', '0', null, null, null, '2', '0', '0', '', null, '1', 'COLN-20130304171532893-SYSM-00001,COLN-20130304171532894-SYSM-00001', '0', null, '0', null, '0', null, '0', null, null, null, '0');
 INSERT INTO `sys_biaodansheji` VALUES ('1697', '1254', 'sys_templatelibrary', '11', '0', null, '0', '0', '2', '1', '154', '204', null, '194', null, '0', '0', null, null, null, null, '0', null, '-1', null, null, null, null, '0', '1', null, null, null, '1340005570406', '0', '0', '', null, '1', 'COLN-20130304171532899-SYSM-00001,COLN-20130304171532900-SYSM-00001', '0', null, null, null, null, null, '0', null, null, null, '0');
 INSERT INTO `sys_biaodansheji` VALUES ('1033', '1118', 'sys_catalog', '12', '0', '3', '0', '0', '2', '1', '67', '3', '0', '108', '0', '0', '0', null, null, null, '0', '0', '0', '-1', null, '0', '0', '0', '1', '1', '0', null, null, '1340005570406', '0', '0', '', null, '1', 'COLN-2013030417153327-SYSM-00001,COLN-2013030417153328-SYSM-00001', '0', null, '0', null, '0', null, '0', null, '0', '0', '0');
-INSERT INTO `sys_biaodansheji` VALUES ('744', '548', 'bus_xinxifabu', '4', '0', '4', '0', '0', '14', '1', '97', '140', '1338264437781', '127', '0', '0', '933737443', null, null, ' ', '0', '0', '0', '-1', null, '0', '0', '0', '1', '1', '0', null, null, '1', '0', '0', null, null, '1', 'COLN-2013030417153333-SYSM-00001,COLN-2013030417153334-SYSM-00001', '0', null, '0', null, '0', null, '0', null, '0', null, '0');
+INSERT INTO `sys_biaodansheji` VALUES ('744', '548', 'bus_xinxifabu', '4', '0', '4', '0', '0', '2', '1', '97', '140', '1338264437781', '127', '0', '0', '933737443', null, null, ' ', '0', '0', '0', '-1', null, '0', '0', '0', '1', '1', '0', null, null, '1340005570406', '0', '0', null, null, '1', 'COLN-2013030417153333-SYSM-00001,COLN-2013030417153334-SYSM-00001', '0', null, '0', null, '0', null, '0', null, '0', '0', '0');
 INSERT INTO `sys_biaodansheji` VALUES ('671', '117', 'sys_tree', '0', '1', '1', '1', '1', '0', '1', '62', '34', '0', '158', '0', '0', '0', null, null, ' ', '0', '1', '0', '-1', null, '0', '0', '0', '1', '1', '0', null, '', '1338264437781', '0', '0', '', null, '0', 'COLN-2013030417153339-SYSM-00001,COLN-2013030417153340-SYSM-00001', '0', null, '0', null, '0', null, '0', null, '0', '0', '0');
 INSERT INTO `sys_biaodansheji` VALUES ('674', '685', 'sys_tree', '2', '1', '2', '1', '0', '9', '1', '62', '34', null, '158', null, '0', '0', null, null, ' ', null, '1', null, '-1', null, null, null, null, '1', '1', null, null, null, null, '0', '0', '', null, '1', 'COLN-2013030417153345-SYSM-00001,COLN-2013030417153346-SYSM-00001', '0', null, null, null, null, null, '0', null, null, null, '0');
 INSERT INTO `sys_biaodansheji` VALUES ('675', '236', 'sys_tree', '3', '1', '4', '1', '0', '8', '1', '62', '34', null, '158', null, '1', '0', 'sys_tables', 'tbl_tableZhName', null, null, '1', null, '-1', null, null, null, null, '1', '1', null, null, null, '1340085958542', '0', '0', null, null, '1', 'COLN-2013030417153351-SYSM-00001,COLN-2013030417153352-SYSM-00001', '0', null, null, null, null, null, '0', null, null, null, '0');
@@ -2651,7 +2672,7 @@ INSERT INTO `sys_biaodansheji` VALUES ('10000005190169', '10000005190168', 'sys_
 INSERT INTO `sys_biaodansheji` VALUES ('10000005750004', '10000005610014', 'bus_product', '2', '1', '2', '0', '0', '0', '1', '10000005610026', '10000005610006', '0', '10000005610029', '0', '0', '0', null, null, null, '0', '0', '0', '-1', null, '0', '0', '0', '1', '1', '0', null, null, '1338264437781', '0', '0', null, null, '1', 'COLN-20140917201622646-SYSM-00001,COLN-20140917201622662-SYSM-00001', '0', null, '0', null, '0', null, '0', '-1', '0', '0', '0');
 INSERT INTO `sys_biaodansheji` VALUES ('10000005750008', '10000005610015', 'bus_product', '3', '0', '3', '0', '0', '0', '1', '10000005610026', '10000005610006', null, '10000005610029', null, null, null, null, null, null, null, '0', null, '-1', null, null, null, null, '1', '1', null, null, null, '1338264437781', '0', '0', null, null, '1', 'COLN-20140917201622828-SYSM-00001,COLN-20140917201622845-SYSM-00001', '0', null, null, null, null, null, null, '-1', null, '0', '0');
 INSERT INTO `sys_biaodansheji` VALUES ('10000005750012', '10000005610023', 'bus_pingjia', '1', '1', '1', '0', '0', '0', '1', '10000005610026', '10000005610016', '0', '10000005740007', '0', '0', '0', null, null, null, '0', '0', '0', '9', null, '0', '0', '0', '1', '1', '0', null, null, '1338264437781', '0', '0', null, null, '1', 'COLN-201409172016443-SYSM-00001,COLN-2014091720164417-SYSM-00001', '0', null, '0', null, '0', null, '0', '-1', '0', '0', '0');
-INSERT INTO `sys_biaodansheji` VALUES ('10000005750000', '10000005610013', 'bus_product', '1', '1', '1', '0', '0', '0', '1', '10000005610026', '10000005610006', '0', '10000005610029', '0', '0', '0', null, null, null, '0', '0', '0', '-1', null, '0', '0', '0', '1', '1', '0', null, null, '1338264437781', '0', '0', null, null, '1', 'COLN-20140917201622478-SYSM-00001,COLN-20140917201622515-SYSM-00001', '0', null, '0', null, '0', null, '0', '-1', '0', '0', '0');
+INSERT INTO `sys_biaodansheji` VALUES ('10000005750000', '10000005610013', 'bus_product', '1', '1', '1', '0', '1', '0', '1', '10000005610026', '10000005610006', '0', '10000005610029', '0', '0', '0', null, null, null, '0', '0', '0', '-1', null, '0', '0', '0', '1', '1', '0', null, null, '1338264437781', '0', '0', null, null, '1', 'COLN-20140917201622478-SYSM-00001,COLN-20140917201622515-SYSM-00001', '0', null, '0', null, '0', null, '0', '-1', '0', '0', '0');
 INSERT INTO `sys_biaodansheji` VALUES ('10000006380012', '10000006350000', 'bus_device', '1', '1', '1', '0', '1', '0', '1', '10000006380002', '10000006340000', '0', '10000006380004', '0', '0', '0', null, null, null, '0', '0', '0', '-1', null, '0', '0', '0', '1', '1', '0', null, null, '1338264437781', '0', '0', null, null, '1', 'COLN-20180222105128742-SYSM-00001,COLN-20180222105128745-SYSM-00001', '0', null, '0', null, '0', null, '0', '-1', '0', '0', '0');
 INSERT INTO `sys_biaodansheji` VALUES ('10000006380016', '10000006360001', 'bus_device', '2', '1', '2', '0', '0', '0', '1', '10000006380002', '10000006340000', '0', '10000006380004', '0', '0', '0', null, null, null, '0', '0', '0', '-1', null, '0', '0', '0', '1', '1', '0', null, null, '1338264437781', '0', '0', null, null, '1', 'COLN-20180222105128801-SYSM-00001,COLN-20180222105128805-SYSM-00001', '0', null, '0', null, '0', null, '0', '-1', '0', '0', '0');
 INSERT INTO `sys_biaodansheji` VALUES ('10000006380020', '10000006370001', 'bus_device', '3', '1', '3', '0', '0', '0', '1', '10000006380002', '10000006340000', '0', '10000006380004', '0', '0', '0', null, null, null, '0', '0', '0', '-1', null, '0', '0', '0', '1', '1', '0', null, null, '1338264437781', '0', '0', null, null, '1', 'COLN-20180222105128846-SYSM-00001,COLN-20180222105128849-SYSM-00001', '0', null, '0', null, '0', null, '0', '-1', '0', '0', '0');
@@ -2969,7 +2990,7 @@ INSERT INTO `sys_catalog` VALUES ('1963019503', '2006802974', '岗位', 'FUNC-20
 INSERT INTO `sys_catalog` VALUES ('1059136970', '2006802974', '角色', 'FUNC-20130828092041810-SYSM-00001', null, null, '4', '/pages/system/role/rolelist.action', '2052751705', '2013-08-28 09:20:41', '2052751705', '2014-09-13 11:57:30', '0', '1', '角色', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000000140000', '2006802974', '用户', 'FUNC-2013090409515963-SYSM-00001', null, null, '2', '/pages/system/user/userlist.action', '2052751705', '2013-09-04 09:51:58', '2052751705', '2013-10-10 15:44:26', '0', '1', '用户', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000000200019', '2006802974', '权限', 'FUNC-20130906153957566-SYSM-00001', null, null, '5', '/pages/system/privilege/index.action', '2052751705', '2013-09-06 15:39:57', '2052751705', '2014-09-13 11:57:59', '0', '1', '功能权限', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
-INSERT INTO `sys_catalog` VALUES ('10000000410000', '1', '流程管理', 'FUNC-20130910113334713-SYSM-00001', null, null, '12', null, '2052751705', '2013-09-10 11:33:24', '2052751705', '2016-08-17 20:57:40', '0', '1', '流程管理', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
+INSERT INTO `sys_catalog` VALUES ('10000000410000', '1', '流程管理', 'FUNC-20130910113334713-SYSM-00001', null, null, '4', null, '2052751705', '2013-09-10 11:33:24', '2052751705', '2016-08-17 20:57:40', '0', '1', '流程管理', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000000410002', '10000000410000', '流程定义', 'FUNC-20130910113505170-SYSM-00001', null, null, '1', '/pages/third/bpm/bpmDefinition/list.action', '2052751705', '2013-09-10 11:35:05', '2052751705', '2016-04-22 14:53:49', '0', '1', '流程定义管理', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000000520006', '10000000410000', '流程分类', 'FUNC-20130910182758809-SYSM-00001', null, null, '5', '/pages/resource/10000000590001compexlist.action?listId=10000002930024', '2052751705', '2013-09-10 18:27:58', '2052751705', '2013-10-09 17:59:27', '0', '1', '流程分类', null, 'Arial, sans-serif', '12', '#000000', 'sys', '10000002930024', '750', null, '-1', '0', '0', null, '1');
 INSERT INTO `sys_catalog` VALUES ('10000001020000', '1', '邮件管理', 'FUNC-20130913143032297-SYSM-00001', null, null, '11', null, '2052751705', '2013-09-13 14:30:30', '2052751705', '2013-09-13 14:31:32', '0', '1', '邮件管理', null, 'Arial, sans-serif', '12', '#000000', 'sys', '-1', '750', null, '-1', '0', '0', null, '1');
@@ -3006,7 +3027,7 @@ INSERT INTO `sys_catalog` VALUES ('10000005760015', '10000005760003', '我的办
 INSERT INTO `sys_catalog` VALUES ('10000005760017', '10000005760003', '我的草稿', 'FUNC-20140919080802389-SYSM-00001', null, null, '8', null, '2052751705', '2014-09-19 08:08:02', '2052751705', '2016-08-17 21:01:07', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '1', 'myDraw', '0');
 INSERT INTO `sys_catalog` VALUES ('10000005760019', '10000005760003', '我的消息', 'FUNC-20140919081020400-SYSM-00001', null, null, '9', '/pages/platform/message/receivedMessage/list.action', '2052751705', '2014-09-19 08:10:20', '2052751705', '2014-09-19 08:12:24', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '0', 'newMessage', '0');
 INSERT INTO `sys_catalog` VALUES ('10000005760021', '10000005760003', '我的邮件', 'FUNC-20140919081059630-SYSM-00001', null, null, '10', '/pages/platform/email/mailAccount/mailbox.action', '2052751705', '2014-09-19 08:10:59', '2052751705', '2014-09-19 08:13:11', '0', '1', null, null, null, null, null, null, '-1', '750', null, null, '0', '0', 'newEmail', '0');
-INSERT INTO `sys_catalog` VALUES ('10000006390011', '290', '设备管理', 'FUNC-20180222111313981-SYSM-00001', null, null, '10', '/pages/resource/10000006340000compexlist.action?listId=10000006390000', '2052751705', '2018-02-22 11:13:14', '2052751705', '2018-02-22 11:13:14', '0', '1', null, null, null, null, null, null, '10000006390000', '750', null, null, '0', '0', 'shebei', '0');
+INSERT INTO `sys_catalog` VALUES ('10000006390011', '290', '设备管理', 'FUNC-20180222111313981-SYSM-00001', null, null, '10', '/pages/resource/10000006340000compexlist.action?listId=10000006390000', '2052751705', '2018-02-22 11:13:14', '2052751705', '2018-02-22 11:13:14', '0', '1', null, null, null, null, null, null, '10000006390000', '750', null, null, '0', '0', 'shebei', '1');
 
 -- ----------------------------
 -- Table structure for sys_chaxunzujian
@@ -4047,7 +4068,6 @@ INSERT INTO `sys_columns` VALUES ('1685', 'tbl_systemteam', '分类', '173', 'sy
 INSERT INTO `sys_columns` VALUES ('1686', 'tbl_systemteam', '分类', '174', 'sys_liebiaoorder', 'varchar', '', '50', '0', '0', null, '根据应用位置对序号列构件进行分类，按优先级分为系统类、业务类、测试类。  ', '1', '2012-09-19 11:40:14', '1', '2012-09-19 11:39:01', '1', null, null, '0', '0', 'systemteam');
 INSERT INTO `sys_columns` VALUES ('1687', 'tbl_systemteam', '分类', '175', 'sys_liebiaooperation', 'varchar', '', '50', '0', '1', null, '根据应用位置对操作列构件进行分类，按优先级分为系统类、业务类、测试类。  ', '1', '2012-09-19 11:39:58', '1', '2012-09-19 11:38:46', '1', null, null, '0', '0', 'systemteam');
 INSERT INTO `sys_columns` VALUES ('1688', 'tbl_systemteam', '分类', '224', 'sys_codecasecade', 'varchar', '', '50', '0', '0', null, '根据应用位置对代码级联组件进行分类，按优先级分为系统类、业务类、测试类。  ', '1', '2012-09-19 11:39:41', '1', '2012-09-19 11:38:28', '0', null, null, '0', '0', 'systemteam');
-INSERT INTO `sys_columns` VALUES ('10000006000000', 'tbl_product_id', '外键', '10000005610016', 'bus_pingjia', 'bigint', null, '50', '0', '0', null, '外键：主表-->bus_product,子表--->bus_pingjia', '2052751705', '2016-04-21 18:47:25', '2052751705', '2016-04-21 18:47:25', '0', null, null, '1', '0', null);
 INSERT INTO `sys_columns` VALUES ('10000006010001', 'comm_createBy', '创建人', '10000006010000', 'bus_productdetail', 'varchar', null, '50', '0', '1', null, '创建记录的人员', '2052751705', '2016-04-21 19:45:33', '2052751705', '2016-04-21 19:45:33', '0', null, null, '0', '0', 'createBy');
 INSERT INTO `sys_columns` VALUES ('10000006010002', 'comm_createDate', '创建时间', '10000006010000', 'bus_productdetail', 'timestamp', null, '50', '0', '1', null, '创建记录的时间', '2052751705', '2016-04-21 19:45:33', '2052751705', '2016-04-21 19:45:33', '0', null, null, '0', '0', 'createDate');
 INSERT INTO `sys_columns` VALUES ('10000006010003', 'comm_updateBy', '修改人', '10000006010000', 'bus_productdetail', 'varchar', null, '50', '0', '1', null, '修改记录的人员', '2052751705', '2016-04-21 19:45:33', '2052751705', '2016-04-21 19:45:33', '0', null, null, '0', '0', 'updateBy');
@@ -4798,7 +4818,7 @@ CREATE TABLE `sys_db_id` (
 -- ----------------------------
 -- Records of sys_db_id
 -- ----------------------------
-INSERT INTO `sys_db_id` VALUES ('1', '10000', '6480000', '0');
+INSERT INTO `sys_db_id` VALUES ('1', '10000', '6560000', '0');
 
 -- ----------------------------
 -- Table structure for sys_desktopdesign
@@ -4882,8 +4902,8 @@ CREATE TABLE `sys_desktoplayout` (
 -- ----------------------------
 INSERT INTO `sys_desktoplayout` VALUES ('10000002090002', '2052751705', '2013-09-26 15:40:33', '2052751705', '2013-09-29 09:33:43', '0', '0', '等分两列布局', '2', '50,50', null, '0', '10000003170012,10000003170010;10000003170013,10000003170011');
 INSERT INTO `sys_desktoplayout` VALUES ('10000002100000', '2052751705', '2013-09-26 15:45:11', '2052751705', '2013-09-29 09:33:20', '0', '0', '等分三列布局', '3', '33,33,33', null, '0', '10000003170012,10000003170013;10000003170014,10000003170010;10000002300000,10000003170011');
-INSERT INTO `sys_desktoplayout` VALUES ('10000002360000', '2052751705', '2013-09-29 10:41:47', '2052751705', '2013-10-25 18:01:57', '0', '0', '中宽三列布局', '3', '30,40,30', null, '1', '10000003170012,10000003170013;10000003170014,10000002300000;10000003170011,10000003170010');
-INSERT INTO `sys_desktoplayout` VALUES ('10000003170000', '2052751705', '2013-10-11 16:02:27', '2052751705', '2013-10-23 17:37:49', '0', '0', '一列布局', '3', '500,200,300', null, '0', '10000003170012');
+INSERT INTO `sys_desktoplayout` VALUES ('10000002360000', '2052751705', '2013-09-29 10:41:47', '2052751705', '2018-02-28 15:11:29', '0', '0', '中宽三列布局', '3', '30,40,30', null, '1', '10000003170012,10000003170013;10000003170014,10000002300000;10000003170011,10000003170010');
+INSERT INTO `sys_desktoplayout` VALUES ('10000003170000', '2052751705', '2013-10-11 16:02:27', '2052751705', '2018-02-28 15:11:22', '0', '0', '一列布局', '3', '500,200,300', null, '0', '10000003170012');
 
 -- ----------------------------
 -- Table structure for sys_dictionarys
@@ -7023,6 +7043,7 @@ INSERT INTO `sys_privilege` VALUES ('10000005190017', '2052751705', '2013-11-01 
 INSERT INTO `sys_privilege` VALUES ('10000005130165', '2052751705', '2013-10-31 17:16:16', '2052751705', '2013-10-31 17:16:16', '0', '0', '信息发布访问权', '', '信息发布访问权', '1', '107', '-1');
 INSERT INTO `sys_privilege` VALUES ('10000005130255', '2052751705', '2013-10-31 17:18:39', '2052751705', '2013-10-31 17:18:39', '0', '0', '子系统管理访问权', '', '子系统管理访问权', '1', '10000004960025', '-1');
 INSERT INTO `sys_privilege` VALUES ('10000005190063', '2052751705', '2013-11-01 14:24:25', '2052751705', '2013-11-01 14:24:25', '0', '0', '署内新闻访问权', '', '署内新闻访问权', '1', '111', '-1');
+INSERT INTO `sys_privilege` VALUES ('10000006520033', '2052751705', '2018-02-28 14:56:41', '2052751705', '2018-02-28 14:56:41', '0', '0', '设备管理访问权', '', '设备管理访问权', '1', '10000006390011', '-1');
 
 -- ----------------------------
 -- Table structure for sys_privilege_resource
@@ -7126,6 +7147,7 @@ INSERT INTO `sys_privilege_resource` VALUES ('10000005130167', null, null, null,
 INSERT INTO `sys_privilege_resource` VALUES ('10000005130257', null, null, null, null, '0', '0', '10000005130255', '10000005130256');
 INSERT INTO `sys_privilege_resource` VALUES ('10000005190062', null, null, null, null, '0', '0', '10000005190060', '10000005190061');
 INSERT INTO `sys_privilege_resource` VALUES ('10000005190065', null, null, null, null, '0', '0', '10000005190063', '10000005190064');
+INSERT INTO `sys_privilege_resource` VALUES ('10000006520035', null, null, null, null, '0', '0', '10000006520033', '10000006520034');
 
 -- ----------------------------
 -- Table structure for sys_radiomgt
@@ -7210,7 +7232,7 @@ INSERT INTO `sys_receivedmessage` VALUES ('10000004910040', null, null, null, nu
 INSERT INTO `sys_receivedmessage` VALUES ('10000004910042', null, null, null, null, '0', '0', '457985569', '2052751705', '公司奖励制度', '正在完善中', '2013-10-28 11:40:12', '0', '0', '2', '10000004910041', '开发管理员');
 INSERT INTO `sys_receivedmessage` VALUES ('10000004910043', null, null, null, '2013-11-20 13:18:56', '0', '0', '2052751705', '2052751705', '公司奖励制度', '正在完善中', '2013-10-28 11:40:12', '0', '0', '2', '10000004910041', '开发管理员');
 INSERT INTO `sys_receivedmessage` VALUES ('10000004910044', null, null, null, null, '0', '0', '493106587', '2052751705', '公司奖励制度', '正在完善中', '2013-10-28 11:40:12', '0', '0', '2', '10000004910041', '开发管理员');
-INSERT INTO `sys_receivedmessage` VALUES ('10000004910051', null, null, null, '2013-11-20 13:19:23', '0', '0', '2052751705', '2052751705', '一起坚持一起加油一起努力', '<p>一起坚持一起加油一起努力</p><p>胜利离我们不远了！<br /></p>', '2013-10-28 11:41:23', '0', '0', '2', '10000004910049', '开发管理员');
+INSERT INTO `sys_receivedmessage` VALUES ('10000004910051', null, null, null, '2018-02-28 15:17:27', '0', '0', '2052751705', '2052751705', '一起坚持一起加油一起努力', '<p>一起坚持一起加油一起努力</p><p>胜利离我们不远了！<br /></p>', '2013-10-28 11:41:23', '1', '0', '2', '10000004910049', '开发管理员');
 INSERT INTO `sys_receivedmessage` VALUES ('10000004910052', null, null, null, null, '0', '0', '493106587', '2052751705', '一起坚持一起加油一起努力', '<p>一起坚持一起加油一起努力</p><p>胜利离我们不远了！<br /></p>', '2013-10-28 11:41:23', '0', '0', '2', '10000004910049', '开发管理员');
 INSERT INTO `sys_receivedmessage` VALUES ('10000004110002', null, null, null, null, '0', '0', '493106587', '2052751705', '最新消息发送测试', 'fasdfasdfsadf', '2013-10-23 10:58:28', '0', '0', '2', '10000004110001', '开发管理员');
 
@@ -7245,7 +7267,7 @@ INSERT INTO `sys_relation` VALUES ('42', '197', 'sys_menu', '198', 'sys_menuitem
 INSERT INTO `sys_relation` VALUES ('10000006010009', '10000005610006', 'bus_product', '10000006010000', 'bus_productdetail', '0', '', null, '2052751705', '2016-04-21 19:46:40', '2052751705', '2016-04-21 19:46:40', null, '1', '0', 'tbl_product_id');
 INSERT INTO `sys_relation` VALUES ('336280120', '101838990416', 'sys_role', '218', 'sys_roles', '1', '角色对应的权限组', '角色对应的权限组', '1', '2012-12-25 09:41:37', '1', '2012-12-25 09:41:37', 'sys', '2', '0', null);
 INSERT INTO `sys_relation` VALUES ('10303011302', '150', 'sys_usr', '101838990416', 'sys_role', '3', '用户角色中间表', '用户角色中间表', '1', '2012-12-25 15:14:15', '1', '2012-12-25 15:14:15', 'sys', '2', '0', null);
-INSERT INTO `sys_relation` VALUES ('10000005610025', '10000005610006', 'bus_product', '10000005610016', 'bus_pingjia', '1', '', null, '2052751705', '2014-09-14 16:40:14', '2052751705', '2016-04-21 18:47:25', null, '1', '0', 'tbl_product_id');
+INSERT INTO `sys_relation` VALUES ('10000005610025', '10000005610006', 'bus_product', '10000005610016', 'bus_pingjia', '1', '', null, '2052751705', '2014-09-14 16:40:14', '2052751705', '2018-02-28 16:01:30', null, '2', '0', 'bus_product_pingjia');
 
 -- ----------------------------
 -- Table structure for sys_renyuan
@@ -7395,6 +7417,7 @@ INSERT INTO `sys_resource` VALUES ('10000005130166', '2052751705', '2013-10-31 1
 INSERT INTO `sys_resource` VALUES ('10000005130256', '2052751705', '2013-10-31 17:18:39', '2052751705', '2013-10-31 17:18:39', '0', '0', '子系统管理', '子系统管理', '1', '1', '10000004960025', '/pages/resource/10000004960006compexlist.action?listId=10000004960020');
 INSERT INTO `sys_resource` VALUES ('10000005190061', '2052751705', '2013-11-01 14:24:23', '2052751705', '2013-11-01 14:24:23', '0', '0', '行业公告', '行业公告', '1', '1', '109', '/pages/resource/140compexlist.action?listId=100');
 INSERT INTO `sys_resource` VALUES ('10000005190064', '2052751705', '2013-11-01 14:24:25', '2052751705', '2013-11-01 14:24:25', '0', '0', '署内新闻', '署内新闻', '1', '1', '111', '/pages/resource/140compexlist.action?listId=98');
+INSERT INTO `sys_resource` VALUES ('10000006520034', '2052751705', '2018-02-28 14:56:41', '2052751705', '2018-02-28 14:56:41', '0', '0', '设备管理', '设备管理', '1', '1', '10000006390011', '/pages/resource/10000006340000compexlist.action?listId=10000006390000');
 
 -- ----------------------------
 -- Table structure for sys_riqizujian
@@ -7555,6 +7578,35 @@ INSERT INTO `sys_role_privilege` VALUES ('10000005260082', null, null, null, nul
 INSERT INTO `sys_role_privilege` VALUES ('10000005260079', null, null, null, null, '0', '0', '1769937698', '10000005190017');
 INSERT INTO `sys_role_privilege` VALUES ('10000005260078', null, null, null, null, '0', '0', '1769937698', '10000005130165');
 INSERT INTO `sys_role_privilege` VALUES ('10000005320035', null, null, null, null, '0', '0', '101360787977', '10000005190017');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520004', null, null, null, null, '0', '0', '10000006510002', '10000003970002');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520005', null, null, null, null, '0', '0', '10000006510002', '10000005130000');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520006', null, null, null, null, '0', '0', '10000006510002', '10000005130009');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520007', null, null, null, null, '0', '0', '10000006510002', '10000005130012');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520008', null, null, null, null, '0', '0', '10000006510002', '10000005130015');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520009', null, null, null, null, '0', '0', '10000006510002', '10000005130018');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520010', null, null, null, null, '0', '0', '10000006510002', '10000005130021');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520011', null, null, null, null, '0', '0', '10000006510002', '10000003970032');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520012', null, null, null, null, '0', '0', '10000006510002', '10000005130042');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520013', null, null, null, null, '0', '0', '10000006510002', '10000003970083');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520014', null, null, null, null, '0', '0', '10000006510002', '10000005130024');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520015', null, null, null, null, '0', '0', '10000006510002', '10000005130027');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520016', null, null, null, null, '0', '0', '10000006510002', '10000005130030');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520017', null, null, null, null, '0', '0', '10000006510002', '10000005130033');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520018', null, null, null, null, '0', '0', '10000006510002', '10000005130036');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520019', null, null, null, null, '0', '0', '10000006510002', '10000005130039');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520020', null, null, null, null, '0', '0', '10000006510002', '10000005130045');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520021', null, null, null, null, '0', '0', '10000006510002', '10000005130048');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520022', null, null, null, null, '0', '0', '10000006510002', '10000005130051');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520023', null, null, null, null, '0', '0', '10000006510002', '10000005130054');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520024', null, null, null, null, '0', '0', '10000006510002', '10000005130057');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520025', null, null, null, null, '0', '0', '10000006510002', '10000005130060');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520026', null, null, null, null, '0', '0', '10000006510002', '10000005130063');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520027', null, null, null, null, '0', '0', '10000006510002', '10000005130066');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520028', null, null, null, null, '0', '0', '10000006510002', '10000005130069');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520029', null, null, null, null, '0', '0', '10000006510002', '10000005130072');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520030', null, null, null, null, '0', '0', '10000006510002', '10000005130075');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520031', null, null, null, null, '0', '0', '10000006510002', '10000005130078');
+INSERT INTO `sys_role_privilege` VALUES ('10000006520032', null, null, null, null, '0', '0', '10000006510002', '10000005130090');
 
 -- ----------------------------
 -- Table structure for sys_searchcombox
@@ -8652,7 +8704,6 @@ INSERT INTO `sys_useinfo` VALUES ('6263', '1', '2012-08-22 17:00:00', '1', '2012
 INSERT INTO `sys_useinfo` VALUES ('6266', '1', '2012-08-22 17:00:00', '1', '2012-09-17 11:46:23', '66', '1340085958542', '表关系管理表单', '宽186高20通用搜索下拉框', 'BMWB100910004020120703102933', '表单元素', '713', '1', '0');
 INSERT INTO `sys_useinfo` VALUES ('6269', '1', '2012-08-22 17:00:00', '1', '2012-09-17 11:46:23', '65', '1340085958542', '字段管理表单', '宽186高20通用搜索下拉框', 'BMWB100910004020120703102933', '表单元素', '1132', '1', '0');
 INSERT INTO `sys_useinfo` VALUES ('6273', '1', '2012-08-22 17:00:00', '1', '2012-09-17 11:46:23', '95', '1', '部内通知表单', '通用编辑器', null, '表单元素', '363', '1', '0');
-INSERT INTO `sys_useinfo` VALUES ('6274', '1', '2012-08-22 17:00:00', '1', '2012-09-17 11:46:23', '97', '1', '行业公告表单', '通用编辑器', null, '表单元素', '744', '1', '0');
 INSERT INTO `sys_useinfo` VALUES ('6276', '1', '2012-08-22 17:00:00', '1', '2012-09-17 11:46:23', '55', '1339482578375', '学员信息管理', '添加按钮', null, '表单按钮', '72', '2', '0');
 INSERT INTO `sys_useinfo` VALUES ('6277', '1', '2012-08-22 17:00:00', '1', '2012-09-17 11:46:23', '55', '1338176658578', '学员信息管理', '保存按钮', '', '表单按钮', '71', '2', '0');
 INSERT INTO `sys_useinfo` VALUES ('6515', '1', '2012-08-22 17:44:27', '1', '2012-09-17 11:46:23', '113', '1338264437781', '字处理组件表单', '宽180高15通用文本框', 'BMWB100910000120120625112301', '表单元素', '1247', '1', '0');
@@ -9557,6 +9608,7 @@ INSERT INTO `sys_useinfo` VALUES ('10000006390004', '2052751705', '2018-02-22 11
 INSERT INTO `sys_useinfo` VALUES ('10000006390007', '2052751705', '2018-02-22 11:12:07', null, null, '10000006390000', '1338430888400', '设备列表', '列表批量删除按钮', null, '列表按钮', '10000006390005', '3', '0');
 INSERT INTO `sys_useinfo` VALUES ('10000006390010', '2052751705', '2018-02-22 11:12:21', null, null, '10000006390000', '1340071401633', '设备列表', '主列表维护按钮', null, '列表操作按钮', '10000006390008', '4', '0');
 INSERT INTO `sys_useinfo` VALUES ('10000006430000', '2052751705', '2018-02-26 10:08:12', null, null, '154', '101588525942', '模板库表单', '自定义按钮宽70高24按钮', null, '表单按钮', '101657622805', '2', '0');
+INSERT INTO `sys_useinfo` VALUES ('10000006540004', '2052751705', '2018-02-28 15:56:56', null, null, '97', '1340005570406', '行业公告表单', null, null, '表单元素', '744', '1', '0');
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -9596,7 +9648,7 @@ INSERT INTO `sys_user` VALUES ('10000005610000', 'wang', 'pmWkWSBCL51Bfkhn79xPuK
 INSERT INTO `sys_user` VALUES ('493106587', 'aduser', 'pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=', '2052751705', '2013-01-30 13:13:35', '2052751705', '2013-10-28 11:10:05', '高级体验用户', '18600068369', 'user@kingtam.com', '56897856', '0', null, '1721463146', '1255043594', null, '0', '0', '0', '0', '');
 INSERT INTO `sys_user` VALUES ('457985569', 'user', 'pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=', '2052751705', '2013-01-30 13:13:54', '2052751705', '2013-10-28 11:09:11', '体验用户', '15425458754', 'abcd@163.com', '2548956', '0', null, '101829002980', '544698454', null, '0', '0', '0', '0', '/upload/1382699255441.gif');
 INSERT INTO `sys_user` VALUES ('10000005610001', 'li', 'pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=', '2052751705', '2014-09-14 16:25:46', '2052751705', '2014-09-14 16:26:04', '李某', '13520706924', 'li@peisheyun.com', '66897656', '0', null, null, null, '0', '0', '0', '0', '0', '');
-INSERT INTO `sys_user` VALUES ('10000005970000', 'gao', 'pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=', '2052751705', '2014-09-26 05:48:50', '2052751705', '2014-09-26 05:48:50', '高某', '15811564536', 'rosyapril@126.com', '267898', '1', null, null, null, '0', '0', '0', '0', '0', '');
+INSERT INTO `sys_user` VALUES ('10000005970000', 'gao', 'jZae727K08KaOmKSgOaGzww/XVqGr/PKEgIMkjrcbJI=', '2052751705', '2014-09-26 05:48:50', '2052751705', '2014-09-26 05:48:50', '高某', '15811564536', 'rosyapril@126.com', '267898', '1', null, null, null, '0', '0', '0', '0', '0', '');
 
 -- ----------------------------
 -- Table structure for sys_user_org

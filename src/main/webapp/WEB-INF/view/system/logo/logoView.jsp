@@ -12,6 +12,6 @@
 </head>
 
 <body>
-	<img src="${logoPath}">
+	<img src="<%=basePath %>${logoPath}">
 </body>
 </html>

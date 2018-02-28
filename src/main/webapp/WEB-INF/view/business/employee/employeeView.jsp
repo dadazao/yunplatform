@@ -16,7 +16,7 @@
 		$("#tabDivId").append('<div id="detailTab"></div>');
 		$("#detailTab").loadUrl('<%=basePath %>/pages/business/employee/detail/view.action?employeeId='+$('#domainId').val());
 		$("#tabDivId").append('<div id="projectTab"></div>');
-		$("#projectTab").loadUrl('<%=basePath %>/pages/business/employee/tab.action');
+		$("#projectTab").loadUrl('<%=basePath %>/pages/business/employee/project/tab.action');
 	});
 		//--> 
 </script>

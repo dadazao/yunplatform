@@ -12,7 +12,7 @@
 	
 	ns.position.selfDialogAjaxDone = function(json) {
 		$("#positionId").val(json.domainId);
-		$("#treeId").load("<%=basePath %>/pages/system/position/positionTree.jsp");
+		$("#treeId").load("<%=basePath %>/pages/system/position/tree.action");
 		refreshList(json);
 	}
 	

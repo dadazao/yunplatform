@@ -24,7 +24,7 @@
 		$("#tabDivId").append('<div id="detailTab"></div>');
 		$("#detailTab").loadUrl('<%=basePath %>/pages/business/employee/detail/edit.action?employeeId='+$('#domainId').val());
 		$("#tabDivId").append('<div id="projectTab"></div>');
-		$("#projectTab").loadUrl('<%=basePath %>/pages/business/employee/projectTab.jsp');
+		$("#projectTab").loadUrl('<%=basePath %>/pages/business/employee/project/tab.action');
 	});
 	
 //-->

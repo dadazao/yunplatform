@@ -51,7 +51,9 @@ import com.cloudstong.platform.system.service.SysPositionService;
 		@Result(name = "userList", location = "/WEB-INF/view/system/position/userList.jsp"),
 		@Result(name = "setUserList", location = "/WEB-INF/view/system/position/setuserList.jsp"),
 		@Result(name = "index", location = "/WEB-INF/view/system/position/positionIndex.jsp"),
-		@Result(name = "tree", location = "/WEB-INF/view/system/position/positionTree.jsp")
+		@Result(name = "tree", location = "/WEB-INF/view/system/position/positionTree.jsp"),
+		@Result(name = "addUser", location = "/WEB-INF/view/system/position/addUser.jsp"),
+		@Result(name = "orgTree", location = "/WEB-INF/view/system/position/orgTree.jsp")
 })
 public class SysPositionAction extends BaseAction {
 	
@@ -76,6 +78,16 @@ public class SysPositionAction extends BaseAction {
 	@Action("tree")
 	public String tree() {
 		return "tree";
+	}
+	
+	@Action("addUser")
+	public String addUser() {
+		return "addUser";
+	}
+	
+	@Action("orgTree")
+	public String orgTree() {
+		return "orgTree";
 	}
 	
 	@Action("positionadd")
@@ -233,7 +245,7 @@ public class SysPositionAction extends BaseAction {
 	}
 	
 	@Action("positionaddUser")
-	public String addUser(){
+	public String positionaddUser(){
 		positionService.doAddUser(userIds,positionId);
 		return NONE;
 	}
