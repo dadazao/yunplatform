@@ -1,6 +1,6 @@
 <Configuration status="INFO" monitorInterval="300">  
     <properties>  
-        <property name="LOG_HOME">/logs</property>  
+        <property name="LOG_HOME">/tmp/logs</property>  
         <property name="FILE_NAME">yplog</property>  
     </properties>  
     <Appenders>  
