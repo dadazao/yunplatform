@@ -37,24 +37,24 @@ import com.cloudstong.platform.core.web.action.BaseAction;
 @Namespace("/${mainTable.namespace}/${mainTable.variables.class?uncap_first}")
 	<#if mainTable.relation=="1:1">
 @Results(value = { 
-		@Result(name = "edit", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
-		@Result(name = "view", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}View.jsp") 
+		@Result(name = "edit", location = "${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
+		@Result(name = "view", location = "${mainTable.variables.page}/${mainTable.variables.class?uncap_first}View.jsp") 
 })
 	<#elseif mainTable.relation=="1:n">
 @Results(value = {
-		@Result(name = "add", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
-		@Result(name = "edit", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
-		@Result(name = "sublist", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}List.jsp"), 
-		@Result(name = "tab", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Tab.jsp")
+		@Result(name = "add", location = "${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
+		@Result(name = "edit", location = "${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
+		@Result(name = "sublist", location = "${mainTable.variables.page}/${mainTable.variables.class?uncap_first}List.jsp"), 
+		@Result(name = "tab", location = "${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Tab.jsp")
 })
 	</#if>
 <#else><#--主表-->
 @Namespace("/${mainTable.namespace}")
 @Results(value = { 
-	@Result(name = "list", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}List.jsp"),
-	@Result(name = "add", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
-	@Result(name = "edit", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
-	@Result(name = "view", location = "/${mainTable.variables.page}/${mainTable.variables.class?uncap_first}View.jsp")	
+	@Result(name = "list", location = "${mainTable.variables.page}/${mainTable.variables.class?uncap_first}List.jsp"),
+	@Result(name = "add", location = "${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
+	@Result(name = "edit", location = "${mainTable.variables.page}/${mainTable.variables.class?uncap_first}Edit.jsp"),
+	@Result(name = "view", location = "${mainTable.variables.page}/${mainTable.variables.class?uncap_first}View.jsp")	
 })
 </#if>
 public class ${mainTable.variables.class}Action extends BaseAction {
