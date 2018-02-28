@@ -1,6 +1,6 @@
 <Configuration status="INFO" monitorInterval="300">  
     <properties>  
-        <property name="LOG_HOME">D:/logs</property>  
+        <property name="LOG_HOME">/logs</property>  
         <property name="FILE_NAME">yplog</property>  
     </properties>  
     <Appenders>  
@@ -25,7 +25,8 @@
             <AppenderRef ref="YpFile" />  
         </Logger>  
         <Root level="info">  
-            <AppenderRef ref="Console" />  
+            <AppenderRef ref="Console" /> 
+            <AppenderRef ref="YpFile" />   
         </Root>  
     </Loggers>  
 </Configuration> 
