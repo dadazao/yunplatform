@@ -100,7 +100,7 @@
 				<tr><td>
 					<button type="button" id="onlineDesign" name="onlineDesign" class="listbutton" onclick="ns.bpm.onlineDesign(0);" style="width:100px;">在线流程设计</button>
 					<button type="button" id="deleteDefinition" name="deleteDefinition" class="listbutton" onclick="ns.bpm.deleteDefinition();" >删除</button>				
-					<button type="button" id="deleteDefinition" name="deleteDefinition" class="listbutton" onclick="refresh();" >刷新</button>
+					<!-- <button type="button" id="deleteDefinition" name="deleteDefinition" class="listbutton" onclick="refresh();" >刷新</button> -->
 <!-- 					<button type="button" id="importXml" name="importXml" class="listbutton" onclick="ns.bpm.importXml();" >导入</button> -->
 <!-- 					<button type="button" id="exportXml" name="exportXml" class="listbutton" onclick="ns.bpm.exportXml();" >导出</button> -->
 				</td></tr>

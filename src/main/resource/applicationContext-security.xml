@@ -60,6 +60,7 @@
 				<value>/pages/resource/template/saveBase.action</value>
 				<value>/pages/resource/template/saveComb.action</value>
 				<value>/pages/system/dataSource/save.action</value>
+				<value>/pages/third/bpm/bpmDefinition/flexDefSave.action</value>
 			</list>
 		</property>
 	</bean>

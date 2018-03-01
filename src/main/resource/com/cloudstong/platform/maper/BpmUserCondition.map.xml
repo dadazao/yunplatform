@@ -92,20 +92,20 @@
 		ORDER BY SN asc
 	</select>
 	
-	<select id="getByActDefId" parameterType="java.lang.Long" resultMap="BpmUserCondition">
+	<select id="getByActDefId" parameterType="java.lang.String" resultMap="BpmUserCondition">
 		SELECT *
 		FROM BPM_USER_CONDITION WHERE 
 		ACTDEFID = #{actDefId} and CONDITIONTYPE=0
 	</select>
 	
-	<select id="getCcByActDefId" parameterType="java.lang.Long" resultMap="BpmUserCondition">
+	<select id="getCcByActDefId" parameterType="java.lang.String" resultMap="BpmUserCondition">
 		SELECT *
 		FROM BPM_USER_CONDITION WHERE 
 		ACTDEFID = #{actDefId} and CONDITIONTYPE=1 
 		ORDER BY SN asc
 	</select>
 	
-	<select id="getByActDefIdExport" parameterType="java.lang.Long" resultMap="BpmUserCondition">
+	<select id="getByActDefIdExport" parameterType="java.lang.String" resultMap="BpmUserCondition">
 		SELECT *
 		FROM BPM_USER_CONDITION WHERE 
 		ACTDEFID = #{actDefId}

@@ -69,7 +69,8 @@
 	// 供flex方向调用,关闭flex页面
 	function closeFlexWindow(){
 		window.close();
-		opener.location.reload();
+		//opener.location.reload();
+		opener.refresh();
 	}
 	
 	// 获取flex中加载流程设计图对应的xml数据，请求地址

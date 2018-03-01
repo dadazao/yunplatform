@@ -13,6 +13,7 @@
 }
 -->  
 </style>
+<body style="background-color: #FFFFFF;">
 <div align="center" style="margin-top:100px;">
 	<div><img src="<%=basePath%>/images/error/error_top.jpg" width="510" height="80" /></div>
 	<div style="width:510px;height:200px;" align="center" valign="top" >
@@ -40,4 +41,4 @@
 	</div>
 	<div><img src="<%=basePath%>/images/error/error_bootom.jpg" width="510" height="32" /></div>
 </div>
-
+</body>

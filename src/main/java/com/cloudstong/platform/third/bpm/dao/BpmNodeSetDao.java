@@ -60,14 +60,13 @@ public class BpmNodeSetDao extends BaseMyBatisDaoImpl<BpmNodeSet, Long> {
 		params.put("setType", setType);
 		return (BpmNodeSet) getUnique("getBySetType", params);
 	}
-	
-	  public BpmNodeSet getByStartGlobal(Long defId)
-	  {
-	    List list = getBySqlKey("getByStartGlobal", defId);
-	    if (list.size() == 0)
-	      return null;
-	    return (BpmNodeSet)list.get(0);
-	  }
+
+	public BpmNodeSet getByStartGlobal(Long defId) {
+		List list = getBySqlKey("getByStartGlobal", defId);
+		if (list.size() == 0)
+			return null;
+		return (BpmNodeSet) list.get(0);
+	}
 
 	public void delByStartGlobalDefId(Long defId) {
 		delBySqlKey("delByStartGlobalDefId", defId);
@@ -77,7 +76,7 @@ public class BpmNodeSetDao extends BaseMyBatisDaoImpl<BpmNodeSet, Long> {
 		Map map = new HashMap();
 		List<BpmNodeSet> list = getByDefId(defId);
 		for (BpmNodeSet bpmNodeSet : list) {
-			map.put(bpmNodeSet.getNodeId()+bpmNodeSet.getNodeName(), bpmNodeSet);
+			map.put(bpmNodeSet.getNodeId() + bpmNodeSet.getNodeName(), bpmNodeSet);
 		}
 		return map;
 	}

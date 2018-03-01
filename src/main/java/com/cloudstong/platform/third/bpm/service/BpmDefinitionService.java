@@ -561,10 +561,12 @@ public class BpmDefinitionService {
 
 	private void syncStartGlobal(Long oldDefId, Long newDefId, String newActDefId) throws Exception {
 		BpmNodeSet nodeSet = bpmNodeSetDao.getByStartGlobal(oldDefId);
-		nodeSet.setSetId(Long.valueOf(UniqueIdUtil.genId()));
-		nodeSet.setDefId(newDefId);
-		nodeSet.setActDefId(newActDefId);
-		bpmNodeSetDao.save(nodeSet);
+		if(nodeSet != null) {
+			nodeSet.setSetId(Long.valueOf(UniqueIdUtil.genId()));
+			nodeSet.setDefId(newDefId);
+			nodeSet.setActDefId(newActDefId);
+			bpmNodeSetDao.save(nodeSet);
+		}
 	}
 
 	public List<BpmDefinition> getAllHistoryVersions(Long defId) {

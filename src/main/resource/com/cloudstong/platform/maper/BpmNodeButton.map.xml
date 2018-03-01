@@ -91,7 +91,7 @@
 		ID=#{id}
 	</select>
 	
-	<select id="getByDefId" parameterType="String" resultMap="BpmNodeButton">
+	<select id="getByDefId" parameterType="java.lang.Long" resultMap="BpmNodeButton">
 		SELECT <include refid="columns"/>
 		FROM BPM_NODE_BTN
 		WHERE
@@ -105,7 +105,7 @@
 		defId=#{defId} and NODEID=#{nodeId} and isstartform=0 order by sn asc
 	</select>
 	
-	<select id="getByStartForm" parameterType="String" resultMap="BpmNodeButton">
+	<select id="getByStartForm" parameterType="java.lang.Long" resultMap="BpmNodeButton">
 		SELECT <include refid="columns"/>
 		FROM BPM_NODE_BTN
 		WHERE defId=#{defId}  and isstartform=1 order by sn asc
