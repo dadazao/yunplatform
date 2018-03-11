@@ -184,7 +184,7 @@
 	</delete>
 	
 	<select id="getByStartGlobal" resultMap="BpmNodeSet" parameterType="java.lang.Long">
-		SELECT * FROM BPM_NODE_SET WHERE defId=#{defId} and setType>=0
+		SELECT * FROM BPM_NODE_SET WHERE defId=#{defId} and setType>=1
 	</select>
 	
 	<update id="updateIsJumpForDef" parameterType="java.util.Map">

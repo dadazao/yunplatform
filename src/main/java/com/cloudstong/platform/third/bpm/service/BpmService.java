@@ -1201,7 +1201,7 @@ public class BpmService implements IScript {
 		processInstance.setEndActivityId(lastActivitiId);
 		historyProcessInstanceDao.update(processInstance);
 
-		executionDao.delVariableByProcInstId(instanceId);
+		//executionDao.delVariableByProcInstId(instanceId);
 
 		executionDao.delExecutionByProcInstId(instanceId);
 

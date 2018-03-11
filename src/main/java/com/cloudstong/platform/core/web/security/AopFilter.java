@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cloudstong.platform.core.common.AppContext;
 import com.cloudstong.platform.core.util.BeanUtils;
+import com.cloudstong.platform.core.util.RequestUtil;
 import com.cloudstong.platform.system.model.SysUser;
 
 public class AopFilter implements Filter {
@@ -24,8 +25,8 @@ public class AopFilter implements Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         try {
-            RequestContext.setHttpServletRequest((HttpServletRequest)request);
-            RequestContext.setHttpServletResponse((HttpServletResponse)response);
+        		RequestUtil.setHttpServletRequest((HttpServletRequest)request);
+        		RequestUtil.setHttpServletResponse((HttpServletResponse)response);
             SysUser user = AppContext.getCurrentUser();
             if (BeanUtils.isNotEmpty(user)) {
                 request.setAttribute("currentUser", user);

@@ -55,7 +55,7 @@ public class ExecutionDao extends BaseMyBatisDaoImpl<ProcessExecution, String> {
 	}
 
 	public void delVariableByProcInstId(Long procInstId) {
-		delBySqlKey("delVariableByProcInstId", procInstId);
+		delBySqlKey("delVariableByProcInstId", procInstId.toString());
 	}
 
 	public void delExecutionByProcInstId(Long procInstId) {

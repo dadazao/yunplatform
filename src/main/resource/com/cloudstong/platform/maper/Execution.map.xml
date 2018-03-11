@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
   
 <mapper namespace="com.cloudstong.platform.third.bpm.model.ProcessExecution">
-  <insert id="save" parameterType="com.cloudstong.platform.third.bpm.model.ProcessExecution">
+  <insert id="add" parameterType="com.cloudstong.platform.third.bpm.model.ProcessExecution">
     insert into ACT_RU_EXECUTION (ID_, REV_, PROC_INST_ID_, BUSINESS_KEY_, PROC_DEF_ID_, ACT_ID_, IS_ACTIVE_, IS_CONCURRENT_, IS_SCOPE_, PARENT_ID_, SUPER_EXEC_,IS_EVENT_SCOPE_,SUSPENSION_STATE_,CACHED_ENT_STATE_)
     values (
       #{id ,jdbcType=VARCHAR},
@@ -47,6 +47,10 @@
   
   <select id="getById" parameterType="string" resultMap="executionResultMap">
     select * from ACT_RU_EXECUTION where ID_ = #{id}
+  </select>
+  
+  <select id="getExecutionBySuperId" resultMap="executionResultMap">
+  	select * from ACT_RU_EXECUTION where SUPER_EXEC_ = #{id}
   </select>
   
   <delete id="delById" parameterType="String">
@@ -93,4 +97,31 @@
   	update ACT_RU_TASK set execution_id_=#{executionId}  where ID_=#{taskId}
   </update>
   
+
+
+    <select id="getSubExecutionByProcInstId" parameterType="string" resultMap="executionResultMap">
+    select * from ACT_RU_EXECUTION where PROC_INST_ID_ = #{procInstId} and ID_!=#{procInstId}
+  </select>
+  
+  <delete id="delSubVarByProcInstId" parameterType="java.lang.String">
+  	delete from ACT_RU_VARIABLE where  PROC_INST_ID_=#{procInstId} and EXECUTION_ID_!=#{procInstId}
+  </delete>
+  
+   <delete id="delSubInstByProcInstId" parameterType="java.lang.String">
+  	delete from ACT_RU_EXECUTION where  PROC_INST_ID_=#{procInstId} and ID_!=#{procInstId}
+  </delete>
+  
+  <select id="getSubExecutionBySuperId" parameterType="string" resultMap="executionResultMap">
+    select * from ACT_RU_EXECUTION where super_exec_=#{procInstId}
+  </select>
+  
+  <delete id="delCandidateByProcInstId" parameterType="java.lang.String">
+		delete from act_ru_identitylink  where proc_inst_id_=#{procInstId}
+	</delete>
+
+  <select id="getByProcInstId" parameterType="java.lang.Long" resultMap="executionResultMap">
+  	select * from ACT_RU_EXECUTION where PROC_INST_ID_=#{procInstId}
+  </select>
+  
+
 </mapper>
