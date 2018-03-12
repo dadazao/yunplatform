@@ -16,11 +16,11 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cloudstong.platform.core.common.AppContext;
 import com.cloudstong.platform.core.model.DomainVO;
 import com.cloudstong.platform.core.util.BeanUtils;
-import com.cloudstong.platform.core.util.EncryptUtil;
 import com.cloudstong.platform.core.util.ExceptionUtil;
 import com.cloudstong.platform.core.util.RequestUtil;
 import com.cloudstong.platform.core.util.StringUtil;
@@ -193,6 +193,13 @@ public class TaskAction extends BaseAction {
 		List<DomainVO> domainVOs = new ArrayList<DomainVO>();
 		// 通过表单ID查找表单信息
 		Form form = formService.getFormByIdAndDomainVO(bpmNodeSet.getFormKey(), domainVOs, user);
+		
+		if(form.getId() == null) {
+			printJSON("300", "请设置表单！");
+			
+			return NONE;
+		}
+		
 		String model = form.getTableName();
 		String simpleModel = model;
 
@@ -229,6 +236,14 @@ public class TaskAction extends BaseAction {
 
 		return NONE;
 	}
+	
+	  @RequestMapping({"pendingMattersList"})
+	  public String pendingMattersList() throws Exception {
+		  
+		  List list = this.bpmService.getMyTasks(queryCriteria);
+
+		  return "taskList";
+	  }
 
 	public List<TaskEntity> getTaskList() {
 		return taskList;

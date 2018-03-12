@@ -31,7 +31,19 @@ FlowUtil.startFlow=function(definitionId,actDefId){
 					});
 				}});
 			}else{
-				$.pdialog.open(__basePath +"/pages/third/bpm/task/startFlowForm.action?definitionId="+definitionId,"startFlowFormDialog","",{width:950,height:650,mask:true,resizable:true});
+				var flowUrl= __basePath +"/pages/third/bpm/task/startFlowForm.action?definitionId="+definitionId;
+				$.ajax({
+			  		type:'POST',
+			  		url:flowUrl,
+			  		success:function(json){
+						if(json.indexOf('300')!=-1 && json.indexOf("message")!=-1){
+							alertMsg.error("请设置表单！");
+						}
+						else{
+							$.pdialog.open(__basePath +"/pages/third/bpm/task/startFlowForm.action?definitionId="+definitionId,"startFlowFormDialog","",{width:950,height:650,mask:true,resizable:true});
+						}
+					}
+				});
 			}
   		}
   	});

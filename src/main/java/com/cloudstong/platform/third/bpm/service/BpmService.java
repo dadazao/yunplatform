@@ -1203,7 +1203,7 @@ public class BpmService implements IScript {
 
 		//executionDao.delVariableByProcInstId(instanceId);
 
-		executionDao.delExecutionByProcInstId(instanceId);
+		//executionDao.delExecutionByProcInstId(instanceId);
 
 		return processRun;
 	}

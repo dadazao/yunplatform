@@ -131,7 +131,7 @@
 								</td>
 		                    	<td align="center">
 		                    		<a style="cursor: pointer;color:blue;" onclick="ns.bpm.delProcessRun(${processRunItem.id})"  >删除</a>&nbsp;
-									<a style="cursor: pointer;color:blue;" onclick="ns.bpm.logProcessRun(${processRunItem.id})" >操作日志</a>
+									<a style="cursor: pointer;color:blue;" onclick="ns.bpm.logProcessRun(${processRunItem.id})"  >流程日志</a>
 		                    	</td>
 		                    </tr>
 		            </c:forEach>
