@@ -98,6 +98,8 @@ yunplatform是基于JavaEE开源、轻量级的企业敏捷开发与管理平台
 
 # 访问地址：
 http://app.wangzhiyun.cn:8080/yp
+用户名：admin
+密码：123
 
 # 官方QQ群：
 337191427
