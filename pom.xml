@@ -10,7 +10,7 @@
 		<org.struts.version>2.5.14.1</org.struts.version>
 		<org.springframework.version>4.3.14.RELEASE</org.springframework.version>
 		<org.springframework.security.version>4.2.4.RELEASE</org.springframework.security.version>
-		<org.mybatis.version>3.4.5</org.mybatis.version>
+		<org.mybatis.version>3.5.6</org.mybatis.version>
 		<org.activiti.version>5.14</org.activiti.version>
 	</properties>           
 	<repositories>
