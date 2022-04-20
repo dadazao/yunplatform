@@ -97,7 +97,7 @@ yunplatform是基于JavaEE开源、轻量级的企业敏捷开发与管理平台
 平台复用、子系统复用、代码复用、标准规范复用  
 
 # 访问地址：
-http://www.peishequ.com:8090/yp
+https://www.wangzhiyun.cn
 用户名：admin
 密码：123
 
