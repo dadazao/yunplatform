@@ -8,7 +8,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.struts.version>2.5.14.1</org.struts.version>
-		<org.springframework.version>4.3.14.RELEASE</org.springframework.version>
+		<org.springframework.version>5.2.21.RELEASE</org.springframework.version>
 		<org.springframework.security.version>4.2.4.RELEASE</org.springframework.security.version>
 		<org.mybatis.version>3.4.5</org.mybatis.version>
 		<org.activiti.version>5.14</org.activiti.version>
